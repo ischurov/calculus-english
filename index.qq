@@ -23,33 +23,5 @@
         \newcommand{\LB}{\mathop{\mathrm{LB}}}
         \newcommand{\Arg}{\mathop{\mathrm{Arg}}}
         \newcommand{\Ln}{\mathop{\mathrm{Ln}}}
-\_comment
-    \_include chapter01.qq
-    \_include chapter02.qq
-    \_include chapter03.qq
-    \_include chapter04.qq
-    \_include chapter05.qq
-    \_include chapter06.qq
-    \_include chapter07.qq
-    \_include chapter08.qq
-    \_include chapter09.qq
-    \_include chapter10.qq
-    \_include chapter11.qq
-    \_include chapter12.qq
-    \_include chapter13.qq
-    \_include chapter14.qq
-    \_include chapter15.qq
-    \_include chapter16.qq
-    \_include chapter17.qq
-    \_include chapter18.qq
-    \_include chapter19.qq
-    \_include chapter20.qq
-    \_include chapter21.qq
-    \_include chapter22.qq
-    \_include chapter23.qq
-    \_include chapter24.qq
-    \_include chapter25.qq
-    \_include chapter26.qq
-    \_include chapter27.qq
-    \_include chapter28.qq
-    \_include chapter29.qq
+
+\_include chapter01.qq
