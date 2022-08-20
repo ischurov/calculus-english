@@ -1,20 +1,19 @@
 \chapter \label chap:09:limitpoints
-    Подпоследовательности, предельные точки и теорема Больцано — Вейерштрасса
+    Subsequences, accumulation points and Bolzano–Weierstrass theorem
 
-На прошлой лекции мы выяснили, что монотонные ограниченные последовательности
-имеют предел. А что насчёт немонотонных? Оказывается, и про них можно кое-что
-сказать. Но для начала нужно напомнить и ввести несколько определений.
+In the last lecture we found out that monotonic and bounded sequences have a limit. 
+But what about non-monotonic ones? 
+It turns out that you can say something about them, too. 
+But first we need to recall and inroduce several definitions.
 
-\section Подпоследовательности и предельные точки
+\section Subsequences and accumulation points
 
-\subsection Подпоследовательности
+\subsection Subsequences
 
 \definition \label def:09:subseq
-    Пусть у нас есть последовательность $\seq{a_n}$ и возрастающая
-    последовательность  натуральных чисел $\seq{n_k}$. Тогда можно рассмотреть
-    последовательность $\seq{b_k}$, опредённую таким образом: для всех
-    натуральных $k$, $b_k=a_{n_k}$. Последовательность $\seq{b_k}$ называется
-    \emph{подпоследовательностью} последовательности $\seq{a_n}$.
+    Suppose we have a subsequance $\seq{a_n}$ and an increasing sequence of natural numbers $\seq{n_k}$. 
+    Consider a sequence $\seq{b_k}$, defined this way: for all natural $k$, $b_k=a_{n_k}$. 
+    The sequence $\seq{b_k}$ is said to be a \emph{subsequence} of a sequence $\seq{a_n}$.
 
 \figure
     \img
@@ -29,149 +28,118 @@
             также как a_k — например, a_3 равно b_1, a_7 равно b_2. Эти точки
             перенесены с левых осей на правые.
     \caption
-        Выделение подпоследовательности
+        Subsequence selection
     \label fig:09:subseq
     
 \example
-    Пусть $a_n=2^n$ и $n_k=2k$. Тогда $b_k=a_{2k}=2^{2k}$ задаёт
-    подпоследовательность исходной последовательности, состоящей из членов с
-    чётными номерами.
+    Let $a_n=2^n$ and $n_k=2k$. 
+    Then $b_k=a_{2k}=2^{2k}$ defines a subsequence of the original sequence, consisting of elements with even indexes.
 
 \example
-    Пусть $a_n=n^3$, $n_k=k^2$. Тогда $b_k=a_{k^2}=(k^2)^3=k^6$ задаёт
-    подпоследовательность исходной последовательности, состоящей из членов с
-    номерами, являющимися полными квадратами натуральных чисел.
+    Let $a_n=n^3$, $n_k=k^2$. 
+    Then $b_k=a_{k^2}=(k^2)^3=k^6$ defines a subsequence of the original sequence, consisting of elements with indexes that are perfect squares.
 
 \remark
-    На $\seq{n_k}$ накладываются два условия, оба важны. Во-первых, это
-    последовательность, то есть в ней бесконечно много элементов (значение $n_k$
-    определено для всех натуральных $k$). Это означает, что в
-    подпоследовательности есть бесконечно много элементов, взятых из исходной
-    последовательности. Например, нельзя образовать подпоследовательность, взяв
-    первые три элемента исходной последовательности. Во-вторых, $\seq{n_k}$
-    возрастает — то есть мы должны брать элементы исходной последовательности в
-    том же порядке, в котором они были изначально (но можем некоторые
-    пропускать). Нельзя взять один и тот же элемент несколько раз или «вернуться
-    назад». Про подпоследовательность можно думать так, что мы выбросили из
-    исходной последовательности какое-то количество элементов (конечное или
-    бесконечное), но так, чтобы осталось бесконечно много элементов.
+    There are two conditions imposed on $\seq{n_k}$, both important. 
+    Firstly, it is a sequence, so there are infinitely many elements (the value of $n_k$ is defined for all naturak $k$). 
+    It means that a subsequence consists of infinitely many elements taken from the original sequence. 
+    For example, it is forbidden to form a subsequence by taking only three elements of the original sequence. 
+    Secondly, $\seq{n_k}$ is increasing, so the elements must be extracted in the same order they were originally arranged (note that some can be skiped). 
+    It is forbidden to extract the same element several times or “go back”. 
+    You can imagine a subsequence as an original sequence with a number of elements deleted (finite or infinite number); the only thing to be preserved is the infinite number of elements in the subsequence.
 
 \proposition \label prop:09:subseq
-    Пусть последовательность $\seq{a_n}$ обладает каким-нибудь из следующих
-    свойств:
+    Suppose a sequence $\seq{a_n}$ has one of the properties bellow:
     \itemize
-        \item ограничена (сверху, снизу, просто);
-        \item монотонна (возрастает, убывает, невозрастает, неубывает);
-        \item имеет предел (конечный или бесконечный).
-    Тогда любая её подпоследовательность обладает тем же свойством (тоже
-    ограничена, тоже монотонна, тоже имеет предел, причём такой же, и т.д.)
+        \item bounded (above, bellow or in general);
+        \item monotonic (increasing, decreasing, non-increasing, non-decreasing);
+        \item has a limit (finite or infinite).
+    Then any of its subsequences has the same properties (also bounded, also monotonic, has the same limit, etc.)
 
-Доказательство первых двух пунктов этого утверждения простое и я советую его
-провести самостоятельно. Третий пункт вынесен в качестве задачи на семинары.
-Обратное неверно: если подпоследовательность обладает каким-нибудь из этих
-свойств (скажем, ограничена), это ничего не говорит про аналогичное свойство
-исходной последовательности (приведите примеры).
+The proof of the first two points is straightforward and left as an exercise. 
+The third point is to be proven on seminars.
+The converse is not true—if the subsequence has one of the listed properties, nothing can be stated about the original sequence (try to give examples).
 
 \question
-    Если последовательность неограничена, следует ли из этого, что любая её
-    подпоследовательность тоже неограничена?
+    If the sequence is unbounded, does it imply that every its subsequence is also unbounded?
     \quiz
         \choice
-            Да, следует.
+            Yes, it implies.
             \comment
-                Попробуйте доказать :)
+                Try proving it :)
         \choice \correct
-            Нет, не следует.
+            No, it does not.
             \comment
-                Действительно, можно рассмотреть неограниченную
-                последовательность $a_n=((-1)^n+1)n$, у которой есть
-                тождественно нулевая подпоследовательность.
-
-\subsection Предельные точки
-Бывают последовательности, которые не сходятся, но имеют сходящиеся
-подпоследовательности. Например, последовательность $a_n=(-1)^n$ обладает таким
-свойством: сама она расходится (см. \ref[утверждение][prop:04:nolim] из 
-\ref[лекции][chap:04:lim-seq]), но у неё есть подпоследовательность $a_{2k}$, все члены
-которой равны $1$ — она сходится к $1$, а ещё есть подпоследовательность
-$a_{2k+1}$, все члены которой равны $(-1)$, она сходится к $(-1)$. В этом случае
-$1$ и $(-1)$ называются \emph{предельными точками}.
+                Indeed, consider an unbounded sequence $a_n=((-1)^n+1)n$, that has a subsequence consisting of identically zero elements.
+                
+\subsection Accumulation points
+There exist sequences that are divergent but have convergent subsequences. 
+For example, the sequence $a_n=(-1)^n$ qualifies: it is divergent (см. \ref[statement][prop:04:nolim] from 
+\ref[lecture][chap:04:lim-seq]) but has the subsequence $a_{2k}$, all elements of which equal $1$, so the limit is $1$. 
+There is an another subsequence $a_{2k+1}$, all elements of which equal $(-1)$, and it converges to $(-1)$. 
+In this case $1$ и $(-1)$ are called \emph{accumulation points}.
 
 \definition \label def:09:limitpoint
-    Число $A$ называется \emph{предельной точкой} последовательности
-    $\seq{a_n}$ если существует такая подпоследовательность $\seq{b_k}$,
-    $b_k=a_{n_k}$, что $b_k \to A$ при $n\to \infty$.
+    A number $A$ is called an \emph{accumulation point} of a sequence $\seq{a_n}$ if there exists a subsequence $\seq{b_k}$, $b_k=a_{n_k}$, such that $b_k \to A$ as $n\to \infty$.
 
-Предел последовательности является её предельной точкой (можно выбрать
-подпоследовательность, совпадающую с исходной последовательностью), но в отличие
-от предела, предельных точек может быть несколько. Наоборот: по
-\ref[утверждению][prop:09:subseq], если у последовательности есть предел, то у
-любой её подпоследовательности предел такой же. Значит, если предел есть, то
-предельная точка единственна, и стало быть если предельных точек несколько, то
-предела нет.
+The limit of the sequence is also its accumulation point (choose a subsequence identically equal to the sequence). 
+But in contrast to the uniqueness of a limit, there can be numerous accumulation points. 
+In fact, according to \ref[statement][prop:09:subseq], if the sequence has a limit, all its subsequence also have the same limit. 
+It follows that if the sequence converges, there is only one accumulation point—so if there are multiple, the sequence has no limit.
 
-При решении некоторых задач удобным оказывается другое определение предельной
-точки.
+When it comes to solving problems, the other definition of an accumulation points comes in handy.
 
 \definition \label def:09:limitpoint-eps
-    Число $A$ называется \emph{предельной точкой} последовательности
-    $\seq{a_n}$, если для всякого $\eps>0$ и всякого натурального $N$ есть
-    такой номер $n>N$, что $|a_n - A| < \eps$. Формально:
+    A number $A$ is called an \emph{accumulation point} of the sequence $\seq{a_n}$, if for every $\eps>0$ and every natural number $N$ there exists such $n>N$, that $|a_n - A| < \eps$. 
+    More formally,
     \eq
         \forall \eps > 0\\ \forall N\in \mathbb N\\ \exists n>N\colon |a_n - A| <
         \eps.
 
-Сравните это определение с определением предела — в чём ключевое различие?
+
+Try comparing this definition with the definition of a limit. What is the key difference?
 
 \exercise
-    Докажите, что определения \ref{def:09:limitpoint} и
-    \ref{def:09:limitpoint-eps} эквивалентны.
+    Prove that the definitions \ref{def:09:limitpoint} and
+    \ref{def:09:limitpoint-eps} are equivalent.
         
-Есть ли последовательности, не имеющие предельных точек? Тут легко привести
-пример — скажем, последовательность $a_n=n$ обладает таким свойством: она
-посещает каждое натуральное число ровно один раз, а потом уходит от него на
-расстояние как минимум 1.
+Does there exist a sequence without limit point? 
+An example comes up easily—$a_n=n$ satisfies. It goes through every natural number once, and then separates from it by a distance at least $1$.
 
-Заметим, что последовательсноть $a_n=n$ неограничена. Бывают ли ограниченные
-последовательности без предельных точек? Прежде, чем читать дальше, попробуйте
-придумать такую.
+Note that the sequence $a_n=n$ is unbounded. 
+Are there any bounded sequences that do not have accumulation points? 
+Before reading further, try to come up with such a sequence on your own.
 
-\section Теорема Больцано — Вейерштрасса
+\section Bolzano–Weierstrass theorem
 
-\theorem (Больцано, Вейерштрасс) \label thm:09:B-V
-    У всякой ограниченной последовательности есть сходящаяся
-    подпоследовательность.
+\theorem (Bolzano, Weierstrass) \label thm:09:B-V
+    Every bounded sequence has a convergent subsequence.
 
-Для доказательства этой теоремы нам понадобится вспомогательная лемма, которая
-представляет и самостоятельный интерес — она пригодится нам ещё несколько раз.
+To prove this theorem, we will need a useful lemma, which is also of independent interest—it will be useful to us several more times.
 
-\subsection Лемма о вложенных отрезках
-\lemma (Лемма о вложенных отрезках) \label lem:09:segments
-    Пусть есть последовательность отрезков $I_k$, левый конец $k$-го отрезка
-    обозначим через $l_k$, а правый через $r_k$:
+\subsection Nested intervals lemma
+\lemma (Nested intervals lemma) \label lem:09:segments
+    Suppose we have a sequence of closed intervals $I_k$; let’s denote the left endpoint of the $k$-th interval by $l_k$, and the right endpoint by $r_k$:
     \eq
         I_k = [l_k, r_k] = \set{x\in \mathbb R \mid l_k \le x \le r_k}.
-    Пусть также каждый следующий отрезок вложен в предыдущий, см.
-    \ref[рис.][fig:09:segments]:
+    Suppose also that each next segment is nested in the previous one, see \ref[fig.][fig:09:segments]:
     \eq
         \forall k \in \mathbb N\colon I_{k+1} \subset I_k.
-    Таким образом, у нас есть бесконечная последовательность $I_1 \supset I_2
-    \supset I_3 \ldots$. Вложения здесь нестрогие: может оказаться, что два
-    отрезка в последовательности совпадают.
+    This way we have an infinitely nested sequence $I_1 \supset I_2 \supset I_3 \ldots$. 
+    Note that the inclusions must not be proper, in other words it may so happen that two intervals of the sequence coincide.
 
-    Потребуем также, чтобы длины отрезков стремились к нулю:
+    It’s natural to demand that the lengths of intervals must approach zero:
     \equation \label eq:09:len0
         |I_k| := r_k - l_k \to 0
-    при $k\to \infty$.
+    as $k\to \infty$.
 
-    Тогда существует такое число $c\in \mathbb R$, что пересечение всех отрезков
-    $I_k$ содержит только $c$:
+    Then there exist such number $c\in \mathbb R$, that the intersection of all intervals $I_k$ contains only $c$:
     \eq
         \bigcap_{k\in \mathbb N} I_k = \set{c}.
-    Более того: $c$ является пределом последовательностей концов
-    $\seq{l_k}$ и $\seq{r_k}$:
+    Moreover, $c$ is the limit of the endpoints $\seq{l_k}$ and $\seq{r_k}$:
     \eq
         l_k \to c,\quad r_k \to c.
-
+        
 \figure
     \img
         \src limitpoints-2.svg
@@ -181,83 +149,68 @@ $1$ и $(-1)$ называются \emph{предельными точками}.
             Серия вертикальных осей, на каждой отмечен отрезок, показано, что
             отрезок на каждой оси вложен в отрезок с предыдущей оси.
     \caption
-        Последовательность вложенных отрезков
+        The sequence of nested intervals
     \label fig:09:segments
 
 \remark
-    Тут может возникнуть вопрос, что такое бесконечное пересечение $\bigcap_{k
-    \in \mathbb N} I_k$. На самом деле, это простая штука: это просто множество
-    таких чисел, которые принадлежат всем отрезкам из последовательности $I_k$:
+    The question may arise, what is the infinite intersection $\bigcap_{k \in \mathbb N} I_k$ exactly? 
+    It is simply the set of all numbers that are contained in every interval of the sequence $I_k$:
     \eq
         \bigcap_{k \in \mathbb N} I_k := \set{x\in \mathbb R\mid \forall k\in
             \mathbb N\colon x \in I_k}.
+            
 \remark \label rem:09:intervals
-    Утверждение леммы выглядит почти тривиальным, но на самом деле таким не
-    является. Действительно, если заменить отрезки на интервалы, оно перестанет
-    быть верным: рассмотрим набор интервалов вида $(0, 1/k)$ для всех
-    натуральных $k$. Пересечение всех этих интервалов пусто: каким бы ни был
-    $x>0$, найдётся такое значение $k$, что $1/k<x$ и значит $x$ не принадлежит
-    $k$-му интервалу. С другой стороны, никакие числа $x \le 0$ не принадлежат
-    ни одному из этих интервалов. Значит, нет таких $x$, которые могли бы
-    принадлежать всем интервалам из нашей последовательности одновременно, и
-    следовательно их пересечение пусто. Лемма утверждает, что с
-    последовательностью вложенных отрезков такого произойти не может.
+    The statement of the lemma looks intuitive, but the it is not trivial. 
+    In fact, if you replace closed intervals with open intervals, it will no longer hold.
+    Consider the sequence of (open) intervals $(0, 1/k)$ for all natural $k$. 
+    The intersection of these intervals is empty: no matter how small is $x>0$, there exists $k$, such that $1/k<x$ and hence $x$ does not belong to the $k$-th interval. 
+    On the other hand, no numbers of the form $x \le 0$ are contained in the intervals by construction. 
+    Hence, there are no such $x$, that are contained in all of our intervals, so their intersection is empty. 
+    The lenna states that this cannot happen with a sequence of nested closed intervals.
 
 \question
-    А что насчёт бесконечного пересечения всех интервалов вида $(-1/k, 1/k)$,
-    $k$ — натуральное?
+    What about an infinite intersection of the intervals $(-1/k, 1/k)$, where $k$ is a natural number?
     \quiz
         \choice
-            Оно тоже пусто, это же интервалы!
+            It closed because the intervals are open.
             \comment
-                А вот и нет. Посмотрите на точку $0$.
+                Actually, no. Focus on the point $0$.
         \choice \correct
-            Оно непусто и состоит из единственной точки.
+            It is non-empty and contains one point.
             \comment
-                Так и есть! Эта точка $0$.
+                Correct! And this point is $0$.
         \choice
-            Оно содержит больше одной точки.
+            It contains more than one point.
             \comment
-                Какие же это?
+                And what are the points then?
 
-\proof \of \ref[леммы][lem:09:segments]
-    Рассмотрим последовательности левых концов $\seq{r_k}$ и правых концов
-    $\seq{l_k}$. В силу условия вложенности отрезков, левые концы могут
-    сдвигаться только вправо, а правые — только влево, то есть для всех
-    натуральных $k$,
+\proof \of \ref[lemma][lem:09:segments]
+    Consider the sequence of left endpoints $\seq{r_k}$ and right endpoints $\seq{l_k}$. 
+    Because of the nestedness, left endpoints must move only to the right, and right endpoints to the left, so for all natural $k$,
     \eq
             l_{k+1} \ge l_k,\quad r_{k+1} \le r_k.
-    Неравенства нестрогие: два отрезка могут совпадать или касаться концами.
-    Таким образом, последовательность $\seq{l_k}$ нестрого возрастает, а
-    $\seq{r_k}$ — нестрого убывает.
+    The inequalities aren't strict: two intervals can coincide or share one of the endpoints. 
+    This means that the sequence $\seq{l_k}$ is non-strictly increasing and the sequence $\seq{r_k}$ is non-strictly decreasing.
 
-    Поскольку для всех натуральных $k$, $l_k \le r_k$ (левый конец отрезка $I_k$
-    левее правого, хотя они могут и совпадать — в этом случае отрезок является
-    одной точкой, так тоже бывает, поэтому неравенство нестрогое) и $r_k \le
-    r_{k-1} \le r_{k-2} \le \ldots \le r_1$ (в силу вложенности),
-    последовательность $\seq{l_k}$ ограничена сверху числом $r_1$, и аналогично
-    $\seq{r_k}$ ограничена снизу числом $l_1$. Значит по \ref[теореме
-    Вейерштрасса\nonumber][thm:08:weierstrass] существуют пределы:
+    Since for all natural $k$, $l_k \le r_k$ (left endpoint $I_k$ is less than the right one, or they are the same and hence the interval becomes a point), and $r_k \le r_{k-1} \le r_{k-2} \le \ldots \le r_1$ (nestedness), it must be that $\seq{l_k}$ is bounded above by $r_1$. 
+    Similarly $\seq{r_k}$ is bounded bellow by $l_1$. 
+    Boundness then implies, by \ref[Weierstrass Theorem\nonumber][thm:08:weierstrass] the following limits exist:
     \eq
         \lim_{k\to \infty} l_k=:L,\quad \lim_{k\to \infty} r_k=:R.
-    Переходя к пределу в неравенстве $l_k \le r_k$, имеем: $L\le R$.
+    Taking the limit of the inequality $l_k \le r_k$ we obtain $L\le R$.
 
-    Поскольку последовательность $\seq{l_k}$ неубывает, её предел $L$ является
-    точной верхней гранью множества её элементов, и значит все элементы не
-    больше $L$ (см. \ref[замечание][rem:08:limbound] в 
-    \ref[лекции][chap:08:weierstrass]). Аналогично, все элементы последовательности
-    $\seq{r_k}$ не меньше $R$. Получаем такую цепочку неравенств, верную для
-    всех $k$:
+
+    Since the sequence $\seq{l_k}$ is non-decreading, its limit $L$ is also its lowest upper bound (supremum), which means all elements are less than or equal to $L$ (see. \ref[reminder][rem:08:limbound] in 
+    \ref[lecture][chap:08:weierstrass]). 
+    Analogously, all elements of $\seq{r_k}$ aren't less than $R$. 
+    Hence, we have the chain of inequalities, that hold for all $k$:
     \eq
         l_k \le L \le R \le r_k.
-    Пусть какая-то точка $x$ принадлежит отрезку $[L, R]$. Тогда можно воткнуть
-    $x$ в этом неравенстве между $L$ и $R$ и получить:
+    Suppose some number $x$ belongs to the segment $[L, R]$. Then we can add it into the chain:
     \eq
         l_k \le L \le x \le R \le r_k.
-    Таким образом, $x \in [l_k, r_k]=I_k$ для всех $k$, то есть все точки отрезка
-    $[L, R]$ принадлежат всем отрезкам $I_k$ и следовательно входят в их
-    бесконечное пересечение. Отрезок $[L, R]$ заведомо непуст, поскольку $L \le
-    R$.
+    This way, $x \in [l_k, r_k]=I_k$ for all $k$, in other words any point in $[L, R]$ lies in every interval $I_k$, which means it also lies in their infinite intersection. 
+    Closed interval $[L, R]$ is non-empty by construction ($L \le R$).
 
     Но раз отрезок $[L, R]$ принадлежит каждому из отрезков $[l_k, r_k]$, а
     длины этих отрезков стремятся к нулю (см. \ref{eq:09:len0}), длина отрезка
