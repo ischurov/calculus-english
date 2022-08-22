@@ -1,10 +1,10 @@
 \chapter \label chap:09:limitpoints
     Subsequences, accumulation points and Bolzano–Weierstrass theorem
 
-In the last lecture we found out that monotonic and bounded sequences have a limit. 
-But what about non-monotonic ones? 
-It turns out that you can say something about them, too. 
-But first we need to recall and inroduce several definitions.
+In the last lecture we found that monotonic and bounded sequences have a limit. 
+But what about nonmonotonic ones? 
+It turns out something can be said about them too.
+But firstly, we need to recall and inroduce several definitions.
 
 \section Subsequences and accumulation points
 
@@ -12,7 +12,7 @@ But first we need to recall and inroduce several definitions.
 
 \definition \label def:09:subseq
     Suppose we have a subsequance $\seq{a_n}$ and an increasing sequence of natural numbers $\seq{n_k}$. 
-    Consider a sequence $\seq{b_k}$, defined this way: for all natural $k$, $b_k=a_{n_k}$. 
+    Consider a sequence $\seq{b_k}$ defined this way: for all natural $k$, $b_k=a_{n_k}$. 
     The sequence $\seq{b_k}$ is said to be a \emph{subsequence} of a sequence $\seq{a_n}$.
 
 \figure
@@ -33,27 +33,27 @@ But first we need to recall and inroduce several definitions.
     
 \example
     Let $a_n=2^n$ and $n_k=2k$. 
-    Then $b_k=a_{2k}=2^{2k}$ defines a subsequence of the original sequence, consisting of elements with even indexes.
+    Then $b_k=a_{2k}=2^{2k}$ defines a subsequence consisting of elements with even indexes.
 
 \example
     Let $a_n=n^3$, $n_k=k^2$. 
-    Then $b_k=a_{k^2}=(k^2)^3=k^6$ defines a subsequence of the original sequence, consisting of elements with indexes that are perfect squares.
+    Then $b_k=a_{k^2}=(k^2)^3=k^6$ defines a subsequence consisting of elements with indexes that are perfect squares.
 
 \remark
     There are two conditions imposed on $\seq{n_k}$, both important. 
-    Firstly, it is a sequence, so there are infinitely many elements (the value of $n_k$ is defined for all naturak $k$). 
+    Firstly, it is a sequence, so there are infinitely many elements (the value of $n_k$ is defined for all natural $k$). 
     It means that a subsequence consists of infinitely many elements taken from the original sequence. 
     For example, it is forbidden to form a subsequence by taking only three elements of the original sequence. 
-    Secondly, $\seq{n_k}$ is increasing, so the elements must be extracted in the same order they were originally arranged (note that some can be skiped). 
+    Secondly, $\seq{n_k}$ is increasing, so the elements must be extracted in the same order they were originally arranged (some can be skiped). 
     It is forbidden to extract the same element several times or “go back”. 
-    You can imagine a subsequence as an original sequence with a number of elements deleted (finite or infinite number); the only thing to be preserved is the infinite number of elements in the subsequence.
+    You can imagine a subsequence as an original sequence with a number of elements exctarced (finite or infinite number); the only thing to be preserved is the infinite number of elements in the subsequence.
 
 \proposition \label prop:09:subseq
     Suppose a sequence $\seq{a_n}$ has one of the properties bellow:
     \itemize
-        \item bounded (above, bellow or in general);
-        \item monotonic (increasing, decreasing, non-increasing, non-decreasing);
-        \item has a limit (finite or infinite).
+        \item it is bounded (above, bellow or in general);
+        \item it is monotonic (increasing, decreasing, nonincreasing, nondecreasing);
+        \item it is has a limit (finite or infinite).
     Then any of its subsequences has the same properties (also bounded, also monotonic, has the same limit, etc.)
 
 The proof of the first two points is straightforward and left as an exercise. 
@@ -74,9 +74,9 @@ The converse is not true—if the subsequence has one of the listed properties, 
                 
 \subsection Accumulation points
 There exist sequences that are divergent but have convergent subsequences. 
-For example, the sequence $a_n=(-1)^n$ qualifies: it is divergent (см. \ref[statement][prop:04:nolim] from 
-\ref[lecture][chap:04:lim-seq]) but has the subsequence $a_{2k}$, all elements of which equal $1$, so the limit is $1$. 
-There is an another subsequence $a_{2k+1}$, all elements of which equal $(-1)$, and it converges to $(-1)$. 
+For example, the sequence $a_n=(-1)^n$ qualifies: it is divergent (see. \ref[statement][prop:04:nolim] from 
+\ref[lecture][chap:04:lim-seq]) but has the subsequence $a_{2k}$, all elements of which equal $1$, so the limit (of the subsequence) is $1$. 
+There is an another subsequence $a_{2k+1}$, all elements of which equal $(-1)$, so it converges to $(-1)$. 
 In this case $1$ и $(-1)$ are called \emph{accumulation points}.
 
 \definition \label def:09:limitpoint
@@ -85,12 +85,12 @@ In this case $1$ и $(-1)$ are called \emph{accumulation points}.
 The limit of the sequence is also its accumulation point (choose a subsequence identically equal to the sequence). 
 But in contrast to the uniqueness of a limit, there can be numerous accumulation points. 
 In fact, according to \ref[statement][prop:09:subseq], if the sequence has a limit, all its subsequence also have the same limit. 
-It follows that if the sequence converges, there is only one accumulation point—so if there are multiple, the sequence has no limit.
+It follows that if the sequence converges, there is only one accumulation point—so if it turns out that there are multiple ones, this implies that the sequence has no limit.
 
 When it comes to solving problems, the other definition of an accumulation points comes in handy.
 
 \definition \label def:09:limitpoint-eps
-    A number $A$ is called an \emph{accumulation point} of the sequence $\seq{a_n}$, if for every $\eps>0$ and every natural number $N$ there exists such $n>N$, that $|a_n - A| < \eps$. 
+    A number $A$ is called an \emph{accumulation point} of the sequence $\seq{a_n}$ if for every $\eps>0$ and every natural number $N$ there exists such $n>N$ that $|a_n - A| < \eps$. 
     More formally,
     \eq
         \forall \eps > 0\\ \forall N\in \mathbb N\\ \exists n>N\colon |a_n - A| <
@@ -103,19 +103,19 @@ Try comparing this definition with the definition of a limit. What is the key di
     Prove that the definitions \ref{def:09:limitpoint} and
     \ref{def:09:limitpoint-eps} are equivalent.
         
-Does there exist a sequence without limit point? 
+Does there exist a sequence without any accumulation points? 
 An example comes up easily—$a_n=n$ satisfies. It goes through every natural number once, and then separates from it by a distance at least $1$.
 
-Note that the sequence $a_n=n$ is unbounded. 
+But note that the sequence $a_n=n$ is unbounded.
 Are there any bounded sequences that do not have accumulation points? 
-Before reading further, try to come up with such a sequence on your own.
+Before reading further try to come up with such a sequence on your own.
 
 \section Bolzano–Weierstrass theorem
 
 \theorem (Bolzano, Weierstrass) \label thm:09:B-V
     Every bounded sequence has a convergent subsequence.
 
-To prove this theorem, we will need a useful lemma, which is also of independent interest—it will be useful to us several more times.
+To prove this theorem we will need a useful lemma, which is also of independent interest—it will be useful to us several more times.
 
 \subsection Nested intervals lemma
 \lemma (Nested intervals lemma) \label lem:09:segments
@@ -133,7 +133,7 @@ To prove this theorem, we will need a useful lemma, which is also of independent
         |I_k| := r_k - l_k \to 0
     as $k\to \infty$.
 
-    Then there exist such number $c\in \mathbb R$, that the intersection of all intervals $I_k$ contains only $c$:
+    Then there exist such number $c\in \mathbb R$ that the intersection of all intervals $I_k$ contains only $c$:
     \eq
         \bigcap_{k\in \mathbb N} I_k = \set{c}.
     Moreover, $c$ is the limit of the endpoints $\seq{l_k}$ and $\seq{r_k}$:
@@ -153,20 +153,20 @@ To prove this theorem, we will need a useful lemma, which is also of independent
     \label fig:09:segments
 
 \remark
-    The question may arise, what is the infinite intersection $\bigcap_{k \in \mathbb N} I_k$ exactly? 
+    The question may arise: what is the infinite intersection $\bigcap_{k \in \mathbb N} I_k$ exactly? 
     It is simply the set of all numbers that are contained in every interval of the sequence $I_k$:
     \eq
         \bigcap_{k \in \mathbb N} I_k := \set{x\in \mathbb R\mid \forall k\in
             \mathbb N\colon x \in I_k}.
             
 \remark \label rem:09:intervals
-    The statement of the lemma looks intuitive, but the it is not trivial. 
+    The statement of the lemma looks intuitive, but it is not trivial. 
     In fact, if you replace closed intervals with open intervals, it will no longer hold.
     Consider the sequence of (open) intervals $(0, 1/k)$ for all natural $k$. 
-    The intersection of these intervals is empty: no matter how small is $x>0$, there exists $k$, such that $1/k<x$ and hence $x$ does not belong to the $k$-th interval. 
+    The intersection of these intervals is empty: no matter how small is $x>0$, there exists $k$ such that $1/k<x$ and hence $x$ does not belong to the $k$-th interval. 
     On the other hand, no numbers of the form $x \le 0$ are contained in the intervals by construction. 
-    Hence, there are no such $x$, that are contained in all of our intervals, so their intersection is empty. 
-    The lenna states that this cannot happen with a sequence of nested closed intervals.
+    Thus, there are no such $x$ that are contained in all of our intervals, which means their intersection is empty. 
+    The lemma states that this cannot happen with a sequence of nested closed intervals.
 
 \question
     What about an infinite intersection of the intervals $(-1/k, 1/k)$, where $k$ is a natural number?
@@ -185,24 +185,24 @@ To prove this theorem, we will need a useful lemma, which is also of independent
                 And what are the points then?
 
 \proof \of \ref[lemma][lem:09:segments]
-    Consider the sequence of left endpoints $\seq{r_k}$ and right endpoints $\seq{l_k}$. 
-    Because of the nestedness, left endpoints must move only to the right, and right endpoints to the left, so for all natural $k$,
+    Consider the sequences of right endpoints $\seq{r_k}$ and left endpoints $\seq{l_k}$. 
+    Because of the nestedness, left endpoints must move only to the right, and right endpoints to the left, so for all natural $k$
     \eq
             l_{k+1} \ge l_k,\quad r_{k+1} \le r_k.
     The inequalities aren't strict: two intervals can coincide or share one of the endpoints. 
-    This means that the sequence $\seq{l_k}$ is non-strictly increasing and the sequence $\seq{r_k}$ is non-strictly decreasing.
+    This means that the sequence $\seq{l_k}$ is nonstrictly increasing and the sequence $\seq{r_k}$ is nonstrictly decreasing.
 
-    Since for all natural $k$, $l_k \le r_k$ (left endpoint $I_k$ is less than the right one, or they are the same and hence the interval becomes a point), and $r_k \le r_{k-1} \le r_{k-2} \le \ldots \le r_1$ (nestedness), it must be that $\seq{l_k}$ is bounded above by $r_1$. 
+    Since for all natural $k$, $l_k \le r_k$ (left endpoint $I_k$ is less than the right one, or they are the same and the interval becomes a point), and $r_k \le r_{k-1} \le r_{k-2} \le \ldots \le r_1$ (nestedness), it must be that $\seq{l_k}$ is bounded above by $r_1$. 
     Similarly $\seq{r_k}$ is bounded bellow by $l_1$. 
-    Boundness then implies, by \ref[Weierstrass Theorem\nonumber][thm:08:weierstrass] the following limits exist:
+    Boundness then implies, according to \ref[Weierstrass Theorem\nonumber][thm:08:weierstrass], the following limits exist:
     \eq
         \lim_{k\to \infty} l_k=:L,\quad \lim_{k\to \infty} r_k=:R.
     Taking the limit of the inequality $l_k \le r_k$ we obtain $L\le R$.
 
 
-    Since the sequence $\seq{l_k}$ is non-decreading, its limit $L$ is also its lowest upper bound (supremum), which means all elements are less than or equal to $L$ (see. \ref[reminder][rem:08:limbound] in 
+    Since the sequence $\seq{l_k}$ is nondecreading, its limit $L$ is also the lowest upper bound (supremum), which means all elements of the sequence are less than or equal to $L$ (see. \ref[reminder][rem:08:limbound] in 
     \ref[lecture][chap:08:weierstrass]). 
-    Analogously, all elements of $\seq{r_k}$ aren't less than $R$. 
+    Analogously, all elements of $\seq{r_k}$ are greater or equal to $R$. 
     Hence, we have the chain of inequalities, that hold for all $k$:
     \eq
         l_k \le L \le R \le r_k.
@@ -210,54 +210,43 @@ To prove this theorem, we will need a useful lemma, which is also of independent
     \eq
         l_k \le L \le x \le R \le r_k.
     This way, $x \in [l_k, r_k]=I_k$ for all $k$, in other words any point in $[L, R]$ lies in every interval $I_k$, which means it also lies in their infinite intersection. 
-    Closed interval $[L, R]$ is non-empty by construction ($L \le R$).
+    Closed interval $[L, R]$ is nonempty by construction ($L \le R$).
 
-    Но раз отрезок $[L, R]$ принадлежит каждому из отрезков $[l_k, r_k]$, а
-    длины этих отрезков стремятся к нулю (см. \ref{eq:09:len0}), длина отрезка
-    $[L, R]$ не может быть положительной: тогда он не поместился бы внутрь
-    какого-то отрезка $[l_k, r_k]$ для достаточно большого $k$. Формально это
-    можно обосновать так: 
+    But if the interval $[L, R]$ lies in every $[l_k, r_k]$, and their length approach zero (see. \ref{eq:09:len0}), the length of $[L, R]$ cannot be nonzero: otherwise it couldn't have fitted in one of $[l_k, r_k]$ for large enough $k$. 
+    More formally, 
     \align \nonumber
         \item & \lim_{k\to \infty} |I_k| = \lim_{k \to \infty} (r_k - l_k) =
         \splitem \splonly{&=} \lim_{k \to \infty} r_k - 
             \lim_{k \to \infty} l_k =
         \splitem \splonly{&=} R - L.
-    Но согласно \eqref{eq:09:len0}, этот предел равен нулю, и следовательно
-    $R=L$. Таким образом, отрезок $[L, R]$ состоит из единственной точки.
-    Обозначим её через $c$ (то есть положим $c:=L=R$) и получим утверждение
-    теоремы.
+    But according to \eqref{eq:09:len0}, this limit equals zero, so $R=L$. 
+    We obtained that $[L, R]$ contains only one point, let's denote it by $c$ (that is, $c:=L=R$)--this is the number we needed to construct.
 
 \exercise
-    Как мы выяснили, для интервалов теорема неверна. Найдите, где именно
-    «ломается» доказательство, если вместо отрезков взять интервалы — какие
-    переходы остаются верными, а какие нарушаются? А что происходит, если в
-    доказательство подставить последовательность интервалов $(-1/k, 1/k)$?
- 
-\subsection Деление отрезка пополам
+    As we've shown, the lemma doesn't hold for open intervals (we've given a counterexample).
+    Try to understand where the given proof "breaks": which implications still holds and which start to be false.
+    Also, what happens if the given proof is applied to the sequence of intervals defined by $(-1/k, 1/k)$ for all natural $k$?
 
-Теперь мы готовы к тому, чтобы доказывать теорему Больцано — Вейерштрасса. Мы
-сделаем это с помощью приёма «деление отрезка пополам», который
-нам ещё пригодится.
+\subsection Cutting intervals in half
 
-\proof \of \ref[теоремы][thm:09:B-V]
+Now we're finally ready to proove Bolzano–Weierstrass theorem. 
+We will do this using the "cutting intervals in half" technique, which will also be useful to us later.
 
-    Пусть последовательность $\seq{a_n}$ ограничена. Тогда существует такое
-    $C$, что для всех $n$, $|a_n| \le C$, или, иными словами, $a_n \in [-C, C]$.
-    Обозначим: $I_1:=[-C, C]$.
+\proof \of \ref[theorem][thm:09:B-V]
 
-    Теперь будем строить последовательность вложенных отрезков $\seq{I_k}$ и
-    одновременно подпоследовательность $b_k=a_{n_k}$. Пусть $n_1=1$ и
-    $b_1=a_1$.
+    Assume the sequence $\seq{a_n}$ is bounded. 
+    Then there exist such $C$ that for all $n$, $|a_n| \le C$, in other words $a_n \in [-C, C]$.
+    Let's denote $I_1:=[-C, C]$.
 
-    Разобьём отрезок $I_1$ на две половины: $I_1^L$ и $I_1^R$, см.
-    \ref[рис.][fig:09:divide]. (Они пересекаются по одной точке, это не
-    страшно.) Среди элементов нашей последовательности $\seq{a_n}$ какие-то
-    принадлежат $I_1^L$, какие-то $I_1^R$ (какие-то могут принадлежать обоим,
-    это тоже не страшно.) Важно вот что: хотя бы один из отрезков $I_1^L$ или
-    $I_1^R$ содержит бесконечно много членов последовательности $\seq{a_n}$:
-    если бы каждый из них содержал лишь конечное число членов, то у всей
-    последовательности было бы лишь конечное число членов, это противоречит
-    определению последовательности.
+    Now we start constructing the sequence of nested intervals $\seq{I_k}$ and the subsequence $b_k=a_{n_k}$. 
+    Let $n_1=1$, so $b_1=a_1$.
+
+    We divide the interval $I_1$ in half and get two parts: $I_1^L$ and $I_1^R$, see.
+    \ref[fig.][fig:09:divide]. 
+    (Their intersection is one point, but it's not critical.) 
+    Among the elements of the sequence $\seq{a_n}$ some belong to $I_1^L$ and some to $I_1^R$. 
+    (Some can belong to both—also not critical.) 
+    Notice that either $I_1^L$ or $I_1^R$ contain intinitely many elements of $\seq{a_n}$: if both of them contained finitely many elements, this would imply that the sequence itself containes finite number of elements, which contradicts the definition of the sequence.
 
     \figure
         \img
@@ -267,82 +256,62 @@ To prove this theorem, we will need a useful lemma, which is also of independent
             \alt
                 Иллюстрацию к доказательству в тексте
         \caption
-            Делим отрезок пополам и выбираем очередной элемент
-            подпоследовательности
+            Splitting the interval in two parts and choosing the respecting element of the subsequence
         \label fig:09:divide
     
-    Формально можно записать так: пусть $N_1^L$ — множество номеров элементов
-    последовательности $\seq{a_n}$, попадающих в $I_1^L$, и $N_1^R$ — множество
-    номеров элементов, попадающих в $I_1^R$:
+    More formally, let $N_1^L$ be the set of all numbers of elements from $\seq{a_n}$, that are contained in $I_1^L$; similarly $N_1^R$ is the set of all numbers, respective elements of which are contained in $I_1^R$.
     \align
         \item
             N_1^L &= \set{n\in \mathbb N\mid a_n \in I_1^L};
         \item
             N_1^R &= \set{n\in \mathbb N\mid a_n \in I_1^R}.
-    Каждый элемент попадает по крайней мере в один из отрезков $I_1^L$ или
-    $I_1^R$. Значит, объединение $N_1^L \cup N_1^R$ даёт всё множество
-    натуральных чисел. Значит, хотя бы одно из множеств $N_1^L$ или $N_1^R$
-    является бесконечным. Если бы они оба были конечными множествами, их
-    объединение тоже было бы конечным.
+    Each element is contained in $I_1^L$ or in $I_1^R$. 
+    Hence, the union $N_1^L \cup N_1^R$ is precisely the set of all natural numbers. 
+    This implies that one of the sets $N_1^L$ or $N_1^R$ is infinite. 
+    Otherwise, if both of them were finite, the union would be finite, which is a contradiction.
 
-    Обозначим тот отрезок из $I_1^L$ и $I_1^R$, который содержит бесконечно
-    много членов последовательности, через $I_2$. (Если они оба содержат
-    бесконечно много членов последовательности, положим для определенности, что
-    $I_2=I_1^L$.) Выберем $n_2$ — номер какого-нибудь из элементов
-    последовательности $\seq{a_n}$, попавшего в $I_2$. Их там бесконечно много,
-    так что какой-нибудь обязательно можем выбрать. Положим $b_2=a_{n_2}$.
+    Set one of the intervals $I_1^L$ or $I_1^R$ that contains infinitely many elements to be $I_2$. 
+    (If they both have infinitely many elements we always take the left one: $I_2=I_1^L$.) 
+    Let's choose $n_2$ as the number of some element of $\seq{a_n}$, contained in $I_2$. 
+    It containes infinitely many of them, so such choice is always possible. 
+    Set $b_2=a_{n_2}$.
 
-    Дальше повторим процесс, теперь уже с отрезком $I_2$. Разобьём его на две
-    половинки, $I_2^L$ и $I_2^R$. Поскольку $I_2$ по построению содержал
-    бесконечно много членов последовательности $\seq{a_n}$, хотя бы бы одна из
-    половинок тоже будет содержать бесконечно много членов. Обозначим её за
-    $I_3$. Выберем  $n_3$ — номер какого-нибудь из элементов последовательности
-    $\seq{a_n}$, попавшего в $I_3$, и \emph{обязательно} (это важно!) такого,
-    что $n_3>n_2$. Это всегда можно сделать: $n_2$ мы выбрали и зафиксировали на
-    предыдущем шаге, а в $I_3$ лежит бесконечно много членов, значит найдутся и
-    такие, у которых номера больше $n_2$. Вот какой-нибудь из них мы и обозначим
-    за $n_3$ и положим: $b_3=a_{n_3}$.
+    Now we repeat the process, but start with $I_2$. 
+    We split in in half, getting $I_2^L$ and $I_2^R$. 
+    Since $I_2$ by construction had infinitely many elements of $\seq{a_n}$, at least one of the parts will have infinitely many elements—set this part to be $I_3$. 
+    Choose $n_3$ to be the number of some element of $\seq{a_n}$, that is contained in $I_3$, and \emph{importantly} the one that $n_3>n_2$. 
+    This can always be done since we've fixed $n_2$ in the previous step, and $I_3$ containes infinitely many elements: there are always infinitely many elements with numbers bigger than $n_2$. 
+    Among these numbers we choose $n_3$ and set $b_3=a_{n_3}$.
 
-    Так будем продолжать до бесконечности. Для каждого натурального $k$,
-    построим отрезок $I_k$, являющийся половинкой отрезка $I_{k-1}$, содержащей
-    бесконечно много элементов последовательности $\seq{a_n}$. Среди этих
-    элементов выберем элемент, номер которого больше $n_{k-1}$ и обозначим его
-    номер за $n_k$. Положим $b_k=a_{n_k}$.
+    We continue soing thisfor all natural $k$: constructing $I_k$ as the half of $I_{k-1}$ with infinitely many elements from $\seq{a_n}$. 
+    Among these elements we choose the one with a number succeeding $n_{k-1}$ and set it to $n_k$. 
+    Finally, obtain $b_k=a_{n_k}$.
 
-    Получим последовательность вложенных отрезков $I_1 \supset I_2 \supset I_3
-    \supset \ldots$. Каждый отрезок получается делением предедыщего отрезка
-    пополам, поэтому их длины каждый раз уменьшаются в два раза:
+    We've just constructed the sequence of nested intervals $I_1 \supset I_2 \supset I_3 \supset \ldots$. 
+    Every one of them in half the length of the previous, and so we have a formula:
     \eq
         |I_k| = \frac{|I_1|}{2^{k-1}}.
-    Следовательно, $|I_k|\to 0$ при $k\to \infty$. (Мы доказывали на семинарах,
-    что последовательность вида $1/2^{k}$ стремится к нулю.) Значит, наши
-    отрезки удовлетворяют условию \ref[леммы о вложенных
-    отрезках\nonumber][lem:09:segments]. Значит, их пересечение состоит из
-    единственной точки $c$.
+    Taking the limit, $|I_k|\to 0$ as $k\to \infty$. 
+    (It was proved during the seminars that sequences of the form $1/2^{k}$ approach zero.) 
+    Hence our intervals satisfy the assumptions of the \ref[nested intervals lemma\nonumber][lem:09:segments]. 
+    This allows us to set their single-point intersection by $c$.
 
-    Покажем, что $a_{n_k} = b_k \to c$ при $k\to \infty$. Действительно, как и
-    раньше, будем обозначать левый конец отрезка $I_k$ через $l_k$, а правый —
-    через $r_k$. Тогда для всех $k$ выполняются неравенства $l_k \le b_k \le
-    r_k$. Мы знаем из доказательства леммы, что $l_k \to c$ и $r_k \to c$. По
-    \ref[теореме о двух милиционерах\nonumber][thm:06:sandwich], из этого следует, что
-    $b_k \to c$.
+    All it's left to show if that $a_{n_k} = b_k \to c$ as $k\to \infty$. 
+    Analogously to the proof of the lemma, set the left endpoint of $I_k$ to be $l_k$, and the right one to be $r_k$. 
+    Then for all natural $k$ the we have an inequality $l_k \le b_k \le r_k$. 
+    It's known from the proof of the lemma, $l_k \to c$ and $r_k \to c$. 
+    According to the \ref[sandwich theorem\nonumber][thm:06:sandwich], this implies $b_k \to c$.
 
-    Доказали!
+    The proof is done!
 
 \remark
-    У вас может возникнуть вопрос, зачем такая теорема вообще понадобилась? На
-    самом деле, часто бывает очень полезно найти предел если не самой
-    последовательности, то хотя бы какой-нибудь подпоследовательности, или по
-    крайней мере доказать, что он существует. Чуть позже мы столкнёмся с такими
-    ситуациями.
+    The question may arise, why do we even need this theorem?
+    It turns out that often we're not interested in checking the convergence of the whole sequence, and it's only needed to check if it has a convergent subsequence.
+    A little later we will encounter such situations. 
+    
+\section Conclusion
 
-\section Заключение
-
-Мы доказали довольно много фактов про пределы последовательностей. В стандартные
-курсы анализа также часто включают понятие фундаментальной последовательности и
-теорему Коши о сходимости фундаментальных последовательностей. Она особенно
-полезна в теории рядов, но до них ещё далеко, и вряд ли у нас будет время на её
-аккуратное построение. Так что мы пропустим этот классический сюжет и со
-следующей лекции покинем мир последовательностей, чтобы оказаться в новом для
-нас, ещё более загадочном (хоть и знакомом со школы) мире функций.
-
+We have proved quite a lot of facts about the limits of sequences. 
+Standard calculus courses often include the concept of a fundamental sequence and Cauchy's theorem on the convergence of fundamental sequences. 
+It is especially useful in studying series, but they are fairly far away from us now, and we're unlikely to have enough time for its accurate construction. 
+So we will skip this part and leave the world of sequences to find ourselves in a new, even more mysterious (although familiar from school) world of functions.
