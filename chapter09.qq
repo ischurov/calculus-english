@@ -28,7 +28,7 @@ But firstly, we need to recall and inroduce several definitions.
             также как a_k — например, a_3 равно b_1, a_7 равно b_2. Эти точки
             перенесены с левых осей на правые.
     \caption
-        Subsequence selection
+        Subsequence extraction
     \label fig:09:subseq
     
 \example
@@ -44,9 +44,9 @@ But firstly, we need to recall and inroduce several definitions.
     Firstly, it is a sequence, so there are infinitely many elements (the value of $n_k$ is defined for all natural $k$). 
     It means that a subsequence consists of infinitely many elements taken from the original sequence. 
     For example, it is forbidden to form a subsequence by taking only three elements of the original sequence. 
-    Secondly, $\seq{n_k}$ is increasing, so the elements must be extracted in the same order they were originally arranged (some can be skiped). 
+    Secondly, $\seq{n_k}$ is increasing, so the elements must be extracted in the same order they were originally arranged (some can be skipped). 
     It is forbidden to extract the same element several times or “go back”. 
-    You can imagine a subsequence as an original sequence with a number of elements exctarced (finite or infinite number); the only thing to be preserved is the infinite number of elements in the subsequence.
+    You can imagine a subsequence as an original sequence with a number of elements extracted (finite or infinite number); the only thing to be preserved is the infinite number of elements in the subsequence.
 
 \proposition \label prop:09:subseq
     Suppose a sequence $\seq{a_n}$ has one of the properties bellow:
@@ -154,7 +154,7 @@ To prove this theorem we will need a useful lemma, which is also of independent 
 
 \remark
     The question may arise: what is the infinite intersection $\bigcap_{k \in \mathbb N} I_k$ exactly? 
-    It is simply the set of all numbers that are contained in every interval of the sequence $I_k$:
+    It is the set of all numbers that are contained in every interval of the sequence $I_k$:
     \eq
         \bigcap_{k \in \mathbb N} I_k := \set{x\in \mathbb R\mid \forall k\in
             \mathbb N\colon x \in I_k}.
@@ -203,7 +203,7 @@ To prove this theorem we will need a useful lemma, which is also of independent 
     Since the sequence $\seq{l_k}$ is nondecreading, its limit $L$ is also the lowest upper bound (supremum), which means all elements of the sequence are less than or equal to $L$ (see. \ref[reminder][rem:08:limbound] in 
     \ref[lecture][chap:08:weierstrass]). 
     Analogously, all elements of $\seq{r_k}$ are greater or equal to $R$. 
-    Hence, we have the chain of inequalities, that hold for all $k$:
+    Hence, we have the chain of inequalities that hold for all $k$:
     \eq
         l_k \le L \le R \le r_k.
     Suppose some number $x$ belongs to the segment $[L, R]$. Then we can add it into the chain:
@@ -229,7 +229,7 @@ To prove this theorem we will need a useful lemma, which is also of independent 
 
 \subsection Cutting intervals in half
 
-Now we're finally ready to proove Bolzano–Weierstrass theorem. 
+Now we're finally ready to prove Bolzano–Weierstrass theorem. 
 We will do this using the "cutting intervals in half" technique, which will also be useful to us later.
 
 \proof \of \ref[theorem][thm:09:B-V]
@@ -246,7 +246,7 @@ We will do this using the "cutting intervals in half" technique, which will also
     (Their intersection is one point, but it's not critical.) 
     Among the elements of the sequence $\seq{a_n}$ some belong to $I_1^L$ and some to $I_1^R$. 
     (Some can belong to both—also not critical.) 
-    Notice that either $I_1^L$ or $I_1^R$ contain intinitely many elements of $\seq{a_n}$: if both of them contained finitely many elements, this would imply that the sequence itself containes finite number of elements, which contradicts the definition of the sequence.
+    Notice that either $I_1^L$ or $I_1^R$ contain infinitely many elements of $\seq{a_n}$: if both of them contained finitely many elements, this would imply that the sequence itself contains finite number of elements, which contradicts the definition of the sequence.
 
     \figure
         \img
@@ -273,17 +273,17 @@ We will do this using the "cutting intervals in half" technique, which will also
     Set one of the intervals $I_1^L$ or $I_1^R$ that contains infinitely many elements to be $I_2$. 
     (If they both have infinitely many elements we always take the left one: $I_2=I_1^L$.) 
     Let's choose $n_2$ as the number of some element of $\seq{a_n}$, contained in $I_2$. 
-    It containes infinitely many of them, so such choice is always possible. 
+    It contains infinitely many of them, so such choice is always possible. 
     Set $b_2=a_{n_2}$.
 
     Now we repeat the process, but start with $I_2$. 
     We split in in half, getting $I_2^L$ and $I_2^R$. 
     Since $I_2$ by construction had infinitely many elements of $\seq{a_n}$, at least one of the parts will have infinitely many elements—set this part to be $I_3$. 
     Choose $n_3$ to be the number of some element of $\seq{a_n}$, that is contained in $I_3$, and \emph{importantly} the one that $n_3>n_2$. 
-    This can always be done since we've fixed $n_2$ in the previous step, and $I_3$ containes infinitely many elements: there are always infinitely many elements with numbers bigger than $n_2$. 
+    This can always be done since we've fixed $n_2$ in the previous step, and $I_3$ contains infinitely many elements: there are always infinitely many elements with numbers bigger than $n_2$. 
     Among these numbers we choose $n_3$ and set $b_3=a_{n_3}$.
 
-    We continue soing thisfor all natural $k$: constructing $I_k$ as the half of $I_{k-1}$ with infinitely many elements from $\seq{a_n}$. 
+    We continue doing this for each natural $k$: constructing $I_k$ as the half of $I_{k-1}$ with infinitely many elements from $\seq{a_n}$. 
     Among these elements we choose the one with a number succeeding $n_{k-1}$ and set it to $n_k$. 
     Finally, obtain $b_k=a_{n_k}$.
 
@@ -307,11 +307,11 @@ We will do this using the "cutting intervals in half" technique, which will also
 \remark
     The question may arise, why do we even need this theorem?
     It turns out that often we're not interested in checking the convergence of the whole sequence, and it's only needed to check if it has a convergent subsequence.
-    A little later we will encounter such situations. 
+    We will encounter such situations later. 
     
 \section Conclusion
 
 We have proved quite a lot of facts about the limits of sequences. 
 Standard calculus courses often include the concept of a fundamental sequence and Cauchy's theorem on the convergence of fundamental sequences. 
-It is especially useful in studying series, but they are fairly far away from us now, and we're unlikely to have enough time for its accurate construction. 
+They are especially useful in studying series, but these are fairly far away from us now, and we're unlikely to have enough time for its accurate construction. 
 So we will skip this part and leave the world of sequences to find ourselves in a new, even more mysterious (although familiar from school) world of functions.
