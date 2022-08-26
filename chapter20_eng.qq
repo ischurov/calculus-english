@@ -1,0 +1,182 @@
+\chapter \label chap:20:lhospital
+    L'Hôpital's rule
+
+Derivatives of functions allow us not only to investigate the behaviour of the latter (whether they're increasing, decreasing, or convex). They can also be used to define limits, by yielding indeterminate forms.
+
+\section Handling indeterminate forms $0/0$
+
+L'Hôpital's rule allows us to get an indeterminate form (i.e. to find a limit of a function) by differentiating a function. There are several versions of this rule —  I'll begin with the one that is easier to prove.
+
+\theorem 
+    \label thm:20:lhospital
+    (L'Hôpital's rule for the indeterminate form $0/0$).
+    Let $f$ and $g$ be the functions defined on the interval $(a, b)$,
+    \eq
+        \lim_{x\to a^+} f(x)=0,\quad \lim_{x\to a^+} g(x)=0,
+    there are derivatives $f'(x)$ and $g'(x)$ for all $x \in (a, b)$, $g'(x)$ is non-zero on $(a, b)$, and there's limit
+    \eq
+        \lim_{x\to a^+} \frac{f'(x)}{g'(x)} =: L.
+    Then a limit
+    \eq
+        \lim_{x\to a^+} \frac{f(x)}{g(x)}
+    exists and is equal to $L$.
+
+In other words, \ref[the theorem][thm:20:lhospital] allows to get the indeterminate form $0/0$ by differentiating the numerator and the denominator of a fraction. Another way of thinking about the theorem is the following: it shows that if two functions are approaching zero, then the limit of their ratio  is equal to the limit of their rate of change. Which sounds quite logical.
+
+\subsection Cauchy's theorem
+To prove \ref[the theorem 1][thm:20:lhospital] we'll need
+an auxiliary statement, known as the Cauchy's theorem.
+
+\theorem (Cauchy's).
+    Let $f$ and $g$ be the continuous functions over a closed interval $[a, b]$ that are differentiable over the interval $(a, b)$. Let $g'(x) \ne 0$ for all $x \in (a, b)$. Then
+    there exists a point $c\in (a,b)$, that is 
+    \eq
+        \frac{f(a) - f(b)}{g(a) - g(b)} = \frac{f'(c)}{g'(c)}
+\remark
+    If we solve for $g(x)=x$, the Cauchy's theorem turns into the \ref[Lagrange's Mean Value Theorem\nonumber][thm:17:Lagrange].
+\proof
+    Let's look at the function
+    \eq
+        H(x) = f(x)-\frac{f(a)-f(b)}{g(a)-g(b)} (g(x)-g(b)).
+    It looks similar to the way we proved the Lagrange's theorem, but instead of  a linear function we substitute the function $g(x)$ with the right coefficient.
+    Note that
+    \eq
+        H(a)=f(b)=H(b).
+    Let's apply $H$ \ref[Rolle's theorem\nonumber][thm:17:rolle]. There exists a point $c \in (a, b)$, that
+    $H'(c)=0$. Let's write the derivative of $H$:
+    \eq
+        H'(x)=f'(x)=\frac{f(a)-f(b)}{g(a)-g(b)}g'(x).
+    Hence,
+    \eq
+        0=H'(c)=f'(c)-\frac{f(a)-f(b)}{g(a)-g(b)}g'(c).
+    Since $g'(c)\ne 0$ (as $g'(x)=0$ for all $x\in(a,b)$), we can divide by it and get the original equation.
+
+\question 
+    Why, while finding the function $H$ can we divide by $(g(a)-g(b))$, why doesn't it vanish?
+    \quiz
+        \choice \correct
+            Get the answer
+            \comment
+                If the function vanished, then $g(a)$ would be equal to $g(b)$ and the function $g$ would  satisfy the conditions of
+                \ref[Rolle's theorem\nonumber][thm:17:rolle]. That means that somewhere over the interval $(a, b)$, there would exist the point where the derivative of $g$ is zero. Our theorem does not allow for this.
+                
+            
+\subsection Proof of the L'Hôpital's rule
+\proof \of \ref[the theorem][thm:20:lhospital]
+    Defining or re-defining the functions $f$ and $g$ at a point $a$, one can assume that
+    $f(a)=g(a)=0$. This does not affect limits or derivatives, since  they do not depend on the value of the functions at the point $a$. Then
+    \eq
+        \lim_{x\to a^+} \frac{f(x)}{g(x)}=\lim_{x\to
+            a^+}\frac{f(x)-f(a)}{g(x)-g(a)}=\ldots
+
+    Let's apply Cauchy's theorem to a closed interval $[a, x]$. There exists a point
+    $c(x)\in (a, x)$, that the fraction under the limit sign is equal to
+    $f'(c(x))/g'(c(x))$. (Cauchy's theorem for a fixed interval gives
+     fixed point $c$, and in our case, each $x$ has its own
+     interval, so the point $c$ depends on $x$.)
+
+    There we can continue the equation:
+    \eq
+        \ldots=\lim_{x\to a^+}\frac{f'(c(x))}{g'(c(x))}=\ldots
+    Note that $c(x)\to a^+$ for $x\to a^+$ and $c(x)\ne a$, since $c(x)
+    \in (a, x)$ (according to the Squeeze theorem). Hence,
+    we can use \ref[Theorem for limits of composite functions\nonumber][thm:13:lim-comp]
+    (см. \ref[exercise][ex:13:comp-limit] in \ref[lecture][chap:13:continuity]). Resulting in:
+    \eq
+        \ldots =\lim_{c\to a^+}\frac{f'(c)}{g'(c)}=L.
+
+\section Othe
+
+Of course, it is possible to prove a statement similar to \ref[thm:20:lhospital] with the limit on the left, and also with the two-sided limit (in this case it is necessary that
+$f$ and $g$ are differentiable in a punctured neighborhood of a point $a$).
+The proves are analogous to the first one.
+
+\subsection
+    Limit at the infinity
+The case of $x \to +\infty$ or $x\to -\infty$ is easily reduced to
+\ref[thm:20:lhospital].
+
+\theorem
+    Let $f$ and $g$ are the functions defined over a ray $(a, +\infty)$,
+    \eq
+        \lim_{x\to +\infty} f(x)=0,\quad \lim_{x\to +\infty} g(x)=0,
+    there are derivatives $f'(x)$ и $g'(x)$ for all $x \in (a, +\infty)$, $g'(x)$ does not vanish over $(a, +\infty)$ and there exists a limit
+    \eq
+        \lim_{x\to +\infty} \frac{f'(x)}{g'(x)} =: L.
+    Then there is a limit
+    \eq
+        \lim_{x\to +\infty} \frac{f(x)}{g(x)}.
+    equal to $L$.
+\proof
+    Let $t=1/x$. Then for $x\to +\infty$, $t\to 0^+$. According to the theorem for limits of composite functions (similar to that in the homework),
+    \equation \label eq:20:1-over-t
+        \lim_{x\to +\infty} \frac{f(x)}{g(x)}=\lim_{t\to 0^+}
+            \frac{f(1/t)}{g(1/t)}=\ldots
+    Let's look at the functions 
+    \eq
+        \tilde f(t) := f(1/t),\quad \tilde g(t) := g(1/t).
+    The equation \ref{eq:20:1-over-t} can be continued as:
+    \eq
+        \lim_{t\to 0^+} \frac{\tilde f(t)}{\tilde g(t)}=\ldots
+    We'll now apply \ref[theorem][thm:20:lhospital] to the resulting limit and the interval
+    $(0, 1/a)$ (let $a>0$). To find derivatives of $f(1/t)$ and
+    $g(1/t)$ we'll use the Chain rule.
+    \align \nonumber
+        \item 
+            \ldots = \splonly{&} \lim_{t \to 0^+} \frac{\tilde f'(t)}{\tilde g'(t)}=
+        \splitem
+            \splonly{=&} \lim_{t \to 0^+} \frac{f'(1/t)\cdot (-\frac{1}{t^2})}{g'(1/t)\cdot (-\frac{1}{t^2})}=
+        \splitem
+            \splonly{=&} \lim_{t \to 0^+} \frac{f'(1/t)}{g'(1/t}=\ldots
+    Now we can apply the theorem for limits of composite functions once again, but this time we'll switch $x=1/t$ back, and get:
+    \eq
+        \ldots = \lim_{x\to +\infty} \frac{f'(x)}{g'(x)}.
+
+Similarly, one can solve for $x\to -\infty$ и $x\to \infty$.
+
+\subsection Examples of yielding indeterminate form $0/0$
+
+\example
+    Let's find the limit
+    \eq
+        \lim_{x\to 0} \frac{\sin x}{x+x^2}.
+    We have an indeterminate form $0/0$, the derivative of a denominator does not vanish around zero, let's differentiate both numerator and denominator of a fraction. Resulting in:
+    \eq
+        \lim_{x\to 0} \frac{\cos x}{1 + 2x}.
+    We got rid of the indeterminate form, the limit exists and is equal to 1 (due to the continuity of the cosine function and the Quotient Law for limits). Hence, the original limit also exists and is also equal to 1.
+\example
+    Let's find the limit
+    \equation \label eq:20:cosx1
+        \lim_{x\to 0} \frac{1-\cos x}{\sin (x^2)}.
+    Familiar indeterminate form $0/0$ again. The derivative of a denominator does not vanish around zero, let's differentiate numerator as well as denominator. We now have
+    \equation \label eq:20:cosx2
+        \lim_{x\to 0} \frac{\sin x}{2x\cos x^2}.
+    We still have the indeterminate form $0/0$. Let's try and apply L'Hôpital's rule:
+    \eq
+        \lim_{x\to 0} \frac{\cos x}{2\cos x^2 + 4x^2 \sin x^2}.
+    The from disappeared, and due to the sine and cosine functions' continuity as well as to the limits' arithmetic, the limit is equal to $1/2$. Thereby, L'Hôpital's rule can be used to find the limit \ref{eq:20:cosx2}, it exists and is equal to $1/2$.
+    And consequently, L'Hôpital's rule an be used to find the limit \ref{eq:20:cosx1},it also exists and is also equal to $1/2$.
+\example
+    Let's find the limit
+    \eq
+        \lim_{x\to 0} \frac{\sin x}{x}.
+    In general, one could formally apply L'Hôpital's rule and get the correct answer, but there happens a certain logical trick. It turns out that one's dealing with the First Remarkable Limit here. When proving the sine's differentiability and finding its derivative, we used the rule that this limit exists and is equal to 1. (We  proved this during our seminars, using the geometric explanations). To use L'Hôpital's rule now, we need to differentiate the sine function, but we can only do that if previously proved that the limit we're working with is equal to 1.
+
+\subsection Handling the indeterminate form $\infty/\infty$
+
+Instead of $f$ and $g$ simultaneously vanishing, let them in the same manner tend to infinity.
+Proving this would be quite bulky, and we will not give it here, but let us consider the following example.
+
+\example
+    Let's find the limit
+    \eq
+        \lim_{x\to +\infty} \frac{\ln x}{\sqrt{x}}.
+    This is the indeterminate form $\infty/\infty$, the derivative of the denominator does not vanish. Let's differentiate numerator as well as denominator. Resulting in:
+    \eq
+        \lim_{x\to +\infty} \frac{1/x}{1/(2\sqrt{x})}=\lim_{x\to +\infty}
+        \frac{2}{\sqrt{x}}=0.
+    The limit exists and is equal to 0, hence, L'Hôpital's rule is applicable here, the original limit also exists and equals to 0.
+
+\section Conclusion
+
+L'Hôpital's rule often (though, not always) lets us yield the indeterminate forms $0/0$ or $\infty/\infty$ easily — and if the first differentiation results in some indeterminate form, no need to worry — we can differentiate again, and then again until we get some certain limit.(It is important to check that all  the conditions for the necessary theorems are satisfied). Students love using this rule. However, I do not. In fact, there's another - quicker — solution, called Taylor series. We'll talk about it next time.
