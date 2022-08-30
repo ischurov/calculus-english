@@ -1,72 +1,132 @@
-\chapter Множества, отображения и числа \label chap:01:setsnumbers 
+\_comment \chapter Множества, отображения и числа \label chap:01:setsnumbers 
+\chapter Sets, Mappings, and Numbers \label chap:01:setsnumbers 
 
-\section Добро пожаловать!
+\_comment \section Добро пожаловать!
+\section Welcome!
 
-Привет! Это онлайн-учебник по математическому анализу — науке, изучающей
-функции, пределы, скорости роста, бесконечные суммы, площади под кривыми. 
+Hello! This is an online guide to calculus. Calculus studies functions, limits,
+rates of change, infinite sums, areas under curves, etc.
+\_comment Привет! Это онлайн-учебник по математическому анализу — науке, изучающей
+    функции, пределы, скорости роста, бесконечные суммы, площади под кривыми. 
 
-Анализ традиционно является первым или одним из первых предметов, относящихся к
-высшей математике. Он нужен практически всем — лингвистам, химикам, физикам,
-политологам и, конечно, самим математикам. 
+Calculus is traditionally the first or one of the first branches of higher mathematics taught.
+Everyone needs it - linguists, chemists, physicists, political scientists, and, of course, mathematicians themselves.
+\_comment
+    Анализ традиционно является первым или одним из первых предметов, относящихся к
+    высшей математике. Он нужен практически всем — лингвистам, химикам, физикам,
+    политологам и, конечно, самим математикам. 
 
-Его можно изучать на разных уровнях строгости. Можно оперировать неформальными
-описаниями, картинками и отдельными примерами, и таким образом обсуждать
-множество важных и содержательных вещей, опираясь на уже имеющуюся интуицию и
-представления об окружающем нас мире. Например, для многих приложений достаточно
-понимать, что интеграл — это площадь под графиком функции, и не обязательно
-знать его формальное определение, равно как и доказательства связанных с ним
-теорем: достаточно естественных и знакомым всем свойств площадей.
+Calculus can be studied with different levels of rigor. We can use 
+informal descriptions, pictures, and examples, and discuss a lot of
+important and meaningful things relying on our intuition and existing notions about 
+the world. For example, for a lot of applications, it is sufficient to understand
+that an integral is the area under a graph of a function, and it is not necessary to 
+know the formal definition or the proofs of related theorems - we only need the natural
+and familiar properties of areas.
+\_comment
+    Его можно изучать на разных уровнях строгости. Можно оперировать неформальными
+    описаниями, картинками и отдельными примерами, и таким образом обсуждать
+    множество важных и содержательных вещей, опираясь на уже имеющуюся интуицию и
+    представления об окружающем нас мире. Например, для многих приложений достаточно
+    понимать, что интеграл — это площадь под графиком функции, и не обязательно
+    знать его формальное определение, равно как и доказательства связанных с ним
+    теорем: достаточно естественных и знакомым всем свойств площадей.
 
-В то же время, есть понятия, про которые трудно говорить и думать на таком
-неформальном языке, поскольку у нас нет естественной интуиции о них. В первую
-очередь, речь о понятии бесконечности, которое пронизывает весь анализ и всю
-математику, но при этом выходит за рамки привычного для нас опыта.  Чтобы
-почувствовать в этом случае твёрдую почву под ногами, нам приходится опираться
-на формальные определения, а для этого — научиться с ними работать с помощью
-аккуратных рассуждений. Это и составляет основу любого «строгого» курса анализа
-— в том числе, и нашего.
+At the same time, some notions are hard to discuss in that informal manner
+because we do not have a natural intuition for them. First of all, we talk about the 
+notion of infinity that permeates all of the calculus and all of the math but goes beyond 
+our usual experience. To feel solid ground beneath our feet, in this case, we have to rely 
+on formal definitions and for that, we need to learn how to rigorously reason about them.
+This is the basis of every "rigorous" calculus course, including this one.
+\_comment
+    В то же время, есть понятия, про которые трудно говорить и думать на таком
+    неформальном языке, поскольку у нас нет естественной интуиции о них. В первую
+    очередь, речь о понятии бесконечности, которое пронизывает весь анализ и всю
+    математику, но при этом выходит за рамки привычного для нас опыта.  Чтобы
+    почувствовать в этом случае твёрдую почву под ногами, нам приходится опираться
+    на формальные определения, а для этого — научиться с ними работать с помощью
+    аккуратных рассуждений. Это и составляет основу любого «строгого» курса анализа
+    — в том числе, и нашего.
 
-Будучи введением в серьёзную математику, курс анализа демонстрирует связь между
-интуитивным, образным математическим мышлением и работой с формальными
-рассуждениями. Эти два режима мышления дополняют друг друга. Без интуиции
-невозможно придумать ничего нового, но интуиция может легко нас подвести. Чтобы
-проверить её, мы записываем аккуратные доказательства, проверяя, что каждый шаг
-является верным. Но справедливо и обратное: не имея интуиции и правильных образов
-математических объектов, легко пропустить ошибку в формальных рассуждениях.
-Реальное понимание доказательства возникает не в тот момент, когда вы его
-проверили строчка за строчкой, а тогда, когда в голове возникла чёткая картинка,
-в которой вы видите всю «механику» происходящего.
+Being an introduction to serious mathematics the calculus course shows
+the connection between intuitive, imaginative mathematical thinking and
+working with formal statements. These two modes of thinking complement each other.
+Without intuition, we cannot invent anything new, but intuition can deceive us.
+To check it we write down careful proofs and check that every step is correct.
+The opposite is also true: without intuition and correct mental images of 
+mathematical objects we can easily miss a mistake in reasoning.
+The real understanding of a proof happens not when we checked every line of it, 
+but when we have a in our mind a clear picture of how it works altogether.
+\_comment
+    Будучи введением в серьёзную математику, курс анализа демонстрирует связь между
+    интуитивным, образным математическим мышлением и работой с формальными
+    рассуждениями. Эти два режима мышления дополняют друг друга. Без интуиции
+    невозможно придумать ничего нового, но интуиция может легко нас подвести. Чтобы
+    проверить её, мы записываем аккуратные доказательства, проверяя, что каждый шаг
+    является верным. Но справедливо и обратное: не имея интуиции и правильных образов
+    математических объектов, легко пропустить ошибку в формальных рассуждениях.
+    Реальное понимание доказательства возникает не в тот момент, когда вы его
+    проверили строчка за строчкой, а тогда, когда в голове возникла чёткая картинка,
+    в которой вы видите всю «механику» происходящего.
 
-Появление таких правильных «картинок», или лучше сказать «ментальных моделей»
-математических объектов и является нашей целью. Однако, оно невозможно без
-использования аккуратного математического языка, изучения большого количества
-доказательств и самостоятельного решения задач.
+Our goal is to create such "pictures" or, better term, "mental models" of 
+mathematical objects. Nevertheless, it is impossible to do without the use of 
+precise mathematical language, studying a large number of proofs, and 
+solving problems ourselves.
+\_comment
+    Появление таких правильных «картинок», или лучше сказать «ментальных моделей»
+    математических объектов и является нашей целью. Однако, оно невозможно без
+    использования аккуратного математического языка, изучения большого количества
+    доказательств и самостоятельного решения задач.
 
-Это непростой курс. Я был бы рад написать по нему простой учебник, но это
-невозможно. Как правило, анализ повергает в шок большинство студентов — что
-вполне естественно, учитывая резко возросший, по сравнению со школой, уровень
-строгости и сложности конструкций. Тем не менее, я постарался максимально
-«смягчить удар», используя подробные объяснения, неформальные мотивировки,
-большое количество иллюстраций и встроенных вопросов для самопроверки. В то же
-время, нужно иметь в виду, что в освоении любой математической дисциплины учебник
-играет скорее вспомогательную роль; реальное понимание приходит исключительно в
-результате самостоятельного взаимодействия с математическими объектами в ходе
-решения задач.
+This course is not easy. I would be happy to write a simple guide, but it is 
+impossible. Generally, calculus comes as a shock to the majority of university 
+students, which is understandable considering the rapid increase (compared to school) in
+the level of rigor and the complexity of objects discussed. Nevertheless, 
+I have tried to "soften the blow" as much as could using detailed explanations,
+informal motivations, a large number of illustrations, and built-in quizzes. 
+At the same time, one must realize that in studying any branch of math, any
+textbook or guide plays more of an auxiliary role, the real understanding comes
+only from individual interaction with mathematical objects in the process of  
+problem-solving.
+\_comment
+    Это непростой курс. Я был бы рад написать по нему простой учебник, но это
+    невозможно. Как правило, анализ повергает в шок большинство студентов — что
+    вполне естественно, учитывая резко возросший, по сравнению со школой, уровень
+    строгости и сложности конструкций. Тем не менее, я постарался максимально
+    «смягчить удар», используя подробные объяснения, неформальные мотивировки,
+    большое количество иллюстраций и встроенных вопросов для самопроверки. В то же
+    время, нужно иметь в виду, что в освоении любой математической дисциплины учебник
+    играет скорее вспомогательную роль; реальное понимание приходит исключительно в
+    результате самостоятельного взаимодействия с математическими объектами в ходе
+    решения задач.
 
-Этот учебник изначально был написан для студентов Совместного бакалавриата по
-экономике НИУ ВШЭ и РЭШ, где мне посчастливилось читать лекции по анализу на
-протяжении четырёх лет. «Посчастливилось» здесь — не фигура речи: каждый раз я
-получал огромное удовольствие от этого курса, от общения со студентами,
-коллегами, которые вели семинары, и учебными ассистентами. 
+This guide was first written for the students of the HSE/NES Bachelor’s Programme in Economics,
+where I was lucky to give lectures in calculus for four years. "Lucky" here is not a figure of speech:
+Every year I derived great pleasure from this course, from communication with students,
+colleagues, and teaching assistants. 
+\_comment
+    Этот учебник изначально был написан для студентов Совместного бакалавриата по
+    экономике НИУ ВШЭ и РЭШ, где мне посчастливилось читать лекции по анализу на
+    протяжении четырёх лет. «Посчастливилось» здесь — не фигура речи: каждый раз я
+    получал огромное удовольствие от этого курса, от общения со студентами,
+    коллегами, которые вели семинары, и учебными ассистентами. 
 
-Я благодарен Дмитрию Дагаеву за конспекты его лекций, служившие мне опорой при
-разработке этого курса, всем студентам, а также читателям, указывавшим на
-опечатки и непонятные моменты в тексте. Отдельно мне хочется
-поблагодарить Ольгу Крылову — незрячую студентку, поступившую на нашу программу
-в 2020-м году. Её смелость мотивировала меня взяться за написание подробных
-конспектов и в итоге сделать учебник, доступный, насколько это возможно, для
-людей с нарушениями зрения. Так я понял важную истину: забота о тех, кому
-тяжелее всего, делает мир лучше для всех.
+I am grateful to Dmitry Dagaev for his lecture notes that served as a basis for this course, 
+to all my students and readers who pointed out typos and unclear moments in the text.
+I want to give separate thanks to Olga Krylova, a visually impaired student who attended
+the course in 2020. Her bravery motivated me to start writing detailed lecture notes
+and make this guide as accessible as possible to visually impaired people. Because of that I understood
+a fundamental truth - taking care of the most vulnerable makes the world better for everyone.
+\_comment
+    Я благодарен Дмитрию Дагаеву за конспекты его лекций, служившие мне опорой при
+    разработке этого курса, всем студентам, а также читателям, указывавшим на
+    опечатки и непонятные моменты в тексте. Отдельно мне хочется
+    поблагодарить Ольгу Крылову — незрячую студентку, поступившую на нашу программу
+    в 2020-м году. Её смелость мотивировала меня взяться за написание подробных
+    конспектов и в итоге сделать учебник, доступный, насколько это возможно, для
+    людей с нарушениями зрения. Так я понял важную истину: забота о тех, кому
+    тяжелее всего, делает мир лучше для всех.
 
 \section Множества
 
