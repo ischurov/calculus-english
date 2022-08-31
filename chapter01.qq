@@ -1,10 +1,12 @@
-\_comment \chapter Множества, отображения и числа \label chap:01:setsnumbers 
 \chapter Sets, Mappings, and Numbers \label chap:01:setsnumbers 
+\_comment 
+    \chapter Множества, отображения и числа \label chap:01:setsnumbers 
 
-\_comment \section Добро пожаловать!
 \section Welcome!
+\_comment 
+    \section Добро пожаловать!
 
-Hello! This is an online guide to calculus. Calculus studies functions, limits,
+Hello! This is an online calculus textbook. Calculus studies functions, limits,
 rates of change, infinite sums, areas under curves, etc.
 \_comment Привет! Это онлайн-учебник по математическому анализу — науке, изучающей
     функции, пределы, скорости роста, бесконечные суммы, площади под кривыми. 
@@ -37,7 +39,7 @@ because we do not have a natural intuition for them. First of all, we talk about
 notion of infinity that permeates all of the calculus and all of the math but goes beyond 
 our usual experience. To feel solid ground beneath our feet, in this case, we have to rely 
 on formal definitions and for that, we need to learn how to rigorously reason about them.
-This is the basis of every "rigorous" calculus course, including this one.
+This is the basis of every "serious" calculus course, including this one.
 \_comment
     В то же время, есть понятия, про которые трудно говорить и думать на таком
     неформальном языке, поскольку у нас нет естественной интуиции о них. В первую
@@ -56,7 +58,7 @@ To check it we write down careful proofs and check that every step is correct.
 The opposite is also true: without intuition and correct mental images of 
 mathematical objects we can easily miss a mistake in reasoning.
 The real understanding of a proof happens not when we checked every line of it, 
-but when we have a in our mind a clear picture of how it works altogether.
+but when we have in our mind a clear picture of how it works altogether.
 \_comment
     Будучи введением в серьёзную математику, курс анализа демонстрирует связь между
     интуитивным, образным математическим мышлением и работой с формальными
@@ -86,7 +88,7 @@ the level of rigor and the complexity of objects discussed. Nevertheless,
 I have tried to "soften the blow" as much as could using detailed explanations,
 informal motivations, a large number of illustrations, and built-in quizzes. 
 At the same time, one must realize that in studying any branch of math, any
-textbook or guide plays more of an auxiliary role, the real understanding comes
+textbook plays more of an auxiliary role and the real understanding comes
 only from individual interaction with mathematical objects in the process of  
 problem-solving.
 \_comment
@@ -101,7 +103,7 @@ problem-solving.
     результате самостоятельного взаимодействия с математическими объектами в ходе
     решения задач.
 
-This guide was first written for the students of the HSE/NES Bachelor’s Programme in Economics,
+This textbook was first written for the students of the HSE/NES Bachelor’s Programme in Economics,
 where I was lucky to give lectures in calculus for four years. "Lucky" here is not a figure of speech:
 Every year I derived great pleasure from this course, from communication with students,
 colleagues, and teaching assistants. 
@@ -116,7 +118,7 @@ I am grateful to Dmitry Dagaev for his lecture notes that served as a basis for 
 to all my students and readers who pointed out typos and unclear moments in the text.
 I want to give separate thanks to Olga Krylova, a visually impaired student who attended
 the course in 2020. Her bravery motivated me to start writing detailed lecture notes
-and make this guide as accessible as possible to visually impaired people. Because of that I understood
+and make this textbook as accessible as possible to visually impaired people. Because of that, I understood
 a fundamental truth - taking care of the most vulnerable makes the world better for everyone.
 \_comment
     Я благодарен Дмитрию Дагаеву за конспекты его лекций, служившие мне опорой при
@@ -128,99 +130,187 @@ a fundamental truth - taking care of the most vulnerable makes the world better 
     людей с нарушениями зрения. Так я понял важную истину: забота о тех, кому
     тяжелее всего, делает мир лучше для всех.
 
-\section Множества
+\section Sets.
+\_comment
+    \section Множества
 
-\subsection Примеры множеств
-Мы начнём с самых базовых объектов анализа (да и в целом математики), из которых
-строится всё остальное: с множеств, отображений и чисел.
+\subsection Examples of Sets
+\_comment
+    \subsection Примеры множеств
 
-Вообще, в математике принято давать строгие определения всем вводимым понятиям.
-Однако, когда мы даём определение новому понятию, мы описываем его с помощью
-слов, каждое из которых, по идее, также нуждается в определении. Поскольку этот
-процесс не может продолжаться до бесконечности, в какой-то момент мы вынуждены
-остановиться, и сказать, что некоторые понятия мы не будем определять формально.
-
+We will start from the most basic notions of calculus (and mathematics as a whole),
+from which all the others are constructed: sets, mappings, and numbers.
+\_comment
+    Мы начнём с самых базовых объектов анализа (да и в целом математики), из которых
+    строится всё остальное: с множеств, отображений и чисел.
+    
+Generally, in mathematics, we aim to provide rigorous definitions for all concepts
+we introduce. However, when we define a new concept, we describe it with words, 
+each of which requires, in principle, a definition of its own. Since this process 
+cannot go forever, at some point we must stop and declare that some concepts will 
+not be defined formally.
+\_comment
+    Вообще, в математике принято давать строгие определения всем вводимым понятиям.
+    Однако, когда мы даём определение новому понятию, мы описываем его с помощью
+    слов, каждое из которых, по идее, также нуждается в определении. Поскольку этот
+    процесс не может продолжаться до бесконечности, в какой-то момент мы вынуждены
+    остановиться, и сказать, что некоторые понятия мы не будем определять формально.
 
 \quasidefinition
-    \emph{Множество} — это набор каких-то элементов. 
+    A \emph{set} is a collection of elements of some kind.
+\_comment
+    \quasidefinition
+        \emph{Множество} — это набор каких-то элементов. 
 
-Это как бы определение даёт мало информации — фактически, в нём сказано, что
-множество — это набор, а что такое набор — так же непонятно. Чтобы стало чуть
-более понятно, давайте приведём пару примеров:
+This quasi-definition gives us very little information — it says that a set is a collection,
+but it is similarly unclear what a collection is. To make things a little bit clearer let's give some examples:
+\_comment
+    Это как бы определение даёт мало информации — фактически, в нём сказано, что
+    множество — это набор, а что такое набор — так же непонятно. Чтобы стало чуть
+    более понятно, давайте приведём пару примеров:
 
 \example \label ex:01:123
-    Определим множество $A:=\set{1, 2, 3}$, которое состоит из трёх элементов —
-    чисел 1, 2 и 3. (Когда какой-то объект впервые определяется, мы часто будем
-    использовать знак $:=$ вместо обычного равно, чтобы подчеркнуть, что мы
-    таким образом определяем значение того символа, который стоит со стороны
-    двоеточия.) Чтобы задать множество, можно перечислить его элементы,
-    заключив их в фигурные скобки. (Так, конечно, можно задать не все множества,
-    а только конечные, в которых число элементов конечно; чуть позже мы
-    столкнёмся с бесконечными множествами.) Важно отметить, что
-    порядок следования элементов при перечислении не имеет значения: я мог бы
-    написать $\set{2, 1, 3}$ или $\set{3, 2, 1}$ и получить ровно то же самое
-    множество $A$. Ещё одно важное замечание: каждый элемент либо входит в
-    множество, либо не входит, нельзя «дважды входить» в множество. Если бы я
-    написал $\set{1, 1, 2, 3}$, я бы получил то же множество из трёх элементов,
-    что и выше: единица написана дважды, но входить в множество она может ровно
-    один раз. (Именно так это будет интерпретировать, например, язык
-    программирования Python, умеющий работать с множествами.)
+	Let $A:=\set{1, 2, 3}$ be a set comprising three elements — numbers 1, 2, and 3. 
+    (When we define an object for the first time we will use the sign $:=$ instead of 
+    the standard equality sign to emphasize that we define the symbol on the left side 
+    of the sign). To define a set we can list its elements inside curly brackets. (Of course, 
+    not every set can be defined this way — only finite ones can, the ones with finitely many 
+    elements; later we will encounter infinite sets as well). It is important to note that here 
+    the order of the elements does not matter — we can write $\set{2, 1, 3}$ or $\set{3, 2, 1}$ 
+    and get the same set $A$. Another important note — an element is either in a set or not, 
+    it cannot "be in it twice". If we write $set{1,1,2,3}$ we get the same set defined above: 
+    we write 1 twice but it can only be in it one time. (This is the way this would be interpreted 
+    by, for example, Python, a programming language that can work with sets).
+
+\_comment
+    \example \label ex:01:123
+        Определим множество $A:=\set{1, 2, 3}$, которое состоит из трёх элементов —
+        чисел 1, 2 и 3. (Когда какой-то объект впервые определяется, мы часто будем
+        использовать знак $:=$ вместо обычного равно, чтобы подчеркнуть, что мы
+        таким образом определяем значение того символа, который стоит со стороны
+        двоеточия.) Чтобы задать множество, можно перечислить его элементы,
+        заключив их в фигурные скобки. (Так, конечно, можно задать не все множества,
+        а только конечные, в которых число элементов конечно; чуть позже мы
+        столкнёмся с бесконечными множествами.) Важно отметить, что
+        порядок следования элементов при перечислении не имеет значения: я мог бы
+        написать $\set{2, 1, 3}$ или $\set{3, 2, 1}$ и получить ровно то же самое
+        множество $A$. Ещё одно важное замечание: каждый элемент либо входит в
+        множество, либо не входит, нельзя «дважды входить» в множество. Если бы я
+        написал $\set{1, 1, 2, 3}$, я бы получил то же множество из трёх элементов,
+        что и выше: единица написана дважды, но входить в множество она может ровно
+        один раз. (Именно так это будет интерпретировать, например, язык
+        программирования Python, умеющий работать с множествами.)
+    
 \example
-    Бывает пустое множество, которое обозначается $\varnothing$ (в другом стиле
-    выглядит как $\emptyset$). Оно не содержит ни одного элемента: $\varnothing
-    = \set{}$.
+    There is an empty set that we denote $\varnothing$ (or $\emptyset$). It does not 
+    contain any elements: $\varnothing= \set{}$.    
 
-Утверждение «элемент $x$ входит в множество $X$» кратко записывается таким образом:
+\_comment    
+    \example
+        Бывает пустое множество, которое обозначается $\varnothing$ (в другом стиле
+        выглядит как $\emptyset$). Оно не содержит ни одного элемента: $\varnothing
+        = \set{}$.
+
+The statement "the element $x$ is in the set $X$" we will write like this: 
 \eq \nonumber
-    x \in X
+    x \in X.
+\_comment    
+    Утверждение «элемент $x$ входит в множество $X$» кратко записывается таким образом:
+    \eq \nonumber
+        x \in X
 
-То есть, например, справедливо сказать, что $1 \in A$ для множества $A$,
-определенного в \ref[примере][ex:01:123], а $4 \not \in A$.
+For example, this means that it would be fair to say that  $1 \in A$, for the set $A$ 
+defined in \ref[Example][ex:01:123], but $4 \not \in A$.
+\_comment    
+    То есть, например, справедливо сказать, что $1 \in A$ для множества $A$,
+    определенного в \ref[примере][ex:01:123], а $4 \not \in A$.
 
 \definition
-    Пусть есть два множества, $X$ и $Y$. Говорят, что $X$ является
-    \emph{подмножеством} множества $Y$ (пишут $X\subset Y$ или $Y\supset X$),
-    если всякий элемент множества $X$ также является и элементом множества $Y$.
+    Suppose there are two sets $X$ and $Y$. We say that $X$ is a \emph{subset}
+    of $Y$ (and write $X\subset Y$ or $Y\supset X$) if every element of $X$ is 
+    also an element of $Y$. 
+\_comment    
+    \definition
+        Пусть есть два множества, $X$ и $Y$. Говорят, что $X$ является
+        \emph{подмножеством} множества $Y$ (пишут $X\subset Y$ или $Y\supset X$),
+        если всякий элемент множества $X$ также является и элементом множества $Y$.
 
-Например, множество $\set{1, 2}$ является подмножеством множества $A$ из 
-\ref[примера][ex:01:123], а множество $\\{1, 2, 3, 4\\}$ — не является.
+For example the set $\set{1, 2}$ is a subset of the set $A$ from \ref[Example][ex:01:123], 
+but the set $\\{1, 2, 3, 4\\}$ is not.
+\_comment    
+    Например, множество $\set{1, 2}$ является подмножеством множества $A$ из 
+    \ref[примера][ex:01:123], а множество $\\{1, 2, 3, 4\\}$ — не является.
 
 \remark
-    Пустое множество является подмножеством любого множества. Само множество
-    также является подмножеством самого себя.  Если подмножество некоторого
-    множества не является пустым и не является всем множеством, говорят, что оно
-    является \emph{собственным} подмножеством.
-\example \label ex:01:powerset
-    Множества могут быть сами элементами множеств. Например, можно рассмотреть
-    \emph{множество всех подмножеств} множества $A$: получится такое множество
-    (обозначим его через $B$):
-    \align \nonumber
-        \item B:=\set{\varnothing,& \set{1}, \set{2}, \set{3}, \set{1, 2}, 
-        \splitem \splonly{&}\set{1, 3}, \set{2, 3}, \set{1, 2, 3}}.
+	The empty set is a subset of any set. Any set is a subset of itself. 
+    If a subset of a set is neither empty nor the whole set, we call it a \emph{proper} subset.
+\_comment    
+    \remark
+        Пустое множество является подмножеством любого множества. Само множество
+        также является подмножеством самого себя.  Если подмножество некоторого
+        множества не является пустым и не является всем множеством, говорят, что оно
+        является \emph{собственным} подмножеством.
+        
+example \label ex:01:powerset
+	Sets can be elements of other sets themselves. For example, we can consider 
+    the \emph{power set} of $A$ - the set of all subsets of $A$. We get the 
+    following set (let's denote it by $B$):
+	\align \nonumber
+        	\item B:=\set{\varnothing,& \set{1}, \set{2}, \set{3}, \set{1, 2}, 
+        	\splitem \splonly{&}\set{1, 3}, \set{2, 3}, \set{1, 2, 3}}.
+            
+\_comment    
+    \example \label ex:01:powerset
+        Множества могут быть сами элементами множеств. Например, можно рассмотреть
+        \emph{множество всех подмножеств} множества $A$: получится такое множество
+        (обозначим его через $B$):
+        \align \nonumber
+            \item B:=\set{\varnothing,& \set{1}, \set{2}, \set{3}, \set{1, 2}, 
+            \splitem \splonly{&}\set{1, 3}, \set{2, 3}, \set{1, 2, 3}}.
 
-Обратите внимание на разницу между знаками $\in$ и $\subset$. Например, для
-множества $A$, справедливо утверждение $1\in A$, справедливо утверждение
-$\set{1}\subset A$, но неверно, что $\set{1}\in A$, поскольку элементами $A$
-являются числа, а не множества. Для множества $B$, наоборот, $1 \not \in B$,
-зато $\set{1} \in B$.
+
+Take notice of the difference between the signs $\in$ and $\subset$. For example, 
+for the set $A$ the statement $1\in A$ is true, the statement $\set{1}\subset A$ is true, 
+but the statement $\set{1}\in A$ is false because the elements of $A$ are numbers and not sets. 
+For the set $B$, conversely, $1 \not \in B$, but $\set{1} \in B$.
+\_comment    
+    Обратите внимание на разницу между знаками $\in$ и $\subset$. Например, для
+    множества $A$, справедливо утверждение $1\in A$, справедливо утверждение
+    $\set{1}\subset A$, но неверно, что $\set{1}\in A$, поскольку элементами $A$
+    являются числа, а не множества. Для множества $B$, наоборот, $1 \not \in B$,
+    зато $\set{1} \in B$.
 
 \question
-    Кстати, а верно ли, что $\set{1}\subset B$?
+    By the way, is it true that $\set{1}\subset B$?
+    \_comment    
+        Кстати, а верно ли, что $\set{1}\subset B$?
     \quiz
         \choice
-            Верно
+            True
+            \_comment    
+                Верно
             \comment
-                Нет, $\set{1}$ не является подмножеством множества $B$: оно
-                содержит это множество как элемент. Если вы хотите создать
-                множество, единственным элементом которого является множество
-                $\set{1}$, оно будет записываться как $\set{\set{1}}$.
+                No, $\set{1}$ is not a subset of the set $B$: it contains 
+                it as an element. If we want to create a set whose only element 
+                is the set $\set{1}$, it would be written as $\set{\set{1}}$. 
+                \_comment    
+                    Нет, $\set{1}$ не является подмножеством множества $B$: оно
+                    содержит это множество как элемент. Если вы хотите создать
+                    множество, единственным элементом которого является множество
+                    $\set{1}$, оно будет записываться как $\set{\set{1}}$.
         \choice \correct
-            Неверно
+            False
+            \_comment    
+                Неверно
             \comment
-                Действительно, $\set{1}$ не является подмножеством множества $B$: оно
-                содержит это множество как элемент. Если вы хотите создать
-                множество, единственным элементом которого является множество
-                $\set{1}$, оно будет записываться как $\set{\set{1}}$.
+                Indeed, $\set{1}$ is not a subset of the set $B$: it contains 
+                it as an element. If we want to create a set whose only element 
+                is the set $\set{1}$, it would be written as $\set{\set{1}}$.
+                \_comment    
+                    Действительно, $\set{1}$ не является подмножеством множества $B$: оно
+                    содержит это множество как элемент. Если вы хотите создать
+                    множество, единственным элементом которого является множество
+                    $\set{1}$, оно будет записываться как $\set{\set{1}}$.
 
 Как мы видим из \ref[примера][ex:01:powerset], множества могут содержать в себе
 другие множества. Тут может возникнуть соблазн рассмотреть «множество всех
