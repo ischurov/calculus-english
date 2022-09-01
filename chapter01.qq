@@ -37,7 +37,7 @@ and familiar properties of areas.
 At the same time, some notions are hard to discuss in this informal manner
 because we do not have a natural intuition for them. First of all, we talk about the 
 notion of infinity that permeates all of the calculus and all of the math but goes beyond 
-our usual experience. To feel solid ground beneath our feet, in this case, we have to rely 
+our usual experience. To be on solid ground, in this case, we have to rely 
 on formal definitions and for that, we need to learn how to rigorously reason about them.
 This is the basis of every "serious" calculus course, including this one.
 \_comment
@@ -72,9 +72,9 @@ but when we have in our mind a clear picture of how it works altogether.
     в которой вы видите всю «механику» происходящего.
 
 Our goal is to create such "pictures" or, better term, "mental models" of 
-mathematical objects. Nevertheless, it is impossible to do without the use of 
+mathematical objects. However, it is impossible to do this without the use of 
 precise mathematical language, studying a large number of proofs, and 
-solving problems ourselves.
+solving problems by ourselves.
 \_comment
     Появление таких правильных «картинок», или лучше сказать «ментальных моделей»
     математических объектов и является нашей целью. Однако, оно невозможно без
@@ -171,16 +171,16 @@ but it is similarly unclear what a collection is. To make things a little bit cl
 
 \example \label ex:01:123
 	Let $A:=\set{1, 2, 3}$ be a set comprising three elements — numbers 1, 2, and 3. 
-    (When we define an object for the first time we will use the sign $:=$ instead of 
-    the standard equality sign to emphasize that we define the symbol on the left side 
-    of the sign). To define a set we can list its elements inside curly brackets. (Of course, 
-    not every set can be defined this way — only finite ones can, the ones with finitely many 
-    elements; later we will encounter infinite sets as well). It is important to note that here 
-    the order of the elements does not matter — we can write $\set{2, 1, 3}$ or $\set{3, 2, 1}$ 
-    and get the same set $A$. Another important note — an element is either in a set or not, 
-    it cannot "be in it twice". If we write $set{1,1,2,3}$ we get the same set defined above: 
-    we write 1 twice but it can only be in it one time. (This is the way this would be interpreted 
-    by, for example, Python, a programming language that can work with sets).
+   	(When we define an object for the first time we will use the sign $:=$ instead of 
+    	the standard equality sign to emphasize that we define the symbol on the left side 
+    	of the sign). To define a set we can list its elements inside curly brackets. (Of course, 
+    	not every set can be defined this way — only finite ones can, the ones with finitely many 
+    	elements; later we will encounter infinite sets as well). It is important to note that here 
+    	the order of the elements does not matter — we can write $\set{2, 1, 3}$ or $\set{3, 2, 1}$ 
+    	and get the same set $A$. Another important note — an element is either in a set or not, 
+    	it cannot "be in it twice". If we write $set{1,1,2,3}$ we get the same set defined above: 
+    	we write 1 twice but it can only be in it one time. (This is the way this would be interpreted 
+    	by, for example, Python, a programming language that can work with sets).
 
 \_comment
     \example \label ex:01:123
@@ -243,7 +243,7 @@ but the set $\\{1, 2, 3, 4\\}$ is not.
 
 \remark
 	The empty set is a subset of any set. Any set is a subset of itself. 
-    If a subset of a set is neither empty nor the whole set, we call it a \emph{proper} subset.
+    	If a subset of a set is neither empty nor the whole set, we call it a \emph{proper} subset.
 \_comment    
     \remark
         Пустое множество является подмножеством любого множества. Само множество
@@ -253,8 +253,8 @@ but the set $\\{1, 2, 3, 4\\}$ is not.
         
 example \label ex:01:powerset
 	Sets can be elements of other sets themselves. For example, we can consider 
-    the \emph{power set} of $A$ - the set of all subsets of $A$. We get the 
-    following set (let's denote it by $B$):
+    	the \emph{power set} of $A$ - the set of all subsets of $A$. We would get the 
+    	following set (let's denote it by $B$):
 	\align \nonumber
         	\item B:=\set{\varnothing,& \set{1}, \set{2}, \set{3}, \set{1, 2}, 
         	\splitem \splonly{&}\set{1, 3}, \set{2, 3}, \set{1, 2, 3}}.
@@ -312,41 +312,69 @@ For the set $B$, conversely, $1 \not \in B$, but $\set{1} \in B$.
                     множество, единственным элементом которого является множество
                     $\set{1}$, оно будет записываться как $\set{\set{1}}$.
 
-Как мы видим из \ref[примера][ex:01:powerset], множества могут содержать в себе
-другие множества. Тут может возникнуть соблазн рассмотреть «множество всех
-возможных множеств», однако это приводит к проблемам (подробнее можно посмотреть
-в статье про \href[парадокс
-Рассела][https://ru.wikipedia.org/wiki/Парадокс_Рассела] в Википедии). Таких
-проблем удаётся избегать, если мы разрешаем рассматривать лишь множества,
-которые понятным образом строятся из уже определенных ранее множеств. Так мы и
-будем поступать. Есть более аккуратные способы определения множеств путём ввода
-некоторой системы аксиом, но для всех практических целей нам будет достаточно
-«наивного» понятия о множествах, которое обсуждается здесь.
+As we can see from \ref[Example][ex:01:powerset] sets can have other sets as 
+elements. One might be tempted here to consider "the set of all sets", but
+this leads to problems (for details see the Wikipedia article  
+\href[Russel's paradox][https://en.wikipedia.org/wiki/Russell%27s_paradox]).
+We can avoid such problems if we only allow sets that are constructed
+straightforwardly from already defined sets. This is what we are going to do.
+There are more rigorous ways to define sets by introducing a system of axioms,
+but for all practical purposes, the "naive" notion of sets discussed here 
+will be sufficient.
+\_comment    
+	Как мы видим из \ref[примера][ex:01:powerset], множества могут содержать в себе
+	другие множества. Тут может возникнуть соблазн рассмотреть «множество всех
+	возможных множеств», однако это приводит к проблемам (подробнее можно посмотреть
+	в статье про \href[парадокс
+	Рассела][https://ru.wikipedia.org/wiki/Парадокс_Рассела] в Википедии). Таких
+	проблем удаётся избегать, если мы разрешаем рассматривать лишь множества,
+	которые понятным образом строятся из уже определенных ранее множеств. Так мы и
+	будем поступать. Есть более аккуратные способы определения множеств путём ввода
+	некоторой системы аксиом, но для всех практических целей нам будет достаточно
+	«наивного» понятия о множествах, которое обсуждается здесь.
 
-\subsection Операции над множествами
+\subsection Set Operations
+\_comment    
+	\subsection Операции над множествами
 
-Нам понадобятся некоторые известные операции с множествами.
+We will need some well-known set operations.
+\_comment    
+	Нам понадобятся некоторые известные операции с множествами.
+
 
 \definition
-    Для произвольных множеств $X$ и $Y$, определим их \emph{пересечение}, то
-    есть новое множество (обозначается $X\cap Y$), которое состоит из всех
-    элементов, которые есть одновременно и в $X$, и в $Y$.
+	For any sets $X$ and $Y$ we define their \emph{intersection},
+	a new set (denoted by $X\cap Y$) that comprises all elements
+	that are at the same time in $X$ and in $Y$
+    	\_comment    
+		Для произвольных множеств $X$ и $Y$, определим их \emph{пересечение}, то
+		есть новое множество (обозначается $X\cap Y$), которое состоит из всех
+    		элементов, которые есть одновременно и в $X$, и в $Y$.
 \figure
     \img
         \src pic-1.svg
         \style
             padding: 4em; max-width:300px;
         \alt
-            Два пересекающихся овала, левый X, правый Y, закрашено их пересечение.
+            Two intersecting ovals, the left one marked X, the right one marked Y,
+	    with their intersection filled in.
+	    \_comment    
+		    Два пересекающихся овала, левый X, правый Y, закрашено их пересечение.
     \caption
-        Пересечение множеств.
+    	Set intersection
+        \_comment    
+		Пересечение множеств.
     \label fig:01:intersect
 
 \definition
-    Для произвольных множеств $X$ и $Y$, определим их \emph{объединение}, то
-    есть новое множество (обозначается $X\cup Y$), которое состоит из всех
-    элементов, которые есть хотя бы в одном из множеств $X$, или в $Y$ (или в
-    обоих).
+	For any sets $X$ and $Y$ we define their \emph{union},
+	a new set (denoted by $X\cup Y$) that comprises all elements
+	that are in $X$ or in $Y$ (or in both).
+    	\_comment    
+		Для произвольных множеств $X$ и $Y$, определим их \emph{объединение}, то
+    		есть новое множество (обозначается $X\cup Y$), которое состоит из всех
+    		элементов, которые есть хотя бы в одном из множеств $X$, или в $Y$ (или в
+    		обоих).
 
 \figure
     \img
@@ -354,17 +382,27 @@ For the set $B$, conversely, $1 \not \in B$, but $\set{1} \in B$.
         \style
             padding: 4em; max-width:300px;
         \alt
-            Два пересекающихся овала, левый X, правый Y, равномерно закрашены
-            оба овала.
+		Two intersecting ovals, the left one marked X, the right one marked Y,
+	    	both filled in.
+            	\_comment    
+			Два пересекающихся овала, левый X, правый Y, равномерно закрашены
+            		оба овала.
     \caption
-        Объединение множеств.
+    	Set union.
+        \_comment    
+		Объединение множеств.
     \label fig:01:union
 
 \definition
-    Для произвольных множеств $X$ и $Y$, разностью $X \setminus Y$ (также пишут
-    просто $X-Y$) называется множество всех элементов $X$, не содержащихся в
-    $Y$. Иногда говорят \emph{дополнение $Y$ до $X$} (вероятно, наиболее
-    корректным этот термин является, если $Y$ является подмножеством $X$).
+	For any sets $X$ and $Y$, their \emph{difference} $X \setminus Y$ 
+	(sometimes written as $X-Y$) is a set that comprises all elements
+	that are in $X$ but not in $Y$. Sometimes (when $Y$ is a subset of $X$)
+	the set $X \setminus Y$ is called a complement of $X$ with respect to $Y$.
+    	\_comment    
+		Для произвольных множеств $X$ и $Y$, разностью $X \setminus Y$ (также пишут
+    		просто $X-Y$) называется множество всех элементов $X$, не содержащихся в
+    		$Y$. Иногда говорят \emph{дополнение $Y$ до $X$} (вероятно, наиболее
+    		корректным этот термин является, если $Y$ является подмножеством $X$).
 
 \figure
     \img
@@ -372,18 +410,32 @@ For the set $B$, conversely, $1 \not \in B$, but $\set{1} \in B$.
         \style
             padding: 4em; max-width:300px;
         \alt
-            Два пересекающихся овала, левый X, правый Y, закрашена часть X, не
-            пересекающаяся с Y.
+            Two intersecting ovals, the left one marked X, the right one marked Y,
+	    with the part of X outside of Y filled in.
+            \_comment    
+		Два пересекающихся овала, левый X, правый Y, закрашена часть X, не
+            	пересекающаяся с Y.
     \caption
-        Разность множеств.
+    	Set difference
+        \_comment    
+		Разность множеств.
     \label fig:01:setdiff
-\section Отображения \label sec:01:maps
+    
+\section Mappings \label sec:01:maps
+\_comment    
+	\section Отображения \label sec:01:maps
 
-Вы наверняка встречались с понятием функции. В математике есть два набора
-терминов, которые описывают одно и то же — в одних случаях используется слово
-«функция», в других — «отображение». Слово «отображение» выглядит чуть более
-универсальным термином. Его можно было бы определить формально, опираясь только
-на понятие множества, но мы ограничимся неформальным описанием.
+You have probably encountered the notion of a function. In math there are two 
+sets of terms describing the same thing - sometimes the word "function" is used,
+and sometimes "mapping" is used. "Mapping" seems to be a more universal term.
+We could have defined it formally using only the notion of a set, but we will 
+go with an informal description.
+\_comment    
+	Вы наверняка встречались с понятием функции. В математике есть два набора
+	терминов, которые описывают одно и то же — в одних случаях используется слово
+	«функция», в других — «отображение». Слово «отображение» выглядит чуть более
+	универсальным термином. Его можно было бы определить формально, опираясь только
+	на понятие множества, но мы ограничимся неформальным описанием.
 
 \quasidefinition 
     Рассмотрим два произвольных множества $X$ и $Y$. Пусть мы
