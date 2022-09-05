@@ -1,19 +1,19 @@
 \chapter Sets, Mappings, and Numbers \label chap:01:setsnumbers 
-\_comment 
+\source 
     \chapter Множества, отображения и числа \label chap:01:setsnumbers 
 
 \section Welcome!
-\_comment 
+\source 
     \section Добро пожаловать!
 
 Hello! This is an online calculus textbook. Calculus studies functions, limits,
 rates of change, infinite sums, areas under curves, etc.
-\_comment Привет! Это онлайн-учебник по математическому анализу — науке, изучающей
+\source Привет! Это онлайн-учебник по математическому анализу — науке, изучающей
     функции, пределы, скорости роста, бесконечные суммы, площади под кривыми. 
 
 Calculus is traditionally the first or one of the first branches of higher mathematics taught.
 Everyone needs it - linguists, chemists, physicists, political scientists, and, of course, mathematicians themselves.
-\_comment
+\source
     Анализ традиционно является первым или одним из первых предметов, относящихся к
     высшей математике. Он нужен практически всем — лингвистам, химикам, физикам,
     политологам и, конечно, самим математикам. 
@@ -25,7 +25,7 @@ the world. For example, for a lot of applications, it is sufficient to understan
 that an integral is the area under a graph of a function, and it is not necessary to 
 know the formal definition or the proofs of related theorems - we only need the natural
 and familiar properties of areas.
-\_comment
+\source
     Его можно изучать на разных уровнях строгости. Можно оперировать неформальными
     описаниями, картинками и отдельными примерами, и таким образом обсуждать
     множество важных и содержательных вещей, опираясь на уже имеющуюся интуицию и
@@ -40,7 +40,7 @@ notion of infinity that permeates all of the calculus and all of the math but go
 our usual experience. To be on solid ground, in this case, we have to rely 
 on formal definitions and for that, we need to learn how to rigorously reason about them.
 This is the basis of every "serious" calculus course, including this one.
-\_comment
+\source
     В то же время, есть понятия, про которые трудно говорить и думать на таком
     неформальном языке, поскольку у нас нет естественной интуиции о них. В первую
     очередь, речь о понятии бесконечности, которое пронизывает весь анализ и всю
@@ -59,7 +59,7 @@ The opposite is also true: without intuition and correct mental images of
 mathematical objects we can easily miss a mistake in reasoning.
 The real understanding of a proof happens not when we checked every line of it, 
 but when we have in our mind a clear picture of how it works altogether.
-\_comment
+\source
     Будучи введением в серьёзную математику, курс анализа демонстрирует связь между
     интуитивным, образным математическим мышлением и работой с формальными
     рассуждениями. Эти два режима мышления дополняют друг друга. Без интуиции
@@ -75,7 +75,7 @@ Our goal is to create such "pictures" or, better term, "mental models" of
 mathematical objects. However, it is impossible to do this without the use of 
 precise mathematical language, studying a large number of proofs, and 
 solving problems by ourselves.
-\_comment
+\source
     Появление таких правильных «картинок», или лучше сказать «ментальных моделей»
     математических объектов и является нашей целью. Однако, оно невозможно без
     использования аккуратного математического языка, изучения большого количества
@@ -91,7 +91,7 @@ At the same time, one must realize that in studying any branch of math, any
 textbook plays more of an auxiliary role and the real understanding comes
 only from individual interaction with mathematical objects in the process of  
 problem-solving.
-\_comment
+\source
     Это непростой курс. Я был бы рад написать по нему простой учебник, но это
     невозможно. Как правило, анализ повергает в шок большинство студентов — что
     вполне естественно, учитывая резко возросший, по сравнению со школой, уровень
@@ -107,7 +107,7 @@ This textbook was first written for the students of the HSE/NES Bachelor’s Pro
 where I was lucky to give lectures in calculus for four years. "Lucky" here is not a figure of speech:
 Every year I derived great pleasure from this course, from communication with students,
 colleagues, and teaching assistants. 
-\_comment
+\source
     Этот учебник изначально был написан для студентов Совместного бакалавриата по
     экономике НИУ ВШЭ и РЭШ, где мне посчастливилось читать лекции по анализу на
     протяжении четырёх лет. «Посчастливилось» здесь — не фигура речи: каждый раз я
@@ -120,7 +120,7 @@ I want to give separate thanks to Olga Krylova, a visually impaired student who 
 the course in 2020. Her bravery motivated me to start writing detailed lecture notes
 and make this textbook as accessible as possible to visually impaired people. Because of that, I understood
 a fundamental truth - taking care of the most vulnerable makes the world better for everyone.
-\_comment
+\source
     Я благодарен Дмитрию Дагаеву за конспекты его лекций, служившие мне опорой при
     разработке этого курса, всем студентам, а также читателям, указывавшим на
     опечатки и непонятные моменты в тексте. Отдельно мне хочется
@@ -131,16 +131,16 @@ a fundamental truth - taking care of the most vulnerable makes the world better 
     тяжелее всего, делает мир лучше для всех.
 
 \section Sets.
-\_comment
+\source
     \section Множества
 
 \subsection Examples of Sets
-\_comment
+\source
     \subsection Примеры множеств
 
 We will start from the most basic notions of calculus (and mathematics as a whole),
 from which all the others are constructed: sets, mappings, and numbers.
-\_comment
+\source
     Мы начнём с самых базовых объектов анализа (да и в целом математики), из которых
     строится всё остальное: с множеств, отображений и чисел.
     
@@ -149,7 +149,7 @@ we introduce. However, when we define a new concept, we describe it with words,
 each of which requires, in principle, a definition of its own. Since this process 
 cannot go forever, at some point we must stop and declare that some concepts will 
 not be defined formally.
-\_comment
+\source
     Вообще, в математике принято давать строгие определения всем вводимым понятиям.
     Однако, когда мы даём определение новому понятию, мы описываем его с помощью
     слов, каждое из которых, по идее, также нуждается в определении. Поскольку этот
@@ -158,13 +158,13 @@ not be defined formally.
 
 \quasidefinition
     A \emph{set} is a collection of elements of some kind.
-\_comment
+\source
     \quasidefinition
         \emph{Множество} — это набор каких-то элементов. 
 
 This quasi-definition gives us very little information — it says that a set is a collection,
 but it is similarly unclear what a collection is. To make things a little bit clearer let's give some examples:
-\_comment
+\source
     Это как бы определение даёт мало информации — фактически, в нём сказано, что
     множество — это набор, а что такое набор — так же непонятно. Чтобы стало чуть
     более понятно, давайте приведём пару примеров:
@@ -182,7 +182,7 @@ but it is similarly unclear what a collection is. To make things a little bit cl
     	we write 1 twice but it can only be in it one time. (This is the way this would be interpreted 
     	by, for example, Python, a programming language that can work with sets).
 
-\_comment
+\source
     \example \label ex:01:123
         Определим множество $A:=\set{1, 2, 3}$, которое состоит из трёх элементов —
         чисел 1, 2 и 3. (Когда какой-то объект впервые определяется, мы часто будем
@@ -205,7 +205,7 @@ but it is similarly unclear what a collection is. To make things a little bit cl
     There is an empty set that we denote $\varnothing$ (or $\emptyset$). It does not 
     contain any elements: $\varnothing= \set{}$.    
 
-\_comment    
+\source    
     \example
         Бывает пустое множество, которое обозначается $\varnothing$ (в другом стиле
         выглядит как $\emptyset$). Оно не содержит ни одного элемента: $\varnothing
@@ -214,14 +214,14 @@ but it is similarly unclear what a collection is. To make things a little bit cl
 The statement "the element $x$ is in the set $X$" we will write like this: 
 \eq \nonumber
     x \in X.
-\_comment    
+\source    
     Утверждение «элемент $x$ входит в множество $X$» кратко записывается таким образом:
     \eq \nonumber
         x \in X
 
 For example, this means that it would be fair to say that  $1 \in A$, for the set $A$ 
 defined in \ref[Example][ex:01:123], but $4 \not \in A$.
-\_comment    
+\source    
     То есть, например, справедливо сказать, что $1 \in A$ для множества $A$,
     определенного в \ref[примере][ex:01:123], а $4 \not \in A$.
 
@@ -229,7 +229,7 @@ defined in \ref[Example][ex:01:123], but $4 \not \in A$.
     Suppose there are two sets $X$ and $Y$. We say that $X$ is a \emph{subset}
     of $Y$ (and write $X\subset Y$ or $Y\supset X$) if every element of $X$ is 
     also an element of $Y$. 
-\_comment    
+\source    
     \definition
         Пусть есть два множества, $X$ и $Y$. Говорят, что $X$ является
         \emph{подмножеством} множества $Y$ (пишут $X\subset Y$ или $Y\supset X$),
@@ -237,14 +237,14 @@ defined in \ref[Example][ex:01:123], but $4 \not \in A$.
 
 For example the set $\set{1, 2}$ is a subset of the set $A$ from \ref[Example][ex:01:123], 
 but the set $\\{1, 2, 3, 4\\}$ is not.
-\_comment    
+\source    
     Например, множество $\set{1, 2}$ является подмножеством множества $A$ из 
     \ref[примера][ex:01:123], а множество $\\{1, 2, 3, 4\\}$ — не является.
 
 \remark
 	The empty set is a subset of any set. Any set is a subset of itself. 
     	If a subset of a set is neither empty nor the whole set, we call it a \emph{proper} subset.
-\_comment    
+\source    
     \remark
         Пустое множество является подмножеством любого множества. Само множество
         также является подмножеством самого себя.  Если подмножество некоторого
@@ -259,7 +259,7 @@ example \label ex:01:powerset
         	\item B:=\set{\varnothing,& \set{1}, \set{2}, \set{3}, \set{1, 2}, 
         	\splitem \splonly{&}\set{1, 3}, \set{2, 3}, \set{1, 2, 3}}.
             
-\_comment    
+\source    
     \example \label ex:01:powerset
         Множества могут быть сами элементами множеств. Например, можно рассмотреть
         \emph{множество всех подмножеств} множества $A$: получится такое множество
@@ -273,7 +273,7 @@ Take notice of the difference between the signs $\in$ and $\subset$. For example
 for the set $A$ the statement $1\in A$ is true, the statement $\set{1}\subset A$ is true, 
 but the statement $\set{1}\in A$ is false because the elements of $A$ are numbers and not sets. 
 For the set $B$, conversely, $1 \not \in B$, but $\set{1} \in B$.
-\_comment    
+\source    
     Обратите внимание на разницу между знаками $\in$ и $\subset$. Например, для
     множества $A$, справедливо утверждение $1\in A$, справедливо утверждение
     $\set{1}\subset A$, но неверно, что $\set{1}\in A$, поскольку элементами $A$
@@ -282,31 +282,31 @@ For the set $B$, conversely, $1 \not \in B$, but $\set{1} \in B$.
 
 \question
     By the way, is it true that $\set{1}\subset B$?
-    \_comment    
+    \source    
         Кстати, а верно ли, что $\set{1}\subset B$?
     \quiz
         \choice
             True
-            \_comment    
+            \source    
                 Верно
             \comment
                 No, $\set{1}$ is not a subset of the set $B$: it contains 
                 it as an element. If we want to create a set whose only element 
                 is the set $\set{1}$, it would be written as $\set{\set{1}}$. 
-                \_comment    
+                \source   
                     Нет, $\set{1}$ не является подмножеством множества $B$: оно
                     содержит это множество как элемент. Если вы хотите создать
                     множество, единственным элементом которого является множество
                     $\set{1}$, оно будет записываться как $\set{\set{1}}$.
         \choice \correct
             False
-            \_comment    
+            \source    
                 Неверно
             \comment
                 Indeed, $\set{1}$ is not a subset of the set $B$: it contains 
                 it as an element. If we want to create a set whose only element 
                 is the set $\set{1}$, it would be written as $\set{\set{1}}$.
-                \_comment    
+                \source    
                     Действительно, $\set{1}$ не является подмножеством множества $B$: оно
                     содержит это множество как элемент. Если вы хотите создать
                     множество, единственным элементом которого является множество
@@ -321,7 +321,7 @@ straightforwardly from already defined sets. This is what we are going to do.
 There are more rigorous ways to define sets by introducing a system of axioms,
 but for all practical purposes, the "naive" notion of sets discussed here 
 will be sufficient.
-\_comment    
+\source    
 	Как мы видим из \ref[примера][ex:01:powerset], множества могут содержать в себе
 	другие множества. Тут может возникнуть соблазн рассмотреть «множество всех
 	возможных множеств», однако это приводит к проблемам (подробнее можно посмотреть
@@ -334,11 +334,11 @@ will be sufficient.
 	«наивного» понятия о множествах, которое обсуждается здесь.
 
 \subsection Set Operations
-\_comment    
+\source    
 	\subsection Операции над множествами
 
 We will need some well-known set operations.
-\_comment    
+\source    
 	Нам понадобятся некоторые известные операции с множествами.
 
 
@@ -346,7 +346,7 @@ We will need some well-known set operations.
 	For any sets $X$ and $Y$ we define their \emph{intersection},
 	a new set (denoted by $X\cap Y$) that comprises all elements
 	that are at the same time in $X$ and in $Y$
-    	\_comment    
+    	\source   
 		Для произвольных множеств $X$ и $Y$, определим их \emph{пересечение}, то
 		есть новое множество (обозначается $X\cap Y$), которое состоит из всех
     		элементов, которые есть одновременно и в $X$, и в $Y$.
@@ -358,11 +358,11 @@ We will need some well-known set operations.
         \alt
             Two intersecting ovals, the left one marked X, the right one marked Y,
 	    with their intersection filled in.
-	    \_comment    
+	    \source    
 		    Два пересекающихся овала, левый X, правый Y, закрашено их пересечение.
     \caption
     	Set intersection
-        \_comment    
+        \source    
 		Пересечение множеств.
     \label fig:01:intersect
 
@@ -370,7 +370,7 @@ We will need some well-known set operations.
 	For any sets $X$ and $Y$ we define their \emph{union},
 	a new set (denoted by $X\cup Y$) that comprises all elements
 	that are in $X$ or in $Y$ (or in both).
-    	\_comment    
+    	\source    
 		Для произвольных множеств $X$ и $Y$, определим их \emph{объединение}, то
     		есть новое множество (обозначается $X\cup Y$), которое состоит из всех
     		элементов, которые есть хотя бы в одном из множеств $X$, или в $Y$ (или в
@@ -384,12 +384,12 @@ We will need some well-known set operations.
         \alt
 		Two intersecting ovals, the left one marked X, the right one marked Y,
 	    	both filled in.
-            	\_comment    
+            	\source    
 			Два пересекающихся овала, левый X, правый Y, равномерно закрашены
             		оба овала.
     \caption
     	Set union.
-        \_comment    
+        \source    
 		Объединение множеств.
     \label fig:01:union
 
@@ -398,7 +398,7 @@ We will need some well-known set operations.
 	(sometimes written as $X-Y$) is a set that comprises all elements
 	that are in $X$ but not in $Y$. Sometimes (when $Y$ is a subset of $X$)
 	the set $X \setminus Y$ is called a complement of $X$ with respect to $Y$.
-    	\_comment    
+    	\source    
 		Для произвольных множеств $X$ и $Y$, разностью $X \setminus Y$ (также пишут
     		просто $X-Y$) называется множество всех элементов $X$, не содержащихся в
     		$Y$. Иногда говорят \emph{дополнение $Y$ до $X$} (вероятно, наиболее
@@ -412,17 +412,17 @@ We will need some well-known set operations.
         \alt
             Two intersecting ovals, the left one marked X, the right one marked Y,
 	    with the part of X outside of Y filled in.
-            \_comment    
+            \source    
 		Два пересекающихся овала, левый X, правый Y, закрашена часть X, не
             	пересекающаяся с Y.
     \caption
     	Set difference
-        \_comment    
+        \source    
 		Разность множеств.
     \label fig:01:setdiff
     
 \section Mappings \label sec:01:maps
-\_comment    
+\source    
 	\section Отображения \label sec:01:maps
 
 You have probably encountered the notion of a function. In math there are two 
@@ -430,7 +430,7 @@ sets of terms describing the same thing - sometimes the word "function" is used,
 and sometimes "mapping" is used. "Mapping" seems to be a more universal term.
 We could have defined it formally using only the notion of a set, but we will 
 go with an informal description.
-\_comment    
+\source    
 	Вы наверняка встречались с понятием функции. В математике есть два набора
 	терминов, которые описывают одно и то же — в одних случаях используется слово
 	«функция», в других — «отображение». Слово «отображение» выглядит чуть более
@@ -438,25 +438,44 @@ go with an informal description.
 	на понятие множества, но мы ограничимся неформальным описанием.
 
 \quasidefinition 
-    Рассмотрим два произвольных множества $X$ и $Y$. Пусть мы
-    каждому элементу из множества $X$ поставили в соответствие какой-то элемент из
-    множества $Y$. Тогда говорят, что мы задали \emph{отображение} из $X$ в $Y$.
+    Consider two sets $X$ and $Y$. Suppose, to every element of $X$ we assign an element of $Y$.
+    Then we say that we have defined a \emph{mapping} of $X$ into $Y$.
+\source   
+    \quasidefinition 
+    	Рассмотрим два произвольных множества $X$ и $Y$. Пусть мы
+    	каждому элементу из множества $X$ поставили в соответствие какой-то элемент из
+    	множества $Y$. Тогда говорят, что мы задали \emph{отображение} из $X$ в $Y$.
 
 \example
-    Рассмотрим отображение из множества $A=\set{1, 2, 3}$ в множество
-    $L:=\set{\mathtt{a}, \mathtt{b}, \mathtt{c}, \mathtt{d}}$ (здесь $\mathtt{a}$, $\mathtt{b}$,
-    $\mathtt{c}$ и $\mathtt{d}$ — не переменные, а просто  буквы английского
-    алфавита — множества ведь могут содержать не только числа), заданное
-    следующим образом (см. \ref[рис][fig:01:map]: числу $1$ поставили в
-    соответствие букву $\mathtt{b}$, числу $2$ — букву $\mathbb{c}$ и числу $3$
-    — букву $\mathtt{b}$. Таким образом мы задали отображение из $A$ в $L$. Это
-    отображение можно обозначить какой-нибудь буквой, например, буквой $g$.
-    Тогда можно записать: $g(1)=\mathtt{b}$, $g(2)=\mathtt{c}$ и
-    $g(3)=\mathtt{b}$. Говорят также, что под действием отображения $g$, число
+    Consider the mapping of the set $A=\set{1, 2, 3}$ into the set
+    $L:=\set{\mathtt{a}, \mathtt{b}, \mathtt{c}, \mathtt{d}}$ (here $\mathtt{a}$, $\mathtt{b}$,
+    $\mathtt{c}$, and $\mathtt{d}$ are not variables, but simply letters of the English alphabet
+    - sets do not have to contain only numbers), given by the following: to the number $1$ we assign
+    the letter $\mathtt{b}$, to the number $2$ - the letter $c$, and to the number $3$ - the letter $b$,
+    So we defined a mapping of $A$ into $L$. We can denote this mapping by a letter, for example, the letter $g$.
+    Then we can write $g(1)=\mathtt{b}$, $g(2)=\mathtt{c}$, and$g(3)=\mathtt{b}$. 
+    We will say that $g$ maps the number $1$ to the letter $\mathtt{b}$, etc. We will also say that $\mathtt{b}$
+    is the image of the number $1$ under the mapping $g$.
+    Говорят также, что под действием отображения $g$, число
     $1$ переходит в букву $\mathtt{b}$ и т.д. Также можно сказать, что буква
     $\mathbb{b}$ является \emph{образом} числа $1$ под действием отображения
     $g$, и наоборот, число $1$ является одним из \emph{прообразов} буквы
     $\mathtt{b}$.
+    \source
+	Рассмотрим отображение из множества $A=\set{1, 2, 3}$ в множество
+	$L:=\set{\mathtt{a}, \mathtt{b}, \mathtt{c}, \mathtt{d}}$ (здесь $\mathtt{a}$, $\mathtt{b}$,
+	$\mathtt{c}$ и $\mathtt{d}$ — не переменные, а просто  буквы английского
+	алфавита — множества ведь могут содержать не только числа), заданное
+	следующим образом (см. \ref[рис][fig:01:map]: числу $1$ поставили в
+    	соответствие букву $\mathtt{b}$, числу $2$ — букву $\mathbb{c}$ и числу $3$
+    	— букву $\mathtt{b}$. Таким образом мы задали отображение из $A$ в $L$. Это
+    	отображение можно обозначить какой-нибудь буквой, например, буквой $g$.
+    	Тогда можно записать: $g(1)=\mathtt{b}$, $g(2)=\mathtt{c}$ и
+    	$g(3)=\mathtt{b}$. Говорят также, что под действием отображения $g$, число
+    	$1$ переходит в букву $\mathtt{b}$ и т.д. Также можно сказать, что буква
+    	$\mathbb{b}$ является \emph{образом} числа $1$ под действием отображения
+    	$g$, и наоборот, число $1$ является одним из \emph{прообразов} буквы
+    	$\mathtt{b}$.
 
 \figure
     \img
