@@ -3,24 +3,39 @@
 \section Statements \source{Высказывания}
 \subsection Examples of statements \source{Примеры высказываний}
 
+You might think the chapter with such a title must contain strict and formal definitions for each concept introduced.
+Sad to say, this is not the case.
 \source{Вероятно, в главе с таким названием читатель ожидает наконец увидеть аккуратные определения всем вводимым понятиям.}
 \source{Но нет.}
 
 \quasidefinition
+    Statement is a declarative sentence with an unambiguous meaning. 
+    Statements are either true or false. 
     \source{Высказывание — это утверждение с чётко определенным смыслом, которое может быть истинным или ложным.}
 
+As always, examples are very helpful.
 \source{Как обычно, проще привести несколько примеров.}
 
 \example \nonumber
     \itemize
-        \item \source{«$2+2=5$» — пример высказывания. Оно ложно.}
-        \item \source{«$3 > 2$» — ещё один пример высказывания. Оно истинно.}
-        \item \source{«$5$ — простое число» — ещё одно истинное высказывание.}
-        \item \source{«Множество простых чисел конечно» — это ложное высказывание.}
-        \item \source{«Если целое число простое и оно больше двух, оно нечётно» — истинное высказывание.}
-        \item 
+        \item The sentence "$2+2=5$" is a statement. 
+            It is false.
+            \source{«$2+2=5$» — пример высказывания. Оно ложно.}
+        \item Another example is "$3 > 2$". This is a true statement.
+            \source{«$3 > 2$» — ещё один пример высказывания. Оно истинно.}
+        \item Yet another true statement is "$5$ is a prime".
+            \source{«$5$ — простое число» — ещё одно истинное высказывание.}
+        \item The sentence "The set of all prime numbers is finite" is false.
+            \source{«Множество простых чисел конечно» — это ложное высказывание.}
+        \item The sentence "If a prime number is bigger than two, then it is odd" is a true statement.
+            \source{«Если целое число простое и оно больше двух, оно нечётно» — истинное высказывание.}
+        \item There are statements which haven't yet been proven to be true or false. 
+            "Every even number bigger than two can be written as the sum of two prime numbers" is a statement of such kind. 
+            It's actually called \href[Goldbach's conjecture][https://en.wikipedia.org/wiki/Goldbach%27s_conjecture]
             \source{«Каждое чётное число, большее двух, можно представить в виде суммы двух простых чисел» — это высказывание, истинность которого в настоящий момент неизвестна (это так называемая \href[бинарная проблема Гольдбаха][https://ru.wikipedia.org/wiki/Проблема_Гольдбаха]).}
-        \item 
+        \item The sentence "$n$ is an even number" is not a statement because what $n$ stands for is unclear.
+            Because of that, neither true nor false value can be assigned to it.
+            Such sentences are called \emph{predicates}, we will study them in greater detail later
             \source{«$n$ — чётное число» — это не высказывание, потому что непонятно, чему равно $n$ (здесь, конечно, под $n$ подразумевается не собственно буква, а переменная, которая может принимать разные значения), и поэтому это утверждение не является ни ложным, ни истинным. 
             С такого типа утверждениями (они называются \emph{предикатами}) мы познакомимся чуть позже.}
 
