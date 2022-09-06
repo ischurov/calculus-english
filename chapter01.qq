@@ -455,12 +455,8 @@ go with an informal description.
     So we defined a mapping of $A$ into $L$. We can denote this mapping by a letter, for example, the letter $g$.
     Then we can write $g(1)=\mathtt{b}$, $g(2)=\mathtt{c}$, and$g(3)=\mathtt{b}$. 
     We will say that $g$ maps the number $1$ to the letter $\mathtt{b}$, etc. We will also say that $\mathtt{b}$
-    is the image of the number $1$ under the mapping $g$.
-    Говорят также, что под действием отображения $g$, число
-    $1$ переходит в букву $\mathtt{b}$ и т.д. Также можно сказать, что буква
-    $\mathbb{b}$ является \emph{образом} числа $1$ под действием отображения
-    $g$, и наоборот, число $1$ является одним из \emph{прообразов} буквы
-    $\mathtt{b}$.
+    is the image of the number $1$ under the mapping $g$, and, conversely, the number $1$ is in the \emph{pre-image}
+    of the letter $\mathtt{b}$.
     \source
 	Рассмотрим отображение из множества $A=\set{1, 2, 3}$ в множество
 	$L:=\set{\mathtt{a}, \mathtt{b}, \mathtt{c}, \mathtt{d}}$ (здесь $\mathtt{a}$, $\mathtt{b}$,
