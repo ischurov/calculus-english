@@ -39,57 +39,85 @@ As always, examples are very helpful.
             \source{«$n$ — чётное число» — это не высказывание, потому что непонятно, чему равно $n$ (здесь, конечно, под $n$ подразумевается не собственно буква, а переменная, которая может принимать разные значения), и поэтому это утверждение не является ни ложным, ни истинным. 
             С такого типа утверждениями (они называются \emph{предикатами}) мы познакомимся чуть позже.}
 
+НЕ ПЕРЕВЁЛ
 \source{Вместо «истинно» или «ложно» используются и другие синонимичные выражения: верно (неверно), корректно (некорректно) и т.д.}
 
-\subsection \source{Операции с высказываниями}
+\subsection Operations with statements
+    \source{Операции с высказываниями}
 
-\source{Из существующих высказываний можно делать новые высказывания с помощью логических операций (которые также называются операциями булевой алгебры). Пусть даны какие-то высказывания $A$ и $B$.}
+New statements can be created by combining existing ones.
+This can be done by using logical operations (which are called boolean algebra operations).
+Suppose statements $A$ and $B$ are given.
+\source{Из существующих высказываний можно делать новые высказывания с помощью логических операций (которые также называются операциями булевой алгебры). 
+Пусть даны какие-то высказывания $A$ и $B$.}
 
 \definition
+    A statement "at least one of the statements $A$ and $B$ is true" is called a \emph{disjunction}, write $A\vee B$.
+    Another term for disjunction is \emph{logical OR}.
     \source{Высказывание «верно по крайней мере одно из двух высказываний $A$ или $B$ (или оба)», называется \emph{дизъюнкцией} высказываний $A$ и $B$. 
-    Оно обозначается $A\vee B$. Другой термин для дизъюнкции — \emph{логическое «ИЛИ»}.
+    Оно обозначается $A\vee B$. 
+    Другой термин для дизъюнкции — \emph{логическое «ИЛИ»}.
 
 
 \definition
+    A statement "both  of the statements $A$ and $B$ are true" is called a \emph{conjunction}, write $A\wedge B$.
+    Another term for conjunction is \emph{logical AND}.
     \source{Высказывание «верны оба высказывания $A$ и $B$» называется \emph{конъюнкцией} высказываний $A$ и $B$. 
     Оно обозначается $A \wedge B$.
     Другой термин для конъюнкции — \emph{логическое «И»}.}
 
 \definition
+   A statement "$A$ is false" is called a \emph{negation}, write as $\neg A$.
+   Another term for negation is \emph{logical NOT}.
    \source{Высказывание «высказывание $A$ неверно» называется \emph{отрицанием} $A$. Обозначается $\neg A$. Другой термин — \emph{логическое «НЕ»}.}
     
+If the truth values of statements $A$ and $B$ are known, it's straightforward to establish the truthfulness of the conjunction, disjunction and negation. 
+For example, if $A$ is true, then $\neg A$ is false.
+If $A$ and $B$ are both true, then $A\wedge B$ is true, otherwise false, and so on.
+All these variations can be conveniently written in the form of a table, that is called a \emph{truth table}.
 \source{Если про каждое из высказываний $A$ и $B$ известно, является оно истинным или ложным, легко установить истинность их конъюнкции, дизъюнкции и отрицания. 
 Например, если $A$ истинно, то $\neg A$ ложно. 
 Если $A$ и $B$ оба истинны, то $A\wedge B$ истинно, иначе оно ложно. 
 И так далее. 
 Эту информацию удобно записывать в виде табличек, которые называются \emph{таблицами истинности}.}
 
+For example, a truth table for negation looks like this:
 \source{Таблица истинности для отрицания выглядит так:}
 \eq
     \begin{array}{cc}
         A & \neg A \\\\
         \hline
-        \text{И} & \text{Л} \\\\
-        \text{Л} & \text{И} \\\\
+        \text{T} & \text{F} \\\\
+        \text{F} & \text{T} \\\\
         \hline
     \end{array}
 
+The following table is for conjunction and disjunction
 \source{Таблицы истинности для конъюнкции и дизъюнкции:}
 \eq
     \begin{array}{cccc}
         A & B & A \vee B & A \wedge B \\\\
         \hline
-        \text{И} & \text{И} & \text{И} & \text{И} \\\\
-        \text{И} & \text{Л} & \text{И} & \text{Л} \\\\
-        \text{Л} & \text{И} & \text{И} & \text{Л} \\\\
-        \text{Л} & \text{Л} & \text{Л} & \text{Л} \\\\
+        \text{T} & \text{T} & \text{T} & \text{T} \\\\
+        \text{T} & \text{Л} & \text{T} & \text{F} \\\\
+        \text{F} & \text{T} & \text{T} & \text{F} \\\\
+        \text{F} & \text{F} & \text{F} & \text{F} \\\\
         \hline
     \end{array}
 
+There is an another important logical operation, but for now we'll focus on these three.
 \source{В дальнейшем нам понадобится ещё одна важная логическая операция, но пока остановимся на этих.}
 
-\subsection \source{Раскрытие скобок с отрицанием \label ssec:02:deMorg}
 
+\subsection De Morgan's laws \label ssec:02:deMorg
+    \source{Раскрытие скобок с отрицанием \label ssec:02:deMorg}
+
+Suppose $A$ and $B$ are some statements. 
+Consider a statement $\neg(A\vee B)$, which is the negation of $A \vee B$.
+In which case is it true?
+Only when both $A$ and $B$ are false. 
+Indeed, suppose one of them is true, then the disjunction (logical OR) is true, and its negation is false.
+Formally we write
 \source{Пусть $A$ и $B$ — какие-то высказывания. 
 Рассмотрим высказывание $\neg(A\vee B)$, то есть отрицание высказывания $A \vee B$. 
 В каком случае оно истинно?
@@ -102,8 +130,13 @@ As always, examples are very helpful.
         \neg(A\vee B)=(\neg A) &\wedge (\neg B)=
     \splitem \splonly{=}
         \neg A \splonly{&} \wedge \neg B
+The second equality holds because negation has a priority over conjunction.
+In other words, writing $\neg A \wedge \neg B$ means the negations happen first, then the conjunction, so brackets are unnecessary. 
 \source{Второе равенство верно, поскольку операция отрицания имеет приоритет перед конъюнкцией, то есть в формуле $\neg A \wedge \neg B$ сначала выполняются отрицания, а потом конъюнкция, так что скобки вокруг $\neg A$ и $\neg B$ можно не писать.}
 
+Similarly with a statement $\neg(A \wedge B)$.
+If either of the statements $A$ and $B$ is false, then thein conjunction (logical AND) is false, and its negation is true.
+Again, more formally
 \source{Аналогично можно рассмотреть высказывание $\neg(A \wedge B)$. 
 Чтобы оно стало истинным, достаточно, чтобы хотя бы одно из высказываний $A$ или $B$ было ложным: тогда их конъюнкция (логическое И) ложна и её отрицание истинно. 
 Таким образом:}
@@ -114,54 +147,91 @@ As always, examples are very helpful.
     \splitem
         \splonly{&=}\neg A \vee \neg B.
 
+It's safe to say that when dealing with brackets with negation in front, operator $\vee$ changes to $\wedge$ and vice versa.
 \source{Можно сказать, что при раскрытии скобок, перед которыми стоит отрицание, знак $\vee$ меняется на $\wedge$ и наоборот.}
 
+These logical rules are calles \emph{De Morgan's laws}.
 \source{Эти правила преобразования формул в алгебре логики называются \emph{законами де Моргана}.}
 
 \remark
+    De Morgan's laws can be generalized to more than two statements.
+    For example,
     \source{Законы де Моргана мгновенно обобщаются на случай большего количества высказываний. 
     Например:}
     \eq
         \neg(A \wedge B \wedge C) = \neg A \vee \neg B \vee \neg C.
 
-\subsection \source{Логические операции в программировании}
+\subsection Logical operations in programming.
+    \source{Логические операции в программировании}
 
+In commonly used programming languages statements are representes by variables called "boolean values" (for example, \tt{bool} in Python).
+They take two values: true and false (\tt{True} and \tt{False}).
+As an example, consider an expression \tt{2 + 3 == 4}. 
+Its value is \tt{False}.
+On the other hand, \tt{3 > 2} has a value of \tt{True}.
+It's possible to apply logical operations to them. 
+These are called \tt{and}, \tt{or}, and \tt{not}.
+For example, \tt{2 * 0 == 1 or 3 > 2} has a value of \tt{True}.
 \source{В распространённых языках программирования высказываниям соответствуют выражения, имеющие значения типа «булевская величина» (например, в Python это \tt{bool}), то есть принимающие значения «истина» или «ложь» (\tt{True} и \tt{False}). 
 Например, \tt{2 + 3 == 4} имеет значение \tt{False}, а \tt{3 > 2} — \tt{True}. 
 К булевским значениям можно применять логические операторы \tt{and}, \tt{or} и \tt{not}. Например, \tt{2 * 0 == 1 or 3 > 2} имеет значение \tt{True}.}
 
 \comment
+    Consider a line of code \tt{if x > 0 and x < 10: print("ok"). 
+    When executed, it prints \tt{ok} if a variable \tt{x} contains a number greater than $0$ \emph{and} less than $10$.
+    In the process of developing a certain program, logical operators are very useful for creating complex (so called \emph{compound}) statements from simple ones.
     \source{Например: \tt{if x > 0 and x < 10: print("ok")} — на экран будет выведена строка \tt{ok} если в переменной \tt{x} находится значение больше 0 \emph{и} меньше 10. 
     С помощью логических операторов можно составлять сложные условия из простых, и это часто приходится делать, чтобы реализовать ту или иную логику работы приложения.}
 
-\section \source{Предикаты и кванторы}
+\section Predicates and quantifiers
+    \source{Предикаты и кванторы}
 
-\subsection \source{Примеры предикатов}
+\subsection Examples of predicates
+    \source{Примеры предикатов}
 
+In this chapter we've encountered a sentence "$n$ is even". 
+When faced with the question of its truth value, one can argue it doesn't make sence since it's not specified what exactly $n$ stands for.
+This is an example of a sentence that is not a statement.
+Instead, such sentences are called \emph{predicates}.
 \source{Выше фигурировал пример утверждения «$n$ — чётное число». 
-Если задать вопрос, является оно истинным или ложным, вы скорее всего скажете, что вопрос не имеет смысла: как можно на него ответить, если не знаешь, чему равно $n$? Это пример утверждения, не являющегося высказыванием. 
+Если задать вопрос, является оно истинным или ложным, вы скорее всего скажете, что вопрос не имеет смысла: как можно на него ответить, если не знаешь, чему равно $n$? 
+Это пример утверждения, не являющегося высказыванием. 
 Утверждения такого типа называются \emph{предикатами}.}
 
 \quasidefinition
+    Roungly speaking, a \emph{predicate} is a sentence which contains one or more variables. 
+    It becomes a statement if the values of \emph{all} variables are specified. 
     \source{Грубо говоря, \emph{предикат} — это такое утверждение, которое зависит от одной или нескольких переменных, и становится высказыванием, если задать значения этих переменных.}
 
 \example
+    Consider a predicate "$n$ is even".
+    To be concise and formal, predicates are often written like so: $E(n)$.
+    By substituting a certain value into $n$ it becomes a statement, either true or false.
+    For example, $E(2)$ is true, while $E(17)$ is false.
+    When dealing with a function, we always define its domain.
+    In similar way, predicates also have their domains, or the set of all values their variables are allowed to take.
+    In this example, let's define the range of $E(n)$ to be all natural numbers $n\in \mathbb N$. 
+    (Noone can restrict us to this particular domain—other ones are also allowed).
     \source{Рассмотрим предикат «$n$ — чётное число». 
     Его можно обозначить какой-нибудь буквой, аналогично обозначению функций — например, $E(n)$. 
     При подстановке конкретного $n$ предикат становится высказыванием, которое является истинным или ложным. 
     Например, $E(2)$ истинно, а $E(17)$ — ложно. 
     Подобно функциям, у предикатов есть «область определения» — множество значений, которые могут принимать переменные. 
     Например, давайте считать, что областью определения для $E(n)$ является множество натуральных чисел, $n\in \mathbb N$ (но можно было бы определить аналогичный предикат и для множества всех целых чисел).}
-\example
+\example Consider a predicate $D(k, n)$ which denotes the sentence "$n$ is divisible by $k$".
+    This predicates depends on two variables $k$ and $n$.
+    Suppose also that $n\in \mathbb N$ and $k \in \mathbb N$.
+    By trying some values we see,  $D(2, 3)$ is false and D(2, 4)$ is true.
     \source{Определим предикат $D(k, n)$ — «$n$ делится на $k$». 
     Этот предикат зависит от двух переменных. 
     Будем считать, что $n\in \mathbb N$ и $k \in \mathbb N$. 
     Например, $D(2, 3)$ — ложь, а $D(2, 4)$ — истина.}
-\example
+\example We will need a predicate $S(x, y):=«x^2=y»$, where $x$ and $y$ are real numbers.
+    It checks whether $x^2$ is equal to $y$ or not.
     \source{Ещё нам понадобится предикат $S(x, y):=«x^2=y»$, определенный для вещественных $x$ и $y$. 
     Он проверяет, что $x^2$ равняется $y$.}
 
-\remark
+\remark From now on in this chapter variables $m$, $n$, and $k$ denote (only) natural numbers, in contrast to $x$ and $y$ denoting (only) real numbers.
     \source{В дальнейшем в этой главе, если не оговорено обратное, мы будем считать, что буквы $m$, $n$, $k$ обозначают натуральные числа, а $x$ и $y$ — вещественные.}
 
 \source{Одни предикаты можно определять через другие. 
