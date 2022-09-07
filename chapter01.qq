@@ -479,29 +479,48 @@ go with an informal description.
         \style
             padding: 1em; max-width:300px;
         \alt
-            Два овала, в левом отмечены точки 1, 2, 3, он подписан A, в правом точки
-            a, b, c, d, он подписан L. Есть стрелочки от 1 к b, от 2 к c и от 3 к b. 
+		Two ovals, inside the left one there are dots labelled 1,2,3, the oval is labeled A;
+		inside the right one there are dots leabelled a,b,c,d, the oval is labelled L. There
+		are arrows leading from 1 to b, from 2 to c, and from 3 to b.
+		\source
+            		Два овала, в левом отмечены точки 1, 2, 3, он подписан A, в правом точки
+            		a, b, c, d, он подписан L. Есть стрелочки от 1 к b, от 2 к c и от 3 к b. 
     \caption
-        Пример отображения.
+    	An example of a mapping.
+	\source
+	        Пример отображения.
     \label fig:01:map
-Если задано отображение $f$ из множества $X$ в множество $Y$, пишут:
+If a mapping $f$ of a set $X$ into a set $Y$ is defined we write:
+\source
+	Если задано отображение $f$ из множества $X$ в множество $Y$, пишут:
 \eq
     f\colon X \to Y.
 
-Можно представить себе отображение $f\colon X \to Y$ как такую картинку, в
-которой из каждого элемента множества $X$ выходит стрелочка, которая ведёт к
-какому-то элементу множества $Y$. При этом стрелочки обязаны выходить из всех
-элементов $X$, но не обязаны входить во все элементы $Y$. Важно также, что
-из каждого элемента $X$ выходит ровно одна стрелочка, то есть каждый элемент
-множества $X$ отображается ровно в один элемент множества $Y$.
+We can think of a mapping $f\colon X \to Y$ a picture where each element of the set $X$
+has an arrow leading from it to an element of the set $Y$. Moreover every element of the set $X$
+must have an arrow leaving it, but not all elements of $Y$ must have an arrow pointing to it.
+It is also important that exactly one arrow leaves each element of the set $X$, i.e. 
+every element of the set $X$ maps to exactly one element of the set $Y$.
+\source
+	Можно представить себе отображение $f\colon X \to Y$ как такую картинку, в
+	которой из каждого элемента множества $X$ выходит стрелочка, которая ведёт к
+	какому-то элементу множества $Y$. При этом стрелочки обязаны выходить из всех
+	элементов $X$, но не обязаны входить во все элементы $Y$. Важно также, что
+	из каждого элемента $X$ выходит ровно одна стрелочка, то есть каждый элемент
+	множества $X$ отображается ровно в один элемент множества $Y$.
 
 \snippet \flabel инъективно \label snip:injection
     \definition
-        Отображение $f\colon X \to Y$ называется \emph{инъективным} (или просто
-        \emph{инъекцией}), если оно «не склеивает точки», то есть не переводит две
-        разные точки в одну и ту же. Если представлять отображение в виде картинки
-        со стрелочками, это соответствует тому, что нет двух стрелочек, ведущих в
-        одну и ту же точку.
+    	A mapping $f\colon X \to Y$ is called \emph{injective} (or just an \emph{injection})
+	if it does not "glue points together", i.e. does not map two different points to the same one.
+	If we think of a mapping as a picture with arrows this corresponds to not having two arrows going 
+	to the same place.
+	\source
+        	Отображение $f\colon X \to Y$ называется \emph{инъективным} (или просто
+        	\emph{инъекцией}), если оно «не склеивает точки», то есть не переводит две
+        	разные точки в одну и ту же. Если представлять отображение в виде картинки
+        	со стрелочками, это соответствует тому, что нет двух стрелочек, ведущих в
+        	одну и ту же точку.
 
 \figure
     \img
@@ -509,21 +528,34 @@ go with an informal description.
         \style
             padding: 1em;
         \alt
-            Две картинки. Слева два овала, в левом точки 1, 2, 3. В правом точки
-            a, b, c, d. Есть стрелочки от 1 к a, от 2 и 3 к b. Подпись: не
-            инъективное. Справа тоже два овала с такими же точками. Стрелочки из
-            1 в b, из 2 в с, из 3 в a. Подпись: инъективное.
+		Two pictures. On the left one there are two ovals, in the left one there are dots labelled
+		1,2,3. In the right one there are dots labelled a,b,c,d. There are arrows from 1 to b, from 
+		2 to c, and from 3 to b. The picture is labelled "Not injective". On the right one there are 
+		the same ovals with the same dots. The arrows go from 1 to b, from 
+		2 to c, and from 3 to a. The picture is labelled "Injective".
+		\source
+            		Две картинки. Слева два овала, в левом точки 1, 2, 3. В правом точки
+            		a, b, c, d. Есть стрелочки от 1 к a, от 2 и 3 к b. Подпись: не
+            		инъективное. Справа тоже два овала с такими же точками. Стрелочки из
+            		1 в b, из 2 в с, из 3 в a. Подпись: инъективное.
     \caption
-        Не инъективное (слева) и инъективное (справа) отображения.
+    	Non-injective (left) and injective (right) mappings.
+        \source
+		Не инъективное (слева) и инъективное (справа) отображения.
     \label fig:01:injective
 
 \definition
-    Отображение $f\colon X \to Y$ называется \emph{сюръективным} (или просто
-    \emph{сюръекцией}), если в любую точку множества $Y$ что-то переходит. Иными
-    словами, у любой точки множества $Y$ есть хотя бы один прообраз под
-    действием $f$. Если представлять отображение в виде картинки
-    со стрелочками, это соответствует тому, что в каждую точку $Y$ ведёт хотя бы
-    одна стрелочка.
+    A mapping $f\colon X \to Y$ is called \emph{surjective} (or just a \emph{surjection})
+    if every element of the set $Y$ has something mapping to it. In other words every element of the set $Y$
+    has something in the preimage under the mapping $f$. If we think of a mapping as a picture with arrows
+    this corresponds to every point of the set $Y$ has at least one arrow going to it.
+    \source
+    	Отображение $f\colon X \to Y$ называется \emph{сюръективным} (или просто
+    	\emph{сюръекцией}), если в любую точку множества $Y$ что-то переходит. Иными
+    	словами, у любой точки множества $Y$ есть хотя бы один прообраз под
+    	действием $f$. Если представлять отображение в виде картинки
+    	со стрелочками, это соответствует тому, что в каждую точку $Y$ ведёт хотя бы
+    	одна стрелочка.
 
 \figure
     \img
@@ -531,12 +563,20 @@ go with an informal description.
         \style
             padding: 1em;
         \alt
-            Две картинки. Слева два овала, в левом точки 1, 2, 3, 4, 5. В правом точки
-            a, b, c, d. Есть стрелочки от 1 к a, от 2 и 3 к c, от 5 к b. Подпись: не
-            сюръективное. Справа тоже два овала с такими же точками. Стрелочки из
-            1 в a, из 2 и 3 в с, из 4 в d, из 5 в b. Подпись: сюръективное.
+		Two pictures. On the left one there are two ovals, in the left one there are dots labelled
+		1,2,3,4,5. In the right one there are dots labelled a,b,c,d. There are arrows from 1 to a, from 
+		2 and 3 to c, and from 4 and 5 to b. The picture is labelled "Not surjective". On the right one there are 
+		the same ovals with the same dots. The arrows go from 1 to a, from 
+		2 and 3 to c, from 4 to d, and from 5 to b. The picture is labelled "Surjective".
+		\source
+            		Две картинки. Слева два овала, в левом точки 1, 2, 3, 4, 5. В правом точки
+            		a, b, c, d. Есть стрелочки от 1 к a, от 2 и 3 к c, от 5 к b. Подпись: не
+            		сюръективное. Справа тоже два овала с такими же точками. Стрелочки из
+            		1 в a, из 2 и 3 в с, из 4 в d, из 5 в b. Подпись: сюръективное.
     \caption
-        Не сюръективное (слева) и сюръективное (справа) отображения.
+    	Non-surjective (left) and surjective (right) mappings.
+        \source
+	        Не сюръективное (слева) и сюръективное (справа) отображения.
     \label fig:01:surj
 \snippet \flabel биекция \label snip:bijection
     \definition
