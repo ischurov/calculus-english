@@ -71,7 +71,7 @@ Suppose statements $A$ and $B$ are given.
    Another term for negation is \emph{logical NOT}.
    \source{Высказывание «высказывание $A$ неверно» называется \emph{отрицанием} $A$. Обозначается $\neg A$. Другой термин — \emph{логическое «НЕ»}.}
     
-If the truth values of statements $A$ and $B$ are known, it's straightforward to establish the truthfulness of the conjunction, disjunction and negation. 
+If the truth values of statements $A$ and $B$ are known, it's straightforward to establish the truth value of the conjunction, disjunction and negation. 
 For example, if $A$ is true, then $\neg A$ is false.
 If $A$ and $B$ are both true, then $A\wedge B$ is true, otherwise false, and so on.
 All these variations can be conveniently written in the form of a table, that is called a \emph{truth table}.
@@ -234,22 +234,36 @@ Instead, such sentences are called \emph{predicates}.
 \remark From now on in this chapter variables $m$, $n$, and $k$ denote (only) natural numbers, in contrast to $x$ and $y$ denoting (only) real numbers.
     \source{В дальнейшем в этой главе, если не оговорено обратное, мы будем считать, что буквы $m$, $n$, $k$ обозначают натуральные числа, а $x$ и $y$ — вещественные.}
 
+It's possible to define new predicates from existing ones.
+For example, suppose we have a predicate $D$, that checks devisibility. 
+If we need to make a predicate $E$, that checks whether a number is even, $D$ can help:
 \source{Одни предикаты можно определять через другие. 
 Например, если бы у нас был готовый предикат $D$, проверяющий делимость, и нам нужно было изготовить из него предикат $E$, проверяющий число на чётность, его легко можно было бы задать таким образом:}
 
 \eq
     E(n):=D(2, n).
 
+In the following section we will discuss an another way to define a predicate.
 \source{В следующем разделе мы познакомимся с ещё одним способом создания новых предикатов из существующих.}
 
-\subsection \source{Квантор всеобщности}
+\subsection Universal quantifier
+    \source{Квантор всеобщности}
 
+Consider a predicate $T(n):=D(1, n)$.
+It checks, whether a natural number $n$ is divisible by $1$. 
+(Note that every natural number is divisible by $1$).
+It can also be restates this way: "for all $n$ predicate $T(n)$ is true".
+Too many words, isn't it?
+There is a short way of representing the same thing:
 \source{Давайте рассмотрим предикат $T(n):=D(1, n)$. 
-Он проверяет, что натуральное число $n$ делится на $1$. Но все натуральные числа делятся на 1! 
+Он проверяет, что натуральное число $n$ делится на $1$. 
+Но все натуральные числа делятся на 1! 
 Это можно сформулировать следующим образом: «для всех значений $n$ предикат $T(n)$ имеет значение „истина”». 
 Есть специальный короткий способ записывать такого типа утверждения:}
 \eq
     \forall n \\ T(n).
+A sign $\forall$ (upside down A, from \emph{all}) is called a \emph{universal quantifier}.
+It is read "for all".
 \source{Знак $\forall$ (перевёрнутая буква A, от \emph{all}) называется \emph{квантором всеобщности}. 
 Он читается «для всякого». }
 
@@ -264,27 +278,50 @@ Instead, such sentences are called \emph{predicates}.
     определении предиката или её можно понять из контекста.
 
 \question
+    Consider a statement $\forall n \\ E(n)$, where $E(n)$ is a predicare, that checks whether a natural number $n$ is even.
+    What are your thoughts about this one.
     \source{Рассмотрим утверждение $\forall n \\ E(n)$, где $E(n)$ — предикат, проверяющий, что натуральное число $n$ является чётным. 
     Что вы можете сказать про построенное таким образом утверждение?}
     \quiz
         \choice
+            It is true.
             \source{Оно истинно.}
             \comment
-                \source{Вы уверены? В этом утверждении сказано: «для любого натурального $n$ верно, что $n$ чётно». 
+                Are you sure? 
+                In other words, it states that all natural numbers are even.
+                \source{Вы уверены? 
+                В этом утверждении сказано: «для любого натурального $n$ верно, что $n$ чётно». 
                 Иными словами, это утверждение можно переписать так: «все натуральные числа — чётны».}
         \choice \correct
+            It is false.
             \source{Оно ложно.}
             \comment
+                Yes, because odd numbers exist.
+                For example, $E(3)$ is false.
                 \source{Да, потому что бывают нечётные числа. 
                 Например, $E(3)$ — ложно.}
         \choice
+            It's impossible to determine its truth value.
             \source{Невозможно определить его истинность, зависит от значения $n$.}
             \comment
-                \source{Нет! В этом утверждении сказано: «для любого натурального $n$ верно, что $n$ чётно». 
+                No!
+                It's false simply because there are natural numbers that are not even.
+                They are called odd numbers.
+                \source{Нет! 
+                В этом утверждении сказано: «для любого натурального $n$ верно, что $n$ чётно». 
                 Иными словами, это утверждение можно переписать так: «все натуральные числа — чётны». 
                 Это утверждение попросту неверно.}
 
 \remark \label rem:02:bound
+    Suppose $P(x)$ is some predicate.
+    Consider a sentence $\forall x \\ P(x)$.
+    If for all values of $x$ a statement $P(x)$ is true, then considered sentence is also true.
+    Otherwise it is false.
+    (This verifies the sentence is a statement).
+    Notice that although $x$ is contained in the sentence, we cannot substitute any values in it.
+    (A sentence $\forall 2 \\ P(2)$ does not make sence at all, because right after a quantifier there must be a variable).
+    In such cases $x$ is called a \emph{bound} variable, in contrast to \emph{free} variables in all statement above, that doesn't have any universal quantifiers.
+    It's somewhat "bound" to the statement and we cannot manipulate it in any way.
     \source{Пусть $P(x)$ — какой-то предикат. 
     Рассмотрим утверждение $\forall x \\ P(x)$. 
     Если $P(x)$ при всех значениях $x$ является истинным, значит, это утверждение истинно. 
@@ -294,8 +331,11 @@ Instead, such sentences are called \emph{predicates}.
     Нельзя записать $\forall 2 \\ P(2)$, это не имеет смысла, поскольку после квантора обязательно должна идти переменная, а не какое-то конкретное число. 
     Переменная $x$ в этом случае называется \emph{связанной}: она существует как бы только внутри утверждения, но «извне» мы не можем её менять.}
 
-\subsection \source{Квантор существования}
+\subsection Existential quantifier
+    \source{Квантор существования}
 
+\emph{Perfect numbers} are natural numbers, that equal the sum of their (positive) divisors different from the number itself. 
+(These divisors are called \emph{proper divisors}).
 \source{\emph{Совершенными числами} называются натуральные числа, которые равны сумме всех своих положительных делителей, отличных от самого числа (так называемых «собственных делителей»).}
 
 \source{Рассмотрим предикат $R(n)$, проверяющий, является ли натуральное число $n$ совершенным. 
