@@ -338,36 +338,53 @@ It is read "for all".
 (These divisors are called \emph{proper divisors}).
 \source{\emph{Совершенными числами} называются натуральные числа, которые равны сумме всех своих положительных делителей, отличных от самого числа (так называемых «собственных делителей»).}
 
+Consider a predicate $R(n)$, which checks whether a natural number $n$ is a perfect number.
+(In other words, it states that "$n$ is a perfect number").
 \source{Рассмотрим предикат $R(n)$, проверяющий, является ли натуральное число $n$ совершенным. 
 (Иными словами, $R(n)$ соответствует утверждению «$n$ — совершенное число».)}
 
+By choosing a particular $n$ we can easily check whether it is perfect or not.
+For example, a number $10$ has three proper divisors: $5$, $2$, and $1$, but $5+2+1=8\ne 10$.
+Hence $10$ is not a perfect number.
+To check the truth value of $R(n)$, it's useful to know whether perfect numbers exist at all.
+In other words, is the statement "there exist at least one value of $n$, such that $R(n)$ is true" a true statement?
 \source{Если взять какое-то конкретное $n$, очень легко проверить, является ли оно совершенным. 
 Например, число $10$ имеет три собственных делителя, $5$, $2$ и $1$, но $5+2+1=8\ne 10$ — значит, оно не совершенное. 
 Но существуют ли вообще совершенные числа? 
 Иными словами, верно ли утверждение: «существует такое $n$, что $R(n)$ имеет значение „истина”»?}
 
+For formulating such statements there exist an another short notation.
 \source{Для формулирования таких утверждений также есть специальное короткое обозначение:}
 \eq
     \exists n \\ R(n).
 
 \comment
-    \source{или}
+    \source{or}
     \eq
         \exists n\in \mathbb N\colon R(n).
 
+A sign $\exists$ (mirrored letter E, from \emph{exists}) is called an \epmh{existential quantifier} and is read as "there exists".
 \source{Знак $\exists$ (перевернутая буква E, от \emph{exists}) называется \emph{квантором существования}. 
 Читается просто «существует [такое]».}
 
+Similarly to a universal quantifier, an existential quantifier "bounds" the variable after it.
+Notice that a statement $\exists n\\ R(n)$, despite containing a variable $n$, is not actually a predicate (it doesn't depend on $n$).
+It's a statement because perfect numbers either exist (which makes the sentence true), or not (making it false).
 \source{Аналогично квантору всеобщности (см. \ref[замечание][rem:02:bound]), квантор существования «связывает» соответствующую переменную. 
 Утверждение $\exists n\\ R(n)$, хотя в нём фигурирует переменная $n$, не является предикатом, зависящим от $n$. 
 Это просто высказывание, которое является истинным (если совершенные числа существуют), или ложным (если их нет).}
 
+In fact, perfect numbers do exist. 
+For example a number $6$ is a perfect number because $3+2+1=6$.
+This prooves that a statement $\exists n \\ R(n)$ is true.
 \source{Кстати, совершенные числа существуют. 
 Например, число 6 совершенно. 
 Это доказывает, что утверждение $\exists n \\ R(n)$ является истинным.}
 
-\subsection \source{Кванторы и отрицание \label ssec:02:quant-neg}
+\subsection Quantifiers and negation
+    \source{Кванторы и отрицание \label ssec:02:quant-neg}
 
+We can generalize \ref[De Morgan's laws\nonumber][ssec:02:deMorg] for statements and predicates involving quantifiers.
 \source{Есть обобщение \ref[законов де Моргана\nonumber][ssec:02:deMorg] на формулы с кванторами.
 Рассмотрим какой-нибудь предикат $P(x)$. 
 (Например, $x$ принадлежит множеству всех крокодилов, а $P(x)$ проверяет, что крокодил $x$ является красным.)}
