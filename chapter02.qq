@@ -385,23 +385,35 @@ This prooves that a statement $\exists n \\ R(n)$ is true.
     \source{Кванторы и отрицание \label ssec:02:quant-neg}
 
 We can generalize \ref[De Morgan's laws\nonumber][ssec:02:deMorg] for statements and predicates involving quantifiers.
+Consider a predicate $P(x)$.
+To be specific, let $P(x)$ state that "given a crocodile $x$, it is red".
 \source{Есть обобщение \ref[законов де Моргана\nonumber][ssec:02:deMorg] на формулы с кванторами.
 Рассмотрим какой-нибудь предикат $P(x)$. 
 (Например, $x$ принадлежит множеству всех крокодилов, а $P(x)$ проверяет, что крокодил $x$ является красным.)}
 
+Consider a statement $\forall x \\ P(x)$ ("all crocodiles are red").
+It is sufficient to give an example (in such cases called a \emph{counterexample}) of a crocodile which is \emph{not} red.
+More formally, the following equality holds:
 \source{Рассмотрим высказывание $\forall x \\ P(x)$ («все крокодилы красные»). 
 Чтобы его опровергнуть (то есть доказать его отрицание), достаточно предъявить какого-нибудь крокодила, который бы не был красным. 
 Иными словами, верно равенство:} 
 \equation \label eq:02:negofrall
     \neg(\forall x \\ P(x)) = (\exists x \\ \neg P(x))
+Similarly, we can consider a statement $\exists x \\ P(x)$ ("there exist at least one red crocodile").
+The way to disprove it is to check \emph{each} crocodile.
+In other words, 
 \source{Аналогично, можно рассмотреть утверждение $\exists x \\ P(x)$ («существует по крайней мере один красный крокодил»). 
 Чтобы его опровергнуть, нужно перебрать всех крокодилов, и проверить, что каждый из них не является красным. 
 Иными словами, верно такое равенство:}
 \equation \label eq:02:negexists
     \neg(\exists x \\ P(x)) = (\forall x \\ \neg P(x))
+Now we state that negation acts on quantifiers by changing to a "negative" of itself: "there exist at least one" becomes "for any" and vice versa.
 \source{Можно сказать, что при переносе знака отрицания через квантор он меняется на обратный: существование на всеобщность и наоборот.}
 
 \remark
+    Consider some predicate $P(x)$ defined on a set $\set{1, 2, 3}$.
+    Then a statement $\forall x \\ P(x)$ is equivalent to $P(1) \wedge P(2) \wedge P(3)$.
+    Its negation can be restated using De Morgan's laws:
     \source{Рассмотрим какой-нибудь предикат $P(x)$, определенный на множестве $\set{1, 2, 3}$. 
     Тогда утверждение $\forall x \\ P(x)$ эквивалентно такому: $P(1) \wedge P(2) \wedge P(3)$. 
     Его отрицание легко переписать по законам де Моргана:}
@@ -409,60 +421,99 @@ We can generalize \ref[De Morgan's laws\nonumber][ssec:02:deMorg] for statements
         \item \neg(P(1) \wedge P(2) \wedge P(3))=
         \splitem \splonly{=}  \neg P(1) \vee \neg P(2)
             \vee \neg P(3).
+    Clearly, the last statement is equivalent to $\exists x\\ \neg P(x)$.
+    This way we've shown (with the help of De Morgan) that negation acts on quantifiers the way we described.
     \source{Оно в свою очередь эквивалентно $\exists x\\ \neg P(x)$. 
     Таким образом, правило переноса знака отрицания через квантор — это действительно обобщение законов де Моргана.}
 
-\section \source{Кванторы и предикаты с несколькими переменными}
-\subsection \source{Связывание одной переменной}
+\section Quantifiers and predicates with multiple variables
+    \source{Кванторы и предикаты с несколькими переменными}
+\subsection Bounding one of the variables
+    \source{Связывание одной переменной}
 
+Consider a predicate $S(x, y):=«x^2=y»$, defined on real numbers.
+Now let's form a sentence $\exists x \\ S(x, y)$ and investigate its nature.
 \source{Рассмотрим предикат $S(x, y):=«x^2=y»$, определённый для вещественных $x$ и $y$.
 Рассмотрим такое утверждение: $\exists x \\ S(x, y)$. 
 Что это за объект?}
 
-\sourceЕсли задать конкретное значение $y$, например, $y=4$, получается такая штука: $\exists x \\ S(x, 4)$, или попросту}
+If we fix the value of $y$ to equal to $4$, we get $\exists x \\ S(x, 4)$, or simply
+\source{Если задать конкретное значение $y$, например, $y=4$, получается такая штука: $\exists x \\ S(x, 4)$, или попросту}
 \eq
     \exists x \enspace (x^2=4).
+In other words, we get a statement about the existence of a square root of $4$.
+This is a statement (since it doesn't depend on anything), and the straighforward way to proove it is to provide an example $x=2$.
 \source{Иными словами, получается высказывание о том, что существует квадратный корень из числа $4$. 
 Это высказывание ни от чего не зависит и является верным, чтобы его доказать, достаточно предъявить $x=2$.}
 
+What if we choose $y$ to equal $-1$ istead?
+In this case we get a statement
 \source{Однако, можно выбрать другое значение $y$, например, положить $y=-1$. 
 Тогда получается утверждение}
 \eq
     \exists x \enspace (x^2=-1).
+This statement is false since a square of a \emph{real} number is always nonnegative. 
+This ensures there exist no real number with a square root equal to $-1$. 
 \source{Это утверждение неверно: мы знаем, что квадраты вещественных чисел неотрицательны, и значит не существует такого $x$, что его квадрат равен $-1$.}
 
+Now back to a sentence $\exists x \\ S(x, y)$.
+We've seen that it's possible to get different results (either true, or false values) depending on the values of $y$.
+This means we have a predicate, which depends on $y$.
+Let's denote it by $Q(y)$.
+We can write:
 \source{Вернёмся теперь к утверждению $\exists x \\ S(x, y)$. 
 Мы видим, что в это утверждение вместо $y$ можно подставлять различные числа и получать разные высказывания — верные и неверные. 
-Значит, перед нами предикат, зависящий от $y$. Обозначим его через $Q(y)$. Можно записать:}
+Значит, перед нами предикат, зависящий от $y$. 
+Обозначим его через $Q(y)$. 
+Можно записать:}
 \eq
     Q(y):=(\exists x \\ S(x, y))
+Notice that we've originally had a predicate $S(x, y)$ with two variables, out of which we've constructed an another predicate $Q(y)$, which depends only on $y$.
+One cay say we've "bounded" a variable $x$ by putting a quantifier in front of it.
+In a statement $\exists x \\ S(x, y)$ a variable $x$ is called a \emph{free} variable (recall that $y$ is called \emph{bounded}). 
 \source{Таким образом, из предиката с двумя переменными $S$ мы получили предикат с одной переменной $y$, поскольку переменную $x$ «связали» с помощью квантора. 
 В высказывании $\exists x \\ S(x, y)$ переменная $y$ называется «свободной» (мы можем задавать её значения как хотим и получать разные высказывания), а переменная $x$ — «связанной».}
 
-\subsection \source{Последовательное применение кванторов}
+\subsection КАК ПЕРЕВЕСТИ?
+    \source{Последовательное применение кванторов}
 
+Consider a predicate G(n, m):=«n>m»$, defined on a set of natural numbers.
+It checks, whether $n$ is bigger thatn $m$ or not.
+Define a new predicate
 \source{Рассмотрим предикат $G(n, m):=«n>m»$, определенный на множестве натуральных чисел. 
 Он проверяет, что $n$ больше $m$. 
 Введём новый предикат:} 
 \eq
     Z(m):=(\exists n \\ G(n, m))=(\exists n \enspace (n>m)).
+Now we consider a statement $\forall m \\ Z(m)$, which can be restated as
 \source{Теперь можно рассмотреть высказывание $\forall m \\ Z(m)$. 
 Его можно записать так:}
 \equation
     \forall m \\ (\exists n \enspace (n > m)).
+We can remove the parentheses and get
 \source{Скобки вокруг предиката $(\exists n \\ (n > m))$ можно убрать, и получится такая запись:}
 \equation \label eq:02:forallexists
     \forall m\\ \exists n \enspace (n > m).
+This statement is read as "for all $m$ there exist such $n$ that $n>m$".
 \source{Читается: «для всякого $m$ существует такое $n$, что $n>m$».}
 
+Observe, that at first we've had a predicate with two variables, then we've "bounded" each of it and got a statement.
 \source{Во-первых, нужно заметить, что получившееся утверждение не является предикатом — мы последовательно связали обе переменные и то, что получилось, уже ни от чего не зависит, это просто высказывание, которое может быть истинным или ложным.}
 
+Is it true.
+Yes, it is. 
+Take an arbitrary natural number $m$.
+Notice $Z(m)$ is true since we can take $n=m+1$ and get the desired result.
+Since the reasoning above is true for an arbitrary element of natural numbers, it is true for all natural numbers.
 \source{Является ли оно истинным? 
-Да, является. 
 Действительно, возьмём любое $m$.
 Заметим, что для него предикат $Z(m)$ верен, поскольку существует такое $n$ (например, можно взять $n=m+1$), для которого $n>m$. 
 (Действительно, $m+1>m$, каким бы ни было $m$.)}
 
+We can spell the sentence out (which can often be helpful): "for every natural number we can find a number bigger than it".
+It's somewhat tempting to restate it as "there is a natural number bigger than any given natural number".
+But in fact, these two statements are not the same. 
+The latter is formally written as
 \source{Словами это высказывание можно было бы записать так: «для всякого натурального числа найдётся большее его число». 
 Эта формулировка с точки зрения привычного нам языка выглядит немножко неестественно и может возникнуть искушение сделать её более привычной, переформулировав таким образом: «найдется натуральное число, большее любого другого натурального числа». 
 Однако, то, что в результате получилось — не переформулировка исходного утверждения, а совсем другое высказывание. 
@@ -471,6 +522,14 @@ We can generalize \ref[De Morgan's laws\nonumber][ssec:02:deMorg] for statements
 \equation \label eq:02:existsforall
     \exists n\\ \forall m \enspace (n > m)
 
+This statement is different from \ref{eq:02:forallexists} only in the order of quantifiers, but if you think about it, the meaning has changed.
+In the process of proving a statement \ref{eq:02:forallexists}, the strategy was to choose an exceeding number for a \emph{particular} given number.
+In a statement \ref{eq:02:existsforall}, on the other hand, there must exist the one and only number $n$, that makes $n>m$ true for all natural $m$.
+It's easy to see that there are no such natural number.
+No matter how big we make $n$, for $m=n$ (or $m=n+1$, or $m=n+2$ and so on), a predicate $n>m$ will be false. 
+Now it's clear that the order of quantifiers is very important: it can change the way the corresponding variables are chosen.
+In our case the order of quantifiers changed a truth value: the first statement is true, while the second is false.
+But is not the case in general (think of a statement for which changing the order of quantifiers preserves its truth value), and the main takeaway is that different orders of quantifiers make different statements.
 \source{Как видно, эта формулировка отличается от \ref{eq:02:forallexists} только порядком следования кванторов. 
 Однако, её смысл совсем иной. 
 При доказательстве высказывания \ref{eq:02:forallexists} мы для каждого конкретного $m$ могли выбирать своё $n$, так, чтобы сделать предикат $n>m$ справедливым. 
