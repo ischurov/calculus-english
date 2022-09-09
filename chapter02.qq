@@ -381,7 +381,7 @@ This prooves that a statement $\exists n \\ R(n)$ is true.
 Например, число 6 совершенно. 
 Это доказывает, что утверждение $\exists n \\ R(n)$ является истинным.}
 
-\subsection Quantifiers and negation
+\subsection Quantifiers and negation \label ssec:02:quant-neg
     \source{Кванторы и отрицание \label ssec:02:quant-neg}
 
 We can generalize \ref[De Morgan's laws\nonumber][ssec:02:deMorg] for statements and predicates involving quantifiers.
@@ -474,7 +474,7 @@ In a statement $\exists x \\ S(x, y)$ a variable $x$ is called a \emph{free} var
 \source{Таким образом, из предиката с двумя переменными $S$ мы получили предикат с одной переменной $y$, поскольку переменную $x$ «связали» с помощью квантора. 
 В высказывании $\exists x \\ S(x, y)$ переменная $y$ называется «свободной» (мы можем задавать её значения как хотим и получать разные высказывания), а переменная $x$ — «связанной».}
 
-\subsection КАК ПЕРЕВЕСТИ?
+\subsection Order of quantifiers
     \source{Последовательное применение кванторов}
 
 Consider a predicate G(n, m):=«n>m»$, defined on a set of natural numbers.
@@ -540,8 +540,13 @@ But is not the case in general (think of a statement for which changing the orde
 В данном случае при изменении порядка кванторов получились разные результаты: утверждение с одним порядок истинное, а с другим ложное. 
 Так бывает не всегда (придумайте пример, когда это не так), но важно понимать, что изменение порядка следования кванторов создаёт другое утверждение.}
 
-\subsection \source{Отрицание и серия кванторов \label ssec:02:quant-neg-series}
+\subsection Negation acts on a series of quantifiers \label ssec:02:quant-neg-series
+    \source{Отрицание и серия кванторов \label ssec:02:quant-neg-series}
 
+We've already disproven a statement \ref{eq:02:existsforall}, but let's try to revision the way we've done it.
+It's common to formulate a negation of the statements with quantifiers, and to prove that the negation is true.
+Let's use the identities from the \ref[section][ssec:02:quant-neg] and denote a predicate $\forall m \\ (n>m)$ by $W(n)$.
+Then a statement \ref{eq:02:existsforall} can be stated in the following form:
 \source{Мы уже опровергли утверждение \ref{eq:02:existsforall}, но давайте ещё раз более подробно поговорим, как мы это сделали. 
 Чтобы опровергнуть утверждение с кванторами обычно проще всего записать к нему отрицание, а потом доказать это отрицание. 
 Воспользуемся формулами из \ref[раздела][ssec:02:quant-neg]. 
@@ -549,29 +554,49 @@ But is not the case in general (think of a statement for which changing the orde
 Утверждение \ref{eq:02:existsforall} можно переписать в виде:}
 \eq
     \neg(\exists n \enspace W(n)).
+Let's apply the equality \ref{eq:02:negexists} to it:
 \source{Применим к нему равенство \ref{eq:02:negexists}:}
 
 \gather
     \item \label eq:02:neg-quantors 
         \neg(\exists n \enspace W(n))=\forall n \enspace (\neg W(n))=
     \splitem \splonly{=} \forall n \enspace (\neg(\forall m \enspace (n>m)))=\ldots
+Now we can apply \ref{eq:02:negofrall} to a statement $\neg(\forall m \\ (n>m))$ and substitute the result into the equation \ref{eq:02:neg-quantors}:
 \source{Теперь можно к выражению $\neg(\forall m \\ (n>m))$ применить формулу \ref{eq:02:negofrall} и подставить результат в \ref{eq:02:neg-quantors}:}
 \eq
     \ldots=(\forall n\\ \exists m \enspace \neg(n>m))=(\forall n\\ \exists m
     \enspace (n \leqslant m)).
+We've sequantially "applied" a negation to the quantifiers, and each has been changed to the opposite.
+Eventually a negation "moved" in front of a predicate $n>m$, and changed it to $n \leqslant m$.
+Finally, a negation of a statement \ref{eq:02:existsforall} is a statement
 \source{Мы как бы последовательно перекинули знак отрицания сначала через первый квантор, а потом через второй. 
 Каждый раз квантор менялся на противоположный.
 Наконец, отрицание оказалось записано перед предикатом $n>m$, но мы знаем, что отрицание к утверждение $n>m$ — это утверждение, что $n \leqslant m$. 
 Итак, отрицанием к высказыванию \ref{eq:02:existsforall} является высказывание}
 \eq
     \forall n\\ \exists m \enspace (n \leqslant m).
+Let's prove it.
+We need to be able to produce a number $m$ for any given $n$, such that $n \leqslant m$. 
+That's easy! 
+Just take $m=n$, or $m=n+1$ or any number bigger than $n$.
 \source{Докажем его. 
 Для этого нужно научиться для всякого $n$ предъявлять такое $m$, что $n \leqslant m$. 
 Это просто: достаточно взять, например, $m=n$. 
 С тем же успехом можно было бы взять $m=n+1$ или $m=n+100$.}
 
-\section Импликация \label sec:02:impl
+\section Implication\label sec:02:impl
+    \source{Импликация \label sec:02:impl}
 
+Let's consider a sentence "if a natural number is divisible by $4$, then it is divisible by $2$" and denote it by $A$.
+First of all, it is a statement because it is somewhat an algorithm for determining the divisibility by $2$.
+An algorithm can be either correct (then people use it) or incorrect (leading to mistakes), hence $A$ is a statement.
+In this case it is a well-known and correct algorithm, in other words a statement $A$ is true.
+Can we formulate it using quantifiers and predicates?
+Consider a predicate $Q(n)$, that checks whether $n$ is divisible by $4$.
+Since a statement $A$ claims something about an arbitrary natural number, the appropriate (universal) quantifier must go first.
+Then the predicates follow, but how exactly?
+
+Recall we've already created a predicate $E(n)$, which checks if the number is even.
 \source{Давайте рассмотрим такое утверждение: «если натуральное число делится на 4, то оно делится на 2» (обозначим его за $A$). 
 Как мы знаем, это верное утверждение.
 Как его сформулировать на языке кванторов и предикатов? 
@@ -580,6 +605,13 @@ But is not the case in general (think of a statement for which changing the orde
 Поскольку речь про все натуральные числа, следует начать с квантора $\forall n$. 
 Очевидно, дальше нужно написать какое-то утверждение с предикатами $Q(n)$ и $E(n)$, но какое?}
 
+Perhaps we can think of negating the (not yet constructed) statement $A$, then use the rules derived above to get the formal expression?
+Okay, but what is a negation of $A$ in words?
+We must provide a number $n$, that is a counterexample: it is divisible by $4$, but not divisible by $2$.
+This would disprove our initial statement.
+In other words, there must exist a number $n$, such that $Q(n)$ is true and $E(n)$ is false.
+(More formally, the statement $Q(n)\wedge \neg E(n)$ is true for some natural $n$).
+Now we're ready to write a negation of $A$ formally:
 \source{Вероятно, здесь проще начать с отрицания. 
 Что нам нужно было бы сделать, чтобы опровергнуть утверждение $A$? 
 Нужно придумать такое $n$, чтобы оно делилось на $4$, но при этом \emph{не делилось} на 2. 
@@ -589,30 +621,50 @@ But is not the case in general (think of a statement for which changing the orde
 
 \eq
     \neg A = (\exists n \enspace (Q(n) \wedge \neg E(n))).
+Applying a negation to the statement above, we get the initial statement 
 \source{Взяв отрицание от этой формулы, получим формулировку для исходного утверждения:}
 \equation \label eq:02:APnQ
     A = (\forall n \enspace (\neg Q(n) \vee  E(n))).
+In words, it claims the following for every natural number $n$: it is either not divisible by $4$, or—if it is divisible by $4$—always divisible by $2$.
+This is precisely what we're aiming to say.
 \source{Иными словами, мы утверждаем, что для всякого $n$ выполняется следующее. 
 Либо оно не делится на 4 (тогда $\neg Q(n)$ является истинным: про числа, которые не делятся на 4, мы ничего не утверждаем, а если мы ничего не утверждаем, то нечему быть неверным), либо, если оно делится на 4 (то есть $\neg Q(n)$ ложно), оно обязано делиться на 2 (чтобы вся дизъюнкция была истинной, если второй её аргумент ложный, то первый — в данном случае, $E(n)$ — должен быть истинным).}
 
 \source{Это ровно то, что мы хотим сказать.}
 
 \question
-    \source{Зачем городить такой огород? Почему нельзя было просто написать}
+    Why was it necessary to make a fuss, introducing double negations, in order to state such a simple thing? 
+    Why not just write
+    \source{Зачем городить такой огород? 
+    Почему нельзя было просто написать}
     \equation \label eq:02:wrong
         \forall n \enspace (E(n) \wedge Q(n))?
     \quiz
         \choice
+            Yes, we could have written it in this (equivalent) way, the reasoning above is purely for building an intuition.
             \source{Можно было так и написать, формулы \ref{eq:02:wrong} и \ref{eq:02:APnQ} эквивалентны.}
             \comment
+                Actually, we couldn't!
+                A statement $A$ in the form of \ref{eq:02:APnQ} is true, in contrast to the form of \ref{eq:02:wrong}, which is simply false.
+                Take $n=6$.
+                It is not divisible by $4$, so $Q(6)$ is false, hence the conjunction if false.
+                Since the statement involved a universal quantifier $\forall n$, this is a counterexample.
+                (Show that this example does not disprove that \ref{eq:02:APnQ} is true).
                 \source{А вот и нет. 
                 Например, утверждение $A$ и формула \ref{eq:02:APnQ} являются истинными, а утверждение в формуле \ref{eq:02:wrong} ложно. 
                 Действительно, возьмём, например, $n=6$. 
                 Оно не делится на 4, значит, $Q(6)$ ложно, и значит для этого значения $n$ конъюнкция ложна, а раз такое $n$ нашлось, то и всё утверждение ложно. 
                 Проверьте, что этот пример не опровергает утверждение \ref{eq:02:APnQ}.}
         \choice \correct
+            Because these statements are not equivalent.
             \source{Потому что это совсем другое утверждение, оно не эквивалентно $A$.}
             \comment
+                Yes! 
+                For example, a statement $A$ in \ref{eq:02:APnQ} is true, while a statement in \ref{eq:02:wrong} is wrong.
+                Take $n=6$.
+                It is not divisible by $4$, so $Q(6)$ is false, hence the conjunction if false.
+                Since the statement involved a universal quantifier $\forall n$, this is a counterexample.
+                (Show that this example does not disprove that \ref{eq:02:APnQ} is true).
                 \source{Так и есть. 
                 Например, утверждение $A$ и формула \ref{eq:02:APnQ} являются истинными, а утверждение в формуле \ref{eq:02:wrong} ложно. 
                 Действительно, возьмём, например, $n=6$. 
