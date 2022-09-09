@@ -479,9 +479,9 @@ go with an informal description.
         \style
             padding: 1em; max-width:300px;
         \alt
-		Two ovals, inside the left one there are dots labelled 1,2,3, the oval is labeled A;
-		inside the right one there are dots leabelled a,b,c,d, the oval is labelled L. There
-		are arrows leading from 1 to b, from 2 to c, and from 3 to b.
+		Two ovals, inside the left one there are dots labeled 1,2,3, the oval is labeled A;
+		inside the right one, there are dots labeled a,b,c, and d, and the oval is labeled L. 
+		Arrows are going from 1 to b, from 2 to c, and from 3 to b.
 		\source
             		Два овала, в левом отмечены точки 1, 2, 3, он подписан A, в правом точки
             		a, b, c, d, он подписан L. Есть стрелочки от 1 к b, от 2 к c и от 3 к b. 
@@ -528,11 +528,11 @@ every element of the set $X$ maps to exactly one element of the set $Y$.
         \style
             padding: 1em;
         \alt
-		Two pictures. On the left one there are two ovals, in the left one there are dots labelled
-		1,2,3. In the right one there are dots labelled a,b,c,d. There are arrows from 1 to b, from 
-		2 to c, and from 3 to b. The picture is labelled "Not injective". On the right one there are 
-		the same ovals with the same dots. The arrows go from 1 to b, from 
-		2 to c, and from 3 to a. The picture is labelled "Injective".
+		Two pictures. On the left one, there are two ovals, inside the left one, there are dots labeled
+		1,2,3. Inside the right one, there are dots labeled a,b,c, and d. Arrows go from 1 to b, from 
+		2 to c, and from 3 to b. The picture is labeled "Not injective". On the right one, there are 
+		the same ovals with the same dots. Arrows are going from 1 to b, from 
+		2 to c, and from 3 to a. The picture is labeled "Injective".
 		\source
             		Две картинки. Слева два овала, в левом точки 1, 2, 3. В правом точки
             		a, b, c, d. Есть стрелочки от 1 к a, от 2 и 3 к b. Подпись: не
@@ -548,7 +548,7 @@ every element of the set $X$ maps to exactly one element of the set $Y$.
     A mapping $f\colon X \to Y$ is called \emph{surjective} (or just a \emph{surjection})
     if every element of the set $Y$ has something mapping to it. In other words every element of the set $Y$
     has something in the preimage under the mapping $f$. If we think of a mapping as a picture with arrows
-    this corresponds to every point of the set $Y$ has at least one arrow going to it.
+    this corresponds to every point of the set $Y$ having at least one arrow going to it.
     \source
     	Отображение $f\colon X \to Y$ называется \emph{сюръективным} (или просто
     	\emph{сюръекцией}), если в любую точку множества $Y$ что-то переходит. Иными
@@ -563,11 +563,11 @@ every element of the set $X$ maps to exactly one element of the set $Y$.
         \style
             padding: 1em;
         \alt
-		Two pictures. On the left one there are two ovals, in the left one there are dots labelled
-		1,2,3,4,5. In the right one there are dots labelled a,b,c,d. There are arrows from 1 to a, from 
-		2 and 3 to c, and from 4 and 5 to b. The picture is labelled "Not surjective". On the right one there are 
+		Two pictures. On the left one, there are two ovals, inside the left one there are dots labeled
+		1,2,3,4, and 5. Inside the right one, there are dots labeled a,b,c, and d. Arrows are going from 1 to a, from 
+		2 and 3 to c, and from 4 and 5 to b. The picture is labeled "Not surjective". On the right one, there are 
 		the same ovals with the same dots. The arrows go from 1 to a, from 
-		2 and 3 to c, from 4 to d, and from 5 to b. The picture is labelled "Surjective".
+		2 and 3 to c, from 4 to d, and from 5 to b. The picture is labeled "Surjective".
 		\source
             		Две картинки. Слева два овала, в левом точки 1, 2, 3, 4, 5. В правом точки
             		a, b, c, d. Есть стрелочки от 1 к a, от 2 и 3 к c, от 5 к b. Подпись: не
@@ -580,196 +580,353 @@ every element of the set $X$ maps to exactly one element of the set $Y$.
     \label fig:01:surj
 \snippet \flabel биекция \label snip:bijection
     \definition
-        Отображение $f\colon X \to Y$ называется \emph{биективным} (или
-        \emph{биекцией}, или \emph{взаимно однозначным отображением}), если оно
-        одновременно является инъективным и сюръективным. В этом случае не только каждому
-        элементу множества $X$ поставлен в соответствие ровно один элемент $Y$ (как
-        всегда бывает, когда отображение задано), но и наоборот, каждому элементу
-        множества $Y$ поставлен в соответствие ровно один элемент множества $X$ —
-        тот, который в него переходит под действием отображения. Он существует
-        (потому что отображение сюръективно) и единственный (потому что инъективно).
+    	A mapping $f\colon X \to Y$ is called \emph{bijective} (or
+	just a \emph{bijection}) if it is both injective and surjective.
+	In this case, not only there is exactly one element of the set $Y$
+	assigned to each element of the set $X$ (as is always the case with 
+	a mapping) but also there is exactly one element of the set $X$ corresponding to
+	each element of the set $Y$ - the one that maps to it under the mapping.
+	It exists because the mapping is surjective and it is unique because the mapping is injective.
+        \source
+		Отображение $f\colon X \to Y$ называется \emph{биективным} (или
+        	\emph{биекцией}, или \emph{взаимно однозначным отображением}), если оно
+        	одновременно является инъективным и сюръективным. В этом случае не только каждому
+        	элементу множества $X$ поставлен в соответствие ровно один элемент $Y$ (как
+        	всегда бывает, когда отображение задано), но и наоборот, каждому элементу
+        	множества $Y$ поставлен в соответствие ровно один элемент множества $X$ —
+        	тот, который в него переходит под действием отображения. Он существует
+        	(потому что отображение сюръективно) и единственный (потому что инъективно).
 \figure
     \img
         \src pic-8.svg
         \style
             padding: 1em; max-width:300px;
         \alt
-            Два овала, в левом точки 1, 2, 3, в правом точки
-            a, b, c. Есть стрелочки от 1 к b, от 2  к c, от 3 к a. 
+		Two ovals, inside the left one, there are dots labeled 1,2,3;
+		inside the right one, there are dots labeled a,b, and c. Arrows 
+		are going from 1 to b, from 2 to c, and from 3 to a.
+		\source
+            		Два овала, в левом точки 1, 2, 3, в правом точки
+            		a, b, c. Есть стрелочки от 1 к b, от 2  к c, от 3 к a. 
     \caption
-        Биективное отображение.
+    	A bijective mapping.
+	\source
+        	Биективное отображение.
     \label fig:01:surj
 \remark
-    Для конечных множеств $X$ и $Y$ существование биективного отображение из $X$
-    в $Y$ означает, что число элементов в этих двух множествах равно. Вероятно,
-    идея взаимно однозначного соответствия могла предшествовать идее числа:
-    чтобы понять, сколько стульев нужно принести в комнату, чтобы все могли
-    сесть, можно пересчитать гостей, а можно просто установить
-    взаимно однозначное соответствие: этот стул для Кати, этот стул для Коли и
-    т.д.
+	For finite sets $X$ and $Y$, the existence of a bijection from $X$ to $Y$
+	means that the number of elements in the two sets is the same. The idea of
+	a bijection can even precede the idea of a number: to figure out how
+	many chairs you need to bring to sit all the guests you can count the number
+	of people, or you can establish a bijection: this chair is for Kate, this
+	chair is for Nick, etc.
+	\source
+		Для конечных множеств $X$ и $Y$ существование биективного отображение из $X$
+    		в $Y$ означает, что число элементов в этих двух множествах равно. Вероятно,
+    		идея взаимно однозначного соответствия могла предшествовать идее числа:
+    		чтобы понять, сколько стульев нужно принести в комнату, чтобы все могли
+    		сесть, можно пересчитать гостей, а можно просто установить
+    		взаимно однозначное соответствие: этот стул для Кати, этот стул для Коли и
+    		т.д.
 
 \snippet \label sn:01:card \flabel равномощны
     \definition \label def:01:card
-        Множества, между которыми существует взаимно однозначное соответствие,
-        называются \emph{равномощными}. Очевидно, если два множества равномощны, у
-        них одинаковая мощность. Но что такое эта мощность? Для конечных множеств,
-        \emph{мощность} определяется просто как число элементов. Для бесконечных всё
-        сложнее, мы поговорим об этом позже.
+    	Sets for which there exists a bijection are called \emph{equinumerous} or are 
+	said to have the same cardinality. What is this cardinality? For finite sets
+	we define \emph{cardinality} simply as number of elements. For infinite sets 
+	it gets trickier and we will discuss it later.
+	\source
+        	Множества, между которыми существует взаимно однозначное соответствие,
+        	называются \emph{равномощными}. Очевидно, если два множества равномощны, у
+        	них одинаковая мощность. Но что такое эта мощность? Для конечных множеств,
+        	\emph{мощность} определяется просто как число элементов. Для бесконечных всё
+        	сложнее, мы поговорим об этом позже.
 
 \section Числа
 
-Основным строительным материалом для всего последующего курса будут различные
-числовые множества.
+The main building blocks for the rest of the course will be different
+numerical sets, i.e. sets of numbers.
+\source
+	Основным строительным материалом для всего последующего курса будут различные
+	числовые множества.
+\subsection Natural numbers
+\source
+	\subsection Натуральные числа
 
-\subsection Натуральные числа
+The set of natural numbers $\set{1, 2, 3, \ldots}$ is denoted by the letter $\mathbb N$
+The only point of contention is whether we consider zero a natural number.
+Usually, natural numbers are "defined" as "numbers used for counting things". 
+Using this definition zero is not considered a natural number. 
+There is another approach - to make it so natural numbers are the cardinalities of 
+finite sets (see \ref[Definition][def:01:card]). In this case, zero should be considered 
+a natural number since it is the cardinality of the empty set. We will use the first convention
+and not consider zero a natural number.
+\source
+	Множество натуральных чисел $\set{1, 2, 3, \ldots}$ обозначается буквой $\mathbb
+	N$. Единственный камень преткновения: считать ли ноль натуральным числом. Как
+	правило, натуральные числа «определяются» как «числа, используемые при счёте
+	предметов». В этом случае среди натуральных чисел нет нуля, и это соответствует
+	распространённому в России соглашению. Есть другой подход — сказать, что
+	натуральные числа — это «мощности конечных множеств» (см.
+	\ref[определение][def:01:card]). В этом случае ноль следовало бы считать
+	натуральным, потому что это мощность пустого множества. Такое соглашение
+	принято, например, во Франции. Мы будем использовать соглашение, принятое в
+	России, и не будем считать 0 натуральным числом.
 
-Множество натуральных чисел $\set{1, 2, 3, \ldots}$ обозначается буквой $\mathbb
-N$. Единственный камень преткновения: считать ли ноль натуральным числом. Как
-правило, натуральные числа «определяются» как «числа, используемые при счёте
-предметов». В этом случае среди натуральных чисел нет нуля, и это соответствует
-распространённому в России соглашению. Есть другой подход — сказать, что
-натуральные числа — это «мощности конечных множеств» (см.
-\ref[определение][def:01:card]). В этом случае ноль следовало бы считать
-натуральным, потому что это мощность пустого множества. Такое соглашение
-принято, например, во Франции. Мы будем использовать соглашение, принятое в
-России, и не будем считать 0 натуральным числом.
+\subsection Integers
+\source{\subsection Целые числа}
 
-\subsection Целые числа
+The set of all integer numbers is denoted by $\mathbb Z=\set{0, 1, -1, 2, -2,
+\ldots}$. Natural numbers are a subset of integers (natural numbers are exactly positive integers).
+\source
+	Множество целых чисел обозначается буквой $\mathbb Z=\set{0, 1, -1, 2, -2,
+	\ldots}$. Натуральные числа являются подмножеством целых (натуральные числа
+	— это в точности целые положительные числа). 
 
-Множество целых чисел обозначается буквой $\mathbb Z=\set{0, 1, -1, 2, -2,
-\ldots}$. Натуральные числа являются подмножеством целых (натуральные числа
-— это в точности целые положительные числа). 
+Which numbers there are more of: natural numbers or integers? It seems that 
+there is "a same amount" of negative numbers as there are positive ones, so
+natural numbers can "go into" the integers twice and there is zero as well.
+So there must be at least twice as many integers as natural numbers (and even 
+a little bit more). As it is, this logic does not work for infinite sets:
+we can easily establish a bijection between natural numbers and integers (for example,
+we can use the order the sets are presented above - $1$ maps to $0$, $2$ maps to $1$, 
+$3$ to $-1$, $4$ to $2$, $5$ to $-2$, etc.), so we can just as easily say that 
+we have the "same amount" of natural numbers and integers. The precise statement here
+is that the set of natural numbers and the set of integers are equinumerous.
+\source
+	Каких чисел больше: натуральных или целых? Казалось бы, отрицательных целых
+	чисел «столько же», сколько положительных, то есть натуральные числа входит в
+	число целых дважды, да ещё остаётся ноль. То есть целых должно быть вдвое
+	больше, чем натуральных (и ещё чуть-чуть больше). На самом деле, для бесконечных
+	множеств такая логика не работает: легко придумать взаимно однозначное
+	соответствие между натуральными и целыми числами (например, можно
+	воспользоваться тем, как эти множества записаны выше: $1$ отобразить в $0$, $2$
+	в $1$, $3$ в $-1$, $4$ в $2$, $5$ в $-2$ и т.д.), так что с тем же успехом можно
+	сказать, что их «поровну». Аккуратное утверждение состоит в том, что множества
+	целых и натуральных чисел равномощны.
 
-Каких чисел больше: натуральных или целых? Казалось бы, отрицательных целых
-чисел «столько же», сколько положительных, то есть натуральные числа входит в
-число целых дважды, да ещё остаётся ноль. То есть целых должно быть вдвое
-больше, чем натуральных (и ещё чуть-чуть больше). На самом деле, для бесконечных
-множеств такая логика не работает: легко придумать взаимно однозначное
-соответствие между натуральными и целыми числами (например, можно
-воспользоваться тем, как эти множества записаны выше: $1$ отобразить в $0$, $2$
-в $1$, $3$ в $-1$, $4$ в $2$, $5$ в $-2$ и т.д.), так что с тем же успехом можно
-сказать, что их «поровну». Аккуратное утверждение состоит в том, что множества
-целых и натуральных чисел равномощны.
+\subsection Rational numbers
+\source{\subsection Рациональные числа}
 
-\subsection Рациональные числа
+The set of rational numbers $\mathbb Q$ comprises all fractions of the form
+$\set{\frac{p}{q}\mid p\in \mathbb Z, q \in \mathbb N}$, i.e. fractions with an integer
+nominator and natural denominator. Of course, we know that some fractions that are different
+correspond to the same number: for example $\frac{2}{4}=\frac{1}{2}$.
+Generally for any $M\ne 0$ the fractions $\frac{p}{q}$ and $\frac{pm}{qm}$
+correspond to the same number.
+\source
+	Множество рациональных чисел $\mathbb Q$ состоит из всевозможных обыкновенных
+	дробей вида $\set{\frac{p}{q}\mid p\in \mathbb Z, q \in \mathbb N}$, то есть
+	дробей с целым числителем и натуральным знаменателем. Конечно, мы знаем, что
+	бывают разные дроби, задающие одно и то же число: например,
+	$\frac{2}{4}=\frac{1}{2}$. Вообще, для любого целого $m\ne 0$, дроби
+	$\frac{p}{q}$ и $\frac{pm}{qm}$ задают одно и то же число.
 
-Множество рациональных чисел $\mathbb Q$ состоит из всевозможных обыкновенных
-дробей вида $\set{\frac{p}{q}\mid p\in \mathbb Z, q \in \mathbb N}$, то есть
-дробей с целым числителем и натуральным знаменателем. Конечно, мы знаем, что
-бывают разные дроби, задающие одно и то же число: например,
-$\frac{2}{4}=\frac{1}{2}$. Вообще, для любого целого $m\ne 0$, дроби
-$\frac{p}{q}$ и $\frac{pm}{qm}$ задают одно и то же число.
+Arithmetical operations with rational numbers are defined using the standard rules 
+for fractions.
+\source
+	Арифметические операции с рациональными числами задаются с помощью стандартных
+	правил действий с обыкновенными дробями.
 
-Арифметические операции с рациональными числами задаются с помощью стандартных
-правил действий с обыкновенными дробями.
-
-Целые числа входят в множество рациональных чисел — это в точности рациональные
-числа со знаменателем $1$.
+Integers are elements of the set of rational numbers - they are exactly
+rational numbers with a denominator $1$.
+\source
+	Целые числа входят в множество рациональных чисел — это в точности рациональные
+	числа со знаменателем $1$.
 
 \definition
-    Целые числа $m$ и $n$ называются \emph{взаимно простыми}, если они не имеют
-    общих натуральных делителей, кроме 1.
+	Integers $m$ and $n$ are called \emph{relatively prime} if they do not 
+	have common natural factors, except $1$.
+	\source
+    		Целые числа $m$ и $n$ называются \emph{взаимно простыми}, если они не имеют
+    		общих натуральных делителей, кроме 1.
 
-Если числа $m$ и $n$ взаимно просты, дробь $\frac{m}{n}$ является
-\emph{несократимой}. (Если бы у $m$ и $n$ были натуральные делители, отличные от
-$1$, на них можно было сократить, а так сокращать не на что.)
+If the numbers $m$ and $n$ are relatively prime, the fraction $\frac{m}{n}$
+is \emph{irreducible}. (If $m$ and $n$ had natural common factors other than $1$
+we could have been able to reduce the fraction, but this way there is nothing to reduce by).
+\source
+	Если числа $m$ и $n$ взаимно просты, дробь $\frac{m}{n}$ является
+	\emph{несократимой}. (Если бы у $m$ и $n$ были натуральные делители, отличные от
+	$1$, на них можно было сократить, а так сокращать не на что.)
 
 \theorem
-    Любое рациональное число имеет единственное представление в виде
-    несократимой дроби $\frac{p}{q}$, $p \in \mathbb Z$, $q\in \mathbb N$. Иными
-    словами, если есть другое представление, $\frac{p}{q}=\frac{m}{n}$, где $m$
-    и $n$ взаимно просты и $n$ натурально, то обязательно $p=m$ и $q=n$.
+	Any rational number has a unique representation as an irreducible fraction
+	$\frac{p}{q}$, where $p \in \mathbb Z$, $q\in \mathbb N$. In other words,
+	if there is another representation $\frac{p}{q}=\frac{m}{n}$, where $m$ and $n$
+	are relatively prime and $n$ is a natural number, then $p=m$ and $q=n$.
+	\source
+    		Любое рациональное число имеет единственное представление в виде
+    		несократимой дроби $\frac{p}{q}$, $p \in \mathbb Z$, $q\in \mathbb N$. Иными
+    		словами, если есть другое представление, $\frac{p}{q}=\frac{m}{n}$, где $m$
+    		и $n$ взаимно просты и $n$ натурально, то обязательно $p=m$ и $q=n$.
 
-Эта теорема кажется очевидной, но на самом деле таковой не является. Например,
-если бы мы разрешили знаменателю принимать не только натуральные, но и любые
-целые ненулевые значения, теорема была бы неверна: $\frac{1}{2}=\frac{-1}{-2}$,
-хотя обе дроби несократимы. Её аккуратное доказательство требует либо веры в
-основную теорему арифметики (о том, что любое целое число однозначно задаётся в
-виде произведения простых сомножителей), которая имеет не очень короткое
-доказательство, либо использования алгоритма Евклида. Второй подход приведён в
-виде серии задачи в \href[семинарских
-листочках][http://math-info.hse.ru/a/2020-21/nes-calculus-1/seminar01.pdf].
+This theorem seems obvious, but it is actually not. For example, if we allowed
+the denominator to be any non-zero integer, the theorem would have been false:
+$\frac{1}{2}=\frac{-1}{-2}$, but both fractions are irreducible. Accurate proof of this theorem
+either requires the fundamental theorem of arithmetic (that every integer  
+can be represented uniquely as a product of prime numbers) that has quite a long proof
+or uses Euclid's algorithm. The second approach is presented as a series of problems
+in the \href[Tutorial][http://math-info.hse.ru/a/2020-21/nes-calculus-1/seminar01.pdf].
+\source
+	Эта теорема кажется очевидной, но на самом деле таковой не является. Например,
+	если бы мы разрешили знаменателю принимать не только натуральные, но и любые
+	целые ненулевые значения, теорема была бы неверна: $\frac{1}{2}=\frac{-1}{-2}$,
+	хотя обе дроби несократимы. Её аккуратное доказательство требует либо веры в
+	основную теорему арифметики (о том, что любое целое число однозначно задаётся в
+	виде произведения простых сомножителей), которая имеет не очень короткое
+	доказательство, либо использования алгоритма Евклида. Второй подход приведён в
+	виде серии задачи в \href[семинарских
+	листочках][http://math-info.hse.ru/a/2020-21/nes-calculus-1/seminar01.pdf].
 
-\subsection Вещественные числа
+\subsection Real numbers
+\source{\subsection Вещественные числа}
 
-С вещественными (действительными) числами всё сложно. Интуитивно, вещественные
-числа — это длины отрезков, площади фигур и т.д. Но чтобы аккуратно их ввести в
-математику, человечество потратило несколько тысяч лет: тот факт, что длины
-отрезков могут не выражаться рациональными числами, был известен ещё Древним
-Грекам за несколько сотен лет до нашей эры, но аккуратно вещественные числа были
-введены в математику только в XIX веке. 
+Real numbers are complicated. Intuitively, real numbers are lengths of segments,
+areas of figures, etc. But to define them rigorously took mankind several millennia:
+the fact that lengths of some segments cannot be expressed as rational numbers was known 
+in Ancient Greece several hundreds of years before the common era, but a precise definition was 
+introduced only in the XIX century.
+\source
+	С вещественными (действительными) числами всё сложно. Интуитивно, вещественные
+	числа — это длины отрезков, площади фигур и т.д. Но чтобы аккуратно их ввести в
+	математику, человечество потратило несколько тысяч лет: тот факт, что длины
+	отрезков могут не выражаться рациональными числами, был известен ещё Древним
+	Грекам за несколько сотен лет до нашей эры, но аккуратно вещественные числа были
+	введены в математику только в XIX веке. 
 
-В рамках лекций мы будем следовать «школьному» определению: вещественное число —
-это бесконечная десятичная дробь, то есть бесконечная вправо последовательность
-цифр, у которой на каком-то месте стоит десятичная запятая (в англоязычной
-традиции — десятичная точка). Множество вещественных чисел обозначается буквой
-$\mathbb R$ (от слова \emph{real}, действительный).
+Within this course we will use the "school" definition: a real number is an
+infinite decimal fraction, i.e. infinite to the right sequence of digits 
+that at some place has a decimal point. The set of real numbers is denoted by
+the letter $\mathbb R$ (R for real).
+\source
+	В рамках лекций мы будем следовать «школьному» определению: вещественное число —
+	это бесконечная десятичная дробь, то есть бесконечная вправо последовательность
+	цифр, у которой на каком-то месте стоит десятичная запятая (в англоязычной
+	традиции — десятичная точка). Множество вещественных чисел обозначается буквой
+	$\mathbb R$ (от слова \emph{real}, действительный).
 
-Чтобы какое-то множество можно было с полным правом называть числовым, нужно,
-чтобы на нём были определены арифметические операции. Для конечных десятичных
-дробей это делается с помощью стандартных алгоритмов сложения и умножения
-(столбиком) и деления (уголком), которые проходят в школе. Для бесконечных
-десятичных дробей так просто это сделать не получается, и мы не будем этим
-заниматься — скажем только, что сделать это возможно, и результат будет
-соответствовать нашим интуитивным представлениям об этих операциях. (Для
-желающих у нас заготовлена серия задач, в которых вещественные числа
-определяются несколько иначе — как некоторые множества рациональных чисел — мы
-их дадим, когда все будут к этому готовы.)
+To legitimately call a set numerical we need to define arithmetical operations on it.
+For the finite decimal fractions, we use the standard algorithms for addition, long multiplication,
+and long division that are taught in school. For the infinite decimal fractions,
+it is not that easy and we won't be doing that, we will only say that it is
+possible and the result matches our intuitive ideas of these operations.
+(For those who want it we have prepared a series of problems where the real numbers
+are defined differently - as sets of rational numbers - we will come to them when everybody is ready).
+\source
+	Чтобы какое-то множество можно было с полным правом называть числовым, нужно,
+	чтобы на нём были определены арифметические операции. Для конечных десятичных
+	дробей это делается с помощью стандартных алгоритмов сложения и умножения
+	(столбиком) и деления (уголком), которые проходят в школе. Для бесконечных
+	десятичных дробей так просто это сделать не получается, и мы не будем этим
+	заниматься — скажем только, что сделать это возможно, и результат будет
+	соответствовать нашим интуитивным представлениям об этих операциях. (Для
+	желающих у нас заготовлена серия задач, в которых вещественные числа
+	определяются несколько иначе — как некоторые множества рациональных чисел — мы
+	их дадим, когда все будут к этому готовы.)
 
-Рациональные числа входят в множество вещественных чисел. Этот факт, вообще
-говоря, не прямо следует из определения, но его можно доказать, воспользовавшись
-алгоритмом деления уголком и свойствами геометрических прогрессий.
+Rational numbers are a subset of the set of real numbers. Strictly speaking, this 
+fact does not follow from the definition, but it can be proven using the long division
+algorithm and the properties of geometric sequences.
+\source
+	Рациональные числа входят в множество вещественных чисел. Этот факт, вообще
+	говоря, не прямо следует из определения, но его можно доказать, воспользовавшись
+	алгоритмом деления уголком и свойствами геометрических прогрессий.
 
 \definition
-    Вещественные числа, не являющиеся рациональными, называются
-    \emph{иррациональными}. Специального обозначения для иррациональных чисел
-    нет, обычно просто пишут $\mathbb R \setminus \mathbb Q$.
+	Real numbers that are not rational are called \emph{irrational}.
+	there is no special notation for the set of irrational numbers,
+	usually, it is simply denoted by $\mathbb R \setminus \mathbb Q$.
+	\source
+    		Вещественные числа, не являющиеся рациональными, называются
+    		\emph{иррациональными}. Специального обозначения для иррациональных чисел
+    		нет, обычно просто пишут $\mathbb R \setminus \mathbb Q$.
 
-Чтобы не казалось, что мы зря возимся с вещественными числами, давайте докажем,
-что иррациональные числа существуют. Для этого предъявим по крайней мере одно
-такое число: $\sqrt{2}$.
+In order not to seem like we are wasting our time with real numbers, let's
+prove that irrational numbers exist. To do that we will present one such number: $\sqrt{2}$.
+\source
+	Чтобы не казалось, что мы зря возимся с вещественными числами, давайте докажем,
+	что иррациональные числа существуют. Для этого предъявим по крайней мере одно
+	такое число: $\sqrt{2}$.
 
-(Конечно, можно было бы не верить в существование иррациональных чисел, и
-сказать, что раз $\sqrt{2}$ не является рациональным, то просто нет такого числа,
-нельзя вычислить квадратный корень из двух, и всё тут; проблема в том, что тогда
-мы не могли бы никак измерить длину диагонали квадрата со стороной 1, которая,
-по теореме Пифагора, равна как раз $\sqrt{2}$. Это было бы неудачно.)
+(Of course, it is possible not to believe in the existence of irrational numbers, and say
+that since $\sqrt{2}$ is not rational, it does not exist, we simply cannot take the square root of two
+and that's that; the problem then is that we cannot measure the length of a diagonal of a unit square,
+that, by Pythagoras theorem, is exactly $\sqrt{2}$. This would be unfortunate.)
+\source
+	(Конечно, можно было бы не верить в существование иррациональных чисел, и
+	сказать, что раз $\sqrt{2}$ не является рациональным, то просто нет такого числа,
+	нельзя вычислить квадратный корень из двух, и всё тут; проблема в том, что тогда
+	мы не могли бы никак измерить длину диагонали квадрата со стороной 1, которая,
+	по теореме Пифагора, равна как раз $\sqrt{2}$. Это было бы неудачно.)
 
 \theorem \label thm:01:sqrt2
-    Число $\sqrt{2}$ не является рациональным.
+	The number $\sqrt{2}$ is not rational.
+	\source{Число $\sqrt{2}$ не является рациональным.}
 \proof
-    Докажем от противного. Пусть является, то есть существует такая несократимая
-    дробь $\frac{p}{q}$, которая равна $\sqrt{2}$. По определению, $\sqrt{2}$
-    это такое число, которое при возведении в квадрат даёт $2$. Значит,
-    \align \nonumber
-        \item \left(\frac{p}{q}\right)^2 & =2;
-        \item \frac{p^2}{q^2} & =2;
-        \item p^2 & = 2q^2.
-    Из этого следует, что $p^2$ — четное число. Если бы $p$ было нечётным, оно
-    бы представлялось в виде $p=(2k+1)$ и его квадрат был бы нечётным:
-    $p^2=(2k+1)^2=4k^2+4k+1=4k(k+1)+1$. Значит, $p$ обязательно чётно. Пусть
-    $p=2k$. Имеем:
-    \align \nonumber
-        \item
-            (2k)^2&=2q^2;
-        \item
-            4k^2&=2q^2;
-        \item
-            2k^2&=q^2.
-    Из таких же рассуждений получаем, что $q$ должно быть чётным. Но по
-    предположению, дробь $\frac{p}{q}$ несократима, и значит её числитель и
-    знаменатель не могут быть одновременно чётными. Противоречие.
+	We will present a proof by contradiction. Assume it is rational, so 
+	there exists an irreducible fraction $\frac{p}{q}$ equal to $\sqrt{2}$.
+	By definition, $\sqrt{2}$ is a number such that squared it becomes $2$.
+	Therefore:
+	\align \nonumber
+        	\item \left(\frac{p}{q}\right)^2 & =2;
+        	\item \frac{p^2}{q^2} & =2;
+        	\item p^2 & = 2q^2.
+	From this, it follows that $p^2$ is an even number. If $p$ was odd,
+	it would be possible to represent it as $p=2k+1$ for some integer $k$ and 
+	its square would also be odd: $p^2=(2k+1)^2=4k^2+4k+1=4k(k+1)+1$. So $p$ 
+	must be even. Let $p=2k$. We have:
+	\align \nonumber
+        	\item
+            		(2k)^2&=2q^2;
+       		 \item
+            		4k^2&=2q^2;
+        	\item
+            		2k^2&=q^2.
+	This means that $q$ must be even as well. But we assumed that the fraction 
+	$\frac{p}{q}$ is irreducible, and cannot have both the nominator and the denominator 
+	be both even, which is a contradiction.
+	\source
+    		Докажем от противного. Пусть является, то есть существует такая несократимая
+    		дробь $\frac{p}{q}$, которая равна $\sqrt{2}$. По определению, $\sqrt{2}$
+    		это такое число, которое при возведении в квадрат даёт $2$. Значит,
+    		\align \nonumber
+        		\item \left(\frac{p}{q}\right)^2 & =2;
+        		\item \frac{p^2}{q^2} & =2;
+        		\item p^2 & = 2q^2.
+    		Из этого следует, что $p^2$ — четное число. Если бы $p$ было нечётным, оно
+    		бы представлялось в виде $p=(2k+1)$ и его квадрат был бы нечётным:
+    		$p^2=(2k+1)^2=4k^2+4k+1=4k(k+1)+1$. Значит, $p$ обязательно чётно. Пусть
+    		$p=2k$. Имеем:
+    		\align \nonumber
+        		\item
+            			(2k)^2&=2q^2;
+        		\item
+            			4k^2&=2q^2;
+        		\item
+            			2k^2&=q^2.
+    		Из таких же рассуждений получаем, что $q$ должно быть чётным. Но по
+    		предположению, дробь $\frac{p}{q}$ несократима, и значит её числитель и
+    		знаменатель не могут быть одновременно чётными. Противоречие.
 
+\section Conclusion
+\source{\section Заключение}
 
-\section Заключение
-
-Математический анализ изучает функции, описывающие зависимости между различными
-числовыми величинами. Как размер популяции меняется с течением времени? Как
-скорость роста экономики зависит от уровня налогов? Как высота орбиты зависит от
-количества топлива в ракете? Как время работы алгоритма зависит от объема
-обрабатываемой информации? Чтобы обсуждать вопросы такого типа, нам нужно
-уметь анализировать функции, или, что то же самое, отображения из числовых
-множеств в числовые множества. Поэтому мы начали курс с этих трёх
-фундаментальных понятий: множеств, отображений и чисел. Для дальнейшего нам
-понадобятся также элементы математической логики — именно про них будет следующая
-лекция.
+Calculus studies functions that describe the dependencies between numeric values.
+How does population growth depend on time? How does economical growth correspond to the tax rates?
+How does the height of the orbit depend on the amount of fuel a rocket has?
+How does the run time of an algorithm depend on the amount of processed data?
+To discuss questions like these we need to learn how to reason about functions,
+or mappings, from numerical sets to numerical sets. That is why we start the course 
+with these three fundamental notions: sets, mappings, and numbers. For what comes next
+we will need some elements of mathematical logic - they will be the topic of the next lecture.
+\source
+	Математический анализ изучает функции, описывающие зависимости между различными
+	числовыми величинами. Как размер популяции меняется с течением времени? Как
+	скорость роста экономики зависит от уровня налогов? Как высота орбиты зависит от
+	количества топлива в ракете? Как время работы алгоритма зависит от объема
+	обрабатываемой информации? Чтобы обсуждать вопросы такого типа, нам нужно
+	уметь анализировать функции, или, что то же самое, отображения из числовых
+	множеств в числовые множества. Поэтому мы начали курс с этих трёх
+	фундаментальных понятий: множеств, отображений и чисел. Для дальнейшего нам
+	понадобятся также элементы математической логики — именно про них будет следующая
+	лекция.
