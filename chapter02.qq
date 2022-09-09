@@ -671,62 +671,94 @@ This is precisely what we're aiming to say.
                 Оно не делится на 4, значит, $Q(6)$ ложно, и значит для этого значения $n$ конъюнкция ложна, а раз такое $n$ нашлось, то и всё утверждение ложно. 
                 Проверьте, что этот пример не опровергает утверждение \ref{eq:02:APnQ}.}
 
+It seems like sentences including "if" and "then" are important and must have their own name.
+Indeed, statements "$A$ implies $B$", or "if $A$, then $B$", or "if $A$ is true, then $B$ is true" are formally written as $\neg A \vee B$.
+Notice once again that by saying "if $A$ is true, then $B$ is true" we don't state anything about the case when $A$ is false.
+But then, what truth value must the statement take?
+Quite logically it must be true, or perhaps it must \emph{not} be false.
+But in the case when $A$ is true, $B$ is most centainly true.
 \source{В общем виде это формулируется так. 
 Пусть есть два высказывания, $A$ и $B$. 
 Утверждения «из $A$ следует $B$» или  «$A$ влечёт $B$» или «если $A$ истинно, то $B$ тоже истинно», формально записываются как $\neg A \vee B$. 
 Иными словами, говоря «если $A$ истинно, то $B$ тоже истинно», мы говорим, что $A$ может и не быть истинным, но нас этот случай, не интересует, мы про него никаких выводов не делаем (а значит, и ошибаться не можем), но если уж $A$ истинно, то $B$ обязано быть истинным.}
 
+Although this kind of statement can be expressed using logical OR, logical AND, and a negation, it has a special name — \emph{implication} and a notation $A\Rightarrow B$.
+A statement $A$ is called an \emph{antecedent} and $B$ is called a \emph{consequent}.
 \source{Эта операция с высказываниями $A$ и $B$ настолько важна, что хотя она и выражается через конъюнкцию, дизъюнкцию и отрицание, у него есть специальное название — \emph{импликация} (ср. с английским словом \emph{imply}, влечёт), и специальное обозначение $A\Rightarrow B$. 
 Утверждение $A$ называется \emph{посылкой}, а утверждение $B$ — \emph{заключением}.}
 
+Since an implication is a statement, lets construct its truth table.
 \source{Давайте построим таблицу истинности для $A\Rightarrow B$ (то есть $\neg A \vee B$).}
 
 \eq
     \begin{array}{ccc}
         A & B & A \Rightarrow B  \\\\
         \hline
-        \text{И} & \text{И} & \text{И} \\\\
-        \text{И} & \text{Л} & \text{Л} \\\\
-        \text{Л} & \text{И} & \text{И} \\\\
-        \text{Л} & \text{Л} & \text{И} \\\\
+        \text{T} & \text{T} & \text{T} \\\\
+        \text{T} & \text{F} & \text{F} \\\\
+        \text{F} & \text{T} & \text{T} \\\\
+        \text{F} & \text{F} & \text{T} \\\\
         \hline
     \end{array}
 
+This table, in perticular its third row, it usually confusing the first time you see it. 
+How can a false statement imply a true statement?
+The thing is, when we say "if $A$ is true, them $B$ is also true", we don't state anything about the "state of the world" when $A$ is false, so we cannot possibly be wrong in this case.
 \source{Эта таблица, и особенно её третья строчка, обычно ставит в тупик всех, кто её в первый раз видит. 
 «Из лжи следует истина!» — как такое может быть? Дело в том, что если вы делаете утверждение $A \Rightarrow B$ («Если $A$ истинно, то $B$ тоже истинно»), и $A$ оказалось ложным, то это просто означает, что вы находитесь в ситуации, про которую вы ничего не утверждали. 
 А раз ничего не утверждали, то не могли и ошибиться. 
 И значит вы правы (ваше утверждение истинно), вне зависимости от того, является ли $B$ истинным или ложным.}
 
+Revisiting the example above, consider a (true) statement "if a natural number is divisible by $4$, it is even".
+Take $n=6$, and notice that the antecedent is false. 
+Despite this fact, and no matter whether $6$ turns out even or odd, the implication is true.
 \source{Возвращаясь к примеру, который мы разбирали раньше: «если число $n$ делится на 4, то оно чётное». 
 Рассмотрим число $n=6$. 
 Для него посылка оказалась ложной (оно не делится на 4), и хотя заключение оказалось истинным (оно чётно), это никак не противоречит нашей импликации: она остаётся верна и в этом случае.}
 
+From now on we will use implications very often.
+You will most certainly notice it in the next chapter, and in subsequent ones.
 \source{В дальнейшем мы будем постоянно пользоваться импликацией в доказательствах. 
 Начнём прямо со следующей лекции.}
 
-\section 
+\section The usage of mathematical logic in this book
     \source{Применение языка матлогики в этой книге}
-\subsection
+\subsection Formal and natural language
     \source{Формальный и естественный язык}
 
+Notations from mathematical logic are very useful for writing mathematical statements and their proofs using quantifiers and predicates.
+They have the obvious advantage over natural language: they are strict and formal, making the meaning of statements unambiguous.
+Even computers can understand mathematical logic! 
+Statements can be validated and even written by a computer, that was introdiced to formal rules we've discussed above.
 \source{Обозначения математической логики, которые мы ввели выше, позволяют записывать утверждения и даже их доказательства в виде длинных формул, состоящих из кванторов и предикатов. 
 Они хороши своей чёткостью и однозначностью: после того, как утверждение записано на этом формальном языке, прочитать его можно единственным образом, а доказательство может проверить (или, в некоторых случаях, даже придумать) и компьютер, пользуясь чисто формальными правилами, описывающими допустимые преобразования одних строчек символов в другие.}
 
+Back in the time I was a first-year undergraduate student, I was absolutely in awe by mathematical logic language.
+I wondered if \emph{anything} can be proven or disproven when phrased in quantifiers, predicates, and statements.
+However, I quickly understood I was wrong: formal lanuage usually makes logical connections and proof validation easier, but when it comes to \emph{inventing} a proof, it's essential to really dive into the problem, not just manipulate with ats notation. 
 \source{Когда я учился на первом курсе и только познакомился с этим языком, я был им очарован: какое-то время мне казалось, что достаточно записать любое утверждение «в кванторах», и дальше станет понятно, как его доказывать. 
 Однако очень быстро я обнаружил, что это не так: формальная запись иногда упрощает некоторые логические переходы, и она часто необходима, чтобы убедиться в правильности доказательства, но чтобы придумать доказательство, нужно проникнуть в суть утверждения, а не просто манипулировать строчками с кванторами.}
 
+At the same time, the intuition behind logic connections is usually easier expressed and understood in natural language, not formal.
+Professional mathematicians write their papers (let alone introductory textbooks) in natural language, using formal expressions only when necessary.
+Try to overcome the fear of the new terminology and the increased level of abstractions. 
+They take a time to settle, and every formal reasoning in this text will be accompanied by a clarification in "human" language—so there is nothing to worry about.
 \source{При этом «суть», то есть идеи, стоящие за математическими рассуждениями, как правило проще передавать, пользуясь преимущественно естественным языком, а не формальным. 
 В конце концов, профессиональные математики пишут научные статьи именно на естественном языке, используя формальный лишь там, где это действительно необходимо. 
 Что уж говорить об учебнике, читатели которого видят все эти кванторы впервые в жизни!
 Так что пусть вас не пугает обилие новых обозначений и понятий в этой главе: мы будем ими пользоваться и их нужно освоить, но все утверждения, сформулированные формально, мы будем подробно комментировать «по-человечески».}
 
-\subsection \source{Сокращённые обозначения}
-    \label ssec:02:short
+\subsection Shorthand notions \label ssec:02:short
+    \source{Сокращённые обозначения \label ssec:02:short}
 
+To simplify the notations with quantifiers and make them more natural, we will allow ourselves to uphold the formal rules derived above.
+Firstly, usually after numeous quantifiers in a row we will insert a colon.
+For example, instead of
 \source{Чтобы немножко упростить обозначения в формулах с кванторами и приблизить их к естественному языку, я разрешу себе чуть-чуть отступить от правил формального языка, введённого выше. 
 Во-первых, часто после серии кванторов я буду ставить двоеточие — например, вместо}
 \eq
     \forall x \\ \exists y \enspace (x < y)
+we write
 \source{буду писать}
 \eq
     \forall x \\ \exists y\colon x < y.
