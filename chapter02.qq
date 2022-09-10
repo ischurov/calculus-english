@@ -1,52 +1,54 @@
-\chapter Introduction to mathematical logic \source{Введение в математическую логику} \label chap:02:logic
+\chapter Introduction to mathematical logic \label chap:02:logic
+    \source{Введение в математическую логику \label chap:02:logic}
 
-\section Statements \source{Высказывания}
-\subsection Examples of statements \source{Примеры высказываний}
+\section Statements
+    \source{Высказывания}
+\subsection Examples of statements 
+    \source{Примеры высказываний}
 
 You might think the chapter with such a title must contain strict and formal definitions for each concept introduced.
-Sad to say, this is not the case.
+But no, this is not the case.
 \source{Вероятно, в главе с таким названием читатель ожидает наконец увидеть аккуратные определения всем вводимым понятиям.}
 \source{Но нет.}
 
 \quasidefinition
     Statement is a declarative sentence with an unambiguous meaning. 
-    Statements are either true or false. 
+    Statements can be either true or false. 
     \source{Высказывание — это утверждение с чётко определенным смыслом, которое может быть истинным или ложным.}
 
-As always, examples are very helpful.
+As always, examples make everything very clear.
 \source{Как обычно, проще привести несколько примеров.}
 
 \example \nonumber
     \itemize
-        \item The sentence "$2+2=5$" is a statement. 
+        \item A sentence "$2+2=5$" is a statement. 
             It is false.
             \source{«$2+2=5$» — пример высказывания. Оно ложно.}
         \item Another example is "$3 > 2$". This is a true statement.
             \source{«$3 > 2$» — ещё один пример высказывания. Оно истинно.}
         \item Yet another true statement is "$5$ is a prime".
             \source{«$5$ — простое число» — ещё одно истинное высказывание.}
-        \item The sentence "The set of all prime numbers is finite" is false.
+        \item A sentence "the set of all prime numbers is finite" is false.
             \source{«Множество простых чисел конечно» — это ложное высказывание.}
-        \item The sentence "If a prime number is bigger than two, then it is odd" is a true statement.
+        \item A sentence "If a prime number is bigger than two, then it is odd" is a true statement.
             \source{«Если целое число простое и оно больше двух, оно нечётно» — истинное высказывание.}
         \item There are statements which haven't yet been proven to be true or false. 
             "Every even number bigger than two can be written as the sum of two prime numbers" is a statement of such kind. 
-            It's actually called \href[Goldbach's conjecture][https://en.wikipedia.org/wiki/Goldbach%27s_conjecture]
+            It's actually has a name: \href[Goldbach's conjecture][https://en.wikipedia.org/wiki/Goldbach%27s_conjecture].
             \source{«Каждое чётное число, большее двух, можно представить в виде суммы двух простых чисел» — это высказывание, истинность которого в настоящий момент неизвестна (это так называемая \href[бинарная проблема Гольдбаха][https://ru.wikipedia.org/wiki/Проблема_Гольдбаха]).}
-        \item The sentence "$n$ is an even number" is not a statement because what $n$ stands for is unclear.
-            Because of that, neither true nor false value can be assigned to it.
-            Such sentences are called \emph{predicates}, we will study them in greater detail later
+        \item A sentence "$n$ is an even number" is not a statement because what $n$ stands for is unclear.
+            Because of that, it is neither true nor false.
+            Such sentences are called \emph{predicates}, and we will study them in greater detail little bit later.
             \source{«$n$ — чётное число» — это не высказывание, потому что непонятно, чему равно $n$ (здесь, конечно, под $n$ подразумевается не собственно буква, а переменная, которая может принимать разные значения), и поэтому это утверждение не является ни ложным, ни истинным. 
             С такого типа утверждениями (они называются \emph{предикатами}) мы познакомимся чуть позже.}
 
-НЕ ПЕРЕВЁЛ
 \source{Вместо «истинно» или «ложно» используются и другие синонимичные выражения: верно (неверно), корректно (некорректно) и т.д.}
 
 \subsection Operations with statements
     \source{Операции с высказываниями}
 
-New statements can be created by combining existing ones.
-This can be done by using logical operations (which are called boolean algebra operations).
+New statements can be created by combining existing ones with each other.
+This can be done by using logical operations (which are also called boolean algebra operations).
 Suppose statements $A$ and $B$ are given.
 \source{Из существующих высказываний можно делать новые высказывания с помощью логических операций (которые также называются операциями булевой алгебры). 
 Пусть даны какие-то высказывания $A$ и $B$.}
@@ -67,14 +69,14 @@ Suppose statements $A$ and $B$ are given.
     Другой термин для конъюнкции — \emph{логическое «И»}.}
 
 \definition
-   A statement "$A$ is false" is called a \emph{negation}, write as $\neg A$.
+   A statement "$A$ is false" is called a \emph{negation}, write $\neg A$.
    Another term for negation is \emph{logical NOT}.
    \source{Высказывание «высказывание $A$ неверно» называется \emph{отрицанием} $A$. Обозначается $\neg A$. Другой термин — \emph{логическое «НЕ»}.}
     
 If the truth values of statements $A$ and $B$ are known, it's straightforward to establish the truth value of the conjunction, disjunction and negation. 
 For example, if $A$ is true, then $\neg A$ is false.
-If $A$ and $B$ are both true, then $A\wedge B$ is true, otherwise false, and so on.
-All these variations can be conveniently written in the form of a table, that is called a \emph{truth table}.
+If $A$ and $B$ are both true, then $A\wedge B$ is true, otherwise false—and so on.
+All these variations can be conveniently written in the form of a table, which is called a \emph{truth table}.
 \source{Если про каждое из высказываний $A$ и $B$ известно, является оно истинным или ложным, легко установить истинность их конъюнкции, дизъюнкции и отрицания. 
 Например, если $A$ истинно, то $\neg A$ ложно. 
 Если $A$ и $B$ оба истинны, то $A\wedge B$ истинно, иначе оно ложно. 
@@ -105,7 +107,7 @@ The following table is for conjunction and disjunction
         \hline
     \end{array}
 
-There is an another important logical operation, but for now we'll focus on these three.
+There is also an another important logical operation, but for now we'll focus on these three.
 \source{В дальнейшем нам понадобится ещё одна важная логическая операция, но пока остановимся на этих.}
 
 
@@ -113,7 +115,7 @@ There is an another important logical operation, but for now we'll focus on thes
     \source{Раскрытие скобок с отрицанием \label ssec:02:deMorg}
 
 Suppose $A$ and $B$ are some statements. 
-Consider a statement $\neg(A\vee B)$, which is the negation of $A \vee B$.
+Consider a statement $\neg(A\vee B)$, which is the negation of a statement $A \vee B$.
 In which case is it true?
 Only when both $A$ and $B$ are false. 
 Indeed, suppose one of them is true, then the disjunction (logical OR) is true, and its negation is false.
@@ -131,10 +133,10 @@ Formally we write
     \splitem \splonly{=}
         \neg A \splonly{&} \wedge \neg B
 The second equality holds because negation has a priority over conjunction.
-In other words, writing $\neg A \wedge \neg B$ means the negations happen first, then the conjunction, so brackets are unnecessary. 
+In other words, writing $\neg A \wedge \neg B$ means the negations happen first, then the conjunction—so brackets are unnecessary. 
 \source{Второе равенство верно, поскольку операция отрицания имеет приоритет перед конъюнкцией, то есть в формуле $\neg A \wedge \neg B$ сначала выполняются отрицания, а потом конъюнкция, так что скобки вокруг $\neg A$ и $\neg B$ можно не писать.}
 
-Similarly with a statement $\neg(A \wedge B)$.
+Similar reasoning can be applied to a statement $\neg(A \wedge B)$.
 If either of the statements $A$ and $B$ is false, then thein conjunction (logical AND) is false, and its negation is true.
 Again, more formally
 \source{Аналогично можно рассмотреть высказывание $\neg(A \wedge B)$. 
@@ -147,7 +149,7 @@ Again, more formally
     \splitem
         \splonly{&=}\neg A \vee \neg B.
 
-It's safe to say that when dealing with brackets with negation in front, operator $\vee$ changes to $\wedge$ and vice versa.
+It's safe to say that when dealing with brackets which have a negation in front, an operator $\vee$ changes to $\wedge$ and vice versa.
 \source{Можно сказать, что при раскрытии скобок, перед которыми стоит отрицание, знак $\vee$ меняется на $\wedge$ и наоборот.}
 
 These logical rules are calles \emph{De Morgan's laws}.
@@ -164,12 +166,12 @@ These logical rules are calles \emph{De Morgan's laws}.
 \subsection Logical operations in programming.
     \source{Логические операции в программировании}
 
-In commonly used programming languages statements are representes by variables called "boolean values" (for example, \tt{bool} in Python).
+In common programming languages statements are representes by variables called "boolean values" (for example, \tt{bool} in Python).
 They take two values: true and false (\tt{True} and \tt{False}).
 As an example, consider an expression \tt{2 + 3 == 4}. 
 Its value is \tt{False}.
 On the other hand, \tt{3 > 2} has a value of \tt{True}.
-It's possible to apply logical operations to them. 
+It's possible to apply logical operators to them. 
 These are called \tt{and}, \tt{or}, and \tt{not}.
 For example, \tt{2 * 0 == 1 or 3 > 2} has a value of \tt{True}.
 \source{В распространённых языках программирования высказываниям соответствуют выражения, имеющие значения типа «булевская величина» (например, в Python это \tt{bool}), то есть принимающие значения «истина» или «ложь» (\tt{True} и \tt{False}). 
@@ -179,7 +181,7 @@ For example, \tt{2 * 0 == 1 or 3 > 2} has a value of \tt{True}.
 \comment
     Consider a line of code \tt{if x > 0 and x < 10: print("ok"). 
     When executed, it prints \tt{ok} if a variable \tt{x} contains a number greater than $0$ \emph{and} less than $10$.
-    In the process of developing a certain program, logical operators are very useful for creating complex (so called \emph{compound}) statements from simple ones.
+    In the process of developing a certain program, logical operators can be very useful for creating complex (so called \emph{compound}) statements from simple ones.
     \source{Например: \tt{if x > 0 and x < 10: print("ok")} — на экран будет выведена строка \tt{ok} если в переменной \tt{x} находится значение больше 0 \emph{и} меньше 10. 
     С помощью логических операторов можно составлять сложные условия из простых, и это часто приходится делать, чтобы реализовать ту или иную логику работы приложения.}
 
@@ -189,8 +191,8 @@ For example, \tt{2 * 0 == 1 or 3 > 2} has a value of \tt{True}.
 \subsection Examples of predicates
     \source{Примеры предикатов}
 
-In this chapter we've encountered a sentence "$n$ is even". 
-When faced with the question of its truth value, one can argue it doesn't make sence since it's not specified what exactly $n$ stands for.
+We've already encountered a sentence "$n$ is even" earlier. 
+One can argue the question of its truth value doesn't make sence since it's not specified what exactly $n$ stands for.
 This is an example of a sentence that is not a statement.
 Instead, such sentences are called \emph{predicates}.
 \source{Выше фигурировал пример утверждения «$n$ — чётное число». 
