@@ -762,60 +762,97 @@ we write
 \source{буду писать}
 \eq
     \forall x \\ \exists y\colon x < y.
+This colon doesn't change the meaning of the sentence.
+It just makes it visually easier to separate quantifiers from the predicates. 
+It can also be used as a substitute to parentheses, for example in a sentence
 \source{Двоеточие тут не несёт никакой содержательной нагрузки и служит просто для визуального отделения предиката, на который навешиваются кванторы. 
 Оно также будет заменять скобки — например, в высказывании}
 \equation \label eq:02:xy1
     \forall x\\  \exists y\colon x \ne 0 \Rightarrow xy=1
+Quantifiers are applied to the whole part $(x \ne 0 \Rightarrow xy=1)$, not just to the $x\ne 0$.
+This notation is equivalent to
 \source{кванторы навешиваются целиком на предикат $(x \ne 0 \Rightarrow xy=1)$, а не только на часть $x\ne 0$. 
 Иными словами, эта запись эквивалентна такой:}
 \eq
     \forall x\\  \exists y \enspace (x \ne 0 \Rightarrow xy=1).
+Secondly, we will place the condition right after the quantifiers, as shown bellow with a statement \ref{eq:02:xy1}.
 \source{Во-вторых, я буду зачастую писать условие, которому должно удовлетворять значение переменной, сразу после квантора. 
 Например, утверждение \ref{eq:02:xy1} можно записать так:}
 \eq
     \forall x \ne 0 \\ \exists y\colon xy=1.
+In a similar way we specify the set of all values, which quantifier's variable may take.
+For a statement "for every natural number there exist a rational number, such that their product is bigger than 9", our canonical notation looks like this
 \source{Аналогично я часто буду указывать, из каких множеств допустимо брать значения переменных. 
 Например, если бы я хотел сказать, что для любого натурального числа найдётся такое рациональное число, что их произведение больше 9, то записал бы это так:}
 \eq
     \forall x \in \mathbb N \\ \exists y \in \mathbb Q\colon xy > 9.
+More formally this is restated as
 \source{Формально более аккуратная, но громоздкая запись этого же утверждения звучит следующим образом:}
 \equation \label eq:xygr1
     \forall x\\ \exists y \enspace (x \in \mathbb N \Rightarrow (y \in \mathbb Q
     \wedge xy > 9)).
+Which is less visuappy appealing.
 \question
+    Will the statement still hold if we substitute $x \in \mathbb N$ for $x \in \mathbb Z$?
     \source{Останется ли это утверждение верным, если заменить условие $x \in \mathbb N$ на условие $x \in \mathbb Z$?}
     \quiz
         \choice
+            Yes.
             \source{Да.}
             \comment
+                Are you sure \emph{every} integer satisfies?
+                Try to think about a counterexample.
                 \source{Прямо-таки для любого целого числа вы можете найти рациональное, чтобы их произведение было больше 9? 
                 Гм… 
                 А какие ненатуральные целые числа вы знаете? Приведите пару примеров.}
         \choice \correct
             \source{Нет.}
+            No.
             \comment
+                You're right!
+                Consider $x=0$.
                 \source{Конечно, достаточно взять $x=0$}
 \question
+    Will the statement still hold if we substitute $x \in \mathbb N$ for $x \in $y < 0$?
     \source{Останется ли это это утверждение верным, если заменить условие $y\in \mathbb Q$ на условие $y < 0$?}
     \quiz
         \choice
+            Yes.
             \source{Да.}
             \comment
+                Actually, no. 
+                What happens when a natural number gets multiplied by a negative number?
+                The result is a negative number.
                 \source{Какой знак имеет произведение натурального числа и отрицательного?}
         \choice \correct
+            No.
             \source{Нет.}
             \comment
+                The product of a natural number and a negative number is neagtive, hence it cannot be bigger than $9$.
                 \source{Конечно, произведение натурального числа и отрицательного всегда отрицательно и не может быть больше 9.}
 
+And the final observation: commonly there is a condition on a variable for which a quantifiere is applied.
+If the variable comes after an existential quantifier, we may use conjunction instead of introducing a quantifier.
+Since we want some \emph{particular} values to have certain properties, logical AND is a natural way to go.
+If it comes after a universal quantifier, implication fits well.
+This time the following logic can be applied: "for all" means \emph{as soon as} some condition is satisfied, we must have certain properties. 
 \source{Условия, записываемые после квантора существования, в более подробной записи приписываются к предикату через конъюнкцию (потому что нам нужно, чтобы существовало значение переменной, удовлетворяющей условию, \strong{и} предикат был бы верен), а те, что идут после квантора всеобщности — через импликацию (потому что мы утверждаем, что предикат верен для всех значения переменной, удовлетворяющей условию, а для тех, кто не удовлетворяют, ничего не утверждаем).}
 
 \exercise
+    Try to formulate a negation of a statement \ref{eq:xygr1} using the rules of applying a negation derived above, and De Morgan's laws.
+    Make a notation simpler by putting the conditions right after a quantifier.
+    What happens to them when a negation is applied?
+    Does they change?
     \source{Запишите отрицание к утверждению \ref{eq:xygr1}, пользуясь правилами переноса отрицания через кванторы и законами де Моргана. 
     Запишите получившееся утверждение в краткой форме, размещая условия сразу после кванторов. 
     Что происходит с этими условиями при переносе через них отрицания — меняются ли они?}
 
-\section \source{Заключение}
+\section Conclusion
+    \source{Заключение}
 
+Now we have a mathematical tool—language if you wish—which allows us to make precise notations for various kinds of sentences, and even to some extend analyze them automatically.
+So far we've considered rather easy examples to get a feel for how the language works.
+But very soon they will coome in handy when dealing with all kinds of theorems and claims. 
 \source{Теперь у нас есть математический аппарат, своего рода язык, который позволяет аккуратно записывать и даже в какой-то мере автоматически анализировать довольно сложные утверждения.  
 Мы рассматривали самые простые примеры, чтобы было понятно, как работает «механика» математической логики. 
 Совсем скоро мы будем использовать её в условиях, максимально приближенных к боевым.}
