@@ -193,7 +193,7 @@ For example, \tt{2 * 0 == 1 or 3 > 2} has a value of \tt{True}.
 
 We've already encountered a sentence "$n$ is even" earlier. 
 One can argue the question of its truth value doesn't make sence since it's not specified what exactly $n$ stands for.
-This is an example of a sentence that is not a statement.
+This is an example of a declarative sentence that is not a statement.
 Instead, such sentences are called \emph{predicates}.
 \source{Выше фигурировал пример утверждения «$n$ — чётное число». 
 Если задать вопрос, является оно истинным или ложным, вы скорее всего скажете, что вопрос не имеет смысла: как можно на него ответить, если не знаешь, чему равно $n$? 
@@ -201,43 +201,43 @@ Instead, such sentences are called \emph{predicates}.
 Утверждения такого типа называются \emph{предикатами}.}
 
 \quasidefinition
-    Roungly speaking, a \emph{predicate} is a sentence which contains one or more variables. 
+    Roungly speaking, a \emph{predicate} is a sentence that contains one or more variables. 
     It becomes a statement if the values of \emph{all} variables are specified. 
     \source{Грубо говоря, \emph{предикат} — это такое утверждение, которое зависит от одной или нескольких переменных, и становится высказыванием, если задать значения этих переменных.}
 
 \example
     Consider a predicate "$n$ is even".
-    To be concise and formal, predicates are often written like so: $E(n)$.
-    By substituting a certain value into $n$ it becomes a statement, either true or false.
+    In formal language predicates are often written like this: $E(n)$.
+    By substituting a certain value into $n$ it becomes a statement, which is either true or false.
     For example, $E(2)$ is true, while $E(17)$ is false.
-    When dealing with a function, we always define its domain.
-    In similar way, predicates also have their domains, or the set of all values their variables are allowed to take.
-    In this example, let's define the range of $E(n)$ to be all natural numbers $n\in \mathbb N$. 
-    (Noone can restrict us to this particular domain—other ones are also allowed).
+    When dealing with a function, we always specify its domain.
+    In similar way, predicates also have their domains, which is the set of all values their variables are allowed to take.
+    In this example, let's define the domain of $E(n)$ to be all natural numbers $n\in \mathbb N$. 
+    (No one can restrict us to this particular domain, other ones are also allowed).
     \source{Рассмотрим предикат «$n$ — чётное число». 
     Его можно обозначить какой-нибудь буквой, аналогично обозначению функций — например, $E(n)$. 
     При подстановке конкретного $n$ предикат становится высказыванием, которое является истинным или ложным. 
     Например, $E(2)$ истинно, а $E(17)$ — ложно. 
     Подобно функциям, у предикатов есть «область определения» — множество значений, которые могут принимать переменные. 
     Например, давайте считать, что областью определения для $E(n)$ является множество натуральных чисел, $n\in \mathbb N$ (но можно было бы определить аналогичный предикат и для множества всех целых чисел).}
-\example Consider a predicate $D(k, n)$ which denotes the sentence "$n$ is divisible by $k$".
-    This predicates depends on two variables $k$ and $n$.
+\example Consider a predicate $D(k, n)$ that is a sentence "$n$ is divisible by $k$".
+    This predicate depends on two variables $k$ and $n$.
     Suppose also that $n\in \mathbb N$ and $k \in \mathbb N$.
-    By trying some values we see,  $D(2, 3)$ is false and D(2, 4)$ is true.
+    By trying some values we observe  $D(2, 3)$ is false and D(2, 4)$ is true.
     \source{Определим предикат $D(k, n)$ — «$n$ делится на $k$». 
     Этот предикат зависит от двух переменных. 
     Будем считать, что $n\in \mathbb N$ и $k \in \mathbb N$. 
     Например, $D(2, 3)$ — ложь, а $D(2, 4)$ — истина.}
-\example We will need a predicate $S(x, y):=«x^2=y»$, where $x$ and $y$ are real numbers.
+\example Later we'll need a predicate $S(x, y):=«x^2=y»$, where $x$ and $y$ are real numbers.
     It checks whether $x^2$ is equal to $y$ or not.
     \source{Ещё нам понадобится предикат $S(x, y):=«x^2=y»$, определенный для вещественных $x$ и $y$. 
     Он проверяет, что $x^2$ равняется $y$.}
 
-\remark From now on in this chapter variables $m$, $n$, and $k$ denote (only) natural numbers, in contrast to $x$ and $y$ denoting (only) real numbers.
+\remark From now on we'll reserve variable names $m$, $n$, and $k$ for (only) natural numbers, and $x$ and $y$ for (only) real numbers.
     \source{В дальнейшем в этой главе, если не оговорено обратное, мы будем считать, что буквы $m$, $n$, $k$ обозначают натуральные числа, а $x$ и $y$ — вещественные.}
 
 It's possible to define new predicates from existing ones.
-For example, suppose we have a predicate $D$, that checks devisibility. 
+For example, suppose we have a predicate $D$, that checks divisibility. 
 If we need to make a predicate $E$, that checks whether a number is even, $D$ can help:
 \source{Одни предикаты можно определять через другие. 
 Например, если бы у нас был готовый предикат $D$, проверяющий делимость, и нам нужно было изготовить из него предикат $E$, проверяющий число на чётность, его легко можно было бы задать таким образом:}
@@ -252,10 +252,9 @@ In the following section we will discuss an another way to define a predicate.
     \source{Квантор всеобщности}
 
 Consider a predicate $T(n):=D(1, n)$.
-It checks, whether a natural number $n$ is divisible by $1$. 
+It checks whether a natural number $n$ is divisible by $1$. 
 (Note that every natural number is divisible by $1$).
 It can also be restates this way: "for all $n$ predicate $T(n)$ is true".
-Too many words, isn't it?
 There is a short way of representing the same thing:
 \source{Давайте рассмотрим предикат $T(n):=D(1, n)$. 
 Он проверяет, что натуральное число $n$ делится на $1$. 
@@ -265,7 +264,7 @@ There is a short way of representing the same thing:
 \eq
     \forall n \\ T(n).
 A sign $\forall$ (upside down A, from \emph{all}) is called a \emph{universal quantifier}.
-It is read "for all".
+It is read as "for all".
 \source{Знак $\forall$ (перевёрнутая буква A, от \emph{all}) называется \emph{квантором всеобщности}. 
 Он читается «для всякого». }
 
@@ -280,8 +279,8 @@ It is read "for all".
     определении предиката или её можно понять из контекста.
 
 \question
-    Consider a statement $\forall n \\ E(n)$, where $E(n)$ is a predicare, that checks whether a natural number $n$ is even.
-    What are your thoughts about this one.
+    Consider a statement $\forall n \\ E(n)$, where $E(n)$ is a predicare that checks whether a natural number $n$ is even.
+    What is its truth value?
     \source{Рассмотрим утверждение $\forall n \\ E(n)$, где $E(n)$ — предикат, проверяющий, что натуральное число $n$ является чётным. 
     Что вы можете сказать про построенное таким образом утверждение?}
     \quiz
@@ -290,7 +289,7 @@ It is read "for all".
             \source{Оно истинно.}
             \comment
                 Are you sure? 
-                In other words, it states that all natural numbers are even.
+                It states that all natural numbers are even.
                 \source{Вы уверены? 
                 В этом утверждении сказано: «для любого натурального $n$ верно, что $n$ чётно». 
                 Иными словами, это утверждение можно переписать так: «все натуральные числа — чётны».}
@@ -315,15 +314,15 @@ It is read "for all".
                 Это утверждение попросту неверно.}
 
 \remark \label rem:02:bound
-    Suppose $P(x)$ is some predicate.
+    Suppose $P(x)$ is a predicate.
     Consider a sentence $\forall x \\ P(x)$.
-    If for all values of $x$ a statement $P(x)$ is true, then considered sentence is also true.
+    If for all values of $x$ a statement $P(x)$ is true, then this sentence must be.
     Otherwise it is false.
     (This verifies the sentence is a statement).
     Notice that although $x$ is contained in the sentence, we cannot substitute any values in it.
-    (A sentence $\forall 2 \\ P(2)$ does not make sence at all, because right after a quantifier there must be a variable).
-    In such cases $x$ is called a \emph{bound} variable, in contrast to \emph{free} variables in all statement above, that doesn't have any universal quantifiers.
-    It's somewhat "bound" to the statement and we cannot manipulate it in any way.
+    (A sentence $\forall 2 \\ P(2)$ does not make sence at all, because a quantifier must be followed by a variable).
+    In such cases $x$ is called a \emph{bound} variable, in contrast to \emph{free} variables statement that doesn't have any universal quantifiers.
+    Bound variables are somewhat "bound" to the statement and we cannot be manipulated in any way.
     \source{Пусть $P(x)$ — какой-то предикат. 
     Рассмотрим утверждение $\forall x \\ P(x)$. 
     Если $P(x)$ при всех значениях $x$ является истинным, значит, это утверждение истинно. 
@@ -336,26 +335,26 @@ It is read "for all".
 \subsection Existential quantifier
     \source{Квантор существования}
 
-\emph{Perfect numbers} are natural numbers, that equal the sum of their (positive) divisors different from the number itself. 
-(These divisors are called \emph{proper divisors}).
+\emph{Perfect numbers} are natural numbers, that are equal to the sum of their (positive) divisors different from the number itself. 
+(Such divisors are called \emph{proper divisors}).
 \source{\emph{Совершенными числами} называются натуральные числа, которые равны сумме всех своих положительных делителей, отличных от самого числа (так называемых «собственных делителей»).}
 
-Consider a predicate $R(n)$, which checks whether a natural number $n$ is a perfect number.
+Consider a predicate $R(n)$ that checks whether a natural number $n$ is a perfect number.
 (In other words, it states that "$n$ is a perfect number").
 \source{Рассмотрим предикат $R(n)$, проверяющий, является ли натуральное число $n$ совершенным. 
 (Иными словами, $R(n)$ соответствует утверждению «$n$ — совершенное число».)}
 
-By choosing a particular $n$ we can easily check whether it is perfect or not.
+By choosing a particular $n$ we can easily check whether it is a perfect number or not.
 For example, a number $10$ has three proper divisors: $5$, $2$, and $1$, but $5+2+1=8\ne 10$.
 Hence $10$ is not a perfect number.
-To check the truth value of $R(n)$, it's useful to know whether perfect numbers exist at all.
-In other words, is the statement "there exist at least one value of $n$, such that $R(n)$ is true" a true statement?
+To check the truth value of $R(n)$ it's useful to know whether perfect numbers exist at all.
+In other words, is the statement "there exist at least one value of $n$ such that $R(n)$ is true" a true statement?
 \source{Если взять какое-то конкретное $n$, очень легко проверить, является ли оно совершенным. 
 Например, число $10$ имеет три собственных делителя, $5$, $2$ и $1$, но $5+2+1=8\ne 10$ — значит, оно не совершенное. 
 Но существуют ли вообще совершенные числа? 
 Иными словами, верно ли утверждение: «существует такое $n$, что $R(n)$ имеет значение „истина”»?}
 
-For formulating such statements there exist an another short notation.
+There exist a short nitation for formulating statements of this kind
 \source{Для формулирования таких утверждений также есть специальное короткое обозначение:}
 \eq
     \exists n \\ R(n).
@@ -365,12 +364,12 @@ For formulating such statements there exist an another short notation.
     \eq
         \exists n\in \mathbb N\colon R(n).
 
-A sign $\exists$ (mirrored letter E, from \emph{exists}) is called an \epmh{existential quantifier} and is read as "there exists".
+A sign $\exists$ (mirrored letter E, from \emph{exists}) is called an \epmh{existential quantifier} and is read as "there exists (such)".
 \source{Знак $\exists$ (перевернутая буква E, от \emph{exists}) называется \emph{квантором существования}. 
 Читается просто «существует [такое]».}
 
 Similarly to a universal quantifier, an existential quantifier "bounds" the variable after it.
-Notice that a statement $\exists n\\ R(n)$, despite containing a variable $n$, is not actually a predicate (it doesn't depend on $n$).
+Notice that a statement $\exists n\\ R(n)$ is not actually a predicate, despite containing a variable $n$.
 It's a statement because perfect numbers either exist (which makes the sentence true), or not (making it false).
 \source{Аналогично квантору всеобщности (см. \ref[замечание][rem:02:bound]), квантор существования «связывает» соответствующую переменную. 
 Утверждение $\exists n\\ R(n)$, хотя в нём фигурирует переменная $n$, не является предикатом, зависящим от $n$. 
@@ -383,7 +382,7 @@ This prooves that a statement $\exists n \\ R(n)$ is true.
 Например, число 6 совершенно. 
 Это доказывает, что утверждение $\exists n \\ R(n)$ является истинным.}
 
-\subsection Quantifiers and negation \label ssec:02:quant-neg
+\subsection Relation between quantifiers and negations \label ssec:02:quant-neg
     \source{Кванторы и отрицание \label ssec:02:quant-neg}
 
 We can generalize \ref[De Morgan's laws\nonumber][ssec:02:deMorg] for statements and predicates involving quantifiers.
@@ -394,7 +393,7 @@ To be specific, let $P(x)$ state that "given a crocodile $x$, it is red".
 (Например, $x$ принадлежит множеству всех крокодилов, а $P(x)$ проверяет, что крокодил $x$ является красным.)}
 
 Consider a statement $\forall x \\ P(x)$ ("all crocodiles are red").
-It is sufficient to give an example (in such cases called a \emph{counterexample}) of a crocodile which is \emph{not} red.
+To disprove it, it is sufficient to give an example (in such cases called a \emph{counterexample}) of a crocodile which is \emph{not} red.
 More formally, the following equality holds:
 \source{Рассмотрим высказывание $\forall x \\ P(x)$ («все крокодилы красные»). 
 Чтобы его опровергнуть (то есть доказать его отрицание), достаточно предъявить какого-нибудь крокодила, который бы не был красным. 
@@ -402,14 +401,14 @@ More formally, the following equality holds:
 \equation \label eq:02:negofrall
     \neg(\forall x \\ P(x)) = (\exists x \\ \neg P(x))
 Similarly, we can consider a statement $\exists x \\ P(x)$ ("there exist at least one red crocodile").
-The way to disprove it is to check \emph{each} crocodile.
+The way to disprove it is to check the color of \emph{each} crocodile.
 In other words, 
 \source{Аналогично, можно рассмотреть утверждение $\exists x \\ P(x)$ («существует по крайней мере один красный крокодил»). 
 Чтобы его опровергнуть, нужно перебрать всех крокодилов, и проверить, что каждый из них не является красным. 
 Иными словами, верно такое равенство:}
 \equation \label eq:02:negexists
     \neg(\exists x \\ P(x)) = (\forall x \\ \neg P(x))
-Now we state that negation acts on quantifiers by changing to a "negative" of itself: "there exist at least one" becomes "for any" and vice versa.
+We've just observed that negation acts on quantifiers by changing them to a "negative" of itself: "there exist at least one" becomes "for any" and vice versa.
 \source{Можно сказать, что при переносе знака отрицания через квантор он меняется на обратный: существование на всеобщность и наоборот.}
 
 \remark
@@ -433,7 +432,7 @@ Now we state that negation acts on quantifiers by changing to a "negative" of it
 \subsection Bounding one of the variables
     \source{Связывание одной переменной}
 
-Consider a predicate $S(x, y):=«x^2=y»$, defined on real numbers.
+Now we revisit a predicate $S(x, y):=«x^2=y»$, defined on real numbers.
 Now let's form a sentence $\exists x \\ S(x, y)$ and investigate its nature.
 \source{Рассмотрим предикат $S(x, y):=«x^2=y»$, определённый для вещественных $x$ и $y$.
 Рассмотрим такое утверждение: $\exists x \\ S(x, y)$. 
@@ -459,7 +458,7 @@ This ensures there exist no real number with a square root equal to $-1$.
 \source{Это утверждение неверно: мы знаем, что квадраты вещественных чисел неотрицательны, и значит не существует такого $x$, что его квадрат равен $-1$.}
 
 Now back to a sentence $\exists x \\ S(x, y)$.
-We've seen that it's possible to get different results (either true, or false values) depending on the values of $y$.
+We've seen that it's possible to get different results (either true or false) depending on the values of $y$.
 This means we have a predicate, which depends on $y$.
 Let's denote it by $Q(y)$.
 We can write:
@@ -472,15 +471,15 @@ We can write:
     Q(y):=(\exists x \\ S(x, y))
 Notice that we've originally had a predicate $S(x, y)$ with two variables, out of which we've constructed an another predicate $Q(y)$, which depends only on $y$.
 One cay say we've "bounded" a variable $x$ by putting a quantifier in front of it.
-In a statement $\exists x \\ S(x, y)$ a variable $x$ is called a \emph{free} variable (recall that $y$ is called \emph{bounded}). 
+In a statement $\exists x \\ S(x, y)$ a variable $x$ is called a \emph{free} variable (recall that $y$ is called a \emph{bound} variable).
 \source{Таким образом, из предиката с двумя переменными $S$ мы получили предикат с одной переменной $y$, поскольку переменную $x$ «связали» с помощью квантора. 
 В высказывании $\exists x \\ S(x, y)$ переменная $y$ называется «свободной» (мы можем задавать её значения как хотим и получать разные высказывания), а переменная $x$ — «связанной».}
 
 \subsection Order of quantifiers
     \source{Последовательное применение кванторов}
 
-Consider a predicate G(n, m):=«n>m»$, defined on a set of natural numbers.
-It checks, whether $n$ is bigger thatn $m$ or not.
+Consider a predicate $G(n, m):=«n>m»$, defined on a set of natural numbers.
+It checks whether $n$ is bigger thatn $m$ or not.
 Define a new predicate
 \source{Рассмотрим предикат $G(n, m):=«n>m»$, определенный на множестве натуральных чисел. 
 Он проверяет, что $n$ больше $m$. 
@@ -502,7 +501,7 @@ This statement is read as "for all $m$ there exist such $n$ that $n>m$".
 Observe, that at first we've had a predicate with two variables, then we've "bounded" each of it and got a statement.
 \source{Во-первых, нужно заметить, что получившееся утверждение не является предикатом — мы последовательно связали обе переменные и то, что получилось, уже ни от чего не зависит, это просто высказывание, которое может быть истинным или ложным.}
 
-Is it true.
+Is it true?
 Yes, it is. 
 Take an arbitrary natural number $m$.
 Notice $Z(m)$ is true since we can take $n=m+1$ and get the desired result.
@@ -512,7 +511,7 @@ Since the reasoning above is true for an arbitrary element of natural numbers, i
 Заметим, что для него предикат $Z(m)$ верен, поскольку существует такое $n$ (например, можно взять $n=m+1$), для которого $n>m$. 
 (Действительно, $m+1>m$, каким бы ни было $m$.)}
 
-We can spell the sentence out (which can often be helpful): "for every natural number we can find a number bigger than it".
+We can speak the sentence out loud (which can often be helpful): "for every natural number we can find a number bigger than it".
 It's somewhat tempting to restate it as "there is a natural number bigger than any given natural number".
 But in fact, these two statements are not the same. 
 The latter is formally written as
@@ -526,11 +525,11 @@ The latter is formally written as
 
 This statement is different from \ref{eq:02:forallexists} only in the order of quantifiers, but if you think about it, the meaning has changed.
 In the process of proving a statement \ref{eq:02:forallexists}, the strategy was to choose an exceeding number for a \emph{particular} given number.
-In a statement \ref{eq:02:existsforall}, on the other hand, there must exist the one and only number $n$, that makes $n>m$ true for all natural $m$.
+In a statement \ref{eq:02:existsforall}, on the other hand, there must exist the one and only number $n$ that makes $n>m$ true for all natural $m$.
 It's easy to see that there are no such natural number.
-No matter how big we make $n$, for $m=n$ (or $m=n+1$, or $m=n+2$ and so on), a predicate $n>m$ will be false. 
+No matter how big we make $n$, for $m=n$ (or $m=n+1$, or $m=n+2$ and so on) a predicate $n>m$ will be false. 
 Now it's clear that the order of quantifiers is very important: it can change the way the corresponding variables are chosen.
-In our case the order of quantifiers changed a truth value: the first statement is true, while the second is false.
+In our case the order of quantifiers changed the truth value: the first statement is true, while the second one is false.
 But is not the case in general (think of a statement for which changing the order of quantifiers preserves its truth value), and the main takeaway is that different orders of quantifiers make different statements.
 \source{Как видно, эта формулировка отличается от \ref{eq:02:forallexists} только порядком следования кванторов. 
 Однако, её смысл совсем иной. 
@@ -542,11 +541,11 @@ But is not the case in general (think of a statement for which changing the orde
 В данном случае при изменении порядка кванторов получились разные результаты: утверждение с одним порядок истинное, а с другим ложное. 
 Так бывает не всегда (придумайте пример, когда это не так), но важно понимать, что изменение порядка следования кванторов создаёт другое утверждение.}
 
-\subsection Negation acts on a series of quantifiers \label ssec:02:quant-neg-series
+\subsection How a negation acts on a series of quantifiers \label ssec:02:quant-neg-series
     \source{Отрицание и серия кванторов \label ssec:02:quant-neg-series}
 
 We've already disproven a statement \ref{eq:02:existsforall}, but let's try to revision the way we've done it.
-It's common to formulate a negation of the statements with quantifiers, and to prove that the negation is true.
+A common way to disprove a statement is to formulate its negation with quantifiers, then prove the negation is true.
 Let's use the identities from the \ref[section][ssec:02:quant-neg] and denote a predicate $\forall m \\ (n>m)$ by $W(n)$.
 Then a statement \ref{eq:02:existsforall} can be stated in the following form:
 \source{Мы уже опровергли утверждение \ref{eq:02:existsforall}, но давайте ещё раз более подробно поговорим, как мы это сделали. 
@@ -568,7 +567,7 @@ Now we can apply \ref{eq:02:negofrall} to a statement $\neg(\forall m \\ (n>m))$
 \eq
     \ldots=(\forall n\\ \exists m \enspace \neg(n>m))=(\forall n\\ \exists m
     \enspace (n \leqslant m)).
-We've sequantially "applied" a negation to the quantifiers, and each has been changed to the opposite.
+We've sequantially "applied" a negation to the quantifiers, and each one has been changed to the opposite of itself.
 Eventually a negation "moved" in front of a predicate $n>m$, and changed it to $n \leqslant m$.
 Finally, a negation of a statement \ref{eq:02:existsforall} is a statement
 \source{Мы как бы последовательно перекинули знак отрицания сначала через первый квантор, а потом через второй. 
@@ -586,18 +585,17 @@ Just take $m=n$, or $m=n+1$ or any number bigger than $n$.
 Это просто: достаточно взять, например, $m=n$. 
 С тем же успехом можно было бы взять $m=n+1$ или $m=n+100$.}
 
-\section Implication\label sec:02:impl
+\section Implication \label sec:02:impl
     \source{Импликация \label sec:02:impl}
 
 Let's consider a sentence "if a natural number is divisible by $4$, then it is divisible by $2$" and denote it by $A$.
-First of all, it is a statement because it is somewhat an algorithm for determining the divisibility by $2$.
+First of all, notice it is somewhat an algorithm for determining the divisibility by $2$.
 An algorithm can be either correct (then people use it) or incorrect (leading to mistakes), hence $A$ is a statement.
-In this case it is a well-known and correct algorithm, in other words a statement $A$ is true.
+In this case it is a well-known correct algorithm, in other words a statement $A$ is true.
 Can we formulate it using quantifiers and predicates?
 Consider a predicate $Q(n)$, that checks whether $n$ is divisible by $4$.
 Since a statement $A$ claims something about an arbitrary natural number, the appropriate (universal) quantifier must go first.
 Then the predicates follow, but how exactly?
-
 Recall we've already created a predicate $E(n)$, which checks if the number is even.
 \source{Давайте рассмотрим такое утверждение: «если натуральное число делится на 4, то оно делится на 2» (обозначим его за $A$). 
 Как мы знаем, это верное утверждение.
@@ -609,9 +607,9 @@ Recall we've already created a predicate $E(n)$, which checks if the number is e
 
 Perhaps we can think of negating the (not yet constructed) statement $A$, then use the rules derived above to get the formal expression?
 Okay, but what is a negation of $A$ in words?
-We must provide a number $n$, that is a counterexample: it is divisible by $4$, but not divisible by $2$.
+We must provide a number $n$ that is a counterexample: it is divisible by $4$, but not divisible by $2$.
 This would disprove our initial statement.
-In other words, there must exist a number $n$, such that $Q(n)$ is true and $E(n)$ is false.
+In other words, there must exist a number $n$ such that $Q(n)$ is true and $E(n)$ is false.
 (More formally, the statement $Q(n)\wedge \neg E(n)$ is true for some natural $n$).
 Now we're ready to write a negation of $A$ formally:
 \source{Вероятно, здесь проще начать с отрицания. 
@@ -649,7 +647,7 @@ This is precisely what we're aiming to say.
                 Actually, we couldn't!
                 A statement $A$ in the form of \ref{eq:02:APnQ} is true, in contrast to the form of \ref{eq:02:wrong}, which is simply false.
                 Take $n=6$.
-                It is not divisible by $4$, so $Q(6)$ is false, hence the conjunction if false.
+                It is not divisible by $4$, so $Q(6)$ is false, hence the conjunction is false.
                 Since the statement involved a universal quantifier $\forall n$, this is a counterexample.
                 (Show that this example does not disprove that \ref{eq:02:APnQ} is true).
                 \source{А вот и нет. 
@@ -675,17 +673,17 @@ This is precisely what we're aiming to say.
 
 It seems like sentences including "if" and "then" are important and must have their own name.
 Indeed, statements "$A$ implies $B$", or "if $A$, then $B$", or "if $A$ is true, then $B$ is true" are formally written as $\neg A \vee B$.
-Notice once again that by saying "if $A$ is true, then $B$ is true" we don't state anything about the case when $A$ is false.
+Notice that by saying "if $A$ is true, then $B$ is true" we don't state anything about the case when $A$ is false.
 But then, what truth value must the statement take?
 Quite logically it must be true, or perhaps it must \emph{not} be false.
-But in the case when $A$ is true, $B$ is most centainly true.
+But if $A$ turned out to be true, then $B$ is most centainly true.
 \source{В общем виде это формулируется так. 
 Пусть есть два высказывания, $A$ и $B$. 
 Утверждения «из $A$ следует $B$» или  «$A$ влечёт $B$» или «если $A$ истинно, то $B$ тоже истинно», формально записываются как $\neg A \vee B$. 
 Иными словами, говоря «если $A$ истинно, то $B$ тоже истинно», мы говорим, что $A$ может и не быть истинным, но нас этот случай, не интересует, мы про него никаких выводов не делаем (а значит, и ошибаться не можем), но если уж $A$ истинно, то $B$ обязано быть истинным.}
 
 Although this kind of statement can be expressed using logical OR, logical AND, and a negation, it has a special name — \emph{implication} and a notation $A\Rightarrow B$.
-A statement $A$ is called an \emph{antecedent} and $B$ is called a \emph{consequent}.
+A statement $A$ is called an \emph{antecedent} and $B$ is called a \emph{consequent} in this context.
 \source{Эта операция с высказываниями $A$ и $B$ настолько важна, что хотя она и выражается через конъюнкцию, дизъюнкцию и отрицание, у него есть специальное название — \emph{импликация} (ср. с английским словом \emph{imply}, влечёт), и специальное обозначение $A\Rightarrow B$. 
 Утверждение $A$ называется \emph{посылкой}, а утверждение $B$ — \emph{заключением}.}
 
@@ -719,7 +717,7 @@ Despite this fact, and no matter whether $6$ turns out even or odd, the implicat
 Для него посылка оказалась ложной (оно не делится на 4), и хотя заключение оказалось истинным (оно чётно), это никак не противоречит нашей импликации: она остаётся верна и в этом случае.}
 
 From now on we will use implications very often.
-You will most certainly notice it in the next chapter, and in subsequent ones.
+You will most certainly notice it in the next chapter, and in subsequent ones too.
 \source{В дальнейшем мы будем постоянно пользоваться импликацией в доказательствах. 
 Начнём прямо со следующей лекции.}
 
@@ -731,20 +729,20 @@ You will most certainly notice it in the next chapter, and in subsequent ones.
 Notations from mathematical logic are very useful for writing mathematical statements and their proofs using quantifiers and predicates.
 They have the obvious advantage over natural language: they are strict and formal, making the meaning of statements unambiguous.
 Even computers can understand mathematical logic! 
-Statements can be validated and even written by a computer, that was introdiced to formal rules we've discussed above.
+Statements can be validated and even written by a computer that was introdiced to formal rules we've discussed above.
 \source{Обозначения математической логики, которые мы ввели выше, позволяют записывать утверждения и даже их доказательства в виде длинных формул, состоящих из кванторов и предикатов. 
 Они хороши своей чёткостью и однозначностью: после того, как утверждение записано на этом формальном языке, прочитать его можно единственным образом, а доказательство может проверить (или, в некоторых случаях, даже придумать) и компьютер, пользуясь чисто формальными правилами, описывающими допустимые преобразования одних строчек символов в другие.}
 
-Back in the time I was a first-year undergraduate student, I was absolutely in awe by mathematical logic language.
+Back in the time I was a first-year undergraduate student, I was absolutely in awe by the language of mathematical logic.
 I wondered if \emph{anything} can be proven or disproven when phrased in quantifiers, predicates, and statements.
-However, I quickly understood I was wrong: formal lanuage usually makes logical connections and proof validation easier, but when it comes to \emph{inventing} a proof, it's essential to really dive into the problem, not just manipulate with ats notation. 
+However, I quickly understood I was wrong: formal lanuage usually makes logical connections and proof validation easier, but when it comes to \emph{inventing} a proof, it's essential to really dive into the problem, not just manipulate with its notation. 
 \source{Когда я учился на первом курсе и только познакомился с этим языком, я был им очарован: какое-то время мне казалось, что достаточно записать любое утверждение «в кванторах», и дальше станет понятно, как его доказывать. 
 Однако очень быстро я обнаружил, что это не так: формальная запись иногда упрощает некоторые логические переходы, и она часто необходима, чтобы убедиться в правильности доказательства, но чтобы придумать доказательство, нужно проникнуть в суть утверждения, а не просто манипулировать строчками с кванторами.}
 
 At the same time, the intuition behind logic connections is usually easier expressed and understood in natural language, not formal.
 Professional mathematicians write their papers (let alone introductory textbooks) in natural language, using formal expressions only when necessary.
 Try to overcome the fear of the new terminology and the increased level of abstractions. 
-They take a time to settle, and every formal reasoning in this text will be accompanied by a clarification in "human" language—so there is nothing to worry about.
+These things take time to settle, thats why every formal reasoning in this text will be accompanied by a clarification in "human" language.
 \source{При этом «суть», то есть идеи, стоящие за математическими рассуждениями, как правило проще передавать, пользуясь преимущественно естественным языком, а не формальным. 
 В конце концов, профессиональные математики пишут научные статьи именно на естественном языке, используя формальный лишь там, где это действительно необходимо. 
 Что уж говорить об учебнике, читатели которого видят все эти кванторы впервые в жизни!
@@ -753,8 +751,8 @@ They take a time to settle, and every formal reasoning in this text will be acco
 \subsection Shorthand notions \label ssec:02:short
     \source{Сокращённые обозначения \label ssec:02:short}
 
-To simplify the notations with quantifiers and make them more natural, we will allow ourselves to uphold the formal rules derived above.
-Firstly, usually after numeous quantifiers in a row we will insert a colon.
+To simplify the notations with quantifiers and make them more natural, we will allow ourselves to slightly uphold the formal rules derived above.
+Firstly, usually we will insert a colon after numeous quantifiers in a row.
 For example, instead of
 \source{Чтобы немножко упростить обозначения в формулах с кванторами и приблизить их к естественному языку, я разрешу себе чуть-чуть отступить от правил формального языка, введённого выше. 
 Во-первых, часто после серии кванторов я буду ставить двоеточие — например, вместо}
@@ -783,7 +781,7 @@ Secondly, we will place the condition right after the quantifiers, as shown bell
 \eq
     \forall x \ne 0 \\ \exists y\colon xy=1.
 In a similar way we specify the set of all values, which quantifier's variable may take.
-For a statement "for every natural number there exist a rational number, such that their product is bigger than 9", our canonical notation looks like this
+For a statement "for every natural number there exist a rational number such that their product is bigger than 9", our canonical notation looks like this
 \source{Аналогично я часто буду указывать, из каких множеств допустимо брать значения переменных. 
 Например, если бы я хотел сказать, что для любого натурального числа найдётся такое рациональное число, что их произведение больше 9, то записал бы это так:}
 \eq
@@ -830,10 +828,10 @@ Which is less visuappy appealing.
             No.
             \source{Нет.}
             \comment
-                The product of a natural number and a negative number is neagtive, hence it cannot be bigger than $9$.
+                The product of a natural number and a negative number is negative, hence it cannot be bigger than $9$.
                 \source{Конечно, произведение натурального числа и отрицательного всегда отрицательно и не может быть больше 9.}
 
-And the final observation: commonly there is a condition on a variable for which a quantifiere is applied.
+And the final observation: commonly there is a condition on a variable for which a quantifier is applied.
 If the variable comes after an existential quantifier, we may use conjunction instead of introducing a quantifier.
 Since we want some \emph{particular} values to have certain properties, logical AND is a natural way to go.
 If it comes after a universal quantifier, implication fits well.
@@ -841,7 +839,7 @@ This time the following logic can be applied: "for all" means \emph{as soon as} 
 \source{Условия, записываемые после квантора существования, в более подробной записи приписываются к предикату через конъюнкцию (потому что нам нужно, чтобы существовало значение переменной, удовлетворяющей условию, \strong{и} предикат был бы верен), а те, что идут после квантора всеобщности — через импликацию (потому что мы утверждаем, что предикат верен для всех значения переменной, удовлетворяющей условию, а для тех, кто не удовлетворяют, ничего не утверждаем).}
 
 \exercise
-    Try to formulate a negation of a statement \ref{eq:xygr1} using the rules of applying a negation derived above, and De Morgan's laws.
+    Try to formulate a negation of a statement \ref{eq:xygr1} using the rules derived above and De Morgan's laws.
     Make a notation simpler by putting the conditions right after a quantifier.
     What happens to them when a negation is applied?
     Does they change?
@@ -852,9 +850,9 @@ This time the following logic can be applied: "for all" means \emph{as soon as} 
 \section Conclusion
     \source{Заключение}
 
-Now we have a mathematical tool—language if you wish—which allows us to make precise notations for various kinds of sentences, and even to some extend analyze them automatically.
+Now we have a mathematical tool, which allows us to make precise notations for various kinds of sentences, and even—to some extent—analyze them automatically.
 So far we've considered rather easy examples to get a feel for how the language works.
-But very soon they will coome in handy when dealing with all kinds of theorems and claims. 
+But very soon they will come in handy when dealing with all kinds of theorems and claims. 
 \source{Теперь у нас есть математический аппарат, своего рода язык, который позволяет аккуратно записывать и даже в какой-то мере автоматически анализировать довольно сложные утверждения.  
 Мы рассматривали самые простые примеры, чтобы было понятно, как работает «механика» математической логики. 
 Совсем скоро мы будем использовать её в условиях, максимально приближенных к боевым.}
