@@ -211,7 +211,7 @@ but it is similarly unclear what a collection is. To make things a little bit cl
         выглядит как $\emptyset$). Оно не содержит ни одного элемента: $\varnothing
         = \set{}$.
 
-The statement "the element $x$ is in the set $X$" we will write like this: 
+We will express the statement "the element $x$ is in the set $X$" like this: 
 \eq \nonumber
     x \in X.
 \source    
