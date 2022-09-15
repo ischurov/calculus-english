@@ -1,8 +1,13 @@
-\chapter 
+\chapter Limit of a sequence \label chap:04:lim-seq
     \source{Предел последовательности \label chap:04:lim-seq}
-\section 
+\section Examples and motivation
     \source{Примеры и мотивировка}
 
+In this lecture we will introduce the concept of a limit, which is perhaps the most important one of calculus.
+But human brain is not really used to think the way a limit is formulated.
+It is hard for humans to think about infinities.
+Take sequences: although having infinitely many elements, it is a natural way for a human brain to picture only a finite number of them.
+Today we're about to look closely into the "tail" of a sequence and try to describe its nature.
 \source
 В этой лекции мы введём, пожалуй, главное понятие математического анализа — понятие предела. 
 Это сложное понятие. 
@@ -10,17 +15,29 @@
 Думая про какую-то последовательность, мы как правило представляем себе лишь её первые несколько элементов. 
 Сейчас же нам предстоит вглядеться в бесконечный хвост последовательности и понять, как он устроен.
 
+Consider a cequence $\seq{a_n}$. 
+You can think of it as the measurements of some parameter (say, a population of a country) in time (for example, every year).
+But in contrast to real measurements, our sequence consists of infinitely many elements, or you can say it extends as far in future as desired.
+This object of "far, far future" is the one we want to explore.
+Does there exist some $A$, which will be approached by the elements of a sequence the more "time" passes?
 \source
 Пусть есть последовательность $\seq{a_n}$. 
 Можно думать про неё как про последовательность результатов измерения какого-то параметра (скажем, населения некоторой страны) в последовательные моменты времени (например, каждый год).
 Правда, в отличие от реальных результатов измерения, наша последовательность простирается бесконечно далеко в будущее, и именно это «бесконечное будущее» нас и интересует. 
 Есть ли какое-то значение $A$, к которому члены последовательности будут становиться всё ближе и ближе — так, что, со временем их будет всё сложнее и сложнее отличить от $A$?
 
+Let's consider some examples
 \source{Давайте рассмотрим несколько примеров.}
 
-\subsection 
+\subsection Sequence $1/2^n$
     \source{Последовательность $1/2^n$}
 
+Let $a_n=\frac{1}{2^n}$.
+Firstly, let's show the first twenty elements of this sequence.
+I've written a Python code, which is displayed bellow together with its execution result. 
+The code can be minimized and un-minimized using a button with a blue arrow.
+If you don't know Python, its nothing to worry about: it will not affect the understanding.
+But if you are familiar with it, maybe you will find it interesting to conduct similar experiments yourself.
 \source
 Пусть $a_n=\frac{1}{2^n}$. 
 Давайте выведем первые двадцать членов этой последовательности. 
