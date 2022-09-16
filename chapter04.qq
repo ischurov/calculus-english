@@ -267,19 +267,25 @@ Again the gap is barely distinguishable!
 \source{И снова зазор стал практически неразличим!}
 
 We can go on forever at this point.
-Scale the y-axis (to see more closely) and find a gap, then increase precision and lose it, and so on.
+Scaling the y-axis (to see more closely) and finding a gap, then increasing precision and again scaling the axis, and so on.
 \source
 Так можно продолжать до бесконечности. 
 Увеличивать масштаб вертикальной оси (и следовательно нашу способность различать близкие точки) — находить зазор — увеличивать количество точек — делать зазор неразличимым.
 
-\source
-В общем, можно предположить, что наша последовательность стремится к числу 1. В
-принципе, это неудивительно. Можно преобразовать формулу для общего члена
-последовательности:
+It feels safe to conclude that our sequence approach $1$.
+In fact, it's not that surprising if we do some algebraic manipulations with its general term.
 \eq
     a_n=\frac{n+1}{n}=1 + \frac{1}{n}
-Когда $n$ становится очень большим, $\frac{1}{n}$ становится очень маленьким,
-поэтому вся сумма становится очень близкой к 1. Что мы и видим на графике.
+The term $\frac{1}{n}$ gets very close to zero as $n$ gets bigger, so the whole sum gets closer and closer to $1$.
+This is well illustrated on a plot.
+\source
+В общем, можно предположить, что наша последовательность стремится к числу 1. 
+В принципе, это неудивительно. 
+Можно преобразовать формулу для общего члена последовательности:
+\eq
+    a_n=\frac{n+1}{n}=1 + \frac{1}{n}
+Когда $n$ становится очень большим, $\frac{1}{n}$ становится очень маленьким, поэтому вся сумма становится очень близкой к 1. 
+Что мы и видим на графике.
 
 \comment
     \subsection Постоянная последовательность
@@ -301,41 +307,42 @@ Scale the y-axis (to see more closely) and find a gap, then increase precision a
     больших значений $n$. Если они были близки и для маленьких значений $n$ — тем
     лучше.
 
-\subsection 
+\subsection "Jumping" sequence
     \source{«Скачущая» последовательность}
 
+After constructing the reasoning above, you can be tempted to think about limits in the following way: "a sequence $\seq{a_n}$ approaches a number $a$ if the gap between the element and $a$ is smaller and smaller the bigger $n$ gets"
 \source
-При рассмотрении предыдущих примеров, у вас могло возникнуть искушение дать
-такое определение: «последовательность $\seq{a_n}$ стремится к какому-то числу
-$a$, если её члены с ростом $n$ становятся всё ближе и ближе к $a$: каждый
-следующий член ближе, чем предыдущий».
+При рассмотрении предыдущих примеров, у вас могло возникнуть искушение дать такое определение: «последовательность $\seq{a_n}$ стремится к какому-то числу $a$, если её члены с ростом $n$ становятся всё ближе и ближе к $a$: каждый следующий член ближе, чем предыдущий».
 
+In fact, this definition can be broken in some ways we didn't account for.
+For example, there are many numbers for which the gap between a sequence $\frac{n+1}{n}$ and that number gets smaller and smaller.
+The one we've talked about is $1$, but $0$ also qualifies, although it most sertainly cannot be a limit of our sequence. 
 \source
-Более внимательный анализ показывает, что это определение неверно. Например,
-последовательность $\frac{n+1}{n}$, которую мы только что рассматривали,
-«становится всё ближе и ближе» не только к $1$, но и, например, к $0$ — причём
-каждый следующий член ближе, чем предыдущий. Тем не менее, нельзя сказать, что
-она стремится к $0$.
+Более внимательный анализ показывает, что это определение неверно. 
+Например, последовательность $\frac{n+1}{n}$, которую мы только что рассматривали, «становится всё ближе и ближе» не только к $1$, но и, например, к $0$ — причём каждый следующий член ближе, чем предыдущий. 
+Тем не менее, нельзя сказать, что она стремится к $0$.
 
+Also, it turns out is't unnecessary to demand that the gap always gets smaller as $n$ increases.
 \source
-Более того, требование «каждый следующий член ближе, чем предыдущий»,
-оказывается излишним.
+Более того, требование «каждый следующий член ближе, чем предыдущий», оказывается излишним.
 
+Let's consider the following sequence
 \source{Давайте рассмотрим такую последовательность:}
 \eq
     a_n=\begin{cases}
         \frac{n+1}{n},&n\text{ — нечётное}; \\\\
         \frac{n+3}{n},&n\text{ — чётное}.
     \end{cases}
+Its first five terms are listed bellow:
 \source{Её первые члены выглядят следующим образом:}
 \eq
     2,\\ \frac{5}{2},\\ \frac{4}{3},\\ \frac{7}{4},\\ \frac{6}{5},\ldots
 
+A graph of this sequence is shown in the \ref[fig.][fig:04:up-and-down].
+It's clear that elements with even numbers are closer to $1$ than odd-numbered elements.
 \source
-График этой последовательности изображен на \ref[рис.][fig:04:up-and-down]. Тут
-видно, что требование «каждый следующий элемент ближе к $1$, чем предыдущий»,
-нарушается: элементы с чётными номерами ближе к $1$, чем элементы с нечётными
-номерами.
+График этой последовательности изображен на \ref[рис.][fig:04:up-and-down]. 
+Тут видно, что требование «каждый следующий элемент ближе к $1$, чем предыдущий», нарушается: элементы с чётными номерами ближе к $1$, чем элементы с нечётными номерами.
 
 \figure \showcode \collapsed
     \pythonfigure
@@ -355,17 +362,17 @@ $a$, если её члены с ростом $n$ становятся всё б
                        xlabel="n", ylabel="y") 
 
     \caption
+        The sequence oscillates around $1$, but approach it nevertheless. 
+        Points are connected just for visually better illustration. 
+        (Elemnents are not defines for indexes that are not natural numbers).
         \source
-        Последовательность приближается и отдаляется от 1, но всё равно к ней
-        стремится. Точки соединены пунктирной линией исключительно для
-        наглядности: значения последовательности для нецелых $n$ не определено.
+        Последовательность приближается и отдаляется от 1, но всё равно к ней стремится. 
+        Точки соединены пунктирной линией исключительно для наглядности: значения последовательности для нецелых $n$ не определено.
     \label fig:04:up-and-down
 
+Hovewer, based on a \ref[fig.][fig:04:up-and-down-more], it's reasonable to claim that the limit is $1$ (as $n$ passes, the elements and the limit become more and more indistinguishable from each other).
 \source
-Тем не менее, судя по графику на \ref[рис.][fig:04:up-and-down-more], можно
-предположить, что, несмотря на скачки, последовательность всё-таки стремится к
-числу $1$: с течением времени (то есть с ростом $n$) её элементы становятся
-настолько близки к единице, что их трудно от неё отличить. 
+Тем не менее, судя по графику на \ref[рис.][fig:04:up-and-down-more], можно предположить, что, несмотря на скачки, последовательность всё-таки стремится к числу $1$: с течением времени (то есть с ростом $n$) её элементы становятся настолько близки к единице, что их трудно от неё отличить. 
 
 \figure \showcode \collapsed
     \pythonfigure
@@ -383,19 +390,20 @@ $a$, если её члены с ростом $n$ становятся всё б
         ob.settle_axes(xmin=-0.9, xmax=nmax + 1, ymin=0, ymax=3.11, 
                        xlabel="n", ylabel="y") 
 
-    \caption 
-        \source{Последовательность приближается и отдаляется от 1, но всё равно к
-        ней стремится.}
+    \caption A sequence oscillates aroung $1% but approach it nevertheless. 
+        \source{Последовательность приближается и отдаляется от 1, но всё равно к ней стремится.}
     \label fig:04:up-and-down-more
 
-\subsection 
+\subsection Sequences that doesn't have a limit
     \source{Последовательности без предела}
 
+In the examples above, the sequences approached some number.
+Let's construct some sequences that doesn't have a limit.
 \source
-Последовательности, рассмотренные выше, стремились к какому-то числу. Приведём
-несколько примеров последовательностей, у которых предела нет.
+Последовательности, рассмотренные выше, стремились к какому-то числу. 
+Приведём несколько примеров последовательностей, у которых предела нет.
 
-\example
+\example A sequence $a_n=n^2$ 
     \source{Последовательность $a_n=n^2$:}
     \eq
         1,\\ 4,\\ 9,\\ 16,\ldots
