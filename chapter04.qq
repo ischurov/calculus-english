@@ -52,14 +52,23 @@ But if you are familiar with it, maybe you will find it interesting to conduct s
     for n in range(1, 21):
         a_n = 1 / 2 ** n
         print(f"{n}	{a_n:0.5f}") 
+        # 0.5f means 5 digits after the decimal point will be shown 
         \source{# 0.5f означает, что будут выведены 5 знаков после десятичной точки}
 
+The result tells us all elements starting from the 18th one are zeros.
+Of course, they cannot be identically zeroes: every element of the sequence is positive.
+(An equation  $1/x=0$ does not have a solution. 
+Because if it did, the solution $x$ would satisfy $0\cdot x = 1$, but the product of any number and zero is zero, which is a contradiction).
+The reason why some numbers above are zero is because the first nonzero term is after the 5th decimal place, or in other words they are less than $0{,}00001$.
 \source
 Из результатов видно, что начиная с 18-го члена получаются нули. 
 Конечно, мы понимаем, что это не настоящие нули — ни один член этой последовательности на самом деле не равен нулю. 
 (Если вы делите положительное число на что угодно, никак нельзя получить ноль — уравнение $1/x=0$ не имеет решения, потому что в противном случае $1$ окажется равным $0\cdot x$, а этого не может быть, потому что умножение чего угодно на $0$ даёт $0$.) 
 Однако, мы вывели только 5 знаков после десятичной запятой (точки), поэтому все числа, меньшие $0{,}00001$, отображаются как нули.
 
+Let's increase the precision then!
+We will try six decimal places.
+\source
 Но ведь можно увеличить точность! 
 Давайте отображать шесть цифр после запятой!
 
@@ -71,56 +80,68 @@ But if you are familiar with it, maybe you will find it interesting to conduct s
         \source{# 0.6f означает, что будут выведены 6 знаков после десятичной точки}
         
 \source
-Теперь первые 20 членов последовательности отчётливо ненулевые. Но
-последовательность на этом не заканчивается — давайте выведем ещё несколько
-членов.
+Теперь первые 20 членов последовательности отчётливо ненулевые. Но последовательность на этом не заканчивается — давайте выведем ещё несколько членов.
 
 \pythoncode \showcode \collapsed
     print("n	a_n")
     for n in range(20, 25):
         a_n = 1 / 2 ** n
         print(f"{n}	{a_n:0.6f}") 
+        # 0.6f means 6 digits after the decimal point will be shown 
         \source{# 0.6f означает, что будут выведены 6 знаков после десятичной точки}
 
-Опять нули! Давайте ещё увеличим точность! Семь знаков после запятой!
+Zeros again.
+Seven terms after a decimal!
+Опять нули! 
+Давайте ещё увеличим точность! Семь знаков после запятой!
 \pythoncode \showcode \collapsed
     print("n	a_n")
     for n in range(20, 25):
         a_n = 1 / 2 ** n
-        print(f"{n}	{a_n:0.7f}") 
+        print(f"{n}	{a_n:0.7f}")
+        # 0.7f means 7 digits after the decimal point will be shown 
         \source{# 0.7f означает, что будут выведены 6 знаков после десятичной точки}
 
+Seems like first 24 terms are nonzero, what about the later ones?
 \source{До 24-го члена значения ненулевые, а после?}
 \pythoncode \showcode \collapsed
     print("n	a_n")
     for n in range(24, 30):
         a_n = 1 / 2 ** n
         print(f"{n}	{a_n:0.7f}") 
+        # 0.7f means 7 digits after the decimal point will be shown 
         \source{# 0.7f означает, что будут выведены 6 знаков после десятичной точки}
 
+Seems like it's inevitable for zeros to occur no matter the precision.
 \source
-Похоже, дело безнадёжно. Какую бы точность отображения мы ни выбирали,
-начиная с некоторого момента последовательность будет выглядеть, как будто
-состоит из сплошных нулей!
+Похоже, дело безнадёжно. 
+Какую бы точность отображения мы ни выбирали, начиная с некоторого момента последовательность будет выглядеть, как будто состоит из сплошных нулей!
 
+This is precisely what it means for a sequence to \emph{approach zero}.
 \source{Это и означает, что она \emph{стремится к нулю}.}
 
-\subsection 
+\subsection Sequence $\frac{n+1}{n}$
     \source{Последовательность $\frac{n+1}{n}$}
 
-\source{Пусть теперь $a_n=\frac{n+1}{n}$. Тоже можно вывести первые несколько
-значений.}
+Now let $a_n=\frac{n+1}{n}$.
+\source{Пусть теперь $a_n=\frac{n+1}{n}$. 
+Let's show some elements of it.
+Тоже можно вывести первые несколько значений.}
 \pythoncode \showcode \collapsed
     print("n	a_n")
     for n in range(1, 10):
         a_n = (n + 1) / n
         print(f"{n}	{a_n:0.5f}")
-        
+
+The result is not so obvious as above.
+Let's plot this sequence.
+On the horizontal axis we put the number of an element, and on the vertical its value.
+In contrast to a graph of a function, ours consists of individual points that correspond to natural numbers, see \ref[pic.][fig:04:n/n+1]
 \source
-Здесь эффект не столь очевиден. Давайте построим график. По горизонтальной
-оси будем откладывать $n$, по вертикальной — $a_n$. В отличие от обычного
-графика функции, он будет состоять из отдельных точек, соответствующих
-натуральным значениям $n$, см. \ref[рис.][fig:04:n/n+1].
+Здесь эффект не столь очевиден. 
+Давайте построим график. 
+По горизонтальной оси будем откладывать $n$, по вертикальной — $a_n$. 
+В отличие от обычного графика функции, он будет состоять из отдельных точек, соответствующих натуральным значениям $n$, см. \ref[рис.][fig:04:n/n+1].
 
 \figure \showcode \collapsed
     \pythonfigure
@@ -134,15 +155,15 @@ But if you are familiar with it, maybe you will find it interesting to conduct s
         ob.settle_axes(xmin=-0.9, xmax=nmax + 1, ymin=-0.4, ymax=2.9, 
                        xlabel="n", ylabel="y") 
 
-    \caption 
+    \caption A graph of $y=a_n$.
         \source{График $y=a_n$.}
     \label fig:04:n/n+1
 
+The graph seems to tell us that elements approach a horizontal line $y=1$.
+Let's plot it for clarity. 
 \source
-По графику можно угадать, что точки, вероятно, приближаются к прямой $y=1$,
-то есть элементы последовательности стремятся к $1$.
-Для большей наглядности можно нарисовать эту 
-прямую (\ref[рис.][fig:04:n/n+1-and-1]).
+По графику можно угадать, что точки, вероятно, приближаются к прямой $y=1$, то есть элементы последовательности стремятся к $1$.
+Для большей наглядности можно нарисовать эту прямую (\ref[рис.][fig:04:n/n+1-and-1]).
 
 \figure \showcode \collapsed
     \pythonfigure
@@ -160,14 +181,16 @@ But if you are familiar with it, maybe you will find it interesting to conduct s
         ob.settle_axes(xmin=-0.9, xmax=nmax + 1, ymin=-0.4, ymax=2.9, 
                        xlabel="n", ylabel="y") 
 
-    \caption 
+    \caption A graph of $y=a_n$ and a line $y=1$.
         \source{График $y=a_n$ и прямая $y=1$.}
     \label fig:04:n/n+1-and-1
 
+Although the value of a limit is visually apparent, there is still a gap between the points and the line, but what if we take consider more elements?
+See \ref[fig.][fig:04:n/n+1-and-1-large].
 \source
-Хотя тенденция вроде бы налицо, нетрудно видеть, что между точками $y=a_n$ и
-прямой $y=1$ есть некоторый зазор. Но что если взять побольше точек? См.
-\ref[рис.][fig:04:n/n+1-and-1-large].
+Хотя тенденция вроде бы налицо, нетрудно видеть, что между точками $y=a_n$ и прямой $y=1$ есть некоторый зазор. 
+Но что если взять побольше точек? 
+См. \ref[рис.][fig:04:n/n+1-and-1-large].
 
 \figure \showcode \collapsed
     \pythonfigure
@@ -185,14 +208,15 @@ But if you are familiar with it, maybe you will find it interesting to conduct s
         ob.settle_axes(xmin=-0.9, xmax=nmax + 1, ymin=-0.4, ymax=2.9, 
                        xlabel="n", ylabel="y") 
 
-    \caption 
+    \caption A graph of $y=a_n$ and a line $y=1$ (more elements).
         \source{График $y=a_n$: взяли побольше точек.}
     \label fig:04:n/n+1-and-1-large
 
+Clearly, the gap shrinked, and for some (large) values of $n$ we can't even see it.
+Let's scale the y-axis take a closer look (see \ref[fig.][fig:04:n/n+1-and-1-yscale]). 
 \source
-Видно, что зазор стал меньше и для больших значений $n$ вообще непонятно,
-есть он или нет. Но если изменить масштаб вертикальной оси, станет видно,
-что он всё-таки есть (\ref[рис.][fig:04:n/n+1-and-1-yscale]).
+Видно, что зазор стал меньше и для больших значений $n$ вообще непонятно, есть он или нет. 
+Но если изменить масштаб вертикальной оси, станет видно, что он всё-таки есть (\ref[рис.][fig:04:n/n+1-and-1-yscale]).
 
 \figure \showcode \collapsed
     \pythonfigure
@@ -210,9 +234,11 @@ But if you are familiar with it, maybe you will find it interesting to conduct s
         ob.settle_axes(xmin=-0.9, xmax=nmax + 1, ymin=0, ymax=1.11, 
                        xlabel="n", ylabel="y") 
 
-    \caption \source{График $y=a_n$: увеличили масштаб вертикальной оси.}
+    \caption A graph of $y=a_n$ and a line $y=1$ (more points, y-axis scaled).
+        \source{График $y=a_n$: увеличили масштаб вертикальной оси}
     \label fig:04:n/n+1-and-1-yscale
 
+Now we try to add more points (see \ref[fig.][fig:04:n/n+1-and-1-even-more]).
 \source
 Но теперь можно добавить ещё больше точек (\ref[рис.][fig:04:n/n+1-and-1-even-more])!
 
@@ -232,16 +258,19 @@ But if you are familiar with it, maybe you will find it interesting to conduct s
         ob.settle_axes(xmin=-0.9, xmax=nmax + 1, ymin=0, ymax=1.11, 
                        xlabel="n", ylabel="y") 
 
-    \caption \source{График $y=a_n$: увеличили масштаб вертикальной оси, а потом взяли
+    \caption A graph of $y=a_n$ and a line $y=1$ (y-axis scaled, even more points).
+        \source{График $y=a_n$: увеличили масштаб вертикальной оси, а потом взяли
         ещё больше точек}
     \label fig:04:n/n+1-and-1-even-more
 
+Again the gap is barely distinguishable!
 \source{И снова зазор стал практически неразличим!}
 
+We can go on forever at this point.
+Scale the y-axis (to see more closely) and find a gap, then increase precision and lose it, and so on.
 \source
-Так можно продолжать до бесконечности. Увеличивать масштаб вертикальной оси
-(и следовательно нашу способность различать близкие точки) — находить зазор
-— увеличивать количество точек — делать зазор неразличимым.
+Так можно продолжать до бесконечности. 
+Увеличивать масштаб вертикальной оси (и следовательно нашу способность различать близкие точки) — находить зазор — увеличивать количество точек — делать зазор неразличимым.
 
 \source
 В общем, можно предположить, что наша последовательность стремится к числу 1. В
