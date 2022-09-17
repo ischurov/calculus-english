@@ -177,7 +177,7 @@ but it is similarly unclear what a collection is. To make things a little bit cl
     elements; later we will encounter infinite sets as well). It is important to note that here 
     the order of the elements does not matter—we can write $\set{2, 1, 3}$ or $\set{3, 2, 1}$ 
     and get the same set $A$. Another important note—an element is either in a set or not, 
-    it cannot “be in it twice”. If we write $set{1,1,2,3}$ we get the same set defined above: 
+    it cannot “be in it twice.” If we write $set{1,1,2,3}$ we get the same set defined above: 
     we write 1 twice but it can only be in it one time. (This is the way this would be interpreted 
     by, for example, Python, a programming language that can work with sets).
 
@@ -312,7 +312,7 @@ For the set $B$, conversely, $1 \not \in B$, but $\set{1} \in B$.
                     $\set{1}$, оно будет записываться как $\set{\set{1}}$.
 
 As we can see from \ref[Example][ex:01:powerset] sets can have other sets as 
-elements. One might be tempted here to consider “the set of all sets”, but
+elements. One might be tempted here to consider “the set of all sets,” but
 this leads to problems (for details see the Wikipedia article  
 \href[Russel's paradox][https://en.wikipedia.org/wiki/Russell%27s_paradox]).
 We can avoid such problems if we only allow sets that are constructed
@@ -346,10 +346,10 @@ We will need some well-known set operations.
     For any sets $X$ and $Y$ we define their \emph{intersection},
     a new set (denoted by $X\cap Y$) that comprises all elements
     that are at the same time in $X$ and in $Y$
-        \source   
+    \source   
         Для произвольных множеств $X$ и $Y$, определим их \emph{пересечение}, то
         есть новое множество (обозначается $X\cap Y$), которое состоит из всех
-            элементов, которые есть одновременно и в $X$, и в $Y$.
+        элементов, которые есть одновременно и в $X$, и в $Y$.
 \figure
     \img
         \src pic-1.svg
@@ -370,11 +370,11 @@ We will need some well-known set operations.
     For any sets $X$ and $Y$ we define their \emph{union},
     a new set (denoted by $X\cup Y$) that comprises all elements
     that are in $X$ or in $Y$ (or in both).
-        \source    
-            Для произвольных множеств $X$ и $Y$, определим их \emph{объединение}, то
-            есть новое множество (обозначается $X\cup Y$), которое состоит из всех
-            элементов, которые есть хотя бы в одном из множеств $X$, или в $Y$ (или в
-            обоих).
+    \source    
+        Для произвольных множеств $X$ и $Y$, определим их \emph{объединение}, то
+        есть новое множество (обозначается $X\cup Y$), которое состоит из всех
+        элементов, которые есть хотя бы в одном из множеств $X$, или в $Y$ (или в
+        обоих).
 
 \figure
     \img
@@ -398,11 +398,11 @@ We will need some well-known set operations.
     (sometimes written as $X-Y$) is a set that comprises all elements
     that are in $X$ but not in $Y$. Sometimes (when $Y$ is a subset of $X$)
     the set $X \setminus Y$ is called a complement of $X$ with respect to $Y$.
-        \source    
-            Для произвольных множеств $X$ и $Y$, разностью $X \setminus Y$ (также пишут
-            просто $X-Y$) называется множество всех элементов $X$, не содержащихся в
-            $Y$. Иногда говорят \emph{дополнение $Y$ до $X$} (вероятно, наиболее
-            корректным этот термин является, если $Y$ является подмножеством $X$).
+    \source    
+        Для произвольных множеств $X$ и $Y$, разностью $X \setminus Y$ (также пишут
+        просто $X-Y$) называется множество всех элементов $X$, не содержащихся в
+        $Y$. Иногда говорят \emph{дополнение $Y$ до $X$} (вероятно, наиболее
+        корректным этот термин является, если $Y$ является подмножеством $X$).
 
 \figure
     \img
@@ -511,7 +511,7 @@ every element of the set $X$ maps to exactly one element of the set $Y$.
 \snippet \flabel инъективно \label snip:injection
     \definition
         A mapping $f\colon X \to Y$ is called \emph{injective} (or just an \emph{injection})
-        if it does not “glue points together”, i.e. does not map two different points to the same one.
+        if it does not “glue points together,” i.e. does not map two different points to the same one.
         If we think of a mapping as a picture with arrows this corresponds to not having two arrows going 
         to the same place.
         \source
@@ -529,9 +529,9 @@ every element of the set $X$ maps to exactly one element of the set $Y$.
         \alt
             Two pictures. On the left one, there are two ovals, inside the left one, there are dots labeled
             1,2,3. Inside the right one, there are dots labeled a,b,c, and d. Arrows go from 1 to b, from 
-            2 to c, and from 3 to b. The picture is labeled “Not injective”. On the right one, there are 
+            2 to c, and from 3 to b. The picture is labeled “Not injective.” On the right one, there are 
             the same ovals with the same dots. Arrows are going from 1 to b, from 
-            2 to c, and from 3 to a. The picture is labeled “Injective”.
+            2 to c, and from 3 to a. The picture is labeled “Injective.”
             \source
                 Две картинки. Слева два овала, в левом точки 1, 2, 3. В правом точки
                 a, b, c, d. Есть стрелочки от 1 к a, от 2 и 3 к b. Подпись: не
@@ -564,9 +564,9 @@ every element of the set $X$ maps to exactly one element of the set $Y$.
         \alt
             Two pictures. On the left one, there are two ovals, inside the left one there are dots labeled
             1,2,3,4, and 5. Inside the right one, there are dots labeled a,b,c, and d. Arrows are going from 1 to a, from 
-            2 and 3 to c, and from 4 and 5 to b. The picture is labeled “Not surjective”. On the right one, there are 
+            2 and 3 to c, and from 4 and 5 to b. The picture is labeled “Not surjective.” On the right one, there are 
             the same ovals with the same dots. The arrows go from 1 to a, from 
-            2 and 3 to c, from 4 to d, and from 5 to b. The picture is labeled “Surjective”.
+            2 and 3 to c, from 4 to d, and from 5 to b. The picture is labeled “Surjective.”
             \source
                 Две картинки. Слева два овала, в левом точки 1, 2, 3, 4, 5. В правом точки
                 a, b, c, d. Есть стрелочки от 1 к a, от 2 и 3 к c, от 5 к b. Подпись: не
@@ -657,7 +657,7 @@ numerical sets, i.e. sets of numbers.
 
 The set of natural numbers $\set{1, 2, 3, \ldots}$ is denoted by the letter $\mathbb N$
 The only point of contention is whether we consider zero a natural number.
-Usually, natural numbers are “defined” as “numbers used for counting things”. 
+Usually, natural numbers are “defined” as “numbers used for counting things.” 
 Using this definition zero is not considered a natural number. 
 There is another approach—to make it so natural numbers are the cardinalities of 
 finite sets (see \ref[Definition][def:01:card]). In this case, zero should be considered 
