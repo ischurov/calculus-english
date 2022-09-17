@@ -641,7 +641,10 @@ every element of the set $X$ maps to exactly one element of the set $Y$.
             \emph{мощность} определяется просто как число элементов. Для бесконечных всё
             сложнее, мы поговорим об этом позже.
 
-\section Числа
+\section
+    Numbers
+\source
+    \section Числа
 
 The main building blocks for the rest of the course will be different
 numerical sets, i.e. sets of numbers.
