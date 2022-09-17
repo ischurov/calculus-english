@@ -403,19 +403,22 @@ Let's construct some sequences that doesn't have a limit.
 Последовательности, рассмотренные выше, стремились к какому-то числу. 
 Приведём несколько примеров последовательностей, у которых предела нет.
 
-\example A sequence $a_n=n^2$ 
+\example Consider a sequence $a_n=n^2$ 
     \source{Последовательность $a_n=n^2$:}
     \eq
         1,\\ 4,\\ 9,\\ 16,\ldots
-    \source{Эта последовательность неограничена, и выглядит очевидным, что она не
-    стремится ни к какому числу. У неё нет предела.}
+    This sequence is unbounded, so it looks almost trivial to conclude it has no limit. 
+    \source{Эта последовательность неограничена, и выглядит очевидным, что она не стремится ни к какому числу. 
+    У неё нет предела.}
 \example \label ex:04:flip
+    Consider a sequence
     \source{Последовательность}
     \equation \label eq:04:flip
         a_n=(-1)^n+\frac{1}{n}.
-    \source{В зависимости от чётности $n$, первое слагаемое оказывается равно $1$ или
-    $-1$. Посмотрим, как выглядит график этой последовательности
-    (\ref[рис.][fig:04:here-and-there]).}
+    The firts term can equal $1$ or $-1$ depending on the parity of $n$.
+    Its graph is shown in \ref[fig.][fig:04:here-and-there].
+    \source{В зависимости от чётности $n$, первое слагаемое оказывается равно $1$ или $-1$. 
+    Посмотрим, как выглядит график этой последовательности (\ref[рис.][fig:04:here-and-there]).}
 
     \figure \showcode \collapsed
         \pythonfigure
@@ -434,22 +437,28 @@ Let's construct some sequences that doesn't have a limit.
             ob.settle_axes(xmin=-0.9, xmax=nmax + 1, ymin=-1.9, ymax=1.9, 
                            xlabel="n", ylabel="y") 
 
-        \caption 
+        \caption A sequence is "jumping" between two point
             \source{Последовательность скачет между двумя точками.}
         \label fig:04:here-and-there
+    It appears clear that there is no such number that is close enough to all elements as $n$ increases.
+    The sequence is not changing, repeating the same pattern of "jumping" between $1$ and $-1$.
     \source{По графику видно, что нет одного числа, к которому члены последовательности были бы очень близки при больших $n$: она скачет между двумя значениями, $1$ и $-1$.}
     
 \example \label ex:04:rare
+    Consider a following sequence
     \source{Наконец, рассмотрим такую последовательность:}
     \equation \label eq:04:rare
         a_n=\begin{cases}
             \frac{1}{2},& \exists k \in \mathbb N\colon n=2^k; \\\\
             \frac{n+1}{n},& \forall k \in \mathbb N\colon n\ne 2^k.
             \end{cases}
-    \source{Эта последовательность устроена так. Для тех $n$, которые являются степенями
-    двойки ($1$, $2$, $4$, $8$, $16$ и т.д.), $a_n$ равно $\frac{1}{2}$. Для остальных $n$,
-    $a_n$ равно $\frac{n+1}{n}$. Посмотрим на график на}
-    \ref[рис.][fig:04:rare-outliers].
+    This sequence is constructed in the following way: for elements with indexes that are powers of two, it is constant and equal to $\frac{1}{2}$.
+    All other elements equal to $\frac{n+1}{n}$.
+    A graph is shown in \ref[fig.][fig:04:rare-outliers].
+    \source{Эта последовательность устроена так. 
+    Для тех $n$, которые являются степенями двойки ($1$, $2$, $4$, $8$, $16$ и т.д.), $a_n$ равно $\frac{1}{2}$. 
+    Для остальных $n$, $a_n$ равно $\frac{n+1}{n}$. 
+    Посмотрим на график на \ref[рис.][fig:04:rare-outliers].}
 
     \figure \showcode \collapsed
         \pythonfigure
@@ -468,8 +477,8 @@ Let's construct some sequences that doesn't have a limit.
             ob.settle_axes(xmin=-0.9, xmax=nmax + 1, ymin=-0.4, ymax=1.9, 
                            xlabel="n", ylabel="y") 
 
-        \caption 
-            \section{Последовательность всё реже и реже убегает от предельного значения}
+        \caption A sequence "moves away" from a limit every time an index is a power of two.
+            \source{Последовательность всё реже и реже убегает от предельного значения}
         \label fig:04:rare-outliers
         
     \source
