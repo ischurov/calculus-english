@@ -481,68 +481,68 @@ Let's construct some sequences that doesn't have a limit.
             \source{Последовательность всё реже и реже убегает от предельного значения}
         \label fig:04:rare-outliers
         
+    Clearly, for elements with indexes not equal to some power of two, the sequence gets arbitrarily close to $1$.
+    Once in a while a sequence "moves away" from $1$ to $\frac{1}{2}$, but such "jumps" happen less and less often as $n$ grows.
+    If we start at a very large value of $n$, the sequence is going to behave as $\frac{n+1}{n}$ for a long time.
     \source
-    Понятно, что для тех номеров, которые не являются степенями двойки,
-    элементы становятся сколь угодно близки к 1. Время от времени
-    последовательность «убегает» в точку $\frac{1}{2}$, однако эти моменты,
-    будучи степенями двойки, встречаются всё реже и реже. Если бы мы стартовали
-    с больших значений $n$, мы могли бы очень долго наблюдать
-    последовательность, которая становится очень близка к 1.
+    Понятно, что для тех номеров, которые не являются степенями двойки, элементы становятся сколь угодно близки к 1. 
+    Время от времени последовательность «убегает» в точку $\frac{1}{2}$, однако эти моменты, будучи степенями двойки, встречаются всё реже и реже. 
+    Если бы мы стартовали с больших значений $n$, мы могли бы очень долго наблюдать последовательность, которая становится очень близка к 1.
     
+    Still, we cannot conclude it has a limit of $1$ since no matter how large $n$ is, sooner or later we will encounter an element that is equal to $\frac{1}{2}$. 
     \source
-    Тем не менее, нельзя сказать, что её предел равен 1. Мы знаем, что с какого
-    бы начального момента времени мы ни стартовали, рано или
-    поздно $n$ окажется степенью двойки, и в этот момент последовательность
-    «скакнёт» в число $1/2$, уйдя от $1$ на заметное расстояние.
+    Тем не менее, нельзя сказать, что её предел равен 1. 
+    Мы знаем, что с какого бы начального момента времени мы ни стартовали, рано или поздно $n$ окажется степенью двойки, и в этот момент последовательность «скакнёт» в число $1/2$, уйдя от $1$ на заметное расстояние.
 
-\section 
+\section Definition of a limit
     \source{Определение предела}
 
-\subsection 
+\subsection Intiuitive reasoning
     \source{Интуитивные соображения}
 
+Hopefully observations above have given you an intuitive idea of what we need to demand from a sequence for it to have a limit. 
+Let's summarize what we've discussed.
 \source
-Из обсуждения в предыдущем разделе должно быть понятно — по крайней мере, на
-интуитивном уровне — чего бы мы хотели потребовать от последовательности, чтобы
-сказать, что она стремится к некоторому числу $A$. Подведём промежуточный итог.
+Из обсуждения в предыдущем разделе должно быть понятно — по крайней мере, на интуитивном уровне — чего бы мы хотели потребовать от последовательности, чтобы сказать, что она стремится к некоторому числу $A$. 
+Подведём промежуточный итог.
 
 \enumerate
-    \item
+    \item First several terms can be considerably far away from $A$, but a sequence ccan still approach $A$.
+        In other words, convergence depends only on a "tail" of a sequence.
         \source
-        Первые сколько-то членов могут быть достаточно далеки от $A$, это никак
-        не мешает последовательности стремиться к $A$. Иными словами,
-        «стремление» — это эффект, который зависит только от
-        «хвоста» последовательности.
-    \item
+        Первые сколько-то членов могут быть достаточно далеки от $A$, это никак не мешает последовательности стремиться к $A$. 
+        Иными словами, «стремление» — это эффект, который зависит только от «хвоста» последовательности.
+    \item For large values of $n$ elements of a sequence must become so close to $A$ the gap between the two becomes practically indistinguishable.
+        (For example when you try to round the value of an element with any finite number of decimal places you get $A$).
         \source
-        Для достаточно больших значениий $n$ члены последовательности должны
-        становиться настолько близкими к $A$, чтобы их нельзя было отличить от
-        $A$, скажем, на графике или на компьютерной распечатке, на которой числа
-        выводятся с конечной точностью.
+        Для достаточно больших значениий $n$ члены последовательности должны становиться настолько близкими к $A$, чтобы их нельзя было отличить от $A$, скажем, на графике или на компьютерной распечатке, на которой числа выводятся с конечной точностью.
     \item
-        Этот эффект должен сохраняться для всех достаточно больших $n$. Если
-        последовательность время от времени «убегает» от $A$ на какое-то
-        заметное расстояние, и это происходит сколь угодно далеко в будущем,
-        последовательность не будет стремиться к $A$.
-    \item
+        There must exist a sufficiently large value of $n$ such that the behaviour above must not be interrupted by sudden "jumps" or any other forms of "moving away" from $A$. 
         \source
-        Мы можем увеличить точность измерения — например, выводить больше цифр
-        после запятой или увеличить масштаб на графике — и увидеть зазор между
-        членами последовательности и числом $A$. Однако,  мы можем взять ещё
-        большие значения $n$, чтобы эффект «неразличимости» вернулся.
+        Этот эффект должен сохраняться для всех достаточно больших $n$. 
+        Если последовательность время от времени «убегает» от $A$ на какое-то заметное расстояние, и это происходит сколь угодно далеко в будущем, последовательность не будет стремиться к $A$.
+    \item
+        When we get to values of $n$ so large that the gap is no longer seen, it is okay to zoom in and make it visible again. 
+        The thing we demand is that we can always increase $n$ and make the gap as small as we want.
+        \source
+        Мы можем увеличить точность измерения — например, выводить больше цифр после запятой или увеличить масштаб на графике — и увидеть зазор между членами последовательности и числом $A$. 
+        Однако, мы можем взять ещё большие значения $n$, чтобы эффект «неразличимости» вернулся.
 
+Now we begin formalizing the notion of a limit.
 \source{Теперь приступим к формализации понятия предела.}
 
-\subsection 
-    \source{Вспомогательные понятия}
+\subsection Additional 
+    \source{Auxiliary entities}
 
+We will need some auxiliart definitions and notations.
 \source{Нам потребуется несколько вспомогательных определений и обозначений.}
 
 \definition
+    A \emph{distance} between real numbers $a$ and $b$ is $|a-b|$, which is the absolute value of their difference.
+    This seems like a natural way to define a distance if you think about numbers as points on the number line (see \ref[fig.][fig:04:abs]). 
     \source
-    \emph{Расстоянием} между вещественными числами $a$ и $b$ называется модуль
-    их разности: $|a-b|$. Это довольно естественное определение, если думать
-    про числа как про точки на числовой прямой, см. \ref[рис.][fig:04:abs].
+    \emph{Расстоянием} между вещественными числами $a$ и $b$ называется модуль их разности: $|a-b|$. 
+    Это довольно естественное определение, если думать про числа как про точки на числовой прямой, см. \ref[рис.][fig:04:abs].
 
 \figure
     \img
@@ -553,50 +553,51 @@ Let's construct some sequences that doesn't have a limit.
             Нарисована числовая прямая, на ней отмечены две точки: a = -1 и b =
             3. Показано, что расстояние между ними равно модулю разности: |a-b|
     \caption
-        \source{Модуль разности — это расстояние между числами как точками числовой
-        прямой.}
+        Modulus of a difference is a distance between numbers represented by points on the number line
+        \source{Модуль разности — это расстояние между числами как точками числовой прямой.}
     \label fig:04:abs
 
+We will denote some positive numbers by $\eps$, read "epsilon".
+In such cases it is an indication that a number is considerably small, often as small as you can imagine.
 \source
-Буквой $\eps$ (читается «эпсилон» — почему-то со слуха часто кажется, что там в
-конце есть буква «т» — нет, её нет) мы будем обозначать положительные и как
-правило маленькие вещественные числа.  
+Буквой $\eps$ (читается «эпсилон» — почему-то со слуха часто кажется, что там в конце есть буква «т» — нет, её нет) мы будем обозначать положительные и как правило маленькие вещественные числа.  
 
-\definition 
-    \source{Скажем, что два числа \emph{$\eps$-близки} («эпсилон-близки»)
-    друг к другу, если расстояние между ними меньше $\eps$.}
+\definition We say that two numbers are \emph{$\eps$-close} (read "epsilon-close") to each other if the difference between them is less than $\eps$.
+    \source{Скажем, что два числа \emph{$\eps$-близки} («эпсилон-близки») друг к другу, если расстояние между ними меньше $\eps$.}
 
+You can substitute $\eps$ by any number or even a letter (to which a value was previously assigned), for example $\delta$-closed numbers ("delta-closed") or $0{,}1$-closed numbers ("zero point one closed").
+We can conclude that a proposition "a number $\pi$ is $0{,}1$-closed to a number $3{,}14$" is true since a distance between them (modulus of a difference) is indeed less than $0{,}1$.
+Two numbers $a$ and $b$ are $\eps$-close if their difference taken by its abcolute value is less than $\eps$: $|a-b|<\eps$.
 \source
-Вместо $\eps$ здесь можно подставлять другие буквы или конкретные числа —
-например, $\delta$-близки («дельта-близки») или $0{,}1$-близки. Скажем, утверждение «число $\pi$
-$0{,}1$-близко к числу $3{,}14$» является верным, поскольку расстояние между
-$\pi$ и $3{,}14$ (модуль разности) меньше, чем $0{,}1$. Числа $a$ и $b$ будут
-$\eps$-близки, если модуль их разности меньше $\eps$: $|a-b|<\eps$.
+Вместо $\eps$ здесь можно подставлять другие буквы или конкретные числа — например, $\delta$-близки («дельта-близки») или $0{,}1$-близки. 
+Скажем, утверждение «число $\pi$ $0{,}1$-близко к числу $3{,}14$» является верным, поскольку расстояние между $\pi$ и $3{,}14$ (модуль разности) меньше, чем $0{,}1$. 
+Числа $a$ и $b$ будут $\eps$-близки, если модуль их разности меньше $\eps$: $|a-b|<\eps$.
 
 \definition
+    Consider a sequence $\seq{a_n}$.
+    We say that \emph{its tail is $\eps$-close} to a number $A$ if after some $n$ all elements with indexes greater than $n$ are $\eps$-closed to $A$.
+    In other words, there is an element after which the distance between any element and $A$ is less than $\eps$.
     \source
-    Рассмотрим последовательность $\seq{a_n}$. Скажем, что её \emph{хвост
-    $\eps$-близок} к числу $A$, если все её члены, начиная с некоторого,
-    $\eps$-близки к $A$. Иными словами, если все члены, начиная с некоторого,
-    находятся на расстоянии меньше $\eps$ от $A$.
+    Рассмотрим последовательность $\seq{a_n}$. 
+    Скажем, что её \emph{хвост $\eps$-близок} к числу $A$, если все её члены, начиная с некоторого, $\eps$-близки к $A$. 
+    Иными словами, если все члены, начиная с некоторого, находятся на расстоянии меньше $\eps$ от $A$.
     
+    Formally we can write
     \source{Формально это записывается так:}
     \gather
         \item \label eq:04:tail
             \exists N\in \mathbb N\\ \forall n \in \mathbb N\colon (n > N) \Rightarrow 
         \splitem \splonly{\Rightarrow} |a_n - A| < \eps.
+    This expression says that there exists some number $N$ such that all elements of a sequence with numbers $N+1$ or greater are within a range of values that are $\eps$-closed to $A$.
     \source
-    Здесь сказано, что найдётся такой номер $N$, что все члены
-    последовательности с номерами от $N+1$ и больше находятся на расстоянии
-    меньше $\eps$ от $A$. 
-
+    Здесь сказано, что найдётся такой номер $N$, что все члены последовательности с номерами от $N+1$ и больше находятся на расстоянии меньше $\eps$ от $A$. 
+    
+    The implication states that we're interested in satisfying $|a_n - A| < \eps$ only for $n$ such that $n > N$ (which means we're starting from some point and looking at a "tail" of a sequence).
+    Notice that the case when $|a_n - A| < \eps$ is not satisfied for more "early" elements doesn't brake the definition (this way a premise is false and an implication is true).
+    We can rewrite the sefinition above in a more compact form:
     \source
-    Импликация в этом определении говорит, что нас интересует выполнение условия
-    $|a_n - A| < \eps$ не для всех $n$, а только для тех, для которых выполнено
-    $n > N$, то есть «начиная с некоторого члена»; если оно нарушается для
-    членов с меньшими номерами, это не будет нарушать утверждение, поскольку в
-    этом случае посылка импликации $n > N$ окажется ложной, и значит импликация
-    будет истинной. Более кратко это определение можно записать так:
+    Импликация в этом определении говорит, что нас интересует выполнение условия $|a_n - A| < \eps$ не для всех $n$, а только для тех, для которых выполнено $n > N$, то есть «начиная с некоторого члена»; если оно нарушается для членов с меньшими номерами, это не будет нарушать утверждение, поскольку в этом случае посылка импликации $n > N$ окажется ложной, и значит импликация будет истинной. 
+    Более кратко это определение можно записать так:
     
     \eq
         \exists N\in \mathbb N\\ \forall n > N \colon |a_n - A| < \eps.
