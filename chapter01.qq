@@ -1,202 +1,380 @@
-\chapter Множества, отображения и числа \label chap:01:setsnumbers 
+\chapter Sets, Mappings, and Numbers \label chap:01:setsnumbers 
+\source 
+    \chapter Множества, отображения и числа \label chap:01:setsnumbers 
 
-\section Добро пожаловать!
+\section Welcome!
+\source 
+    \section Добро пожаловать!
 
-Привет! Это онлайн-учебник по математическому анализу — науке, изучающей
-функции, пределы, скорости роста, бесконечные суммы, площади под кривыми. 
+Hello! This is an online calculus textbook. Calculus studies functions, limits,
+rates of change, infinite sums, areas under curves, etc.
+\source Привет! Это онлайн-учебник по математическому анализу — науке, изучающей
+    функции, пределы, скорости роста, бесконечные суммы, площади под кривыми. 
 
-Анализ традиционно является первым или одним из первых предметов, относящихся к
-высшей математике. Он нужен практически всем — лингвистам, химикам, физикам,
-политологам и, конечно, самим математикам. 
+Calculus is traditionally the first or one of the first branches of higher mathematics taught.
+Everyone needs it - linguists, chemists, physicists, political scientists, and, of course, mathematicians themselves.
+\source
+    Анализ традиционно является первым или одним из первых предметов, относящихся к
+    высшей математике. Он нужен практически всем — лингвистам, химикам, физикам,
+    политологам и, конечно, самим математикам. 
 
-Его можно изучать на разных уровнях строгости. Можно оперировать неформальными
-описаниями, картинками и отдельными примерами, и таким образом обсуждать
-множество важных и содержательных вещей, опираясь на уже имеющуюся интуицию и
-представления об окружающем нас мире. Например, для многих приложений достаточно
-понимать, что интеграл — это площадь под графиком функции, и не обязательно
-знать его формальное определение, равно как и доказательства связанных с ним
-теорем: достаточно естественных и знакомым всем свойств площадей.
+Calculus can be studied with different levels of rigor. We can use 
+informal descriptions, pictures, and examples, and discuss a lot of
+important and meaningful things relying on our intuition and existing notions about 
+the world. For example, for a lot of applications, it is sufficient to understand
+that an integral is the area under a graph of a function, and it is not necessary to 
+know the formal definition or the proofs of related theorems - we only need the natural
+and familiar properties of areas.
+\source
+    Его можно изучать на разных уровнях строгости. Можно оперировать неформальными
+    описаниями, картинками и отдельными примерами, и таким образом обсуждать
+    множество важных и содержательных вещей, опираясь на уже имеющуюся интуицию и
+    представления об окружающем нас мире. Например, для многих приложений достаточно
+    понимать, что интеграл — это площадь под графиком функции, и не обязательно
+    знать его формальное определение, равно как и доказательства связанных с ним
+    теорем: достаточно естественных и знакомым всем свойств площадей.
 
-В то же время, есть понятия, про которые трудно говорить и думать на таком
-неформальном языке, поскольку у нас нет естественной интуиции о них. В первую
-очередь, речь о понятии бесконечности, которое пронизывает весь анализ и всю
-математику, но при этом выходит за рамки привычного для нас опыта.  Чтобы
-почувствовать в этом случае твёрдую почву под ногами, нам приходится опираться
-на формальные определения, а для этого — научиться с ними работать с помощью
-аккуратных рассуждений. Это и составляет основу любого «строгого» курса анализа
-— в том числе, и нашего.
+At the same time, some notions are hard to discuss in this informal manner
+because we do not have a natural intuition for them. First of all, we talk about the 
+notion of infinity that permeates all of the calculus and all of the math but goes beyond 
+our usual experience. To be on solid ground, in this case, we have to rely 
+on formal definitions and for that, we need to learn how to rigorously reason about them.
+This is the basis of every "serious" calculus course, including this one.
+\source
+    В то же время, есть понятия, про которые трудно говорить и думать на таком
+    неформальном языке, поскольку у нас нет естественной интуиции о них. В первую
+    очередь, речь о понятии бесконечности, которое пронизывает весь анализ и всю
+    математику, но при этом выходит за рамки привычного для нас опыта.  Чтобы
+    почувствовать в этом случае твёрдую почву под ногами, нам приходится опираться
+    на формальные определения, а для этого — научиться с ними работать с помощью
+    аккуратных рассуждений. Это и составляет основу любого «строгого» курса анализа
+    — в том числе, и нашего.
 
-Будучи введением в серьёзную математику, курс анализа демонстрирует связь между
-интуитивным, образным математическим мышлением и работой с формальными
-рассуждениями. Эти два режима мышления дополняют друг друга. Без интуиции
-невозможно придумать ничего нового, но интуиция может легко нас подвести. Чтобы
-проверить её, мы записываем аккуратные доказательства, проверяя, что каждый шаг
-является верным. Но справедливо и обратное: не имея интуиции и правильных образов
-математических объектов, легко пропустить ошибку в формальных рассуждениях.
-Реальное понимание доказательства возникает не в тот момент, когда вы его
-проверили строчка за строчкой, а тогда, когда в голове возникла чёткая картинка,
-в которой вы видите всю «механику» происходящего.
+Being an introduction to serious mathematics the calculus course shows
+the connection between intuitive, imaginative mathematical thinking and
+working with formal statements. These two modes of thinking complement each other.
+Without intuition, we cannot invent anything new, but intuition can deceive us.
+To check it we write down careful proofs and check that every step is correct.
+The opposite is also true: without intuition and correct mental images of 
+mathematical objects we can easily miss a mistake in reasoning.
+The real understanding of a proof happens not when we checked every line of it, 
+but when we have in our mind a clear picture of how it works altogether.
+\source
+    Будучи введением в серьёзную математику, курс анализа демонстрирует связь между
+    интуитивным, образным математическим мышлением и работой с формальными
+    рассуждениями. Эти два режима мышления дополняют друг друга. Без интуиции
+    невозможно придумать ничего нового, но интуиция может легко нас подвести. Чтобы
+    проверить её, мы записываем аккуратные доказательства, проверяя, что каждый шаг
+    является верным. Но справедливо и обратное: не имея интуиции и правильных образов
+    математических объектов, легко пропустить ошибку в формальных рассуждениях.
+    Реальное понимание доказательства возникает не в тот момент, когда вы его
+    проверили строчка за строчкой, а тогда, когда в голове возникла чёткая картинка,
+    в которой вы видите всю «механику» происходящего.
 
-Появление таких правильных «картинок», или лучше сказать «ментальных моделей»
-математических объектов и является нашей целью. Однако, оно невозможно без
-использования аккуратного математического языка, изучения большого количества
-доказательств и самостоятельного решения задач.
+Our goal is to create such "pictures" or, better term, "mental models" of 
+mathematical objects. However, it is impossible to do this without the use of 
+precise mathematical language, studying a large number of proofs, and 
+solving problems by ourselves.
+\source
+    Появление таких правильных «картинок», или лучше сказать «ментальных моделей»
+    математических объектов и является нашей целью. Однако, оно невозможно без
+    использования аккуратного математического языка, изучения большого количества
+    доказательств и самостоятельного решения задач.
 
-Это непростой курс. Я был бы рад написать по нему простой учебник, но это
-невозможно. Как правило, анализ повергает в шок большинство студентов — что
-вполне естественно, учитывая резко возросший, по сравнению со школой, уровень
-строгости и сложности конструкций. Тем не менее, я постарался максимально
-«смягчить удар», используя подробные объяснения, неформальные мотивировки,
-большое количество иллюстраций и встроенных вопросов для самопроверки. В то же
-время, нужно иметь в виду, что в освоении любой математической дисциплины учебник
-играет скорее вспомогательную роль; реальное понимание приходит исключительно в
-результате самостоятельного взаимодействия с математическими объектами в ходе
-решения задач.
+This course is not easy. I would be happy to write a simple guide, but it is 
+impossible. Generally, calculus comes as a shock to the majority of university 
+students, which is understandable considering the rapid increase (compared to school) in
+the level of rigor and the complexity of objects discussed. Nevertheless, 
+I have tried to "soften the blow" as much as could using detailed explanations,
+informal motivations, a large number of illustrations, and built-in quizzes. 
+At the same time, one must realize that in studying any branch of math, any
+textbook plays more of an auxiliary role and the real understanding comes
+only from individual interaction with mathematical objects in the process of  
+problem-solving.
+\source
+    Это непростой курс. Я был бы рад написать по нему простой учебник, но это
+    невозможно. Как правило, анализ повергает в шок большинство студентов — что
+    вполне естественно, учитывая резко возросший, по сравнению со школой, уровень
+    строгости и сложности конструкций. Тем не менее, я постарался максимально
+    «смягчить удар», используя подробные объяснения, неформальные мотивировки,
+    большое количество иллюстраций и встроенных вопросов для самопроверки. В то же
+    время, нужно иметь в виду, что в освоении любой математической дисциплины учебник
+    играет скорее вспомогательную роль; реальное понимание приходит исключительно в
+    результате самостоятельного взаимодействия с математическими объектами в ходе
+    решения задач.
 
-Этот учебник изначально был написан для студентов Совместного бакалавриата по
-экономике НИУ ВШЭ и РЭШ, где мне посчастливилось читать лекции по анализу на
-протяжении четырёх лет. «Посчастливилось» здесь — не фигура речи: каждый раз я
-получал огромное удовольствие от этого курса, от общения со студентами,
-коллегами, которые вели семинары, и учебными ассистентами. 
+This textbook was first written for the students of the HSE/NES Bachelor’s Programme in Economics,
+where I was lucky to give lectures in calculus for four years. "Lucky" here is not a figure of speech:
+Every year I derived great pleasure from this course, from communication with students,
+colleagues, and teaching assistants. 
+\source
+    Этот учебник изначально был написан для студентов Совместного бакалавриата по
+    экономике НИУ ВШЭ и РЭШ, где мне посчастливилось читать лекции по анализу на
+    протяжении четырёх лет. «Посчастливилось» здесь — не фигура речи: каждый раз я
+    получал огромное удовольствие от этого курса, от общения со студентами,
+    коллегами, которые вели семинары, и учебными ассистентами. 
 
-Я благодарен Дмитрию Дагаеву за конспекты его лекций, служившие мне опорой при
-разработке этого курса, всем студентам, а также читателям, указывавшим на
-опечатки и непонятные моменты в тексте. Отдельно мне хочется
-поблагодарить Ольгу Крылову — незрячую студентку, поступившую на нашу программу
-в 2020-м году. Её смелость мотивировала меня взяться за написание подробных
-конспектов и в итоге сделать учебник, доступный, насколько это возможно, для
-людей с нарушениями зрения. Так я понял важную истину: забота о тех, кому
-тяжелее всего, делает мир лучше для всех.
+I am grateful to Dmitry Dagaev for his lecture notes that served as a basis for this course, 
+to all my students and readers who pointed out typos and unclear moments in the text.
+I want to give separate thanks to Olga Krylova, a visually impaired student who attended
+the course in 2020. Her bravery motivated me to start writing detailed lecture notes
+and make this textbook as accessible as possible to visually impaired people. Because of that, I understood
+a fundamental truth - taking care of the most vulnerable makes the world better for everyone.
+\source
+    Я благодарен Дмитрию Дагаеву за конспекты его лекций, служившие мне опорой при
+    разработке этого курса, всем студентам, а также читателям, указывавшим на
+    опечатки и непонятные моменты в тексте. Отдельно мне хочется
+    поблагодарить Ольгу Крылову — незрячую студентку, поступившую на нашу программу
+    в 2020-м году. Её смелость мотивировала меня взяться за написание подробных
+    конспектов и в итоге сделать учебник, доступный, насколько это возможно, для
+    людей с нарушениями зрения. Так я понял важную истину: забота о тех, кому
+    тяжелее всего, делает мир лучше для всех.
 
-\section Множества
+\section Sets.
+\source
+    \section Множества
 
-\subsection Примеры множеств
-Мы начнём с самых базовых объектов анализа (да и в целом математики), из которых
-строится всё остальное: с множеств, отображений и чисел.
+\subsection Examples of Sets
+\source
+    \subsection Примеры множеств
 
-Вообще, в математике принято давать строгие определения всем вводимым понятиям.
-Однако, когда мы даём определение новому понятию, мы описываем его с помощью
-слов, каждое из которых, по идее, также нуждается в определении. Поскольку этот
-процесс не может продолжаться до бесконечности, в какой-то момент мы вынуждены
-остановиться, и сказать, что некоторые понятия мы не будем определять формально.
-
+We will start from the most basic notions of calculus (and mathematics as a whole),
+from which all the others are constructed: sets, mappings, and numbers.
+\source
+    Мы начнём с самых базовых объектов анализа (да и в целом математики), из которых
+    строится всё остальное: с множеств, отображений и чисел.
+    
+Generally, in mathematics, we aim to provide rigorous definitions for all concepts
+we introduce. However, when we define a new concept, we describe it with words, 
+each of which requires, in principle, a definition of its own. Since this process 
+cannot go forever, at some point we must stop and declare that some concepts will 
+not be defined formally.
+\source
+    Вообще, в математике принято давать строгие определения всем вводимым понятиям.
+    Однако, когда мы даём определение новому понятию, мы описываем его с помощью
+    слов, каждое из которых, по идее, также нуждается в определении. Поскольку этот
+    процесс не может продолжаться до бесконечности, в какой-то момент мы вынуждены
+    остановиться, и сказать, что некоторые понятия мы не будем определять формально.
 
 \quasidefinition
-    \emph{Множество} — это набор каких-то элементов. 
+    A \emph{set} is a collection of elements of some kind.
+\source
+    \quasidefinition
+        \emph{Множество} — это набор каких-то элементов. 
 
-Это как бы определение даёт мало информации — фактически, в нём сказано, что
-множество — это набор, а что такое набор — так же непонятно. Чтобы стало чуть
-более понятно, давайте приведём пару примеров:
+This quasi-definition gives us very little information — it says that a set is a collection,
+but it is similarly unclear what a collection is. To make things a little bit clearer let's give some examples:
+\source
+    Это как бы определение даёт мало информации — фактически, в нём сказано, что
+    множество — это набор, а что такое набор — так же непонятно. Чтобы стало чуть
+    более понятно, давайте приведём пару примеров:
 
 \example \label ex:01:123
-    Определим множество $A:=\set{1, 2, 3}$, которое состоит из трёх элементов —
-    чисел 1, 2 и 3. (Когда какой-то объект впервые определяется, мы часто будем
-    использовать знак $:=$ вместо обычного равно, чтобы подчеркнуть, что мы
-    таким образом определяем значение того символа, который стоит со стороны
-    двоеточия.) Чтобы задать множество, можно перечислить его элементы,
-    заключив их в фигурные скобки. (Так, конечно, можно задать не все множества,
-    а только конечные, в которых число элементов конечно; чуть позже мы
-    столкнёмся с бесконечными множествами.) Важно отметить, что
-    порядок следования элементов при перечислении не имеет значения: я мог бы
-    написать $\set{2, 1, 3}$ или $\set{3, 2, 1}$ и получить ровно то же самое
-    множество $A$. Ещё одно важное замечание: каждый элемент либо входит в
-    множество, либо не входит, нельзя «дважды входить» в множество. Если бы я
-    написал $\set{1, 1, 2, 3}$, я бы получил то же множество из трёх элементов,
-    что и выше: единица написана дважды, но входить в множество она может ровно
-    один раз. (Именно так это будет интерпретировать, например, язык
-    программирования Python, умеющий работать с множествами.)
+	Let $A:=\set{1, 2, 3}$ be a set comprising three elements — numbers 1, 2, and 3. 
+   	(When we define an object for the first time we will use the sign $:=$ instead of 
+    	the standard equality sign to emphasize that we define the symbol on the left side 
+    	of the sign). To define a set we can list its elements inside curly brackets. (Of course, 
+    	not every set can be defined this way — only finite ones can, the ones with finitely many 
+    	elements; later we will encounter infinite sets as well). It is important to note that here 
+    	the order of the elements does not matter — we can write $\set{2, 1, 3}$ or $\set{3, 2, 1}$ 
+    	and get the same set $A$. Another important note — an element is either in a set or not, 
+    	it cannot "be in it twice". If we write $set{1,1,2,3}$ we get the same set defined above: 
+    	we write 1 twice but it can only be in it one time. (This is the way this would be interpreted 
+    	by, for example, Python, a programming language that can work with sets).
+
+\source
+    \example \label ex:01:123
+        Определим множество $A:=\set{1, 2, 3}$, которое состоит из трёх элементов —
+        чисел 1, 2 и 3. (Когда какой-то объект впервые определяется, мы часто будем
+        использовать знак $:=$ вместо обычного равно, чтобы подчеркнуть, что мы
+        таким образом определяем значение того символа, который стоит со стороны
+        двоеточия.) Чтобы задать множество, можно перечислить его элементы,
+        заключив их в фигурные скобки. (Так, конечно, можно задать не все множества,
+        а только конечные, в которых число элементов конечно; чуть позже мы
+        столкнёмся с бесконечными множествами.) Важно отметить, что
+        порядок следования элементов при перечислении не имеет значения: я мог бы
+        написать $\set{2, 1, 3}$ или $\set{3, 2, 1}$ и получить ровно то же самое
+        множество $A$. Ещё одно важное замечание: каждый элемент либо входит в
+        множество, либо не входит, нельзя «дважды входить» в множество. Если бы я
+        написал $\set{1, 1, 2, 3}$, я бы получил то же множество из трёх элементов,
+        что и выше: единица написана дважды, но входить в множество она может ровно
+        один раз. (Именно так это будет интерпретировать, например, язык
+        программирования Python, умеющий работать с множествами.)
+    
 \example
-    Бывает пустое множество, которое обозначается $\varnothing$ (в другом стиле
-    выглядит как $\emptyset$). Оно не содержит ни одного элемента: $\varnothing
-    = \set{}$.
+    There is an empty set that we denote $\varnothing$ (or $\emptyset$). It does not 
+    contain any elements: $\varnothing= \set{}$.    
 
-Утверждение «элемент $x$ входит в множество $X$» кратко записывается таким образом:
+\source    
+    \example
+        Бывает пустое множество, которое обозначается $\varnothing$ (в другом стиле
+        выглядит как $\emptyset$). Оно не содержит ни одного элемента: $\varnothing
+        = \set{}$.
+
+We will express the statement "the element $x$ is in the set $X$" like this: 
 \eq \nonumber
-    x \in X
+    x \in X.
+\source    
+    Утверждение «элемент $x$ входит в множество $X$» кратко записывается таким образом:
+    \eq \nonumber
+        x \in X
 
-То есть, например, справедливо сказать, что $1 \in A$ для множества $A$,
-определенного в \ref[примере][ex:01:123], а $4 \not \in A$.
+For example, this means that it would be fair to say that  $1 \in A$, for the set $A$ 
+defined in \ref[Example][ex:01:123], but $4 \not \in A$.
+\source    
+    То есть, например, справедливо сказать, что $1 \in A$ для множества $A$,
+    определенного в \ref[примере][ex:01:123], а $4 \not \in A$.
 
 \definition
-    Пусть есть два множества, $X$ и $Y$. Говорят, что $X$ является
-    \emph{подмножеством} множества $Y$ (пишут $X\subset Y$ или $Y\supset X$),
-    если всякий элемент множества $X$ также является и элементом множества $Y$.
+    Suppose there are two sets $X$ and $Y$. We say that $X$ is a \emph{subset}
+    of $Y$ (and write $X\subset Y$ or $Y\supset X$) if every element of $X$ is 
+    also an element of $Y$. 
+\source    
+    \definition
+        Пусть есть два множества, $X$ и $Y$. Говорят, что $X$ является
+        \emph{подмножеством} множества $Y$ (пишут $X\subset Y$ или $Y\supset X$),
+        если всякий элемент множества $X$ также является и элементом множества $Y$.
 
-Например, множество $\set{1, 2}$ является подмножеством множества $A$ из 
-\ref[примера][ex:01:123], а множество $\\{1, 2, 3, 4\\}$ — не является.
+For example the set $\set{1, 2}$ is a subset of the set $A$ from \ref[Example][ex:01:123], 
+but the set $\\{1, 2, 3, 4\\}$ is not.
+\source    
+    Например, множество $\set{1, 2}$ является подмножеством множества $A$ из 
+    \ref[примера][ex:01:123], а множество $\\{1, 2, 3, 4\\}$ — не является.
 
 \remark
-    Пустое множество является подмножеством любого множества. Само множество
-    также является подмножеством самого себя.  Если подмножество некоторого
-    множества не является пустым и не является всем множеством, говорят, что оно
-    является \emph{собственным} подмножеством.
-\example \label ex:01:powerset
-    Множества могут быть сами элементами множеств. Например, можно рассмотреть
-    \emph{множество всех подмножеств} множества $A$: получится такое множество
-    (обозначим его через $B$):
-    \align \nonumber
-        \item B:=\set{\varnothing,& \set{1}, \set{2}, \set{3}, \set{1, 2}, 
-        \splitem \splonly{&}\set{1, 3}, \set{2, 3}, \set{1, 2, 3}}.
+	The empty set is a subset of any set. Any set is a subset of itself. 
+    	If a subset of a set is neither empty nor the whole set, we call it a \emph{proper} subset.
+\source    
+    \remark
+        Пустое множество является подмножеством любого множества. Само множество
+        также является подмножеством самого себя.  Если подмножество некоторого
+        множества не является пустым и не является всем множеством, говорят, что оно
+        является \emph{собственным} подмножеством.
+        
+example \label ex:01:powerset
+	Sets can be elements of other sets themselves. For example, we can consider 
+    	the \emph{power set} of $A$ - the set of all subsets of $A$. We would get the 
+    	following set (let's denote it by $B$):
+	\align \nonumber
+        	\item B:=\set{\varnothing,& \set{1}, \set{2}, \set{3}, \set{1, 2}, 
+        	\splitem \splonly{&}\set{1, 3}, \set{2, 3}, \set{1, 2, 3}}.
+            
+\source    
+    \example \label ex:01:powerset
+        Множества могут быть сами элементами множеств. Например, можно рассмотреть
+        \emph{множество всех подмножеств} множества $A$: получится такое множество
+        (обозначим его через $B$):
+        \align \nonumber
+            \item B:=\set{\varnothing,& \set{1}, \set{2}, \set{3}, \set{1, 2}, 
+            \splitem \splonly{&}\set{1, 3}, \set{2, 3}, \set{1, 2, 3}}.
 
-Обратите внимание на разницу между знаками $\in$ и $\subset$. Например, для
-множества $A$, справедливо утверждение $1\in A$, справедливо утверждение
-$\set{1}\subset A$, но неверно, что $\set{1}\in A$, поскольку элементами $A$
-являются числа, а не множества. Для множества $B$, наоборот, $1 \not \in B$,
-зато $\set{1} \in B$.
+
+Take notice of the difference between the signs $\in$ and $\subset$. For example, 
+for the set $A$ the statement $1\in A$ is true, the statement $\set{1}\subset A$ is true, 
+but the statement $\set{1}\in A$ is false because the elements of $A$ are numbers and not sets. 
+For the set $B$, conversely, $1 \not \in B$, but $\set{1} \in B$.
+\source    
+    Обратите внимание на разницу между знаками $\in$ и $\subset$. Например, для
+    множества $A$, справедливо утверждение $1\in A$, справедливо утверждение
+    $\set{1}\subset A$, но неверно, что $\set{1}\in A$, поскольку элементами $A$
+    являются числа, а не множества. Для множества $B$, наоборот, $1 \not \in B$,
+    зато $\set{1} \in B$.
 
 \question
-    Кстати, а верно ли, что $\set{1}\subset B$?
+    By the way, is it true that $\set{1}\subset B$?
+    \source    
+        Кстати, а верно ли, что $\set{1}\subset B$?
     \quiz
         \choice
-            Верно
+            True
+            \source    
+                Верно
             \comment
-                Нет, $\set{1}$ не является подмножеством множества $B$: оно
-                содержит это множество как элемент. Если вы хотите создать
-                множество, единственным элементом которого является множество
-                $\set{1}$, оно будет записываться как $\set{\set{1}}$.
+                No, $\set{1}$ is not a subset of the set $B$: it contains 
+                it as an element. If we want to create a set whose only element 
+                is the set $\set{1}$, it would be written as $\set{\set{1}}$. 
+                \source   
+                    Нет, $\set{1}$ не является подмножеством множества $B$: оно
+                    содержит это множество как элемент. Если вы хотите создать
+                    множество, единственным элементом которого является множество
+                    $\set{1}$, оно будет записываться как $\set{\set{1}}$.
         \choice \correct
-            Неверно
+            False
+            \source    
+                Неверно
             \comment
-                Действительно, $\set{1}$ не является подмножеством множества $B$: оно
-                содержит это множество как элемент. Если вы хотите создать
-                множество, единственным элементом которого является множество
-                $\set{1}$, оно будет записываться как $\set{\set{1}}$.
+                Indeed, $\set{1}$ is not a subset of the set $B$: it contains 
+                it as an element. If we want to create a set whose only element 
+                is the set $\set{1}$, it would be written as $\set{\set{1}}$.
+                \source    
+                    Действительно, $\set{1}$ не является подмножеством множества $B$: оно
+                    содержит это множество как элемент. Если вы хотите создать
+                    множество, единственным элементом которого является множество
+                    $\set{1}$, оно будет записываться как $\set{\set{1}}$.
 
-Как мы видим из \ref[примера][ex:01:powerset], множества могут содержать в себе
-другие множества. Тут может возникнуть соблазн рассмотреть «множество всех
-возможных множеств», однако это приводит к проблемам (подробнее можно посмотреть
-в статье про \href[парадокс
-Рассела][https://ru.wikipedia.org/wiki/Парадокс_Рассела] в Википедии). Таких
-проблем удаётся избегать, если мы разрешаем рассматривать лишь множества,
-которые понятным образом строятся из уже определенных ранее множеств. Так мы и
-будем поступать. Есть более аккуратные способы определения множеств путём ввода
-некоторой системы аксиом, но для всех практических целей нам будет достаточно
-«наивного» понятия о множествах, которое обсуждается здесь.
+As we can see from \ref[Example][ex:01:powerset] sets can have other sets as 
+elements. One might be tempted here to consider "the set of all sets", but
+this leads to problems (for details see the Wikipedia article  
+\href[Russel's paradox][https://en.wikipedia.org/wiki/Russell%27s_paradox]).
+We can avoid such problems if we only allow sets that are constructed
+straightforwardly from already defined sets. This is what we are going to do.
+There are more rigorous ways to define sets by introducing a system of axioms,
+but for all practical purposes, the "naive" notion of sets discussed here 
+will be sufficient.
+\source    
+	Как мы видим из \ref[примера][ex:01:powerset], множества могут содержать в себе
+	другие множества. Тут может возникнуть соблазн рассмотреть «множество всех
+	возможных множеств», однако это приводит к проблемам (подробнее можно посмотреть
+	в статье про \href[парадокс
+	Рассела][https://ru.wikipedia.org/wiki/Парадокс_Рассела] в Википедии). Таких
+	проблем удаётся избегать, если мы разрешаем рассматривать лишь множества,
+	которые понятным образом строятся из уже определенных ранее множеств. Так мы и
+	будем поступать. Есть более аккуратные способы определения множеств путём ввода
+	некоторой системы аксиом, но для всех практических целей нам будет достаточно
+	«наивного» понятия о множествах, которое обсуждается здесь.
 
-\subsection Операции над множествами
+\subsection Set Operations
+\source    
+	\subsection Операции над множествами
 
-Нам понадобятся некоторые известные операции с множествами.
+We will need some well-known set operations.
+\source    
+	Нам понадобятся некоторые известные операции с множествами.
+
 
 \definition
-    Для произвольных множеств $X$ и $Y$, определим их \emph{пересечение}, то
-    есть новое множество (обозначается $X\cap Y$), которое состоит из всех
-    элементов, которые есть одновременно и в $X$, и в $Y$.
+	For any sets $X$ and $Y$ we define their \emph{intersection},
+	a new set (denoted by $X\cap Y$) that comprises all elements
+	that are at the same time in $X$ and in $Y$
+    	\source   
+		Для произвольных множеств $X$ и $Y$, определим их \emph{пересечение}, то
+		есть новое множество (обозначается $X\cap Y$), которое состоит из всех
+    		элементов, которые есть одновременно и в $X$, и в $Y$.
 \figure
     \img
         \src pic-1.svg
         \style
             padding: 4em; max-width:300px;
         \alt
-            Два пересекающихся овала, левый X, правый Y, закрашено их пересечение.
+            Two intersecting ovals, the left one marked X, the right one marked Y,
+	    with their intersection filled in.
+	    \source    
+		    Два пересекающихся овала, левый X, правый Y, закрашено их пересечение.
     \caption
-        Пересечение множеств.
+    	Set intersection
+        \source    
+		Пересечение множеств.
     \label fig:01:intersect
 
 \definition
-    Для произвольных множеств $X$ и $Y$, определим их \emph{объединение}, то
-    есть новое множество (обозначается $X\cup Y$), которое состоит из всех
-    элементов, которые есть хотя бы в одном из множеств $X$, или в $Y$ (или в
-    обоих).
+	For any sets $X$ and $Y$ we define their \emph{union},
+	a new set (denoted by $X\cup Y$) that comprises all elements
+	that are in $X$ or in $Y$ (or in both).
+    	\source    
+		Для произвольных множеств $X$ и $Y$, определим их \emph{объединение}, то
+    		есть новое множество (обозначается $X\cup Y$), которое состоит из всех
+    		элементов, которые есть хотя бы в одном из множеств $X$, или в $Y$ (или в
+    		обоих).
 
 \figure
     \img
@@ -204,17 +382,27 @@ $\set{1}\subset A$, но неверно, что $\set{1}\in A$, поскольк
         \style
             padding: 4em; max-width:300px;
         \alt
-            Два пересекающихся овала, левый X, правый Y, равномерно закрашены
-            оба овала.
+		Two intersecting ovals, the left one marked X, the right one marked Y,
+	    	both filled in.
+            	\source    
+			Два пересекающихся овала, левый X, правый Y, равномерно закрашены
+            		оба овала.
     \caption
-        Объединение множеств.
+    	Set union.
+        \source    
+		Объединение множеств.
     \label fig:01:union
 
 \definition
-    Для произвольных множеств $X$ и $Y$, разностью $X \setminus Y$ (также пишут
-    просто $X-Y$) называется множество всех элементов $X$, не содержащихся в
-    $Y$. Иногда говорят \emph{дополнение $Y$ до $X$} (вероятно, наиболее
-    корректным этот термин является, если $Y$ является подмножеством $X$).
+	For any sets $X$ and $Y$, their \emph{difference} $X \setminus Y$ 
+	(sometimes written as $X-Y$) is a set that comprises all elements
+	that are in $X$ but not in $Y$. Sometimes (when $Y$ is a subset of $X$)
+	the set $X \setminus Y$ is called a complement of $X$ with respect to $Y$.
+    	\source    
+		Для произвольных множеств $X$ и $Y$, разностью $X \setminus Y$ (также пишут
+    		просто $X-Y$) называется множество всех элементов $X$, не содержащихся в
+    		$Y$. Иногда говорят \emph{дополнение $Y$ до $X$} (вероятно, наиболее
+    		корректным этот термин является, если $Y$ является подмножеством $X$).
 
 \figure
     \img
@@ -222,39 +410,68 @@ $\set{1}\subset A$, но неверно, что $\set{1}\in A$, поскольк
         \style
             padding: 4em; max-width:300px;
         \alt
-            Два пересекающихся овала, левый X, правый Y, закрашена часть X, не
-            пересекающаяся с Y.
+            Two intersecting ovals, the left one marked X, the right one marked Y,
+	    with the part of X outside of Y filled in.
+            \source    
+		Два пересекающихся овала, левый X, правый Y, закрашена часть X, не
+            	пересекающаяся с Y.
     \caption
-        Разность множеств.
+    	Set difference
+        \source    
+		Разность множеств.
     \label fig:01:setdiff
-\section Отображения \label sec:01:maps
+    
+\section Mappings \label sec:01:maps
+\source    
+	\section Отображения \label sec:01:maps
 
-Вы наверняка встречались с понятием функции. В математике есть два набора
-терминов, которые описывают одно и то же — в одних случаях используется слово
-«функция», в других — «отображение». Слово «отображение» выглядит чуть более
-универсальным термином. Его можно было бы определить формально, опираясь только
-на понятие множества, но мы ограничимся неформальным описанием.
+You have probably encountered the notion of a function. In math there are two 
+sets of terms describing the same thing - sometimes the word "function" is used,
+and sometimes "mapping" is used. "Mapping" seems to be a more universal term.
+We could have defined it formally using only the notion of a set, but we will 
+go with an informal description.
+\source    
+	Вы наверняка встречались с понятием функции. В математике есть два набора
+	терминов, которые описывают одно и то же — в одних случаях используется слово
+	«функция», в других — «отображение». Слово «отображение» выглядит чуть более
+	универсальным термином. Его можно было бы определить формально, опираясь только
+	на понятие множества, но мы ограничимся неформальным описанием.
 
 \quasidefinition 
-    Рассмотрим два произвольных множества $X$ и $Y$. Пусть мы
-    каждому элементу из множества $X$ поставили в соответствие какой-то элемент из
-    множества $Y$. Тогда говорят, что мы задали \emph{отображение} из $X$ в $Y$.
+    Consider two sets $X$ and $Y$. Suppose, to every element of $X$ we assign an element of $Y$.
+    Then we say that we have defined a \emph{mapping} of $X$ into $Y$.
+\source   
+    \quasidefinition 
+    	Рассмотрим два произвольных множества $X$ и $Y$. Пусть мы
+    	каждому элементу из множества $X$ поставили в соответствие какой-то элемент из
+    	множества $Y$. Тогда говорят, что мы задали \emph{отображение} из $X$ в $Y$.
 
 \example
-    Рассмотрим отображение из множества $A=\set{1, 2, 3}$ в множество
-    $L:=\set{\mathtt{a}, \mathtt{b}, \mathtt{c}, \mathtt{d}}$ (здесь $\mathtt{a}$, $\mathtt{b}$,
-    $\mathtt{c}$ и $\mathtt{d}$ — не переменные, а просто  буквы английского
-    алфавита — множества ведь могут содержать не только числа), заданное
-    следующим образом (см. \ref[рис][fig:01:map]: числу $1$ поставили в
-    соответствие букву $\mathtt{b}$, числу $2$ — букву $\mathbb{c}$ и числу $3$
-    — букву $\mathtt{b}$. Таким образом мы задали отображение из $A$ в $L$. Это
-    отображение можно обозначить какой-нибудь буквой, например, буквой $g$.
-    Тогда можно записать: $g(1)=\mathtt{b}$, $g(2)=\mathtt{c}$ и
-    $g(3)=\mathtt{b}$. Говорят также, что под действием отображения $g$, число
-    $1$ переходит в букву $\mathtt{b}$ и т.д. Также можно сказать, что буква
-    $\mathbb{b}$ является \emph{образом} числа $1$ под действием отображения
-    $g$, и наоборот, число $1$ является одним из \emph{прообразов} буквы
-    $\mathtt{b}$.
+    Consider the mapping of the set $A=\set{1, 2, 3}$ into the set
+    $L:=\set{\mathtt{a}, \mathtt{b}, \mathtt{c}, \mathtt{d}}$ (here $\mathtt{a}$, $\mathtt{b}$,
+    $\mathtt{c}$, and $\mathtt{d}$ are not variables, but simply letters of the English alphabet
+    - sets do not have to contain only numbers), given by the following: to the number $1$ we assign
+    the letter $\mathtt{b}$, to the number $2$ - the letter $c$, and to the number $3$ - the letter $b$,
+    So we defined a mapping of $A$ into $L$. We can denote this mapping by a letter, for example, the letter $g$.
+    Then we can write $g(1)=\mathtt{b}$, $g(2)=\mathtt{c}$, and$g(3)=\mathtt{b}$. 
+    We will say that $g$ maps the number $1$ to the letter $\mathtt{b}$, etc. We will also say that $\mathtt{b}$
+    is the image of the number $1$ under the mapping $g$, and, conversely, the number $1$ is in the \emph{pre-image}
+    of the letter $\mathtt{b}$.
+    \source
+	Рассмотрим отображение из множества $A=\set{1, 2, 3}$ в множество
+	$L:=\set{\mathtt{a}, \mathtt{b}, \mathtt{c}, \mathtt{d}}$ (здесь $\mathtt{a}$, $\mathtt{b}$,
+	$\mathtt{c}$ и $\mathtt{d}$ — не переменные, а просто  буквы английского
+	алфавита — множества ведь могут содержать не только числа), заданное
+	следующим образом (см. \ref[рис][fig:01:map]: числу $1$ поставили в
+    	соответствие букву $\mathtt{b}$, числу $2$ — букву $\mathbb{c}$ и числу $3$
+    	— букву $\mathtt{b}$. Таким образом мы задали отображение из $A$ в $L$. Это
+    	отображение можно обозначить какой-нибудь буквой, например, буквой $g$.
+    	Тогда можно записать: $g(1)=\mathtt{b}$, $g(2)=\mathtt{c}$ и
+    	$g(3)=\mathtt{b}$. Говорят также, что под действием отображения $g$, число
+    	$1$ переходит в букву $\mathtt{b}$ и т.д. Также можно сказать, что буква
+    	$\mathbb{b}$ является \emph{образом} числа $1$ под действием отображения
+    	$g$, и наоборот, число $1$ является одним из \emph{прообразов} буквы
+    	$\mathtt{b}$.
 
 \figure
     \img
@@ -262,29 +479,48 @@ $\set{1}\subset A$, но неверно, что $\set{1}\in A$, поскольк
         \style
             padding: 1em; max-width:300px;
         \alt
-            Два овала, в левом отмечены точки 1, 2, 3, он подписан A, в правом точки
-            a, b, c, d, он подписан L. Есть стрелочки от 1 к b, от 2 к c и от 3 к b. 
+		Two ovals, inside the left one there are dots labeled 1,2,3, the oval is labeled A;
+		inside the right one, there are dots labeled a,b,c, and d, and the oval is labeled L. 
+		Arrows are going from 1 to b, from 2 to c, and from 3 to b.
+		\source
+            		Два овала, в левом отмечены точки 1, 2, 3, он подписан A, в правом точки
+            		a, b, c, d, он подписан L. Есть стрелочки от 1 к b, от 2 к c и от 3 к b. 
     \caption
-        Пример отображения.
+    	An example of a mapping.
+	\source
+	        Пример отображения.
     \label fig:01:map
-Если задано отображение $f$ из множества $X$ в множество $Y$, пишут:
+If a mapping $f$ of a set $X$ into a set $Y$ is defined we write:
+\source
+	Если задано отображение $f$ из множества $X$ в множество $Y$, пишут:
 \eq
     f\colon X \to Y.
 
-Можно представить себе отображение $f\colon X \to Y$ как такую картинку, в
-которой из каждого элемента множества $X$ выходит стрелочка, которая ведёт к
-какому-то элементу множества $Y$. При этом стрелочки обязаны выходить из всех
-элементов $X$, но не обязаны входить во все элементы $Y$. Важно также, что
-из каждого элемента $X$ выходит ровно одна стрелочка, то есть каждый элемент
-множества $X$ отображается ровно в один элемент множества $Y$.
+We can think of a mapping $f\colon X \to Y$ a picture where each element of the set $X$
+has an arrow leading from it to an element of the set $Y$. Moreover every element of the set $X$
+must have an arrow leaving it, but not all elements of $Y$ must have an arrow pointing to it.
+It is also important that exactly one arrow leaves each element of the set $X$, i.e. 
+every element of the set $X$ maps to exactly one element of the set $Y$.
+\source
+	Можно представить себе отображение $f\colon X \to Y$ как такую картинку, в
+	которой из каждого элемента множества $X$ выходит стрелочка, которая ведёт к
+	какому-то элементу множества $Y$. При этом стрелочки обязаны выходить из всех
+	элементов $X$, но не обязаны входить во все элементы $Y$. Важно также, что
+	из каждого элемента $X$ выходит ровно одна стрелочка, то есть каждый элемент
+	множества $X$ отображается ровно в один элемент множества $Y$.
 
 \snippet \flabel инъективно \label snip:injection
     \definition
-        Отображение $f\colon X \to Y$ называется \emph{инъективным} (или просто
-        \emph{инъекцией}), если оно «не склеивает точки», то есть не переводит две
-        разные точки в одну и ту же. Если представлять отображение в виде картинки
-        со стрелочками, это соответствует тому, что нет двух стрелочек, ведущих в
-        одну и ту же точку.
+    	A mapping $f\colon X \to Y$ is called \emph{injective} (or just an \emph{injection})
+	if it does not "glue points together", i.e. does not map two different points to the same one.
+	If we think of a mapping as a picture with arrows this corresponds to not having two arrows going 
+	to the same place.
+	\source
+        	Отображение $f\colon X \to Y$ называется \emph{инъективным} (или просто
+        	\emph{инъекцией}), если оно «не склеивает точки», то есть не переводит две
+        	разные точки в одну и ту же. Если представлять отображение в виде картинки
+        	со стрелочками, это соответствует тому, что нет двух стрелочек, ведущих в
+        	одну и ту же точку.
 
 \figure
     \img
@@ -292,21 +528,34 @@ $\set{1}\subset A$, но неверно, что $\set{1}\in A$, поскольк
         \style
             padding: 1em;
         \alt
-            Две картинки. Слева два овала, в левом точки 1, 2, 3. В правом точки
-            a, b, c, d. Есть стрелочки от 1 к a, от 2 и 3 к b. Подпись: не
-            инъективное. Справа тоже два овала с такими же точками. Стрелочки из
-            1 в b, из 2 в с, из 3 в a. Подпись: инъективное.
+		Two pictures. On the left one, there are two ovals, inside the left one, there are dots labeled
+		1,2,3. Inside the right one, there are dots labeled a,b,c, and d. Arrows go from 1 to b, from 
+		2 to c, and from 3 to b. The picture is labeled "Not injective". On the right one, there are 
+		the same ovals with the same dots. Arrows are going from 1 to b, from 
+		2 to c, and from 3 to a. The picture is labeled "Injective".
+		\source
+            		Две картинки. Слева два овала, в левом точки 1, 2, 3. В правом точки
+            		a, b, c, d. Есть стрелочки от 1 к a, от 2 и 3 к b. Подпись: не
+            		инъективное. Справа тоже два овала с такими же точками. Стрелочки из
+            		1 в b, из 2 в с, из 3 в a. Подпись: инъективное.
     \caption
-        Не инъективное (слева) и инъективное (справа) отображения.
+    	Non-injective (left) and injective (right) mappings.
+        \source
+		Не инъективное (слева) и инъективное (справа) отображения.
     \label fig:01:injective
 
 \definition
-    Отображение $f\colon X \to Y$ называется \emph{сюръективным} (или просто
-    \emph{сюръекцией}), если в любую точку множества $Y$ что-то переходит. Иными
-    словами, у любой точки множества $Y$ есть хотя бы один прообраз под
-    действием $f$. Если представлять отображение в виде картинки
-    со стрелочками, это соответствует тому, что в каждую точку $Y$ ведёт хотя бы
-    одна стрелочка.
+    A mapping $f\colon X \to Y$ is called \emph{surjective} (or just a \emph{surjection})
+    if every element of the set $Y$ has something mapping to it. In other words every element of the set $Y$
+    has something in the preimage under the mapping $f$. If we think of a mapping as a picture with arrows
+    this corresponds to every point of the set $Y$ having at least one arrow going to it.
+    \source
+    	Отображение $f\colon X \to Y$ называется \emph{сюръективным} (или просто
+    	\emph{сюръекцией}), если в любую точку множества $Y$ что-то переходит. Иными
+    	словами, у любой точки множества $Y$ есть хотя бы один прообраз под
+    	действием $f$. Если представлять отображение в виде картинки
+    	со стрелочками, это соответствует тому, что в каждую точку $Y$ ведёт хотя бы
+    	одна стрелочка.
 
 \figure
     \img
@@ -314,205 +563,370 @@ $\set{1}\subset A$, но неверно, что $\set{1}\in A$, поскольк
         \style
             padding: 1em;
         \alt
-            Две картинки. Слева два овала, в левом точки 1, 2, 3, 4, 5. В правом точки
-            a, b, c, d. Есть стрелочки от 1 к a, от 2 и 3 к c, от 5 к b. Подпись: не
-            сюръективное. Справа тоже два овала с такими же точками. Стрелочки из
-            1 в a, из 2 и 3 в с, из 4 в d, из 5 в b. Подпись: сюръективное.
+		Two pictures. On the left one, there are two ovals, inside the left one there are dots labeled
+		1,2,3,4, and 5. Inside the right one, there are dots labeled a,b,c, and d. Arrows are going from 1 to a, from 
+		2 and 3 to c, and from 4 and 5 to b. The picture is labeled "Not surjective". On the right one, there are 
+		the same ovals with the same dots. The arrows go from 1 to a, from 
+		2 and 3 to c, from 4 to d, and from 5 to b. The picture is labeled "Surjective".
+		\source
+            		Две картинки. Слева два овала, в левом точки 1, 2, 3, 4, 5. В правом точки
+            		a, b, c, d. Есть стрелочки от 1 к a, от 2 и 3 к c, от 5 к b. Подпись: не
+            		сюръективное. Справа тоже два овала с такими же точками. Стрелочки из
+            		1 в a, из 2 и 3 в с, из 4 в d, из 5 в b. Подпись: сюръективное.
     \caption
-        Не сюръективное (слева) и сюръективное (справа) отображения.
+    	Non-surjective (left) and surjective (right) mappings.
+        \source
+	        Не сюръективное (слева) и сюръективное (справа) отображения.
     \label fig:01:surj
 \snippet \flabel биекция \label snip:bijection
     \definition
-        Отображение $f\colon X \to Y$ называется \emph{биективным} (или
-        \emph{биекцией}, или \emph{взаимно однозначным отображением}), если оно
-        одновременно является инъективным и сюръективным. В этом случае не только каждому
-        элементу множества $X$ поставлен в соответствие ровно один элемент $Y$ (как
-        всегда бывает, когда отображение задано), но и наоборот, каждому элементу
-        множества $Y$ поставлен в соответствие ровно один элемент множества $X$ —
-        тот, который в него переходит под действием отображения. Он существует
-        (потому что отображение сюръективно) и единственный (потому что инъективно).
+    	A mapping $f\colon X \to Y$ is called \emph{bijective} (or
+	just a \emph{bijection}) if it is both injective and surjective.
+	In this case, not only there is exactly one element of the set $Y$
+	assigned to each element of the set $X$ (as is always the case with 
+	a mapping) but also there is exactly one element of the set $X$ corresponding to
+	each element of the set $Y$ - the one that maps to it under the mapping.
+	It exists because the mapping is surjective and it is unique because the mapping is injective.
+        \source
+		Отображение $f\colon X \to Y$ называется \emph{биективным} (или
+        	\emph{биекцией}, или \emph{взаимно однозначным отображением}), если оно
+        	одновременно является инъективным и сюръективным. В этом случае не только каждому
+        	элементу множества $X$ поставлен в соответствие ровно один элемент $Y$ (как
+        	всегда бывает, когда отображение задано), но и наоборот, каждому элементу
+        	множества $Y$ поставлен в соответствие ровно один элемент множества $X$ —
+        	тот, который в него переходит под действием отображения. Он существует
+        	(потому что отображение сюръективно) и единственный (потому что инъективно).
 \figure
     \img
         \src pic-8.svg
         \style
             padding: 1em; max-width:300px;
         \alt
-            Два овала, в левом точки 1, 2, 3, в правом точки
-            a, b, c. Есть стрелочки от 1 к b, от 2  к c, от 3 к a. 
+		Two ovals, inside the left one, there are dots labeled 1,2,3;
+		inside the right one, there are dots labeled a,b, and c. Arrows 
+		are going from 1 to b, from 2 to c, and from 3 to a.
+		\source
+            		Два овала, в левом точки 1, 2, 3, в правом точки
+            		a, b, c. Есть стрелочки от 1 к b, от 2  к c, от 3 к a. 
     \caption
-        Биективное отображение.
+    	A bijective mapping.
+	\source
+        	Биективное отображение.
     \label fig:01:surj
 \remark
-    Для конечных множеств $X$ и $Y$ существование биективного отображение из $X$
-    в $Y$ означает, что число элементов в этих двух множествах равно. Вероятно,
-    идея взаимно однозначного соответствия могла предшествовать идее числа:
-    чтобы понять, сколько стульев нужно принести в комнату, чтобы все могли
-    сесть, можно пересчитать гостей, а можно просто установить
-    взаимно однозначное соответствие: этот стул для Кати, этот стул для Коли и
-    т.д.
+	For finite sets $X$ and $Y$, the existence of a bijection from $X$ to $Y$
+	means that the number of elements in the two sets is the same. The idea of
+	a bijection can even precede the idea of a number: to figure out how
+	many chairs you need to bring to sit all the guests you can count the number
+	of people, or you can establish a bijection: this chair is for Kate, this
+	chair is for Nick, etc.
+	\source
+		Для конечных множеств $X$ и $Y$ существование биективного отображение из $X$
+    		в $Y$ означает, что число элементов в этих двух множествах равно. Вероятно,
+    		идея взаимно однозначного соответствия могла предшествовать идее числа:
+    		чтобы понять, сколько стульев нужно принести в комнату, чтобы все могли
+    		сесть, можно пересчитать гостей, а можно просто установить
+    		взаимно однозначное соответствие: этот стул для Кати, этот стул для Коли и
+    		т.д.
 
 \snippet \label sn:01:card \flabel равномощны
     \definition \label def:01:card
-        Множества, между которыми существует взаимно однозначное соответствие,
-        называются \emph{равномощными}. Очевидно, если два множества равномощны, у
-        них одинаковая мощность. Но что такое эта мощность? Для конечных множеств,
-        \emph{мощность} определяется просто как число элементов. Для бесконечных всё
-        сложнее, мы поговорим об этом позже.
+    	Sets for which there exists a bijection are called \emph{equinumerous} or are 
+	said to have the same cardinality. What is this cardinality? For finite sets
+	we define \emph{cardinality} simply as number of elements. For infinite sets 
+	it gets trickier and we will discuss it later.
+	\source
+        	Множества, между которыми существует взаимно однозначное соответствие,
+        	называются \emph{равномощными}. Очевидно, если два множества равномощны, у
+        	них одинаковая мощность. Но что такое эта мощность? Для конечных множеств,
+        	\emph{мощность} определяется просто как число элементов. Для бесконечных всё
+        	сложнее, мы поговорим об этом позже.
 
 \section Числа
 
-Основным строительным материалом для всего последующего курса будут различные
-числовые множества.
+The main building blocks for the rest of the course will be different
+numerical sets, i.e. sets of numbers.
+\source
+	Основным строительным материалом для всего последующего курса будут различные
+	числовые множества.
+\subsection Natural numbers
+\source
+	\subsection Натуральные числа
 
-\subsection Натуральные числа
+The set of natural numbers $\set{1, 2, 3, \ldots}$ is denoted by the letter $\mathbb N$
+The only point of contention is whether we consider zero a natural number.
+Usually, natural numbers are "defined" as "numbers used for counting things". 
+Using this definition zero is not considered a natural number. 
+There is another approach - to make it so natural numbers are the cardinalities of 
+finite sets (see \ref[Definition][def:01:card]). In this case, zero should be considered 
+a natural number since it is the cardinality of the empty set. We will use the first convention
+and not consider zero a natural number.
+\source
+	Множество натуральных чисел $\set{1, 2, 3, \ldots}$ обозначается буквой $\mathbb
+	N$. Единственный камень преткновения: считать ли ноль натуральным числом. Как
+	правило, натуральные числа «определяются» как «числа, используемые при счёте
+	предметов». В этом случае среди натуральных чисел нет нуля, и это соответствует
+	распространённому в России соглашению. Есть другой подход — сказать, что
+	натуральные числа — это «мощности конечных множеств» (см.
+	\ref[определение][def:01:card]). В этом случае ноль следовало бы считать
+	натуральным, потому что это мощность пустого множества. Такое соглашение
+	принято, например, во Франции. Мы будем использовать соглашение, принятое в
+	России, и не будем считать 0 натуральным числом.
 
-Множество натуральных чисел $\set{1, 2, 3, \ldots}$ обозначается буквой $\mathbb
-N$. Единственный камень преткновения: считать ли ноль натуральным числом. Как
-правило, натуральные числа «определяются» как «числа, используемые при счёте
-предметов». В этом случае среди натуральных чисел нет нуля, и это соответствует
-распространённому в России соглашению. Есть другой подход — сказать, что
-натуральные числа — это «мощности конечных множеств» (см.
-\ref[определение][def:01:card]). В этом случае ноль следовало бы считать
-натуральным, потому что это мощность пустого множества. Такое соглашение
-принято, например, во Франции. Мы будем использовать соглашение, принятое в
-России, и не будем считать 0 натуральным числом.
+\subsection Integers
+\source{\subsection Целые числа}
 
-\subsection Целые числа
+The set of all integer numbers is denoted by $\mathbb Z=\set{0, 1, -1, 2, -2,
+\ldots}$. Natural numbers are a subset of integers (natural numbers are exactly positive integers).
+\source
+	Множество целых чисел обозначается буквой $\mathbb Z=\set{0, 1, -1, 2, -2,
+	\ldots}$. Натуральные числа являются подмножеством целых (натуральные числа
+	— это в точности целые положительные числа). 
 
-Множество целых чисел обозначается буквой $\mathbb Z=\set{0, 1, -1, 2, -2,
-\ldots}$. Натуральные числа являются подмножеством целых (натуральные числа
-— это в точности целые положительные числа). 
+Which numbers there are more of: natural numbers or integers? It seems that 
+there is "a same amount" of negative numbers as there are positive ones, so
+natural numbers can "go into" the integers twice and there is zero as well.
+So there must be at least twice as many integers as natural numbers (and even 
+a little bit more). As it is, this logic does not work for infinite sets:
+we can easily establish a bijection between natural numbers and integers (for example,
+we can use the order the sets are presented above - $1$ maps to $0$, $2$ maps to $1$, 
+$3$ to $-1$, $4$ to $2$, $5$ to $-2$, etc.), so we can just as easily say that 
+we have the "same amount" of natural numbers and integers. The precise statement here
+is that the set of natural numbers and the set of integers are equinumerous.
+\source
+	Каких чисел больше: натуральных или целых? Казалось бы, отрицательных целых
+	чисел «столько же», сколько положительных, то есть натуральные числа входит в
+	число целых дважды, да ещё остаётся ноль. То есть целых должно быть вдвое
+	больше, чем натуральных (и ещё чуть-чуть больше). На самом деле, для бесконечных
+	множеств такая логика не работает: легко придумать взаимно однозначное
+	соответствие между натуральными и целыми числами (например, можно
+	воспользоваться тем, как эти множества записаны выше: $1$ отобразить в $0$, $2$
+	в $1$, $3$ в $-1$, $4$ в $2$, $5$ в $-2$ и т.д.), так что с тем же успехом можно
+	сказать, что их «поровну». Аккуратное утверждение состоит в том, что множества
+	целых и натуральных чисел равномощны.
 
-Каких чисел больше: натуральных или целых? Казалось бы, отрицательных целых
-чисел «столько же», сколько положительных, то есть натуральные числа входит в
-число целых дважды, да ещё остаётся ноль. То есть целых должно быть вдвое
-больше, чем натуральных (и ещё чуть-чуть больше). На самом деле, для бесконечных
-множеств такая логика не работает: легко придумать взаимно однозначное
-соответствие между натуральными и целыми числами (например, можно
-воспользоваться тем, как эти множества записаны выше: $1$ отобразить в $0$, $2$
-в $1$, $3$ в $-1$, $4$ в $2$, $5$ в $-2$ и т.д.), так что с тем же успехом можно
-сказать, что их «поровну». Аккуратное утверждение состоит в том, что множества
-целых и натуральных чисел равномощны.
+\subsection Rational numbers
+\source{\subsection Рациональные числа}
 
-\subsection Рациональные числа
+The set of rational numbers $\mathbb Q$ comprises all fractions of the form
+$\set{\frac{p}{q}\mid p\in \mathbb Z, q \in \mathbb N}$, i.e. fractions with an integer
+nominator and natural denominator. Of course, we know that some fractions that are different
+correspond to the same number: for example $\frac{2}{4}=\frac{1}{2}$.
+Generally for any $M\ne 0$ the fractions $\frac{p}{q}$ and $\frac{pm}{qm}$
+correspond to the same number.
+\source
+	Множество рациональных чисел $\mathbb Q$ состоит из всевозможных обыкновенных
+	дробей вида $\set{\frac{p}{q}\mid p\in \mathbb Z, q \in \mathbb N}$, то есть
+	дробей с целым числителем и натуральным знаменателем. Конечно, мы знаем, что
+	бывают разные дроби, задающие одно и то же число: например,
+	$\frac{2}{4}=\frac{1}{2}$. Вообще, для любого целого $m\ne 0$, дроби
+	$\frac{p}{q}$ и $\frac{pm}{qm}$ задают одно и то же число.
 
-Множество рациональных чисел $\mathbb Q$ состоит из всевозможных обыкновенных
-дробей вида $\set{\frac{p}{q}\mid p\in \mathbb Z, q \in \mathbb N}$, то есть
-дробей с целым числителем и натуральным знаменателем. Конечно, мы знаем, что
-бывают разные дроби, задающие одно и то же число: например,
-$\frac{2}{4}=\frac{1}{2}$. Вообще, для любого целого $m\ne 0$, дроби
-$\frac{p}{q}$ и $\frac{pm}{qm}$ задают одно и то же число.
+Arithmetical operations with rational numbers are defined using the standard rules 
+for fractions.
+\source
+	Арифметические операции с рациональными числами задаются с помощью стандартных
+	правил действий с обыкновенными дробями.
 
-Арифметические операции с рациональными числами задаются с помощью стандартных
-правил действий с обыкновенными дробями.
-
-Целые числа входят в множество рациональных чисел — это в точности рациональные
-числа со знаменателем $1$.
+Integers are elements of the set of rational numbers - they are exactly
+rational numbers with a denominator $1$.
+\source
+	Целые числа входят в множество рациональных чисел — это в точности рациональные
+	числа со знаменателем $1$.
 
 \definition
-    Целые числа $m$ и $n$ называются \emph{взаимно простыми}, если они не имеют
-    общих натуральных делителей, кроме 1.
+	Integers $m$ and $n$ are called \emph{relatively prime} if they do not 
+	have common natural factors, except $1$.
+	\source
+    		Целые числа $m$ и $n$ называются \emph{взаимно простыми}, если они не имеют
+    		общих натуральных делителей, кроме 1.
 
-Если числа $m$ и $n$ взаимно просты, дробь $\frac{m}{n}$ является
-\emph{несократимой}. (Если бы у $m$ и $n$ были натуральные делители, отличные от
-$1$, на них можно было сократить, а так сокращать не на что.)
+If the numbers $m$ and $n$ are relatively prime, the fraction $\frac{m}{n}$
+is \emph{irreducible}. (If $m$ and $n$ had natural common factors other than $1$
+we could have been able to reduce the fraction, but this way there is nothing to reduce by).
+\source
+	Если числа $m$ и $n$ взаимно просты, дробь $\frac{m}{n}$ является
+	\emph{несократимой}. (Если бы у $m$ и $n$ были натуральные делители, отличные от
+	$1$, на них можно было сократить, а так сокращать не на что.)
 
 \theorem
-    Любое рациональное число имеет единственное представление в виде
-    несократимой дроби $\frac{p}{q}$, $p \in \mathbb Z$, $q\in \mathbb N$. Иными
-    словами, если есть другое представление, $\frac{p}{q}=\frac{m}{n}$, где $m$
-    и $n$ взаимно просты и $n$ натурально, то обязательно $p=m$ и $q=n$.
+	Any rational number has a unique representation as an irreducible fraction
+	$\frac{p}{q}$, where $p \in \mathbb Z$, $q\in \mathbb N$. In other words,
+	if there is another representation $\frac{p}{q}=\frac{m}{n}$, where $m$ and $n$
+	are relatively prime and $n$ is a natural number, then $p=m$ and $q=n$.
+	\source
+    		Любое рациональное число имеет единственное представление в виде
+    		несократимой дроби $\frac{p}{q}$, $p \in \mathbb Z$, $q\in \mathbb N$. Иными
+    		словами, если есть другое представление, $\frac{p}{q}=\frac{m}{n}$, где $m$
+    		и $n$ взаимно просты и $n$ натурально, то обязательно $p=m$ и $q=n$.
 
-Эта теорема кажется очевидной, но на самом деле таковой не является. Например,
-если бы мы разрешили знаменателю принимать не только натуральные, но и любые
-целые ненулевые значения, теорема была бы неверна: $\frac{1}{2}=\frac{-1}{-2}$,
-хотя обе дроби несократимы. Её аккуратное доказательство требует либо веры в
-основную теорему арифметики (о том, что любое целое число однозначно задаётся в
-виде произведения простых сомножителей), которая имеет не очень короткое
-доказательство, либо использования алгоритма Евклида. Второй подход приведён в
-виде серии задачи в \href[семинарских
-листочках][http://math-info.hse.ru/a/2020-21/nes-calculus-1/seminar01.pdf].
+This theorem seems obvious, but it is actually not. For example, if we allowed
+the denominator to be any non-zero integer, the theorem would have been false:
+$\frac{1}{2}=\frac{-1}{-2}$, but both fractions are irreducible. Accurate proof of this theorem
+either requires the fundamental theorem of arithmetic (that every integer  
+can be represented uniquely as a product of prime numbers) that has quite a long proof
+or uses Euclid's algorithm. The second approach is presented as a series of problems
+in the \href[Tutorial][http://math-info.hse.ru/a/2020-21/nes-calculus-1/seminar01.pdf].
+\source
+	Эта теорема кажется очевидной, но на самом деле таковой не является. Например,
+	если бы мы разрешили знаменателю принимать не только натуральные, но и любые
+	целые ненулевые значения, теорема была бы неверна: $\frac{1}{2}=\frac{-1}{-2}$,
+	хотя обе дроби несократимы. Её аккуратное доказательство требует либо веры в
+	основную теорему арифметики (о том, что любое целое число однозначно задаётся в
+	виде произведения простых сомножителей), которая имеет не очень короткое
+	доказательство, либо использования алгоритма Евклида. Второй подход приведён в
+	виде серии задачи в \href[семинарских
+	листочках][http://math-info.hse.ru/a/2020-21/nes-calculus-1/seminar01.pdf].
 
-\subsection Вещественные числа
+\subsection Real numbers
+\source{\subsection Вещественные числа}
 
-С вещественными (действительными) числами всё сложно. Интуитивно, вещественные
-числа — это длины отрезков, площади фигур и т.д. Но чтобы аккуратно их ввести в
-математику, человечество потратило несколько тысяч лет: тот факт, что длины
-отрезков могут не выражаться рациональными числами, был известен ещё Древним
-Грекам за несколько сотен лет до нашей эры, но аккуратно вещественные числа были
-введены в математику только в XIX веке. 
+Real numbers are complicated. Intuitively, real numbers are lengths of segments,
+areas of figures, etc. But to define them rigorously took mankind several millennia:
+the fact that lengths of some segments cannot be expressed as rational numbers was known 
+in Ancient Greece several hundreds of years before the common era, but a precise definition was 
+introduced only in the XIX century.
+\source
+	С вещественными (действительными) числами всё сложно. Интуитивно, вещественные
+	числа — это длины отрезков, площади фигур и т.д. Но чтобы аккуратно их ввести в
+	математику, человечество потратило несколько тысяч лет: тот факт, что длины
+	отрезков могут не выражаться рациональными числами, был известен ещё Древним
+	Грекам за несколько сотен лет до нашей эры, но аккуратно вещественные числа были
+	введены в математику только в XIX веке. 
 
-В рамках лекций мы будем следовать «школьному» определению: вещественное число —
-это бесконечная десятичная дробь, то есть бесконечная вправо последовательность
-цифр, у которой на каком-то месте стоит десятичная запятая (в англоязычной
-традиции — десятичная точка). Множество вещественных чисел обозначается буквой
-$\mathbb R$ (от слова \emph{real}, действительный).
+Within this course we will use the "school" definition: a real number is an
+infinite decimal fraction, i.e. infinite to the right sequence of digits 
+that at some place has a decimal point. The set of real numbers is denoted by
+the letter $\mathbb R$ (R for real).
+\source
+	В рамках лекций мы будем следовать «школьному» определению: вещественное число —
+	это бесконечная десятичная дробь, то есть бесконечная вправо последовательность
+	цифр, у которой на каком-то месте стоит десятичная запятая (в англоязычной
+	традиции — десятичная точка). Множество вещественных чисел обозначается буквой
+	$\mathbb R$ (от слова \emph{real}, действительный).
 
-Чтобы какое-то множество можно было с полным правом называть числовым, нужно,
-чтобы на нём были определены арифметические операции. Для конечных десятичных
-дробей это делается с помощью стандартных алгоритмов сложения и умножения
-(столбиком) и деления (уголком), которые проходят в школе. Для бесконечных
-десятичных дробей так просто это сделать не получается, и мы не будем этим
-заниматься — скажем только, что сделать это возможно, и результат будет
-соответствовать нашим интуитивным представлениям об этих операциях. (Для
-желающих у нас заготовлена серия задач, в которых вещественные числа
-определяются несколько иначе — как некоторые множества рациональных чисел — мы
-их дадим, когда все будут к этому готовы.)
+To legitimately call a set numerical we need to define arithmetical operations on it.
+For the finite decimal fractions, we use the standard algorithms for addition, long multiplication,
+and long division that are taught in school. For the infinite decimal fractions,
+it is not that easy and we won't be doing that, we will only say that it is
+possible and the result matches our intuitive ideas of these operations.
+(For those who want it we have prepared a series of problems where the real numbers
+are defined differently - as sets of rational numbers - we will come to them when everybody is ready).
+\source
+	Чтобы какое-то множество можно было с полным правом называть числовым, нужно,
+	чтобы на нём были определены арифметические операции. Для конечных десятичных
+	дробей это делается с помощью стандартных алгоритмов сложения и умножения
+	(столбиком) и деления (уголком), которые проходят в школе. Для бесконечных
+	десятичных дробей так просто это сделать не получается, и мы не будем этим
+	заниматься — скажем только, что сделать это возможно, и результат будет
+	соответствовать нашим интуитивным представлениям об этих операциях. (Для
+	желающих у нас заготовлена серия задач, в которых вещественные числа
+	определяются несколько иначе — как некоторые множества рациональных чисел — мы
+	их дадим, когда все будут к этому готовы.)
 
-Рациональные числа входят в множество вещественных чисел. Этот факт, вообще
-говоря, не прямо следует из определения, но его можно доказать, воспользовавшись
-алгоритмом деления уголком и свойствами геометрических прогрессий.
+Rational numbers are a subset of the set of real numbers. Strictly speaking, this 
+fact does not follow from the definition, but it can be proven using the long division
+algorithm and the properties of geometric sequences.
+\source
+	Рациональные числа входят в множество вещественных чисел. Этот факт, вообще
+	говоря, не прямо следует из определения, но его можно доказать, воспользовавшись
+	алгоритмом деления уголком и свойствами геометрических прогрессий.
 
 \definition
-    Вещественные числа, не являющиеся рациональными, называются
-    \emph{иррациональными}. Специального обозначения для иррациональных чисел
-    нет, обычно просто пишут $\mathbb R \setminus \mathbb Q$.
+	Real numbers that are not rational are called \emph{irrational}.
+	there is no special notation for the set of irrational numbers,
+	usually, it is simply denoted by $\mathbb R \setminus \mathbb Q$.
+	\source
+    		Вещественные числа, не являющиеся рациональными, называются
+    		\emph{иррациональными}. Специального обозначения для иррациональных чисел
+    		нет, обычно просто пишут $\mathbb R \setminus \mathbb Q$.
 
-Чтобы не казалось, что мы зря возимся с вещественными числами, давайте докажем,
-что иррациональные числа существуют. Для этого предъявим по крайней мере одно
-такое число: $\sqrt{2}$.
+In order not to seem like we are wasting our time with real numbers, let's
+prove that irrational numbers exist. To do that we will present one such number: $\sqrt{2}$.
+\source
+	Чтобы не казалось, что мы зря возимся с вещественными числами, давайте докажем,
+	что иррациональные числа существуют. Для этого предъявим по крайней мере одно
+	такое число: $\sqrt{2}$.
 
-(Конечно, можно было бы не верить в существование иррациональных чисел, и
-сказать, что раз $\sqrt{2}$ не является рациональным, то просто нет такого числа,
-нельзя вычислить квадратный корень из двух, и всё тут; проблема в том, что тогда
-мы не могли бы никак измерить длину диагонали квадрата со стороной 1, которая,
-по теореме Пифагора, равна как раз $\sqrt{2}$. Это было бы неудачно.)
+(Of course, it is possible not to believe in the existence of irrational numbers, and say
+that since $\sqrt{2}$ is not rational, it does not exist, we simply cannot take the square root of two
+and that's that; the problem then is that we cannot measure the length of a diagonal of a unit square,
+that, by Pythagoras theorem, is exactly $\sqrt{2}$. This would be unfortunate.)
+\source
+	(Конечно, можно было бы не верить в существование иррациональных чисел, и
+	сказать, что раз $\sqrt{2}$ не является рациональным, то просто нет такого числа,
+	нельзя вычислить квадратный корень из двух, и всё тут; проблема в том, что тогда
+	мы не могли бы никак измерить длину диагонали квадрата со стороной 1, которая,
+	по теореме Пифагора, равна как раз $\sqrt{2}$. Это было бы неудачно.)
 
 \theorem \label thm:01:sqrt2
-    Число $\sqrt{2}$ не является рациональным.
+	The number $\sqrt{2}$ is not rational.
+	\source{Число $\sqrt{2}$ не является рациональным.}
 \proof
-    Докажем от противного. Пусть является, то есть существует такая несократимая
-    дробь $\frac{p}{q}$, которая равна $\sqrt{2}$. По определению, $\sqrt{2}$
-    это такое число, которое при возведении в квадрат даёт $2$. Значит,
-    \align \nonumber
-        \item \left(\frac{p}{q}\right)^2 & =2;
-        \item \frac{p^2}{q^2} & =2;
-        \item p^2 & = 2q^2.
-    Из этого следует, что $p^2$ — четное число. Если бы $p$ было нечётным, оно
-    бы представлялось в виде $p=(2k+1)$ и его квадрат был бы нечётным:
-    $p^2=(2k+1)^2=4k^2+4k+1=4k(k+1)+1$. Значит, $p$ обязательно чётно. Пусть
-    $p=2k$. Имеем:
-    \align \nonumber
-        \item
-            (2k)^2&=2q^2;
-        \item
-            4k^2&=2q^2;
-        \item
-            2k^2&=q^2.
-    Из таких же рассуждений получаем, что $q$ должно быть чётным. Но по
-    предположению, дробь $\frac{p}{q}$ несократима, и значит её числитель и
-    знаменатель не могут быть одновременно чётными. Противоречие.
+	We will present a proof by contradiction. Assume it is rational, so 
+	there exists an irreducible fraction $\frac{p}{q}$ equal to $\sqrt{2}$.
+	By definition, $\sqrt{2}$ is a number such that squared it becomes $2$.
+	Therefore:
+	\align \nonumber
+        	\item \left(\frac{p}{q}\right)^2 & =2;
+        	\item \frac{p^2}{q^2} & =2;
+        	\item p^2 & = 2q^2.
+	From this, it follows that $p^2$ is an even number. If $p$ was odd,
+	it would be possible to represent it as $p=2k+1$ for some integer $k$ and 
+	its square would also be odd: $p^2=(2k+1)^2=4k^2+4k+1=4k(k+1)+1$. So $p$ 
+	must be even. Let $p=2k$. We have:
+	\align \nonumber
+        	\item
+            		(2k)^2&=2q^2;
+       		 \item
+            		4k^2&=2q^2;
+        	\item
+            		2k^2&=q^2.
+	This means that $q$ must be even as well. But we assumed that the fraction 
+	$\frac{p}{q}$ is irreducible, and cannot have both the nominator and the denominator 
+	be both even, which is a contradiction.
+	\source
+    		Докажем от противного. Пусть является, то есть существует такая несократимая
+    		дробь $\frac{p}{q}$, которая равна $\sqrt{2}$. По определению, $\sqrt{2}$
+    		это такое число, которое при возведении в квадрат даёт $2$. Значит,
+    		\align \nonumber
+        		\item \left(\frac{p}{q}\right)^2 & =2;
+        		\item \frac{p^2}{q^2} & =2;
+        		\item p^2 & = 2q^2.
+    		Из этого следует, что $p^2$ — четное число. Если бы $p$ было нечётным, оно
+    		бы представлялось в виде $p=(2k+1)$ и его квадрат был бы нечётным:
+    		$p^2=(2k+1)^2=4k^2+4k+1=4k(k+1)+1$. Значит, $p$ обязательно чётно. Пусть
+    		$p=2k$. Имеем:
+    		\align \nonumber
+        		\item
+            			(2k)^2&=2q^2;
+        		\item
+            			4k^2&=2q^2;
+        		\item
+            			2k^2&=q^2.
+    		Из таких же рассуждений получаем, что $q$ должно быть чётным. Но по
+    		предположению, дробь $\frac{p}{q}$ несократима, и значит её числитель и
+    		знаменатель не могут быть одновременно чётными. Противоречие.
 
+\section Conclusion
+\source{\section Заключение}
 
-\section Заключение
-
-Математический анализ изучает функции, описывающие зависимости между различными
-числовыми величинами. Как размер популяции меняется с течением времени? Как
-скорость роста экономики зависит от уровня налогов? Как высота орбиты зависит от
-количества топлива в ракете? Как время работы алгоритма зависит от объема
-обрабатываемой информации? Чтобы обсуждать вопросы такого типа, нам нужно
-уметь анализировать функции, или, что то же самое, отображения из числовых
-множеств в числовые множества. Поэтому мы начали курс с этих трёх
-фундаментальных понятий: множеств, отображений и чисел. Для дальнейшего нам
-понадобятся также элементы математической логики — именно про них будет следующая
-лекция.
+Calculus studies functions that describe the dependencies between numeric values.
+How does population growth depend on time? How does economical growth correspond to the tax rates?
+How does the height of the orbit depend on the amount of fuel a rocket has?
+How does the run time of an algorithm depend on the amount of processed data?
+To discuss questions like these we need to learn how to reason about functions,
+or mappings, from numerical sets to numerical sets. That is why we start the course 
+with these three fundamental notions: sets, mappings, and numbers. For what comes next
+we will need some elements of mathematical logic - they will be the topic of the next lecture.
+\source
+	Математический анализ изучает функции, описывающие зависимости между различными
+	числовыми величинами. Как размер популяции меняется с течением времени? Как
+	скорость роста экономики зависит от уровня налогов? Как высота орбиты зависит от
+	количества топлива в ракете? Как время работы алгоритма зависит от объема
+	обрабатываемой информации? Чтобы обсуждать вопросы такого типа, нам нужно
+	уметь анализировать функции, или, что то же самое, отображения из числовых
+	множеств в числовые множества. Поэтому мы начали курс с этих трёх
+	фундаментальных понятий: множеств, отображений и чисел. Для дальнейшего нам
+	понадобятся также элементы математической логики — именно про них будет следующая
+	лекция.
