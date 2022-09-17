@@ -651,7 +651,7 @@ numerical sets, i.e. sets of numbers.
 \source
     Основным строительным материалом для всего последующего курса будут различные
     числовые множества.
-\subsection Natural numbers
+\subsection Natural Numbers
 \source
     \subsection Натуральные числа
 
@@ -707,7 +707,7 @@ is that the set of natural numbers and the set of integers are equinumerous.
     сказать, что их «поровну». Аккуратное утверждение состоит в том, что множества
     целых и натуральных чисел равномощны.
 
-\subsection Rational numbers
+\subsection Rational Numbers
 \source{\subsection Рациональные числа}
 
 The set of rational numbers $\mathbb Q$ comprises all fractions of the form
@@ -780,7 +780,7 @@ in the \href[Tutorial][http://math-info.hse.ru/a/2020-21/nes-calculus-1/seminar0
     виде серии задачи в \href[семинарских
     листочках][http://math-info.hse.ru/a/2020-21/nes-calculus-1/seminar01.pdf].
 
-\subsection Real numbers
+\subsection Real Numbers
 \source{\subsection Вещественные числа}
 
 Real numbers are complicated. Intuitively, real numbers are lengths of segments,
