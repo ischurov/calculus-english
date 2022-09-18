@@ -908,74 +908,108 @@ The best way to understand a definition is to prove some proposition involving i
         Однако, для определенности, давайте предложим конкретный механизм.
 
     \definition
-        Пусть $x$ — вещественное число. Его \emph{округлением вверх} называется
-        наименьшее целое число, не меньшее $x$. Например, $2{,}1$ округляется
-        вверх до $3$. Число $17$ округляется вверх до $17$, потому что оно уже
-        целое. Результат округления вверх числа $x$ обозначается через $\lceil x
-        \rceil$. Функция $y=\lceil x \rceil$ также называется \emph{функцией
-        «потолок»} (англ. \emph{ceil}).
+        A \emph{ceiling function} is a function that takes a real number $x$ as its input and outputs an integer which is greater or equal to $x$.
+        For example, $2{,}1$ corresponds to $3$.
+        A number $17$ rounds uo to $17$ since its already an integer.
+        This operation is denoted by $\lceil x \rceil$.
+        \source
+            Пусть $x$ — вещественное число. 
+            Его \emph{округлением вверх} называется наименьшее целое число, не меньшее $x$. 
+            Например, $2{,}1$ округляется вверх до $3$. 
+            Число $17$ округляется вверх до $17$, потому что оно уже целое. 
+            Результат округления вверх числа $x$ обозначается через $\lceil x \rceil$. 
+            Функция $y=\lceil x \rceil$ также называется \emph{функцией «потолок»} (англ. \emph{ceil}).
     \exercise
-        Опишите, как действует функция $\lceil x \rceil$, пользуясь
-        представлением числа $x$ в виде бесконечной десятичной дроби.
+        Desribe the behaviour of a ceiling function using an infinite decimal expansion of $x$.
+        \source{Опишите, как действует функция $\lceil x \rceil$, пользуясь представлением числа $x$ в виде бесконечной десятичной дроби.}
 
-    Итак, для всякого $\eps>0$,  положим $N(\eps):=\left\lceil \frac{1}{\eps}
-    \right\rceil$. По определению функции потолок, $N(\eps) \ge \frac{1}{\eps}$.
-    Значит, для всех натуральных $n$, если $n > N(\eps)$, то $n >
-    \frac{1}{\eps}$, а значит выполняется \ref{eq:04:frac-up}, а значит и
-    \ref{eq:04:frac}. Ура!
-
-\remark
-    Проанализируем наше выражение для $N(\eps)$. Из формулы видно, что чем
-    меньше $\eps$, тем больше $N$. Это неудивительно: чем больше точность, с
-    которой мы различаем числа, тем больше приходится подождать, чтобы элементы
-    последовательности оказались неотличимыми от значения предела. Как правило,
-    такой же эффект будет наблюдаться и при решении других задач. (Если не
-    наблюдается, хороший повод проверить себя и подумать, почему так. Возможно,
-    где-то допущена ошибка.) Ещё одно важное замечание: формула для $N(\eps)$
-    должна работать для всех $\eps>0$ и всегда давать натуральное число в
-    качестве ответа.
+    Now we're ready to present a proof.
+    For any $\epd>0$ take $N(\eps):=\left\lceil \frac{1}{\eps} \right\rceil$.
+    By definition of a ceiling function, $N(\eps) \ge \frac{1}{\eps}$.
+    This means that for every natural $n$ if $n>N(\eps)$ than $n > \frac{1}{\eps}$, which means \ref{eq:04:frac-up} is satisfied and hence \ref{eq:04:frac} is also satisfied.
+    The proof is done, hurray!
+    Hurray!
+    \source
+        Итак, для всякого $\eps>0$, положим $N(\eps):=\left\lceil \frac{1}{\eps} \right\rceil$. 
+        По определению функции потолок, $N(\eps) \ge \frac{1}{\eps}$.
+        Значит, для всех натуральных $n$, если $n > N(\eps)$, то $n > \frac{1}{\eps}$, а значит выполняется \ref{eq:04:frac-up}, а значит и \ref{eq:04:frac}. 
+        Ура!
 
 \remark
-    В данном случае в ходе решения задачи мы шли от неравенства
-    \ref{eq:04:frac}, которое нам было нужно, к неравенству \ref{eq:04:frac-up},
-    которое было легко проанализировать. Однако сам текст доказательства как
-    правило проще излагать в обратном порядке. Обычно он звучит так: для всякого
-    $\eps>0$ возьмём в качестве $N(\eps)$ некоторое выражение от $\eps$. Не
-    объясняем, почему мы решили взять именно такое выражение. Вместо этого,
-    докажем, что в этом случае для всех $n> N(\eps)$ выполняется неравенство
-    $|a_n - A|<\eps$ (в этом месте, как правило, нужно привести цепочку
-    неравенств, аналогичную переходу от \ref{eq:04:frac-up} к \ref{eq:04:frac},
-    только записанную «снизу вверх»: важно, чтобы каждое следующее неравенство
-    было следствием предыдущего). Доказали? Победа! Получается железобетонная
-    последовательность рассуждений, оставляющая, впрочем, читателя в недоумении
-    — почему же мы выбрали именно такое $N(\eps)$?
+    Let's analyze the value of $N(\eps)$ we've constructed.
+    Clearly, $N$ is increasing as $\eps$ is decreading.
+    This is not a surprise, since as the presicion gets better it takes longer for elements of a sequence to get so close to a limit that the gap becomes indistinguishable.
+    Generally this pattern is repeated in other similar exersises.
+    (If it doesn't, this might be a good indicator that there is a mistake.)
+    Once again, notice that a final expression $N(\eps)$ must always yeild a natural nubmer.
+    \source
+        Проанализируем наше выражение для $N(\eps)$. 
+        Из формулы видно, что чем меньше $\eps$, тем больше $N$. 
+        Это неудивительно: чем больше точность, с которой мы различаем числа, тем больше приходится подождать, чтобы элементы последовательности оказались неотличимыми от значения предела. 
+        Как правило, такой же эффект будет наблюдаться и при решении других задач. 
+        (Если не наблюдается, хороший повод проверить себя и подумать, почему так. 
+        Возможно, где-то допущена ошибка.) 
+        Ещё одно важное замечание: формула для $N(\eps)$ должна работать для всех $\eps>0$ и всегда давать натуральное число в качестве ответа.
 
-Давайте рассмотрим ещё один пример.
+\remark
+    In our proof strategy we've come from an inequality \ref{eq:04:frac}, which we were to prove, to a more understandble indequality \ref{eq:04:frac-up}, from which the value of $N(\eps)$ followed natually.
+    But the actual proof was presented in the reversed order.
+    Take a look at a general form of a proof of such exersices: "for any $\eps>0$ set $N(\eps)$ to be an expression $\ldots$".
+    (The motivation behind this choice of $N(\eps)$ is not specified.)
+    Then a chain or inequalities follow.
+    It is similar to the one we've constructed in our proof strategy, but it reverse: coming from an inequality $n>N(\eps)$ to a desired result $|a_n - A|<\eps$.
+    And the proof is done!
+    This is a convincing yet mysterious line of reasoning, which generally makes a reader wonder, why was this exact value of $N(\eps)$ chosen?
+    \source
+        В данном случае в ходе решения задачи мы шли от неравенства \ref{eq:04:frac}, которое нам было нужно, к неравенству \ref{eq:04:frac-up}, которое было легко проанализировать. 
+        Однако сам текст доказательства как правило проще излагать в обратном порядке. 
+        Обычно он звучит так: для всякого $\eps>0$ возьмём в качестве $N(\eps)$ некоторое выражение от $\eps$. 
+        Не объясняем, почему мы решили взять именно такое выражение. 
+        Вместо этого, докажем, что в этом случае для всех $n> N(\eps)$ выполняется неравенство $|a_n - A|<\eps$ (в этом месте, как правило, нужно привести цепочку неравенств, аналогичную переходу от \ref{eq:04:frac-up} к \ref{eq:04:frac}, только записанную «снизу вверх»: важно, чтобы каждое следующее неравенство было следствием предыдущего). 
+        Доказали? 
+        Победа! 
+        Получается железобетонная последовательность рассуждений, оставляющая, впрочем, читателя в недоумении — почему же мы выбрали именно такое $N(\eps)$?
 
-\proposition
-    Предел последовательности $a_n=\frac{1}{n^2+5n+12}$ равен нулю:
+Let's consider another example.
+\source{Давайте рассмотрим ещё один пример.}
+
+\proposition A limit of a sequence $a_n=\frac{1}{n^2+5n+12}$ is equal to zero:
+    \source{Предел последовательности $a_n=\frac{1}{n^2+5n+12}$ равен нулю:}
     \eq
         \lim_{n\to \infty}\frac{1}{n^2+5n+12}=0.
 \proof
-    По аналогии с предыдущим примером, запишем, что мы хотим получить. Мы хотим
-    научиться для всякого $\eps>0$ строить такое $N=N(\eps)$, что для всех $n>N$
-    выполняется неравенство:
+    Similarly to a previous example, let's write what we want to show.
+    We want to be able to present $N=N(\eps)$ for any $\eps>0$ such that the following inequality holds for any $n>N$:
     \equation \label eq:04:longfrac
-        \left|\frac{1}{n^2+5n+12}-0\right|<\eps.
-    Можно попробовать преобразовать это неравенство. Во-первых, вычитание нуля
-    ничего не меняет. Во-вторых, при натуральных $n$ дробь положительна и знак
-    модуля можно снять. Получаем такое неравенство:
+             \left|\frac{1}{n^2+5n+12}-0\right|<\eps.
+    Let's manipulate this inequality: firsly, substracting zero doesn't change anything; secondly, since $n$ is positive we can get rid of a modulus.
+    We get the following equation:
     \equation \label eq:04:longfrac-short
         \frac{1}{n^2+5n+12}<\eps.
-    Теоретически, дальше его можно мучительно решать относительно $n$, найдя
-    для каждого фиксированного $\eps$ все возможные значения $n$, которые ему
-    удовлетворяют. Делать это, однако, не нужно. Дело в том, что нам не нужны
-    \emph{все} без исключения значения $n$. Нам нужно добиться того, чтобы
-    неравенство \ref{eq:04:longfrac-short} выполнялось, но нам не нужно находить
-    все значения $n$, при которых оно выполняется. Поэтому вместо эквивалентных
-    переходов, которые мы должны делать, когда решаем неравенство, нам
-    достаточно переходов к более сильным неравенствам — таким, из которых наше
-    следует. И это существенно упрощает жизнь! Смотрите.
+    Now we have to proceed to solving this inequality for $n$, but this is too straightforward.
+    Remember that we're not interested in finding the whole range of $N$ that make a tail $\eps$-close to a limit.
+    We need to find just a portion of values, and then take one of them.
+    This motivates us to proceed to a more strict inequality (which means that whenever this inequality is satisfied, our one is also satisfied).
+    This will make pur life much easier!
+    Look:
+    \source
+        По аналогии с предыдущим примером, запишем, что мы хотим получить. 
+        Мы хотим научиться для всякого $\eps>0$ строить такое $N=N(\eps)$, что для всех $n>N$ выполняется неравенство:
+        \equation \label eq:04:longfrac
+             \left|\frac{1}{n^2+5n+12}-0\right|<\eps.
+        Можно попробовать преобразовать это неравенство. 
+        Во-первых, вычитание нуля ничего не меняет. 
+        Во-вторых, при натуральных $n$ дробь положительна и знак модуля можно снять. 
+        Получаем такое неравенство:
+        \equation \label eq:04:longfrac-short
+             \frac{1}{n^2+5n+12}<\eps.
+        Теоретически, дальше его можно мучительно решать относительно $n$, найдя для каждого фиксированного $\eps$ все возможные значения $n$, которые ему удовлетворяют. 
+        Делать это, однако, не нужно. 
+        Дело в том, что нам не нужны \emph{все} без исключения значения $n$. 
+        Нам нужно добиться того, чтобы неравенство \ref{eq:04:longfrac-short} выполнялось, но нам не нужно находить все значения $n$, при которых оно выполняется. 
+        Поэтому вместо эквивалентных переходов, которые мы должны делать, когда решаем неравенство, нам достаточно переходов к более сильным неравенствам — таким, из которых наше следует. 
+        И это существенно упрощает жизнь! 
+        Смотрите.
 
     Заметим, что для натуральных $n$, 
     \eq
