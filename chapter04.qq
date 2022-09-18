@@ -602,16 +602,15 @@ Two numbers $a$ and $b$ are $\eps$-close if their difference taken by its abcolu
     \eq
         \exists N\in \mathbb N\\ \forall n > N \colon |a_n - A| < \eps.
 
+\ref[Fig.][fig:04:eps-nearby-tail] gives an illustration to this definition.
+The set of points that are $\eps$-close to $A$ is an open interval $(A-\eps, A+\eps)$.
+If we plot two horizontal lines $y=A+\eps$ and $y=A-\eps$ alongside the sequence, the lines will will become some sort of a  "corridor" for $A$.
+By saying that a tail is $\eps$-closed to $A$ we mean that after some value of $n$ all elements of a sequence belong to this "corridor".
 \source
 На \ref[рис.][fig:04:eps-nearby-tail] приведена иллюстрация к этому определению.
 Множество точек, $\eps$-близких к точке $A$ — это интервал $(A-\eps, A+\eps)$.
-Если на графике последовательности нарисовать горизонтальные прямые $y=A+\eps$ и
-$y=A-\eps$, они образуют своего рода коридор вокруг $A$ (его можно назвать
-\emph{$\eps$-коридором}). Утверждение, что хвост последовательности $\eps$-близок к $A$,
-означает, что начиная с некоторого номера $n=N+1$, все члены последовательности
-находятся в интервале $(A-\eps, A+\eps)$, а соответствующие им точки на графике
-живут в нарисованном нами $\eps$-коридоре. Точки с номерами меньше или равными
-$N$, могут как принадлежать коридору, так и выходить из него.
+Если на графике последовательности нарисовать горизонтальные прямые $y=A+\eps$ и $y=A-\eps$, они образуют своего рода коридор вокруг $A$ (его можно назвать \emph{$\eps$-коридором}). 
+Утверждение, что хвост последовательности $\eps$-близок к $A$, означает, что начиная с некоторого номера $n=N+1$, все члены последовательности находятся в интервале $(A-\eps, A+\eps)$, а соответствующие им точки на графике живут в нарисованном нами $\eps$-коридоре. Точки с номерами меньше или равными $N$, могут как принадлежать коридору, так и выходить из него.
 
 \figure
     \img
@@ -624,159 +623,179 @@ $N$, могут как принадлежать коридору, так и вы
             y=A-ε, две последние прямые образуют своего рода коридор.
             Показано, что все элементы, после N=5 (то есть начиная с n=6)
             находятся внутри этого коридора.
-    \caption
+    \caption A tail of a sequence is $\eps$-closed to $A$.
         \source{Хвост последовательности $\eps$-близок к числу $A$.}
     \label fig:04:eps-nearby-tail
  
+ Notice that we're not specifying at what point in a sequence its tail starts.
+ Moreover, one sequence can have many tails, each corresponding to a unique value of $\eps$.
 \source
-Заметим, что в этом определении не сказано, с какого именно члена начинается
-«хвост последовательности». Более того, для одной и той же последовательности
-«хвосты» могут быть разными, в зависимости от $\eps$.
+Заметим, что в этом определении не сказано, с какого именно члена начинается «хвост последовательности». 
+Более того, для одной и той же последовательности «хвосты» могут быть разными, в зависимости от $\eps$.
 
-\example
+\example Consider a sequence $a_n=\frac{1}{n}$.
+    Its tail is $0{,}1$-closed to $0$.
+    Let's show it: take $N=10$ and observe that for any $n>N$ we have $a_n<0{,}1$ (since $n$ is bigger than $10$, its inverse $1/n$ is less than $1/10$).
     \source
-    Рассмотрим последовательность $a_n=\frac{1}{n}$. Её хвост $0{,}1$-близок к
-    $0$. Действительно, возьмём $N=10$. Для всех $n>N$, $a_n$ меньше $0{,}1$
-    (поскольку $n$ больше $10$ обратная величина $1/n$ меньше $1/10$).
+    Рассмотрим последовательность $a_n=\frac{1}{n}$. 
+    Её хвост $0{,}1$-близок к $0$. 
+    Действительно, возьмём $N=10$. 
+    Для всех $n>N$, $a_n$ меньше $0{,}1$ (поскольку $n$ больше $10$ обратная величина $1/n$ меньше $1/10$).
 
-\question
+\question Is it true that a tail of this sequence is $0{,}01$-closed to $0$?
     \source
-    Верно ли, что хвост последовательности $a_n = \frac{1}{n}$ является
-    $0{,}01$-близким к $0$?
+    Верно ли, что хвост последовательности $a_n = \frac{1}{n}$ является $0{,}01$-близким к $0$?
     \quiz
-        \choice
+        \choice No, because there exist $n>N$ for which the distance to $0$ is bigger than $0{,}01$.
+            For $n=20$ we get $a_n=\frac{1}{20}=0{,}05$, for which $|a_n-0|=|a_n|=0{,}05 > 0{,}01$.
             \source
-            Нет, потому что существуют $n>10$, при которых расстояние между
-            $a_n$ и $0$ больше, чем $0{,}01$ — например, $n=20$,
-            $a_n=\frac{1}{20}=0{,}05$, $|a_n-0|=|a_n|=0{,}05 > 0{,}01$.
-            \comment
+            Нет, потому что существуют $n>10$, при которых расстояние между $a_n$ и $0$ больше, чем $0{,}01$ — например, $n=20$, $a_n=\frac{1}{20}=0{,}05$, $|a_n-0|=|a_n|=0{,}05 > 0{,}01$.
+            \comment This reasoning is false.
+                When we've changed the "closeness" value (from $0{,}1$ to $0{,}01$) we've started a search for a new $N$, and it will most certainly be larger than $20$, which will avoid complications above.
                 \source
-                Это рассуждение неверно: совсем не обязательно в качестве $N$
-                брать именно $10$, можно попробовать подобрать другое число,
-                так, чтобы требование выполнялось.
-        \choice
+                Это рассуждение неверно: совсем не обязательно в качестве $N$ брать именно $10$, можно попробовать подобрать другое число, так, чтобы требование выполнялось.
+        \choice Its impossible to tell since it is dependant on $N$.
             \source
             Неизвестно, зависит от $N$.
-            \comment
+            \comment No, because in the definition \ref{eq:04:tail} a variable $N$ is bounded (a quantifier is acting on it).
+                We don't ask which values of $N$ make an inequality hold, we just want to find one.
                 \source
-                Нет, в формуле \ref{eq:04:tail} переменная $N$ является
-                связанной (на неё «навешан» квантор) — мы не спрашиваем, при
-                каких $N$ верно или неверно то-то и то-то  — мы спрашиваем,
-                «найдётся ли такое $N$?»
+                Нет, в формуле \ref{eq:04:tail} переменная $N$ является связанной (на неё «навешан» квантор) — мы не спрашиваем, при каких $N$ верно или неверно то-то и то-то  — мы спрашиваем, «найдётся ли такое $N$?»
         \choice \correct
+            Yes, it is.
             \source
             Да, верно.
             \comment
+                You're correct!
+                Which value of $N$ qualifies?
                 \source
-                Конечно! Чему равняется $N$?
+                Конечно! 
+                Чему равняется $N$?
                 \quiz
                     \choice $10$
-                        \comment 
+                        \comment Nope.
                             \source{Не-а.}
                     \choice $20$
-                        \comment 
+                        \comment No.
                             \source{Нет.}
                     \choice $100$
                         \correct
-                        \comment 
-                            \source{Да, например, 100 подойдёт. (Или любое большее число.)}
-\example
+                        \comment Yes!
+                            And any number greater than $100$ also qualifies.
+                            \source{Да, например, 100 подойдёт. 
+                            (Или любое большее число.)}
+\example A sequence from \ref[example][ex:04:flip] (see. \ref{eq:04:flip}) has a tail that is $1{,}2$-close to $0$, but it doesn't have a tail that is $0{,}9$-close to $0$.
     \source
-    Последовательность из \ref[примера][ex:04:flip] (см. \ref{eq:04:flip})
-    имеет хвост, $1{,}2$-близкий к числу $0$, однако неверно, что её хвост
-    $0{,}9$-близок к $0$.
+    Последовательность из \ref[примера][ex:04:flip] (см. \ref{eq:04:flip}) имеет хвост, $1{,}2$-близкий к числу $0$, однако неверно, что её хвост $0{,}9$-близок к $0$.
 
-\question
+\question For which value of $\eps$ a tail of this sequence is $\eps$-closed to $1$?
     \source
     Для какого $\eps$ хвост этой последовательности $\eps$-близок к числу 1?
     \quiz
         \choice
             $\eps=0{,}5$
-            \comment 
+            \comment No, since for any (arbitrarily large) number $n$ we will find an element with larger value for which the distance to $1$ is bigger than $0{,}5$.
+                (Indeed, any odd $n$ will go).
                 \source
-                Нет, у последовательности есть члены со сколь угодно большими
-                номерами, лежащие на расстоянии больше $0{,}5$ от $1$ — например,
-                все члены с нечётными номерами.
+                Нет, у последовательности есть члены со сколь угодно большими номерами, лежащие на расстоянии больше $0{,}5$ от $1$ — например, все члены с нечётными номерами.
         \choice
             $\eps=1{,}5$
-            \comment 
+            \comment No, since for any (arbitrarily large) number $n$ we will find an element with larger value for which the distance to $1$ is bigger than $1{,}5$.
+                (Indeed, any odd $n>2$ will go since the distance between $a_1=0$ and $1$ is less than $1{,}5$).
                 \source
-                Нет, у последовательности есть члены со сколь угодно большими
-                номерами, лежащие на расстоянии больше $1{,}5$ от $1$ — например,
-                все члены с нечётными номерами, большими $2$ (хотя $a_1=0$ находится
-                на расстоянии $1$ от числа $1$).
+                Нет, у последовательности есть члены со сколь угодно большими номерами, лежащие на расстоянии больше $1{,}5$ от $1$ — например, все члены с нечётными номерами, большими $2$ (хотя $a_1=0$ находится на расстоянии $1$ от числа $1$).
         \choice \correct
             $\eps=2$
-            \comment
+            \comment Yes!
                 \source{Верно!}
-        \choice
+        \choice There are no such $\eps$.
             \source{Ни для какого.}
-            \comment
+            \comment You're wrong, try to find a large one first.
                 \source{Нет, неверно.}
+Now we're ready to the Most Important Definition.
 \source{Теперь мы готовы к Самому Главному Определению.}
 
-\subsection Аккуратное определение предела
+\subsection A formal definition of a limit.
+    \source{Аккуратное определение предела}
 
-Мы хотим дать определение понятию, которое бы формализовало утверждение о том,
-что члены последовательности $a_n$ с ростом $n$ становятся очень-очень близки к
-некоторому фиксированному числу $A$ — так, что, начиная с некоторого момента, мы
-их практически не можем отличить от $A$.
+We're trying to find a formalization that states than all elements of a sequence $a_n$ are getting very-very close to some (fixed) value of $A$.
+So close that we're unable to see the gap between any element and $A$.
+\source
+Мы хотим дать определение понятию, которое бы формализовало утверждение о том что члены последовательности $a_n$ с ростом $n$ становятся очень-очень близки к некоторому фиксированному числу $A$ — так, что, начиная с некоторого момента, мы их практически не можем отличить от $A$.
 
-Понятие $\eps$-близости призвано формализовать идею о том, что два числа близки,
-если расстояние между ними маленькое. Можно думать, что $\eps$ — это точность
-или разрешающая способность наших измерительных приборов (чем меньше $\eps$, тем
-точнее приборы). В этом случае если два числа отличаются меньше, чем на $\eps$,
-у нас нет практической возможности их различить, для нас они совпадают.
-Например, если мы печатаем все числа лишь с двумя знаками после запятой, мы
-можем не различить два числа, расстояние между которыми меньше $0{,}001$.
+The concept of $\eps$-close numbers is a formalization of an idea that two numbers are "close" to each other when the distance between them is small.
+This $\eps$ and be thought of as precision of our measurements.
+For a precision of $\eps$ we can no longer tell the difference between number that are $\eps$-close to each other.
+For example, if we print numbers with only two decimal places, it will be impossible to distinguish between two numbers $0{,}001$ apart.
+\source
+Понятие $\eps$-близости призвано формализовать идею о том, что два числа близки, если расстояние между ними маленькое. 
+Можно думать, что $\eps$ — это точность или разрешающая способность наших измерительных приборов (чем меньше $\eps$, тем точнее приборы). 
+В этом случае если два числа отличаются меньше, чем на $\eps$, у нас нет практической возможности их различить, для нас они совпадают.
+Например, если мы печатаем все числа лишь с двумя знаками после запятой, мы можем не различить два числа, расстояние между которыми меньше $0{,}001$.
 
-Но какой $\eps$ «достаточно маленький»? В отличие от других дисциплин, в
-математике нет никакого естественного масштаба. С точки зрения географии,
-расстояние в $1/10$ метра — это очень маленькое расстояние — потому что мы
-сравниваем его с типичными объектами, изучаемыми географией — странами,
-городами, морями. А с точки зрения микробиологии — фантастически большое — по
-сравнению с бактериями или ядром клетки. С точки зрения математики, невозможно
-даже задать вопрос «является ли $1/10$ маленьким числом?» — потому что непонятно,
-с чем его сравнивать.  Поэтому мы не можем выбрать какой-то конкретный $\eps$ и
-сказать: «последовательность стремится к $A$, если её члены, начиная с
-некоторого, $\eps$-близки к $A$». Как же быть?
+But what $\eps$ is sufficiently small?
+This is a slippery question since math doesn't have a natural scale.
+If we consider geography, a distance of $1/10$ meters is very small.
+Geography studies countries, cities, rivers, and many other objects compared with which $1/10$ of a meter is just nothing.
+On the other hand, for microbiologists with their cells and bacteria $1/10$ of a meter is enormously huge.
+But from the perspective of math, a question "is 1/10 small" doesn't make sence: the answer can be anything depending on the number we compare with.
+This is why we cannot choose a particular value of $\eps$ for which if a tail is $\eps$-close to $A$, the limit is $A$.
+What should we do?
+\source
+Но какой $\eps$ «достаточно маленький»? 
+В отличие от других дисциплин, в математике нет никакого естественного масштаба. 
+С точки зрения географии, расстояние в $1/10$ метра — это очень маленькое расстояние — потому что мы сравниваем его с типичными объектами, изучаемыми географией — странами, городами, морями. 
+А с точки зрения микробиологии — фантастически большое — по сравнению с бактериями или ядром клетки. 
+С точки зрения математики, невозможно даже задать вопрос «является ли $1/10$ маленьким числом?» — потому что непонятно, с чем его сравнивать.  
+Поэтому мы не можем выбрать какой-то конкретный $\eps$ и сказать: «последовательность стремится к $A$, если её члены, начиная с некоторого, $\eps$-близки к $A$». 
+Как же быть?
 
-Очень просто. Мы потребуем, чтобы утверждение «хвост последовательности
-$\eps$-близок к $A$», выполнялось \emph{для любого} положительного $\eps$. Какой
-бы ни была разрешающая способность наших измерительных приборов, если подождать
-достаточно долго, мы перестанем отличать члены нашей последовательности от $A$.
+If we cannot specify a particular value of $\eps$, let's instead demand $\eps$-closeness for any positive $\eps$.
+(Notice that negative values of $\eps$ doesn't make sence since a distance cannot be less than a negative number. 
+Zero is not a great choise either because in this case we want elements to be \emph{equal} to a limit, they cannot approach it in any sence).
+We say that no matter how presice our measurements are, at some point in time we will be unable to tell the difference forever.
+\source
+Очень просто. 
+Мы потребуем, чтобы утверждение «хвост последовательности $\eps$-близок к $A$», выполнялось \emph{для любого} положительного $\eps$. 
+Какой бы ни была разрешающая способность наших измерительных приборов, если подождать достаточно долго, мы перестанем отличать члены нашей последовательности от $A$.
 
 \definition \label def:04:lim
-    Последовательность $\seq{a_n}$ имеет \emph{предел} $A$, если для всякого
-    $\eps>0$ её хвост $\eps$-близок к $A$.
-
-    Формально:
+    A sequence $\seq{a_n}$ has a \emph{limit} $A$ is for any $\eps>0$ its tail is $\eps$-close to $A$.
+    \source
+    Последовательность $\seq{a_n}$ имеет \emph{предел} $A$, если для всякого $\eps>0$ её хвост $\eps$-близок к $A$.
+    
+    Formally, 
+    \source{Формально:}
     \gather
         \item \label eq:04:def-lim
             \forall \eps > 0\\ \exists N \in \mathbb N\\ \forall n > N: 
         \splitem |a_n - A| < \eps.
+    
+    If a sequence $\seq{a_n}$ has a limit $A$ it is said to \emph{approach} $A$.
+    \source
+    Если последовательность $\seq{a_n}$ имеет предел $A$, говорят также, что она \emph{стремится} к $A$. 
 
-    Если последовательность $\seq{a_n}$ имеет предел $A$, говорят также, что она
-    \emph{стремится} к $A$. 
-
-    Коротко пишут так:
+    In short:
+    \source{Коротко пишут так:}
     \eq
         \lim_{n\to \infty} a_n = A,
-    (читается «предел при $n$ стремящемся к бесконечности от $a_n$ равен $A$») или
+    (read "the limit of $a_n$ as $n$ goes to infinily is $A$") or
+    \source{(читается «предел при $n$ стремящемся к бесконечности от $a_n$ равен $A$») или}
     \eq
         a_n \to A\text{ при }n \to \infty,
-    (читается «$a_n$ стремится к $A$ при $n$ стремящемся к бесконечности»).
-
-    Последовательность, имеющая предел, называется также
-    \emph{сходящейся}, а не имеющая предела — \emph{расходящейся}.
+    (read "the limit of $a_n$ is $A$ as $n$ goes to infinily").
+    \source{(читается «$a_n$ стремится к $A$ при $n$ стремящемся к бесконечности»).}
+    
+    A sequence that have a limit is said to be \emph{convergent}, otherwise \emph{divergent}.
+    \source{Последовательность, имеющая предел, называется также \emph{сходящейся}, а не имеющая предела — \emph{расходящейся}.}
 
 \remark
-    Уточнение про $n \to \infty$ в случае с последовательностями является
-    избыточным: никаких других (по крайней мере, общепринятых) способов
-    определить предел последовательности, кроме как при $n \to \infty$, нет.
-    Чуть позже мы будем обсуждать пределы функций, и там уточнения такого типа
-    будут важны; в случае с последовательностями они сохраняются для
-    единообразия обозначений.
+    In the case of sequences saying $n \to \infty$ is redundant since it's impossible to define a limit without it.
+    This part is essential when it comes to a limit of a function.
+    The notation will be the same as in case with sequences, so we leave this redundancy for uniformity in the use of the terms.
+    \source
+    Уточнение про $n \to \infty$ в случае с последовательностями является избыточным: никаких других (по крайней мере, общепринятых) способов определить предел последовательности, кроме как при $n \to \infty$, нет.
+    Чуть позже мы будем обсуждать пределы функций, и там уточнения такого типа будут важны; в случае с последовательностями они сохраняются для единообразия обозначений.
 
 Заметим, что в определении предела, число $N$ (граница «хвоста
 последовательности») выбирается в зависимости от $\eps$ — для разных $\eps$
