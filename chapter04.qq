@@ -797,24 +797,29 @@ We say that no matter how presice our measurements are, at some point in time we
     Уточнение про $n \to \infty$ в случае с последовательностями является избыточным: никаких других (по крайней мере, общепринятых) способов определить предел последовательности, кроме как при $n \to \infty$, нет.
     Чуть позже мы будем обсуждать пределы функций, и там уточнения такого типа будут важны; в случае с последовательностями они сохраняются для единообразия обозначений.
 
-Заметим, что в определении предела, число $N$ (граница «хвоста
-последовательности») выбирается в зависимости от $\eps$ — для разных $\eps$
-получаются разные $N$. Если последовательность $\seq{a_n}$ стремится к $A$,
-гарантируется, что для любого $\eps$ найдётся «хорошее» $N$. Часто бывает удобно
-это «хорошее» $N$, подходящее для какого-то $\eps$, обозначать через $N(\eps)$.
-(Вообще говоря, это $N$ определяется не единственным образом — например, если
-$N$ подходит, то $N+1$ тоже подходит — но мы выберем какое-нибудь из подходящих
-значений $N$ и обозначим его через $N(\eps)$.) На \ref[рис.][fig:04:N-of-eps]
-приведена иллюстрация: для $\eps=\eps_1$ мы могли выбрать $N=3$, то есть
-положить $N(\eps_1)=3$. Но для $\eps=\eps_2$ (см. нижний рисунок) это значение
-$N$ уже «не работает» (например, $a_4$ выходит за границы нового коридора),
-однако увеличив $N$ до $8$ (то есть положив $N(\eps_2)=8$) мы снова добились
-соблюдения условия «все члены, начиная с $n=N+1$, находятся на расстоянии меньше
-$\eps$ от $A$».
+Notice that $N$ (the start of a tail of a sequence) is chosed according to the value of $\eps$.
+Different values of $\eps$ need different choices of $N$.
+But if a sequence $\seq{a_n}$ approaches $A$ then the possibility of finding the right $N$ for any $\eps$ is guaranteed.
+Its often useful to denote this "right" $N$, which we've chosen for a partivular $\eps$ by $N(\eps)$.
+(In fact, if $N$ qualifies, then every natural nuber bigger than $N$ also qualifies.
+This is not a problem since in future we'll not be interested in choosing between then, instead we'll need just one, so  its okay to let $N(\eps)$ be any of these).
+There is an illustration in \ref[fig.][fig:04:N-of-eps]: for $\eps=\eps_1$ we can choose $N(\eps_1)=3$.
+But for $\eps=\eps_2$ (see bellow) this value of $N$ doesn't work anymore (for example, $a_4$ leaves the "corridor").
+In this case we need to increase $N$, for example make it equal to $N(\eps_2)=8$.
+By doing so we ensure the requirement "all elements starting from $N+1$ are $\eps$-close to $A$" is once again satisfied.
+\source
+    Заметим, что в определении предела, число $N$ (граница «хвоста последовательности») выбирается в зависимости от $\eps$ — для разных $\eps$ получаются разные $N$. 
+    Если последовательность $\seq{a_n}$ стремится к $A$, гарантируется, что для любого $\eps$ найдётся «хорошее» $N$. 
+    Часто бывает удобно это «хорошее» $N$, подходящее для какого-то $\eps$, обозначать через $N(\eps)$.
+    (Вообще говоря, это $N$ определяется не единственным образом — например, если $N$ подходит, то $N+1$ тоже подходит — но мы выберем какое-нибудь из подходящих значений $N$ и обозначим его через $N(\eps)$.) 
+    На \ref[рис.][fig:04:N-of-eps] приведена иллюстрация: для $\eps=\eps_1$ мы могли выбрать $N=3$, то есть положить $N(\eps_1)=3$. 
+    Но для $\eps=\eps_2$ (см. нижний рисунок) это значение $N$ уже «не работает» (например, $a_4$ выходит за границы нового коридора), однако увеличив $N$ до $8$ (то есть положив $N(\eps_2)=8$) мы снова добились соблюдения условия «все члены, начиная с $n=N+1$, находятся на расстоянии меньше $\eps$ от $A$».
 
-Мы могли бы ещё сильнее уменьшить $\eps$ — и снова должно было найтись
-своё $N$, которое бы обеспечивало выполнение этого условия. Это и значит, что
-последовательность стремится к $A$.
+After the manipulations above it is possible to decrease $\eps$ even more, and for the sequence to converge to $A$ a new value of $N$ must be found.
+This is what is means for a sequence to approach $A$.
+\source
+    Мы могли бы ещё сильнее уменьшить $\eps$ — и снова должно было найтись своё $N$, которое бы обеспечивало выполнение этого условия. 
+    Это и значит, что последовательность стремится к $A$.
 
 \figure
     \img
@@ -839,57 +844,68 @@ $\eps$ от $A$».
             y=A-ε_1, две последние прямые образуют своего рода коридор.
             Показано, что все элементы, после N=N(ε_1)=3 (то есть начиная с n=4)
             находятся внутри этого коридора.
-    \caption
-        Зависимость $N$ от $\eps$ в \ref[определении
-        предела\nonumber][def:04:lim].
+    \caption 
+        A value of $N$ depends on $\eps$ in the \ref[definition of a limit\nonumber][def:04:lim].
+        \soruce{Зависимость $N$ от $\eps$ в \ref[определении предела\nonumber][def:04:lim].}
     \label fig:04:N-of-eps
 
-\section Пример доказательств утверждений о пределах
+\section An example for how to prove a proposition involving limits 
+    \section{Пример доказательств утверждений о пределах}
 
-\subsection Существование предела
+\subsection Existence of a limit
+    \source{Существование предела}
 
-Самый лучший способ понять определение — доказать какое-нибудь утверждение про
-него. 
+The best way to understand a definition is to prove some proposition involving it. 
+\source{Самый лучший способ понять определение — доказать какое-нибудь утверждение про него.}
 \proposition \label prop:04:n+1:n
-    Предел последовательности $a_n=\frac{n+1}{n}$ равен
-    $1$:
+    A limit of a sequence $a_n=\frac{n+1}{n}$ is $1$:
+    \source{Предел последовательности $a_n=\frac{n+1}{n}$ равен $1$:}
     \eq
         \lim_{n\to \infty} \frac{n+1}{n}=1.
-\proof
-    Нам нужно научиться по любому $\eps>0$ строить такое $N=N(\eps)$, что для
-    всех $n>N$, 
+\proof We need to be able to come up with $N=N(\eps)$ for any given $\eps>0$ such that for any $n>N$ the following inequality holds:
+    \source{Нам нужно научиться по любому $\eps>0$ строить такое $N=N(\eps)$, что для всех $n>N$,}
     \equation \label eq:04:frac
         \left|\frac{n+1}{n}-1\right|<\eps.
-    Преобразуем это неравенство:
+    Let's rearrange the inequality:
+    \source{Преобразуем это неравенство:}
     \gather \nonumber
         \item \left|1 + \frac{1}{n} - 1\right| < \eps;
         \item \left|\frac{1}{n}\right| < \eps.
-    Заметим, что $n$ — натуральное число, значит положительное, значит
-    $\frac{1}{n}$ — тоже положительное, значит его модуль всегда равен ему
-    самому. Следовательно, знак модуля можно просто снять. Получим неравенство:
+    Notice that since $n$ is a natural number, $\frac{1}{n}$ is positive, hence it's equal to its absolute value.
+    This means we can get rid of a modulus and get:
+    \source
+        Заметим, что $n$ — натуральное число, значит положительное, значит $\frac{1}{n}$ — тоже положительное, значит его модуль всегда равен ему самому. 
+        Следовательно, знак модуля можно просто снять. 
+        Получим неравенство:
     \eq 
         \frac{1}{n} < \eps.
-    Можно умножить обе части этого неравенства на $n$ и поделить на $\eps$
-    (благодаря тому, что $n>0$ и $\eps>0$, эта операция является эквивалентным
-    преобразованием и не приведёт к изменению знака неравенства). Получим такое
-    неравенство:
+    Let's multiply both sides of an equation by $n$ and divide by $\eps$ (the properties $n>0$ and $\eps>0$ ensure this operation yields an equivalent inequality).
+    We get:
+    \source
+        Можно умножить обе части этого неравенства на $n$ и поделить на $\eps$ (благодаря тому, что $n>0$ и $\eps>0$, эта операция является эквивалентным преобразованием и не приведёт к изменению знака неравенства). 
+        Получим такое неравенство:
     \eq
         \frac{1}{\eps} < n.
-    Наконец, можно переписать его справа налево:
+    Let's rewrite it a bit:
+    \source{Наконец, можно переписать его справа налево:}
     \equation \label eq:04:frac-up
         n > \frac{1}{\eps}.
-    Нам нужно найти такое $N$, что если $n>N$, то неравенство \ref{eq:04:frac}
-    выполняется.  Наши преобразования были эквивалентными, поэтому, в частности, если
+    
+    Нам нужно найти такое $N$, что если $n>N$, то неравенство \ref{eq:04:frac} выполняется.  
+    Наши преобразования были эквивалентными, поэтому, в частности, если
     выполняется неравенство \ref{eq:04:frac-up}, то выполняется и неравенство
-    \ref{eq:04:frac}. Значит, достаточно сделать так, чтобы выполнялось
-    неравенство \ref{eq:04:frac-up}. Очевидно, если выбрать какое-нибудь
-    $N \ge \frac{1}{\eps}$, мы победим: в этом случае любое $n$, большее $N$, будет
-    также больше и $\frac{1}{\eps}$, а значит неравенство \ref{eq:04:frac-up}
-    выполнено. В принципе, можно было бы просто положить $N=\frac{1}{\eps}$, но
-    мы потребовали в \ref[определении][def:04:lim], чтобы $N$ было натуральным
-    числом. Значит, нужно выбрать какое-нибудь натуральное число, не меньшее
-    $\frac{1}{\eps}$. Это всегда можно сделать. Однако, для определенности,
-    давайте предложим конкретный механизм.
+    \ref{eq:04:frac}. 
+    We want to show that an inequality \ref{eq:04:frac-up} is satisfied.
+    Clearly, if we choose $N=\frac{1}{\eps}$ we're done, but in a \ref[definition][def:04:lim] we've stated that $N$ must be a natural number.
+    This means we want to choose any natural number that is bigger than or equal to $\frac{1}{\eps}$, which is always possible.
+    However, let's clarify this operation to be more precise. 
+    \source
+        Значит, достаточно сделать так, чтобы выполнялось неравенство \ref{eq:04:frac-up}. 
+        Очевидно, если выбрать какое-нибудь $N \ge \frac{1}{\eps}$, мы победим: в этом случае любое $n$, большее $N$, будет также больше и $\frac{1}{\eps}$, а значит неравенство \ref{eq:04:frac-up} выполнено. 
+        В принципе, можно было бы просто положить $N=\frac{1}{\eps}$, но мы потребовали в \ref[определении][def:04:lim], чтобы $N$ было натуральным числом. 
+        Значит, нужно выбрать какое-нибудь натуральное число, не меньшее $\frac{1}{\eps}$. 
+        Это всегда можно сделать. 
+        Однако, для определенности, давайте предложим конкретный механизм.
 
     \definition
         Пусть $x$ — вещественное число. Его \emph{округлением вверх} называется
