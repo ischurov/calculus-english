@@ -990,7 +990,7 @@ Let's consider another example.
     Remember that we're not interested in finding the whole range of $N$ that make a tail $\eps$-close to a limit.
     We need to find just a portion of values, and then take one of them.
     This motivates us to proceed to a more strict inequality (which means that whenever this inequality is satisfied, our one is also satisfied).
-    This will make pur life much easier!
+    This will make our life much easier!
     Look:
     \source
         По аналогии с предыдущим примером, запишем, что мы хотим получить. 
@@ -1010,43 +1010,51 @@ Let's consider another example.
         Поэтому вместо эквивалентных переходов, которые мы должны делать, когда решаем неравенство, нам достаточно переходов к более сильным неравенствам — таким, из которых наше следует. 
         И это существенно упрощает жизнь! 
         Смотрите.
-
-    Заметим, что для натуральных $n$, 
+    
+    Notice that for natural $n$ the following idequality always holds:
+    \source{Заметим, что для натуральных $n$,} 
     \eq
         n^2+5n+12>n^2.
-    Действительно, $5n$ и $12$ — положительные числа. Более того: для
-    натуральных $n$, $n^2 \ge n$ (можно поделить это неравенство на $n$,
-    поскольку $n$ больше нуля, и получить неравенство $n\ge 1$, справедливое для
-    всех натуральных $n$). Имеем цепочку неравенств:
+    We can also argue that $n^2$ as always bigger than $n$ for natural $n$, thus obtaining
+    \source
+        Действительно, $5n$ и $12$ — положительные числа. 
+        Более того: для натуральных $n$, $n^2 \ge n$ (можно поделить это неравенство на $n$, поскольку $n$ больше нуля, и получить неравенство $n\ge 1$, справедливое для всех натуральных $n$). 
+        Имеем цепочку неравенств:
     \eq
         n^2+5n+12>n^2\ge n.
-    Значит
+    So,
+    \source{Значит}
     \eq
         n^2+5n+12>n
-    и следовательно
+    Which implies
+    \source{и следовательно}
     \equation \label eq:04:chain
         \frac{1}{n^2+5n+12}<\frac{1}{n}.
-    Оценивая знаменатель дроби снизу, мы оцениваем саму дробь сверху.
-
-    Пусть теперь мы подобрали какое-нибудь такое $N$, что при всех $n>N$
-    выполняется неравенство
-    $\frac{1}{n}<\eps$. Тогда в силу неравнства \ref{eq:04:chain}, для тех же
-    самых $n$, будет выполняться неравенство
+    This is true since in the right hand side we're dividing by a smaller number.
+    \source{Оценивая знаменатель дроби снизу, мы оцениваем саму дробь сверху.}
+    
+    Suppose we've found such $N$ that for all $n>N$ an inequality $\frac{1}{n}<\eps$ hodls.
+    Then by an inequality \ref{eq:04:chain} we've automatically satisfied the following inequality:
+    \source
+        Пусть теперь мы подобрали какое-нибудь такое $N$, что при всех $n>N$ выполняется неравенство $\frac{1}{n}<\eps$. 
+        Тогда в силу неравнства \ref{eq:04:chain}, для тех же самых $n$, будет выполняться неравенство
     \eq
         \frac{1}{n^2+5n+12}<\eps.
-    (Мы опять используем транзитивность неравенства: если $A<B$ и $B<C$, то
-    $A<C$.)
+    Here we're using the transitive property of inequalities: if $A<B$ and $B<C$ holds, then $A<C$ holds.
+    \source{(Мы опять используем транзитивность неравенства: если $A<B$ и $B<C$, то $A<C$.)}
 
-    Таким образом, в качестве $N(\eps)$ можно взять то же выражение, что и в
-    \ref[предыдущем примере\nonumber][prop:04:n+1:n]: $N(\eps):=\left\lceil
-    \frac{1}{\eps} \right\rceil$. И оно сработает! Это гораздо проще, чем решать
-    квадратное неравенство с параметром (можете попробовать — хотя вам вряд ли
-    понравится).
+    So we can make $N(\eps)$ equal to the same valut as in the \ref[previous example\nonumber][prop:04:n+1:n]: $N(\eps):=\left\lceil \frac{1}{\eps} \right\rceil$.
+    This is much easier than solving a quanratic inequality with a parameter (try to finish up the straightforward way yourself and decide which one is for you).
+    \source
+        Таким образом, в качестве $N(\eps)$ можно взять то же выражение, что и в \ref[предыдущем примере\nonumber][prop:04:n+1:n]: $N(\eps):=\left\lceil \frac{1}{\eps} \right\rceil$. 
+        И оно сработает! 
+        Это гораздо проще, чем решать квадратное неравенство с параметром (можете попробовать — хотя вам вряд ли понравится).
 
-    Итак, если отбросить все мотивировки, полное доказательство выглядит так:
-    для всякого $\eps>0$, положим $N(\eps):=\left\lceil \frac{1}{\eps}
-    \right\rceil$. Тогда для всякого натурального $n>N(\eps)$ справедлива
-    цепочка равенств и неравенств:
+    Now if we abandon all the motivation above, we arrive at the proof itself.
+    For any $\eps>0$ take $N(\eps):=\left\lceil \frac{1}{\eps} \right\rceil$, which ensures the following chain of inequalities is satisfied:
+    \source
+        Итак, если отбросить все мотивировки, полное доказательство выглядит так: для всякого $\eps>0$, положим $N(\eps):=\left\lceil \frac{1}{\eps} \right\rceil$. 
+        Тогда для всякого натурального $n>N(\eps)$ справедлива цепочка равенств и неравенств:
     \gather \nonumber
         \item 
             \left|\frac{1}{n^2+5n+12}-0\right| = 
@@ -1054,36 +1062,45 @@ Let's consider another example.
         \item
             = \frac{1}{n^2+5n+12}  < 
         \splitem \splonly{<} \frac{1}{n} < \frac{1}{\lceil 1/\eps \rceil} \le \frac{1}{1/\eps}=\eps.
-    Доказательство законечно. (Конечно, в аккуратном тексте нужно обосновать
-    каждое из равенств и неравенств в цепочке, но мы это уже сделали выше.) 
+    The proof is done.
+    (Some of the inequalities above need extra clarification, but we've already discussed them above).
+    \source
+        Доказательство законечно. 
+        (Конечно, в аккуратном тексте нужно обосновать каждое из равенств и неравенств в цепочке, но мы это уже сделали выше.) 
 
-\subsection Предел не равен какому-то числу
+\subsection A limit is not equal to a particular number
+    \section{Предел не равен какому-то числу}
 \proposition
-    Предел последовательности $\seq{a_n}$, $a_n=\frac{1}{n}$, не равен 1:
+    A limit of a sequence $\seq{a_n}$,  $a_n=\frac{1}{n}$, is not equal to $1$:
+   \source{Предел последовательности $\seq{a_n}$, $a_n=\frac{1}{n}$, не равен 1:}
     \eq
         \lim_{n\to \infty}\frac{1}{n} \ne 1.
 \proof
-    Нам нужно доказать, что неверно, что предел равен 1. Иными словами,
-    опровергнуть следующее утверждение:
+    We need to disprove the following statement:
+    \source
+        Нам нужно доказать, что неверно, что предел равен 1. 
+        Иными словами, опровергнуть следующее утверждение:
     \eq
         \forall \eps > 0\\ \exists N \in \mathbb N\\ \forall n > N\colon
         \left|\frac{1}{n}-1\right|<\eps.
-    Опровергнуть утверждение — это всё равно, что доказать его отрицание.
-    Запишем отрицание, пользуясь \ref[разделом][ssec:02:quant-neg-series] лекции
-    \ref{chap:02:logic}:
+    Since disproving a sentence means proving its negation, let's use some rules from a \ref[section][ssec:02:quant-neg-series] of a lecture \ref{chap:02:logic} and formulate it:
+    \source
+        Опровергнуть утверждение — это всё равно, что доказать его отрицание.
+        Запишем отрицание, пользуясь \ref[разделом][ssec:02:quant-neg-series] лекции \ref{chap:02:logic}:
     \align 
         \item \label eq:04:ne
             \exists \eps > 0 \\ \forall N \in \mathbb N\\ 
         \splitem \exists n > N\colon \left|\frac{1}{n}-1\right|\ge \eps.
-    Иными словами, нам нужно доказать, что существует такой $\eps>0$, что какой
-    бы номер $N$ мы ни выбрали, найдётся номер $n$, больший, чем $N$, для
-    которого элемент с номером $n$ не является $\eps$-близким к $1$. Попросту
-    нам нужно доказать, что для какого-то конкретного $\eps$, время от времени
-    — сколь угодно далеко в будущем — элементы последовательности будут на
-    расстоянии как минимум $\eps$ от $1$. В этом случае, конечно, ни о каком
-    стремлении к $1$ речи уже идти не будет.
-
-    Давайте посмотрим на картинку (\ref[рис.][fig:04:1/n]).
+    In other words, we need to prove that there exists some $\eps>0$ such that whatever $N$ we choose, there can be found a bigger $n>N$, for which an element of a sequence with index $n$ is not $\eps$-close to $1$.
+    Or, equivalently, there is a particular $\eps>0$, for which in every tail of a sequence there will always be an element separated from $1$ by more than $\eps$.
+    This is precisely when a sequence doen't approach $1$.
+    \source
+        Иными словами, нам нужно доказать, что существует такой $\eps>0$, что какой бы номер $N$ мы ни выбрали, найдётся номер $n$, больший, чем $N$, для которого элемент с номером $n$ не является $\eps$-близким к $1$. 
+        Попросту нам нужно доказать, что для какого-то конкретного $\eps$, время от времени — сколь угодно далеко в будущем — элементы последовательности будут на расстоянии как минимум $\eps$ от $1$. 
+        В этом случае, конечно, ни о каком стремлении к $1$ речи уже идти не будет.
+    
+    Let's look at a \ref[fig.][fig:04:1/n].
+    \source{Давайте посмотрим на картинку (\ref[рис.][fig:04:1/n]).}
 
     \figure \showcode \collapsed
         \pythonfigure
@@ -1100,12 +1117,18 @@ Let's consider another example.
             ob.settle_axes(xmin=-0.9, xmax=nmax + 1, ymin=-0.25, ymax=2.27, 
                            xlabel="n", ylabel="y") 
 
-        \caption График $\seq{1/n}$.
+        \caption 
+            A graph of a sequence $\seq{1/n}$.
+            \source{График $\seq{1/n}$.}
         \label fig:04:1/n
 
-    Какое значение $\eps$ подойдёт? Например, подойдёт ли $\eps=1{,}5$? Похоже, что
-    нет — на самом деле, все элементы последовательности находятся на расстоянии
-    не больше $1{,}5$ от числа $1$, см. \ref[рис.][fig:04:1/n:eps=1.5].
+    Which value of $\eps$ should we choose?
+    If $\eps=1{,}5$ a good choice?
+    Seems like it isn't a great one, since each element of a sequence is $1.5$-close to $1$, which is clearly seen in \ref[fig.][fig:04:1/n:eps=1.5].
+    \source
+        Какое значение $\eps$ подойдёт? 
+        Например, подойдёт ли $\eps=1{,}5$? 
+        Похоже, что нет — на самом деле, все элементы последовательности находятся на расстоянии не больше $1{,}5$ от числа $1$, см. \ref[рис.][fig:04:1/n:eps=1.5].
 
     \figure \showcode \collapsed
         \pythonfigure
@@ -1127,13 +1150,14 @@ Let's consider another example.
             ob.settle_axes(xmin=-0.9, xmax=nmax + 1, ymin=-2.47, ymax=5.47, 
                            xlabel="n", ylabel="y") 
 
-        \caption График $\seq{1/n}$ и коридор вокруг $1$ с «размахом» $\eps=1{,}5$.
+        \caption A graph of $\seq{1/n}$ and a $1{,}5$-wide "corridor" around $1$. 
+            \source{График $\seq{1/n}$ и коридор вокруг $1$ с «размахом» $\eps=1{,}5$.}
         \label fig:04:1/n:eps=1.5
 
-
-    Однако, уже значение $\eps=1/3$ подходит. Действительно, лишь одна точка
-    лежит внутри коридора с «размахом» $1/3$ вокруг прямой $y=1$, см.
-    \ref[рис.][fig:04:1/n:eps=0.3].
+    Notice that $\eps=1/3$ qualifies: only one element of a sequence is $1\3$-closed to $1$, see \ref[fig.][fig:04:1/n:eps=0.3].
+    \source
+        Однако, уже значение $\eps=1/3$ подходит. 
+        Действительно, лишь одна точка лежит внутри коридора с «размахом» $1/3$ вокруг прямой $y=1$, см. \ref[рис.][fig:04:1/n:eps=0.3].
 
     \figure \showcode \collapsed
         \pythonfigure
@@ -1156,66 +1180,100 @@ Let's consider another example.
             ob.settle_axes(xmin=-0.9, xmax=nmax + 1, ymin=-2.47, ymax=5.47, 
                            xlabel="n", ylabel="y") 
 
-        \caption График $\seq{1/n}$ и коридор вокруг $1$ с «размахом» $\eps=1/3$.
+        \caption A graph of $\seq{1/n}$ and a $1/3$-wide "corridor" around $1$.
+            \source{График $\seq{1/n}$ и коридор вокруг $1$ с «размахом» $\eps=1/3$.}
         \label fig:04:1/n:eps=0.3
-
-    Итак, пусть мы взяли $\eps=1/3$. Теперь в соответствии с формулой
-    \ref{eq:04:ne} для всякого натурального $N$ нужно научиться строить такое
-    $n$, что $n>N$ и одновременно 
+    
+    Consider $\eps=1/3$.
+    According to a negation \ref{eq:04:ne}, for every natural $N$ we need to be able to produce $n>N$ with the following property:
     \equation \label eq:04:fracge
-        \left|\frac{1}{n}-1\right|\ge 1/3. 
-    По картинке видно, что нам подойдёт любое $n$, начиная с $n=2$.  Поскольку
-    минимальное значение для $N$ равно 1, то любое $n$, удовлетворяющее условию
-    $n>N$, удовлетворяет и условию $n\ge 2$, и значит, нам подходит. Осталось
-    построить натуральное число $n$, которое гарантированно больше данного
-    натурального числа $N$. Как это сделать? Можно просто прибавить единицу к $N$, и всё!
+            \left|\frac{1}{n}-1\right|\ge 1/3. 
+    Clearly, every $n$ bigger than or equal to $2$ will do.
+    Restating this formally we get $n\ge 2$, which is satisfies whenever $n>N$ (recall that $N$ is a natural number).
+    The only thing left is deciding how to construct a natural number $n$ that is bigger than any given natural $N$.
+    Let's just add one to $N$!
+    
+    \source
+        Итак, пусть мы взяли $\eps=1/3$. 
+        Теперь в соответствии с формулой \ref{eq:04:ne} для всякого натурального $N$ нужно научиться строить такое $n$, что $n>N$ и одновременно 
+        \equation \label eq:04:fracge
+            \left|\frac{1}{n}-1\right|\ge 1/3. 
+        По картинке видно, что нам подойдёт любое $n$, начиная с $n=2$.  
+        Поскольку минимальное значение для $N$ равно 1, то любое $n$, удовлетворяющее условию $n>N$, удовлетворяет и условию $n\ge 2$, и значит, нам подходит. 
+        Осталось построить натуральное число $n$, которое гарантированно больше данного натурального числа $N$. 
+        Как это сделать? 
+        Можно просто прибавить единицу к $N$, и всё!
 
-    Итак, положим: $n:=N+1$. Осталось доказать, что выполняется неравенство
-    \ref{eq:04:fracge}.  Действительно:
+    Therefore, take $n:=N+1$.
+    We must prove that an inequality \ref{eq:04:fracge} is satisfied.
+    Indeed, 
+    \source
+        Итак, положим: $n:=N+1$. 
+        Осталось доказать, что выполняется неравенство \ref{eq:04:fracge}.  
+        Действительно:
     \align
         \item 
             \left|\frac{1}{N+1}-1\right| & = 1-\frac{1}{N+1} \ge 
         \splitem \splonly{& \ge} 1-\frac{1}{2} = 
         \splitem \splonly{&=} \frac{1}{2}\ge \frac{1}{3}=\eps.
-    Первое равенство следует из того факта, что $\frac{1}{N+1}$ меньше единицы
-    для натуральных $N$ и модуль может быть раскрыт только так, первое 
-    неравенство следует из того факта, что $\frac{1}{N+1}$ ещё и меньше $1/2$,
-    т.к. $N$ натуральное и не меньше $1$.
+    The first equality follows from the fact that $\frac{1}{N+1}$ is less than $1$ for natural $N$ and we should add a minus sign when removing a modulus.
+    The first inequality is true since $\frac{1}{N+1}$ is less than $1/2$ because $N$ is natural and bigger than or equal to $2$.
+    \source
+        Первое равенство следует из того факта, что $\frac{1}{N+1}$ меньше единицы для натуральных $N$ и модуль может быть раскрыт только так, первое  неравенство следует из того факта, что $\frac{1}{N+1}$ ещё и меньше $1/2$, т.к. $N$ натуральное и не меньше $1$.
         
 
-\subsection Несуществование предела
+\subsection A limit doesn't exist
+    \source{Несуществование предела}
 
-Не у всякой последовательности существует предел.
+Not every sequence has a limit.
+\source{Не у всякой последовательности существует предел.}
 \proposition \label prop:04:nolim
-    Последовательность $a_n=(-1)^n$ не имеет никакого предела.
+    A sequence $a_n=(-1)^n$ doesn't have a limit.
+    \source{Последовательность $a_n=(-1)^n$ не имеет никакого предела.}
 \proof
-    Нас пожидает некоторая трудность в самом начале. Определение предела
-    требует, чтобы мы назвали конкретное число $A$, которое является пределом.
-    Здесь никакого $A$ нет.
+    Now we're faced with an unusual problem.
+    Recall that in a definition of a limit there is a number $A$, which represents its value.
+    Here we don't have such $A$.
+    \source
+        Нас пожидает некоторая трудность в самом начале. 
+        Определение предела требует, чтобы мы назвали конкретное число $A$, которое является пределом.
+        Здесь никакого $A$ нет.
 
-    Формально, утверждение «последовательность $\seq{a_n}$ имеет предел»
-    записывается так: найдётся какое-то число $A$, которое является пределом
-    $\seq{a_n}$. В кванторах:
+   Formally, a proposition "a sequence $\seq{a_n}$ has a limit" is written as follows: there exists some number $A$ that is a limit of $\seq{a_n}$.
+   The samething using quantifiers:
+   \source
+        Формально, утверждение «последовательность $\seq{a_n}$ имеет предел» записывается так: найдётся какое-то число $A$, которое является пределом $\seq{a_n}$. 
+        В кванторах:
     \eq
         \exists A \in \mathbb R\\ \forall \eps>0\\ \exists N \in \mathbb N\\
         \forall n > N\colon |a_n - A| < \eps.
-    Ух! Четыре квантора.
+    Wow!
+    Four quantifiers in one proposition!
+    \source
+        Ух! 
+        Четыре квантора.
 
-    Давайте напишем отрицание к этому утверждению (это как раз то, что нам нужно
-    доказать):
+    Let's formulate a negation to this proposition (this is exactly what we need to proove).
+    \source{Давайте напишем отрицание к этому утверждению (это как раз то, что нам нужно доказать):}
 
     \eq
         \forall A \in \mathbb R\\ \exists \eps > 0 \\ \forall N \in \mathbb N\\
         \exists n > N\colon |a_n - A| \ge \eps.
-    Иными словами, для всякого вещественного числа $A$, справедливо утверждение:
-    $A$ не является пределом нашей последовательности.
+    In other words, a proposition "$A$ is not a limit of the considered sequence" is true for all real numbers $A$.
+    \source{Иными словами, для всякого вещественного числа $A$, справедливо утверждение: $A$ не является пределом нашей последовательности.}
 
-    Теперь будем его доказывать. Тут нужно разобрать два случая: $A\ne 1$ и
-    $A=1$.
+    Now we proceed to the proof.
+    We'll need two cases: $A\ne 1$ and $A=1$.
+    \source
+        Теперь будем его доказывать. 
+        Тут нужно разобрать два случая: $A\ne 1$ и $A=1$.
 
-    \paragraph{Случай $A\ne 1$} Как обычно, начнём с картинки, см.
-    \ref[рис.][fig:04:(-1)^n]. Мы отметили точку $A$ между $0$ и $-1$, но на
-    самом деле она может быть какой угодно, кроме $1$.
+    \paragraph{Случай $A\ne 1$} 
+    As usual, let's start from visualizing the setup: see \ref[fig][fig:04:(-1)^n].
+    We've put $A$ between $0$ and $-1$, but it can be anything except a number $1$.
+    \source
+        Как обычно, начнём с картинки, см. \ref[рис.][fig:04:(-1)^n]. 
+        Мы отметили точку $A$ между $0$ и $-1$, но на самом деле она может быть какой угодно, кроме $1$.
     
     \figure
         \img
@@ -1227,18 +1285,16 @@ Let's consider another example.
                 отмечена точка A между точками 0 и -1. Проведены горизонтальные
                 прямые y=1, y=-1, y=A
         \caption
-            График последовательности $\seq{(-1)^n}$. 
+            A graph of a sequence $\seq{(-1)^n$.
+            \source{График последовательности $\seq{(-1)^n}$.}
         \label fig:04:(-1)^n
 
-    Теперь нужно выбрать такое $\eps>0$, что последовательность будет время от
-    времени выскакивать из $\eps$-коридора сколько угодно далеко в будущем. Как
-    найти $\eps$? Поскольку мы знаем, что $A\ne 1$, и также знаем, что сколь
-    угодно далеко в будущем последовательность посещает точку $1$, логично
-    выбрать такой размах коридора, при котором он не будет содержать точки с
-    $y=1$. Это легко сделать: достаточно в качестве $\eps$ взять число, которое
-    было бы меньше, чем расстояние от $A$ до $1$. В этом случае, если элемент
-    последовательности равен $1$, его расстояние до $A$ будет гарантированно
-    больше, чем $\eps$.
+    \source
+        Теперь нужно выбрать такое $\eps>0$, что последовательность будет время от времени выскакивать из $\eps$-коридора сколько угодно далеко в будущем. 
+        Как найти $\eps$? 
+        Поскольку мы знаем, что $A\ne 1$, и также знаем, что сколь угодно далеко в будущем последовательность посещает точку $1$, логично выбрать такой размах коридора, при котором он не будет содержать точки с $y=1$. 
+        Это легко сделать: достаточно в качестве $\eps$ взять число, которое было бы меньше, чем расстояние от $A$ до $1$. 
+        В этом случае, если элемент последовательности равен $1$, его расстояние до $A$ будет гарантированно больше, чем $\eps$.
 
     Положим 
     \eq
