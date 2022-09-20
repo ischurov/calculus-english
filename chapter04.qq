@@ -1263,7 +1263,7 @@ Not every sequence has a limit.
     \source{Иными словами, для всякого вещественного числа $A$, справедливо утверждение: $A$ не является пределом нашей последовательности.}
 
     Now we proceed to the proof.
-    We'll need two cases: $A\ne 1$ and $A=1$.
+    We need to consider two cases: $A\ne 1$ and $A=1$.
     \source
         Теперь будем его доказывать. 
         Тут нужно разобрать два случая: $A\ne 1$ и $A=1$.
@@ -1289,6 +1289,10 @@ Not every sequence has a limit.
             \source{График последовательности $\seq{(-1)^n}$.}
         \label fig:04:(-1)^n
 
+    How to choose an $\eps>0$ so that our sequence will occasionally "jump out" of an $\eps$-corridor even very far in the future?
+    We know that $A\ne 1$, we also know that a tail of the sequence "visits" a number $1$ no matter how far away it starts.
+    This motivates us to make $\eps$ smaller than a distance between $A$ and $1$.
+    This ensures that whenever an element is equal to $1$, it's not $\eps$-close to $A$.
     \source
         Теперь нужно выбрать такое $\eps>0$, что последовательность будет время от времени выскакивать из $\eps$-коридора сколько угодно далеко в будущем. 
         Как найти $\eps$? 
@@ -1296,19 +1300,24 @@ Not every sequence has a limit.
         Это легко сделать: достаточно в качестве $\eps$ взять число, которое было бы меньше, чем расстояние от $A$ до $1$. 
         В этом случае, если элемент последовательности равен $1$, его расстояние до $A$ будет гарантированно больше, чем $\eps$.
 
-    Положим 
+    Formally,
+    \source{Положим} 
     \eq
         \eps=\frac{|A-1|}{2}.
-    Тут важно, что $A\ne 1$ и следовательно $\eps>0$.
+    Notice since $A\ne 1$, epsilon is always positive.
+    \source{Тут важно, что $A\ne 1$ и следовательно $\eps>0$.}
 
-    Тогда одна из границ коридора будет проходить в точности посередине между
-    $A$ и $1$, см. \ref[рис.][fig:04:(-1)^n+eps]. Пусть теперь дано произвольное
-    натуральное $N$. Из рисунка видно, что каким бы ни было это $N$, найдутся
-    элементы последовательности, лежащие вне коридора между $A+\eps$ и $A-\eps$
-    после $n=N$ (заштрихованная область на рисунке). Собственно, мы именно так и
-    выбирали $\eps$: для любого чётного $n$, $a_n=1$ и следовательно
-    соответстующая точка лежит вне указанного коридора. Для любого
-    $N$ найдётся чётное натуральное число $n>N$ — оно-то нам и нужно. 
+    This way one "side" of an $\eps$-corridor will be locatefd strictly between $A$ and $1$, see \ref[fig. ][fig:04:(-1)^n+eps].
+    No matter which $N$ is chosen, it's always possible to find an index $m>N$, for which a corresponding element $a_m$ doesn't belong to the "corridor" from $A+\eps$ to $A-\eps$.
+    (In fact, there will be infinitely many such elements).
+    To be more precise, for every even $n$ we have $a_n=1$ and hence all such elements can't be $\eps$-close to $A$.
+    Obviously, for every $N$ there will be an even $n>N$, and this is what we needed.
+    \source
+        Тогда одна из границ коридора будет проходить в точности посередине между $A$ и $1$, см. \ref[рис.][fig:04:(-1)^n+eps]. 
+        Пусть теперь дано произвольное натуральное $N$. 
+        Из рисунка видно, что каким бы ни было это $N$, найдутся элементы последовательности, лежащие вне коридора между $A+\eps$ и $A-\eps$ после $n=N$ (заштрихованная область на рисунке). 
+        Собственно, мы именно так и выбирали $\eps$: для любого чётного $n$, $a_n=1$ и следовательно соответстующая точка лежит вне указанного коридора. 
+        Для любого $N$ найдётся чётное натуральное число $n>N$ — оно-то нам и нужно. 
 
     \figure
         \img
@@ -1321,8 +1330,8 @@ Not every sequence has a limit.
                 Проведена вертикальная прямая n=N (N выбрано равным 6), закрашен
                 коридор правее прямой n=N между прямыми y=A+ε и y=A-ε.
         \caption
-            График последовательности $\seq{(-1)^n}$ и коридор для выбранного
-            значения $\eps$. 
+            A graph of $\seq{(-1)^n$ and a corridor for our $\eps$.
+            \source{График последовательности $\seq{(-1)^n}$ и коридор для выбранного значения $\eps$.}
         \label fig:04:(-1)^n+eps
 
     Чтобы сделать рассуждение совсем железобетонным, нужно привести явный способ
