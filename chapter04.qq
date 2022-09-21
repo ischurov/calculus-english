@@ -1334,61 +1334,87 @@ Not every sequence has a limit.
             \source{График последовательности $\seq{(-1)^n}$ и коридор для выбранного значения $\eps$.}
         \label fig:04:(-1)^n+eps
 
-    Чтобы сделать рассуждение совсем железобетонным, нужно привести явный способ
-    построения $n$ по $N$. Тут можно действовать разными методами — например,
-    можно выбирать первое чётное, большее $N$, но можно проще: положить
+    To make the proof fully complete we must give a formal recipe for constructing $n$ from a given value of $N$.
+    This can be done in verious ways, for example any even number bigger than $N$ is valid.
+    But we'll do it even simpler: let
+    \source
+        Чтобы сделать рассуждение совсем железобетонным, нужно привести явный способ построения $n$ по $N$. 
+        Тут можно действовать разными методами — например, можно выбирать первое чётное, большее $N$, но можно проще: положить
     \eq
         n = 2N.
-    Действительно, $2N > N$ для всех натуральных $N$ и число $2N$ гарантированно
-    чётное.
+    Obviously, if $N$ is a natural number, then $2N > N$ and  $2N$ is even.
+    \source{Действительно, $2N > N$ для всех натуральных $N$ и число $2N$ гарантированно чётное.}
 
-    Наконец, нужно доказать, что для выбранного таким образом $n$, будет
-    выполняться неравенство $|a_n - A| \ge \eps$. Поскольку $n$ чётно,
-    $a_{n}=1$. Подставляя значение $\eps$, имеем:
+    We need to show that an inequality $|a_n - A| \ge \eps$ is satisfied for all natural such $n$.
+    Since $n$ is even, $a_{n}=1$, so
+    \source
+        Наконец, нужно доказать, что для выбранного таким образом $n$, будет выполняться неравенство $|a_n - A| \ge \eps$. 
+        Поскольку $n$ чётно, $a_{n}=1$. 
+        Подставляя значение $\eps$, имеем:
     \eq
         |1-A| \ge \frac{|A-1|}{2}.
-    Поскольку $|1-A|=|A-1|$ и это положительное число, это неравенство заведомо
-    верно.
+    Notice that $|1-A|=|A-1|$ and this expression is nonnegative, so the inequality is automatoacally satisfied. 
+    \source{Поскольку $|1-A|=|A-1|$ и это положительное число, это неравенство заведомо верно.}
 
-    Таким образом, для любого $A\ne 1$ мы предъявили такое значение
-    $\eps=\frac{|A-1|}{2}>0$, что для всех натуральных $N$ мы построили такое
-    $n=2N$, что $n>N$ и $|a_n - A| \ge \eps$. Значит, $A$ не является пределом
-    нашей последовательности.
+    \section   
+        For every $A\ne 1$ we're now able to provide a value $\eps=\frac{|A-1|}{2}>0$ such that for all natural $N$ there is $n=2N$ which makes $|a_n - A| \ge \eps$ for all $n>N$.
+        This is a precisely what we wanted to show.
+        A number $A$ is not a limit of our sequence, and the proof is done
+        Таким образом, для любого $A\ne 1$ мы предъявили такое значение $\eps=\frac{|A-1|}{2}>0$, что для всех натуральных $N$ мы построили такое $n=2N$, что $n>N$ и $|a_n - A| \ge \eps$. 
+        Значит, $A$ не является пределом нашей последовательности.
 
-    \paragraph{Случай $A=1$} Он доказывается полностью аналогично, и даже проще,
-    потому что теперь значение $A$ известно. Хорошее упражнение — написать это
-    доказательство явно и аккуратно, подобно тому, как выше разборан случай
-    $A\ne 1$. Пожалуйста, сделайте это, прежде, чем идти дальше!
+    \paragraph{Case $A=1$}
+    The proof is analogous, perhaps even simples since now the value of $A$ is fixed.
+    A good exercise is to write a proof yourself: with all formal aspects and explicit expressions as above.
+    Please, do it yourself before moving on to the next section.
+        \source
+            \paragraph{Случай $A=1$}
+            Он доказывается полностью аналогично, и даже проще,  потому что теперь значение $A$ известно. 
+            Хорошее упражнение — написать это доказательство явно и аккуратно, подобно тому, как выше разборан случай $A\ne 1$. 
+            Пожалуйста, сделайте это, прежде, чем идти дальше!
 
 
-\section Единственность предела
-
-Когда мы записываем выражение типа 
+\section Uniqueness of a limit
+    \source{Единственность предела}
+    
+When we write an expression
+\source{Когда мы записываем выражение типа}
 \equation \label eq:04:lim
     \lim_{n\to \infty} a_n = A, 
-мы подразумеваем, что левая часть равенства является каким-то однозначно
-определенным числом. Конечно, мы понимаем, что не всякое выражение обязано иметь
-числовое значение (например, арифметическое выражение $1/0$ не имеет никакого
-числового значения), но если уж имеет, то мы предполагаем, что это значение
-определяется однозначно. Тем не менее, в \ref[определении
-предела\nonumber][def:04:def-lim] никаких требований, связанных с
-единственностью предела, не накладывается. Как видно, это определение отвечает
-на вопрос «является ли $A$ пределом последовательности $\seq{a_n}$», но вдруг
-для одной и той же последовательности найдутся два разных числа, для которых
-ответ будет положительным? В этом случае запись вроде \ref{eq:04:lim} потеряла
-бы всякую определенность.
+we assume that the left hand side is uniquely defined. 
+It's possible for a mathematical expression to not have a numerical value.
+For example, an arithmetic expression $1/0$ doesn't have a numerical value.
+Notice that in the \ref[definition of a limit\nonumber][def:04:def-lim] we did't specify anything about its uniqueness.
+This definition answers the question "is a number $A$ a limit of a sequence?".
+But what if there are numerous numbers for which the answer to the question above is "yes"? 
+\sourec
+    мы подразумеваем, что левая часть равенства является каким-то однозначно определенным числом. 
+    Конечно, мы понимаем, что не всякое выражение обязано иметь числовое значение (например, арифметическое выражение $1/0$ не имеет никакого числового значения), но если уж имеет, то мы предполагаем, что это значение определяется однозначно. 
+    Тем не менее, в \ref[определении предела\nonumber][def:04:def-lim] никаких требований, связанных с единственностью предела, не накладывается. 
+    Как видно, это определение отвечает на вопрос «является ли $A$ пределом последовательности $\seq{a_n}$», но вдруг для одной и той же последовательности найдутся два разных числа, для которых ответ будет положительным? 
+    В этом случае запись вроде \ref{eq:04:lim} потеряла бы всякую определенность.
 
-К счастью, так не бывает. Давайте это докажем.
+Luckily,  this cannot happen.
+Let's prove it.
+\source
+    К счастью, так не бывает. 
+    Давайте это докажем.
 
 \theorem \label thm:04:uniq
-    Если предел последовательности существует, то он единственный. Иными
-    словами, пусть есть последовательность $\seq{a_n}$ и два числа, $A_1$ и
-    $A_2$, удовлетовряющие определению предела для этой последовательности.
-    Тогда обязательно $A_1=A_2$.
+    If a limit of a sequence exists, it is unique.
+    In other words, if there are two numbers $A_1$ and $A_2$ that satisfy the definition of a limit of $\seq{a_n}$, then $A_1=A_2$.
+    \source
+        Если предел последовательности существует, то он единственный. 
+        Иными словами, пусть есть последовательность $\seq{a_n}$ и два числа, $A_1$ и $A_2$, удовлетовряющие определению предела для этой последовательности.
+        Тогда обязательно $A_1=A_2$.
 \proof
-    Будем доказывать от противного. Пусть $A_1$ и $A_2$ оба являются пределами
-    последовательности $\seq{a_n}$, но при этом $A_1\ne A_2$. Запишем формально
-    утверждения про пределы:
+    We proceed by contradiction.
+    Suppose $A_1$ and $A_2$ are both limits of a sequence $\seq{a_n}$, but at the same time $A_1\ne A_2$.
+    Let's restate this formally:
+    \source
+        Будем доказывать от противного. 
+        Пусть $A_1$ и $A_2$ оба являются пределами последовательности $\seq{a_n}$, но при этом $A_1\ne A_2$. 
+        Запишем формально утверждения про пределы:
     \align
         \item \label eq:04:A1
             \forall &\eps_1>0\\ \exists N_1=N_1(\eps_1)\\ 
@@ -1396,14 +1422,14 @@ Not every sequence has a limit.
         \item \label eq:04:A2
             \forall &\eps_2>0\\ \exists N_2=N_2(\eps_2)\\ 
         \splitem \splonly{&} \forall n > N_2\colon |a_n - A_2|  < \eps_2.
-    Мы обсуждали (см. \ref[раздел][ssec:03:bound]), что когда есть несколько
-    утверждений с кванторами, в которых участвуют одни и те же буквы, никакой
-    связи между этими буквами за пределами соответствующих утверждений нет.
-    Так что чтобы не путаться, мы добавили немножко индексов — например,
-    $\eps_1$ для утверждения про предел $A_1$ и $\eps_2$ для утверждения про
-    предел $A_2$. Мы также ввели очень полезное обозначение $N_1(\eps_1)$ и
-    $N_2(\eps_2)$ — таким образом мы сразу понимаем, $N$ из какого определения
-    взято и для какого $\eps$ оно найдено.
+    
+    In the \ref[section][ssec:03:bound] we discussed that if there are several (distinct) propositions involving quantifiers, then there are no connections between the same letters outside the propositions.
+    So we've added some indexes to avoid any confusion: there is $\eps_1$ for $A_1$, and $\eps_2$ for $A_2$.
+    Also we've introduced a helpful notation $N_1(\eps_1)$ and $N_2(\eps_2)$: these help to understand which definition a number $N$ came from.
+    \source
+        Мы обсуждали (см. \ref[раздел][ssec:03:bound]), что когда есть несколько утверждений с кванторами, в которых участвуют одни и те же буквы, никакой связи между этими буквами за пределами соответствующих утверждений нет.
+        Так что чтобы не путаться, мы добавили немножко индексов — например, $\eps_1$ для утверждения про предел $A_1$ и $\eps_2$ для утверждения про предел $A_2$. 
+        Мы также ввели очень полезное обозначение $N_1(\eps_1)$ и $N_2(\eps_2)$ — таким образом мы сразу понимаем, $N$ из какого определения взято и для какого $\eps$ оно найдено.
 
     Впрочем, давайте вернёмся с формального уровня на интуитивный. У нас есть
     два разных числа, $A_1$ и $A_2$, и два утверждения: одно говорит, что весь
