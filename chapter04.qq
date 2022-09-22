@@ -1,30 +1,32 @@
-\chapter Limit of a sequence \label chap:04:lim-seq
+\chapter 
+    A limit of a sequence \label chap:04:lim-seq
     \source{Предел последовательности \label chap:04:lim-seq}
-\section Examples and motivation
+\section 
+    Examples and motivation
     \source{Примеры и мотивировка}
 
 In this lecture we will introduce the concept of a limit, which is perhaps the most important one of calculus.
-But human brain is not really used to think the way a limit is formulated.
-It is hard for humans to think about infinities.
-Take sequences: although having infinitely many elements, it is a natural way for a human brain to picture only a finite number of them.
-Today we're about to look closely into the "tail" of a sequence and try to describe its nature.
+But a human brain is not really used to think the way a limit is formulated.
+It is hard for us to think about infinities.
+Consider sequences: although having infinitely many elements, it's a natural way for a human to imagine only a finite number of them.
+Today we're about to look closely into the infinite "tail" of a sequence and try to describe its nature.
 \source
-В этой лекции мы введём, пожалуй, главное понятие математического анализа — понятие предела. 
-Это сложное понятие. 
-Человеческий мозг не привык работать с бесконечностями. 
-Думая про какую-то последовательность, мы как правило представляем себе лишь её первые несколько элементов. 
-Сейчас же нам предстоит вглядеться в бесконечный хвост последовательности и понять, как он устроен.
+    В этой лекции мы введём, пожалуй, главное понятие математического анализа — понятие предела. 
+    Это сложное понятие. 
+    Человеческий мозг не привык работать с бесконечностями. 
+    Думая про какую-то последовательность, мы как правило представляем себе лишь её первые несколько элементов. 
+    Сейчас же нам предстоит вглядеться в бесконечный хвост последовательности и понять, как он устроен.
 
-Consider a cequence $\seq{a_n}$. 
-You can think of it as the measurements of some parameter (say, a population of a country) in time (for example, every year).
-But in contrast to real measurements, our sequence consists of infinitely many elements, or you can say it extends as far in future as desired.
+Consider a sequence $\seq{a_n}$. 
+You can think of it as a collection of measurements in time (for example, annual data of a country's population).
+But in contrast to measurements in science, our sequence consists of infinitely many elements, or you can say it extends as far in future as desired.
 This object of "far, far future" is the one we want to explore.
 Does there exist some $A$, which will be approached by the elements of a sequence the more "time" passes?
 \source
-Пусть есть последовательность $\seq{a_n}$. 
-Можно думать про неё как про последовательность результатов измерения какого-то параметра (скажем, населения некоторой страны) в последовательные моменты времени (например, каждый год).
-Правда, в отличие от реальных результатов измерения, наша последовательность простирается бесконечно далеко в будущее, и именно это «бесконечное будущее» нас и интересует. 
-Есть ли какое-то значение $A$, к которому члены последовательности будут становиться всё ближе и ближе — так, что, со временем их будет всё сложнее и сложнее отличить от $A$?
+    Пусть есть последовательность $\seq{a_n}$. 
+    Можно думать про неё как про последовательность результатов измерения какого-то параметра (скажем, населения некоторой страны) в последовательные моменты времени (например, каждый год).
+    Правда, в отличие от реальных результатов измерения, наша последовательность простирается бесконечно далеко в будущее, и именно это «бесконечное будущее» нас и интересует. 
+    Есть ли какое-то значение $A$, к которому члены последовательности будут становиться всё ближе и ближе — так, что, со временем их будет всё сложнее и сложнее отличить от $A$?
 
 Let's consider some examples
 \source{Давайте рассмотрим несколько примеров.}
@@ -36,96 +38,102 @@ Let $a_n=\frac{1}{2^n}$.
 Firstly, let's show the first twenty elements of this sequence.
 I've written a Python code, which is displayed bellow together with its execution result. 
 The code can be minimized and un-minimized using a button with a blue arrow.
-If you don't know Python, its nothing to worry about: it will not affect the understanding.
-But if you are familiar with it, maybe you will find it interesting to conduct similar experiments yourself.
+Don't worry if you don't know Python, it will not affect the understanding.
+But if you are familiar with it, I encourage you to conduct similar experiments yourself.
 \source
-Пусть $a_n=\frac{1}{2^n}$. 
-Давайте выведем первые двадцать членов этой последовательности. 
-Я написал для этого короткий код на языке Python, который приведён ниже вместе с результатом его выполнения. Код можно скрывать и открывать, нажимая на кнопку-уголок. 
-Если вы не знаете Python,
-ничего страшного — для понимания он не понадобится. Но если знаете,
-возможно, вам будет интересно самостоятельно проводить эксперименты, похожие
-на приведенные.
+    Пусть $a_n=\frac{1}{2^n}$. 
+    Давайте выведем первые двадцать членов этой последовательности. 
+    Я написал для этого короткий код на языке Python, который приведён ниже вместе с результатом его выполнения. 
+    Код можно скрывать и открывать, нажимая на кнопку-уголок. 
+    Если вы не знаете Python, ничего страшного — для понимания он не понадобится. Но если знаете, возможно, вам будет интересно самостоятельно проводить эксперименты, похожие на приведенные.
 
 \pythoncode \showcode
     print("n	a_n")
     for n in range(1, 21):
         a_n = 1 / 2 ** n
         print(f"{n}	{a_n:0.5f}") 
-        # 0.5f means 5 digits after the decimal point will be shown 
+        # 0.5f means five digits after the decimal will be shown 
         \source{# 0.5f означает, что будут выведены 5 знаков после десятичной точки}
 
-The result tells us all elements starting from the 18th one are zeros.
-Of course, they cannot be identically zeroes: every element of the sequence is positive.
+This shows us that all elements starting from the 18th one are zeros.
+Of course, they cannot be identically zeros since every element of the sequence is positive.
 (An equation  $1/x=0$ does not have a solution. 
 Because if it did, the solution $x$ would satisfy $0\cdot x = 1$, but the product of any number and zero is zero, which is a contradiction).
-The reason why some numbers above are zero is because the first nonzero term is after the 5th decimal place, or in other words they are less than $0{,}00001$.
+The reason why some numbers above appear as zeros is because their first nonzero term comes after the 5th decimal place (in other words they are less than $0{,}00001$).
 \source
-Из результатов видно, что начиная с 18-го члена получаются нули. 
-Конечно, мы понимаем, что это не настоящие нули — ни один член этой последовательности на самом деле не равен нулю. 
-(Если вы делите положительное число на что угодно, никак нельзя получить ноль — уравнение $1/x=0$ не имеет решения, потому что в противном случае $1$ окажется равным $0\cdot x$, а этого не может быть, потому что умножение чего угодно на $0$ даёт $0$.) 
-Однако, мы вывели только 5 знаков после десятичной запятой (точки), поэтому все числа, меньшие $0{,}00001$, отображаются как нули.
+    Из результатов видно, что начиная с 18-го члена получаются нули. 
+    Конечно, мы понимаем, что это не настоящие нули — ни один член этой последовательности на самом деле не равен нулю. 
+    (Если вы делите положительное число на что угодно, никак нельзя получить ноль — уравнение $1/x=0$ не имеет решения, потому что в противном случае $1$ окажется равным $0\cdot x$, а этого не может быть, потому что умножение чего угодно на $0$ даёт $0$.) 
+    Однако, мы вывели только 5 знаков после десятичной запятой (точки), поэтому все числа, меньшие $0{,}00001$, отображаются как нули.
 
-Let's increase the precision then!
-We will try six decimal places.
+Let's increase the precision!
+Now we try six decimal places.
 \source
-Но ведь можно увеличить точность! 
-Давайте отображать шесть цифр после запятой!
+    Но ведь можно увеличить точность! 
+    Давайте отображать шесть цифр после запятой!
 
 \pythoncode \showcode \collapsed
     print("n	a_n")
     for n in range(1, 21):
         a_n = 1 / 2 ** n
         print(f"{n}	{a_n:0.6f}") 
+        # 0.6f means six digits after the decimal will be shown
         \source{# 0.6f означает, что будут выведены 6 знаков после десятичной точки}
-        
+
+We see that the first twenty terms are nonzero.
+But the sequence doesn't stop there!
+Let's show more elements.
 \source
-Теперь первые 20 членов последовательности отчётливо ненулевые. Но последовательность на этом не заканчивается — давайте выведем ещё несколько членов.
+    Теперь первые 20 членов последовательности отчётливо ненулевые. 
+    Но последовательность на этом не заканчивается — давайте выведем ещё несколько членов.
 
 \pythoncode \showcode \collapsed
     print("n	a_n")
     for n in range(20, 25):
         a_n = 1 / 2 ** n
         print(f"{n}	{a_n:0.6f}") 
-        # 0.6f means 6 digits after the decimal point will be shown 
+        # 0.6f means 6 digits after the decimal will be shown 
         \source{# 0.6f означает, что будут выведены 6 знаков после десятичной точки}
 
 Zeros again.
-Seven terms after a decimal!
-Опять нули! 
-Давайте ещё увеличим точность! Семь знаков после запятой!
+Let's increase the precision to seven terms after the decimal!
+\source
+    Опять нули! 
+    Давайте ещё увеличим точность! 
+    Семь знаков после запятой!
 \pythoncode \showcode \collapsed
     print("n	a_n")
     for n in range(20, 25):
         a_n = 1 / 2 ** n
         print(f"{n}	{a_n:0.7f}")
-        # 0.7f means 7 digits after the decimal point will be shown 
+        # 0.7f means 7 digits after the decimal will be shown 
         \source{# 0.7f означает, что будут выведены 6 знаков после десятичной точки}
 
-Seems like first 24 terms are nonzero, what about the later ones?
+We see that the first 24 terms are nonzero, and what about the later ones?
 \source{До 24-го члена значения ненулевые, а после?}
 \pythoncode \showcode \collapsed
     print("n	a_n")
     for n in range(24, 30):
         a_n = 1 / 2 ** n
         print(f"{n}	{a_n:0.7f}") 
-        # 0.7f means 7 digits after the decimal point will be shown 
+        # 0.7f means 7 digits after the decimal will be shown 
         \source{# 0.7f означает, что будут выведены 6 знаков после десятичной точки}
 
 Seems like it's inevitable for zeros to occur no matter the precision.
 \source
-Похоже, дело безнадёжно. 
-Какую бы точность отображения мы ни выбирали, начиная с некоторого момента последовательность будет выглядеть, как будто состоит из сплошных нулей!
+    Похоже, дело безнадёжно. 
+    Какую бы точность отображения мы ни выбирали, начиная с некоторого момента последовательность будет выглядеть, как будто состоит из сплошных нулей!
 
-This is precisely what it means for a sequence to \emph{approach zero}.
+And this is precisely what it means for a sequence to \emph{approach zero}.
 \source{Это и означает, что она \emph{стремится к нулю}.}
 
-\subsection Sequence $\frac{n+1}{n}$
+\subsection 
+    A sequence $\frac{n+1}{n}$
     \source{Последовательность $\frac{n+1}{n}$}
 
 Now let $a_n=\frac{n+1}{n}$.
 \source{Пусть теперь $a_n=\frac{n+1}{n}$. 
-Let's show some elements of it.
+Firstly, let's show some elements of it.
 Тоже можно вывести первые несколько значений.}
 \pythoncode \showcode \collapsed
     print("n	a_n")
@@ -133,15 +141,15 @@ Let's show some elements of it.
         a_n = (n + 1) / n
         print(f"{n}	{a_n:0.5f}")
 
-The result is not so obvious as above.
+The conclusion is not as straightforward as above.
 Let's plot this sequence.
-On the horizontal axis we put the number of an element, and on the vertical its value.
-In contrast to a graph of a function, ours consists of individual points that correspond to natural numbers, see \ref[pic.][fig:04:n/n+1]
+On the horizontal axis we put an index of an element, and on the vertical its value.
+In contrast to a graph of a function, this type consists of individual points that correspond to natural numbers, see \ref[fig.][fig:04:n/n+1]
 \source
-Здесь эффект не столь очевиден. 
-Давайте построим график. 
-По горизонтальной оси будем откладывать $n$, по вертикальной — $a_n$. 
-В отличие от обычного графика функции, он будет состоять из отдельных точек, соответствующих натуральным значениям $n$, см. \ref[рис.][fig:04:n/n+1].
+    Здесь эффект не столь очевиден. 
+    Давайте построим график. 
+    По горизонтальной оси будем откладывать $n$, по вертикальной — $a_n$. 
+    В отличие от обычного графика функции, он будет состоять из отдельных точек, соответствующих натуральным значениям $n$, см. \ref[рис.][fig:04:n/n+1].
 
 \figure \showcode \collapsed
     \pythonfigure
@@ -155,15 +163,16 @@ In contrast to a graph of a function, ours consists of individual points that co
         ob.settle_axes(xmin=-0.9, xmax=nmax + 1, ymin=-0.4, ymax=2.9, 
                        xlabel="n", ylabel="y") 
 
-    \caption A graph of $y=a_n$.
+    \caption 
+        A graph of $y=a_n$.
         \source{График $y=a_n$.}
     \label fig:04:n/n+1
 
 The graph seems to tell us that elements approach a horizontal line $y=1$.
 Let's plot it for clarity. 
 \source
-По графику можно угадать, что точки, вероятно, приближаются к прямой $y=1$, то есть элементы последовательности стремятся к $1$.
-Для большей наглядности можно нарисовать эту прямую (\ref[рис.][fig:04:n/n+1-and-1]).
+    По графику можно угадать, что точки, вероятно, приближаются к прямой $y=1$, то есть элементы последовательности стремятся к $1$.
+    Для большей наглядности можно нарисовать эту прямую (\ref[рис.][fig:04:n/n+1-and-1]).
 
 \figure \showcode \collapsed
     \pythonfigure
@@ -181,16 +190,17 @@ Let's plot it for clarity.
         ob.settle_axes(xmin=-0.9, xmax=nmax + 1, ymin=-0.4, ymax=2.9, 
                        xlabel="n", ylabel="y") 
 
-    \caption A graph of $y=a_n$ and a line $y=1$.
+    \caption 
+        A graph of $y=a_n$ and a line $y=1$.
         \source{График $y=a_n$ и прямая $y=1$.}
     \label fig:04:n/n+1-and-1
 
-Although the value of a limit is visually apparent, there is still a gap between the points and the line, but what if we take consider more elements?
+Although the value of a limit is visually apparent, there is still a gap between the points and the line, but what if we show more elements?
 See \ref[fig.][fig:04:n/n+1-and-1-large].
 \source
-Хотя тенденция вроде бы налицо, нетрудно видеть, что между точками $y=a_n$ и прямой $y=1$ есть некоторый зазор. 
-Но что если взять побольше точек? 
-См. \ref[рис.][fig:04:n/n+1-and-1-large].
+    Хотя тенденция вроде бы налицо, нетрудно видеть, что между точками $y=a_n$ и прямой $y=1$ есть некоторый зазор. 
+    Но что если взять побольше точек? 
+    См. \ref[рис.][fig:04:n/n+1-and-1-large].
 
 \figure \showcode \collapsed
     \pythonfigure
@@ -208,15 +218,16 @@ See \ref[fig.][fig:04:n/n+1-and-1-large].
         ob.settle_axes(xmin=-0.9, xmax=nmax + 1, ymin=-0.4, ymax=2.9, 
                        xlabel="n", ylabel="y") 
 
-    \caption A graph of $y=a_n$ and a line $y=1$ (more elements).
+    \caption 
+        A graph of $y=a_n$ and a line $y=1$ (more elements).
         \source{График $y=a_n$: взяли побольше точек.}
     \label fig:04:n/n+1-and-1-large
 
 Clearly, the gap shrinked, and for some (large) values of $n$ we can't even see it.
-Let's scale the y-axis take a closer look (see \ref[fig.][fig:04:n/n+1-and-1-yscale]). 
+Let's scale the y-axis to take a closer look (see \ref[fig.][fig:04:n/n+1-and-1-yscale]). 
 \source
-Видно, что зазор стал меньше и для больших значений $n$ вообще непонятно, есть он или нет. 
-Но если изменить масштаб вертикальной оси, станет видно, что он всё-таки есть (\ref[рис.][fig:04:n/n+1-and-1-yscale]).
+    Видно, что зазор стал меньше и для больших значений $n$ вообще непонятно, есть он или нет. 
+    Но если изменить масштаб вертикальной оси, станет видно, что он всё-таки есть (\ref[рис.][fig:04:n/n+1-and-1-yscale]).
 
 \figure \showcode \collapsed
     \pythonfigure
@@ -234,13 +245,13 @@ Let's scale the y-axis take a closer look (see \ref[fig.][fig:04:n/n+1-and-1-ysc
         ob.settle_axes(xmin=-0.9, xmax=nmax + 1, ymin=0, ymax=1.11, 
                        xlabel="n", ylabel="y") 
 
-    \caption A graph of $y=a_n$ and a line $y=1$ (more points, y-axis scaled).
+    \caption 
+        A graph of $y=a_n$ and a line $y=1$ (more points, y-axis scaled).
         \source{График $y=a_n$: увеличили масштаб вертикальной оси}
     \label fig:04:n/n+1-and-1-yscale
 
 Now we try to add more points (see \ref[fig.][fig:04:n/n+1-and-1-even-more]).
-\source
-Но теперь можно добавить ещё больше точек (\ref[рис.][fig:04:n/n+1-and-1-even-more])!
+\source{Но теперь можно добавить ещё больше точек (\ref[рис.][fig:04:n/n+1-and-1-even-more])!}
 
 \figure \showcode \collapsed
     \pythonfigure
@@ -258,9 +269,9 @@ Now we try to add more points (see \ref[fig.][fig:04:n/n+1-and-1-even-more]).
         ob.settle_axes(xmin=-0.9, xmax=nmax + 1, ymin=0, ymax=1.11, 
                        xlabel="n", ylabel="y") 
 
-    \caption A graph of $y=a_n$ and a line $y=1$ (y-axis scaled, even more points).
-        \source{График $y=a_n$: увеличили масштаб вертикальной оси, а потом взяли
-        ещё больше точек}
+    \caption 
+        A graph of $y=a_n$ and a line $y=1$ (y-axis scaled, even more points).
+        \source{График $y=a_n$: увеличили масштаб вертикальной оси, а потом взяли ещё больше точек}
     \label fig:04:n/n+1-and-1-even-more
 
 Again the gap is barely distinguishable!
@@ -269,23 +280,23 @@ Again the gap is barely distinguishable!
 We can go on forever at this point.
 Scaling the y-axis (to see more closely) and finding a gap, then increasing precision and again scaling the axis, and so on.
 \source
-Так можно продолжать до бесконечности. 
-Увеличивать масштаб вертикальной оси (и следовательно нашу способность различать близкие точки) — находить зазор — увеличивать количество точек — делать зазор неразличимым.
+    Так можно продолжать до бесконечности. 
+    Увеличивать масштаб вертикальной оси (и следовательно нашу способность различать близкие точки) — находить зазор — увеличивать количество точек — делать зазор неразличимым.
 
 It feels safe to conclude that our sequence approach $1$.
-In fact, it's not that surprising if we do some algebraic manipulations with its general term.
+In fact, it will become more apparent if we do some algebraic manipulations with its general term.
 \eq
     a_n=\frac{n+1}{n}=1 + \frac{1}{n}
 The term $\frac{1}{n}$ gets very close to zero as $n$ gets bigger, so the whole sum gets closer and closer to $1$.
 This is well illustrated on a plot.
 \source
-В общем, можно предположить, что наша последовательность стремится к числу 1. 
-В принципе, это неудивительно. 
-Можно преобразовать формулу для общего члена последовательности:
-\eq
-    a_n=\frac{n+1}{n}=1 + \frac{1}{n}
-Когда $n$ становится очень большим, $\frac{1}{n}$ становится очень маленьким, поэтому вся сумма становится очень близкой к 1. 
-Что мы и видим на графике.
+    В общем, можно предположить, что наша последовательность стремится к числу 1. 
+    В принципе, это неудивительно. 
+    Можно преобразовать формулу для общего члена последовательности:
+    \eq
+        a_n=\frac{n+1}{n}=1 + \frac{1}{n}
+    Когда $n$ становится очень большим, $\frac{1}{n}$ становится очень маленьким, поэтому вся сумма становится очень близкой к 1. 
+    Что мы и видим на графике.
 
 \comment
     \subsection Постоянная последовательность
@@ -307,24 +318,24 @@ This is well illustrated on a plot.
     больших значений $n$. Если они были близки и для маленьких значений $n$ — тем
     лучше.
 
-\subsection "Jumping" sequence
+\subsection 
+    "Jumping" sequence
     \source{«Скачущая» последовательность}
 
-After constructing the reasoning above, you can be tempted to think about limits in the following way: "a sequence $\seq{a_n}$ approaches a number $a$ if the gap between the element and $a$ is smaller and smaller the bigger $n$ gets"
-\source
-При рассмотрении предыдущих примеров, у вас могло возникнуть искушение дать такое определение: «последовательность $\seq{a_n}$ стремится к какому-то числу $a$, если её члены с ростом $n$ становятся всё ближе и ближе к $a$: каждый следующий член ближе, чем предыдущий».
+After constructing the reasoning above, you may be tempted to think about limits in the following way: "a sequence $\seq{a_n}$ approaches a number $a$ if the gap between the element and $a$ is smaller and smaller as $n$ gets bigger"
+\source{При рассмотрении предыдущих примеров, у вас могло возникнуть искушение дать такое определение: «последовательность $\seq{a_n}$ стремится к какому-то числу $a$, если её члены с ростом $n$ становятся всё ближе и ближе к $a$: каждый следующий член ближе, чем предыдущий».}
 
-In fact, this definition can be broken in some ways we didn't account for.
-For example, there are many numbers for which the gap between a sequence $\frac{n+1}{n}$ and that number gets smaller and smaller.
-The one we've talked about is $1$, but $0$ also qualifies, although it most sertainly cannot be a limit of our sequence. 
+It turns out this definition can be broken in some ways we didn't account for.
+For example, there are \emph{many} numbers for which the distance to a sequence $\frac{n+1}{n}$ decreases.
+The one we've talked about is $1$, but $0$ also has the property above. 
+Most sertainly it cannot be a limit of our sequence. 
 \source
-Более внимательный анализ показывает, что это определение неверно. 
-Например, последовательность $\frac{n+1}{n}$, которую мы только что рассматривали, «становится всё ближе и ближе» не только к $1$, но и, например, к $0$ — причём каждый следующий член ближе, чем предыдущий. 
-Тем не менее, нельзя сказать, что она стремится к $0$.
+    Более внимательный анализ показывает, что это определение неверно. 
+    Например, последовательность $\frac{n+1}{n}$, которую мы только что рассматривали, «становится всё ближе и ближе» не только к $1$, но и, например, к $0$ — причём каждый следующий член ближе, чем предыдущий. 
+    Тем не менее, нельзя сказать, что она стремится к $0$.
 
-Also, it turns out is't unnecessary to demand that the gap always gets smaller as $n$ increases.
-\source
-Более того, требование «каждый следующий член ближе, чем предыдущий», оказывается излишним.
+Also, it turns out is't unnecessary to demand that the every next term must be closer to the limit.
+\source{Более того, требование «каждый следующий член ближе, чем предыдущий», оказывается излишним.}
 
 Let's consider the following sequence
 \source{Давайте рассмотрим такую последовательность:}
@@ -333,7 +344,7 @@ Let's consider the following sequence
         \frac{n+1}{n},&n\text{ — нечётное}; \\\\
         \frac{n+3}{n},&n\text{ — чётное}.
     \end{cases}
-Its first five terms are listed bellow:
+Its first five terms are shown bellow:
 \source{Её первые члены выглядят следующим образом:}
 \eq
     2,\\ \frac{5}{2},\\ \frac{4}{3},\\ \frac{7}{4},\\ \frac{6}{5},\ldots
@@ -363,14 +374,14 @@ It's clear that elements with even numbers are closer to $1$ than odd-numbered e
 
     \caption
         The sequence oscillates around $1$, but approach it nevertheless. 
-        Points are connected just for visually better illustration. 
+        (Points are connected for visually better illustration). 
         (Elemnents are not defines for indexes that are not natural numbers).
         \source
-        Последовательность приближается и отдаляется от 1, но всё равно к ней стремится. 
-        Точки соединены пунктирной линией исключительно для наглядности: значения последовательности для нецелых $n$ не определено.
+            Последовательность приближается и отдаляется от 1, но всё равно к ней стремится. 
+            Точки соединены пунктирной линией исключительно для наглядности: значения последовательности для нецелых $n$ не определено.
     \label fig:04:up-and-down
 
-Hovewer, based on a \ref[fig.][fig:04:up-and-down-more], it's reasonable to claim that the limit is $1$ (as $n$ passes, the elements and the limit become more and more indistinguishable from each other).
+Hovewer, based on the graph on \ref[fig.][fig:04:up-and-down-more], it's reasonable to claim that the limit is $1$ (as $n$ passes, the elements and the limit become more and more indistinguishable from each other).
 \source
 Тем не менее, судя по графику на \ref[рис.][fig:04:up-and-down-more], можно предположить, что, несмотря на скачки, последовательность всё-таки стремится к числу $1$: с течением времени (то есть с ростом $n$) её элементы становятся настолько близки к единице, что их трудно от неё отличить. 
 
@@ -390,20 +401,22 @@ Hovewer, based on a \ref[fig.][fig:04:up-and-down-more], it's reasonable to clai
         ob.settle_axes(xmin=-0.9, xmax=nmax + 1, ymin=0, ymax=3.11, 
                        xlabel="n", ylabel="y") 
 
-    \caption A sequence oscillates aroung $1% but approach it nevertheless. 
+    \caption A sequence oscillates aroung $1$ but approach it nevertheless. 
         \source{Последовательность приближается и отдаляется от 1, но всё равно к ней стремится.}
     \label fig:04:up-and-down-more
 
-\subsection Sequences that doesn't have a limit
+\subsection 
+    Sequences that doesn't have a limit
     \source{Последовательности без предела}
 
-In the examples above, the sequences approached some number.
-Let's construct some sequences that doesn't have a limit.
+In the examples above we've shown an example of what it's like for a sequence to approach some number.
+Now let's take a look at sequences that doesn't have a limit.
 \source
 Последовательности, рассмотренные выше, стремились к какому-то числу. 
 Приведём несколько примеров последовательностей, у которых предела нет.
 
-\example Consider a sequence $a_n=n^2$ 
+\example 
+    Consider a sequence $a_n=n^2$ 
     \source{Последовательность $a_n=n^2$:}
     \eq
         1,\\ 4,\\ 9,\\ 16,\ldots
@@ -415,11 +428,12 @@ Let's construct some sequences that doesn't have a limit.
     \source{Последовательность}
     \equation \label eq:04:flip
         a_n=(-1)^n+\frac{1}{n}.
-    The firts term can equal $1$ or $-1$ depending on the parity of $n$.
+    The firts term equals $1$ or $-1$ depending on the parity of $n$.
     Its graph is shown in \ref[fig.][fig:04:here-and-there].
-    \source{В зависимости от чётности $n$, первое слагаемое оказывается равно $1$ или $-1$. 
-    Посмотрим, как выглядит график этой последовательности (\ref[рис.][fig:04:here-and-there]).}
-
+    \source
+        В зависимости от чётности $n$, первое слагаемое оказывается равно $1$ или $-1$. 
+        Посмотрим, как выглядит график этой последовательности (\ref[рис.][fig:04:here-and-there]).
+    
     \figure \showcode \collapsed
         \pythonfigure
             nmax = 20 
@@ -437,7 +451,8 @@ Let's construct some sequences that doesn't have a limit.
             ob.settle_axes(xmin=-0.9, xmax=nmax + 1, ymin=-1.9, ymax=1.9, 
                            xlabel="n", ylabel="y") 
 
-        \caption A sequence is "jumping" between two point
+        \caption 
+            A sequence is "jumping" between two points.
             \source{Последовательность скачет между двумя точками.}
         \label fig:04:here-and-there
     It appears clear that there is no such number that is close enough to all elements as $n$ increases.
@@ -694,14 +709,14 @@ By saying that a tail is $\eps$-closed to $A$ we mean that after some value of $
     \quiz
         \choice
             $\eps=0{,}5$
-            \comment No, since for any (arbitrarily large) number $n$ we will find an element with larger value for which the distance to $1$ is bigger than $0{,}5$.
-                (Indeed, any odd $n$ will go).
+            \comment No, since for any (arbitrarily large) index $n$ we will find an element with a larger index for which the distance to $1$ is bigger than $0{,}5$.
+                (Indeed, any odd $n$ is valid).
                 \source
                 Нет, у последовательности есть члены со сколь угодно большими номерами, лежащие на расстоянии больше $0{,}5$ от $1$ — например, все члены с нечётными номерами.
         \choice
             $\eps=1{,}5$
             \comment No, since for any (arbitrarily large) number $n$ we will find an element with larger value for which the distance to $1$ is bigger than $1{,}5$.
-                (Indeed, any odd $n>2$ will go since the distance between $a_1=0$ and $1$ is less than $1{,}5$).
+                (Indeed, any odd $n>2$ is valid since the distance between $a_1=0$ and $1$ is less than $1{,}5$).
                 \source
                 Нет, у последовательности есть члены со сколь угодно большими номерами, лежащие на расстоянии больше $1{,}5$ от $1$ — например, все члены с нечётными номерами, большими $2$ (хотя $a_1=0$ находится на расстоянии $1$ от числа $1$).
         \choice \correct
