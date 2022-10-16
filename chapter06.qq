@@ -1,19 +1,31 @@
-\chapter Ещё о свойствах пределов \label chap:06:more-lim-properties
-\section Предел частного
-Мы бы хотели сформулировать и доказать теорему о пределе частного, аналогичную
-уже доказанным теоремам о пределах суммы и произведения. Но для этого нам
-понадобится несколько новых понятий, имеющих и самостоятельную ценность.
-\subsection Понятие отделенности последовательности от числа
-\snippet \flabel отделена  \label snip:bounded-away
+\chapter 
+    More about the properties of a limit \label chap:06:more-lim-properties
+    \source{Ещё о свойствах пределов \label chap:06:more-lim-properties}
+\section 
+    The limit of a fraction
+    \source{Предел частного}
+We are going to state and prove a theorem about the limit of a function that is the ratio of two other functions.
+It will be similar to the theorems about the limit of a sum and a product, but first we need to introduce some new concepts valuable on their own.
+\source
+    Мы бы хотели сформулировать и доказать теорему о пределе частного, аналогичную уже доказанным теоремам о пределах суммы и произведения. 
+    Но для этого нам понадобится несколько новых понятий, имеющих и самостоятельную ценность.
+\subsection 
+    The sequence is bounded away from a number
+    \source{Понятие отделенности последовательности от числа}
+\snippet \flabel bounded away \source{отделена}  \label snip:bounded-away
     \definition \label def:06:bounded-away
-        Последовательность $\seq{a_n}$ называется \emph{отделённой от} числа $a$,
-        если найдётся такое $c>0$, что все элементы последовательности
-        находятся на расстоянии хотя бы $c$ от $a$. Формально:
+        A sequence $\seq{a_n}$ is called \emph{bounded away} from $a$ if there exists such $c>0$ that a distance between every element and $a$ is at least $c$.
+        Formally,
+        \source
+            Последовательность $\seq{a_n}$ называется \emph{отделённой от} числа $a$, если найдётся такое $c>0$, что все элементы последовательности находятся на расстоянии хотя бы $c$ от $a$. 
+            Формально:
         \eq
             \exists c>0\\ \forall n \in \mathbb N\colon |a_n - a| \ge c.
-        Иногда полезно использовать формулировку «последовательность отделена от $a$
-        начиная с члена под номером $N$». Это означает, что условие $|a_n-a|\ge
-        c$ выполняется не для всех натуральных $n$, а только для $n\ge N$.
+        It is often useful to state that "the sequence is bounded away from $a$ starting from the $N$-th element".
+        This means that the condition $|a_n-a|\ge c$ is satisfied not for every natural $n$, but only for $n\ge N$.
+        \source
+            Иногда полезно использовать формулировку «последовательность отделена от $a$ начиная с члена под номером $N$». 
+            Это означает, что условие $|a_n-a|\ge c$ выполняется не для всех натуральных $n$, а только для $n\ge N$.
 \figure
     \img
         \src
@@ -25,72 +37,90 @@
             $y=a+c$, $y=a-c$. Ни одной точки последовательности нет между
             прямыми $y=a+c$ и $y=a-c$.
     \caption
-        Иллюстрация к понятию \ref[отделенности от числа\nonumber][def:06:bounded-away].
+        An illustration to the concept of \ref[a sequence bounded away from a number\nonumber][def:06:bounded-away].}
+        \source{Иллюстрация к понятию \ref[отделенности от числа\nonumber][def:06:bounded-away].}
     \label fig:06:bounded-away
 
-\example Последовательность $\seq{1/n}$ отделена от $-1$, но не отделена от $0$,
-    несмотря на то, что все её члены строго больше $0$. Последовательность
-    $\seq{(-1)^n+1/n}$ не отделена от $1$ и $-1$, но отделена от $0$ начиная со
-    второго члена.
+\example 
+    A sequence $\seq{1/n}$ is bounded away from $-1$ but not bounded away from $0$, although each element of it is strictly bigger than $0$.
+    A sequence $\seq{(-1)^n+1/n}$ is not bounded away from $1$ and $-1$ but is bounded away from $0$ starting from the second element.
+    \source
+        Последовательность $\seq{1/n}$ отделена от $-1$, но не отделена от $0$, несмотря на то, что все её члены строго больше $0$. 
+        Последовательность $\seq{(-1)^n+1/n}$ не отделена от $1$ и $-1$, но отделена от $0$ начиная со второго члена.
 \question
-    Для последовательности $\seq{a_n}$ определим последовательность $\seq{b_n}$
-    следующим образом:
+    Let's construct a sequence $\seq{b_n}$ out of some sequence $\seq{a_n}$ in the following way:
+    \source{Для последовательности $\seq{a_n}$ определим последовательность $\seq{b_n}$ следующим образом:}
     \eq
         b_n = a_{n+1}-a_n.
     \enumerate
         \item
-            Пусть для всех натуральных $n$ верно $b_n>0$. Следует ли из этого, что $a_n \to
-            +\infty$?
+            Suppose $b_n>0$ is true for all natural $n$.
+            Does it imply that $a_n \to +\infty$?
+            \source
+                Пусть для всех натуральных $n$ верно $b_n>0$. 
+                Следует ли из этого, что $a_n \to +\infty$?
             \quiz
                 \choice
-                    Да.
+                    Yes.
+                    \source{Да.}
                     \comment
+                        Wrong. 
+                        Consider a sequence $b_n=\frac{1}{2^n}$.
                         Рассмотрите последовательность $b_n=\frac{1}{2^n}$.
                 \choice \correct
-                    Нет. 
+                    No.
+                    \source{Нет.} 
                     \comment
-                        Например, если $b_n = \frac{1}{2^n}$, $a_1=0$,
-                        $a_n=0+\frac{1}{2}+\frac{1}{4}+\ldots+\frac{1}{2^{n-1}} <
-                        1$.
+                        Yes!
+                        Take $b_n = \frac{1}{2^n}$, $a_1=0$, $a_n=0+\frac{1}{2}+\frac{1}{4}+\ldots+\frac{1}{2^{n-1}} < 1$.
+                        Например, если $b_n = \frac{1}{2^n}$, $a_1=0$, $a_n=0+\frac{1}{2}+\frac{1}{4}+\ldots+\frac{1}{2^{n-1}} < 1$.
         \item
-            Пусть существует такое $c>0$, что для всех натуральных $n$,
-            $b_n\ge c>0$. Следует ли из этого, что $a_n \to +\infty$?
+            Suppose there exists such $c>0$ that for all natural $n$, $b_n\ge c>0$.
+            Does this imply that $a_n \to +\infty$?
+            \source
+                Пусть существует такое $c>0$, что для всех натуральных $n$, $b_n\ge c>0$. 
+                Следует ли из этого, что $a_n \to +\infty$?
             \quiz
                 \choice \correct
-                    Да.
+                    Yes.
+                    \source{Да}.
                     \comment 
-                        Действительно, если все $b_n \ge c$, то $a_n = a_1 + b_1 +
-                        \ldots + b_{n-1} \ge a_1 + c + c + \ldots + c = a_1 +
-                        (n-1)c \to +\infty$, т.к. $c>0$.
-                \choice \correct
-                    Нет.
+                        Indeed, if all $b_n \ge c$, then $a_n = a_1 + b_1 + \ldots + b_{n-1} \ge a_1 + c + c + \ldots + c = a_1 + (n-1)c \to +\infty$ since $c>0$.
+                        Действительно, если все $b_n \ge c$, то $a_n = a_1 + b_1 + \ldots + b_{n-1} \ge a_1 + c + c + \ldots + c = a_1 + (n-1)c \to +\infty$, т.к. $c>0$.
+                \choice \correct НАВЕРНОЕ НАДО УБРАТЬ \КОРРЕКТ
+                    No.
+                    \source{Нет.}
                     \comment
-                        Если вам удалось построить контрпример, пришлите его мне,
-                        пожалуйста.
-    Это упражнение показывает практическую разницу между утверждениями вида «все
-    элементы больше нуля» ($b_n > 0$) и «последовательность отделена от нуля»
-    ($b_n \ge c > 0$).
+                        If you managed to come up with a counterexample, send it to me please.
+                        \source{Если вам удалось построить контрпример, пришлите его мне, пожалуйста.}
+    This exercise shows the difference between propositions "all elements are bigger than zero " ($b_n > 0$) and "the sequence is bounded away from zero" ($b_n \ge c > 0$).
+    \source{Это упражнение показывает практическую разницу между утверждениями вида «все элементы больше нуля» ($b_n > 0$) и «последовательность отделена от нуля» ($b_n \ge c > 0$).}
 \exercise \label exer:06:bounded-vs-lim
-    Докажите, что если последовательность отеделена от числа $b$, то она не
-    может стремиться к $b$. (Подсказка: возьмите $\eps$ в определении предела
-    равным $c$ в определении отделенности и придите к противоречию.)
+    Prove that if a seqeunce is bounded away from $b$, then it cannot approach $b$.
+    (Hint: take $\eps$ to be equal to $c$ and encounter a contradiction).
+    \source
+        Докажите, что если последовательность отеделена от числа $b$, то она не может стремиться к $b$. 
+        (Подсказка: возьмите $\eps$ в определении предела равным $c$ в определении отделенности и придите к противоречию.)
 \proposition \label prop:06:lim-bound-away
-    Пусть есть два различных вещественных числа $a$ и $A$, $A\ne a$. Если
-    последовательность $\seq{a_n}$ стремится к $A$ и ни один член
-    последовательности не равен $a$, то $\seq{a_n}$ отделена от $a$.
+    Consider two distinct real numbers $a$ and $A$, $A\ne a$.
+    If a sequence $\seq{a_n}$ approaches $A$ and there are no elements equal to $a$, then $\seq{a_n}$ is bounded away from $a$.
+    \source
+        Пусть есть два различных вещественных числа $a$ и $A$, $A\ne a$. 
+        Если последовательность $\seq{a_n}$ стремится к $A$ и ни один член последовательности не равен $a$, то $\seq{a_n}$ отделена от $a$.
 \proof
-    Как обычно, начнём с формализации и картинки, см.
-    \ref[рис.][fig:06:lim-bound-away-tail].
-
-    \paragraph{Нам известно} Предел последовательности равен $A$ и ни один член
-    не равен $a$.
+    It is always helpful to start with an illustration, see \ref[pic.][fig:06:lim-bound-away-tail].
+    \source{Как обычно, начнём с формализации и картинки, см. \ref[рис.][fig:06:lim-bound-away-tail].}
+    
+    \paragraph{We know} That the limit is $A$ and no element is equal to $a$.
+    \source{\paragraph{Нам известно} Предел последовательности равен $A$ и ни один член не равен $a$.}
     \align
         \item 
             \forall  \eps & > 0\\ \exists N=N(\eps)\\ 
         \splitem  \splonly{&} \forall n > N  \colon |a_n - A| < \eps.
         \item
             \forall  n & \in \mathbb N \colon a_n \ne a.
-    \paragraph{Нужно доказать} Последовательность отделена от $a$.
+    \paragraph{Want to show} That the sequence is bounded away from $a$.
+    \source{\paragraph{Нужно доказать} Последовательность отделена от $a$.}
     \eq
         \exists c > 0\\ \forall n \in \mathbb N\colon |a_n - a| \ge c.
     
@@ -108,39 +138,49 @@
         \style
             \padding 1em;
         \caption
-            Иллюстрация к \ref[утверждению][prop:06:lim-bound-away]: элементы в
-            хвосте последовательности не могут быть близки к $a$, потому что они
-            близки к $A$ и $A\ne a$.
+            An illustration to a \ref[proposition][prop:06:lim-bound-away]: elements in the tail of a sequence cannot be close to $a$ since they are close to $A$ and $A\ne a$.
+            \source{Иллюстрация к \ref[утверждению][prop:06:lim-bound-away]: элементы в хвосте последовательности не могут быть близки к $a$, потому что они близки к $A$ и $A\ne a$.}
         \label fig:06:lim-bound-away-tail
-    Положим $\eps=|A-a|/2$. Получим $N=N(\eps)$. Тогда для всех $n>N$:
+    Take $\eps=|A-a|/2$ which correspond to $N=N(\eps)$ such that for any $n>N$:
+    \source
+        Положим $\eps=|A-a|/2$. 
+        Получим $N=N(\eps)$. 
+        Тогда для всех $n>N$:
     \eq
-        |a_n - A| < \eps.
-    воспользуемся неравенством треугольника (кажется, главный секрет этой науки
-    в том, чтобы написать неравенство треугольника в правильную сторону). Мы
-    хотим получить оценку снизу на $|a_n - a|$ (сказать, что оно больше
-    чего-то), то есть в неравенстве $|x-y| \leq |x-z|+|z-y|$ это расстояние должно
-    стоять справа. Попробуем так: расстояние от $a$ до $A$ не превосходит суммы
-    расстояний от $a$ до $a_n$ и от $a_n$ до $A$.
+        |a_n - A| < \eps.  
+    Let's try to apply the triangle inequality (it seems to me that the greatest secret of this subject is the correct use of the triangle inequality) and get the lower bound on  $|a_n - a|$.
+    To do so we must state that is is bigger than something, which ensures it must be on the right hand side of the triangle inequality $|x-y| \leq |x-z|+|z-y|$.
+    An another term is needed, so let's try "the distance between $a$ and $A$ does not exceed the sum of the distances from $a$ to $a_n$ and from $a_n$ to $A$".
+    \source
+        воспользуемся неравенством треугольника (кажется, главный секрет этой науки в том, чтобы написать неравенство треугольника в правильную сторону). 
+        Мы хотим получить оценку снизу на $|a_n - a|$ (сказать, что оно больше чего-то), то есть в неравенстве $|x-y| \leq |x-z|+|z-y|$ это расстояние должно стоять справа. 
+        Попробуем так: расстояние от $a$ до $A$ не превосходит суммы расстояний от $a$ до $a_n$ и от $a_n$ до $A$.
     \eq
         |A - a| \le |a_n - a| + |A - a_n|  <  |a_n - a| + \eps.
-    Перенесём $\eps$ в левую часть, подставим его значение и перевернём
-    неравенство:
+    Or equivalently,
+    \source{Перенесём $\eps$ в левую часть, подставим его значение и перевернём неравенство:}
     \align 
         \item \label eq:06:bounds
             \splonly{&} |a_n - a| > |A - a| - \eps =
         \splitem \splonly{&=} 
             |A-a| - \frac{|A-a|}{2} =
         \splitem \splonly{& =} \frac{|A-a|}{2}.
-    Ура, получилась оценка сверху, которую мы хотели. Отсюда видно, что хвост
-    последовательности (все члены, начиная с члена с номером $N+1$)
-    отделён от $a$.  Что насчёт начальной части последовательности?
-
-    Воспользуемся тем же приёмом, что и в доказательстве ограниченности
-    сходящейся последовательности: выберем среди точек $a_1$, $a_2$, …, $a_N$
-    ближайшую к $a$. Она не равна $a$, потому что ни один элемент
-    последовательности не равен $a$. Значит, между ней и $a$ ненулевое
-    расстояние, и все остальные расстояния на этом участке больше, чем это, см.
-    \ref[рис.][fig:06:lim-bound-away-head].
+    Eureka!
+    This is the lower bound we've desired.
+    It's clear now that the tail of a sequence (all elements starting from $N+1$-th one) is bounded away from $a$.
+    What about the leftover part?
+    \source
+        Ура, получилась оценка сверху, которую мы хотели. 
+        Отсюда видно, что хвост последовательности (все члены, начиная с члена с номером $N+1$) отделён от $a$.  
+        Что насчёт начальной части последовательности?
+    
+    Let's use the same approach as in the proof that a convergent sequence is bounded: choose the element closest to $a$ from the set $a_1$, $a_2$, …, $a_N$.
+    It does not equal to $a$ since there are no elements equal to $a$.
+    This means the distance between the element and $a$ is positive and also smaller than any other distance, see \ref[pic.][fig:06:lim-bound-away-head].
+    \source
+        Воспользуемся тем же приёмом, что и в доказательстве ограниченности сходящейся последовательности: выберем среди точек $a_1$, $a_2$, …, $a_N$ ближайшую к $a$. 
+        Она не равна $a$, потому что ни один элемент последовательности не равен $a$. 
+        Значит, между ней и $a$ ненулевое расстояние, и все остальные расстояния на этом участке больше, чем это, см. \ref[рис.][fig:06:lim-bound-away-head].
 
     \figure
         \img
@@ -156,10 +196,9 @@
         \style
             \padding 1em;
         \caption
-            Иллюстрация к \ref[утверждению][prop:06:lim-bound-away]: среди
-            элементов в начале последовательности можно выбрать ближайший и
-            провести границу по нему, если расстояние от него до $a$ меньше, чем
-            $|A-a|/2$.
+            An illustration to the \ref[proposition][prop:06:lim-bound-away].
+            Among elements in the beginning of a sequence we choose the one closest to $a$ and set the lower bound to the distance between them, otherwise take $|A-a|/2$.
+            \source{Иллюстрация к \ref[утверждению][prop:06:lim-bound-away]: среди элементов в начале последовательности можно выбрать ближайший и провести границу по нему, если расстояние от него до $a$ меньше, чем $|A-a|/2$.}
         \label fig:06:lim-bound-away-head
 
     Сведём всё воедино. Положим:
