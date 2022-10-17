@@ -300,33 +300,44 @@ It will be similar to the theorems about the limit of a sum and a product, but f
     \eq
         \lim_{n \to \infty}\frac{a_n}{b_n}=\frac{A}{B}.
 \proof
-    Запишем $\frac{a_n}{b_n}=a_n\frac{1}{b_n}$, затем воспользуемся
-    \ref[теоремой о пределе произведения\nonumber][thm:05:prod] и \ref[только
-    что доказанной теоремой\nonumber][thm:06:inverse] о пределе обратных величин:
+    Write $\frac{a_n}{b_n}=a_n\frac{1}{b_n}$, then use the \ref[limit of a product theorem\nonumber][thm:05:prod] and the—just proven—\ref[limit of an inverse sequence theorem\nonumber][thm:06:inverse]:
+    \soucre{Запишем $\frac{a_n}{b_n}=a_n\frac{1}{b_n}$, затем воспользуемся \ref[теоремой о пределе произведения\nonumber][thm:05:prod] и \ref[только что доказанной теоремой\nonumber][thm:06:inverse] о пределе обратных величин:}
     \align \nonumber
         \item 
             \lim_{n \to \infty}\frac{a_n}{b_n}=\lim_{n\to \infty} a_n \cdot
             \frac{1}{b_n} &=\lim_{n\to \infty}{a_n} \cdot \lim_{n
             \to \infty} \frac{1}{b_n} =
         \splitem \splonly{&=}  A\cdot \frac{1}{B}=\frac{A}{B}.
-    Следствие доказано.
+    This concludes the proof.
+    \source{Следствие доказано.}
 
-\section Пределы и неравенства
-Только что мы обсудили, как пределы взаимодействуют с арифметическими операциями
-— сложением, умножением, делением. Теперь обсудим, как они взаимодействуют с
-неравенствами.
+\section 
+    Limits of inequalities
+    \source{Пределы и неравенства}
+We've just shown how limits act on different arithmetic operations: addition, multiplication and division.
+Now we proceed to how it affects the inequalities.
+\soucre
+    Только что мы обсудили, как пределы взаимодействуют с арифметическими операциями — сложением, умножением, делением. 
+    Теперь обсудим, как они взаимодействуют с неравенствами.
 
-\subsection Предельные переходы в неравенствах
+\subsection 
+    Taking the limit of an inequality
+    \source{Предельные переходы в неравенствах}
 \theorem \label thm:06:lim-ineq
-    Пусть все элементы последовательности $\seq{a_n}$ не превосходят числа
-    $a$ и у последовательности есть предел, равный числу $A$.
-    Тогда $A\le a$.
+    Suppose all elements of a sequence $\seq{a_n}$ are less or equal to $a$ and the sequence has a limit $A$.
+    Then $A\le a$.
+    \source
+        Пусть все элементы последовательности $\seq{a_n}$ не превосходят числа $a$ и у последовательности есть предел, равный числу $A$.
+        Тогда $A\le a$.
 \proof
-    Хотим доказать эту теорему «от противного». Пусть $A>a$. Мы хотим прийти к
-    противоречию. С одной стороны, элементы 
-    последовательности, начиная с некоторого, должны быть близки к $A$, а с
-    другой — они должны быть меньше $a$, а значит отделены от $A$, см.
-    \ref[рис.][fig:06:limit-ineq].
+    We proceed by contradiction.
+    Suppose $A>a$—this fact must lead to a contradiction.
+    Notice that starting from some element, all subsequent ones must be $\eps$-close to $A$, and yet less than $a$, which implies being bounded away from $A$ (see \ref[pic.][fig:06:limit-ineq]).
+    \source
+        Хотим доказать эту теорему «от противного». 
+        Пусть $A>a$. 
+        Мы хотим прийти к противоречию. 
+        С одной стороны, элементы  последовательности, начиная с некоторого, должны быть близки к $A$, а с другой — они должны быть меньше $a$, а значит отделены от $A$, см. \ref[рис.][fig:06:limit-ineq].
     \figure
         \img
             \src
@@ -341,53 +352,76 @@ It will be similar to the theorems about the limit of a sum and a product, but f
                 противоречие: точки должны лежать ниже y=a, но при этом близко
                 к A.
         \caption
-            Иллюстрация к предельному переходу в неравенствах, доказательство
-            \ref[теоремы][thm:06:lim-ineq] от противного.
+            An illustration to taking the limit of an inequality in the proof of the \ref[theorem][thm:06:lim-ineq] by contradiction.
+            \source{Иллюстрация к предельному переходу в неравенствах, доказательство \ref[теоремы][thm:06:lim-ineq] от противного.}
         \label fig:06:limit-ineq
         
-    Итак, возьмём в определении предела $\eps=\frac{A-a}{2}$ и получим
-    соответствующее значение $N=N(\eps)$. Положим $n=N+1$ (нам нужен какой-то
-    элемент правее $N$, любой — мы выбрали этот) и рассмотрим $a_{n}$. Имеем:
+    Take $\eps=\frac{A-a}{2}$ from the definition of a limit, which yeilds the $N=N(\eps)$.
+    Set $n=N+1$ (since we need any element after the $N$-th one, let's take the next one) and consider the corresponding element $a_{n}$.
+    We have:
+    \source
+        Итак, возьмём в определении предела $\eps=\frac{A-a}{2}$ и получим соответствующее значение $N=N(\eps)$. 
+        Положим $n=N+1$ (нам нужен какой-то элемент правее $N$, любой — мы выбрали этот) и рассмотрим $a_{n}$. 
+        Имеем: 
     \equation \label eq:06:abs
         |a_{n}-A| < \eps.
-    Запишем это неравенство в виде:
+    Let's rewrite this inequality in the following form:
+    \source{Запишем это неравенство в виде:}
     \equation \label eq:06:ineq
         A - \eps < a_{n} < A + \eps.
-    Это эквивалентный переход: неравенство \ref{eq:06:abs} говорит, что
-    расстояние от $a_{n}$ до $A$ меньше $\eps$, но все такие числа лежат на
-    интервале от $A-\eps$ до $A+\eps$. (Этот интервал — своего рода «одномерная
-    окружность» с центром в точке $A$ и радиусом $\eps$. Она называется
-    $\eps$-окрестностью точки $A$.) Тогда
+    The two inequalities are equivalent since \ref{eq:06:abs} states that the distance between $a_{n}$ and $A$ is less than $\eps$, but clearly all such numbers belong to the interval from $A-\eps$ to $A+\eps$.
+    This interval is in some sence a "one-dimentional ball" centered at $A$ with radius $\eps$.
+    It is called an $\eps$-neighbourhood of a point $A$.
+    Back to the inequality:
+    \source
+        Это эквивалентный переход: неравенство \ref{eq:06:abs} говорит, что расстояние от $a_{n}$ до $A$ меньше $\eps$, но все такие числа лежат на интервале от $A-\eps$ до $A+\eps$. 
+        (Этот интервал — своего рода «одномерная окружность» с центром в точке $A$ и радиусом $\eps$. 
+        Она называется $\eps$-окрестностью точки $A$.) 
+        Тогда
     \eq
         a_{n} > A - \eps = A - \frac{A-a}{2}=\frac{A+a}{2}>a.
-    В последнем неравенстве мы восползовались тем фактом, что, по предположению,
-    $A>a$. Противоречие.
+    The last inequality uses the assumption $A>a$ and yeilds a contradiction.
+    (Because the proposition states that all elements are not larger than $a$.)
+    \source
+        В последнем неравенстве мы восползовались тем фактом, что, по предположению, $A>a$. 
+        Противоречие.
 \remark
-    Неформально можно сказать, что нестрогие неравенства сохраняются при
-    переходе к пределу. А что насчёт строгих? Если известно, что все элементы
-    последовательности меньше $a$, верно ли, что её предел тоже меньше $a$?
-    Нетрудно видеть, что это не так: например, рассмотрим последовательность
-    $\seq{-1/n}$. Всё её члены меньше нуля, но предел равен нулю.
+    Informally speaking, non-strict inequalities are preserved when taking the limit.
+    And what about strict inequalities?
+    To be more precise, if all elements of a sequence are less than $a$, does this imply that the limit is also less than $a$?
+    It's easy to come up with a counterexample: consider a sequence $\seq{-1/n}$.
+    Each element of it is smaller than zero, but the limit is zero.
+    \source
+        Неформально можно сказать, что нестрогие неравенства сохраняются при переходе к пределу. 
+        А что насчёт строгих? 
+        Если известно, что все элементы последовательности меньше $a$, верно ли, что её предел тоже меньше $a$?
+        Нетрудно видеть, что это не так: например, рассмотрим последовательность $\seq{-1/n}$. 
+        Всё её члены меньше нуля, но предел равен нулю.
 
 \corollary \nonumber
-    Пусть есть две последовательности $\seq{a_n}$ и $\seq{b_n}$, и первая
-    поэлементно не превосходит вторую, то есть для всех натуральных $n$:
+    Consider two sequences $\seq{a_n}$ and $\seq{b_n}$ such that the first one is smaller or equal to the second, or formally: 
+    \source{Пусть есть две последовательности $\seq{a_n}$ и $\seq{b_n}$, и первая поэлементно не превосходит вторую, то есть для всех натуральных $n$:}
     \eq
         a_n \le b_n.
-    Пусть также у них есть пределы:
+    Suppose also that both sequences converge:
+    \source{Пусть также у них есть пределы:}
     \eq
         \lim_{n \to \infty} a_n = A,\quad \lim_{n \to \infty} b_n = B.
-    Тогда $A \le B$.
+    Then $A \le B$.
+    \source{Тогда $A \le B$.}
 
-    Иными словами, в неравенстве $a_n \le b_n$ можно перейти к пределу в правой
-    и левой части.
+    In other words, we do not violate the inequality when taking the limits of both sides.  
+    \source{Иными словами, в неравенстве $a_n \le b_n$ можно перейти к пределу в правой и левой части.}
 \proof
-    Рассмотрим последовательность $c_n = a_n - b_n$. Тогда для всех $n$
-    выполняется неравенство $c_n \le 0$ и значит
+    Consider a sequence $c_n = a_n - b_n$.
+    By construction, $c_n \le 0$ is satisfied and hence
+    \source
+        Рассмотрим последовательность $c_n = a_n - b_n$. 
+        Тогда для всех $n$ выполняется неравенство $c_n \le 0$ и значит
     \eq
         \lim_{n \to \infty} c_n = \lim_{n \to \infty} (a_n - b_n) \le 0.
-    С другой стороны, по теоремам \ref[о пределе суммы\nonumber][thm:05:sum]  и
-    \ref[произведения\nonumber][thm:05:prod],
+    On the other hand, by the theorems \ref[of the limit of a sum\nonumber][thm:05:sum] and \ref[the limit of a product\nonumber][thm:05:sum],
+    \source{С другой стороны, по теоремам \ref[о пределе суммы\nonumber][thm:05:sum] и \ref[произведения\nonumber][thm:05:prod],}
     \align \nonumber
         \item 
             \lim_{n \to \infty} (a_n - b_n) = \lim_{n \to \infty} (a_n + (-1)
@@ -396,27 +430,34 @@ It will be similar to the theorems about the limit of a sum and a product, but f
             \splonly{=} \lim_{n \to \infty} a_n + 
             \lim_{n \to \infty} (-1) \cdot \lim_{n \to \infty} b_n = 
         \splitem \splonly{=} A + (-1) \cdot B  = A - B.
+    This means $A - B \le 0$ or $A \le B$.
     Таким образом, $A - B \le 0$ или $A \le B$.
 
-\subsection Теорема о двух милиционерах \label ssec:06:sandwich
+\subsection 
+    The sandwich theorem \label ssec:06:sandwich
+    \source{Теорема о двух милиционерах \label ssec:06:sandwich}
 
 \theorem \label thm:06:sandwich
-    Рассмотрим три последовательности: $\seq{a_n}$, $\seq{b_n}$, $\seq{c_n}$.
-    Пусть последовательность $\seq{b_n}$ «зажата» между двумя другими: для всех
-    $n$ выполняются неравенства
+    Consider three sequences: $\seq{a_n}$, $\seq{b_n}$, and $\seq{c_n}$.
+    Suppose the sequence $\seq{b_n}$ is "sandwiched" between the other two, in other words the following inequality holds for any natural $n$:
+    \source
+        Рассмотрим три последовательности: $\seq{a_n}$, $\seq{b_n}$, $\seq{c_n}$.
+        Пусть последовательность $\seq{b_n}$ «зажата» между двумя другими: для всех $n$ выполняются неравенства
     \eq
         a_n \le b_n \le c_n.
-    Пусть также $\seq{a_n}$ и $\seq{c_n}$ сходятся, причём к одному и тому же
-    числу $A$. Тогда $\seq{b_n}$ также сходится к $A$ (никуда не денется).
+    Finally, suppose $\seq{a_n}$ and $\seq{c_n}$ converge to the same number $A$.
+    Then $\seq{b_n}$ also converges to $A$.
+    \source
+        Пусть также $\seq{a_n}$ и $\seq{c_n}$ сходятся, причём к одному и тому же числу $A$. 
+        Тогда $\seq{b_n}$ также сходится к $A$ (никуда не денется).
 
-Эта теорема в советской, а потом российской математической традиции получила
-название «теоремы о двух милиционерах»: последовательности $\seq{a_n}$ и
-$\seq{c_n}$ играют роль милиционеров, которые ограничивают «хулигана»
-$\seq{b_n}$ и ведут его туда же, куда сами стремятся (видимо, в участок).
-Вероятно, довольно скоро тут потребуется добавить комментарий о том, что полиция
-в России до 2011 года называлась милицией, а полицейскими — милиционерами. В
-англоязычных источниках она как правило называется squeeze theorem или sandwich
-theorem.
+The motivation behind the name is obvious: one sequence is "sandwiched", or "squeezed" between two others.
+(Sometimes it is also called the squeeze theorem.)
+In some european languages the theorem goes by the name "two officers (and a drunk) theorem", symbolizing two policemen arresting a civilian and carrying him into the police station, or perhaps even into a cell.
+\source 
+    Эта теорема в советской, а потом российской математической традиции получила название «теоремы о двух милиционерах»: последовательности $\seq{a_n}$ и $\seq{c_n}$ играют роль милиционеров, которые ограничивают «хулигана» $\seq{b_n}$ и ведут его туда же, куда сами стремятся (видимо, в участок).
+    Вероятно, довольно скоро тут потребуется добавить комментарий о том, что полиция в России до 2011 года называлась милицией, а полицейскими — милиционерами. 
+    В англоязычных источниках она как правило называется squeeze theorem или sandwich theorem.
 
 \proof
     Идея доказательства очень простая. Если $a_n$ и $c_n$ оказались в какой-то
