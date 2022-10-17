@@ -201,79 +201,102 @@ It will be similar to the theorems about the limit of a sum and a product, but f
             \source{Иллюстрация к \ref[утверждению][prop:06:lim-bound-away]: среди элементов в начале последовательности можно выбрать ближайший и провести границу по нему, если расстояние от него до $a$ меньше, чем $|A-a|/2$.}
         \label fig:06:lim-bound-away-head
 
-    Сведём всё воедино. Положим:
+    Let's finish it up.
+    Take
+    \source
+        Сведём всё воедино. 
+        Положим:
 
     \align \nonumber
         \item c = \min\set{|a_1-a|, |a_2 - a|, \ldots, 
         \splitem |a_N-a|, \frac{|A-a|}{2}}.
-    Для всякого натурального $n$, либо $n \le N$, и тогда $|a_n - a| \ge c$
-    по определению минимума, либо $n > N$, и тогда $|a_n - a| >
-    \frac{|A-a|}{2} \ge c$ (первое неравенство по \ref{eq:06:bounds}, второе —
-    снова по определению минимума).
+    For every natural $n$ we have either $n \le N$, or $n > N$.
+    In the first case by the definition of a minimum $|a_n - a| \ge c$.
+    In the second case $|a_n - a| > \frac{|A-a|}{2} \ge c$, where the first inequality is \ref{eq:06:bounds} and second follows from the definition of a limit.
+    \source
+        Для всякого натурального $n$, либо $n \le N$, и тогда $|a_n - a| \ge c$ по определению минимума, либо $n > N$, и тогда $|a_n - a| > \frac{|A-a|}{2} \ge c$ (первое неравенство по \ref{eq:06:bounds}, второе — снова по определению минимума).
 
-    Победа!
+    Hurray!
+    We're done.
+    \source{Победа!}
 \remark
-    Как вы могли заметить, это доказательство почти дословно повторяет
-    доказательство \ref[теоремы об ограниченности сходящейся
-    последовательности\nonumber][thm:05:bound] из предыдущей лекции. В некотором смысле,
-    это та же теорема: свойство ограниченности можно назвать «отделенностью от
-    бесконечности».
+    Notice the proof above mimics the one we've constructed for the \ref[theorem that the convergent seqience is bounded\nonumber][thm:05:bound] from the previous lecture.
+    One can say these two theorems are equivalent: boundness is like being bounded away from imfinity.
+    \source
+        Как вы могли заметить, это доказательство почти дословно повторяет доказательство \ref[теоремы об ограниченности сходящейся последовательности\nonumber][thm:05:bound] из предыдущей лекции. 
+        В некотором смысле, это та же теорема: свойство ограниченности можно назвать «отделенностью от бесконечности».
 
 \proposition \label prop:06:zero-infty
-    Если последовательность $\seq{a_n}$ отделена от нуля, то последовательность
-    $\seq{1/a_n}$ ограничена.
+    If a sequence $\seq{a_n}$ is bounded away from zero, then the sequence $\seq{1/a_n}$ is bounded.
+    \source{Если последовательность $\seq{a_n}$ отделена от нуля, то последовательность $\seq{1/a_n}$ ограничена.}
 \proof
-    Известно, что
+    It is known that
+    \source{Известно, что}
     \eq
         \exists c > 0\\ \forall n \in \mathbb N \colon |a_n - 0| = |a_n| \ge c.
-    Возьмём $C=1/c$. Тогда для всех натуральных $n$,
+    Take $C=1/c$.
+    Them for all natural $n$, 
+    \source
+        Возьмём $C=1/c$. 
+        Тогда для всех натуральных $n$,
     \eq
         \left| \frac{1}{a_n} \right| = \frac{1}{|a_n|} \le \frac{1}{c} = C.
-    Следовательно, последовательность ограничена. (Мы как обычно вспользовались
-    тем, что если числитель и знаменатель дроби положителен, то при увеличении
-    знаменателя дробь уменьшается.)
-\subsection Предел последовательности обратных величин
+    Which means the sequence is bounded.
+    (To clarify, we've utilized the fact that if both the numerator and the denominator of a fraction are positive, an increase in the denominator results in a decrease of the whole fraction.)
+    \source
+        Следовательно, последовательность ограничена. 
+        (Мы как обычно вспользовались тем, что если числитель и знаменатель дроби положителен, то при увеличении знаменателя дробь уменьшается.)
+\subsection A limit of the sequence of inversed elements 
+    \section{Предел последовательности обратных величин}
 \theorem \label thm:06:inverse
-    Пусть последовательность $\seq{a_n}$ имеет предел $A \ne 0$ и все её члены
-    не равны нулю. Тогда
+    Suppose a sequence $\seq{a_n}$ consisting of strictly positive elements has a limit $A \ne 0$.
+    Then
+    \soucre
+        Пусть последовательность $\seq{a_n}$ имеет предел $A \ne 0$ и все её члены не равны нулю. 
+        Тогда
     \eq
         \lim_{n \to \infty} \frac{1}{a_n}=\frac{1}{A}.
 \proof
-    Рассмотрим разность, которую нам нужно сделать маленькой:
+    Consider a difference that we're aiming to minimize:
+    \source{Рассмотрим разность, которую нам нужно сделать маленькой:}
     \align \nonumber
         \item \left| \frac{1}{a_n}-\frac{1}{A}\right| & = \left| \frac{A-a_n}{a_n A}
             \right|  = \frac{|A-a_n|}{|a_n|\cdot |A|}=
         \splitem \splonly{&=} \frac{1}{|a_n|} \cdot
             \frac{1}{|A|} \cdot |A-a_n|.
-    Поскольку последовательность $\seq{a_n}$ имеет только ненулевые элементы и
-    стремится к числу, отличному от нуля, она отделена от нуля по
-    \ref[утверждению][prop:06:lim-bound-away]. Значит, сомножитель
-    $\frac{1}{|a_n|}$ ограничен некоторым числом $C$ по
-    \ref[утверждению][prop:06:zero-infty]. Поскольку $a_n\to A$, для всякого
-    $\eps>0$ найдётся такое $N$, что для всех $n>N$ выполняется оценка $|A-a_n|
-    < \eps$. Значит, для этих $n$:
+    Since a sequence $\seq{a_n}$ consists of only positive elements and approaches a nonzero number, it is bounded away from zero by a \ref[proposition][prop:06:lim-bound-away].
+    Hence according to a \ref[proposition][prop:06:zero-infty], the term $\frac{1}{|a_n|}$ is bounded above by some $C$.
+    Since $a_n\to A$, for any $\eps>0$ there must exist $N$ such that for every $n>N$ we have $|A-a_n| < \eps$ satisfied.
+    This means the following inequality holds for sych $n$:
+    \source
+        Поскольку последовательность $\seq{a_n}$ имеет только ненулевые элементы и стремится к числу, отличному от нуля, она отделена от нуля по \ref[утверждению][prop:06:lim-bound-away].
+        Значит, сомножитель $\frac{1}{|a_n|}$ ограничен некоторым числом $C$ по \ref[утверждению][prop:06:zero-infty]. 
+        Поскольку $a_n\to A$, для всякого $\eps>0$ найдётся такое $N$, что для всех $n>N$ выполняется оценка $|A-a_n| < \eps$. 
+        Значит, для этих $n$:
     \eq
         \left| \frac{1}{a_n}-\frac{1}{A}\right| < \frac{C}{|A|} \eps.
-    По \ref[упрощающей лемме\nonumber][lem:05:simplify], мы доказали, что предел
-    равен $1/A$: в качестве константы в лемме можно взять число $C/|A|$.
+    The only thing left is to consider a \ref[simplifying lemma\nonumber][lem:05:simplify]: if the constant is $C/|A|$, we conclude the limit is equal to $1/A$.
+    \soure{По \ref[упрощающей лемме\nonumber][lem:05:simplify], мы доказали, что предел равен $1/A$: в качестве константы в лемме можно взять число $C/|A|$.}
 \remark
-    Условие о том, что все элементы последовательности $\seq{a_n}$ ненулевые,
-    носит технический характер. Если какой-то элемент $a_n$ равен нулю, то
-    выражение $1/a_n$ не определено, и вообще непонятно, что значит
-    «последовательность $\seq{1/a_n}$» (в последовательности, как мы её
-    определяли раньше, каждый член должен быть каким-то конкретным вещественным
-    числом). Однако, этим условием как правило пренебрегают, имея в виду, что
-    некоторые элементы последовательности $\seq{1/a_n}$ могут быть не
-    определены, и это не страшно. Их в любом случае конечное число (раз предел
-    $\seq{a_n}$ не нулевой, лишь конечное число её членов могут быть нулевыми
-    — докажите это!), а предел не зависит от любого конечного числа членов
-    последовательности — мы можем просто выкинуть ту начальную часть
-    последовательности $\seq{1/a_n}$, в которой есть неопределенные элементы, и
-    рассматривать лишь оставшийся хвост. Для него будут справедливы условия и
-    заключение теоремы, которую мы только что доказали.
+    The assumption "all elements are positive" is rather technical: if there is an iddentically zero element in a sequence $\seq{a_n}$, then the "inverse" sequence $\seq{1/a_n}$ is undefined.
+    In practice we just ignore those "undefined" elements.
+    How can we ignore some elements?
+    It applies we're changing the seqeuence, don't we?
+    Actually, since the limit of $\seq{a_n}$ is nonzero, only a finite number of elements can be identically zero.
+    Earlier we've shown that a limit does not depend on a finite number of elements.
+    In other words, if we split apart the seqeuence after the last identically zero element and leave only the tail, we get a (new) seqeuence with the same properties.
+    \source
+        Условие о том, что все элементы последовательности $\seq{a_n}$ ненулевые, носит технический характер. 
+        Если какой-то элемент $a_n$ равен нулю, то выражение $1/a_n$ не определено, и вообще непонятно, что значит «последовательность $\seq{1/a_n}$» (в последовательности, как мы её определяли раньше, каждый член должен быть каким-то конкретным вещественным числом).
+        Однако, этим условием как правило пренебрегают, имея в виду, что некоторые элементы последовательности $\seq{1/a_n}$ могут быть не определены, и это не страшно.
+        Их в любом случае конечное число (раз предел $\seq{a_n}$ не нулевой, лишь конечное число её членов могут быть нулевыми — докажите это!), а предел не зависит от любого конечного числа членов последовательности — мы можем просто выкинуть ту начальную часть последовательности $\seq{1/a_n}$, в которой есть неопределенные элементы, и рассматривать лишь оставшийся хвост. 
+        Для него будут справедливы условия и заключение теоремы, которую мы только что доказали.
 \corollary \nonumber
-    Пусть $a_n \to A$, $b_n \to B$, $B \ne 0$ и все элементы $b_n$ не равны
-    нулю. Тогда
+    Suppose $a_n \to A$, $b_n \to B$, $B \ne 0$ and all elements of $b_n$ are non-zero.
+    Then
+    \source
+        Пусть $a_n \to A$, $b_n \to B$, $B \ne 0$ и все элементы $b_n$ не равны нулю. 
+        Тогда
     \eq
         \lim_{n \to \infty}\frac{a_n}{b_n}=\frac{A}{B}.
 \proof
