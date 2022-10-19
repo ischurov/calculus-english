@@ -460,12 +460,13 @@ In some european languages the theorem goes by the name "two officers (and a dru
     В англоязычных источниках она как правило называется squeeze theorem или sandwich theorem.
 
 \proof
-    Идея доказательства очень простая. Если $a_n$ и $c_n$ оказались в какой-то
-    $\eps$-окрестности точки $A$, то и $b_n$ окажется в этой же
-    $\eps$-окрестности: просто отрезок $[a_n, c_n]$ окажется целиком вложен в
-    $\eps$-окрестность, и значит все его точки будут ей принадлежать. Это
-    очевидно из картинки (см. \ref[рис.][fig:06:segments]), но мы всё-таки
-    приведём аккуратное построение с неравенствами.
+    The idea of the proof is straighforward: if $a_n$ and $c_n$ are in same $\eps$-neighbourhood, then $b_n$ must be in the same neighbourhood.
+    This is ensured since the whole interval $[a_n, c_n]$ must be nested into the $\eps$-neighbourhood, together with its every point. 
+    Nevertheless, we're going to prove it formally.
+    \source
+        Идея доказательства очень простая. 
+        Если $a_n$ и $c_n$ оказались в какой-то $\eps$-окрестности точки $A$, то и $b_n$ окажется в этой же $\eps$-окрестности: просто отрезок $[a_n, c_n]$ окажется целиком вложен в $\eps$-окрестность, и значит все его точки будут ей принадлежать. 
+        Это очевидно из картинки (см. \ref[рис.][fig:06:segments]), но мы всё-таки приведём аккуратное построение с неравенствами.
 
     \figure
         \img
@@ -480,8 +481,8 @@ In some european languages the theorem goes by the name "two officers (and a dru
                 b_n, целиком вложен в интервал (A-ε, A+ε). Ниже написано
                 неравенство: A-ε < a_n ≤  b_n ≤ c_n < A+ε.
         \caption
-            Если «милиционеры» оказались в какой-то $\eps$-окрестности, то и
-            ограниченный ими «хулиган» оказался в той же окрестности.
+            If both "slices of bread" got into some $\eps$-neighbourhood, then the "ham" has to be there too.
+            \source{Если «милиционеры» оказались в какой-то $\eps$-окрестности, то и ограниченный ими «хулиган» оказался в той же окрестности.}
         \label
             fig:06:segments
     
