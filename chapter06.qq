@@ -486,7 +486,10 @@ In some european languages the theorem goes by the name "two officers (and a dru
         \label
             fig:06:segments
     
-    Формализуем условие. Нам даны следующие утверждения:
+    Let's formalize what is given:
+    \source
+        Формализуем условие. 
+        Нам даны следующие утверждения:
     \align
         \item \label eq:06:sandwich1
             \forall \eps_1 \splonly{&} > 0\\ \exists N=N_1(\eps_1)\\ 
@@ -498,28 +501,27 @@ In some european languages the theorem goes by the name "two officers (and a dru
             \colon |c_n - A| < \eps_2;
         \item \label eq:06:sandwich-est
             \forall n\splonly{&} \in \mathbb N \colon a_n \le b_n \le c_n.
-    Положим $\eps_1=\eps_2=\eps$ и перепишем неравенства в \ref{eq:06:sandwich1}
-    и \ref{eq:06:sandwich2}: вместо неравенств с модулями запишем двойные
-    неравенства, которые им эквивалентны:
+    Take $\eps_1=\eps_2=\eps$ and rewrite the inequalities in \ref{eq:06:sandwich1} and \ref{eq:06:sandwich2} without the modulus (changing it to the double inequalities).
+    \source{Положим $\eps_1=\eps_2=\eps$ и перепишем неравенства в \ref{eq:06:sandwich1} и \ref{eq:06:sandwich2}: вместо неравенств с модулями запишем двойные неравенства, которые им эквивалентны:}
     \align 
         \item  \label eq:06:sandwich1-prim
             A - \eps &< a_n < A + \eps;
         \item  \label eq:06:sandwich2-prim
             A - \eps &< c_n < A + \eps.
-    Из правого неравенства в цепочке \ref{eq:06:sandwich-est} и тоже правого
-    неравенства в цепочке \ref{eq:06:sandwich2-prim} следует, что для всех
-    $n>N_2$:
+    The last inequalitiy in \ref{eq:06:sandwich-est} and also the last one in \ref{eq:06:sandwich2-prim} together imply that for any $n>N_2$:
+    \source{Из правого неравенства в цепочке \ref{eq:06:sandwich-est} и тоже правого неравенства в цепочке \ref{eq:06:sandwich2-prim} следует, что для всех $n>N_2$:}
     \eq
         b_n \le c_n < A + \eps.
-    Аналогично из \ref{eq:06:sandwich-est} и \ref{eq:06:sandwich1-prim} (теперь
-    нужно взять левые неравенства) следует, что для всех $n>N_1$:
+    Similarlly, the first inequalities of \ref{eq:06:sandwich-est} and \ref{eq:06:sandwich1-prim} tell us that for any $n>N_1$:
+    \source{Аналогично из \ref{eq:06:sandwich-est} и \ref{eq:06:sandwich1-prim} (теперь нужно взять левые неравенства) следует, что для всех $n>N_1$:}
     \eq
         b_n \ge a_n > A - \eps.
-    Таким образом, для всех $n>\max(N_1, N_2)$ (см. \ref[рис.][fig:06:sandwich]):
+    To sum up, for any $n>\max(N_1, N_2)$ (see \ref[fig.][fig:06:sandwich]).
+    \source{Таким образом, для всех $n>\max(N_1, N_2)$ (см. \ref[рис.][fig:06:sandwich]):}
     \eq
         A - \eps < b_n < A + \eps.
-    Это эквивалентно неравенству $|b_n - A| < \eps$, которое требовалось
-    доказать.
+    This is equivalent to the goal inequality $|b_n - A| < \eps$.
+    \source{Это эквивалентно неравенству $|b_n - A| < \eps$, которое требовалось доказать.}
 
     \figure
         \img
@@ -535,34 +537,50 @@ In some european languages the theorem goes by the name "two officers (and a dru
                 n=N. Правее этой прямой точки всех последовательностей находятся
                 внутри ε-коридора вокруг точки A.
         \caption
-            Все элементы всех трёх последовательностей, начиная с номера $N+1$,
-            лежат в $\eps$-коридоре.
+            All elements of three sequences starting from the $N+1$-th one lie in the $\eps$-corridor.  
+            \source{Все элементы всех трёх последовательностей, начиная с номера $N+1$, лежат в $\eps$-коридоре.}
         \label
             fig:06:sandwich
-
-    Итак, мы получили, что для любого $\eps>0$ можно взять $N=\max(N_1(\eps),
-    N_2(\eps))$ и тогда для всех $n>N$ будет выполняться искомое неравенство.
-    Теорема доказана.
-Эту теорему удобно использовать вместо того, чтобы явно находить зависимость $N$
-от $\eps$. Приведём пару примеров.
+    We've just shown that for any $\eps>0$ if we set $N=\max(N_1(\eps), N_2(\eps))$, the goal inequality holds for any $n>N$.
+    Thus the theorem is proven!
+    \source
+        Итак, мы получили, что для любого $\eps>0$ можно взять $N=\max(N_1(\eps), N_2(\eps))$ и тогда для всех $n>N$ будет выполняться искомое неравенство.
+        Теорема доказана.
+This theorem is useful for finding the relation between $N$ and $\eps$.
+Consider the following examples.
+\source
+    Эту теорему удобно использовать вместо того, чтобы явно находить зависимость $N$ от $\eps$. 
+    Приведём пару примеров.
 \example
-    Найдём предел
+    Let's find a limit
+    \source{Найдём предел}
     \eq
         \lim_{n \to \infty} \frac{1}{n^2+1}.
-    Заметим, что для всех $n$,
+    Notice that for all $n$,
+    \source{Заметим, что для всех $n$,}
     \eq
         0 < \frac{1}{n^2+1} < \frac{1}{n}.
-    Левая часть — это константа, её предел равен ей самой, то есть нулю. Правая
-    часть стремится к нулю. По теореме о двух милиционерах (полагаем $a_n=0$,
-    $b_n=1/(n^2+1)$, $c_n=1/n$), получаем, что искомый предел равен нулю.
+    Since the left hand side is a constant, its limit is zero.
+    The right hand side most cenrtainly approaches zero.
+    By the sandwich theorem, if we set $a_n=0$, $b_n=1/(n^2+1)$, $c_n=1/n$ we get that the limit is of $b_n$ is also zero.
+    \source
+        Левая часть — это константа, её предел равен ей самой, то есть нулю. 
+        Правая часть стремится к нулю. 
+        По теореме о двух милиционерах (полагаем $a_n=0$, $b_n=1/(n^2+1)$, $c_n=1/n$), получаем, что искомый предел равен нулю.
 
 \example
-    Найдём предел
+    Let's calculate an another limit
+    \source{Найдём предел}
     \eq
         \lim_{n \to \infty} 
         \left(\frac{\sin n^n \cdot \cos n!}{n^2+1}\right)^{15}.
-    Выглядит жутковато, но на самом деле не очень. Заметим, что $|\sin n^n| \le
-    1$ и $|\cos n!| \le 1$. По свойствам модулей:
+    Looks monstrous, but in fact it's not.
+    Notice $|\sin n^n| \le 1$ and $|\cos n!| \le 1$. 
+    Using the properties of a modulus,
+    \source
+        Выглядит жутковато, но на самом деле не очень. 
+        Заметим, что $|\sin n^n| \le 1$ и $|\cos n!| \le 1$. 
+        По свойствам модулей:
     \align \nonumber
         \item \splonly{&}
             \left|
@@ -580,39 +598,59 @@ In some european languages the theorem goes by the name "two officers (and a dru
         \splitem 
             \splonly{&\le} \frac{1^{15}\cdot 1^{15}}{(n^2+1)^{15}} <
         \splitem \splonly{&<} \frac{1}{n^2+1}.
-    Мы воспользовались тем фактом, что натуральные числа больше 1 при возведении
-    в положительные степени возрастают. Таким образом:
+    We've utilised the fact that all natural numbers greater than 1 get bigger when squared.
+    Thus,
+    \source
+        Мы воспользовались тем фактом, что натуральные числа больше 1 при возведении в положительные степени возрастают. 
+        Таким образом:
     \eq
         -\frac{1}{n^2+1} \le \left(\frac{\sin n^n \cdot \cos n!}{n^2+1}\right)^{15} 
         \le \frac{1}{n^2+1}
-    По доказанному выше, правая оценка стремится к нулю. Левая тоже стремится к
-    нулю (отличается от правой только знаком, предел произведения равен
-    произведению пределов). Следовательно, наш предел также равен нулю.
+    By the fact proven above, the right hand ride approaches zero.
+    The limit of the left hand side is also zero since a constant $-1$ can be taken out of the limit.
+    This implies that our limit equals to zero.
+    \soucre
+        По доказанному выше, правая оценка стремится к нулю. 
+        Левая тоже стремится к нулю (отличается от правой только знаком, предел произведения равен произведению пределов). 
+        Следовательно, наш предел также равен нулю.
 
-До сих пор при решении задач на отыскание пределов по определению мы
-постоянно пользовались аналогичным приёмом — оценивали величину, которую
-нужно сделать маленькой, более простой величиной, и доказывали, что её тоже
-можно сделать маленькой подходящим выбором $N$. Теорема о двух милиционерах
-обобщает эту практику и удобно её «упаковывает».
+So far we've been always using a similar technique to find the limit: first come up with a useful upper bound on the thing we wanted to minimize, then prove it can be made as small as desired by choosing a certain $N$.
+The sandwich theorem generalises this idea and makes it convenient to apply.
 
-Как найти хорошую оценку? Универсального ответа нет. С одной стороны, мы
-хотим, чтобы оценка работала, то есть неравенсто выполнялось для всех $n$
-или для всех $n$, начиная с какого-то. С другой стороны, мы хотим, чтобы
-выражение, которым мы оцениваем нашу последовательность, было несложным. С
-третьей, оно должно стремится туда же, куда стремится наша
-последовательность (предел оценки справа должен совпадать с пределом оценки
-слева). Понимание того, как находить такие оценки (если это возможно)
-приходит с опытом. В общем, как обычно, нужно решать больше задач.
+\source
+    До сих пор при решении задач на отыскание пределов по определению мы постоянно пользовались аналогичным приёмом — оценивали величину, которую нужно сделать маленькой, более простой величиной, и доказывали, что её тоже можно сделать маленькой подходящим выбором $N$. 
+    Теорема о двух милиционерах обобщает эту практику и удобно её «упаковывает».
 
-\section Заключение
+But how to find the upper bound?
+There is no general answer.
+Definitely, we want the upper bound to work for any $n$ or for all $n$ starting from some place.
+In addition, the expression that bounds the sequence should not be complicated.
+Moreover, it must approach the same value our sequence does (in the case of applying the sandwich theorem, the limit of the LHS must equal to the limit of the RHS).
+As usual, skill comes with practice.
+\source
+    Как найти хорошую оценку? 
+    Универсального ответа нет. 
+    С одной стороны, мы хотим, чтобы оценка работала, то есть неравенсто выполнялось для всех $n$ или для всех $n$, начиная с какого-то. 
+    С другой стороны, мы хотим, чтобы выражение, которым мы оцениваем нашу последовательность, было несложным. 
+    С третьей, оно должно стремится туда же, куда стремится наша последовательность (предел оценки справа должен совпадать с пределом оценки слева). 
+    Понимание того, как находить такие оценки (если это возможно) приходит с опытом. 
+    В общем, как обычно, нужно решать больше задач.
 
-На прошлой и этой лекциях мы изучали, как пределы взаимодействуют с привычными
-нам операциями с числами. Выяснили, что взаимодействуют чаще всего «хорошо»:
-предел суммы равен сумме пределов, предел произведения — произведению пределов,
-предел частного — частному пределов (если оно определено), нестрогие неравенства
-сохраняются при предельном переходе. Есть, однако, и свои тонкости — например,
-строгие неравенства «не выживают» при переходе к пределу — превращаются в
-нестрогие. Также нужно учитывать, что все эти хорошие свойства выполняются лишь
-в том случае, когда все пределы, которые мы обсуждаем, существуют — то есть
-являются обычными вещественныи числами. Что происходит с бесконечными пределами?
-Об этом — в следующей лекции.
+\section 
+    Conclusion
+    \soucre{Заключение}
+
+This lecture, together with the last one, discussed how a limit acts on arithmetic operations.
+It turned out the operations behave well: the limit of a sum in the sum of the limits, the limit of a product is the product of the limits, same with a fraction (if the denominator) is non-zero, even non-strict inequalities stay unchanged.
+Although there is an exception in case of strict inequalities.
+They transform into non-strict ones.
+Immportantly, all these properties hold only if the limits exist, in other words if they are equal to some number that is not infinity.
+What about the limits that diverge, or you can say equals infinity?
+This topic will be discussed in the next lecture. 
+\source
+    На прошлой и этой лекциях мы изучали, как пределы взаимодействуют с привычными нам операциями с числами. 
+    Выяснили, что взаимодействуют чаще всего «хорошо»: предел суммы равен сумме пределов, предел произведения — произведению пределов, предел частного — частному пределов (если оно определено), нестрогие неравенства сохраняются при предельном переходе. 
+    Есть, однако, и свои тонкости — например, строгие неравенства «не выживают» при переходе к пределу — превращаются в нестрогие. 
+    Также нужно учитывать, что все эти хорошие свойства выполняются лишь в том случае, когда все пределы, которые мы обсуждаем, существуют — то есть являются обычными вещественныи числами. 
+    Что происходит с бесконечными пределами?
+    Об этом — в следующей лекции.
