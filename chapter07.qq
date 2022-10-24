@@ -95,7 +95,7 @@ We conclude,
     \lim_{n \to \infty} \frac{n^2+2n}{2n^2+3} = \frac{1}{2}.
     
 \subsection 
-    Indeterminate Forms
+    indeterminate forms
     \source{Неопределенности}
 
 Suppose we were to formulate a theorem that states "if $a_n \to \infty$ and $b_n \to \infty$ then $a_n/b_n$ approaches something".
@@ -129,7 +129,7 @@ More precisely,
         (Try to think of an example yourself).
         \source{Может не иметь ни конечного, ни бесконечного предела (придумайте пример самостоятельно).}
     
-In short, this variety of outcomes is formulated in the following way: "$\frac{\infty}{\infty}$ is an indefinite form".
+In short, this variety of outcomes is formulated in the following way: "$\frac{\infty}{\infty}$ is an indeterminate form".
 The notation $\frac{\infty}{\infty}$ is must not be thought of as a valid arithmetical expression.
 It is just a compact way to point out that the limit of the sequence where both the numerator and the denominator diverge cannot yet be determited. 
 So 
@@ -138,52 +138,77 @@ So
     Здесь под $\frac{\infty}{\infty}$ подразумевается не арифметическое выражение, а символическая запись, которая означает предел последовательности вида $\seq{a_n/b_n}$, где пределы числителя и знаменателя равны бесконечностям.
 
 \remark
-    ...
+    Importantly, by saying "$\frac{\infty}{\infty}$ is an indeterminate form" we do not mean that the limit cannot be evaluated.
+    Recall that in the \ref[example][ex:07:frac] we were dealing with the exact same indefinite form, which eventually turned out to be equal to $1/2$.
+    In reality, we mean that both the numerator and the denominator diverge, hence it cannot \emph{yet} be determined what value the limit takes.
+    So, additinal manipulations are needed to evaluate the indeterminate form.
     \source
         Утверждение «$\frac{\infty}{\infty}$ — неопределенность» не означает, что любой предел такого вида не определен. 
         Скажем, в \ref[примере][ex:07:frac] рассматривался предел именно такого вида, однако мы его в конечном итоге нашли и выяснили, что он равен вполне определенному числу: $1/2$.
         Утверждение, «$\frac{\infty}{\infty}$ — неопределенность» означает, что если мы знаем про числитель и знаменатель \emph{только} то, что они стремятся к бесконечности, мы не можем на основе \emph{только} этой информации найти предел дроби. 
         Ситуация, при которой мы находим этот предел (пользуясь явным выражением для числителя и знаменателя или какой-то другой дополнительной информацией о них) называется \emph{раскрытием неопределенности}.
 
-Приведём пример ещё одной неопределенности: $(\infty)+(\infty)$. (Я взял каждую
-из бесконечностей в скобки, чтобы подчеркнуть, что это «бесконечности без
-знака».) Действительно, пусть мы знаем, что $a_n \to \infty$ и $b_n \to \infty$.
-Что можно сказать про $\lim_{n\to \infty}(a_n + b_n)$? Он может равняться чему
-угодно:
+Take a look at an another type of indeterminate form: $(\infty)+(\infty)$.
+(I've decided to put parenthesis around the infinities to emphasize that they can be both positive and negative.)
+Let's show that given $a_n \to \infty$ and $b_n \to \infty$ we can make $\lim_{n\to \infty}(a_n + b_n)$ equal to anything:
+\source
+    Приведём пример ещё одной неопределенности: $(\infty)+(\infty)$. 
+    (Я взял каждую из бесконечностей в скобки, чтобы подчеркнуть, что это «бесконечности без знака».) 
+    Действительно, пусть мы знаем, что $a_n \to \infty$ и $b_n \to \infty$.
+    Что можно сказать про $\lim_{n\to \infty}(a_n + b_n)$? 
+    Он может равняться чему угодно:
 
 \itemize
-    \item Любому вещественному числу $A$: возьмём $a_n = n$, $b_n=-n+A$.
-        (Напомним, что мы требуем, чтобы оба слагаемых стремились к
-        бесконечности без знака, и значит $\seq{-n+A}$ подходит: по модулю эта
-        последовательность становится сколь угодно большой.)
-    \item Плюс бесконечности: возьмём $a_n=n$, $b_n=n$.
-    \item Минус бесконечности: возьмём $a_n=-n$, $b_n=-n$.
-    \item Не иметь ни конечного, ни бесконечного предела: возьмём $a_n=n$,
-        $b_n=(-1)^n \cdot n$.
-    \item Бесконечности без знака, которая не является ни плюс, ни минус
-        бесконечностью (придумайте пример).
+    \item 
+        A real number $A$: take $a_n = n$, $b_n=-n+A$.
+        Notice we've allowed the infinities to be of different signs.
+        \source
+            Любому вещественному числу $A$: возьмём $a_n = n$, $b_n=-n+A$.
+            (Напомним, что мы требуем, чтобы оба слагаемых стремились к бесконечности без знака, и значит $\seq{-n+A}$ подходит: по модулю эта последовательность становится сколь угодно большой.)
+    \item 
+        Positive infinity: take $a_n=n$, $b_n=n$.
+        \source{Плюс бесконечности: возьмём $a_n=n$, $b_n=n$.}
+    \item
+        Negative infinity: take $a_n=-n, b_n=-n$.
+        \source{Минус бесконечности: возьмём $a_n=-n$, $b_n=-n$.}
+    \item 
+        Neither a number, nor infinity (divergent sequence): take $a_n=n$, $b_n=(-1)^n \cdot n$.
+        \source{Не иметь ни конечного, ни бесконечного предела: возьмём $a_n=n$, $b_n=(-1)^n \cdot n$.}
+    \item 
+        Infinity "without a sign", which means the limit is infinite, neither positive nor negative (think of one on your own).
+        \source{Бесконечности без знака, которая не является ни плюс, ни минус бесконечностью (придумайте пример).}
 
-Есть и другие примеры неопределенностей: $0/0$, $0\cdot \infty$, $1^{\infty}$ и
-др.
+There are various other examples of an indeterminate forms: $0/0$, $0\cdot \infty$, $1^{\infty}$ etc.
+\source{Есть и другие примеры неопределенностей: $0/0$, $0\cdot \infty$, $1^{\infty}$ и др.}
 \exercise
-    Докажите, что $0/0$ и $0\cdot \infty$ тоже неопределенности, то есть могут
-    принимать любые вещественные значения, а также стремиться к бесконечности.
+    Prove that $0/0$ and $0\cdot \infty$ are also indeterminate forms, which means being able to take any finite value or infinity.
+    \source{Докажите, что $0/0$ и $0\cdot \infty$ тоже неопределенности, то есть могут принимать любые вещественные значения, а также стремиться к бесконечности.}
 
-С $1^{\infty}$ мы разберёмся позже, когда обсудим логарифмы.
 
-\section «Арифметика бесконечностей»
+We will deal with $1^{\infty}$ later, after the discussion of a logarithm. 
+\source{С $1^{\infty}$ мы разберёмся позже, когда обсудим логарифмы.}
 
-Не все арифметические выражения с последовательностями, стремящимися к
-бесконечностям (или иначе нарушающими правила арифметики пределов), обязательно
-являются неопределенностями.
-\subsection Сумма плюс бесконечностей 
+\section 
+    The arithmetic of infinities
+    \source{«Арифметика бесконечностей»}
+
+Notably, not every arithmetic expression involving sequences with infinite limits is an indeterminate form.
+\source{Не все арифметические выражения с последовательностями, стремящимися к бесконечностям (или иначе нарушающими правила арифметики пределов), обязательно являются неопределенностями.}
+\subsection 
+    The sum of positive infinities
+    \source{Сумма плюс бесконечностей}
 \proposition
-    Пусть $a_n \to +\infty$ и $b_n \to +\infty$. Тогда $(a_n + b_n) \to
-    +\infty$. Неформально это утверждение можно записать так:
-    $(+\infty)+(+\infty)=+\infty$.
+    Suppose $a_n \to +\infty$ and $b_n \to +\infty$.
+    Then $(a_n + b_n) \to +\infty$. 
+    The compact but informal notation $(+\infty)+(+\infty)=+\infty$ is often used.
+    \source
+        Пусть $a_n \to +\infty$ и $b_n \to +\infty$. 
+        Тогда $(a_n + b_n) \to +\infty$. 
+        Неформально это утверждение можно записать так: $(+\infty)+(+\infty)=+\infty$.
 \proof
-    Как обычно в таких доказательствах, начнём с формализации:
-    \paragraph{Нам дано}
+    We start by formalizing.
+    \paragraph{We're given,}
+    \source{Как обычно в таких доказательствах, начнём с формализации: \paragraph{Нам дано}}
     \align 
         \item \label eq:07:plusinfty1
             \forall C_1 & \\ \exists N=N_1(C_1)\\ 
@@ -191,32 +216,43 @@ So
         \item \label eq:07:plusinfty2
             \forall C_2 & \\ \exists N=N_2(C_2)\\ 
         \splitem \splonly{&} \forall n > N  \colon \\  b_n > C_2.
-    \paragraph{Хотим получить}
+    \paragraph{We want to show,}
+    \source{\paragraph{Хотим получить}}
     \eq
         \forall C \\ \exists N=N(C)\\ \forall n > N\colon a_n + b_n > C.
 
-    Возьмём $C_1=C_2=C/2$. Тогда гарантированно $C_1+C_2=C$. Пусть
-    $N=\max(N_1(C/2), N_2(C/2))$. Тогда для всех $n>N$ выполняются неравенства в
-    конце \ref{eq:07:plusinfty1} и \ref{eq:07:plusinfty2}. Их можно сложить и
-    получить:
+    Take $C_1=C_2=C/2$, then it's guaranteed that $C_1+C_2=C$. 
+    Let $N=\max(N_1(C/2), N_2(C/2))$.
+    Then for any $n>N$ both last equations in \ref{eq:07:plusinfty1} and \ref{eq:07:plusinfty2} are satisfied.
+    Adding them together we get
+    \source
+        Возьмём $C_1=C_2=C/2$. 
+        Тогда гарантированно $C_1+C_2=C$. 
+        Пусть $N=\max(N_1(C/2), N_2(C/2))$. 
+        Тогда для всех $n>N$ выполняются неравенства в конце \ref{eq:07:plusinfty1} и \ref{eq:07:plusinfty2}. 
+        Их можно сложить и получить:
     \eq
         a_n + b_n > C_1 + C_2 = C.
-    Что и требовалось.
+    Q.E.D.
+    \source{Что и требовалось.}
 
-Конечно, можно было догадаться до ответа, и не записывая всё это рассуждение.
-Можно было думать так: нам сказано, что $a_n$ и $b_n$ с течением времени
-становятся о-о-очень большими, причём не по модулю большими, а на самом деле
-большими (положительными и большими). Значит, их сумма тоже будет очень большой.
+Surely, the proposition seems true without any mathematical reasoning.
+If we know that both $a_n$ and $b_n$ get very-very large (not by the absolute value!) over time, then their sum must also get very-very large.
+\source
+    Конечно, можно было догадаться до ответа, и не записывая всё это рассуждение.
+    Можно было думать так: нам сказано, что $a_n$ и $b_n$ с течением времени становятся о-о-очень большими, причём не по модулю большими, а на самом деле большими (положительными и большими). 
+    Значит, их сумма тоже будет очень большой.
 
-Заметим, что это рассуждение не работает в том случае, когда $a_n$ или $b_n$
-стремятся не к плюс бесконечности, а к бесконечности без знака: если два числа
-велики по модулю, мы не можем сказать, что их сумма большая по модулю: они могут
-оказаться разных знаков и «сократить» друг друга.
+Notice it's not true in the case when $a_n$ and $b_n$ are of the opposite signs: if two numbers are but by the absolute value, they may be of the opposite signs and reduce each other.
+\source{Заметим, что это рассуждение не работает в том случае, когда $a_n$ или $b_n$ стремятся не к плюс бесконечности, а к бесконечности без знака: если два числа велики по модулю, мы не можем сказать, что их сумма большая по модулю: они могут оказаться разных знаков и «сократить» друг друга.}
 
 \remark
-    По аналогии с доказанным утверждением, легко придумать и доказать несколько
-    новых. Например, $(+\infty)-(-\infty)=+\infty$ или
-    $(-\infty)+(-\infty)=-\infty$. Докажите их!
+    In the manner similar to the statement just proven, try to prove some other counterexamples of indeterminate forms.
+    Consider $(+\infty)-(-\infty)=+\infty$ or $(-\infty)+(-\infty)=-\infty$.
+    \source
+        По аналогии с доказанным утверждением, легко придумать и доказать несколько новых. 
+        Например, $(+\infty)-(-\infty)=+\infty$ или $(-\infty)+(-\infty)=-\infty$. 
+        Докажите их!
 
 \remark
     Число вариантов выражений с последовательностями, в которых нарушаются
