@@ -254,82 +254,125 @@ Notice it's not true in the case when $a_n$ and $b_n$ are of the opposite signs:
         Например, $(+\infty)-(-\infty)=+\infty$ или $(-\infty)+(-\infty)=-\infty$. 
         Докажите их!
 
+At this point it may seem that the number of various indeterminate forms is huge: we've three types of infinities along with addition and substraction and got many that ten different cases
+And we've not yet considered the case when one of the sequences have a finite limit, and the other goes to infinity.
+If during the lecture you've come up with an idea of making a comprehensive table, I must warn you this is not a great idea.
+The best way is to practice in proving the propositions similar to the ones above, which will help ypu strengthen the intuition and gain confidence.  
 \remark
-    Число вариантов выражений с последовательностями, в которых нарушаются
-    условия арифметики пределов, выглядит необъятным: просто рассмотрев три вида
-    бесконечностей и две похожие арифметические операции — сложение и вычитание
-    — легко получить больше десятка разных случаев. А ещё можно комбинировать:
-    например, одна из последовательностей может иметь конечный предел, а другая
-    стремиться к бесконечности. В общем, если у вас возникла идея сделать табличку со
-    всеми возможными случаями, запомнить их и дальше применять без особых
-    размышлений, я сразу скажу, что дело это гиблое. Гораздо лучше и правильнее
-    потренироваться в доказательствах таких утверждений и наработать интуицию,
-    чтобы быстро понимать, чему может равняться то или иное выражение.
+    Число вариантов выражений с последовательностями, в которых нарушаются словия арифметики пределов, выглядит необъятным: просто рассмотрев три вида бесконечностей и две похожие арифметические операции — сложение и вычитание — легко получить больше десятка разных случаев. 
+    А ещё можно комбинировать: например, одна из последовательностей может иметь конечный предел, а другая стремиться к бесконечности. 
+    В общем, если у вас возникла идея сделать табличку со всеми возможными случаями, запомнить их и дальше применять без особых размышлений, я сразу скажу, что дело это гиблое. 
+    Гораздо лучше и правильнее потренироваться в доказательствах таких утверждений и наработать интуицию, чтобы быстро понимать, чему может равняться то или иное выражение.
 
-\subsection Деление на ноль и на бесконечность
-Рассмотрим ещё пару примеров, связанных с делением.
+\subsection 
+    Division by zero and infinity
+    \source{Деление на ноль и на бесконечность}
+Let's consider more examples involving division.
+\source{Рассмотрим ещё пару примеров, связанных с делением.}
 \proposition \label prop:07:1/infty
-    Пусть $a_n \to \infty$. Тогда $\frac{1}{a_n}\to 0$. Неформально можно
-    записать так: $\frac{1}{\infty}=0$.
+    Suppose $a_n \to \infty$, then $\frac{1}{a_n}\to 0$.
+    Or, informally, $\frac{1}{\infty}=0$.
+    \source
+        Пусть $a_n \to \infty$. 
+        Тогда $\frac{1}{a_n}\to 0$. 
+        Неформально можно записать так: $\frac{1}{\infty}=0$.
 \proof
-    Ну, как обычно.
-    \paragraph{Имеем}
+    We proceed as usual.
+    \paragraph{We're given,}
+    \source
+        Ну, как обычно.
+        \paragraph{Имеем}
     \eq
         \forall C\\ \exists N=N_1(C)\\ \forall  n>N\colon |a_n| > C.
-
-    \paragraph{Хотим доказать}
+    \paragraph{We want to show,}
+    \source{\paragraph{Хотим доказать}}
     \eq
         \forall \eps>0\\ \exists N=N(\eps)\\ \forall n>N\colon |1/a_n|<\eps.
 
-    Теперь можно доказывать. Для всякого $\eps>0$ положим $C:=1/\eps$. Возьмём
-    $N:=N_1(1/\eps)$. Тогда для всех $n>N$:
+    Now we're ready to begin the proof.
+    For any $\eps>0$ take $C:=1/\eps$.
+    Then take $N:=N_1(1/\eps)$.
+    This way for any $n>N$:
+    \source
+        Теперь можно доказывать. 
+        Для всякого $\eps>0$ положим $C:=1/\eps$. 
+        Возьмём $N:=N_1(1/\eps)$. 
+        Тогда для всех $n>N$:
     \eq
         |a_n| > C=\frac{1}{\eps}.
-    Умножим на $\eps$ и разделим на $|a_n|$ (поскольку $|a_n| > C > 0$, на него
-    можно делить):
+    Let's multiply the equation by $\eps$ and divide by $|a_n|$ (since $|a_n| > C > 0$, the division is allowed):
+    \source{Умножим на $\eps$ и разделим на $|a_n|$ (поскольку $|a_n| > C > 0$, на него можно делить):}
     \eq
         \left|\frac{1}{a_n}\right| = \frac{1}{|a_n|} < \eps.
-    Что и требовалось.
+    We're done!
+    \source{Что и требовалось.}
 
 \proposition
-    Пусть $a_n \to 0$ и для всех $n$, $a_n \ne 0$. Тогда $1/a_n \to \infty$.
-    Неформально можно записать так: $1/0=\infty$. (Ура! Нам разрешили делить на
-    ноль! Хоть и только неформально.)
+    Suppose $a_n \to 0$ and for all $n$ we have $a_n \ne 0$. 
+    Then $1/a_n \to \infty$.
+    So it is possible to divide by zero, after all?!
+    Perhaps only informally.
+    \source
+        Пусть $a_n \to 0$ и для всех $n$, $a_n \ne 0$. 
+        Тогда $1/a_n \to \infty$.
+        Неформально можно записать так: $1/0=\infty$. 
+        (Ура! Нам разрешили делить на ноль! 
+        Хоть и только неформально.)
 \proof
-    Нужно повторить предыдущее доказательство «наоборот».
-    \paragraph{Имеем}
+    Notice that is is sufficient to repeat the previous point, but in the "reversed" way.
+    \paragraph{We're given,}
+    \source
+        Нужно повторить предыдущее доказательство «наоборот».
+        \paragraph{Имеем}
     \eq
         \forall \eps>0\\ \exists N=N_1(\eps)\\ \forall n>N\colon |a_n|<\eps.
 
-    \paragraph{Хотим доказать}
+    \paragraph{We want to prove,} 
+    \source{\paragraph{Хотим доказать}}
     \eq
         \forall C\\ \exists N=N(C)\\ \forall  n>N\colon
-        \left|\frac{1}{a_n}\right| > C.
-
-    Докажем. Если $C \le 0$, то подойдёт любое $N$, потому что $|a_n| \ge 0$
-    всегда.  Пусть теперь $C>0$. Положим $\eps=1/C$ (это можно сделать, потому
-    что $C>0$ и тогда обязательно получится $\eps>0$) и возмём $N:=N_1(1/C)$.
-    Тогда для всех $n>N$:
+        \left|\frac{1}{a_n}\right| > C. 
+        
+    Let's begin the proof.
+    Since $C \le 0$ and $|a_n| \ge 0$, we can take any $N$.
+    As for the epsilon, take $\eps=1/C$ ($C>0$ is ensured), then set $N:=N_1(1/C)$.
+    This way for any $n>N$:
+    \source
+        Докажем. 
+        Если $C \le 0$, то подойдёт любое $N$, потому что $|a_n| \ge 0$ всегда.  
+        Пусть теперь $C>0$. 
+        Положим $\eps=1/C$ (это можно сделать, потому что $C>0$ и тогда обязательно получится $\eps>0$) и возмём $N:=N_1(1/C)$.
+        Тогда для всех $n>N$:
     \eq
         |a_n|<\eps.
-    Поделим всё на $|a_n|\eps$ (имеем право, потому что $a_n \ne 0$ и значит
-    $|a_n|\eps>0$). Тогда для всех $n>N$:
+    Let's divide by $|a_n|\eps$ (this is also allowed since $a_n \ne 0$), which yeilds:
+    \source
+        Поделим всё на $|a_n|\eps$ (имеем право, потому что $a_n \ne 0$ и значит $|a_n|\eps>0$). 
+        Тогда для всех $n>N$:
     \eq
         \left|\frac{1}{a_n}\right| = \frac{1}{|a_n|} > \frac{1}{\eps}=C.
-    Что и требовалось.
+    Q. E. D.
+    \source{Что и требовалось.}
 
-\section Заключение
+\section 
+    Conclusion
+    \source{Заключение}
 
-Мир последовательностей за пределами «арифметики пределов» выглядит непривычно:
-например, похожие выражения могут приводить к очень разным результатам (сравните
-$(\infty) + (\infty)$ и $(+\infty)+(+\infty)$). Нам нужно приобрести интуицию,
-чтобы научиться делать выводы о последовательностях, анализируя формулы для их
-общего члена, не занимаясь каждый раз утомительным доказательством через
-определения. В каких-то случаях мы сможем свести всё к конечным пределам и
-воспользоваться арифметикой пределов. В каких-то нам придётся разбираться с
-бесконечностями. Иногда нас будет интересовать не предел, а более грубые
-свойства последовательности — например, ограниченность. Невозможно запастись
-теоремами на все случаи жизни — именно поэтому мы изучаем, как они доказываются,
-чтобы при необходимости уметь доказывать похожие утверждения — ровно те, которые
-нам нужны для конкретного случая. Как обычно, ключ к успеху — самостоятельное
-решение задач.
+The world beyond the common limits arithmetic looks bizzare and chaotic.
+Similar expressions can lead to all sorts of different values of a limits (compare $(\infty) + (\infty)$ with $(+\infty)+(+\infty)$).
+Clearly, we need some kind of strong intuilion to be able to analyze a general term of a sequence without dealing with tidious proofs by definition.
+In some cases it may be possible to reduce the expression to include only finite limits.
+But in some cases we'll have to work with infinities.
+Not to mention other properties of limits, perhaps less "strict" than their value, like boundness.
+Importanly, it's impossible to use ready-made theorems in all occasions. 
+Sometimes one need to come up with a specific proof for a particular proposition.
+That's why we pay so much attention to proving all sorts of propositionals in full detail.
+As always, practice is key.
+\section
+    Мир последовательностей за пределами «арифметики пределов» выглядит непривычно: например, похожие выражения могут приводить к очень разным результатам (сравните $(\infty) + (\infty)$ и $(+\infty)+(+\infty)$). 
+    Нам нужно приобрести интуицию, чтобы научиться делать выводы о последовательностях, анализируя формулы для их общего члена, не занимаясь каждый раз утомительным доказательством через определения. 
+    В каких-то случаях мы сможем свести всё к конечным пределам и воспользоваться арифметикой пределов. 
+    В каких-то нам придётся разбираться с бесконечностями. 
+    Иногда нас будет интересовать не предел, а более грубые свойства последовательности — например, ограниченность. 
+    Невозможно запастись теоремами на все случаи жизни — именно поэтому мы изучаем, как они доказываются, чтобы при необходимости уметь доказывать похожие утверждения — ровно те, которые нам нужны для конкретного случая. 
+    Как обычно, ключ к успеху — самостоятельное решение задач.
