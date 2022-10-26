@@ -1,42 +1,55 @@
-\chapter Теорема Вейерштрасса, немного комбинаторики и число e \label chap:08:weierstrass
+\chapter 
+    Weierstrass theorem, a look at combinatorics, and the number e \label chap:08:weierstrass
+    \source{Теорема Вейерштрасса, немного комбинаторики и число e \label chap:08:weierstrass}
 
-До сих пор у нас был единственный способ доказать, что некоторая
-последовательность имеет предел: угадать, чему этот предел равен, а затем
-использовать определение, чтобы доказать, что он действительно этому равен. В
-этой лекции мы познакомимся с утверждением, которое позволит доказать
-существование предела в ситуации, когда его значение неизвестно. Но начнём мы
-слегка издалека.
+So far we've been using only one way to find the limit of a sequence.
+First, you need to guess it and then use the definition to show that it is satusfied.
+In today's lecture we're going to learn the method that proves the existence of a limit when its value is unclear.
+We need to start from afar.
+\source
+    До сих пор у нас был единственный способ доказать, что некоторая последовательность имеет предел: угадать, чему этот предел равен, а затем использовать определение, чтобы доказать, что он действительно этому равен. 
+    В этой лекции мы познакомимся с утверждением, которое позволит доказать существование предела в ситуации, когда его значение неизвестно. 
+    Но начнём мы слегка издалека.
 
-\section Ограниченные множества
-\subsection Максимум и минимум
+\section    
+    Bounded sets
+    \source{Ограниченные множества}
+\subsection 
+    The maximum and the mininum
+    \source{Максимум и минимум}
 \definition \label def:08:bound
-    Пусть $X$ — некоторое числовое множество, $X\subset \mathbb R$. Пусть
-    существует такое число $C$, что все элементы множества $X$ не превосходят
-    $C$:
+    Suppose $X$ is a set of numbers, or formally $X\subset \mathbb R$.
+    Suppose there exists a number $C$ such that all elements of $X$ does not exceed $C$:
+    \source
+        Пусть $X$ — некоторое числовое множество, $X\subset \mathbb R$. 
+        Пусть существует такое число $C$, что все элементы множества $X$ не превосходят $C$:
     \eq
         \forall x \in X\colon x \le C.
-    Тогда множество $X$ называется \emph{ограниченным сверху}.
+    Then the set $X$ is called \emph{bounded from above].
+    \source{Тогда множество $X$ называется \emph{ограниченным сверху}.}
     
-Аналогично, с заменой неравенства $\le$ на $\ge$, определяется множество,
-ограниченное снизу.
+The definition of a set bounded from bellow is analogous (just change the inequality sign from $\le$ to $\ge$).
+\source{Аналогично, с заменой неравенства $\le$ на $\ge$, определяется множество, ограниченное снизу.}
 
 \remark
-    Для дальнейшего полезно ввести новые обозначения, позволяющие описывать
-    множества, получаемые из других множеств по некоторым правилам. Проще всего
-    объяснить их на примере.
+    Let's discuss sets that can be obtained by applying ceratin operations to another sets.
+    For example, 
+    \source
+        Для дальнейшего полезно ввести новые обозначения, позволяющие описывать множества, получаемые из других множеств по некоторым правилам. 
+        Проще всего объяснить их на примере.
     \itemize
-        \item 
-            $\seq{n^2 \mid n \in \mathbb N}$ — множество всех квадратов всех
-            натуральных чисел. Фигурные скобки подсказывают, что мы создаём
-            новое множество, после вертикальной черты написано, какие значения
-            пробегает переменная $n$, а до черты — как из переменной $n$
-            изготовить элементы множества.
         \item
-            $\seq{n \in \mathbb N \mid \exists k \in \mathbb N \colon k^2=n}$ —
-            это тоже множество квадратов всех натуральных чисел, только
-            записанное иначе.  Здесь до вертикальной черты написано, из какого
-            множества выбирается $n$, а после — какому условию $n$ должно
-            удовлетворять, чтобы быть включённым в наше новое множество.
+            The set of all squares of natural numbers is $\seq{n^2 \mid n \in \mathbb N}$.
+            Curly brackets indicate that a set is being created, and the vertical bar tells the range of a variable $n$ on the right, and the "recipe" of elements for this particular set. 
+            \source
+                $\seq{n^2 \mid n \in \mathbb N}$ — множество всех квадратов всех натуральных чисел. 
+                Фигурные скобки подсказывают, что мы создаём новое множество, после вертикальной черты написано, какие значения пробегает переменная $n$, а до черты — как из переменной $n$ изготовить элементы множества.
+        \item
+            We can define the same set using a different notation: $\seq{n \in \mathbb N \mid \exists k \in \mathbb N \colon k^2=n}$.
+            Here the range is to the left of a vertical bar, and the "recipe" is on the right.  
+            \source
+                $\seq{n \in \mathbb N \mid \exists k \in \mathbb N \colon k^2=n}$ — это тоже множество квадратов всех натуральных чисел, только записанное иначе.  
+                Здесь до вертикальной черты написано, из какого множества выбирается $n$, а после — какому условию $n$ должно удовлетворять, чтобы быть включённым в наше новое множество.
 \remark
     Пусть есть последовательность $\seq{a_n}$. Рассмотрим множество всех её
     элементов: $\set{a_n \mid n \in \mathbb N}$. (В отличие от последовательности,
