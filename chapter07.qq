@@ -2,10 +2,10 @@
     Infinite limits \label chap:07:infinite
     \source{Вокруг бесконечных пределов \label chap:07:infinite}
 
-Thw last lecture was dedicated to the relationship between limits and arithmetic operations.
-It turned out all of the operations are preserved act as expected (except for the strict inequality sign: it gets changed to a non-strict one).
-Importantly, these rules hold only is the limit exists (in other words when the limiting value is not infinity).
-We need to be able to understand how the limit of an arithmetic operation involving divergent terms behave (it may have a single value, any value or equal infinity).
+The last lecture was dedicated to the relationship between limits and arithmetic operations.
+It turned out if one takes a limit, everything is preserved (except for the strict inequality: it gets changed to a non-strict one).
+Importantly, these rules hold only if when the limiting value is not infinity.
+We need to be able to understand how the limit of an arithmetic operation involving divergent terms behave (it may take a unique value, or equal to any real number and even infinity).
 \source
     На прошлой лекции мы обсуждали, как пределы взаимодействуют с арифметическими операциями, и выяснили, что взаимодействуют «хорошо». 
     Однако, это только до тех пор, пока пределы существуют (как обычные вещественные числа). 
@@ -19,10 +19,10 @@ We need to be able to understand how the limit of an arithmetic operation involv
     \source{Арифметика пределов и бесконечности}
 
 \subsection 
-    Some wrong and correct examples of the arithmeric of limits. 
+    Some examples and non-examples of the arithmeric of limits. 
     \source{Ошибочное и верное применение арифметики пределов}
 
-Let's start from the wrong usage example:
+Let's start from the non-example:
 \source{Для начала я приведу пример неверного применения арифметики пределов.} 
 
 \example \label ex:07:frac
@@ -42,10 +42,10 @@ Let's start from the wrong usage example:
         \frac{\lim_{n \to \infty}(n^2+2n)}{\lim_{n\to \infty}{(2n^2+3)}} = 
         \frac{\infty}{\infty}=1.
 
-Actually, all equalities have their own mistakes.
-In the first one if we want to use the theorem about the limit of a fraction, we assume that both limits exist.
-Hovewer, soon we find out they both equal to infinity and diverge.
-The second and the third ones don't make sence because \label chap:07:infinite is not an ordinary arithmetic expression, and no common rules can be applied.
+Actually, all equalities have mistakes.
+In the first one we've used the theorem about the limit of a fraction, so we must have assumed that both limits exist.
+Hovewer, soon we find out they both equal to infinity.
+The second and the third one simply doesn't make sence because \label chap:07:infinite is not an ordinary arithmetic expression, and no common rules can be applied.
 So it is forbidden to reduce the fraction by dividing both the numerator and the denominator by an infinity.
 \source
     Собственно, неверны все равенства. 
@@ -74,15 +74,15 @@ Only now the theorem about the limit of a fraction can be applied:
     \lim_{n\to \infty} \frac{1 + \frac{2}{n}}{2+\frac{3}{n^2}} = \frac{\lim_{n
     \to \infty} \left(1 + \frac{2}{n}\right)}{\lim_{n \to \infty} \left(2 +
     \frac{3}{n^3}\right)}.
-The theorem about the limit of a sum can be applied to the numerator and the denominator: the former is a constant, hence it's unchanged, and the latter approaches zero in both cases (as it was proven on seminars). 
-We conclude that the limit of the numerator is $1$, and the limit of a denominator is $2$.
+The theorem about the limit of a sum can be applied to the numerator and the denominator: the former is a constant (hence in the limit it's unchanged) and the latter approaches zero in both cases (as it was proven on seminars). 
+We conclude that the limit of the numerator is $1$, and the limit of the denominator is $2$.
 \source
     К пределам в числителе и знаменателе можно применить теорему о пределе суммы: первое слагаемое является константой и сходится само к себе, второе (в обоих случаях) стремится к нулю, как мы уже доказывали на семинарах. 
     Значит числитель сходится к $1$, знаменатель — к $2$.
 
 As you can see, each arithmetic operation was done correctly.
 Both the numerator and the denominator are the sum of two terms that previously didn't have a limit.
-After the dividion, all four limits started to exist, allowing us to apply the theorem about the limit of a sum.
+After the dividion all four limits started to exist, allowing us to apply the theorem about the limit of a sum.
 Only after we've achieved that both the numerator and the denominator converge (and that the limit of a denominator is non-zero), it was possible to apply the theorem about the limit of a fraction.
 We conclude,
 \source
@@ -95,11 +95,11 @@ We conclude,
     \lim_{n \to \infty} \frac{n^2+2n}{2n^2+3} = \frac{1}{2}.
     
 \subsection 
-    indeterminate forms
+    Indeterminate forms
     \source{Неопределенности}
 
 Suppose we were to formulate a theorem that states "if $a_n \to \infty$ and $b_n \to \infty$ then $a_n/b_n$ approaches something".
-Now we're going to show that it is impossible: the limit $a_n/b_n$ can be anything (or even diverge).
+Now we're going to show that it is impossible: the limit $a_n/b_n$ can be anything (or diverge).
 More precisely,
 \source
     Допустим, мы хотели бы сформулировать какую-нибудь теорему вида «если $a_n \to \infty$ и $b_n \to \infty$, то $a_n/b_n$ стремится туда-то». 
@@ -120,17 +120,18 @@ More precisely,
             Он может быть равен нулю. 
             Предыдущий пример не работает (почему?), но работает такой: $a_n=n$, $b_n=n^2$.
     \item 
-        It can be positive or negative infinity: take $a_n=n^2$ and $b_n=n$.
+        It can be positive infinity: take $a_n=n^2$ and $b_n=n$.
         \source{Он может равняться бесконечности и плюс бесконечности: положим $a_n=n^2$ и $b_n=n$.}
-    \item Минус бесконечности тоже может быть равен (придумайте пример
-        самостоятельно).
+    \item 
+        It can be negative inginity.
+        \source{Минус бесконечности тоже может быть равен (придумайте пример самостоятельно).}
     \item 
         It may even have neither a finite, nor an infinite limit.
         (Try to think of an example yourself).
         \source{Может не иметь ни конечного, ни бесконечного предела (придумайте пример самостоятельно).}
     
-In short, this variety of outcomes is formulated in the following way: "$\frac{\infty}{\infty}$ is an indeterminate form".
-The notation $\frac{\infty}{\infty}$ is must not be thought of as a valid arithmetical expression.
+In short, this variety of cases is formulated in the following way: "$\frac{\infty}{\infty}$ is an indeterminate form".
+The notation $\frac{\infty}{\infty}$ must not be thought of as a valid arithmetical expression.
 It is just a compact way to point out that the limit of the sequence where both the numerator and the denominator diverge cannot yet be determited. 
 So 
 \source.
@@ -181,7 +182,7 @@ Let's show that given $a_n \to \infty$ and $b_n \to \infty$ we can make $\lim_{n
 There are various other examples of an indeterminate forms: $0/0$, $0\cdot \infty$, $1^{\infty}$ etc.
 \source{Есть и другие примеры неопределенностей: $0/0$, $0\cdot \infty$, $1^{\infty}$ и др.}
 \exercise
-    Prove that $0/0$ and $0\cdot \infty$ are also indeterminate forms, which means being able to take any finite value or infinity.
+    Prove that $0/0$ and $0\cdot \infty$ are also indeterminate forms, which means they can take any finite value or infinity.
     \source{Докажите, что $0/0$ и $0\cdot \infty$ тоже неопределенности, то есть могут принимать любые вещественные значения, а также стремиться к бесконечности.}
 
 
@@ -237,27 +238,27 @@ Notably, not every arithmetic expression involving sequences with infinite limit
     \source{Что и требовалось.}
 
 Surely, the proposition seems true without any mathematical reasoning.
-If we know that both $a_n$ and $b_n$ get very-very large (not by the absolute value!) over time, then their sum must also get very-very large.
+If we know that both $a_n$ and $b_n$ get very-very large over time, then their sum must also get very-very large.
 \source
     Конечно, можно было догадаться до ответа, и не записывая всё это рассуждение.
     Можно было думать так: нам сказано, что $a_n$ и $b_n$ с течением времени становятся о-о-очень большими, причём не по модулю большими, а на самом деле большими (положительными и большими). 
     Значит, их сумма тоже будет очень большой.
 
-Notice it's not true in the case when $a_n$ and $b_n$ are of the opposite signs: if two numbers are but by the absolute value, they may be of the opposite signs and reduce each other.
+Notice it's not true in the case when $a_n$ and $b_n$ are of the opposite sign: this way they can possibly reduce each other.
 \source{Заметим, что это рассуждение не работает в том случае, когда $a_n$ или $b_n$ стремятся не к плюс бесконечности, а к бесконечности без знака: если два числа велики по модулю, мы не можем сказать, что их сумма большая по модулю: они могут оказаться разных знаков и «сократить» друг друга.}
 
 \remark
-    In the manner similar to the statement just proven, try to prove some other counterexamples of indeterminate forms.
+    In the manner similar to the statement just proven, try to prove some other non-examples of indeterminate forms.
     Consider $(+\infty)-(-\infty)=+\infty$ or $(-\infty)+(-\infty)=-\infty$.
     \source
         По аналогии с доказанным утверждением, легко придумать и доказать несколько новых. 
         Например, $(+\infty)-(-\infty)=+\infty$ или $(-\infty)+(-\infty)=-\infty$. 
         Докажите их!
 
-At this point it may seem that the number of various indeterminate forms is huge: we've three types of infinities along with addition and substraction and got many that ten different cases
-And we've not yet considered the case when one of the sequences have a finite limit, and the other goes to infinity.
-If during the lecture you've come up with an idea of making a comprehensive table, I must warn you this is not a great idea.
-The best way is to practice in proving the propositions similar to the ones above, which will help ypu strengthen the intuition and gain confidence.  
+At this point it may seem that the number of various indeterminate forms is overwhelming: we've considered three types of infinities along with addition and substraction and got more than ten different cases
+And we've not yet considered the case when one of the sequences have a finite limit, and the other approaches infinity.
+If you come up with an idea of making a comprehensive table at some point during the lecture, I must warn you this is not a great idea.
+The best way is to practice proving more the propositions similar to the ones above, which will help you strengthen the intuition and gain confidence.  
 \remark
     Число вариантов выражений с последовательностями, в которых нарушаются словия арифметики пределов, выглядит необъятным: просто рассмотрев три вида бесконечностей и две похожие арифметические операции — сложение и вычитание — легко получить больше десятка разных случаев. 
     А ещё можно комбинировать: например, одна из последовательностей может иметь конечный предел, а другая стремиться к бесконечности. 
@@ -265,7 +266,7 @@ The best way is to practice in proving the propositions similar to the ones abov
     Гораздо лучше и правильнее потренироваться в доказательствах таких утверждений и наработать интуицию, чтобы быстро понимать, чему может равняться то или иное выражение.
 
 \subsection 
-    Division by zero and infinity
+    Division by zero and by infinity
     \source{Деление на ноль и на бесконечность}
 Let's consider more examples involving division.
 \source{Рассмотрим ещё пару примеров, связанных с делением.}
@@ -300,7 +301,7 @@ Let's consider more examples involving division.
         Тогда для всех $n>N$:
     \eq
         |a_n| > C=\frac{1}{\eps}.
-    Let's multiply the equation by $\eps$ and divide by $|a_n|$ (since $|a_n| > C > 0$, the division is allowed):
+    Let's multiply the equation by $\eps$ and divide by $|a_n|$ (since $|a_n| > C > 0$, this is allowed):
     \source{Умножим на $\eps$ и разделим на $|a_n|$ (поскольку $|a_n| > C > 0$, на него можно делить):}
     \eq
         \left|\frac{1}{a_n}\right| = \frac{1}{|a_n|} < \eps.
@@ -310,8 +311,8 @@ Let's consider more examples involving division.
 \proposition
     Suppose $a_n \to 0$ and for all $n$ we have $a_n \ne 0$. 
     Then $1/a_n \to \infty$.
-    So it is possible to divide by zero, after all?!
-    Perhaps only informally.
+    (So it was possible to divide by zero, after all?
+    Perhaps only informally.)
     \source
         Пусть $a_n \to 0$ и для всех $n$, $a_n \ne 0$. 
         Тогда $1/a_n \to \infty$.
@@ -319,7 +320,7 @@ Let's consider more examples involving division.
         (Ура! Нам разрешили делить на ноль! 
         Хоть и только неформально.)
 \proof
-    Notice that is is sufficient to repeat the previous point, but in the "reversed" way.
+    Notice that we can just repeat the previous proof, but in the "reversed" way.
     \paragraph{We're given,}
     \source
         Нужно повторить предыдущее доказательство «наоборот».
@@ -358,14 +359,14 @@ Let's consider more examples involving division.
     Conclusion
     \source{Заключение}
 
-The world beyond the common limits arithmetic looks bizzare and chaotic.
+The world beyond the logical "finite" arithmetic of limits looks bizzare and chaotic.
 Similar expressions can lead to all sorts of different values of a limits (compare $(\infty) + (\infty)$ with $(+\infty)+(+\infty)$).
 Clearly, we need some kind of strong intuilion to be able to analyze a general term of a sequence without dealing with tidious proofs by definition.
 In some cases it may be possible to reduce the expression to include only finite limits.
-But in some cases we'll have to work with infinities.
-Not to mention other properties of limits, perhaps less "strict" than their value, like boundness.
-Importanly, it's impossible to use ready-made theorems in all occasions. 
-Sometimes one need to come up with a specific proof for a particular proposition.
+But in other cases we'll have to work with infinities.
+Not to mention proving other properties of limits, perhaps less "strict" than their value, like boundness.
+Importanly, one cannot always use ready-made theorems when dealing with problems.  
+Sometimes a proposition demands a specific proof, and there might not be a theorem that applies to this particular case.
 That's why we pay so much attention to proving all sorts of propositionals in full detail.
 As always, practice is key.
 \section
