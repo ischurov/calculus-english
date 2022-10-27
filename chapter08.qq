@@ -51,21 +51,28 @@ The definition of a set bounded from bellow is analogous (just change the inequa
                 $\seq{n \in \mathbb N \mid \exists k \in \mathbb N \colon k^2=n}$ — это тоже множество квадратов всех натуральных чисел, только записанное иначе.  
                 Здесь до вертикальной черты написано, из какого множества выбирается $n$, а после — какому условию $n$ должно удовлетворять, чтобы быть включённым в наше новое множество.
 \remark
-    Пусть есть последовательность $\seq{a_n}$. Рассмотрим множество всех её
-    элементов: $\set{a_n \mid n \in \mathbb N}$. (В отличие от последовательности,
-    это просто множество: в нём нет никакого порядка, и каждый элемент в него
-    может входить только один раз. Например, для последовательности
-    $\seq{(-1)^n}$ получится конечное множество $\set{1, -1}$; такое же
-    множество получится для последовательности $\seq{(-1)^{n+1}}$.) Это
-    множество ограничено тогда и только тогда, когда последовательность
-    ограничена. (Докажите!)
+    Consider a sequence $\seq{a_n}$.
+    Let's construct the set of all its elements $\set{a_n \mid n \in \mathbb N}$.
+    (In contrast to a sequence, a set is not ordered and repeating values are removed.
+    To illustrate, the sequence $\seq{(-1)^n}$ yeilds a finite set $set{1, -1}$, which also comes from the sequence $\seq{(-1)^{n+1}}$.) 
+    Such a set is bounded if and only if a sequence is bounded.
+    (Prove it yourself!.)
+    \source
+        Пусть есть последовательность $\seq{a_n}$. 
+        Рассмотрим множество всех её элементов: $\set{a_n \mid n \in \mathbb N}$. 
+        (В отличие от последовательности, это просто множество: в нём нет никакого порядка, и каждый элемент в него может входить только один раз. 
+        Например, для последовательности $\seq{(-1)^n}$ получится конечное множество $\set{1, -1}$; такое же множество получится для последовательности $\seq{(-1)^{n+1}}$.) 
+        Это множество ограничено тогда и только тогда, когда последовательность ограничена. 
+        (Докажите!)
 
 
 \definition \label def:08:max-min
-    Рассмотрим произвольное числовое множество $X\subset \mathbb R$. Его
-    \emph{максимумом} (соответственно, \emph{минимумом}) называется такой
-    элемент $X$, который не меньше (соответственно, не больше) всех элементов
-    $X$:
+    Consider an arbitrary numerical set $X\subset \mathbb R$.
+    We call an element a \emph{maximal element} if it is not smaller than any other element of $X$.
+    A \emph{minimal element} is not bigger than any other element of the set.
+    \source
+        Рассмотрим произвольное числовое множество $X\subset \mathbb R$. 
+        Его \emph{максимумом} (соответственно, \emph{минимумом}) называется такой элемент $X$, который не меньше (соответственно, не больше) всех элементов $X$:
     \align
         \item 
             & \max  X =  m  \quad \Leftrightarrow 
@@ -77,41 +84,53 @@ The definition of a set bounded from bellow is analogous (just change the inequa
             \in X\colon M \le y).
 
 \question
-    Что будет, если заменить нестрогое неравенство на строгое?
+    What if we make the inequality strict? 
+    \source{Что будет, если заменить нестрогое неравенство на строгое?}
     \quiz
         \choice
-            Ничего не изменится, мы такое уже проходили.
+            Nothing changes, we've seen this before.
+            \source{Ничего не изменится, мы такое уже проходили.}
             \comment
-                В этот раз всё не так.
+                This time it's different.
+                \source{В этот раз всё не так.}
         \choice \correct
-            Определение потеряет свой смысл.
+            The definition loses its meaning.
+            \source{Определение потеряет свой смысл.}
             \comment
-                Действительно, если потребовать строгое неравенство, условие
-                будет всегда нарушаться: элемент не может быть строго больше или
-                строго меньше самого себя.
+                Indeed, in this case the definition must reject any candidate: an element cannot be strictly smaller or larger than itself.
+                \source{Действительно, если потребовать строгое неравенство, условие будет всегда нарушаться: элемент не может быть строго больше или строго меньше самого себя.}
 \exercise
-    Докажите, что если максимум (минимум) определён, он задан единственным
-    образом.
-Если множество конечное, у него всегда определён максимум и минимум, мы уже
-пользовались этим свойством. (Доказать это аккуратно с помощью индукции —
-полезное упражнение.) Если множество бесконечно, становится интереснее.
+    Prove that if a maximal (minimal) element is defined, then it's unique.
+    \source{Докажите, что если максимум (минимум) определён, он задан единственным образом.
+If a set is finite, it must always have a unique minimal and maximal value.
+We've already used this fact in our analysis, and a strict proof will be a great exercise.
+What if a set is infinite?
+This is where it gets interesting
+\source
+    Если множество конечное, у него всегда определён максимум и минимум, мы уже пользовались этим свойством. 
+    (Доказать это аккуратно с помощью индукции — полезное упражнение.) 
+    Если множество бесконечно, становится интереснее.
 
-Если максимум множества $X$ существует, это множество обязательно ограничено
-сверху: действительно, сам этот максимум можно подставить в
-\ref[определение][def:08:bound] в качестве $C$. Аналогично, если существует
-минимум, множество ограничено снизу.
+If a maximal element of $X$ exists, then the set must be bounded from above.
+Indeed, we can make this element play the role of $C$ in the \ref[definition][def:08:bound].
+Similarly, if a minimal element exists, then the set is bounded from bellow.
+\source
+    Если максимум множества $X$ существует, это множество обязательно ограничено сверху: действительно, сам этот максимум можно подставить в \ref[определение][def:08:bound] в качестве $C$.
+    Аналогично, если существует минимум, множество ограничено снизу.
 
-В обратную сторону, однако, это не работает: например, если множество ограничено
-сверху, ещё не факт, что у него есть максимум.
+Notice that the inplication doesn't work the other way around: if a set is bounded from above, it doesn't mean it has a maximal element.
+\source{В обратную сторону, однако, это не работает: например, если множество ограничено сверху, ещё не факт, что у него есть максимум.}
 
 \example 
-    Пусть $X=[0, 1) = \set{x \in \mathbb R\mid 0 \le x < 1}$ — полуоткрытый
-    интервал, включащий в себя $0$, но не включающий единицу. Это множество
-    ограничено и сверху, и снизу.  У него есть минимум — это число $0$, но нет
-    максимума. Действительно, любое число $x \in [0, 1)$ меньше 1 (см.
-    \ref[рис.][fig:08:nomax]). Рассмотрим число $y=\frac{x+1}{2}$ — середину
-    отрезка $[x, 1]$. Оно больше $x$, но меньше $1$ (проверьте аккуратно с
-    помощью неравенств). Значит, $x$ не является максимумом.
+    Consier a half-closed interval $X=[0, 1) = \set{x \in \mathbb R\mid 0 \le x < 1}$, in which $0$ is included but $0$ is not.
+    \source
+        Пусть $X=[0, 1) = \set{x \in \mathbb R\mid 0 \le x < 1}$ — полуоткрытый интервал, включащий в себя $0$, но не включающий единицу. 
+        Это множество ограничено и сверху, и снизу.  
+        У него есть минимум — это число $0$, но нет максимума. 
+        Действительно, любое число $x \in [0, 1)$ меньше 1 (см. \ref[рис.][fig:08:nomax]). 
+        Рассмотрим число $y=\frac{x+1}{2}$ — середину отрезка $[x, 1]$. 
+        Оно больше $x$, но меньше $1$ (проверьте аккуратно с помощью неравенств). 
+        Значит, $x$ не является максимумом.
 
     \figure
         \img
