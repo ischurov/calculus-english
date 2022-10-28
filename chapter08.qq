@@ -123,6 +123,13 @@ Notice that the inplication doesn't work the other way around: if a set is bound
 
 \example 
     Consier a half-closed interval $X=[0, 1) = \set{x \in \mathbb R\mid 0 \le x < 1}$, in which $0$ is included but $0$ is not.
+    This set is bounded both from above and from bellow.
+    It has a minimal value, which is the number $0$, but no maximal value can be found.
+    This is easy to check: take any number $x \in [0, 1)$.
+    By construction is it smaller than $1$ (see \ref[fig.][fig:08:nomax]).
+    Consider a number $y=\frac{x+1}{2}$, which is a midpoint of an interval $[x, 1]$.
+    It's larger than $x$, but less than $1$ (which I andise you  to check yourself via a chain of inequalities), so it also belongs to $[0, 1)$.
+    Hence $x$ cannot be a maximal point.
     \source
         Пусть $X=[0, 1) = \set{x \in \mathbb R\mid 0 \le x < 1}$ — полуоткрытый интервал, включащий в себя $0$, но не включающий единицу. 
         Это множество ограничено и сверху, и снизу.  
@@ -143,52 +150,69 @@ Notice that the inplication doesn't work the other way around: if a set is bound
                 Иллюстрация к доказательству утверждения о том, что у
                 полуинтервала $[0, 1)$ нет максимума, описание см. в тексте.
         \caption
-            У множества $[0, 1)$ нет максимума.
+            The set $[0, 1)$ does not have a maximal value.
+            \source{У множества $[0, 1)$ нет максимума.}
         \label fig:08:nomax
 
-Это неудачно: мы бы хотели как-то обобщить понятие максимума и минимума, чтобы
-они существовали для любого ограниченного с соответствующей стороны множества.
-Если ещё раз посмотреть на пример с полуоткрытым интервалом $[0, 1)$, и задать
-вопрос, какое число подходит на роль его «обобщённого максимума», напрашивается
-ответ, что это число $1$. Единственная причина, по которой $1$ не является
-максимумом на самом деле — то, что $1$ не принадлежит нашему множеству. Если бы
-мы могли снять это ограничение…
+This is somewhat of a failure.
+We'd like to generalize the notion of a maximal and a minimal value so that they exist for any bounded (from the respective side) set. 
+If we revisit the just considered example and ask ourselves, what number would be a good candidate for this generalized maximal value?
+The number begs to be $1$, but the only reason why it does not satisfy the definition is because it is excluded from the set.
+\source
+    Это неудачно: мы бы хотели как-то обобщить понятие максимума и минимума, чтобы они существовали для любого ограниченного с соответствующей стороны множества.
+    Если ещё раз посмотреть на пример с полуоткрытым интервалом $[0, 1)$, и задать вопрос, какое число подходит на роль его «обобщённого максимума», напрашивается ответ, что это число $1$. 
+    Единственная причина, по которой $1$ не является максимумом на самом деле — то, что $1$ не принадлежит нашему множеству. 
+    Если бы мы могли снять это ограничение…
 
-\subsection Точная верхняя и нижняя грани
+\subsection 
+    Infimum and supremum
+    \source{Точная верхняя и нижняя грани}
 
-Что будет, если мы уберём в \ref[определении максимума\nonumber][def:08:max-min]
-требование, чтобы $M$ принадлежал $X$. Для полуинтервала $[0, 1)$, число $1$
-будет удовлетворять новому определению. Однако, не только оно: любое число,
-большее 1, тоже ему будет удовлетворять. Мы лишились единственности. Однако,
-сделали важный шаг на пути к построению нужного нам понятия. Штука, которую мы
-определили, называется \emph{верхней гранью} множества.
+Let's analyze what happens if we change the \ref[definition of a maximal value\nonumber][def:08:max-min] by remobing the requirement that $M$ must belong to $X$. 
+Now the number $1$ is a maximal value for a half-cloded interval $[0, 1)$.
+But it is far from unique: any number greater than $1$ also qualifies.
+The uniqueness is gone, but we've made a step towards a definition we seek to formulate.
+The thing we defined actually has a name.
+It's called an \emph{upper bound} of a set.
+\source
+    Что будет, если мы уберём в \ref[определении максимума\nonumber][def:08:max-min] требование, чтобы $M$ принадлежал $X$. 
+    Для полуинтервала $[0, 1)$, число $1$ будет удовлетворять новому определению. 
+    Однако, не только оно: любое число, большее 1, тоже ему будет удовлетворять. 
+    Мы лишились единственности. 
+    Однако, сделали важный шаг на пути к построению нужного нам понятия. 
+    Штука, которую мы определили, называется \emph{верхней гранью} множества.
 
 \definition \label def:08:bound-C
+    An \emph{upper bound} of a set $X$ is a number $C$ that is larger or equal to all elements of $X$:
     \emph{Верхней гранью} множества $X$ называется такое число $C$, которое не
     меньше всех элементов $X$:
     \eq
         \forall x \in X\colon x \le C.
 
-    Аналогично (заменой неравенства $\le$ на $\ge$) определяетcя \emph{нижняя грань}
-    множества.
+    The definition of a \emph{lower bound} is the same expect for changing the inequality from $\le$ to $\ge$.
+    \source{Аналогично (заменой неравенства $\le$ на $\ge$) определяетcя \emph{нижняя грань} множества.}
 
-    Множество всех верхних граней $X$ будем обозначать через $\UB(X)$ (от англ.
-    \emph{upper bound}), а нижних — через $\LB(X)$ (от \emph{lower bound}).
+    The set of all upper bounds of $X$ is going to have a special notation $\UB(X)$, and the set of all lower bounds is going to be called $\LB(X)$.
+    \source{Множество всех верхних граней $X$ будем обозначать через $\UB(X)$ (от англ. \emph{upper bound}), а нижних — через $\LB(X)$ (от \emph{lower bound}).}
 
 
 
-Сравнивая определения \ref{def:08:bound-C} и \ref{def:08:bound}, мы видим, что
-множество является ограниченным сверху (снизу) тогда и только тогда, когда у
-него есть верхняя (нижняя) грань, то есть $\UB(X)$ непусто (соответственно,
-$\LB(X)$ непусто). Собственно, верхняя грань (нижняя грань) — это ровно та самая
-константа $C$, которая участвует в \ref[определении][def:08:bound]. Слово
-«грань» здесь следует понимать как «то, что ограничивает».
+Comparing the definitions \ref{def:08:bound-C} and \ref{def:08:bound} we see that the set is bounded from above (bellow) if ad only if it has an upper (lower) bound, which is equivalent to $\UB(X)$ ($\LB(X)$) being non-empty.
+Actually, a constant $C$ on the \ref[definition][def:08:bound] is an upper bound.
+\source
+    Сравнивая определения \ref{def:08:bound-C} и \ref{def:08:bound}, мы видим, что множество является ограниченным сверху (снизу) тогда и только тогда, когда у него есть верхняя (нижняя) грань, то есть $\UB(X)$ непусто (соответственно, $\LB(X)$ непусто). 
+    Собственно, верхняя грань (нижняя грань) — это ровно та самая константа $C$, которая участвует в \ref[определении][def:08:bound]. 
+    Слово «грань» здесь следует понимать как «то, что ограничивает».
 
-Вернёмся к задаче определения «обобщённого максимума» и примеру с полуинтервалом
-$[0, 1)$. Множеством верхих граней этого интервала оказывается весь луч $[1,
-+\infty)$, см. \ref[рис.][fig:08:bounds]. Какое число из этого луча в наибольшей
-степени достойно того, чтобы назваться «обобщённым максимумом» множества $[0,
-1)$? Очевидно, самое маленькое: число $1$.
+Let's get back to the desided definition of a generalized maximal value and the example involving $[0, 1)$.
+The set of all upper bounds for this interval is the ray $[1, +\infty)$, see \ref[fig.][fig:08:bounds]. 
+What element from this ray is the best candidate for a generalized maximal value of $[0, 1)$?
+Seems like $1$ is the best choice.
+\source
+    Вернёмся к задаче определения «обобщённого максимума» и примеру с полуинтервалом $[0, 1)$. 
+    Множеством верхих граней этого интервала оказывается весь луч $[1, +\infty)$, см. \ref[рис.][fig:08:bounds]. 
+    Какое число из этого луча в наибольшей степени достойно того, чтобы назваться «обобщённым максимумом» множества $[0, 1)$? 
+    Очевидно, самое маленькое: число $1$.
 
 \figure
     \img
@@ -201,41 +225,53 @@ $[0, 1)$. Множеством верхих граней этого интерв
             является луч (-∞, 0], а множеством верхних граней UB(X) является луч
             [1, +∞).
     \caption
-        Множества верхних и нижних граней для $[0, 1)$.
+        A set of all upper bounds of $[0, 1)$ and a set of all lower bounds of $[0, 1)$.
+        \source{Множества верхних и нижних граней для $[0, 1)$.}
     \label
         fig:08:bounds
 \definition \label def:08:sup-inf
-    Пусть $X \subset \mathbb R$ — некоторое числовое множество. Его \emph{точной
-    верхней гранью} называется самая маленькая верхняя грань, то есть минимум
-    множества $\UB(X)$. Аналогично, \emph{точной нижней гранью} называется самая
-    большая из нижних граней, то есть максимум множества $\LB(X)$.
+    Suppose $X \subset \mathbb R$ is some numerical set.
+    The smallest element of a set of all its upper bounds is called the \emph{least upper bound} of $X$.
+    Similarly, the \emph{greatest lower bound} of $X$ is the largest element in the set $\LB(X)$.
+    \source
+        Пусть $X \subset \mathbb R$ — некоторое числовое множество. 
+        Его \emph{точной верхней гранью} называется самая маленькая верхняя грань, то есть минимум множества $\UB(X)$. 
+        Аналогично, \emph{точной нижней гранью} называется самая большая из нижних граней, то есть максимум множества $\LB(X)$.
 
-    Точная верхняя грань также называется \emph{супремумом}, а точная нижняя
-    грань — \emph{инфимумом}. В обозначениях:
+    The least upper bound is often called the \emph{supremum}, and the greatest lower bound is called the \emph{infinum}.
+    In formal language,
+    \source
+        Точная верхняя грань также называется \emph{супремумом}, а точная нижняя грань — \emph{инфимумом}. 
+        В обозначениях:
 
     \eq
         \sup X := \min \UB(X),\quad \inf X := \max \LB(X).
 
-Позвольте! — скажет тут читатель, — вы водите нас кругами! Обещали построить
-обобщение максимума и минимума, но вернулись в итоге к ним же самим: супремум
-определяется через минимум, а инфимум — через максимум. Казалось бы, мы должны
-столкнуться с теми же самыми трудностями, от которых стремились уйти: максимум и
-минимум могут быть не определены. Стоило ли тогда так мучаться?
+But wait, isn't there a contradiction? 
+We were aiming to construct the generalized version of a maximal value, which led to the notion of the supremum.
+But its definition involves finding a minimal value of a set, and what if it doesn't exist, like in our example with $[0, 1)$? 
+\source
+    Позвольте! — скажет тут читатель, — вы водите нас кругами! 
+    Обещали построить обобщение максимума и минимума, но вернулись в итоге к ним же самим: супремум определяется через минимум, а инфимум — через максимум. 
+    Казалось бы, мы должны столкнуться с теми же самыми трудностями, от которых стремились уйти: максимум и минимум могут быть не определены. 
+    Стоило ли тогда так мучаться?
 
-Оказывается, да, стоило. Дело в том, что каким бы ни было множество $X$, если
-множество его верхних граней $\UB(X)$ не пусто, у него обязательно есть
-минимальный элемент $\min \UB(X)$, и аналогично если непусто множество нижних
-граний, определён его максимум.
+It turns out this does not yeild any complications at all.
+For an arbitraty $X$, if the set of all upper bounds of $X$ is non-empty, then it must have a minimal element $\min \UB(X)$.
+The same fact holds for the set of all lower bounds.
+\source
+    Оказывается, да, стоило. 
+    Дело в том, что каким бы ни было множество $X$, если множество его верхних граней $\UB(X)$ не пусто, у него обязательно есть минимальный элемент $\min \UB(X)$, и аналогично если непусто множество нижних граний, определён его максимум.
 
-Давайте ещё раз вернёмся к полуинтервалу $[0, 1)$. Его множество верхних граней
-— замкнутый луч $[1, +\infty)$, содержащий единицу. Может показаться, что если
-мы теперь возмём вместо полуинтервала замкнутый отрезок $[0, 1]$, множество
-верхних граней станет открытым лучом и лишится своего минимального элемента. Но
-нет! Из-за использования нестрого неравенства в
-\ref[определении][def:08:bound-C], верхняя грань может принадлежать множеству
-$X$ (это не запрещено). Множеством всех верхних граней отрезка $[0, 1]$
-по-прежнему является замкнутый луч $[1, +\infty)$, и он по-прежнему содержит
-минимальный элемент — число $1$. Здорово, правда?
+Let's once again revisit the interval $[0, 1)$. 
+Its set of all upper bounds is the closed ray $[1, +\infty)$, which includes $1$.
+\source
+    Давайте ещё раз вернёмся к полуинтервалу $[0, 1)$. 
+    Его множество верхних граней — замкнутый луч $[1, +\infty)$, содержащий единицу. 
+    Может показаться, что если мы теперь возмём вместо полуинтервала замкнутый отрезок $[0, 1]$, множество верхних граней станет открытым лучом и лишится своего минимального элемента. 
+    Но нет! Из-за использования нестрого неравенства в \ref[определении][def:08:bound-C], верхняя грань может принадлежать множеству $X$ (это не запрещено). 
+    Множеством всех верхних граней отрезка $[0, 1]$ по-прежнему является замкнутый луч $[1, +\infty)$, и он по-прежнему содержит минимальный элемент — число $1$. 
+    Здорово, правда?
 
 \theorem \label thm:08:sup-inf
     Если множество $X \subset \mathbb R$ ограничено сверху, у него есть точная
