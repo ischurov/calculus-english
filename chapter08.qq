@@ -265,54 +265,78 @@ The same fact holds for the set of all lower bounds.
 
 Let's once again revisit the interval $[0, 1)$. 
 Its set of all upper bounds is the closed ray $[1, +\infty)$, which includes $1$.
+It may seem like if we change the interval to include $1$, the set of all upper bounds will also change and become an open ray (which means it no longer has a maximal element).
+Quite remarkably, it won't!
+The fact that we've used a non-strict inequality in the \ref[definition][def:08:bound-C] makes it possible for an upper bound to be included in $X$.
+The set of all upper bounds is still $[1, +\infty)$, and it still has a minimal element, which is $1$.
 \source
     Давайте ещё раз вернёмся к полуинтервалу $[0, 1)$. 
     Его множество верхних граней — замкнутый луч $[1, +\infty)$, содержащий единицу. 
     Может показаться, что если мы теперь возмём вместо полуинтервала замкнутый отрезок $[0, 1]$, множество верхних граней станет открытым лучом и лишится своего минимального элемента. 
-    Но нет! Из-за использования нестрого неравенства в \ref[определении][def:08:bound-C], верхняя грань может принадлежать множеству $X$ (это не запрещено). 
+    Но нет! 
+    Из-за использования нестрого неравенства в \ref[определении][def:08:bound-C], верхняя грань может принадлежать множеству $X$ (это не запрещено). 
     Множеством всех верхних граней отрезка $[0, 1]$ по-прежнему является замкнутый луч $[1, +\infty)$, и он по-прежнему содержит минимальный элемент — число $1$. 
     Здорово, правда?
 
 \theorem \label thm:08:sup-inf
-    Если множество $X \subset \mathbb R$ ограничено сверху, у него есть точная
-    верхняя грань. Если оно ограничено снизу — точная нижняя.
+    If a set $X \subset \mathbb R$ is bounded from above, then it has the least upper bound.
+    If it is bounded from bellow, then the greatest lower bound exist.
+    \source
+        Если множество $X \subset \mathbb R$ ограничено сверху, у него есть точная верхняя грань. 
+        Если оно ограничено снизу — точная нижняя.
 
-Эта теорема доказывается не очень сложно, хотя и немножко занудно. (Как-то я
-даже хотел рассказать доказательство на лекциях, но, прикинув масштабы бедствия,
-понял, что все быстро уснут, и отказался от этой идеи.) Например, доказательство
-можно найти \href[в
-Википедии][https://ru.wikipedia.org/wiki/Точная_верхняя_и_нижняя_границы#Доказательство].
-Выглядит жутковато, но если сесть и аккуратно в нём разобраться, вы увидите, что
-оно не очень сложное. Тем не менее, мы не будем его подробнее обсуждать. Однако,
-стоит обсудить, почему эта теорема не так очевидна, как может показаться из
-рассмотрения примера с полуинтервалом.
+The proof is not hard, but a little tidious.
+(At one point I was planning on presenting it during a lecture, but quickly I realized everybody's going to fall asleep, so I abandoned the idea.)
+You can read the proof yourself in \href[Wikipedia][???].
+It may look scary, but in fact it is not that difficult.
+Nevertheless, we're not going to discuss it in full detail now.
+But we will examine why this theorem is not as trivial as it seems based in the half-closed interval example.
+\source
+    Эта теорема доказывается не очень сложно, хотя и немножко занудно. 
+    (Как-то я даже хотел рассказать доказательство на лекциях, но, прикинув масштабы бедствия, понял, что все быстро уснут, и отказался от этой идеи.)  
+    Например, доказательство можно найти \href[в Википедии][https://ru.wikipedia.org/wiki/Точная_верхняя_и_нижняя_границы#Доказательство].
+    Выглядит жутковато, но если сесть и аккуратно в нём разобраться, вы увидите, что оно не очень сложное. 
+    Тем не менее, мы не будем его подробнее обсуждать. 
+    Однако, стоит обсудить, почему эта теорема не так очевидна, как может показаться из рассмотрения примера с полуинтервалом.
 
-Представьте себе, что мы переместились во времена Пифагора, когда про
-вещественные числа ещё ничего не знали. Рассмотрим множество
+Imagine yourself in the Pythagorean times, where everything about real numbers is unknown.
+Consider a set
+\source
+    Представьте себе, что мы переместились во времена Пифагора, когда про вещественные числа ещё ничего не знали. 
+    Рассмотрим множество
 \eq
     S := \set{x \in \mathbb Q \mid x^2 < 2}.
-Древние греки вполне могли такое множество рассмотреть: оно состоит из
-рациональных чисел, и в его определении никакие иррациональные числа не
-участвуют. Однако, если бы древний грек попытался найти точную верхнюю грань
-множества $S$, его бы постигла неудача. Действительно, он бы рассматривал только
-рациональные верхние грани (других чисел он не знает). Поскольку $\sqrt{2}$, как
-мы сейчас знаем, иррационален (см.  \ref[теорему][thm:01:sqrt2] из
-\ref[лекции][chap:01:setsnumbers]), множество \emph{рациональных} верхних граней
-для $S$ не содержит минимального элемента: какое бы рациональное число, большее
-$\sqrt{2}$ мы бы ни взяли, можно найти рациональное число поменьше, по-прежнему
-являющееся верхней гранью для $S$. (Это следует из плотности множества
-рациональных чисел, которую мы доказывали на семинарах.) Неудача!
+The ancient greeks could have considered such a set themselves since its definition involve only rational numbers.
+But if the question of finding a supremum arose, it wouldn't be possible to get the answer.
+Since only rational numbers were discovered at that time, there was no such thing as $\sqrt{2}$ at the moment.
+Today we know that $\sqrt{2}$ is irrational (see \ref[theorem][thm:01:sqrt2]) from \ref[lecture][chap:01:setsnumbers]), so as long as we consider only rational numbers, each of them fails to be the least upper bound.
+(For any rational number larger than $\sqrt{2}$ it's possible to construct an another upper bound that is smaller than an original upper bound.
+This possibility is nothing but the density property of rational numbers, which was discussed during seminars.)
 
-Тот факт, что у любого ограниченного сверху подмножества множества вещественных
-чисел есть (вещественная) точная верхняя грань — пожалуй, главное, что отличает
-вещественные числа от рациональных.
+\source
+    Древние греки вполне могли такое множество рассмотреть: оно состоит из рациональных чисел, и в его определении никакие иррациональные числа не участвуют. 
+    Однако, если бы древний грек попытался найти точную верхнюю грань множества $S$, его бы постигла неудача. 
+    Действительно, он бы рассматривал только рациональные верхние грани (других чисел он не знает). 
+    Поскольку $\sqrt{2}$, как мы сейчас знаем, иррационален (см.  \ref[теорему][thm:01:sqrt2] из \ref[лекции][chap:01:setsnumbers]), множество \emph{рациональных} верхних граней для $S$ не содержит минимального элемента: какое бы рациональное число, большее $\sqrt{2}$ мы бы ни взяли, можно найти рациональное число поменьше, по-прежнему являющееся верхней гранью для $S$. 
+    (Это следует из плотности множества рациональных чисел, которую мы доказывали на семинарах.) 
+    Неудача!
 
-\section Теорема Вейерштрасса
-Вернёмся к последовательностям.
+The fact that any bounded subset of real numbers has a supremum is arguably the main difference between rational and irrational numbers.
+\source{Тот факт, что у любого ограниченного сверху подмножества множества вещественных чисел есть (вещественная) точная верхняя грань — пожалуй, главное, что отличает вещественные числа от рациональных.}
+
+\section 
+    Weierstrass theorem
+    \source{Теорема Вейерштрасса}
+Let's return to the discussion of sequences. 
+\source{Вернёмся к последовательностям.}
 \theorem  \label thm:08:weierstrass
-    (Вейерштрасс)
-    Пусть последовательность $\seq{a_n}$ ограничена сверху и неубывает. Тогда
-    она имеет предел.
+    (Weierstrass)
+    Suppose a sequence $\seq{a_n}$ is non-decreasing and bounded from above.
+    This implies that it converges.
+    \source
+        (Вейерштрасс)
+        Пусть последовательность $\seq{a_n}$ ограничена сверху и неубывает. 
+        Тогда она имеет предел.
 
     \figure
         \img
@@ -325,28 +349,39 @@ $\sqrt{2}$ мы бы ни взяли, можно найти рациональн
             \style
                 padding:1em;
         \caption
-            Иллюстрация к \ref[теореме][thm:08:weierstrass]. Неубывающая
-            ограниченная последовательность. Здесь число $C$ является какой-то
-            из верхних граней (не обязательно точной) для множества всех членов
-            последовательности.
+            An illustration to \ref[theorem][thm:08:weierstrass].
+            Non-decreasing bounded sequence.
+            A number $C$ is some (not necessarily lowest) upper bound for a set of all elements of a sequence.
+            \source
+                Иллюстрация к \ref[теореме][thm:08:weierstrass]. 
+                Неубывающая ограниченная последовательность.  
+                Здесь число $C$ является какой-то из верхних граней (не обязательно точной) для множества всех членов последовательности.
     
         
 \proof
-    Рассмотрим множество элементов последовательности $\set{a_n \mid n \in
-    \mathbb N}$. Поскольку последовательность ограничена сверху, это множество
-    тоже ограничено сверху. Возьмём его точную верхнюю грань (она существует по
-    \ref[теореме][thm:08:sup-inf]) и обозначим её за $A$. Докажем, что $A$
-    является пределом нашей последовательности.
+    Consider a set of all elements of a sequence $\set{a_n \mid n \in \mathbb N}$.
+    The assumption that a set is bounded from above implies that this set is also bounded from above.
+    Consider its lowers upper bound (it exists because of \ref[theorem][thm:08:sup-inf]) and denote it by $A$.
+    Now we prove that $A$ is a limit of the sequence.
+    \source 
+        Рассмотрим множество элементов последовательности $\set{a_n \mid n \in \mathbb N}$. 
+        Поскольку последовательность ограничена сверху, это множество тоже ограничено сверху. 
+        Возьмём его точную верхнюю грань (она существует по \ref[теореме][thm:08:sup-inf]) и обозначим её за $A$. 
+        Докажем, что $A$ является пределом нашей последовательности.
 
 
-    \paragraph{Близкие элементы существуют} Сперва докажем более слабое
-    утверждение: докажем, что элементы последовательности подходят к $A$ сколь
-    угодно близко, см. \ref[рис.][fig:08:weierstrass-proof]. Формально:
+    \paragraph{Close elements exist}
+    Firstly, let's prove a less strict proposition.
+    It states that there is an element of the sequence that gets arbitrarily close to $A$, see \ref[fig.][fig:08:weierstrass-proof]. 
+    Formally,
+    \source
+        \paragraph{Близкие элементы существуют} 
+        Сперва докажем более слабое утверждение: докажем, что элементы последовательности подходят к $A$ сколь угодно близко, см. \ref[рис.][fig:08:weierstrass-proof]. 
+        Формально:
     \equation \label eq:08:A
         \forall \eps>0\\ \exists N \in \mathbb N \colon |a_N - A| < \eps.
-    Это ещё не определение предела (мы ничего не говорим про бесконечный хвост
-    последовательности, а говорим только про один элемент), но давайте начнём с
-    этого.
+    Notice that this proposition doesn't match the definition of a limit since we focus on each element endividually, not on the whole tail of a sequence.
+    \source{Это ещё не определение предела (мы ничего не говорим про бесконечный хвост последовательности, а говорим только про один элемент), но давайте начнём с этого.}
     \figure
         \img
             \src
@@ -360,93 +395,128 @@ $\sqrt{2}$ мы бы ни взяли, можно найти рациональн
             \style
                 padding:1em;
         \caption
-            Иллюстрация к доказательству теоремы Вейерштрасса, $A=\sup
-            \set{a_n\mid n \in \mathbb N}$.
+            An illistration to the proof of the Weierstrass theorem, where $A=\sup \set{a_n\mid n \in \mathbb N}$.
+            \source{Иллюстрация к доказательству теоремы Вейерштрасса, $A=\sup \set{a_n\mid n \in \mathbb N}$.}
         \label
             fig:08:weierstrass-proof
-    От противного, пусть это неверно. Запишем отрицание:
+    Our strategy is the proof by contradiction.
+    Suppose, on the contrary, that there is no element that gets arbitratily close to $A$.
+    Let's formulate the negation formally:
+    \source
+        От противного, пусть это неверно. 
+        Запишем отрицание:
     \eq
         \exists \eps > 0 \\ \forall N \in \mathbb N\colon |a_N - A| \ge \eps
-    Заметим, что раз $A$ — верхняя грань множества всех элементов
-    последовательности, каждый из элементов не больше $A$ и значит модуль
-    раскрывается как $A-a_N$. Тогда нашлось такое $\eps$, что все элементы
-    последовательности удовлетворяют неравенству
+    Notice that since $A$ is an upper bound, each element of the sequence is less than or equal to $A$, so the expression involving an absolute value becomes $A-a_N$.
+    This means we've found $\eps$ such that the following inequality holds for any element of a sequence:
+    \source
+        Заметим, что раз $A$ — верхняя грань множества всех элементов последовательности, каждый из элементов не больше $A$ и значит модуль раскрывается как $A-a_N$. 
+        Тогда нашлось такое $\eps$, что все элементы последовательности удовлетворяют неравенству
     \eq
         A - a_N \ge \eps,
-    или, иными словами, $a_n \le A-\eps$. Таким образом, все элементы
-    $\seq{a_n}$ не превосходят $(A-\eps)$, то есть $(A-\eps)$ — верхняя грань.
-    (На \ref[рис.][fig:08:weierstrass-proof] в этом случае не было бы никаких
-    точек последовательности выше $y=A-\eps$.) Но $A-\eps < A$, а мы
-    предположили, что $A$ точная верхняя грань, то есть
-    минимум из всех верхних граней. Противоречие!
+    In other words, $a_n \le A-\eps$.
+    This implies that ell elements of $\seq{a_n}$ so not exceed $(A-\eps)$.
+    This means that $(A-\eps)$ is an upper bound.
+    (This way \ref[fig.][fig:08:weierstrass-proof] wouldn't contain any elements greater than $y=A-\eps$.)
+    But we've assumed that $A$ is the least upper bound, so there cannot be any other upper bounds lower that it.
+    Clearly, $A-\eps < A$, so we've come to a contradiction.
+    \source
+        или, иными словами, $a_n \le A-\eps$. 
+        Таким образом, все элементы $\seq{a_n}$ не превосходят $(A-\eps)$, то есть $(A-\eps)$ — верхняя грань.
+        (На \ref[рис.][fig:08:weierstrass-proof] в этом случае не было бы никаких точек последовательности выше $y=A-\eps$.) 
+        Но $A-\eps < A$, а мы предположили, что $A$ точная верхняя грань, то есть минимум из всех верхних граней. 
+        Противоречие!
 
-    Иными словами, если элементы последовательности не подходят к $A$ сколь
-    угодно близко, то между $A$ и этими элементами есть «зазор», и $A$ можно
-    было бы уменьшить, сохранив его свойство быть верхней гранью. Это
-    противоречит тому, что $A$ точная (самая маленькая) верхняя грань.
+    In other words, if no element of the sequence can get arbitrarily close to $A$, then $A$ must be bounded awat from all elements, which implies $A$ can get smaller and still be an upper bound.
+    This contradicts the fact that $A$ is assumed to be the lowest upper bound.
+    \source
+        Иными словами, если элементы последовательности не подходят к $A$ сколь угодно близко, то между $A$ и этими элементами есть «зазор», и $A$ можно было бы уменьшить, сохранив его свойство быть верхней гранью. 
+        Это противоречит тому, что $A$ точная (самая маленькая) верхняя грань.
 
-    \paragraph{Монотонность} Заметим, что в силу монотонности, если $a_N > A -
-    \eps$, то для всякого $n>N$, $a_n \ge a_N > A - \eps$. Поскольку для всех
-    элементов выполняется, что $a_N \le A$, отсюда следует, что для $|a_n -
-    A|=A-a_n < \eps$.
+    \paragraph{Monotonicity}
+    Notice that due to monotonicity, if $a_N > A - \eps$, then $a_n \ge a_N > A - \eps$ holds for any $n>N$.
+    Since all elements satisfy $a_N \le A$, we get $|a_n - A|=A-a_n < \eps$.
+    \source
+        \paragraph{Монотонность} 
+        Заметим, что в силу монотонности, если $a_N > A - \eps$, то для всякого $n>N$, $a_n \ge a_N > A - \eps$. 
+        Поскольку для всех элементов выполняется, что $a_N \le A$, отсюда следует, что для $|a_n - A|=A-a_n < \eps$.
 
-    Таким образом, утверждение доказано по определению предела: мы показали, что
-    для всякого $\eps$ найдётся такое $N$ (определяемое из формулы
-    \ref{eq:08:A}), что для всех $n>N$, $|a_n - A| < \eps$.
+    We've just proven the proposition using the definition of a limit: we've shown that for any $\eps$ it's possible to construct $N$ (using \ref{eq:08:A}) such that for any $n>N$ the inequality $|a_n - A| < \eps$ holds.
+    \source{Таким образом, утверждение доказано по определению предела: мы показали, что для всякого $\eps$ найдётся такое $N$ (определяемое из формулы \ref{eq:08:A}), что для всех $n>N$, $|a_n - A| < \eps$.}
 
 \remark 
-    Конечно, легко сформулировать и доказать теорему Вейерштрасса для
-    ограниченных снизу невозрастающих последовательностей.
+    The theorem can be formulated for the case of sequences that are non-increasing and bounded from bellow.
+    Its proof is similar to the one we've just presented.
+    \source{Конечно, легко сформулировать и доказать теорему Вейерштрасса для ограниченных снизу невозрастающих последовательностей.}
 
 \remark \label rem:08:limbound
-    В ходе доказательства получили, что предел неубывающей последовательности
-    является точной верхней гранью всех её членов. Отсюда в частности следует,
-    что все члены не превосходят предела: если $\seq{a_n}$ неубывает и имеет
-    предел $A$, то для всех натуральных $k$, $a_k \le A$. Конечно, мы могли бы
-    получить этот результат и непосредственно: в силу неубывания, для всех
-    $n>k$, $a_k \le a_n$. Зафиксируем $k$ и перейдём в этом неравенстве к
-    пределу при $n\to \infty$. (Поскольку предел зависит только от «хвоста»
-    последовательности, тот факт, что неравенство выполняется не для всех $n$, а
-    только для тех, которые больше $k$, не является препятствием — можно просто
-    выкинуть первые $k$ элементов обеих последовательностей.) Получим $a_k \le
-    \lim_{n \to \infty} a_n = A$. 
+    ...
+    \source
+        В ходе доказательства получили, что предел неубывающей последовательности является точной верхней гранью всех её членов. 
+        Отсюда в частности следует, что все члены не превосходят предела: если $\seq{a_n}$ неубывает и имеет предел $A$, то для всех натуральных $k$, $a_k \le A$. 
+        Конечно, мы могли бы получить этот результат и непосредственно: в силу неубывания, для всех $n>k$, $a_k \le a_n$. 
+        Зафиксируем $k$ и перейдём в этом неравенстве к пределу при $n\to \infty$. 
+        (Поскольку предел зависит только от «хвоста» последовательности, тот факт, что неравенство выполняется не для всех $n$, а только для тех, которые больше $k$, не является препятствием — можно просто выкинуть первые $k$ элементов обеих последовательностей.) 
+        Получим $a_k \le \lim_{n \to \infty} a_n = A$. 
 
-\section Биномиальные коэффициенты
-\subsection Упорядоченные наборы
+\section 
+    Binomial coefficients
+    \source{Биномиальные коэффициенты}
+\subsection 
+    Ordered sets
+    \source{Упорядоченные наборы}
 \definition
-    Пусть есть множества $X$ и $Y$. \emph{Декартовым произведением} этих
-    множеств называется множество упорядоченных пар $(x, y)$, где $x \in X$ и
-    $y\in Y$. Пишут:
+    Cosider two arbitrary sets $X$ and $Y$.
+    The set of all ordered pairs $(x, y)$ ("ordered" means $x$ is in the first place, and $y$ is in the second) where $x \in X$ и $y\in Y$ is called a \emph{Cartesian product}.
+    The notation is as follows:
+    \source
+        Пусть есть множества $X$ и $Y$. 
+        \emph{Декартовым произведением} этих множеств называется множество упорядоченных пар $(x, y)$, где $x \in X$ и $y\in Y$. 
+        Пишут:
     \eq
         X \times Y = \set{(x, y)\mid x\in X,\\ y\in Y}.
 
 \example
-    Рассмотрим множество $\mathbb R^2=\mathbb R \times \mathbb R$ — декартов
-    квадрат множества вещественных чисел. Оно состоит из упорядоченных пар $(x,
-    y)$, где $x$ и $y$ — вещественные числа. С этим объектом мы хорошо знакомы
-    из школы: это обыкновенная декартова плоскость.
+    Consider a set $\mathbb R^2=\mathbb R \times \mathbb R$ which is a Cartesian product of all real numbers with itself.
+    It consists of ordered pairs $(x, y)$ where $X$ and $y$ are real numbers.
+    This object is very familiar from the school days: it is precisely the Cartesian coordinate system.
+    \source
+        Рассмотрим множество $\mathbb R^2=\mathbb R \times \mathbb R$ — декартов квадрат множества вещественных чисел. 
+        Оно состоит из упорядоченных пар $(x, y)$, где $x$ и $y$ — вещественные числа. 
+        С этим объектом мы хорошо знакомы из школы: это обыкновенная декартова плоскость.
 
 \question
-    Пусть множества $X$ и $Y$ конечны: в $X$ 3 элемента, а в $Y$ два. Сколько
-    элементов в множестве $X\times Y$?
+    Suppose a set $X$ has three elements, and a set $Y$ has two.
+    How many elements are in their Cartesian product $X\times Y$?
+    \source
+        Пусть множества $X$ и $Y$ конечны: в $X$ 3 элемента, а в $Y$ два. 
+        Сколько элементов в множестве $X\times Y$?
     \quiz
         \choice \correct
-            6
+            $6$
+            \source{6}
             \comment
-                Конечно: к каждому из трёх элементов $X$ можно приписать два
-                элемента из $Y$, значит всего шесть элементов.
+                Yes!
+                There are three elements, and each can be associated with two elements from $Y$, so there are six elements in total. 
+                \source{Конечно: к каждому из трёх элементов $X$ можно приписать два элемента из $Y$, значит всего шесть элементов.}
         \choice
-            5
+            $5$
+            \source{5}
             \comment
-                Интересно, как это получилось?
+                Something's wrong... 
+                \source{Интересно, как это получилось?}
         \choice
-            3
+            $3$
+            \source{3}
             \comment
-                Ой?
+                Oops?
+                \source{Ой?}
         \choice
-            12
+            $12$
+            \source{12}
             \comment
-                Откуда это могло взяться?
+                How did you get that?
+                \source{Откуда это могло взяться?}
 
 Можно рассматривать декартово произведение больше, чем двух множеств: оно
 состоит из упорядоченных наборов элементов, каждый из которых взят из
