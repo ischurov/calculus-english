@@ -518,47 +518,61 @@ Let's return to the discussion of sequences.
                 How did you get that?
                 \source{Откуда это могло взяться?}
 
-Можно рассматривать декартово произведение больше, чем двух множеств: оно
-состоит из упорядоченных наборов элементов, каждый из которых взят из
-соответствующего сомножителя. Например:
+It's possible to consider a Cartesian product of more than two sets, and it consists of all possible ordered tuples of elements.
+For example,
+\source
+    Можно рассматривать декартово произведение больше, чем двух множеств: оно состоит из упорядоченных наборов элементов, каждый из которых взят из соответствующего сомножителя. 
+    Например:
 \align \nonumber
     \item X \times Y \times Z = \set{(x, y, z)\mid  x \in X, \\ y \in Y, \\ 
     \splitem z \in Z}.
-Можно было бы расставить скобки в выражении $X \times  Y \times Z$ и, например,
-получить множество $(X \times Y) \times Z$, элементами которого были бы
-упорядоченные пары $(w, z)$, где $z \in Z$ и $w\in X\times Y$, то есть $w=(x,
-y)$ — тоже упорядоченная пара. Но с практической точки зрения обычно нет никакой
-разницы между выражениями вида $((x, y), z)$ и $(x, y, z)$.
+One could add parenthesis to the expression $X \times  Y \times Z$ and get a Cartesian product of two sets $(X \times Y) \times Z$, which consists of all ordered pairs $(w, z)$ where $z \in Z$ и $w\in X\times Y$, in other words $w=(x, y)$ is also an ordered pair.
+But from a practical point of view, the notations $((x, y), z)$ and $(x, y, z)$ are equivalent and there is commonly no need to add extra parenthesis.
+\source
+    Можно было бы расставить скобки в выражении $X \times  Y \times Z$ и, например, получить множество $(X \times Y) \times Z$, элементами которого были бы упорядоченные пары $(w, z)$, где $z \in Z$ и $w\in X\times Y$, то есть $w=(x, y)$ — тоже упорядоченная пара. 
+    Но с практической точки зрения обычно нет никакой разницы между выражениями вида $((x, y), z)$ и $(x, y, z)$.
 
 \definition
-    Результат $k$-кратного декартова умножения множества $X$ на себя называется
-    \emph{$k$-й декартовой степенью} множества $X$ и обозначается $X^k$. Оно
-    состоит из упорядоченных $k$-элементных наборов элементов множества $X$:
+    If we take a set $X$ and repeatedly apply a Cartesian product $k$ times we get a \emph{$k$-ary Cartesian product} of $X$, which is denoted by $X^k$.
+    This Cartesian product is said to have an \emph{arity} of $k$.
+    It consists of all ordered $k$-tuples of elements in $X$.
+    \source
+        Результат $k$-кратного декартова умножения множества $X$ на себя называется \emph{$k$-й декартовой степенью} множества $X$ и обозначается $X^k$. 
+        Оно состоит из упорядоченных $k$-элементных наборов элементов множества $X$:
     \align \nonumber
         \item X^k=\set{(x_1, x_2, \ldots, x_k)\mid 
                  x_1\in X, 
         \splitem x_2 \in X, \ldots, x_k \in X}.
 
-Про упорядоченные наборы важно понимать следующее: элементы в них могут
-повторяться (никто не мешает вам рассмотреть точку $(1, 1) \in \mathbb R^2$) и
-порядок следования элементов важен (точка $(1, 2)$ — это совсем не то же самое,
-что точка $(2, 1)$).
+It's important to note that, firstly, ordered tuples can consist of equal elemets (consider a point $(1, 1) \in \mathbb R^2$).
+Secondly, the order of elements in tuples matters, since a point $(1, 2)$ is not the same as $(2, 1)$.
+\source
+    Про упорядоченные наборы важно понимать следующее: элементы в них могут повторяться (никто не мешает вам рассмотреть точку $(1, 1) \in \mathbb R^2$) и порядок следования элементов важен (точка $(1, 2)$ — это совсем не то же самое, что точка $(2, 1)$).
 
 \proposition  \label prop:08:tuples
-    Пусть $X$ — конечное множество, состоящее из $n$ элементов. Тогда $X^k$ состоит
-    из $n^k$ элементов. Иными словами, количество $k$-элементных упорядоченных
-    наборов из $n$-элементного множества равно $n^k$.
+    Suppose $X$ is a finite set that consists of $n$ elements.
+    Then $X^k$ consists of $n^k$ elements.
+    In other words, a total number of $k$-tuples that can be constructed from a set with $n$ elements is $n^k$.
+    \source
+        Пусть $X$ — конечное множество, состоящее из $n$ элементов. 
+        Тогда $X^k$ состоит из $n^k$ элементов. 
+        Иными словами, количество $k$-элементных упорядоченных наборов из $n$-элементного множества равно $n^k$.
 \proof
-    Совсем аккуратное доказательство проводится по индукции, но и без неё всё
-    довольно наглядно. Пусть нам нужно выбрать $k$-элементный упорядоченный
-    набор. Будем выписывать его по очереди. У нас есть $n$ различных способов
-    выбрать первый элемент, см. \ref[рис.][fig:08:tuples]. После того, как
-    первый элемент выбран, к нему нужно приписать второй элемент, и это можно
-    сделать $n$ разными способами. Всего получается $n\times n$ способов
-    выписать первые два элемента. Когда первые два элемента зафиксированы, есть
-    $n$ способов выписать третий элемент, значит количество вариантов умножается
-    на $n$ и становится равно $n^2\times n = n^3$. И так далее до $k$-го
-    элемента.
+    The most strict proof can be done by induction, but we'll examine a more intuitive one.
+    Since we would like to get a $k$-tuple, let's start from its first element element and chose one by one. 
+    We have $n$ different ways to chose the first element (see \ref[fig.][fig:08:tuples]). 
+    After we fix the first one, we still have the same number of candidates for a second elements, so there are $n\times n$ ways to chose the second one.
+    When we proceed to the third one, there are also $n$ total ways to chose it from $X$, so the number of all possible options is $n^2\times n = n^3$.
+    Generalizing this reasoning to the case of $k$ elements yeilds the desired expression.
+    \source
+        Совсем аккуратное доказательство проводится по индукции, но и без неё всё довольно наглядно. 
+        Пусть нам нужно выбрать $k$-элементный упорядоченный набор. 
+        Будем выписывать его по очереди. 
+        У нас есть $n$ различных способов выбрать первый элемент, см. \ref[рис.][fig:08:tuples]. 
+        После того, как первый элемент выбран, к нему нужно приписать второй элемент, и это можно сделать $n$ разными способами. 
+        Всего получается $n\times n$ способов выписать первые два элемента. 
+        Когда первые два элемента зафиксированы, есть $n$ способов выписать третий элемент, значит количество вариантов умножается на $n$ и становится равно $n^2\times n = n^3$. 
+        И так далее до $k$-го элемента.
 
     \figure
         \img
@@ -577,33 +591,47 @@ y)$ — тоже упорядоченная пара. Но с практичес
                 точек. Каждой из этих точек соответствует упорядоченный набор,
                 который считывается из цифр, написанных на стрелочках.
         \caption
-            Построение всевозможных трёхэлементных упорядоченных наборов из
-            чисел $1$ и $2$. Выбор каждого следующего элемента удваивает
-            количество наборов.
+            The construction of all possible ordered $3$-tuples consisting of numbers $1$ and $2$.
+            Adding an another element doubles the total number of options.
+            \source
+                Построение всевозможных трёхэлементных упорядоченных наборов из чисел $1$ и $2$. 
+                Выбор каждого следующего элемента удваивает количество наборов.
         \label fig:08:tuples
 
-\subsection Наборы без повторений
+\subsection 
+    Choice without replacements
+    \source{Наборы без повторений}
 
-Рассмотрим теперь упорядоченные наборы без повторяющихся элементов.
+Now we consider ordered tuples without replacements.
+\source{Рассмотрим теперь упорядоченные наборы без повторяющихся элементов.}
 \proposition \label prop:08:tuples-without-replacements
-    Количество $k$-элементных упорядоченных наборов из $n$-элементного множества
-    равно 
+    The number of $k$-tuples without replacements what can be constructed from a set of $n$ elements is equal to
+    \source{Количество $k$-элементных упорядоченных наборов из $n$-элементного множества равно} 
     \eq
         n(n-1)\ldots (n-k+1)=\frac{n!}{(n-k)!},
-    где $n!=1\times 2\times 3\times \cdots \times n$ — $n$-факториал. (По
-    определению полагают, что $0!=1$.)
+    where $n!=1\times 2\times 3\times \cdots \times n$ is the factorial of $n$.
+    (Recall that be definition, $0!=1$.)
+    \source
+        где $n!=1\times 2\times 3\times \cdots \times n$ — $n$-факториал. 
+        (По определению полагают, что $0!=1$.)
 \proof
-    Доказательство очень похоже на доказательство
-    \ref[утверждения][prop:08:tuples], см.
-    \ref[рис.][fig:08:tuples-without-replacements] Будем выписывать набор
-    последовательно.  Есть $n$ способов выбрать первый элемент. После того, как
-    первый элемент выбран, остаётся $(n-1)$ способ выбрать второй элемент
-    (потому что повторяться нельзя, и значит множество допустимых элементов
-    сокращается на $1$). Значит, есть $n\cdot(n-1)$ способов выбрать первые два
-    элемента. И так далее. Получится $k$ сомножителей, начиная с $n=(n-0)$.
-    Значит, последний сомножитель будет $(n-(k-1))=(n-k+1)$. (Чтобы не
-    запутаться, всегда полезно подставить какое-нибудь конкретное значение
-    — например, $k=2$ — и посмотреть, что получится.)
+    The proof is in many ways similar to the proof of a \ref[proposition][prop:08:tuples], see \ref[fig.][fig:08:tuples-without-replacements].
+    Let's choose the elements one by one.
+    Clearly, there are $n$ ways to chose the first one.
+    After we fix the first element, there are $n-1$ ways left for the second one to be chosen (since repetitions are not allowed).
+    So there are $n\cdot(n-1)$ ways to chose the first two elements.
+    In general, the number of all possible $k$-tuples without replacements consists of $k$ multipliers, where the first one is $n=(n-0)$, so the last one is $(n-(k-1))=(n-k+1)$.
+    (It's helpful to substitute some particular values for $k$ since it may not be straighforward without an example).
+    \source
+        Доказательство очень похоже на доказательство \ref[утверждения][prop:08:tuples], см. \ref[рис.][fig:08:tuples-without-replacements] 
+        Будем выписывать набор последовательно.  
+        Есть $n$ способов выбрать первый элемент. 
+        После того, как первый элемент выбран, остаётся $(n-1)$ способ выбрать второй элемент (потому что повторяться нельзя, и значит множество допустимых элементов сокращается на $1$). 
+        Значит, есть $n\cdot(n-1)$ способов выбрать первые два элемента. 
+        И так далее. 
+        Получится $k$ сомножителей, начиная с $n=(n-0)$.
+        Значит, последний сомножитель будет $(n-(k-1))=(n-k+1)$. 
+        (Чтобы не запутаться, всегда полезно подставить какое-нибудь конкретное значение    — например, $k=2$ — и посмотреть, что получится.)
 
 
     \figure
@@ -625,9 +653,11 @@ y)$ — тоже упорядоченная пара. Но с практичес
                 соответствует упорядоченный набор, который считывается из цифр,
                 написанных на стрелочках.
         \caption
-            Построение всевозможных трёхэлементных упорядоченных наборов без
-            повторений из чисел $1$, $2$, $3$ и $4$. На каждом следующем шаге
-            число возможных элементов уменьшается на 1.
+            The construction of all possible ordered $3$-tuples consisting of numbers $1$, $2$, $3$, and $4$.
+            Every step the number of candidates for the next place in decreasing by one.
+            \source
+                Построение всевозможных трёхэлементных упорядоченных наборов без повторений из чисел $1$, $2$, $3$ и $4$. 
+                На каждом следующем шаге число возможных элементов уменьшается на 1.
         \label fig:08:tuples-without-replacements
 
 \subsection Неупорядоченные наборы без повторений 
