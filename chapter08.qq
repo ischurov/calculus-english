@@ -660,44 +660,65 @@ Now we consider ordered tuples without replacements.
                 На каждом следующем шаге число возможных элементов уменьшается на 1.
         \label fig:08:tuples-without-replacements
 
-\subsection Неупорядоченные наборы без повторений 
+\subsection 
+    Unordered tuples without replacements
+    \source{Неупорядоченные наборы без повторений} 
 
-Сколько существует $k$-элементных подмножеств данного $n$-элементного множества?
-Если выписать элементы подмножества в строчку, получится $k$-элементный набор
-без повторений. Однако, между упорядоченными наборами и подмножествами есть
-важное различие: множество не упорядочено. Наборы $(1, 2)$ и $(2, 1)$ — разные
-наборы, множества $\set{1, 2}$ и $\set{2, 1}$ — одно и то же множество. Поэтому
-количество упорядоченных наборов больше количества подмножеств. Во сколько раз?
+How many subsets of length $k$ does a set $X$ with $n$ elements in total have?
+Notice that each of the subsets is a $k$-tuple without replacements.
+However, a set is unordered, so it is not the same thing as an ordered tuple.
+To illustrate, the tuples $(1, 2)$ and $(2, 1)$ are disticts, but the sets $\set{1, 2}$ and $\set{2, 1}$ are actually different notations for a single set.
+This means that the number of ordered tuples is larger than the number of subsets.
+The question is, how exactly?
+\source
+    Сколько существует $k$-элементных подмножеств данного $n$-элементного множества?
+    Если выписать элементы подмножества в строчку, получится $k$-элементный набор без повторений. 
+    Однако, между упорядоченными наборами и подмножествами есть важное различие: множество не упорядочено. 
+    Наборы $(1, 2)$ и $(2, 1)$ — разные наборы, множества $\set{1, 2}$ и $\set{2, 1}$ — одно и то же множество. 
+    Поэтому количество упорядоченных наборов больше количества подмножеств. 
+    Во сколько раз?
 
 \question
-    Пусть есть $k$-элементное множество. Сколькими способами его элементы можно
-    упорядочить (выстроить в ряд)? Иными словами, сколько есть различных
-    $k$-элементных наборов без повторяющихся элементов из элементов данного
-    $k$-элементного множества?
+    Consider a set of $k$ elements.
+    How many ways are there to construct distinct ordered tuples without replacements of a length $k$ out of this set? 
+    \source
+        Пусть есть $k$-элементное множество. 
+        Сколькими способами его элементы можно упорядочить (выстроить в ряд)? 
+        Иными словами, сколько есть различных $k$-элементных наборов без повторяющихся элементов из элементов данного $k$-элементного множества?
 
-Ответ на этот вопрос содержится в
-\ref[утверждении][prop:08:tuples-without-replacements]: нужно просто подставить
-$n=k$. Видно, что в этом случае $(n-k)=0$, а по определению $0!=1$. Значит,
-искомое число способов равно $k!$.
+The answer can be found in \ref[proposition][prop:08:tuples-without-replacements] where $n=k$.
+In this case $(n-k)=0$ and $0!=1$ by definition.
+Hence, the answer is $k!$.
+\source
+    Ответ на этот вопрос содержится в \ref[утверждении][prop:08:tuples-without-replacements]: нужно просто подставить $n=k$. 
+    Видно, что в этом случае $(n-k)=0$, а по определению $0!=1$. 
+    Значит, искомое число способов равно $k!$.
 
 \proposition \label prop:08:Cnk
-    Обозначим количество $k$-элементных подмножеств $n$-элементного множества
-    через $C_n^k$. Тогда
+    Let's denote the number of subsets that have length $k$ of a set with $n$ eleents by $C_n^k$.
+        Then
+    \source
+        Обозначим количество $k$-элементных подмножеств $n$-элементного множества через $C_n^k$. 
+        Тогда
     \align 
         \item \label eq:08:Cnk
             C_n^k = \frac{n(n-1)\cdots (n-k+1)}{k!} =
         \splitem \splonly{=} \frac{n!}{k!(n-k)!}.
 \proof
-    Пусть мы выписали все $\frac{n!}{(n-k)!}$ упорядоченных $k$-элементных
-    наборов наборов из элементов нашего $n$-элементного множества (см.
-    \ref[утверждение][prop:08:tuples-without-replacements] ). Рассмотрим
-    какой-нибудь из этих наборов. Его элементы можно переставлять $k!$ разными
-    способами, получая новые наборы из нашего списка (включая его самого). Все
-    они задают одно и то же подмножество. Значит, если мы хотим посчитать
-    подмножества, нужно все эти $k!$ наборов посчитать один раз. Таким образом,
-    чтобы получить количество подмножеств из количества наборов, надо количество
-    наборов разделить на $k!$. (Поскольку каждому подмножеству соответствует
-    ровно $k!$ упорядоченных наборов.) Отсюда и следует формула \ref{eq:08:Cnk}.
+    Consider one of the $\frac{n!}{(n-k)!}$ ordered $k$-tuples that can be constructed out of the initial set (see. \ref[proposition][prop:08:tuples-without-replacements]).
+    Its elements can be rearranged in $k!$ ways, each time relusting in an another (distinct) $k$-tuple.
+    At the same time, each such $k$-tuple define the same subset, so since we're aiming to count the subsets, we must consider $k!$ tuples as one.
+    This implies that the number of subsets is $k!$ times smaller than the number of tuples.
+    This is the motivation behind the expression \ref{eq:08:Cnk}.
+    \source
+        Пусть мы выписали все $\frac{n!}{(n-k)!}$ упорядоченных $k$-элементных наборов наборов из элементов нашего $n$-элементного множества (см. \ref[утверждение][prop:08:tuples-without-replacements] ). 
+        Рассмотрим какой-нибудь из этих наборов. 
+        Его элементы можно переставлять $k!$ разными способами, получая новые наборы из нашего списка (включая его самого). 
+        Все они задают одно и то же подмножество. 
+        Значит, если мы хотим посчитать подмножества, нужно все эти $k!$ наборов посчитать один раз. 
+        Таким образом, чтобы получить количество подмножеств из количества наборов, надо количество наборов разделить на $k!$. 
+        (Поскольку каждому подмножеству соответствует ровно $k!$ упорядоченных наборов.) 
+        Отсюда и следует формула \ref{eq:08:Cnk}.
 
     \figure
         \img
@@ -713,31 +734,42 @@ $n=k$. Видно, что в этом случае $(n-k)=0$, а по опред
                 max-width: 600px;
             \alt
         \caption
-            Построение всевозможных трёхэлементных подмножеств множества
-            $\set{1, 2, 3, 4}$. Мы сначала построили всевозможные упорядоченные
-            3-элементные наборы без повторений, а потом объединили те из них,
-            которые отличаются только порядком и следовательно задают одно и то
-            же множество. На рисунке отмечены два таких объединения, в каждом по
-            6 наборов (здесь $6=3!$ — число способов переставить три элемента).
-            Напишите, какие два множества мы не указали, и отметьте все наборы,
-            которые задают эти множества.
+            Construction of all subsets of length $3$ in the set $\set{1, 2, 3, 4}$ in two steps.
+            The first is to find all possible ordered $3$-tuples without replacements.
+            The second is to "merge" all tuples that differ only in the order.
+            The figure illustrates two of the four "mergers", each one contains $6$ tuples (where $6=3!$ is the number of ways to reorder a $3$-tuple).
+            Try to write down the structure of other "mergers" explicitly yourself. 
+            \source
+                Построение всевозможных трёхэлементных подмножеств множества $\set{1, 2, 3, 4}$. 
+                Мы сначала построили всевозможные упорядоченные 3-элементные наборы без повторений, а потом объединили те из них, которые отличаются только порядком и следовательно задают одно и то же множество. 
+                На рисунке отмечены два таких объединения, в каждом по 6 наборов (здесь $6=3!$ — число способов переставить три элемента).
+                Напишите, какие два множества мы не указали, и отметьте все наборы, которые задают эти множества.
         \label fig:08:subsets
 \exercise
-    Самый лучший способ понять все утверждения, сформулированные выше, такой:
-    взять какое-нибудь небольшое $n$ и $k$ и пройти все шаги. Например, $n=4$,
-    $k=2$. Выпишите все двухэлементные упорядоченные наборы без повторений с
-    элементами из множества $X=\set{1, 2, 3, 4}$, руководствуясь алгоритмом из
-    \ref[утверждения][prop:08:tuples-without-replacements]. Посчитайте, сколько их
-    получилось. Затем объедините их в группы, так, чтобы в каждой группе наборы
-    отличались только порядком (и следовательно задавали одно и то же
-    множество). Сколько элементов в каждой группе? Сколько всего групп?
-    Повторите эти действия, например, с $n=5$, $k=3$.
+    The best way to get along with the propositions above is to take a fairly small values of $n$ and $k$ and to go through all the steps yourself.
+    For example, let $n=4$ and $k=2$.
+    Construst all ordered pairs without replacements from the set $X=\set{1, 2, 3, 4}$ by following the technique from \ref[proposition][prop:08:tuples-without-replacements].
+    Then count them all up.
+    Then "merge" the tuples into groups where only the order of elements differs (in other words, the groups where each tuple define the same set).
+    How many tuples are there in each group?
+    What is the tital number of groups?
+    Then repeat the steps with different parameters, say $n=5$ and $k=3$.
+    \source
+        Самый лучший способ понять все утверждения, сформулированные выше, такой: взять какое-нибудь небольшое $n$ и $k$ и пройти все шаги. 
+        Например, $n=4$, $k=2$. 
+        Выпишите все двухэлементные упорядоченные наборы без повторений с элементами из множества $X=\set{1, 2, 3, 4}$, руководствуясь алгоритмом из \ref[утверждения][prop:08:tuples-without-replacements]. 
+        Посчитайте, сколько их получилось. 
+        Затем объедините их в группы, так, чтобы в каждой группе наборы отличались только порядком (и следовательно задавали одно и то же множество). 
+        Сколько элементов в каждой группе? 
+        Сколько всего групп?
+        Повторите эти действия, например, с $n=5$, $k=3$.
 
 \remark
-    Числа $C_n^k$ называются \emph{биномиальными коэффициентами} (почему так —
-    будет ясно в следующем разделе) или \emph{числом сочетаний из $n$ элементов
-    по $k$}. Другое обозначение: $\binom{n}{k}$ — обратите внимание, что в этом
-    случае $n$ ставится сверху.
+    The numbers $C_n^k$ are called the \emph{binomial coefficients} (motivation behind the name is discussed in the next section).
+    An equivalent notation is $\binom{n}{k}$ (notice this time $n$ is in the superscript).
+    \source
+        Числа $C_n^k$ называются \emph{биномиальными коэффициентами} (почему так — будет ясно в следующем разделе) или \emph{числом сочетаний из $n$ элементов по $k$}. 
+        Другое обозначение: $\binom{n}{k}$ — обратите внимание, что в этом случае $n$ ставится сверху.
 
 \subsection Бином Ньютона
 
