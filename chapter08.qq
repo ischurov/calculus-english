@@ -825,40 +825,63 @@ Hence the coefficient of $a^2b$ is equal to $3$.
     \eq
         (a+b)^n = \sum_{k=0}^n C_n^k a^k b^{n-k}.
 \proof
-    Коэффициент при выражении $a^k b^{n-k}$ — это количество различных «слов»
-    длины $n$, в которых входит ровно $k$ раз буква $a$ и оставшиеся $(n-k)$ раз
-    буква $b$.  Сколько таких слов существует? Поскольку мы знаем длину слова
-    (она равна $n$), и знаем, что в слове бывают только буквы $a$ и $b$, чтобы
-    задать такое слово, нужно просто задать, на каких позициях стоят буквы $a$.
-    Всего возможных позиций $n$, из них $k$ позиций нужно заполнить буквами $a$.
-    Чтобы выбрать эти позиции, нужно из $n$-элементного множества (всех позиций)
-    выбрать $k$-элементное подмножество (тех позиций, на которых мы напишем
-    $a$). Это можно сделать $C_n^k$ различными способами.
+    The coefficient of $a^k b^{n-k}$ equals to the number of different "words" of a length $n$ that contain the "letter" $a$ exactly $k$ times, and the remaining $(n-k)$ "letters" are $b$s.
+    How many such "words" are there?
+    Since the length of a "word" is known to be $n$, and there are only two possibile "letters" (namely, $a$ and $b$), the positions of "letters" $a$ completely determine the resulting word.
+    Once again, there are $n$ total positions for $k$ letters $a$, which can be though of as having a set of length $n$ and finnding all its subseets of length $k$.
+    By definition this is possible in $C_n^k$ ways.
+    \source
+        Коэффициент при выражении $a^k b^{n-k}$ — это количество различных «слов» длины $n$, в которых входит ровно $k$ раз буква $a$ и оставшиеся $(n-k)$ раз буква $b$.  
+        Сколько таких слов существует? 
+        Поскольку мы знаем длину слова (она равна $n$), и знаем, что в слове бывают только буквы $a$ и $b$, чтобы задать такое слово, нужно просто задать, на каких позициях стоят буквы $a$.
+        Всего возможных позиций $n$, из них $k$ позиций нужно заполнить буквами $a$.
+        Чтобы выбрать эти позиции, нужно из $n$-элементного множества (всех позиций) выбрать $k$-элементное подмножество (тех позиций, на которых мы напишем $a$). 
+        Это можно сделать $C_n^k$ различными способами.
 \remark
-    Разумеется, у этой теоремы есть строгое формальное доказательство через
-    индукцию. Провести его — полезное упражнение. Однако, на мой взгляд, понять
-    смысл из этого доказательство — довольно трудно. Поэтому я его здесь не
-    привожу.
+    A theorem of this kind must have an induction proofm, and it is a good exercise to go through it yourself.
+    However, I think the intuition behind such a proof is not clear enough to be included in here.
+    \source
+        Разумеется, у этой теоремы есть строгое формальное доказательство через индукцию. 
+        Провести его — полезное упражнение. 
+        Однако, на мой взгляд, понять смысл из этого доказательство — довольно трудно. 
+        Поэтому я его здесь не привожу.
 
-\section Число $e$
+\section 
+    Number $e$
+    \source{Число $e$}
 
-Рассмотрим следующий предел
+Consider a following limt
+\source{Рассмотрим следующий предел}
 \eq
     \lim_{n\to \infty} \left(1+\frac{1}{n}\right)^n.
-Чему он равен? Если вы попробуете применить арифметику пределов, то заметите,
-что основание степени стремится к $1$, а показатель — к бесконечности. Чему
-«равняется» $1^\infty$? Увы, это неопределенность. Лобовой метод тут не
-работает. Мы пока даже не знаем, существует этот предел, или нет. Однако, скоро
-узнаем.
+What value does it equal to?
+If one thies to apply the arithmetic of limits, it turns out that the expression inside the brackets approaches $1$, and the exponent approaches infinity.
+What value does $1^\infty$ equal to?
+Unfortunately, it is one of the indeterminate foms, so no known method can be applied.
+For the moment, we cannot even determine if the limit converges or not.
+but siin we will be.
+\source
+    Чему он равен? 
+    Если вы попробуете применить арифметику пределов, то заметите, что основание степени стремится к $1$, а показатель — к бесконечности. 
+    Чему «равняется» $1^\infty$? 
+    Увы, это неопределенность. 
+    Лобовой метод тут не работает. 
+    Мы пока даже не знаем, существует этот предел, или нет. 
+    Однако, скоро узнаем.
 
 
 \proposition
-    При всех $n$,
+    For all $n$,
+    \source{При всех $n$,}
     \eq
         \left(1+\frac{1}{n}\right)^n < 3.
 \proof
-    Случай $n=1$ разбирается явно. Пусть $n>1$. Раскроем скобки по биному
-    Ньютона (ага! пригодился!).
+    The case when $n=1$ is trivial.
+    Suppose $n>1$ and expand the brackets using the binomial theorem.
+    \source
+        Случай $n=1$ разбирается явно. 
+        Пусть $n>1$. 
+        Раскроем скобки по биному Ньютона (ага! пригодился!).
     Имеем:
     \align 
         \item \label eq:08:eee
@@ -866,8 +889,13 @@ Hence the coefficient of $a^2b$ is equal to $3$.
         \splitem \splonly{&+} \frac{n(n-1)}{2!} \frac{1}{n^2} + 
         \splitem \splonly{&+} \frac{n(n-1)(n-2)}{3!} \frac{1}{n^3} + \ldots +
         \splitem \splonly{&+} \frac{n(n-1)(n-2)\ldots 1}{n!}\frac{1}{n^n}.
-    Первые два слагаемые равны $1$. Рассмотрим $(k+1)$-е слагаемое, $k>2$. Оно
-    имеет вид:
+    The first two terms are equal to $1$.
+    Consider a $(k+1)$th term, where $k>2$.
+    It has the following form:
+    \source
+        Первые два слагаемые равны $1$. 
+        Рассмотрим $(k+1)$-е слагаемое, $k>2$. 
+        Оно имеет вид:
     \align 
         \item \nonumber
             \frac{n(n-1)\ldots(n-k+1)}{k!}\frac{1}{n^k} =
@@ -875,36 +903,48 @@ Hence the coefficient of $a^2b$ is equal to $3$.
         \item \label eq:08:term 
             = \left(1 - \frac{1}{n}\right) \cdots\left(1-\frac{k-1}{n}\right)\frac{1}{k!}
 
-    Иными словами, оно состоит из $(k-1)$ сомножителя вида $1-\frac{m}{n}$, где 
-    $m$ меняется от $1$ до $(k-1)$, и последнего сомножителя $\frac{1}{k!}$.
+    In ither words, it consists of $(k-1)$ factors of the form $1-\frac{m}{n}$ where $m$ vary from $1$ to $(k-1)$, and the last factor $\frac{1}{k!}$.
+    \source{Иными словами, оно состоит из $(k-1)$ сомножителя вида $1-\frac{m}{n}$, где  $m$ меняется от $1$ до $(k-1)$, и последнего сомножителя $\frac{1}{k!}$.}
 
-    Заметим, что каждый из сомножителей вида $1-\frac{m}{n}$ меньше 1.
-    Значит, всё слагаемое меньше $\frac{1}{k!}$. Но с другой стороны
-    $2^{k-1} \le k!$ для всех натуральных $k$ (проверьте, а ещё лучше — докажите
-    по индукции, что это так) и значит
-    $\frac{1}{k!} \le \frac{1}{2^{k-1}}$. Имеем:
+    Notice that every factor of the form $1-\frac{m}{n}$ is less than $1$.
+    This implies that the whole term is less than $\frac{1}{k!}$.
+    On the other hans, $2^{k-1} \le k!$ is true for any natural $k$ (a proof by induction is highly recommended), hence $\frac{1}{k!} \le \frac{1}{2^{k-1}}$. 
+    We get that
+    \source
+        Заметим, что каждый из сомножителей вида $1-\frac{m}{n}$ меньше 1.
+        Значит, всё слагаемое меньше $\frac{1}{k!}$. 
+        Но с другой стороны $2^{k-1} \le k!$ для всех натуральных $k$ (проверьте, а ещё лучше — докажите по индукции, что это так) и значит $\frac{1}{k!} \le \frac{1}{2^{k-1}}$. 
+        Имеем:
     \eq
         \left(1+\frac{1}{n}\right)^n  < 1 + 1 + \frac{1}{2^1} + \frac{1}{2^2} +
         \ldots \frac{1}{2^n}.
-    Слагаемые, начиная с третьего, образуют геометрическую прогрессию с
-    положительным знаменателем, меньшим $1$. Её сумма меньше суммы
-    соответствующей бесконечной геометрической прогрессии, которая в свою
-    очередь равна 1. (Не нужно знать формулу суммы бесконечной геометрической
-    прогрессии, чтобы это увидеть: если у вас была одна шоколадка, вы её
-    разломали пополам, съели половину (то есть $1/2$), остаток разломали снова пополам,
-    съели половину от половину (то есть $1/2^2$) и т.д., в каждый момент времени вы
-    съедите меньше, чем целую шоколадку, а в пределе съедите её всю.) Значит,
-    вся сумма меньше трёх.
+    All terms starting from the thind one form a geometric series whose common ratio is positive and less than $1$.
+    So, its sum is less than the sum of an infinite geometric series that has a common ratio $1$.
+    (A great illustration is eating a chocolate bar by biting a half of the previous bite, so that you start with biting a half of a bar, then a fourth, and eating the whole in the limit.)
+    Hence, the whole sum is less than $3$.
+    \source
+        Слагаемые, начиная с третьего, образуют геометрическую прогрессию с положительным знаменателем, меньшим $1$. 
+        Её сумма меньше суммы соответствующей бесконечной геометрической прогрессии, которая в свою очередь равна 1. 
+        (Не нужно знать формулу суммы бесконечной геометрической прогрессии, чтобы это увидеть: если у вас была одна шоколадка, вы её разломали пополам, съели половину (то есть $1/2$), остаток разломали снова пополам, съели половину от половину (то есть $1/2^2$) и т.д., в каждый момент времени вы съедите меньше, чем целую шоколадку, а в пределе съедите её всю.) 
+        Значит, вся сумма меньше трёх.
         
 \proposition
-    Последовательность
+    A sequence
+    \source{Последовательность}
     \eq
         \largeseq{\left(1+\frac{1}{n}\right)^n}
-    монотонно возрастает.
+    is monotonically increasing
+    \source{монотонно возрастает.}
 \proof
-    Рассмотрим представление \ref{eq:08:eee}. Что произойдёт при увеличении $n$
-    на единицу? Первые два слагаемые не изменятся. Добавится ещё одно
-    неотрицательное слагаемое. Что произойдёт с остальными?
+    Consider expression \ref{eq:08:eee} and think of what happens if we increase $n$ by one.
+    The first two terms stay unchanged, and one positive term is added.
+    But what about the rest?
+    \source
+        Рассмотрим представление \ref{eq:08:eee}. 
+        Что произойдёт при увеличении $n$ на единицу? 
+        Первые два слагаемые не изменятся. 
+        Добавится ещё одно неотрицательное слагаемое. 
+        Что произойдёт с остальными?
 
     Первые два слагаемые равны 1, они не изменятся. Слагаемые, начиная с
     третьего, задаются формулой \ref{eq:08:term}. Возьмём какое-то конкретное
