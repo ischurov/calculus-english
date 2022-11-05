@@ -771,12 +771,19 @@ Hence, the answer is $k!$.
         Числа $C_n^k$ называются \emph{биномиальными коэффициентами} (почему так — будет ясно в следующем разделе) или \emph{числом сочетаний из $n$ элементов по $k$}. 
         Другое обозначение: $\binom{n}{k}$ — обратите внимание, что в этом случае $n$ ставится сверху.
 
-\subsection Бином Ньютона
+\subsection 
+    Binomial theorem
+    \source{Бином Ньютона}
 
-Рассмотрим выражение $(a+b)^n$. Что получится, если раскрыть в нём скобки и
-привести подобные слагаемые?
+Consider an expression $(a+b)^n$.
+What is the best way to expand the brackets?
+\source
+    Рассмотрим выражение $(a+b)^n$. 
+    Что получится, если раскрыть в нём скобки и привести подобные слагаемые?
 
-\example Посмотрим, что происходит при небольших значениях $n$:
+\example
+    Let's examine what happens when $n$ is low:
+    \source{Посмотрим, что происходит при небольших значениях $n$:}
     \align \nonumber
         \item (a+b)^2=(a+b)(a+b)=
         \splitem \splonly{=} aa + a b + b a + b b = 
@@ -791,26 +798,30 @@ Hence, the answer is $k!$.
         \item    
             & =a^3+3a^2b+3ab^2+b^3.
 
-Мы видим, что если не приводить подобные слагаемые, каждый раз получается сумма
-всевозможных мономов, состоящих из $n$ сомножителей, каждый сомножитель — $a$
-или $b$ — они выглядят как «слова» типа $aaba$. Так будет и дальше: каждый раз
-нужно умножить $(a+b)$ на $(a+b)^{n-1}$, то есть приписать слева к каждому
-«слову», получающемуся в $(a+b)^{n-1}$, букву $a$ (получили $(n-1)$ новых
-«слов» длины $n$), а затем букву $b$ (получили ещё $(n-1)$ новых «слов» длины
-$n$), и всё сложить. Если в разложении $(a+b)^{n-1}$ были все $(n-1)$-буквенные
-«слова» из букв $a$ и $b$, то в разложении $(a+b)^n$ будут все $n$-буквенные
-слова из букв $a$ и $b$.
+It turns out the expression turned out to be the sum of $n$ monomials, each being the product of $n$ terms (either $a$ or $b$).
+It looks like the sum of "words", like $abaa$ and $baba$.
+The pattern looks recursive, since each time we're multiplying $(a+b)^{n-1}$ by $(a+b)$, which looks like attaching the "letter" $a$ to the left of each "word" in $(a+b)^{n-1}$ (which results in $(n-1)$ new "words" of the length $n$), then doing the same thing with the "letter" $b$ (another $(n-1)$ words), and summing over both groups at once.
+So, the expansion of $(a+b)^{n-1}$ has each "word" of length $(n-1)$ in it, and the expansion of $(a+b)^n$ has each "words" of length $n$.
+\source
+    Мы видим, что если не приводить подобные слагаемые, каждый раз получается сумма всевозможных мономов, состоящих из $n$ сомножителей, каждый сомножитель — $a$ или $b$ — они выглядят как «слова» типа $aaba$. 
+    Так будет и дальше: каждый раз нужно умножить $(a+b)$ на $(a+b)^{n-1}$, то есть приписать слева к каждому «слову», получающемуся в $(a+b)^{n-1}$, букву $a$ (получили $(n-1)$ новых «слов» длины $n$), а затем букву $b$ (получили ещё $(n-1)$ новых «слов» длины $n$), и всё сложить. 
+    Если в разложении $(a+b)^{n-1}$ были все $(n-1)$-буквенные «слова» из букв $a$ и $b$, то в разложении $(a+b)^n$ будут все $n$-буквенные слова из букв $a$ и $b$.
 
-Теперь нужно привести подобные слагаемые. Например, для $(a+b)^2$ мы замечаем,
-что $ab=ba$ и значит коэффициент при $ab$ равен двум. Для $(a+b)^3$, чтобы
-посчитать коэффициент при $a^2b$, нужно найти количество «слов», в которых две
-буквы $a$ и одна буква $b$. Таких слов 3: $aab$, $aba$ и $baa$. Значит,
-коэффициент при $a^2b$ равен трём.
+Now the only thing left is to combine like terms.
+For example, $(a+b)^2$ has "words" $ab$ and $ba$, which are the same thing, so the coefficient must be $2$.
+To calculate the coefficient of a term in $(a+b)^3$, say $a^2b$, we need to find the number of "words" that have two $a$s and one $b$.
+Clearly, there are $3$ such words: $aab$, $aba$, and $baa$.
+Hence the coefficient of $a^2b$ is equal to $3$.
+\source
+    Теперь нужно привести подобные слагаемые. 
+    Например, для $(a+b)^2$ мы замечаем, что $ab=ba$ и значит коэффициент при $ab$ равен двум. 
+    Для $(a+b)^3$, чтобы посчитать коэффициент при $a^2b$, нужно найти количество «слов», в которых две буквы $a$ и одна буква $b$. 
+    Таких слов 3: $aab$, $aba$ и $baa$. 
+    Значит, коэффициент при $a^2b$ равен трём.
 
 \theorem
-    Если раскрыть собки и привести подобные слагаемые в выражении $(a+b)^n$,
-    получится сумма мономов вида $a^k b^{n-k}$, коэффициент перед каждым таким
-    мономом равен $C_n^k$:
+    The result of expanding the expression $(a+b)^n$ and combining like terms of the form $a^k b^{n-k}$, the coefficient of each term is equal to $C_n^k$.
+    \source{Если раскрыть собки и привести подобные слагаемые в выражении $(a+b)^n$, получится сумма мономов вида $a^k b^{n-k}$, коэффициент перед каждым таким мономом равен $C_n^k$:}
     \eq
         (a+b)^n = \sum_{k=0}^n C_n^k a^k b^{n-k}.
 \proof
