@@ -963,7 +963,7 @@ but siin we will be.
         Во-вторых, количество сомножителей вида $1-\frac{m}{n}$ тоже не изменится, их $(k-1)$ штука. 
         Наконец, каждый из сомножителей такого вида при увеличении $n$ увеличивается, поскольку дробь $\frac{m}{n}$ уменьшается, но перед ней стоит минус.
         
-    Finally, we conclude that increasing $n$ by one adds a positive term to sum \ref{eq:08:term}, leaving all original terms unchanged.  
+    Finally, we conclude that increasing $n$ by one adds a positive term to sum \ref{eq:08:term}, and each of the original terms does not increase.  
     Hence, the expression increases.
     \source
         Итак, в результате увеличения $n$ на единицу к сумме \ref{eq:08:term} добавится положительное слагаемое, а остальные слагаемые не уменьшатся.
