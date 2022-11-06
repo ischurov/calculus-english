@@ -946,32 +946,49 @@ but siin we will be.
         Добавится ещё одно неотрицательное слагаемое. 
         Что произойдёт с остальными?
 
-    Первые два слагаемые равны 1, они не изменятся. Слагаемые, начиная с
-    третьего, задаются формулой \ref{eq:08:term}. Возьмём какое-то конкретное
-    слагаемое, то есть зафиксируем какое-то $k>2$. Посмотрим на правую часть
-    \ref{eq:08:term}. Что произойдёт с ней, когда $n$ увеличится, а $k$
-    останется прежним?  Во-первых, сомножитель $\frac{1}{k!}$, стоящий в конце,
-    не изменится. Во-вторых, количество сомножителей вида $1-\frac{m}{n}$ тоже
-    не изменится, их $(k-1)$ штука. Наконец, каждый из сомножителей такого вида
-    при увеличении $n$ увеличивается, поскольку дробь $\frac{m}{n}$
-    уменьшается, но перед ней стоит минус.
+    The first two terms equal to $1$, so they don't change.
+    The terms that follow are defined by \ref{eq:08:term}.
+    Let's fix some particular value of $k>2$ and look at the right hand side of \ref{eq:08:term}. 
+    How does it change when $n$ is increased and $k>2$ is unchanged?
+    Firstly, the factor $\frac{1}{k!}$ in the end stays the same.
+    Secondly, the number of factors of the form $1-\frac{m}{n}$ is unchanged (there are still $(k-1)$ of them).
+    Finally, each of the factors is increased as $n$ rises, since the fraction $\frac{m}{n}$ gets smaller, but there is a minus sign in front.
+    \source
+        Первые два слагаемые равны 1, они не изменятся. 
+        Слагаемые, начиная с третьего, задаются формулой \ref{eq:08:term}. 
+        Возьмём какое-то конкретное слагаемое, то есть зафиксируем какое-то $k>2$. 
+        Посмотрим на правую часть \ref{eq:08:term}. 
+        Что произойдёт с ней, когда $n$ увеличится, а $k$ останется прежним?  
+        Во-первых, сомножитель $\frac{1}{k!}$, стоящий в конце, не изменится. 
+        Во-вторых, количество сомножителей вида $1-\frac{m}{n}$ тоже не изменится, их $(k-1)$ штука. 
+        Наконец, каждый из сомножителей такого вида при увеличении $n$ увеличивается, поскольку дробь $\frac{m}{n}$ уменьшается, но перед ней стоит минус.
         
-    Итак, в результате увеличения $n$ на единицу к сумме \ref{eq:08:term}
-    добавится положительное слагаемое, а остальные слагаемые не уменьшатся.
-    Значит, сумма возрастёт.
+    Finally, we conclude that increasing $n$ by one adds a positive term to sum \ref{eq:08:term}, leaving all original terms unchanged.  
+    Hence, the expression increases.
+    \source
+        Итак, в результате увеличения $n$ на единицу к сумме \ref{eq:08:term} добавится положительное слагаемое, а остальные слагаемые не уменьшатся.
+        Значит, сумма возрастёт.
 
 \corollary \nonumber
-    Таким образом, наша последовательность возрастает и ограничена сверху.
-    Значит, по \ref[теореме Вейерштрасса\nonumber][thm:08:weierstrass], у неё
-    есть предел.
+    Utilizing the \ref[Weierstrass theorem\nonumber][thm:08:weierstrass], since the sequence is increasing and bounded, it must have a limit. 
+    \source
+        Таким образом, наша последовательность возрастает и ограничена сверху. 
+        Значит, по \ref[теореме Вейерштрасса\nonumber][thm:08:weierstrass], у неё есть предел.
 
-Оказывается, этот предел не записывается в виде какого-либо простого
-арифметического выражения, и представляет собой иррациональное число. Оно
-обозначается буквой $e$ и играет важную роль в построении анализа.
+It turns out that this limit is an irrational number that cannot be expressed in any familiar arithmetic way.
+This number is denoted by $e$ and it plays an important role in calculus. 
+\source
+    Оказывается, этот предел не записывается в виде какого-либо простого арифметического выражения, и представляет собой иррациональное число. 
+    Оно обозначается буквой $e$ и играет важную роль в построении анализа.
 
-\section Заключение
+\section 
+    Conclusion
+    \source{Заключение}
 
-Мы доказали теорему Вейерштрасса, позволяющую исследовать на сходимость
-монотонные ограниченные последовательности. С её помощью, а также с помощью
-бинома Ньютона, мы определили число $e$ как предел некоторой последовательности.
-Оно нам ещё пригодится.
+We've proven the Weierstrass theorem, which is a helpful tool when dealing with bounded and monotonic seqences.
+This theorem, alongside with a binomial theorem, helped us to define a number $e$ as a limit of a sequence.
+It will be very helpful in furure.
+\source
+    Мы доказали теорему Вейерштрасса, позволяющую исследовать на сходимость монотонные ограниченные последовательности. 
+    С её помощью, а также с помощью бинома Ньютона, мы определили число $e$ как предел некоторой последовательности.
+    Оно нам ещё пригодится.
