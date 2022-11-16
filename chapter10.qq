@@ -276,7 +276,6 @@ But there are other properties of functions that sequences lack.
         Функция $f(x)$ называется \emph{чётной}, если для всех $x\in D(f)$, $f(-x)=f(x)$. 
         Функция $f(x)$ называется \emph{нечётной}, если для всех $x\in D(f)$, $f(-x)=-f(x)$.
 
-...
 A graph of an even function is symmetrical about the $y$-axis, which means if a point $(x, f(x))$ belongs to it, then $(-x, f(x))$ also does.
 A graph of an odd function is symmetrical about the origin, which means if a point $(x, f(x))$ belongs to it, then $(-x, -f(x))$ also does.
 \source
@@ -305,12 +304,12 @@ Well, it is not so easy to understand what cats want to optimize, but I am prett
     Ладно, с кошками непонятно, но они тоже наверняка что-нибудь оптимизируют.
 
 As tempting as it is, we cannot yet proceed to studying these problems.
-We need to introduce a couple of new concepts.
+First, we need to introduce a couple of new concepts.
 \source{Чтобы иметь возможность формулировать и решать задачи оптимизации нам нужно сформулировать ряд дополнительных понятий.}
 
 \definition \label def:10:globmax
-    A function $f$ reaches it's \emph{maximum} in the point $x_0 \in D(f)$ if for all $x\in D(f)$ the inequality $f(x_0) \ge f(x)$ holds.
-    In this case the point $x_0$ is called the \emph{argmax} of $f$.
+    A function $f$ reaches it's \emph{maximum value} in the point $x_0 \in D(f)$ if for all $x\in D(f)$ the inequality $f(x_0) \ge f(x)$ holds.
+    In this case the point $x_0$ is called the \emph{argmax} of $f$, or a \emph{maximum point} of $f$.
     ??? ЕСТЬ ЛИ ЭТИ ДЕТАЛИ В АНГЛ ???
     \source
         Говорят, что функция $f$ достигает своего \emph{максимального значения} в точке $x_0 \in D(f)$, если для всех $x\in D(f)$ выполняется неравенство $f(x_0) \ge f(x)$. 
@@ -320,21 +319,21 @@ We need to introduce a couple of new concepts.
         Как правило, из контекста ясно, что имеется в виду.
 
 \definition \label def:10:globmin
-    Conversely, $f$ reaches it's \emph{minimum} in the point $x_0 \in D(f)$ if for all $x\in D(f)$ the inequality $f(x_0) \le f(x)$ holds.
-    The point $x_0$ is called the \emph{argmin} of $f$.
+    Conversely, $f$ reaches it's \emph{minimum value} in the point $x_0 \in D(f)$ if for all $x\in D(f)$ the inequality $f(x_0) \le f(x)$ holds.
+    The point $x_0$ is called the \emph{argmin} of $f$, or a \emph{minimum value} of $f$.
     \source
         Ну и наоборот, $f$ достигает своего \emph{минимального значения} в точаке $x_0 \in D(f)$, если для всех $x\in D(f)$ выполняется неравенство $f(x_0) \le f(x)$. 
         В этом случае точка $x_0$ называется \emph{точкой глобального минимума} функции $f$. 
 
-Maxima and minima together form extrema.
-In other words, an $extremum$ of a function is one of its maxima or minima.
+Maximum and minimum values together are called extrema.
+In other words, an $extremum$ of a function is either a maximum or a minimum value.
 \source
     Совместно максимумы и минимумы называются \emph{экстремумами}. 
     То есть \emph{экстремум} — это максимум или минимум.
 
 \example
     A function may have no global extrema. 
-    For example, the function $f(x)=x$ defined on $(0, 1)$ has neither a maximum, nor a minimum.
+    For example, the function $f(x)=x$ defined on $(0, 1)$ has neither a maximum value, nor a minimum value.
     \source
         У функции может не быть глобальных экстремумов. 
         Например, функция $f(x)=x$, определенная на интервале $(0, 1)$, не имеет ни глобального максимума, ни глобального минимума.
@@ -347,11 +346,11 @@ In other words, an $extremum$ of a function is one of its maxima or minima.
             \source{Узнать ответ}
             \comment
                 We proceed by contradiction.
-                Suppose $x_0 \in (0, 1)$ is the global maximum of $f$.
+                Suppose $x_0 \in (0, 1)$ is the global maximum point of $f$.
                 Consider the point $x = (x_0 + 1) / 2$, which is the midpoint of the interval $[x_0, 1]$. 
                 Then $f(x) = x = x_0 / 2 + 1 / 2 > x_0 / 2 + x_0 / 2 = x_0 = f(x_0)$ since $1 > x_0$.
                 Hence, $x_0$ is not the global maximum, which is a contradiction.
-                A similar argument proves that the global minimum does not exist.
+                A similar argument proves that the global minimum value does not exist.
                 \source
                     Докажем от противного. 
                     Пусть $x_0 \in (0, 1)$ — точка глобального максимума. 
@@ -361,74 +360,94 @@ In other words, an $extremum$ of a function is one of its maxima or minima.
                     Значит, никакого глобального максимума нет.
                     Аналогично можно показать, что нет и глобального минимума.
 \example
-    У функции может быть много глобальных экстремумов. Например, у функции
-    $f(x)=\cos x$ бесконечно много глобальных максимумов (все точки вида
-    $2k\pi$, $k$ — целое) и бесконечного много минимумов (каких?).
+    A function may also have many global extrema.
+    For example, the function $f(x)=\cos x$ has infinitely many global maxima of the form $2k\pi$, where $k$ is an integer.
+    Actually, it also has infinitely many global minima (think of a closed form yourself).
+    \source
+        У функции может быть много глобальных экстремумов. 
+        Например, у функции $f(x)=\cos x$ бесконечно много глобальных максимумов (все точки вида $2k\pi$, $k$ — целое) и бесконечного много минимумов (каких?).
 \question
-    Может ли глобальный максимум совпадать с глобальным минимумом?
+   Can a global maximum value coincide with a global minimum value?
+   \source{Может ли глобальный максимум совпадать с глобальным минимумом?}
     \quiz
         \choice
-            Нет.
+            No
+            \source{Нет.}
             \comment
-                А вот и нет.
+                It turns out that yes!
+                \source{А вот и нет.}
         \choice \correct
-            Да.
+            Yes
+            \source{Да.}
             \comment
-                Действительно, у функции $f(x)=42$ бесконечно много глобальных
-                максимумов и все они также являются глобальными минимумами.
+                Indeed, the function $f(x)=42$ has intinitely many global maximum values, and each of them is at the same time a global minimum value.
+                \source{Действительно, у функции $f(x)=42$ бесконечно много глобальных максимумов и все они также являются глобальными минимумами.}
 \definition \label def:10:strictextr
-    Точка $x_0$ называется точкой \emph{строгого локального максимума}
-    (\emph{минимума}) если для всех $x \in D(f)$, не совпадающих с $x_0$,
-    выполняется неравенство $f(x_0) > f(x)$ (соответственно, $f(x_0) < f(x)$).
-    Иными словами, в определении экстремума мы заменили неравенство на строгое,
-    и ещё добавили условие, что $x$ не совпадает с $x_0$ — если бы мы этого не
-    сделали, никакая точка не могла бы удовлетворять определению.
+    A point $x_0$ is called a \emph{strict global maximum point} (\emph{minimum}) if for all $x \in D(f)$ that are not equal to $x_0$ the inequality $f(x_0) > f(x)$ (respectively, $f(x_0) < f(x)$) holds.
+    \source
+        Точка $x_0$ называется точкой \emph{строгого локального максимума} (\emph{минимума}) если для всех $x \in D(f)$, не совпадающих с $x_0$, выполняется неравенство $f(x_0) > f(x)$ (соответственно, $f(x_0) < f(x)$).
+        Иными словами, в определении экстремума мы заменили неравенство на строгое, и ещё добавили условие, что $x$ не совпадает с $x_0$ — если бы мы этого не сделали, никакая точка не могла бы удовлетворять определению.
 \question
-    Может ли у функции быть несколько строгих глобальных максимумов? 
+    But is it possible for a function to have more than one but a finite number of global maxima?
+    \source{Может ли у функции быть несколько строгих глобальных максимумов?} 
     \quiz
         \choice \correct
-            Нет.
+            No
+            \source{Нет.Х
             \comment
-                Действительно, не может: значение функции в каждом из них должно
-                быть строго больше, чем в другом. Так не бывает.
+                Yes!
+                The value of a function in each of these points must be strictly larger than the values in the rest of the points. 
+                This cannot simultaneously happen.
+                \source
+                    Действительно, не может: значение функции в каждом из них должно быть строго больше, чем в другом. 
+                    Так не бывает.
         \choice
-            Да.
+            Yes
+            \source{Да.}
             \comment
-                Как же?
+                No way!
+                \source{Как же?}
 \question
-    Может ли у функции быть строгий глобальный максимум, являющийся одновременно
-    строгим глобальным минимумом?
+    Now, can a function have a strict global maximum point which it at the same time is a strict global minimum point?
+    \source{Может ли у функции быть строгий глобальный максимум, являющийся одновременно строгим глобальным минимумом?}
     \quiz
         \choice \correct
-            Нет.
+            No.
+            \source{Нет.}
             \comment
-                Это почти правда: значение функции в строгом глобальном
-                максимуме должно быть строго больше её значения в строгом
-                глобальном минимуме, и значит это должно быть два разных
-                значения, и значит две разные точки. Но есть одно исключение.
-                Угадаете, какое?
+                This is almost true.
+                The following argument is convincing: since a global maximum value must be strictly larger than a global minimum value, the function must take these two (distinct) values in different points.
+                But there is one exception.
+                Can you spot it?
+                \source
+                    Это почти правда: значение функции в строгом глобальном максимуме должно быть строго больше её значения в строгом глобальном минимуме, и значит это должно быть два разных значения, и значит две разные точки. 
+                    Но есть одно исключение.
+                    Угадаете, какое?
         \choice \correct
-            Да.
+            Yes.
+            \source{Да.}
             \comment
-                Технически, это верно: для любой функции, определённой лишь в
-                одной точке, эта точка является одновременно глобальным
-                максимумом и минимумом. Однако, такие функции не очень интересны
-                — как говорят, это \emph{вырожденный} пример.
+                Technically, you are right. 
+                For every function that is defined in only one point, this point is both its maximum and minimum point.
+                These functions are examples of a \emph{degenerate case} in math.
+                They are qualitatively different from the rest of the objects in a particular class, but their analysis is trivial and not "interesting". 
+                \source
+                    Технически, это верно: для любой функции, определённой лишь в одной точке, эта точка является одновременно глобальным максимумом и минимумом. 
+                    Однако, такие функции не очень интересны — как говорят, это \emph{вырожденный} пример.
 
 \definition \label def:10:locextr
-    Точка $x_0 \in D(f)$ называется точкой \emph{локального максимума}
-    (\emph{минимума}) функции
-    $f$, если существует такой интервал $(a, b)$, содержащий точку $x_0$, что
-    для всех $x \in (a, b) \cap D(f)$ выполняется неравенство $f(x_0) \ge f(x)$
-    (соответственно, $f(x_0) \le f(x)$).
+    A point $x_0 \in D(f)$ is called a \emph{local maximum point} (\emph{minimum}) of a function $f$ if there exists an interval $(a, b)$ that includes $x_0$ such that for any $x \in (a, b) \cap D(f)$ the inequality $f(x_0) \ge f(x)$ ($f(x_0) \le f(x)$ respectively) is satisfied.
+    
+    \source{Точка $x_0 \in D(f)$ называется точкой \emph{локального максимума} (\emph{минимума}) функции $f$, если существует такой интервал $(a, b)$, содержащий точку $x_0$, что для всех $x \in (a, b) \cap D(f)$ выполняется неравенство $f(x_0) \ge f(x)$ (соответственно, $f(x_0) \le f(x)$).}
 
-Как видно, определение локального экстремума отличается от определения
-глобального только требованиями на $x$. Например, в случае глобального
-максимума, мы хотим, чтобы $f(x_0)$ было не меньше, чем значение $f$ в любой
-другой точке области определения, а в случае с локальным максимумом $f(x_0)$
-должно быть не меньше, чем значения $f$ в точках $x$, близких к $x_0$. Любой
-глобальный максимум автоматически является локальным, но не всякий локальный
-максимум обязан быть глобальным.
+Notice that the conditions on $x$ is the only thing that makes the definition of a local extremum different from the definition of a global one.
+Namely, in the case of a global extremum, we want $f(x_0)$ to be strictly larger than any other value (in any other point of a domain).
+In the case of a local extremum, we seek only for the values in points that lie within some close range around $x_0$ to not exceed the value in $x_0$.
+Clearly, any global extremum is automatically a local one, but not the other way around.
+\source
+    Как видно, определение локального экстремума отличается от определения глобального только требованиями на $x$. 
+    Например, в случае глобального максимума, мы хотим, чтобы $f(x_0)$ было не меньше, чем значение $f$ в любой другой точке области определения, а в случае с локальным максимумом $f(x_0)$ должно быть не меньше, чем значения $f$ в точках $x$, близких к $x_0$. 
+    Любой глобальный максимум автоматически является локальным, но не всякий локальный максимум обязан быть глобальным.
 
 \figure
     \img
@@ -445,52 +464,66 @@ In other words, an $extremum$ of a function is one of its maxima or minima.
             на пересечении с горизонтальной осью подписана «точка глобального
             максимума.
     \caption
-        Точки локального и глобального максимума на графике функции $y=f(x)$.
+        Points of local and global maxima on the graph of $y=f(x)$.
+        \source{Точки локального и глобального максимума на графике функции $y=f(x)$.}
     \label fig:10:extrema
 
 \remark
-    Представьте себе, что вы — правитель некоторого государства, и ваша задача
-    — повышать благосостояние жителей. При этом согласно конституции этого
-    государства вы можете влиять лишь на один параметр — например, на уровень
-    налогов. Более того: вы не можете директивно задать уровень налогов на
-    следующий год, а можете только дать указания министерству финансов, чтобы
-    оно его плавно повышало или понижало. Может так случиться, что
-    зависимость благосостояния от уровня налогов описывается функцией, у которой
-    есть локальный максимум, не являющийся глобальным, как на
-    \ref[рис.][fig:10:extrema]. Тогда, если в ходе изменения уровня налогов вы
-    попадёте в эту точку локального максимума, дальше вы столкнётесь с
-    трудностями: маленькие отклонения от неё (в любую сторону!) будут приводить
-    к снижению благосостояния — что, конечно, никому не понравится. Жители будут
-    опасаться, что ещё большее изменение приведёт к ещё более сильному снижению
-    уровня их жизни, и начнут призывать обратить реформы вспять. Вам придётся
-    убедить их, что уйдя от локального максимума достаточно далеко, вы сможете
-    вернуться к росту, а затем и достигнуть большего благосостояния, чем было в
-    этом максимуме. Непростая задача!
+    The following illustration builds the intuition.
+    Consider yourself as a ruler of some state and suppose your goal is to increase welfare of the nation.
+    According to the Constitution, you are only allowed to act of one variable: taxes.
+    Moreover, you can choose either to set the amount of next year's taxes directively, or to make the Ministry of Finance change it gradually.
+    It may so happen that welfare as a function of taxes has a local maximum that is not a global one (see \ref[fig.][fig:10:extrema]).
+    If the economy finds itself in this local maximum, then any deviation (in both directions) from it must result in a decrease of welfare.
+    People may start to worry that future policy will decrease welfare even more.
+    You, as a leader, must convince people to bear the pressure and wait for the economy to settle on an optimal trajectory.
+    This is not an easy task!
+    \source
+        Представьте себе, что вы — правитель некоторого государства, и ваша задача — повышать благосостояние жителей. 
+        При этом согласно конституции этого государства вы можете влиять лишь на один параметр — например, на уровень налогов. 
+        Более того: вы не можете директивно задать уровень налогов на следующий год, а можете только дать указания министерству финансов, чтобы оно его плавно повышало или понижало. 
+        Может так случиться, что зависимость благосостояния от уровня налогов описывается функцией, у которой есть локальный максимум, не являющийся глобальным, как на \ref[рис.][fig:10:extrema]. 
+        Тогда, если в ходе изменения уровня налогов вы попадёте в эту точку локального максимума, дальше вы столкнётесь с трудностями: маленькие отклонения от неё (в любую сторону!) будут приводить к снижению благосостояния — что, конечно, никому не понравится. 
+        Жители будут опасаться, что ещё большее изменение приведёт к ещё более сильному снижению уровня их жизни, и начнут призывать обратить реформы вспять. 
+        Вам придётся убедить их, что уйдя от локального максимума достаточно далеко, вы сможете вернуться к росту, а затем и достигнуть большего благосостояния, чем было в этом максимуме. 
+        Непростая задача!
 
-Перейдём теперь к ключевому понятию курса: пределу функции.
+Now we proceed to the central concept of a course: a limit of a function.
+\source{Перейдём теперь к ключевому понятию курса: пределу функции.}
 
-\section Предел функции
-\subsection Примеры и мотивировка \label ssec:10:examples-motivation
+\section
+    Limit of a function
+    \source{Предел функции}
+\subsection 
+    Examples and motivation \label ssec:10:examples-motivation
+    \source{Примеры и мотивировка \label ssec:10:examples-motivation}
 
-Начнём как всегда с неформального описания и примеров. 
+Let's start from an informal side.
+\source{Начнём как всегда с неформального описания и примеров.} 
 
 \quasidefinition \label qdef:10:lim
-    Говорят, что функция $y=f(x)$ имеет предел в точке $x=x_0$, равный $b$, если
-    значение этой функции становится сколь угодно близким к числу $b$ если
-    значение $x$ достаточно близко к $x_0$, но при этом не равно $x_0$.
+    A function $y=f(x)$ has a limit $b$ in the point $x=x_0$ if the value of $f$ becomes as close to $b$ as desired when considering smaller and smaller neighbourhoods of $x_0$.   
+    \source{Говорят, что функция $y=f(x)$ имеет предел в точке $x=x_0$, равный $b$, если значение этой функции становится сколь угодно близким к числу $b$ если значение $x$ достаточно близко к $x_0$, но при этом не равно $x_0$.}
 
-Обозначение:
+The following notation is used:
+\source{Обозначение:}
 \eq
     \lim_{x\to x_0} f(x)=b
-или
+or
+\source{или}
 \eq
     f(x)\to b\text{ при }x \to x_0.
 
-Рассмотрим несколько примеров.
+Let's study some examples.
+\source{Рассмотрим несколько примеров.}
 \example \label ex:10:x^2lim
-    Пусть $f(x)=x^2$. К чему стремится $f(x)$, если $x$ стремится к 2? Можно
-    посмотреть на график и увидеть, что если мы выибраем значения $x$, близкие к
-    2, то соответствующая точка на графике будет близка к точке $(2, 4)$.
+    Consider the function $f(x)=x^2$.
+    What is the limit of $f$ when $x$ approaches $2$?
+    The graph tells us that if we narrow yourselves to some heighbourhood of $2$, the corresponding outputs are close to the point $(2, 4)$.
+    \source
+        Пусть $f(x)=x^2$. 
+        К чему стремится $f(x)$, если $x$ стремится к 2? 
+        Можно посмотреть на график и увидеть, что если мы выибраем значения $x$, близкие к 2, то соответствующая точка на графике будет близка к точке $(2, 4)$.
     \figure \showcode \collapsed
         \pythonfigure  \style max-width: 500px;
             def f(x):
@@ -513,27 +546,39 @@ In other words, an $extremum$ of a function is one of its maxima or minima.
             ob.settle_axes(xmin=-0.7, xmax=2.7, ymin=-0.2, ymax=7.8, 
                            xlabel="x", ylabel="y") 
         \caption \center
-            Предел функции $y=x^2$ при $x \to 2$.
+            The limit of the function $y=x^2$ as $x \to 2$.
+            \source{Предел функции $y=x^2$ при $x \to 2$.}
             
-    Значит, значение $f(x)$ будет близким к 4. Таким образом, предел $f$ при
-    $x$ стремящемся к двум равен четырём:
+    So, the value of $f$ is close to $4$.
+    Hence, the limit of $f$ as $x$ approaches $2$ is $4$!
+    \source
+        Значит, значение $f(x)$ будет близким к 4. 
+        Таким образом, предел $f$ при $x$ стремящемся к двум равен четырём:
     \eq
         \lim_{x \to 2} x^2=4.
-Казалось бы, зачем городить такой огород в предыдущем примере — понятно, что
-достаточно просто подставить значение $x$ в формулу для функции и получить
-ответ. Однако, это не всегда работает. Во-первых, в \ref[квазиопределении
-предела\nonumber][qdef:10:lim] явно сказано, что мы не можем брать $x$, равное
-$x_0$. Во-вторых, функция может быть не определена в точке $x_0$ — и это не
-мешает ей иметь предел в этой точке.
+One may ask, why not just evaluate $f$ at $2$ and get $4$?
+What is the point of being so rigorous?
+The reason lies in the \ref[quasidefinition of a limit\nonumber][qdef:10:lim].
+It says that we cannot consider $x$ to be $x_0$.
+Moreover, a function may be undefined in $x_0$, and still it has a limit in $x_0$. 
+\source
+    Казалось бы, зачем городить такой огород в предыдущем примере — понятно, что достаточно просто подставить значение $x$ в формулу для функции и получить ответ. 
+    Однако, это не всегда работает. 
+    Во-первых, в \ref[квазиопределении предела\nonumber][qdef:10:lim] явно сказано, что мы не можем брать $x$, равное $x_0$. 
+    Во-вторых, функция может быть не определена в точке $x_0$ — и это не мешает ей иметь предел в этой точке.
 
 \example
-    Пусть 
+    Consider the function
+    \source{Пусть} 
     \eq
         f(x)=\frac{x^2-1}{x-1}. 
-    К чему приближается значение функции когда $x$ приближается к 1? Если
-    попытаться просто подставить значение $x=1$ в формулу, ничего не получится:
-    знаменатель обнуляется и значение не определено. Однако, можно выбирать
-    близкие значения $x$, подставлять их в формулу и посмотреть, что получается:
+    What is the value of a function as $x$ approaches $1$?
+    The function is undefined in $x=1$, hence we cannot just evaluate $f$ in $x$.
+    Let's analyze the behaviour of $f$ in the neighbourhood of $1$ numerically:
+    \source
+        К чему приближается значение функции когда $x$ приближается к 1? 
+        Если попытаться просто подставить значение $x=1$ в формулу, ничего не получится: знаменатель обнуляется и значение не определено. 
+        Однако, можно выбирать близкие значения $x$, подставлять их в формулу и посмотреть, что получается: 
     \pythoncode \showcode
         def f(x):
             return (x ** 2 - 1) / (x - 1)
@@ -541,8 +586,11 @@ $x_0$. Во-вторых, функция может быть не определ
         for x in [1.01, 1.001, 1.0001, 1.00001, 
                   0.99, 0.999, 0.9999, 0.99999]:
             print(f"{x}\t{f(x)}")
-    Из таблички, которую мы видим, можно сделать вывод, что значение $f(x)$
-    приближается к $2$. То же самое можно увидеть на графике.
+    The table tells us that $f(x)$ approaches $2$.
+    The same thing is apparent from the graph bellow.
+    \source
+        Из таблички, которую мы видим, можно сделать вывод, что значение $f(x)$ приближается к $2$. 
+        То же самое можно увидеть на графике.
     \figure \showcode \collapsed
         \pythonfigure \style max-width: 500px;
             def f(x):
@@ -564,7 +612,8 @@ $x_0$. Во-вторых, функция может быть не определ
             ob.settle_axes(xmin=-0.9, xmax=1.7, ymin=-0.2, ymax=2.2, 
                            xlabel="x", ylabel="y") 
         \caption \center
-            Функция не определена в точке, но предел у неё есть.
+            The function is undefined in a point, but has a limit it in.
+            \source{Функция не определена в точке, но предел у неё есть.}
 
     Как это можно было бы доказать?
 
