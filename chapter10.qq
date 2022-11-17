@@ -615,46 +615,60 @@ Moreover, a function may be undefined in $x_0$, and still it has a limit in $x_0
             The function is undefined in a point, but has a limit it in.
             \source{Функция не определена в точке, но предел у неё есть.}
 
-    Как это можно было бы доказать?
+    How can we prove it?
+    \source{Как это можно было бы доказать?}
 
-    Заметим, что выражение для $f(x)$ можно упростить. Если разложить
-    числитель на скобки, получится $(x-1)(x+1)$:
+    Notice that the numerator of $f(x)$ can be expressed as $(x-1)(x+1)$:
+    \source
+        Заметим, что выражение для $f(x)$ можно упростить. 
+        Если разложить числитель на скобки, получится $(x-1)(x+1)$:
     \eq
         f(x)=\frac{(x-1)(x+1)}{(x-1)}.
-    Если $x\ne 1$, дробь можно сократить на $(x-1)$ и получится выражение
-    $(x+1)$. Если $x=1$, значение функции не определено. Таким образом, можно
-    сказать, что функция $f(x)$ определена при всех значениях $x\in \mathbb
-    R\setminus\set{1}$, и на этом множестве задаётся формулой
+    If $x\ne 1$, then we're allowed to reduce the fraction and get $(x+1)$.
+    If $x=1$, then the value is undefined.
+    We conclude, $f(x)$ is defined on $x\in \mathbb R\setminus\set{1}$ and acts according to the expression
+    \source
+        Если $x\ne 1$, дробь можно сократить на $(x-1)$ и получится выражение $(x+1)$. 
+        Если $x=1$, значение функции не определено. 
+        Таким образом, можно сказать, что функция $f(x)$ определена при всех значениях $x\in \mathbb R\setminus\set{1}$, и на этом множестве задаётся формулой
     \equation \label eq:10:x+1
         f(x)=x+1.
-    Поскольку нас интересует, к чему приближается $f(x)$, когда $x$ приближается
-    к 1, \emph{но не равен 1} (см. \ref[как бы определение][qdef:10:lim]),
-    нас интересуют только значения функции при $x\ne 1$, и значит мы можем смело
-    использовать формулу \ref{eq:10:x+1}. Очевидно, если $x$
-    приближается к 1, то $(x+1)$ приближается к 2. Таким образом, 
+    Our \ref[informal definition][qdef:10:lim] implies that we're interested in the value of $f(x)$ as $x$ approaches $1$ (at the same time \emph{not being equal to $1$}), we're can safely use the expression \ref{eq:10:x+1}. 
+    Clearly, if $x$ approaches $1$, then $(x+1)$ approaches $2$.
+    Formally,
+    \source
+        Поскольку нас интересует, к чему приближается $f(x)$, когда $x$ приближается к 1, \emph{но не равен 1} (см. \ref[как бы определение][qdef:10:lim]), нас интересуют только значения функции при $x\ne 1$, и значит мы можем смело использовать формулу \ref{eq:10:x+1}. 
+        Очевидно, если $x$ приближается к 1, то $(x+1)$ приближается к 2. 
+        Таким образом, 
     \eq
         \lim_{x\to 1}\frac{x^2-1}{x-1}=2.
 \remark
-    Заметим, что в приведенной выше табличке значения $f(x)$ не в точности равны
-    $x+1$. Это связано с тем, что все компьютерные вычисления с вещественными
-    числами носят приблизительный характер: компьютер не может запомнить все
-    цифры вещественного числа (их бесконечно много, никакой памяти не хватит) и
-    в ходе вычислений постоянно делает округления.
+    One can notice that our numerical calculations of $f(x)$ does not equal to $x+1$ exactly.
+    This arises from the fact that all float numbers calculations on a computer are rounded up.
+    An infinite expansion of a real number cannot be stored in a finite memory of a computer.
+    \source
+        Заметим, что в приведенной выше табличке значения $f(x)$ не в точности равны $x+1$. 
+        Это связано с тем, что все компьютерные вычисления с вещественными числами носят приблизительный характер: компьютер не может запомнить все цифры вещественного числа (их бесконечно много, никакой памяти не хватит) и в ходе вычислений постоянно делает округления.
 \example \label ex:10:cases
-    Рассмотрим функцию
+    Consider the function
+    \source{Рассмотрим функцию}
     \eq
         f(x)=
         \begin{cases}
             1,& x \ne 2; \\\\
             3, & x = 2.
         \end{cases}
-    Чему равняется её предел при $x \to 2$?
+    What is its value as $x \to 2$?
+    \source{Чему равняется её предел при $x \to 2$?}
 
-    В этом примере функция определена в точке $x=2$ и может возникнуть искушение
-    подставить $x=2$ в формулу и сказать, что результат (число 3) и будет ответом. Однако,
-    это неверно. На самом деле, значение функции в этой точке никак не влияет на
-    ответ: предел функции при $x$ стремящемся к $x_0$ зависит от значений
-    функции в точках, близких к $x_0$, но не в самой точке $x_0$.
+    You nay be tempted to just evaluate the function at $x=2$ and conclude that the answer is $3$.
+    However, this is incorrect.
+    In fact, the value of a function in $x=2$ does not affect the limit at all!
+    The actual values that determine the answer are the values in points near $x_0$.
+    \source
+        В этом примере функция определена в точке $x=2$ и может возникнуть искушение подставить $x=2$ в формулу и сказать, что результат (число 3) и будет ответом. 
+        Однако, это неверно. 
+        На самом деле, значение функции в этой точке никак не влияет на ответ: предел функции при $x$ стремящемся к $x_0$ зависит от значений функции в точках, близких к $x_0$, но не в самой точке $x_0$.
     
     \figure \showcode \collapsed
         \pythonfigure \style max-width: 500px;
@@ -681,23 +695,30 @@ Moreover, a function may be undefined in $x_0$, and still it has a limit in $x_0
             ob.settle_axes(xmin=-0.9, xmax=2.7, ymin=-1.2, ymax=3.7, 
                            xlabel="x", ylabel="y") 
         \caption \center
-            Предел функции в точке не равен её значению в этой точке.
-    Во всех точках, близких к $2$, значение функции равно $1$. Значит, предел
-    этой функции при $x\to 2$ также равен 1:
+            The function's limit and value in a single point are different.
+            All inputs near $2$ output the value $1$.
+            Hence, the limit as $x \to 2$ is also $1$
+            \source
+                Предел функции в точке не равен её значению в этой точке. 
+                Во всех точках, близких к $2$, значение функции равно $1$. 
+                Значит, предел этой функции при $x\to 2$ также равен 1:
     \eq
         \lim_{x\to 2}f(x)=1.
 
 \example \label ex:10:jump
-    Рассмотрим функцию
+    Consider the function
+    \source{Рассмотрим функцию}
     \equation \label eq:10:jump
         f(x)=
         \begin{cases}
             x+1,& x \le 1;\\\\
             x-2,& x > 1.
         \end{cases}
-    Что вы можете сказать про её предел при $x\to 1$?
+    ЧWhat is its limit as $x \to 1$?
+    \source{Что вы можете сказать про её предел при $x\to 1$?}
 
-    Посмотрим на график.
+    Let's look at the graph.
+    \source{Посмотрим на график.}
     
 
     \figure \showcode \collapsed
@@ -727,26 +748,37 @@ Moreover, a function may be undefined in $x_0$, and still it has a limit in $x_0
             ob.center_spines(grid=False, minor_ticks=False)
             ob.settle_axes(xmin=-0.9, xmax=2.7, ymin=-1.2, ymax=2.7, 
                            xlabel="x", ylabel="y") 
-    Если $x$ чуть меньше 1, действует верхняя строчка в определении функции и
-    значение оказывается чуть меньше 2. Однако, если $x$ чуть больше 1,
-    действует уже нижняя строчка, и значение функции оказывается чуть больше
-    $-1$. Никакого одного числа, к которому бы приближалось значение функции,
-    когда $x$ приближается к 1, нет. Значит, нет и предела.
+    If $x$ is a little less than $1$, the value is defined by the first row of the expression and turns out to be a little less than 2.
+    On the other hand, if $x$ is a little larger than $1$, then we must compute the values according to the second row, so $f(x)$ becomes a little larger than $-1$.
+    We see that there is no such (unique) number that is approached as $x$ tends to $1$.
+    Hence, there is no limit.
+    \source
+        Если $x$ чуть меньше 1, действует верхняя строчка в определении функции и значение оказывается чуть меньше 2. 
+        Однако, если $x$ чуть больше 1, действует уже нижняя строчка, и значение функции оказывается чуть больше $-1$. 
+        Никакого одного числа, к которому бы приближалось значение функции, когда $x$ приближается к 1, нет. 
+        Значит, нет и предела.
 
-    Итак, $\lim_{x\to 1} f(x)$ в этом случае не существует.
+    We conclude, $\lim_{x\to 1} f(x)$ does not exist.
+    \source{Итак, $\lim_{x\to 1} f(x)$ в этом случае не существует.}
 
-В этом примере несуществование предела было связано с тем фактом, что
-при приближении $x$ с разных сторон значение функции приближалось к разным
-числам. Это не единственный механизм несуществования предела.
+This example describes the case when the limiting value from the left is different from the one from the right.
+But this is not the only way a limit may not exist.
+\source
+    В этом примере несуществование предела было связано с тем фактом, что при приближении $x$ с разных сторон значение функции приближалось к разным числам. 
+    Это не единственный механизм несуществования предела.
 
 \example \label ex:10:sin-pi/x
-    Рассмотрим функцию
+    Consider a function
+    \source{Рассмотрим функцию}
     \eq
         f(x)=\sin \frac{\pi}{x}.
-    Что вы можете сказать про её предел при $x\to 0$? Просто подставить $x=0$ в
-    формулу нельзя, да и как мы видели это не всегда работает. Попробуем использовать тот
-    же приём, что и в \ref[примере][ex:10:x^2lim]: подставим в $f$ какие-нибудь
-    значения $x$, близкие к 0, и посмотрим, что получается.
+    What can be said about the limit as $x\to 0$?
+    We cannot evaluate at $0$, and besides this failed to help earlier.
+    Let's use the numerical approach again!
+    \source
+        Что вы можете сказать про её предел при $x\to 0$? 
+        Просто подставить $x=0$ в формулу нельзя, да и как мы видели это не всегда работает. 
+        Попробуем использовать тот же приём, что и в \ref[примере][ex:10:x^2lim]: подставим в $f$ какие-нибудь значения $x$, близкие к 0, и посмотрим, что получается.
 
     \pythoncode \showcode
         import numpy as np
@@ -758,22 +790,33 @@ Moreover, a function may be undefined in $x_0$, and still it has a limit in $x_0
                   -0.01, -0.001, -0.0001, -0.00001]:
             print(f"{x: .7f}\t{f(x): .7f}")
 
-    Чему же равен предел? Из таблички может сложиться ощущение, что нулю — во
-    всех наших пробных точках значение функции нулевое. Однако, на самом деле
-    это не так.
+    So, what is the limit then?
+    One may think that it is zero, since all the values computed are zero.
+    However, this is not the case.
+    \source
+        Чему же равен предел? 
+        Из таблички может сложиться ощущение, что нулю — во всех наших пробных точках значение функции нулевое. 
+        Однако, на самом деле это не так.
 
-    Рассмотрим последовательность точек $x_n=\frac{1}{2n+1/2}$. Очевидно $x_n \to
-    0$ при $n\to \infty$. Найдём $f(x_n)$:
+    Consider a sequence $x_n=\frac{1}{2n+1/2}$.
+    Clearly, $x_n \to 0$ при $n\to \infty$.
+    Let's take a look at $f(x_n)$:
+    \source
+        Рассмотрим последовательность точек $x_n=\frac{1}{2n+1/2}$. 
+        Очевидно $x_n \to 0$ при $n\to \infty$. 
+        Найдём $f(x_n)$:
     \eq
         f(x_n)=\sin \left(\frac{\pi}{\frac{1}{2n+1/2}}\right) = \sin (2n\pi +
         \pi/2)=1.
-    Таким образом, существуют сколь угодно близкие к нулю числа, в которых
-    значение функции принимает значение 1. Это значит, что предел никак не может
-    быть равен нулю! На самом деле, предел в этом случае не существует: выбирая разные
-    значения $x$, близкие к нулю, например, справа (то есть положительные
-    числа), можно получать значения функции, близкие к $1$, или к $0$, или к $-1$, или
-    ещё к чему-нибудь. Одного числа, к которому приближалось бы значение
-    функции, не существует.
+    We see that there exist arbitrarily small points, the values of $f$ in which are equal to $1$.
+    This means the limit cannot be $0$.
+    A similar argument can be formulated for any other "candidate" for the limit: it's always possible to find an arbitratily close to $0$ input whose output is not close to the "candidate".
+    Thus, the limit does not exist.
+    \source
+        Таким образом, существуют сколь угодно близкие к нулю числа, в которых значение функции принимает значение 1. 
+        Это значит, что предел никак не может быть равен нулю! 
+        На самом деле, предел в этом случае не существует: выбирая разные значения $x$, близкие к нулю, например, справа (то есть положительные числа), можно получать значения функции, близкие к $1$, или к $0$, или к $-1$, или ещё к чему-нибудь. 
+        Одного числа, к которому приближалось бы значение функции, не существует.
 
 \exercise
     Крайне полезное упражнение — построить график функции $y=\sin \pi/x$. Чтобы
