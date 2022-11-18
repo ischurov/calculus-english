@@ -502,7 +502,7 @@ Let's start from an informal side.
 \source{Начнём как всегда с неформального описания и примеров.} 
 
 \quasidefinition \label qdef:10:lim
-    A function $y=f(x)$ has a limit $b$ in the point $x=x_0$ if the value of $f$ becomes as close to $b$ as desired when considering smaller and smaller neighbourhoods of $x_0$.   
+    A function $y=f(x)$ has a limit $b$ in the point $x=x_0$ if the value of $f$ becomes as close to $b$ as desired when considering smaller and smaller neighbourhoodbourhoods of $x_0$.   
     \source{Говорят, что функция $y=f(x)$ имеет предел в точке $x=x_0$, равный $b$, если значение этой функции становится сколь угодно близким к числу $b$ если значение $x$ достаточно близко к $x_0$, но при этом не равно $x_0$.}
 
 The following notation is used:
@@ -819,61 +819,77 @@ But this is not the only way a limit may not exist.
         Одного числа, к которому приближалось бы значение функции, не существует.
 
 \exercise
-    Крайне полезное упражнение — построить график функции $y=\sin \pi/x$. Чтобы
-    понять, как он выглядит, полезно найти все значения $x$, при которых функция
-    принимает значения $0$, $1$ и $-1$ и отметить соответствуюие точки на графике.
+    A highly helpful exercise is to make a graph of $y=\sin \pi/x$.
+    To do so it's useful to find all inputs that correspond to the values of $0$, $1$, and $-1$, then mark them on the $x$-axis.
+    \source
+        Крайне полезное упражнение — построить график функции $y=\sin \pi/x$. 
+        Чтобы понять, как он выглядит, полезно найти все значения $x$, при которых функция принимает значения $0$, $1$ и $-1$ и отметить соответствуюие точки на графике.
 
-\subsection Строгое определение предела
-Мы хотим формализовать \ref[квазиопределение][qdef:10:lim]. В нём есть слова
-«значение функции становится сколь угодно близким». Что это значит? Это значит,
-что мы можем сделать значения $f(x)$ настолько близкими к числу $b$, насколько
-хотим. Но для этого нужно потребовать, чтобы $x$ был достаточно близок к $x_0$
-(и при этом не равен $x_0$). С чем-то подобным мы уже сталкивались, когда
-придумывали понятие предела последовательности. Определение предела функции
-очень похоже.
+\subsection 
+    Formal definition of a limit
+    \source{Строгое определение предела}
+We want to formalize \ref[quasidefinition][qdef:10:lim].
+It says that "the value of $f$ becomes as close to $b$ as desired".
+Moreover, these values must be evaluated near $x_0$ and not in $x_0$ exactly.
+Seems like we were dealing with a similar situation when inventing the definition for a limit of a sequence.
+Indeed, these definitions are conceptually close. 
+\source
+    Мы хотим формализовать \ref[квазиопределение][qdef:10:lim]. 
+    В нём есть слова «значение функции становится сколь угодно близким». 
+    Что это значит? 
+    Это значит, что мы можем сделать значения $f(x)$ настолько близкими к числу $b$, насколько хотим. 
+    Но для этого нужно потребовать, чтобы $x$ был достаточно близок к $x_0$ (и при этом не равен $x_0$). 
+    С чем-то подобным мы уже сталкивались, когда придумывали понятие предела последовательности. 
+    Определение предела функции очень похоже.
 
-Нам понадобится пара вспомогательных определений.
+We're going to need a couple of auxiliary definitions.
+\source{Нам понадобится пара вспомогательных определений.}
 
-\snippet \flabel окрестность \label snip:nbd 
+\snippet \flabel 
+    Neighbourhood
+    \source{окрестность}
+    \label snip:nbd 
     \definition
-        \emph{Окрестностью} точки $x_0$ называется любой интервал $(a, b)$,
-        содержащий точку $x_0$, см. \ref[рис.][fig:10:nbds]. \emph{Проколотой
-        окрестностью} точки $x_0$ назвается окрестность, из которой выкинули
-        саму точку $x_0$, то есть множество $(a, x_0)\cup (x_0, b)$, где
-        $a<x_0<b$. \emph{Эпсилон-окрестностью} (\emph{$\eps$-окрестностью})
-        точки $x_0$ называется интервал $(x_0-\eps, x_0+\eps)$. \emph{Проколотой
-        $\eps$-окрестностью} точки $x_0$ называется множество 
+        A \emph{neighbourhood} of $x_0$ is any interval $(a, b)$ that contains $x_0$ (see \ref[fig.][fig:10:nbds]).
+        A \emph{deleted neighbourhood} of $x_0$ is a neighbourhood of $x_0$ excluding $x_0$, or a set $(a, x_0)\cup (x_0, b)$ where $a<x_0<b$. 
+        An \emph{epsilon-neighbourhood} (\emph{$\eps$-neighbourhood}) of $x_0$ is an interval $(x_0-\eps, x_0+\eps)$.
+        A \emph{deleted epsilon-neighbourhood} of $x_0$ is a set
+        \source
+            \emph{Окрестностью} точки $x_0$ называется любой интервал $(a, b)$, содержащий точку $x_0$, см. \ref[рис.][fig:10:nbds]. 
+            \emph{Проколотой окрестностью} точки $x_0$ назвается окрестность, из которой выкинули саму точку $x_0$, то есть множество $(a, x_0)\cup (x_0, b)$, где $a<x_0<b$. 
+            \emph{Эпсилон-окрестностью} (\emph{$\eps$-окрестностью}) точки $x_0$ называется интервал $(x_0-\eps, x_0+\eps)$. 
+            \emph{Проколотой $\eps$-окрестностью} точки $x_0$ называется множество 
         \align \nonumber
             \item (x_0-\eps, x_0)\cup (x_0, x_0+\eps)=
             \splitem \splonly{=} (x_0-\eps, x_0+\eps)\setminus\set{x_0}.
-        Обычно $\eps$-окрестность точки $x_0$ обозначается как $U_\eps(x_0)$, а
-        проколотая $\eps$-окрестность — как $\mathring{U}_\eps(x_0)$.
+        Usually, an $\eps$-neighbourhood of $x_0$ is notated as $U_\eps(x_0)$, and a deleted $\eps$-neighbourhood is $\mathring{U}_\eps(x_0)$.
+        \source{Обычно $\eps$-окрестность точки $x_0$ обозначается как $U_\eps(x_0)$, а проколотая $\eps$-окрестность — как $\mathring{U}_\eps(x_0)$.}
 
 \figure
     \img
         \src limfunc-3.svg
         \style padding:2em; max-width: 400px;
     \caption
-        Различные типы окрестностей: обычная окрестность, проколотая
-        окрестность, $\eps$-окрестность и проколотая $\eps$-окрестность.
+        Various types of neighbourhoods: a (general) neighbourhood, a deleted (general) neighbourhood, an $\eps$-neighbourhood, and a deleted $\eps$-neighbourhood. 
+        \source{Различные типы окрестностей: обычная окрестность, проколотая окрестность, $\eps$-окрестность и проколотая $\eps$-окрестность.}
     \label fig:10:nbds
 
 \remark \label rem:10:nbd-to-abs
-    Условие $x\in U_\eps(x_0)$ можно записать в виде
+    The condition $x\in U_\eps(x_0)$ can be rewritted in the following form:
+    \source{Условие $x\in U_\eps(x_0)$ можно записать в виде}
     \eq
         |x-x_0| < \eps,
-    а условие $x\in \mathring{U}_{\eps}(x_0)$ в виде
+    Similarly, the condition $x\in \mathring{U}_{\eps}(x_0)$ becomes
+    \source{а условие $x\in \mathring{U}_{\eps}(x_0)$ в виде}
     \eq
         0 < |x-x_0| < \eps.
 
 \definition \label def:10:lim
-    Пусть функция $f(x)$ определена в некоторой проколотой окрестности точки $x_0$,
-    то есть существует такая проколотая окрестность, в которой функция
-    определена; в самой точке $x_0$ она может быть определена, а может и не
-    быть. Говорят, что \emph{предел функции $f(x)$ в точке $x=x_0$ равен числу $b$},
-    если для всякого $\eps>0$ найдётся такое $\delta>0$, что для всех $x$ из
-    проколотой $\delta$-окрестности точки $x_0$ значения функции лежат в
-    $\eps$-окрестности точки $b$, см. \ref[рис.][fig:10:lim-def].
+    Suppose a function $f(x)$ is defined in some deleted neighbourhood of $x_0$ ($f$ may or may not be defined in $x_0$).
+    A \emph{limit of $f(x)$ in $x=x_0$ is equal to $b$} is for any $\eps>0$ there exist $\delta>0$ such that for any $x$ in the deleted $\delta$-neighbourhood of $x_0$ the values of $f$ are within an $\eps$-neighbourhood of $b$ (see \ref[fig.][fig:10:lim-def]).
+    \source
+        Пусть функция $f(x)$ определена в некоторой проколотой окрестности точки $x_0$, то есть существует такая проколотая окрестность, в которой функция определена; в самой точке $x_0$ она может быть определена, а может и не быть. 
+        Говорят, что \emph{предел функции $f(x)$ в точке $x=x_0$ равен числу $b$}, если для всякого $\eps>0$ найдётся такое $\delta>0$, что для всех $x$ из проколотой $\delta$-окрестности точки $x_0$ значения функции лежат в $\eps$-окрестности точки $b$, см. \ref[рис.][fig:10:lim-def].
 
     Формально: утверждение
     \eq
