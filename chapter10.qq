@@ -891,14 +891,17 @@ We're going to need a couple of auxiliary definitions.
         Пусть функция $f(x)$ определена в некоторой проколотой окрестности точки $x_0$, то есть существует такая проколотая окрестность, в которой функция определена; в самой точке $x_0$ она может быть определена, а может и не быть. 
         Говорят, что \emph{предел функции $f(x)$ в точке $x=x_0$ равен числу $b$}, если для всякого $\eps>0$ найдётся такое $\delta>0$, что для всех $x$ из проколотой $\delta$-окрестности точки $x_0$ значения функции лежат в $\eps$-окрестности точки $b$, см. \ref[рис.][fig:10:lim-def].
 
-    Формально: утверждение
+    Formally, the proposition
+    \source{Формально: утверждение}
     \eq
         \lim_{x \to x_0} f(x)=b
-    по определению означает, что
+    means that
+    \source{по определению означает, что}
     \eq
         \forall \eps > 0 \\ \exists \delta > 0 \\ \forall x \in
         \mathring{U}_{\delta}(x_0)\colon f(x) \in U_\eps(b),
-    или, с учётом \ref[замечания][rem:10:nbd-to-abs]:
+    or, taking into account \ref[reminder][rem:10:nbd-to-abs]:
+    \source{или, с учётом \ref[замечания][rem:10:nbd-to-abs]:}
     \align \nonumber
         \item \forall \eps > 0 & \\ \exists \delta > 0 \\ \forall x \in \mathbb R\colon 
         \splitem \splonly{&}0 < |x-x_0| < \delta \Rightarrow |f(x)-b| < \eps.
@@ -917,52 +920,79 @@ We're going to need a couple of auxiliary definitions.
             Значение функции в самой точке x_0 может выходить за этот коридор
             или вовсе не существовать.
     \caption
-        Окрестности в определении предела. Заметим, что значение функции в
-        самой точке $x_0$ может не лежать в $\varepsilon$-окрестности точки
-        $b$ или быть вообще не определено, но может и лежать: про него мы
-        ничего не говорим.
+        The neighbourhoods from the definition of a limit.
+        Notice that the value of a function in $x_0$ may be outside of the $\varepsilon$-neighbourhood of $b$ (or even undefined). 
+        \source
+            Окрестности в определении предела. 
+            Заметим, что значение функции в самой точке $x_0$ может не лежать в $\varepsilon$-окрестности точки $b$ или быть вообще не определено, но может и лежать: про него мы ничего не говорим.
     \label fig:10:lim-def
         
             
 \example \nonumber
-    Вернёмся к \ref[примеру][ex:10:x^2lim] и докажем, что $\lim_{x\to 2} x^2=4$,
-    пользуясь только что сформулированным определением.
+    Let's revisit \ref[example][ex:10:x^2lim] and prove that $\lim_{x\to 2} x^2=4$ formally.
+    \source{Вернёмся к \ref[примеру][ex:10:x^2lim] и докажем, что $\lim_{x\to 2} x^2=4$, пользуясь только что сформулированным определением.}
 
-    Пусть нам дано произвольное $\eps>0$. Мы хотим подобрать такое $\delta>0$, что
-    для всех $x$ из проколотой $\delta$-окрестности точки $2$, $|x^2-4|<\eps$.
-    Заметим, что
+    Consider an arbitrary $\eps>0$ .
+    We want to find $\delta>0$ such that for all $x$ from the deleted $\delta$-neighbourhood of $2$ the inequality $|x^2-4|<\eps$ holds.
+    Notice,
+    \source
+        Пусть нам дано произвольное $\eps>0$. 
+        Мы хотим подобрать такое $\delta>0$, что для всех $x$ из проколотой $\delta$-окрестности точки $2$, $|x^2-4|<\eps$.
+        Заметим, что
     \eq
         |x^2-4| =|(x-2)(x+2)| = |x-2|\cdot |x+2|.
-    Если $x$ лежит в проколотой дельта-окрестности точки $2$, значит,
-    $|x-2|<\delta$. Таким образом мы получили оценку на первый сомножитель: его
-    можно сделать сколь угодно маленьким подходящим выбором $\delta$. Осталось
-    оценить второй сомножитель. Поскольку $\delta$ мы выбираем сами, на неё можно
-    накладывать любые условия, какие мы хотим. Пусть $\delta \le 1$. (Почему именно
-    $1$? На самом деле, подойдёт любое фиксированное число, нужно взять какое-то
-    конкретное, почему бы и не $1$?) Тогда
+    If $x$ lies in the deleted $\delta$-neighbourhood of $2$, then $|x-2|<\delta$.
+    Great!
+    We can make the first factor as small as we want by choosing the appropriate value of $\delta$.
+    Now to the second one.
+    Since we're free to chose any $\delta$, it can constrainted as we desire.
+    Let's make $\delta \le 1$.
+    Why $1$? 
+    In fact, any (fixed) value will do, so why not take $1$?
+    This way,
     \eq
-        -1 \le -\delta < x-2 < \delta \le 1
-    или (прибавим ко всем членам число 2):
+        -1 \le -\delta < x-2 < \delta \le 1,
+    \source
+        Если $x$ лежит в проколотой дельта-окрестности точки $2$, значит, $|x-2|<\delta$. 
+        Таким образом мы получили оценку на первый сомножитель: его можно сделать сколь угодно маленьким подходящим выбором $\delta$. 
+        Осталось оценить второй сомножитель. 
+        Поскольку $\delta$ мы выбираем сами, на неё можно накладывать любые условия, какие мы хотим. 
+        Пусть $\delta \le 1$. 
+        (Почему именно $1$? 
+        На самом деле, подойдёт любое фиксированное число, нужно взять какое-то конкретное, почему бы и не $1$?) 
+        Тогда
+        \eq
+            -1 \le -\delta < x-2 < \delta \le 1
+    or (adding $2$ to each side of the inequalities)
+    \source{или (прибавим ко всем членам число 2):}
     \eq
         1 < x < 3.
-    В этом случае выражение $|x+2|$ обязательно меньше $|3+2|=5$: поскольку $x>0$,
-    выражение под модулем гарантированно положительно и значит его нужно сделать как
-    можно больше, чтобы модуль был как можно больше, и значит нужно брать как можно
-    большее значение $x$, но $x<3$. Таким образом, если $|x-x_0|<\delta \le 1$,
+    This implies that $|x+2|$ is less than $|3+2|=5$ (the previous double inequality ensures that the expression inside an absolute value is positive, hence it needs to be maximized, and we know that $x<3$).
+    Thus, if $|x-x_0|<\delta \le 1$, then
+    \source
+        В этом случае выражение $|x+2|$ обязательно меньше $|3+2|=5$: поскольку $x>0$, выражение под модулем гарантированно положительно и значит его нужно сделать как можно больше, чтобы модуль был как можно больше, и значит нужно брать как можно большее значение $x$, но $x<3$. 
+        Таким образом, если $|x-x_0|<\delta \le 1$,
     \eq
         |x^2-4| = |x-2|\cdot |x+2| < \delta \cdot 5.
-    Мы хотим, чтобы эта величина была меньше $\eps$. Это будет выполняться, если
-    потребовать, чтобы $\delta \le \eps/5$. Итак, у нас есть два условия на
-    $\delta$: $\delta \le 1$ и $\delta \le \eps/5$. Чтобы они оба были
-    удовлетворены, достаточно взять
+    We want this expression to be less than $\eps$.
+    Notice that we need $\delta \le \eps/5$.
+    Theresofe, two following conditions must hold: firstly, $\delta \le 1$ and secondly, $\delta \le \eps/5$. 
+    It is sufficient to set
+    \source
+        Мы хотим, чтобы эта величина была меньше $\eps$. 
+        Это будет выполняться, если потребовать, чтобы $\delta \le \eps/5$. 
+        Итак, у нас есть два условия на $\delta$: $\delta \le 1$ и $\delta \le \eps/5$. 
+        Чтобы они оба были удовлетворены, достаточно взять
     \eq
         \delta(\eps):=\min(\eps/5, 1).
-    Проверяем: для всех $x \in \mathring{U}_\delta(2)$ верно неравенство
-    $|x-2|<\delta$, и значит
+    Let's check ourselves.
+    For all $x \in \mathring{U}_\delta(2)$ the following inequality holds
+    \source{Проверяем: для всех $x \in \mathring{U}_\delta(2)$ верно неравенство $|x-2|<\delta$, и значит}
     \eq
         |x^2-4| < \delta \cdot 5 = 5 \eps / 5 = \eps.
-    Таким образом, выбранная нами $\delta$ удовлетворяет определению, и предел
-    действительно равен 4, см. анимацию на \ref[рис.][fig:10:lim-def-sq].
+    We conclude, this $\delta$ satisfies the definition and hence the limit is indeed equal to $4$.
+    See animation in \ref[fig.][fig:10:lim-def-sq].
+    \source{Таким образом, выбранная нами $\delta$ удовлетворяет определению, и предел действительно равен 4, см. анимацию на \ref[рис.][fig:10:lim-def-sq].}
 
     \figure \showcode \collapsed
         \pythonvideo  \jsanimate \style max-width: 500px;
@@ -998,19 +1028,28 @@ We're going to need a couple of auxiliary definitions.
                 camera.snap()
             animation = camera.animate()
         \caption 
-            Как работает определение предела: хотя значение $\eps$ уменьшается,
-            нам каждый раз удаётся подобрать такое значение $\delta$, чтобы все
-            точки графика над проколотой $\delta$-окрестностью точки $x_0=2$
-            лежали в $\eps$-окрестности точки $b=4$.
+            How the definition of a limit works.
+            No matter how small $\eps$ gets, we're always able to find $\delta$ such that all values of a function from the deleted $\delta$-neighbourhood of $x_0=2$ lie in the $\eps$-neighbourhood of $b=4$.
+            \source
+                Как работает определение предела: хотя значение $\eps$ уменьшается, нам каждый раз удаётся подобрать такое значение $\delta$, чтобы все точки графика над проколотой $\delta$-окрестностью точки $x_0=2$ лежали в $\eps$-окрестности точки $b=4$.
 
         \label fig:10:lim-def-sq
-\section Односторонние пределы
+\section 
+    One-sided limits
+    \source{Односторонние пределы}
 
-В мире последовательностей всё было просто: последовательность могла иметь
-предел при $n\to \infty$, и больше никакого. В мире функций всё сложнее. Мало
-того, что $x$ может приближаться к различным точкам, и нужно уточнять, к чему
-именно он приближается. Он ещё может это делать разными способами.
+The world of sequences is simple: a sequence can either have a (single) limit as $n\to \infty$, or diverge.
+The world of functions is more complex.
+One must specify not only a number that $x$ appoach, but also the its direction.
+Thisэcan be done in various ways.
+Let's consider an example.
+\source
+    В мире последовательностей всё было просто: последовательность могла иметь предел при $n\to \infty$, и больше никакого. 
+    В мире функций всё сложнее. 
+    Мало того, что $x$ может приближаться к различным точкам, и нужно уточнять, к чему именно он приближается. 
+    Он ещё может это делать разными способами.
 
+...
 Рассмотрим функцию $f(x)$, заданную формулой \ref{eq:10:jump} (см.
 \ref[пример][ex:10:jump]). У неё нет предела в точке $x=1$, поскольку при
 приближении по $x$ к точке $1$ справа или слева, значение функции $f(x)$
