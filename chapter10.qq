@@ -1049,19 +1049,20 @@ Let's consider an example.
     Мало того, что $x$ может приближаться к различным точкам, и нужно уточнять, к чему именно он приближается. 
     Он ещё может это делать разными способами.
 
-...
-Рассмотрим функцию $f(x)$, заданную формулой \ref{eq:10:jump} (см.
-\ref[пример][ex:10:jump]). У неё нет предела в точке $x=1$, поскольку при
-приближении по $x$ к точке $1$ справа или слева, значение функции $f(x)$
-приближается к разным числам ($-1$ и $2$ соответственно). Чтобы сказать это
-формально, нужно дать определение односторонних пределов.
+Consider the function $f(x)$ defined by \ref{eq:10:jump} (see \ref[example][ex:10:jump]).
+It does not have a limit in $x=1$ because when $1$ is approached from the left, it yields values close to $-1$; and when it is approached from the right, $f$'s outputs get close to $2$.
+To prove it formally we must introcude the notion of a one-sided limit.
+\source
+    Рассмотрим функцию $f(x)$, заданную формулой \ref{eq:10:jump} (см. \ref[пример][ex:10:jump]). 
+    У неё нет предела в точке $x=1$, поскольку при приближении по $x$ к точке $1$ справа или слева, значение функции $f(x)$ приближается к разным числам ($-1$ и $2$ соответственно). 
+    Чтобы сказать это формально, нужно дать определение односторонних пределов.
 
 \definition \label def:10:left
-    Пусть функция $f(x)$ определена в правой полуокрестности точки $x_0$, то
-    есть на множестве $(x_0, x_0+\delta_*)$ для некоторого $\delta_*>0$.
-    Говорят, что предел функции $f(x)$ при $x$ стремящемся к $x_0$ \emph{справа}
-    равен $b$, если для всякого $\eps>0$ найдётся такая $\delta>0$, что для всех
-    $x\in (x_0, x_0 + \delta)$ выполняется неравенство $|f(x)-b|<\eps$.
+    Suppose $f(x)$ is defined in the right half-neighbourhood of $x_0$ (namely, the interval $(x_0, x_0+\delta_*)$ for some $\delta_*>0$).
+    The limit of $f(x)$ as $x$ approaches $x_0$ \emph{from the right}, if for all $\eps>0$ there is $\delta>0$ such that for all $x\in (x_0, x_0 + \delta)$ the inequality $|f(x)-b|<\eps$ holds.
+    \source
+        Функция $f(x)$ определена в правой полуокрестности точки $x_0$, то есть на множестве $(x_0, x_0+\delta_*)$ для некоторого $\delta_*>0$.
+        Говорят, что предел функции $f(x)$ при $x$ стремящемся к $x_0$ \emph{справа} равен $b$, если для всякого $\eps>0$ найдётся такая $\delta>0$, что для всех $x\in (x_0, x_0 + \delta)$ выполняется неравенство $|f(x)-b|<\eps$.
 
 \definition \label def:10:right
     Пусть функция $f(x)$ определена в левой полуокрестности точки $x_0$, то
