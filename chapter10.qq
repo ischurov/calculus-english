@@ -1059,42 +1059,52 @@ To prove it formally we must introcude the notion of a one-sided limit.
 
 \definition \label def:10:left
     Suppose $f(x)$ is defined in the right half-neighbourhood of $x_0$ (namely, the interval $(x_0, x_0+\delta_*)$ for some $\delta_*>0$).
-    The limit of $f(x)$ as $x$ approaches $x_0$ \emph{from the right}, if for all $\eps>0$ there is $\delta>0$ such that for all $x\in (x_0, x_0 + \delta)$ the inequality $|f(x)-b|<\eps$ holds.
+    The limit of $f(x)$ as $x$ approaches $x_0$ \emph{from the right} is equal to $b$ if for all $\eps>0$ there is $\delta>0$ such that for all $x\in (x_0, x_0 + \delta)$ the inequality $|f(x)-b|<\eps$ holds.
     \source
         Функция $f(x)$ определена в правой полуокрестности точки $x_0$, то есть на множестве $(x_0, x_0+\delta_*)$ для некоторого $\delta_*>0$.
         Говорят, что предел функции $f(x)$ при $x$ стремящемся к $x_0$ \emph{справа} равен $b$, если для всякого $\eps>0$ найдётся такая $\delta>0$, что для всех $x\in (x_0, x_0 + \delta)$ выполняется неравенство $|f(x)-b|<\eps$.
 
 \definition \label def:10:right
-    Пусть функция $f(x)$ определена в левой полуокрестности точки $x_0$, то
-    есть на множестве $(x_0-\delta_*, x_0)$ для некоторого $\delta_*>0$.
-    Говорят, что предел функции $f(x)$ при $x$ стремящемся к $x_0$ \emph{слева}
-    равен $b$, если для всякого $\eps>0$ найдётся такая $\delta>0$, что для всех
-    $x\in (x_0-\delta, x_0)$ выполняется неравенство $|f(x)-b|<\eps$.
+    Suppose $f(x)$ is defined in the left half-neighbourhood of $x_0$ (namely, the interval $(x_0-\delta_*, x_0)$ for some $\delta_*>0$).
+    The limit of $f(x)$ as $x$ approaches $x_0$ \emph{from the left} is equal to $b$ if for all $\eps>0$ there is $\delta>0$ such that for all $x\in (x_0-\delta, x_0)$ the inequality $|f(x)-b|<\eps$ holds.
+    \source
+        Пусть функция $f(x)$ определена в левой полуокрестности точки $x_0$, то есть на множестве $(x_0-\delta_*, x_0)$ для некоторого $\delta_*>0$.
+        Говорят, что предел функции $f(x)$ при $x$ стремящемся к $x_0$ \emph{слева} равен $b$, если для всякого $\eps>0$ найдётся такая $\delta>0$, что для всех $x\in (x_0-\delta, x_0)$ выполняется неравенство $|f(x)-b|<\eps$.
 
-Записывают:
+We write
+\source{Записывают:}
 \eq
     \lim_{x\to x_0^+} f(x)=b
-для предела справа и
+for a limit from the right and
+\source{для предела справа и}
 \eq
     \lim_{x\to x_0^-} f(x)=b
-для предела слева.
+for a limit from the left
+\source{для предела слева.}
 
 \exercise
-    Докажите, что для функции $f(x)$, заданной формулой \ref{eq:10:jump}, предел
-    справа равен $-1$, а предел слева равен $2$.
+    Prove that for $f(x)$ defined by expression \ref{eq:10:jump}, a limit from the right is $-1$, and a limit from the left is $2$.
+    \source
+        Докажите, что для функции $f(x)$, заданной формулой \ref{eq:10:jump}, предел справа равен $-1$, а предел слева равен $2$.
 
 \exercise \label exer:10:sidelimits
-    Докажите, что если у функции существует предел при $x\to x_0$, то пределы при
-    $x\to x_0^+$ и  при $x\to x_0^-$ также существуют, равны между собой и равны
-    пределу при $x\to x_0$. Докажите, что верно и обратное: если оба
-    односторонние пределы существуют и равны между собой, то предел при $x\to
-    x_0$ также существует и его значение равно значению односторонних пределов.
+    Prove that if a function has a limit as $x\to x_0$, then there exist both limits from the left ($x\to x_0^+$) and from the right ($x\to x_0$).
+    Moreover, all three limits are equal.
+    This also works in the other direction: if both a limit from the right and a limit from the left exist and are equal to each other, then a limit as $x\to x_0$ also exists and is equal to the values of one-sided limits.
+    \source
+        Докажите, что если у функции существует предел при $x\to x_0$, то пределы при $x\to x_0^+$ и  при $x\to x_0^-$ также существуют, равны между собой и равны пределу при $x\to x_0$. 
+        Докажите, что верно и обратное: если оба односторонние пределы существуют и равны между собой, то предел при $x\to x_0$ также существует и его значение равно значению односторонних пределов.
 
-\section Заключение
+\section 
+    Conclusion
+    \source{Заключение}
 
-Функции одной переменной нам всем знакомы со школы. Однако, объект этот не
-так прост, как может показаться. Чтобы приобрести хорошую интуицию о том,
-какими бывают функции и какими свойствами они могут обладать, придётся хорошо
-поработать. И для начала — освоить понятие предела функции в точке, которое
-мы будем постоянно использовать в будущем.
-
+Functions of one variable are familiar from school yet not as simple as they may seem.
+To build a good intuition behind the essence of functions and their properties much work must be done.
+We've begun with the notion of a limit.
+It will be regularly used from now on.
+\source
+    Функции одной переменной нам всем знакомы со школы. 
+    Однако, объект этот не так прост, как может показаться. 
+    Чтобы приобрести хорошую интуицию о том, какими бывают функции и какими свойствами они могут обладать, придётся хорошо поработать. 
+    И для начала — освоить понятие предела функции в точке, которое мы будем постоянно использовать в будущем.
