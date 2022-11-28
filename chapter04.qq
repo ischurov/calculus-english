@@ -874,12 +874,12 @@ This is what it means for a sequence to approach $A$.
             находятся внутри этого коридора.
     \caption 
         A value of $N$ depends on $\eps$ in the \ref[definition of a limit\nonumber][def:04:lim].
-        \soruce{Зависимость $N$ от $\eps$ в \ref[определении предела\nonumber][def:04:lim].}
+        \source{Зависимость $N$ от $\eps$ в \ref[определении предела\nonumber][def:04:lim].}
     \label fig:04:N-of-eps
 
 \section 
     An example of how to prove a proposition involving limits 
-    \section{Пример доказательств утверждений о пределах}
+    \source{Пример доказательств утверждений о пределах}
 
 \subsection 
     Existence of a limit
@@ -888,7 +888,7 @@ This is what it means for a sequence to approach $A$.
 The best way to understand a definition is to study some propositions involving it. 
 \source{Самый лучший способ понять определение — доказать какое-нибудь утверждение про него.}
 \proposition \label prop:04:n+1:n
-    A limit of a sequence $a_n=\frac{n+1}{n}$ is $1$:
+    A limit of the sequence $a_n=\frac{n+1}{n}$ is $1$:
     \source{Предел последовательности $a_n=\frac{n+1}{n}$ равен $1$:}
     \eq
         \lim_{n\to \infty} \frac{n+1}{n}=1.
@@ -903,7 +903,7 @@ The best way to understand a definition is to study some propositions involving 
         \item \left|1 + \frac{1}{n} - 1\right| < \eps;
         \item \left|\frac{1}{n}\right| < \eps.
     Notice that since $n$ is a natural number, $\frac{1}{n}$ is positive, hence it's equal to its absolute value.
-    This means we can get rid of the modulus and get:
+    This means we can get rid of the absolute value and get:
     \source
         Заметим, что $n$ — натуральное число, значит положительное, значит $\frac{1}{n}$ — тоже положительное, значит его модуль всегда равен ему самому. 
         Следовательно, знак модуля можно просто снять. 
@@ -923,9 +923,9 @@ The best way to understand a definition is to study some propositions involving 
         n > \frac{1}{\eps}.
     
     We need to find such $N$ that if $n>N$, then an inequality \ref{eq:04:frac} is satisfied.
-    All inequalities above are equivalent, which means if an inequality \ref{eq:04:frac-up} is satisfied, then \ref{eq:04:frac} is also satisfied.
-    Which means we want to show that an inequality \ref{eq:04:frac-up} holds.
-    Clearly, if we choose $N=\frac{1}{\eps}$, then we're done, but in a \ref[definition][def:04:lim] we've stated that $N$ must be a natural number.
+    All inequalities above are equivalent, which means if inequality \ref{eq:04:frac-up} is satisfied, then \ref{eq:04:frac} is also satisfied.
+    Which means we want to show that inequality \ref{eq:04:frac-up} holds.
+    Clearly, if we choose $N=\frac{1}{\eps}$, then we're done, but in \ref[definition][def:04:lim] we've stated that $N$ must be a natural number.
     This means we want to choose any natural number that is bigger than or equal to $\frac{1}{\eps}$, which is always possible.
     However, let's clarify this operation to be more precise. 
     \source
@@ -959,7 +959,6 @@ The best way to understand a definition is to study some propositions involving 
     By definition of a ceiling function, $N(\eps) \ge \frac{1}{\eps}$.
     This means that for every natural $n$ if $n>N(\eps)$ than $n > \frac{1}{\eps}$, which means \ref{eq:04:frac-up} is satisfied and hence \ref{eq:04:frac} is also satisfied.
     The proof is done, hurray!
-    Hurray!
     \source
         Итак, для всякого $\eps>0$, положим $N(\eps):=\left\lceil \frac{1}{\eps} \right\rceil$. 
         По определению функции потолок, $N(\eps) \ge \frac{1}{\eps}$.
@@ -969,10 +968,10 @@ The best way to understand a definition is to study some propositions involving 
 \remark
     Let's analyze the value of $N(\eps)$ we've constructed.
     Clearly, $N$ is increasing as $\eps$ is decreading.
-    This is not a surprise, since as the presicion gets better it takes longer for elements of a sequence to get so close to a limit that the gap becomes indistinguishable.
+    This is not a surprise since it takes longer for elements of a sequence to get indistinguishable from a limit as we increase the precision.
     Generally this pattern is repeated in other similar exersises.
     (If it doesn't, this might be a good indicator that there is a mistake.)
-    Once again, notice that a final expression $N(\eps)$ must always yeild a natural nubmer.
+    Once again, notice that $N(\eps)$ must always output a natural nubmer.
     \source
         Проанализируем наше выражение для $N(\eps)$. 
         Из формулы видно, что чем меньше $\eps$, тем больше $N$. 
@@ -983,14 +982,14 @@ The best way to understand a definition is to study some propositions involving 
         Ещё одно важное замечание: формула для $N(\eps)$ должна работать для всех $\eps>0$ и всегда давать натуральное число в качестве ответа.
 
 \remark
-    In our proof strategy we've come from an inequality \ref{eq:04:frac}, which we were to prove, to a more understandble indequality \ref{eq:04:frac-up}, from which the value of $N(\eps)$ followed natually.
+    In our proof strategy we've come from inequality \ref{eq:04:frac}, which we were to prove, to a more understandble indequality \ref{eq:04:frac-up}, from which the value of $N(\eps)$ followed natually.
     But the actual proof was presented in the reversed order.
-    A general form of such proofs looks like this: "for any $\eps>0$ set $N(\eps)$ to be an expression $\ldots$".
+    A general form of such proofs looks as follows: "for any $\eps>0$ set $N(\eps)$ to be the expression $\ldots$".
     (And the motivation behind this choice of $N(\eps)$ is not specified.)
     Then a chain of inequalities follows.
-    It is similar to the one we've constructed in our proof strategy, but in reverse: coming from an inequality $n>N(\eps)$ to a desired result $|a_n - A|<\eps$.
+    It is similar to the one we've constructed in our proof strategy, but in reverse: coming from the inequality $n>N(\eps)$ to $|a_n - A|<\eps$.
     And the proof is done!
-    This is a convincing yet mysterious line of reasoning, which generally makes a reader wonder: why was this exact value of $N(\eps)$ chosen?
+    This is a convincing yet mysterious line of reasoning, which generally makes a reader wonder: why was this particular value of $N(\eps)$ chosen?
     \source
         В данном случае в ходе решения задачи мы шли от неравенства \ref{eq:04:frac}, которое нам было нужно, к неравенству \ref{eq:04:frac-up}, которое было легко проанализировать. 
         Однако сам текст доказательства как правило проще излагать в обратном порядке. 
@@ -1005,7 +1004,7 @@ Let's consider an another example.
 \source{Давайте рассмотрим ещё один пример.}
 
 \proposition 
-    A limit of a sequence $a_n=\frac{1}{n^2+5n+12}$ is equal to zero:
+    A limit of the sequence $a_n=\frac{1}{n^2+5n+12}$ is equal to zero:
     \source{Предел последовательности $a_n=\frac{1}{n^2+5n+12}$ равен нулю:}
     \eq
         \lim_{n\to \infty}\frac{1}{n^2+5n+12}=0.
@@ -1019,9 +1018,9 @@ Let's consider an another example.
     \equation \label eq:04:longfrac-short
         \frac{1}{n^2+5n+12}<\eps.
     Now we proceed to solving this inequality for $n$, but this is too straightforward.
-    Remember that we're not interested in finding the whole range of $N$ that make a tail $\eps$-close to a limit.
+    Remember that we're not interested in finding the whole range of $N$ that make a tail $\eps$-close to the limit.
     We need to find just a portion of values, and then take one of them.
-    This motivates us to proceed to a more strict inequality (which means that whenever this inequality is satisfied, our one is also satisfied).
+    This motivates us to proceed to a more strict inequality (which means that whenever this inequality is satisfied, the one we have is also satisfied).
     This will make our life much easier!
     Look:
     \source
@@ -1047,7 +1046,7 @@ Let's consider an another example.
     \source{Заметим, что для натуральных $n$,} 
     \eq
         n^2+5n+12>n^2.
-    We can also argue that $n^2$ is always bigger than $n$ for natural $n$, thus obtaining
+    Observe that $n^2$ is always bigger than $n$ for natural $n$ (divide by $n>0$ and get $n>1$ that is true for all natural numbers), thus obtaining
     \source
         Действительно, $5n$ и $12$ — положительные числа. 
         Более того: для натуральных $n$, $n^2 \ge n$ (можно поделить это неравенство на $n$, поскольку $n$ больше нуля, и получить неравенство $n\ge 1$, справедливое для всех натуральных $n$). 
@@ -1065,8 +1064,8 @@ Let's consider an another example.
     This is true since in the right hand side we're dividing by a smaller number.
     \source{Оценивая знаменатель дроби снизу, мы оцениваем саму дробь сверху.}
     
-    Suppose we've found such $N$ that for all $n>N$ an inequality $\frac{1}{n}<\eps$ hodls.
-    Then by an inequality \ref{eq:04:chain} we've automatically satisfied the following inequality:
+    Suppose we've found such $N$ that for all $n>N$ the inequality $\frac{1}{n}<\eps$ hodls.
+    Then by inequality \ref{eq:04:chain}, we've automatically satisfied the following inequality:
     \source
         Пусть теперь мы подобрали какое-нибудь такое $N$, что при всех $n>N$ выполняется неравенство $\frac{1}{n}<\eps$. 
         Тогда в силу неравнства \ref{eq:04:chain}, для тех же самых $n$, будет выполняться неравенство
@@ -1082,7 +1081,7 @@ Let's consider an another example.
         И оно сработает! 
         Это гораздо проще, чем решать квадратное неравенство с параметром (можете попробовать — хотя вам вряд ли понравится).
 
-    Now skipping all the motivation above, we arrive at the proof.
+    Now skipping all the motivation above, we arrive at the actual proof.
     For any $\eps>0$ take $N(\eps):=\left\lceil \frac{1}{\eps} \right\rceil$, which ensures the following chain of inequalities is satisfied:
     \source
         Итак, если отбросить все мотивировки, полное доказательство выглядит так: для всякого $\eps>0$, положим $N(\eps):=\left\lceil \frac{1}{\eps} \right\rceil$. 
@@ -1104,7 +1103,7 @@ Let's consider an another example.
     A limit is not equal to a particular number
     \section{Предел не равен какому-то числу}
 \proposition
-    A limit of a sequence $\seq{a_n}$,  $a_n=\frac{1}{n}$, is not equal to $1$:
+    The limit of the sequence $\seq{a_n}$,  $a_n=\frac{1}{n}$, is not equal to $1$:
    \source{Предел последовательности $\seq{a_n}$, $a_n=\frac{1}{n}$, не равен 1:}
     \eq
         \lim_{n\to \infty}\frac{1}{n} \ne 1.
@@ -1116,7 +1115,7 @@ Let's consider an another example.
     \eq
         \forall \eps > 0\\ \exists N \in \mathbb N\\ \forall n > N\colon
         \left|\frac{1}{n}-1\right|<\eps.
-    Since disproving a sentence means proving its negation, let's use some of the rules rules from a \ref[section][ssec:02:quant-neg-series] of a lecture \ref{chap:02:logic} and formulate it:
+    Since disproving a sentence means proving its negation, let's use some of the rules rules from a \ref[section][ssec:02:quant-neg-series] of lecture \ref{chap:02:logic} and formulate it:
     \source
         Опровергнуть утверждение — это всё равно, что доказать его отрицание.
         Запишем отрицание, пользуясь \ref[разделом][ssec:02:quant-neg-series] лекции \ref{chap:02:logic}:
@@ -1124,15 +1123,15 @@ Let's consider an another example.
         \item \label eq:04:ne
             \exists \eps > 0 \\ \forall N \in \mathbb N\\ 
         \splitem \exists n > N\colon \left|\frac{1}{n}-1\right|\ge \eps.
-    In other words, we need to prove that there exists some $\eps>0$ such that whatever $N$ we choose, there can be found a bigger $n>N$, for which an element of a sequence with index $n$ is not $\eps$-close to $1$.
+    In other words, we need to prove that there exists some $\eps>0$ such that whatever $N$ we chose, it's possible to find a bigger $n>N$, for which an element of the sequence with index $n$ is not $\eps$-close to $1$.
     Or, equivalently, there is a particular $\eps>0$, for which in every tail of a sequence there will always be an element separated from $1$ by more than $\eps$.
-    This is precisely when a sequence doen't approach $1$.
+    This is precisely the case when a sequence doen't approach $1$.
     \source
         Иными словами, нам нужно доказать, что существует такой $\eps>0$, что какой бы номер $N$ мы ни выбрали, найдётся номер $n$, больший, чем $N$, для которого элемент с номером $n$ не является $\eps$-близким к $1$. 
         Попросту нам нужно доказать, что для какого-то конкретного $\eps$, время от времени — сколь угодно далеко в будущем — элементы последовательности будут на расстоянии как минимум $\eps$ от $1$. 
         В этом случае, конечно, ни о каком стремлении к $1$ речи уже идти не будет.
     
-    Let's look at a \ref[fig.][fig:04:1/n].
+    Let's look at \ref[fig.][fig:04:1/n].
     \source{Давайте посмотрим на картинку (\ref[рис.][fig:04:1/n]).}
 
     \figure \showcode \collapsed
@@ -1157,7 +1156,7 @@ Let's consider an another example.
 
     Which value of $\eps$ should we choose?
     Is $\eps=1{,}5$ a good choice?
-    Seems like it isn't a great one, since each element of a sequence is $1.5$-close to $1$, which is clearly seen in \ref[fig.][fig:04:1/n:eps=1.5].
+    Seems like it isn't a great one, since each element of the sequence is $1.5$-close to $1$, which is clearly from \ref[fig.][fig:04:1/n:eps=1.5].
     \source
         Какое значение $\eps$ подойдёт? 
         Например, подойдёт ли $\eps=1{,}5$? 
@@ -1184,11 +1183,11 @@ Let's consider an another example.
                            xlabel="n", ylabel="y") 
 
         \caption 
-            A graph of $\seq{1/n}$ and a $1{,}5$-wide "corridor" around $1$. 
+            The graph of $\seq{1/n}$ and a $1{,}5$-wide "corridor" around $1$. 
             \source{График $\seq{1/n}$ и коридор вокруг $1$ с «размахом» $\eps=1{,}5$.}
         \label fig:04:1/n:eps=1.5
 
-    Notice that $\eps=1/3$ qualifies: only one element of a sequence is $1\3$-closed to $1$, see \ref[fig.][fig:04:1/n:eps=0.3].
+    Notice that $\eps=1/3$ will do: only one element of the sequence is $1\3$-closed to $1$, see \ref[fig.][fig:04:1/n:eps=0.3].
     \source
         Однако, уже значение $\eps=1/3$ подходит. 
         Действительно, лишь одна точка лежит внутри коридора с «размахом» $1/3$ вокруг прямой $y=1$, см. \ref[рис.][fig:04:1/n:eps=0.3].
@@ -1214,16 +1213,16 @@ Let's consider an another example.
             ob.settle_axes(xmin=-0.9, xmax=nmax + 1, ymin=-2.47, ymax=5.47, 
                            xlabel="n", ylabel="y") 
 
-        \caption A graph of $\seq{1/n}$ and a $1/3$-wide "corridor" around $1$.
+        \caption The graph of $\seq{1/n}$ and a $1/3$-wide "corridor" around $1$.
             \source{График $\seq{1/n}$ и коридор вокруг $1$ с «размахом» $\eps=1/3$.}
         \label fig:04:1/n:eps=0.3
     
     Consider $\eps=1/3$.
-    According to a negation \ref{eq:04:ne}, for every natural $N$ we need to be able to produce $n>N$ with the following property:
+    According to negation \ref{eq:04:ne}, for every natural $N$ we need to be able to produce $n>N$ with the following property:
     \equation \label eq:04:fracge
             \left|\frac{1}{n}-1\right|\ge 1/3. 
-    Clearly, every $n$ bigger than or equal to $2$ will do.
-    Restating this formally we get $n\ge 2$, which is satisfies whenever $n>N$ (recall that $N$ is a natural number).
+    Clearly, every $n$ bigger than or equal to $2$ is okay.
+    Restating this formally we get $n\ge 2$, which is satisfied whenever $n>N$ (recall that $N$ is a natural number).
     The only thing left is how to construct a natural number $n$ that is bigger than any given natural $N$.
     Let's just add one to $N$!
     
@@ -1239,7 +1238,7 @@ Let's consider an another example.
         Можно просто прибавить единицу к $N$, и всё!
 
     Therefore, take $n:=N+1$.
-    We must prove that an inequality \ref{eq:04:fracge} is satisfied.
+    We must prove that inequality \ref{eq:04:fracge} is satisfied.
     Indeed, 
     \source
         Итак, положим: $n:=N+1$. 
@@ -1250,7 +1249,7 @@ Let's consider an another example.
             \left|\frac{1}{N+1}-1\right| & = 1-\frac{1}{N+1} \ge 
         \splitem \splonly{& \ge} 1-\frac{1}{2} = 
         \splitem \splonly{&=} \frac{1}{2}\ge \frac{1}{3}=\eps.
-    The first equality follows from the fact that $\frac{1}{N+1}$ is less than $1$ for natural $N$ and we should add a minus sign when removing a modulus.
+    The first equality follows from the fact that $\frac{1}{N+1}$ is less than $1$ for natural $N$, so we should add a minus sign when removing a modulus.
     The first inequality is true since $\frac{1}{N+1}$ is less than $1/2$ because $N$ is natural and bigger than or equal to $2$.
     \source{Первое равенство следует из того факта, что $\frac{1}{N+1}$ меньше единицы для натуральных $N$ и модуль может быть раскрыт только так, первое  неравенство следует из того факта, что $\frac{1}{N+1}$ ещё и меньше $1/2$, т.к. $N$ натуральное и не меньше $1$.}
         
@@ -1260,19 +1259,19 @@ Let's consider an another example.
 Not every sequence has a limit.
 \source{Не у всякой последовательности существует предел.}
 \proposition \label prop:04:nolim
-    A sequence $a_n=(-1)^n$ doesn't have a limit.
+    The sequence $a_n=(-1)^n$ doesn't have a limit.
     \source{Последовательность $a_n=(-1)^n$ не имеет никакого предела.}
 \proof
     Now we're faced with an unusual problem.
-    Recall that in a definition of a limit there is a number $A$, which represents its value.
+    Recall that in a definition of a limit there is a number $A$ that represents its value.
     Here we don't have such $A$.
     \source
         Нас пожидает некоторая трудность в самом начале. 
         Определение предела требует, чтобы мы назвали конкретное число $A$, которое является пределом.
         Здесь никакого $A$ нет.
 
-   Formally, a proposition "a sequence $\seq{a_n}$ has a limit" is written as follows: there exists some number $A$ that is a limit of $\seq{a_n}$.
-   The same thing using quantifiers:
+   Formally, the proposition "$\seq{a_n}$ has a limit" is written as follows: there exists some number $A$ that is the limit of $\seq{a_n}$.
+   Same thing using quantifiers:
    \source
         Формально, утверждение «последовательность $\seq{a_n}$ имеет предел» записывается так: найдётся какое-то число $A$, которое является пределом $\seq{a_n}$. 
         В кванторах:
@@ -1285,13 +1284,13 @@ Not every sequence has a limit.
         Ух! 
         Четыре квантора.
 
-    Let's formulate a negation to this proposition (this is exactly what we need to prove).
+    Let's formulate a negation to this proposition (which is the thing we aim to prove).
     \source{Давайте напишем отрицание к этому утверждению (это как раз то, что нам нужно доказать):}
 
     \eq
         \forall A \in \mathbb R\\ \exists \eps > 0 \\ \forall N \in \mathbb N\\
         \exists n > N\colon |a_n - A| \ge \eps.
-    In other words, a proposition "$A$ is not a limit of the considered sequence" is true for all real numbers $A$.
+    In other words, the proposition "$A$ is not a limit of the considered sequence" is true for all real numbers $A$.
     \source{Иными словами, для всякого вещественного числа $A$, справедливо утверждение: $A$ не является пределом нашей последовательности.}
 
     Now we proceed to the proof.
@@ -1321,9 +1320,9 @@ Not every sequence has a limit.
             \source{График последовательности $\seq{(-1)^n}$.}
         \label fig:04:(-1)^n
 
-    How to choose an $\eps>0$ so that our sequence will occasionally "jump out" of an $\eps$-corridor even very far in the future?
-    We know that $A\ne 1$, and we also know that a tail of the sequence "visits" a number $1$ no matter how far away it starts.
-    This motivates us to make $\eps$ smaller than a distance between $A$ and $1$.
+    How to choose $\eps>0$ so that our sequence will occasionally "jump out" of the $\eps$-corridor even very far in the future?
+    We know that $A\ne 1$, and we also know that a tail of the sequence "visits" the number $1$ no matter how far away it starts.
+    This motivates us to make $\eps$ smaller than the distance between $A$ and $1$.
     This ensures that whenever an element is equal to $1$, it's not $\eps$-close to $A$.
     \source
         Теперь нужно выбрать такое $\eps>0$, что последовательность будет время от времени выскакивать из $\eps$-коридора сколько угодно далеко в будущем. 
@@ -1339,11 +1338,11 @@ Not every sequence has a limit.
     Notice since $A\ne 1$, epsilon is always positive.
     \source{Тут важно, что $A\ne 1$ и следовательно $\eps>0$.}
 
-    This way one "side" of an $\eps$-corridor will be located strictly between $A$ and $1$, see \ref[fig. ][fig:04:(-1)^n+eps].
-    No matter which $N$ is chosen, it's always possible to find an index $m>N$, for which a corresponding element $a_m$ doesn't belong to the "corridor" from $A+\eps$ to $A-\eps$.
+    This way one "side" of the $\eps$-corridor will be located strictly between $A$ and $1$, see \ref[fig. ][fig:04:(-1)^n+eps].
+    No matter what $N$ is chosen, it's always possible to find an index $m>N$, for which the corresponding element $a_m$ doesn't belong to the "corridor" from $A+\eps$ to $A-\eps$.
     (In fact, there will be infinitely many such elements).
     To be more precise, for every even $n$ we have $a_n=1$ and hence all such elements can't be $\eps$-close to $A$.
-    Obviously, for every $N$ there will be an even $n>N$, and this is what we needed.
+    Obviously, for every $N$ there exists an even $n>N$, and this is what we needed.
     \source
         Тогда одна из границ коридора будет проходить в точности посередине между $A$ и $1$, см. \ref[рис.][fig:04:(-1)^n+eps]. 
         Пусть теперь дано произвольное натуральное $N$. 
@@ -1362,13 +1361,13 @@ Not every sequence has a limit.
                 Проведена вертикальная прямая n=N (N выбрано равным 6), закрашен
                 коридор правее прямой n=N между прямыми y=A+ε и y=A-ε.
         \caption
-            A graph of $\seq{(-1)^n$ and a corridor for our $\eps$.
+            The graph of $\seq{(-1)^n$ and a corridor for our $\eps$.
             \source{График последовательности $\seq{(-1)^n}$ и коридор для выбранного значения $\eps$.}
         \label fig:04:(-1)^n+eps
 
     To make the proof fully complete we must give a formal recipe for constructing $n$ given the value of $N$.
     This can be done in various ways, for example any even number bigger than $N$ is valid.
-    But we'll do it even simpler, let
+    But we'll do it even simpler, so let
     \source
         Чтобы сделать рассуждение совсем железобетонным, нужно привести явный способ построения $n$ по $N$. 
         Тут можно действовать разными методами — например, можно выбирать первое чётное, большее $N$, но можно проще: положить
@@ -1377,21 +1376,21 @@ Not every sequence has a limit.
     Obviously, if $N$ is a natural number, then $2N > N$ and $2N$ is even.
     \source{Действительно, $2N > N$ для всех натуральных $N$ и число $2N$ гарантированно чётное.}
 
-    We need to show that an inequality $|a_n - A| \ge \eps$ is satisfied for all natural numbes $n$.
-    Since $n$ is even, $a_{n}=1$, so
+    We need to show that the inequality $|a_n - A| \ge \eps$ is satisfied for all natural numbers $n$.
+    Since $n$ is even, we have $a_{n}=1$, so
     \source
         Наконец, нужно доказать, что для выбранного таким образом $n$, будет выполняться неравенство $|a_n - A| \ge \eps$. 
         Поскольку $n$ чётно, $a_{n}=1$. 
         Подставляя значение $\eps$, имеем:
     \eq
         |1-A| \ge \frac{|A-1|}{2}.
-    Notice that $|1-A|=|A-1|$ and this expression is nonnegative, so the inequality is automatoacally satisfied. 
+    Notice that $|1-A|=|A-1|$ and this expression is non-negative, so the inequality is automatoacally satisfied. 
     \source{Поскольку $|1-A|=|A-1|$ и это положительное число, это неравенство заведомо верно.}
 
     \section   
-        For every $A\ne 1$ we're now able to provide a value $\eps=\frac{|A-1|}{2}>0$ such that for all natural $N$ there is $n=2N$ which makes $|a_n - A| \ge \eps$ for all $n>N$.
+        For every $A\ne 1$ we're now able to provide the value $\eps=\frac{|A-1|}{2}>0$ such that for all natural $N$ there is $n=2N$ which makes $|a_n - A| \ge \eps$ for all $n>N$.
         This is precisely what we wanted to show.
-        A number $A$ is not a limit of our sequence, and the proof is done.
+        The number $A$ is not a limit of our sequence, and the proof is done.
         \source
             Таким образом, для любого $A\ne 1$ мы предъявили такое значение $\eps=\frac{|A-1|}{2}>0$, что для всех натуральных $N$ мы построили такое $n=2N$, что $n>N$ и $|a_n - A| \ge \eps$. 
             Значит, $A$ не является пределом нашей последовательности.
@@ -1417,9 +1416,9 @@ When we write an expression
     \lim_{n\to \infty} a_n = A, 
 we assume that the left hand side is uniquely defined. 
 Actually, it's possible for a mathematical expression to not have a numerical value.
-For example, an arithmetic expression $1/0$ doesn't have a numerical value.
+For example, the arithmetic expression $1/0$ doesn't have a numerical value.
 Notice that in the \ref[definition of a limit\nonumber][def:04:def-lim] we did't specify anything about its uniqueness.
-This definition answers the question "is a number $A$ a limit of a sequence?".
+This definition answers the question "is the number $A$ the limit of the sequence?".
 But what if there are numerous numbers for which the answer to the question above is "yes"? 
 \sourec
     мы подразумеваем, что левая часть равенства является каким-то однозначно определенным числом. 
@@ -1428,7 +1427,7 @@ But what if there are numerous numbers for which the answer to the question abov
     Как видно, это определение отвечает на вопрос «является ли $A$ пределом последовательности $\seq{a_n}$», но вдруг для одной и той же последовательности найдутся два разных числа, для которых ответ будет положительным? 
     В этом случае запись вроде \ref{eq:04:lim} потеряла бы всякую определенность.
 
-Luckily,  this cannot happen, which we're going to prove.
+Actually, this cannot happen, and we're going to prove it.
 \source
     К счастью, так не бывает. 
     Давайте это докажем.
@@ -1442,7 +1441,7 @@ Luckily,  this cannot happen, which we're going to prove.
         Тогда обязательно $A_1=A_2$.
 \proof
     We proceed by contradiction.
-    Suppose $A_1$ and $A_2$ are both limits of a sequence $\seq{a_n}$, but at the same time $A_1\ne A_2$.
+    Suppose $A_1$ and $A_2$ are both limits of $\seq{a_n}$, and at the same time $A_1\ne A_2$.
     Let's restate this formally:
     \source
         Будем доказывать от противного. 
@@ -1456,9 +1455,9 @@ Luckily,  this cannot happen, which we're going to prove.
             \forall &\eps_2>0\\ \exists N_2=N_2(\eps_2)\\ 
         \splitem \splonly{&} \forall n > N_2\colon |a_n - A_2|  < \eps_2.
     
-    In the \ref[section][ssec:03:bound] we discussed that if there are several (distinct) propositions involving quantifiers, then there are no connections between the same letters outside the propositions.
+    In \ref[section][ssec:03:bound] we discussed that if there are several (distinct) propositions involving quantifiers, then there are no connections between the same letters outside the propositions.
     So we've added some indexes to avoid any confusion: there is $\eps_1$ for $A_1$, and $\eps_2$ for $A_2$.
-    Also we've introduced a helpful notation $N_1(\eps_1)$ and $N_2(\eps_2)$: these help to understand which definition a number $N$ came from.
+    Also we've introduced a helpful notation $N_1(\eps_1)$ and $N_2(\eps_2)$: these help to understand from which definition a number $N$ came from.
     \source
         Мы обсуждали (см. \ref[раздел][ssec:03:bound]), что когда есть несколько утверждений с кванторами, в которых участвуют одни и те же буквы, никакой связи между этими буквами за пределами соответствующих утверждений нет.
         Так что чтобы не путаться, мы добавили немножко индексов — например, $\eps_1$ для утверждения про предел $A_1$ и $\eps_2$ для утверждения про предел $A_2$. 
@@ -1479,13 +1478,13 @@ Luckily,  this cannot happen, which we're going to prove.
 
     Recall that in the process of proving propositions about the value of a limit we've been perceiving $\eps$ as a fixed value.
     The reason was because of a universal quantifier in front: it forced us to consider an arbitrary value of $\eps$.
-    Now we're dealing with the reversed case.
-    We're given (by assumption) that $A_1$ is a limit of a sequence.
-    This means we know that for every $\eps>0$ there is $N_1=N_1(\eps_1)$ such that some inequality holds.
+    But now we're dealing with the reversed case.
+    We're given (by assumption) that $A_1$ is the limit of the sequence.
+    This means we know that for every $\eps>0$ there is $N_1=N_1(\eps_1)$ such that a certain inequality holds.
     If we want to find the value of $N_1$ for $\eps_1=1/10$, we can do that.
     And for $\eps_1 = 1/100$ we can find the corresponding $N_1$.
     And for every other positive $\eps_1$ this is guaranteed to be possible.
-    Similarly with the second preposition (involving $\eps_2$ and $\N_2$).
+    Similar argument holds for the second proposition (involving $\eps_2$ and $\N_2$).
     \source
         Действительно, до сих пор когда мы доказывали, что предел равен какому-то числу, мы воспринимали $\eps$ как нечто данное, что от нас не зависит.
         Потому что нам нужно было доказать утверждение, взятое из определения предела, а оно начинается квантором «для всякого $\eps>0$». 
@@ -1497,8 +1496,8 @@ Luckily,  this cannot happen, which we're going to prove.
         И для любого другого положительного $\eps_1$ можем найти. 
         Аналогично и со вторым утверждением.
 
-    The strategy is to fing $\eps_1$ and $\eps_2$, such that we arrive at a contradiction.
-    Let's make an illustration, see \ref[fig.][fig:04:uniq].
+    The strategy is to find $\eps_1$ and $\eps_2$, such that we arrive at a contradiction.
+    The illustration is in \ref[fig.][fig:04:uniq].
     \source
         Как выбрать $\eps_1$ и $\eps_2$, чтобы имеющиеся у нас утверждения пришли к явному противоречию? 
         Давайте посмотрим на картинку, \ref[рис.][fig:04:uniq].
@@ -1519,20 +1518,20 @@ Luckily,  this cannot happen, which we're going to prove.
                 последователности располагаются произвольным образом, между N_1 и
                 N_2 только внутри коридора вокруг A_1, правее N_2 точек не отмечено. 
         \caption
-            A contradiction in the proof of the \ref[theorem][thm:04:uniq].
+            The contradiction in the proof of \ref[theorem][thm:04:uniq].
             \source{Противоречие в доказательстве \ref[теоремы][thm:04:uniq].}
         \label fig:04:uniq
-    We know that starting from some number $n=N_1$, all elements of the sequence belong to an $\eps_1$-corridor arond $A_1$.
-    At the same time, starting from some $n=N_2$, all elements also lie in an $\eps_2$-corridor around $A_2$.
+    We know that starting from some number $n=N_1$, all elements of the sequence belong to the $\eps_1$-corridor arond $A_1$.
+    At the same time, starting from some $n=N_2$, all elements also lie in the $\eps_2$-corridor around $A_2$.
     If we choose the corridors to be disjoint, this will produce a valid contradiction!
     \source
         Известно, что, начиная с некоторого номера $n=N_1$, все элементы последовательности лежат в $\eps_1$-коридоре вокруг точки $A_1$. 
         В то же время, начиная с некоторого $n=N_2$, все элементы последовательности лежат в $\eps_2$-коридоре вокруг точки $A_2$. 
         Если выбрать эти коридоры непересекающимися, будет явное противоречие — точки не смогут жить в обоих одновременно!
 
-    Which values of $\eps_1$ and $\eps_2$ should we choose for them to be disjoint?
-    A common trick is helpful: lets divide a distance between $A_1$ and $A_2$ in three parts.
-    This way the upper line of the lower corridor (see \ref[fig.][fig:04:uniq]) will lie in the lower third of an interval $[A_2, A_1]$, and the lower line of an upper corridor will be contained in the upper third of the same interval.
+    The question is, which values of $\eps_1$ and $\eps_2$ should we choose for them to be disjoint?
+    A common trick is helpful: lets divide the distance between $A_1$ and $A_2$ in three parts.
+    This way the upper line of the lower corridor (see \ref[fig.][fig:04:uniq]) will lie in the lower third of the interval $[A_2, A_1]$, and the lower line of an upper corridor will be contained in the upper third of $[A_2, A_1]$.
     This will guarantee that the corridors don't intersect.
     \source
         Какими выбрать $\eps_1$ и $\eps_2$, чтобы коридоры не пересекались? 
@@ -1541,7 +1540,7 @@ Luckily,  this cannot happen, which we're going to prove.
         Конечно, пересечения не будет, и мы победим.
 
     Let's provide a rigorous proof.
-    So let
+    Let
     \source
         Давайте сделаем железобетонное рассуждение.     
         Итак, пусть
@@ -1572,7 +1571,7 @@ Luckily,  this cannot happen, which we're going to prove.
         Положим:
     \eq
         n=\max(N_1, N_2)+1.
-    Then $n>N_1$ and according to \ref{eq:04:A1} this leads to
+    Then $n>N_1$ and according to \ref{eq:04:A1} this implies
     \source{Тогда $n>N_1$ и согласно \ref{eq:04:A1} в этом случае обязательно}
     \eq
         |a_n - A_1| < \eps_1=\frac{|A_1-A_2|}{3}.
@@ -1580,7 +1579,7 @@ Luckily,  this cannot happen, which we're going to prove.
     \source{Одновременно $n>N_2$ и согласно \ref{eq:04:A2} в этом случае обязательно}
     \eq
         |a_n - A_2| < \eps_2=\frac{|A_1-A_2|}{3}.
-    To avoid calculations involving a modulus we can utilize a well-known triangle inequality: the distance between $A_1$ and $A_2$ is less than or equal to a sum of the distances from $A_1$ to $a_n$ and from $a_n$ to $A_2$.
+    To avoid calculations involving an absolute value we can utilize a well-known triangle inequality: the distance between $A_1$ and $A_2$ is less than or equal to a sum of the distances from $A_1$ to $a_n$ and from $a_n$ to $A_2$.
     We have
     \source
         Чтобы не возиться с раскрытием модулей и рассмотрением разных случаев, применим известное неравенство треугольника: расстояние от $A_1$ до $A_2$ не превосходит сумму расстояний от $A_1$ до $a_n$ и от $a_n$ до $A_2$. 
@@ -1592,7 +1591,7 @@ Luckily,  this cannot happen, which we're going to prove.
         \splitem \splonly{=} \frac{2}{3}|A_1-A_2|.
     But remember that $|A_1-A_2|$ is positive!
     Positive numbers decrease when multiplied by $2/3$, but our inequality states the opposite.
-    This is the contradiction we've desired!
+    And this is the contradiction we've desired!
     Thus the theorem is proven.
     \source
         Но $|A_1-A_2|$ — положительное число! 
@@ -1605,7 +1604,7 @@ Luckily,  this cannot happen, which we're going to prove.
     \source{Заключение}
 
 What a long lecture!
-But we've achieved what we wanted: a definition of a limit is formulated and it's even proven to be unique!
+But we've achieved what we wanted: the definition of a limit is formulated and a limit is even proven to be unique!
 We've also constructed some proofs of propositions involving existence and nonexistence of a limit.
 The next lecture will contain proofs of more general properties of limits, and you'll be able to practice with the definitions during the next semimar.
 \source
