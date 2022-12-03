@@ -1,76 +1,113 @@
 \chapter \label chap:12:asymptote
-    Бесконечные пределы и асимптоты
+    Infinite limits and asymptotes
+   \source{Бесконечные пределы и асимптоты}
 
-Помимо конечных пределов, у последовательностей бывают бесконечные (см. раздел
-\ref[Пределы и ограниченность\nonumber][sec:05:lim-bound] в
-\ref[главе][chap:05:lim-properties]). У функций тоже!
+Besides finite limits, a sequence may have an infinite one (see section about \ref[limits and boundness\nonumber][sec:05:lim-bound] in \ref[chapter][chap:05:lim-properties]).
+Same thing with functions!
+\source
+    Помимо конечных пределов, у последовательностей бывают бесконечные (см. раздел \ref[Пределы и ограниченность\nonumber][sec:05:lim-bound] в \ref[главе][chap:05:lim-properties]). 
+    У функций тоже!
 
-\section Бесконечные пределы в конечных точках
-\subsection Существование предела и ограниченность
-Из \ref[лекции][chap:05:lim-properties] мы знаем, что \ref[сходящаяся
-последовательность ограничена\nonumber][thm:05:bound]. Для функций можно
-сформулировать аналогичное утверждение.
+\section 
+    Infinite limits in finite points
+    \source{Бесконечные пределы в конечных точках}
+\subsection 
+    Existence and boundness
+    \source{Существование предела и ограниченность}
+\ref[Lection][chap:05:lim-properties] taught us that \ref[convergent sequence is bounded\nonumber][thm:05:bound]. 
+We woiuld like to formulate a similar proposition for functions.
+\source
+    Из \ref[лекции][chap:05:lim-properties] мы знаем, что \ref[сходящаяся последовательность ограничена\nonumber][thm:05:bound]. 
+    Для функций можно сформулировать аналогичное утверждение.
 
 \theorem \label thm:12:bound
-    Пусть функция $f(x)$ имеет предел при $x\to x_0$. Тогда она ограничена на
-    некоторой проколотой окрестности точки $x_0$. Иными словами, найдутся такие
-    $C$ и $\delta_*>0$, что для всех $x \in \mathring{U}_{\delta_*}(x_0)$
-    выполняется неравенство $|f(x)|<C$.
+    Suppose $f(x)$ has a limit as $x\to x_0$.
+    Then it is bounded in some deleted neighbourhood of $x_0$.
+    In other words, there exist $C$ and $\delta_*>0$ such that for all $x \in \mathring{U}_{\delta_*}(x_0)$ the inequality $|f(x)|<C$ is satisfied.
+    \source
+        Пусть функция $f(x)$ имеет предел при $x\to x_0$. 
+        Тогда она ограничена на  некоторой проколотой окрестности точки $x_0$. 
+        Иными словами, найдутся такие $C$ и $\delta_*>0$, что для всех $x \in \mathring{U}_{\delta_*}(x_0)$ выполняется неравенство $|f(x)|<C$.
 \proof
-    По определению предела, для всякого $\eps>0$ найдётся такое
-    $\delta=\delta(\eps)>0$, что для всех $x$ из проколотой $\delta$-окрестности
-    $x_0$ выполняется неравенство $|f(x)-b|<\eps$.
+    By the definition of a limit, for every $\eps>0$ we can find $\delta=\delta(\eps)>0$ such that for all $x$ in the deleted $\delta$-neighbourhood of $x_0$ the inequality $|f(x)-b|<\eps$ is satisfied.
+    \source{По определению предела, для всякого $\eps>0$ найдётся такое $\delta=\delta(\eps)>0$, что для всех $x$ из проколотой $\delta$-окрестности $x_0$ выполняется неравенство $|f(x)-b|<\eps$.}
 
-    Положим $\delta_* := \delta(1)$ (то есть возьмём $\eps=1$). Тогда для всех
-    $x$ из проколотой $\delta_*$-окрестности точки $x_0$ выполняется неравенство
-    $|f(x)-b|<1$. По неравенству треугольника,
+    Set $\delta_* := \delta(1)$ (which means we took $\eps=1$).
+    Then $|f(x)-b|<1$ is satisfied for any $x$ from the deleted $\delta_*$-neighbourhood of $x_0$.
+    By the triangle inequality,
+    \source
+        Положим $\delta_* := \delta(1)$ (то есть возьмём $\eps=1$). 
+        Тогда для всех $x$ из проколотой $\delta_*$-окрестности точки $x_0$ выполняется неравенство $|f(x)-b|<1$. 
+        По неравенству треугольника,
     \eq
         |f(x)| \le |f(x)-b| + |b-0| < 1 + |b|.
-    Положим $C=1+|b|$. Тогда $\mathring{U}_{\delta_*}(x_0)$ — искомая окрестность
-    точки $x_0$. Теорема доказана.
+    Take $C=1+|b|$.
+    Then $\mathring{U}_{\delta_*}(x_0)$ is the desired neighbourhood of $x_0$.
+    And we're done!
+    \source
+        Положим $C=1+|b|$. 
+        Тогда $\mathring{U}_{\delta_*}(x_0)$ — искомая окрестность точки $x_0$. 
+        Теорема доказана.
 
-Доказательство очень похоже на доказательство \ref[аналогичной
-теоремы\nonumber][thm:05:bound] для последовательностей, и даже проще: в случае
-с последовательностями нужно было отдельно рассматривать начальный отрезок. За
-это мы платим тем фактом, что утверждение об ограниченности распространяется не
-на всю область определения функции, а лишь на некоторую проколотую окрестность
-точки $x_0$.
+The proof is very similar to the proof of an \ref[analogous theorem\nonumber][thm:05:bound] for sequences, perhaps even simpler since we didn't consider the initial interval.
+This comes with a price: boundness exists only on some deleted neighbourhood of $x_0$, not the whole domain of a function.  
+\source
+    Доказательство очень похоже на доказательство \ref[аналогичной теоремы\nonumber][thm:05:bound] для последовательностей, и даже проще: в случае с последовательностями нужно было отдельно рассматривать начальный отрезок. 
+    За это мы платим тем фактом, что утверждение об ограниченности распространяется не на всю область определения функции, а лишь на некоторую проколотую окрестность точки $x_0$.
 
 \example
-    Рассмотрим функцию $f(x)=1/x$. Она имеет предел при $x\to 1$, однако не
-    является ограниченной на всей области определения.
+    Consider the function $f(x)=1/x$.
+    It has a limit as $x\to 1$, but it is not bounded on on the whole domain.
+    \source
+        Рассмотрим функцию $f(x)=1/x$. 
+        Она имеет предел при $x\to 1$, однако не является ограниченной на всей области определения.
 
-\subsection Бесконечные пределы
+\subsection 
+    Infinite limits
+    \source{Бесконечные пределы}
 
-В том случае, когда функция не является ограниченной ни в какой проколотой
-окрестности точки $x_0$, она не может иметь предела в этой точке. Однако,
-опять аналогично ситуациям с последовательностями, мы можем определить, что
-означает, что функция \emph{стремится к бесконечности} в точке $x_0$.
+In the case when the function is unbounded in any deleted neighbourhood of $x_0$, it cannot have a limit in $x_0$.
+But again, similar to sequences, it's useful to define what it means to \emph{approach infinity} in $x_0$.
+\source
+    В том случае, когда функция не является ограниченной ни в какой проколотой окрестности точки $x_0$, она не может иметь предела в этой точке. 
+    Однако, опять аналогично ситуациям с последовательностями, мы можем определить, что означает, что функция \emph{стремится к бесконечности} в точке $x_0$.
 
 \definition
-    Пусть функция $f(x)$ определена в некоторой проколотой окрестности точки
-    $x_0$. Говорят, что её предел в этой точке равен бесконечности, если для
-    всякого $C$ найдётся такая $\delta>0$, что для всех $x$ из проколотой
-    $\delta$-окрестности точки $x_0$ выполняется неравенство: $|f(x)| > C$.
-    Формально:
+    Suppose a function $f(x)$ is defined in some deleted neighbourhood of $x_0$.
+    We say that the limit of $f(x)$ in $x_0$ is infinity if for any $C$ there exists $\delta>0$ such that for any $x$ in the deleted $\delta$-neighbourhood of $x_0$ the inequality  $|f(x)| > C$ is satisfied.
+    Formally,
+    \source
+        Пусть функция $f(x)$ определена в некоторой проколотой окрестности точки $x_0$. 
+        Говорят, что её предел в этой точке равен бесконечности, если для всякого $C$ найдётся такая $\delta>0$, что для всех $x$ из проколотой $\delta$-окрестности точки $x_0$ выполняется неравенство: $|f(x)| > C$.
+        Формально:
     \align \nonumber
         \item \forall C \in \mathbb R & \\ \exists \delta>0 \\ \forall x\in \mathbb R\colon
         \splitem \splonly{&}
             0 < |x-x_0| < \delta \Rightarrow |f(x)| > C.
-    Записывают:
+    The notation is as follows:
+    \source{Записывают:}
     \eq
         \lim_{x\to x_0} f(x)=\infty.
 \remark
-    И снова: если предел функции равен бесконечности, это означает, что предел
-    «не существует» (в смысле обычного определения предела). Тот факт, что
-    функция стремится к бесконечности, означает, что она \emph{не имеет} предела
-    в точке, но при этом не имеет его специфическим образом.
+    It's important to note that when a function approaches infinity, it actually does not approach anything (in the sence of an ordinary definition of a limit).
+    It is just very common to see such kind of divergence, so it's useful to treat it like other limits.
+    Once again: the fact that a function approaches infinity in some point means that it \emph{doesn't have} a limit in this point.
+    \source
+        И снова: если предел функции равен бесконечности, это означает, что предел «не существует» (в смысле обычного определения предела). 
+        Тот факт, что функция стремится к бесконечности, означает, что она \emph{не имеет} предела в точке, но при этом не имеет его специфическим образом.
 
 \example
-    Функция $f(x)=\frac{1}{x}$ стремится к бесконечности при $x\to 0$.
-    Дейстительно, возьмём любоое $C$. Если $C \le 0$, условие $|1/x| > C$
-    выполнено автоматически. Если $C > 0$, положим $\delta=1/C$. Тогда если
-    $|x|<\delta$, то $|1/x|=1/|x| > 1/\delta = C$.
+    The function $f(x)=\frac{1}{x}$ approaches infinity as $x\to 0$.
+    Let's take any $C$.
+    If $C \le 0$, then $|1/x|>C$ is trivially satisfied.
+    If $C > 0$, set $\delta=1/C$.
+    This way if $|x|<\delta$, then $|1/x|=1/|x| > 1/\delta = C$.
+    \source
+        Функция $f(x)=\frac{1}{x}$ стремится к бесконечности при $x\to 0$.
+        Дейстительно, возьмём любоое $C$. 
+        Если $C \le 0$, условие $|1/x| > C$ выполнено автоматически. 
+        Если $C > 0$, положим $\delta=1/C$. 
+        Тогда если $|x|<\delta$, то $|1/x|=1/|x| > 1/\delta = C$.
 
     \figure \showcode \collapsed
         \pythonfigure \style max-width: 400px;
@@ -108,37 +145,40 @@
             plt.yticks([])
 
 \example
-    Функция
+    The function
+    \source{Функция}
     \eq
         f(x)=\begin{cases}
             1/x,& x \in \mathbb Q, \\\\
             0, & x \not \in \mathbb Q,
         \end{cases}
-    не является ограниченной ни в какой проколотой окрестности точки $x=0$
-    (поскольку сколь угодно близко к нулю существуют рациональные числа), но
-    при этом не стремится к бесконечности при $x\to 0$ (поскольку сколь угодно
-    близко к нулю существуют иррациональные числа, в которых функция принимает
-    значение 0).
+    is not bounded in $x=0$ because there are no deleted neighbourhood of $x=0$ such that it doesn't include rational numbers (because there exist arbitrarily close to zero rational numbers).
+    At the same time, it doesn't approach infinity as $x\to 0$ (because there exist arbitrarily close to zero irrational numbers, in which $f(x)$ is zero).
+    \source{не является ограниченной ни в какой проколотой окрестности точки $x=0$ (поскольку сколь угодно близко к нулю существуют рациональные числа), но при этом не стремится к бесконечности при $x\to 0$ (поскольку сколь угодно близко к нулю существуют иррациональные числа, в которых функция принимает значение 0).}
 
-Опять же, аналогично последовательностям, помимо просто бесконечности, бывает
-плюс бесконечность и минус бесконечность:
+Again, similar to the case of sequences, there are plus and minus infinities.
+\source{Опять же, аналогично последовательностям, помимо просто бесконечности, бывает плюс бесконечность и минус бесконечность:}
 
 \definition \label def:12:plus-infty
-    Пусть функция $f(x)$ определена в некоторой проколотой окрестности точки
-    $x_0$. Говорят, что её предел в этой точке равен плюс бесконечности (минус
-    бесконечности), если для всякого $C$ найдётся такая $\delta>0$, что для всех
-    $x$ из проколотой $\delta$-окрестности точки $x_0$ выполняется неравенство:
-    $f(x) > C$ (соответственно, $f(x) < C$).
+    Suppose $f(x)$ is defined in some deleted neighbourhood of $x_0$.
+    We say that is approaches positive infinity (negative infinity) in $x_0$ if for all $C$ there exists $\delta>0$ such that for all $x$ from a deleted $\delta$-neighbourhood of $x_0$ the inequality $f(x) > C$ ($f(x) < C$ respectively) is satisfied.
+    \source
+        Пусть функция $f(x)$ определена в некоторой проколотой окрестности точки $x_0$. 
+        Говорят, что её предел в этой точке равен плюс бесконечности (минус бесконечности), если для всякого $C$ найдётся такая $\delta>0$, что для всех $x$ из проколотой $\delta$-окрестности точки $x_0$ выполняется неравенство: $f(x) > C$ (соответственно, $f(x) < C$).
 \exercise
-    Запишите эти три определения в кванторах.
+    Try to formulate these two definitions in quantifiers.
+    \spurcЗапишите эти три определения в кванторах.
 \example
-    Неверно, что $1/x \to +\infty$ при $x\to 0$: когда $x$ приближается к нулю
-    слева (то есть становится очень маленьким по модулю, но отрицательным),
-    $1/x$ становится большим по модулю, но тоже отрицательным. В то же время,
-    $1/(x^2) \to +\infty$ при $x\to 0$: знаменатель всегда положительный при
-    $x\ne 0$, и когда он маленький по модулю, дробь становится очень большой.
+    Notice that it is wrong to say that $1/x \to +\infty$ as $x\to 0$.
+    There are two ways for $x$ to approach $0$: from the left and from the right.
+    In the first case, the value of the function is always negative, so it must approach negative infinity.
+    Unlike $1/x$, the function $1/(x^2)$ approaches infinity as $x\to 0$ since its denominator is always nonnegative.
+    \source
+        Неверно, что $1/x \to +\infty$ при $x\to 0$: когда $x$ приближается к нулю слева (то есть становится очень маленьким по модулю, но отрицательным), $1/x$ становится большим по модулю, но тоже отрицательным. 
+        В то же время, $1/(x^2) \to +\infty$ при $x\to 0$: знаменатель всегда положительный при $x\ne 0$, и когда он маленький по модулю, дробь становится очень большой.
 
-Наконец, можно рассматривать односторонние бесконечные пределы. 
+Now we move to one-sided infinite limits.
+\source{Наконец, можно рассматривать односторонние бесконечные пределы.} 
 
 \exercise
     Придумайте определения для утверждений $\lim_{x\to x_0^+} f(x)=+\infty$,
