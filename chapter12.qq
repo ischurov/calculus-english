@@ -180,42 +180,55 @@ Again, similar to the case of sequences, there are plus and minus infinities.
 Now we move to one-sided infinite limits.
 \source{Наконец, можно рассматривать односторонние бесконечные пределы.} 
 
-\exercise
-    Придумайте определения для утверждений $\lim_{x\to x_0^+} f(x)=+\infty$,
-    $\lim_{x\to x_0^+} f(x)=-\infty$, $\lim_{x\to x_0^-} f(x)=+\infty$,
-    $\lim_{x\to x_0^-} f(x)=-\infty$  самостоятельно, объединяя определение
-    \ref{def:12:plus-infty} и определения \ref{def:10:left} и \ref{def:10:right}
-    из \ref[лекции][chap:10:limfunc].
+\exercise$\lim_{x\to x_0^+} f(x)=+\infty$,{$\lim_{x\to x_0^+} f(x)=-\infty$, $\lim_{x\to x_0^-} f(x)=+\infty$,{$\lim_{x\to x_0^-} f(x)=-\infty$ yourself, 
+    Try to come up with a definition for expressions $\lim_{x\to x_0^+} f(x)=+\infty$,{$\lim_{x\to x_0^+} f(x)=-\infty$, $\lim_{x\to x_0^-} f(x)=+\infty$,{$\lim_{x\to x_0^-} f(x)=-\infty$ yourself by combining definitions {\ref{def:12:plus-infty}, \ref{def:10:left} and \ref{def:10:right} from \ref[lecture][chap:10:limfunc].
+    \source{Придумайте определения для утверждений $\lim_{x\to x_0^+} f(x)=+\infty$,{$\lim_{x\to x_0^+} f(x)=-\infty$, $\lim_{x\to x_0^-} f(x)=+\infty$,{$\lim_{x\to x_0^-} f(x)=-\infty$  самостоятельно, объединяя определение{\ref{def:12:plus-infty} и определения \ref{def:10:left} и \ref{def:10:right}{из \ref[лекции][chap:10:limfunc].}
 
 \exercise
-    Снова рассмотрим функцию $f(x)=1/x$. Докажите, что
+    Let's revisit the function $f(x)=1/x$.
+    Prove that 
+    \source
+        Снова рассмотрим функцию $f(x)=1/x$. 
+        Докажите, что
     \eq
         \lim_{x\to 0^+} \frac{1}{x}=+\infty
-    и
+    and
+    \source{и}
     \eq
         \lim_{x\to 0^-} \frac{1}{x}=-\infty.
 
 \definition
-    Заметим, что если функция стремится к какой-нибудь из бесконечностей
-    (неважно, плюс, минус или просто бесконечности) когда $x$ стремится к $x_0$
-    с какой-нибудь стороны, график $y=f(x)$ приближается к вертикальной прямой
-    $x=x_0$ когда $x$ приближается к $x_0$ (слева или справа). В этом случае
-    прямая $x=x_0$ называется \emph{вертикальной асимптотой} функции $y=f(x)$
-    (или её графика).
+    Notice that if a function approaches some kind of infinity (no matter whether it is positive, negative or unspecified) as $x$ goes to $x_0$, then its graph starts to look like a vetrical line $x=x_0$.
+    In this case the line $x=x_0$ is called a \emph{vertical asymptote} of the function (or its graph).
+    \source
+        Заметим, что если функция стремится к какой-нибудь из бесконечностей (неважно, плюс, минус или просто бесконечности) когда $x$ стремится к $x_0$ с какой-нибудь стороны, график $y=f(x)$ приближается к вертикальной прямой $x=x_0$ когда $x$ приближается к $x_0$ (слева или справа). 
+        В этом случае прямая $x=x_0$ называется \emph{вертикальной асимптотой} функции $y=f(x)$ (или её графика).
 
 \example
-    Рассмотрим функцию
+    Consider the function
+    \source{Рассмотрим функцию}
     \eq
         f(x)=\frac{x-1}{x^2-1}.
-    Знаменатель обнуляется в двух точках: $x=1$ и $x=-1$. При приближении к
-    точке $x=-1$ знаменатель стремится к нулю, а числитель к $-2$. Значит, дробь
-    стремится к бесконечности (без знака, т.к. знаменатель может быть
-    положительным или отрицательным, в зависимости от того, с какой стороны
-    приближаемся). У функции есть вертикальная асимптота $x=-1$. В точке $x=1$
-    обнуляется и числитель, и знаменатель. Чтобы найти предел в этой точке,
-    сократим дробь на $(x-1)$. Получится выражение $1/(x+1)$. Оно имеет предел,
-    равный $1/2$ при $x\to 1$. Значит, вертикальной асимптоты $x=1$ у функции
-    нет.
+    Notice that the denominator turns zero at $x=1$ and $x=-1$.
+    Also, as $x$ approaches $-1$, the numerator becomes $-2$.
+    This means that the whole fraction approaches infinity (neither a positive, nor a negative one since it depends on what side we choose to approach $x=-1$ from).
+    Hence, $f(x)$ has a vertical asymptote $x=-1$.
+    Now to the point $x=1$.
+    It makes both the numerator and the denominator equal to zero.
+    To find the value of a limit in this point we need to reduce the fraction by $(x-1)$.
+    This yeilds the expression $1/(x+1)$.
+    Clearly, it approaches $1/2$ as $x\to 1$. 
+    This means $f(x)$ does not have a vertical asymptote at $x=1$.
+    \source
+        Знаменатель обнуляется в двух точках: $x=1$ и $x=-1$. 
+        При приближении к точке $x=-1$ знаменатель стремится к нулю, а числитель к $-2$. 
+        Значит, дробь стремится к бесконечности (без знака, т.к. знаменатель может быть положительным или отрицательным, в зависимости от того, с какой стороны приближаемся). 
+        У функции есть вертикальная асимптота $x=-1$. 
+        В точке $x=1$ обнуляется и числитель, и знаменатель. 
+        Чтобы найти предел в этой точке, сократим дробь на $(x-1)$. 
+        Получится выражение $1/(x+1)$. 
+        Оно имеет предел, равный $1/2$ при $x\to 1$. 
+        Значит, вертикальной асимптоты $x=1$ у функции нет.
     \figure \showcode \collapsed
         \pythonfigure \style max-width: 450px;
             def f(x):
@@ -233,37 +246,41 @@ Now we move to one-sided infinite limits.
             ob.settle_axes(xmin=-3.7, xmax=3.7, ymin=-3.7, ymax=3.7, 
                            xlabel="x", ylabel="y") 
         \caption
-            У функции $f(x)=\frac{x-1}{x^2-1}$ есть единственная вертикальная
-            асимптота: $x=-1$.
+            The function $f(x)=\frac{x-1}{x^2-1}$ has a single vertical asymptote at $x=-1$.
+            \source{У функции $f(x)=\frac{x-1}{x^2-1}$ есть единственная вертикальная асимптота: $x=-1$.}
 
-\section Пределы на бесконечности
-Другой тип пределов функций, связанный с бесконечностями — это предел при $x$
-стремящемся к бесконечности.
+\section 
+    Approaching infinity
+    \source{Пределы на бесконечности}
+Another type of limit involving infinities is a limit as $x$ approaches infinity.
+\source{Другой тип пределов функций, связанный с бесконечностями — это предел при $x$ стремящемся к бесконечности.}
 
 \subsection
-    Конечные пределы на бесконечности и горизонтальные асимптоты
+    Finite limits and horizontal asymptotes
+    \source{Конечные пределы на бесконечности и горизонтальные асимптоты}
 \definition
-    Пусть функция $f(x)$ определена для всех достаточно больших по модулю значений
-    $x$, то есть найдётся такое $C_*$, что $f(x)$ определена для всех $x$, для
-    которых $|x| > C_*$. Говорят, что предел функции $f(x)$ при $x$ стремящемся к
-    бесконечности равен $b$, если для всякого $\eps>0$ найдётся такое $C$, что
-    для всех $x$, если $|x| > C$, то $|f(x)-b|<\eps$.
+    Suppose a function $f(x)$ is defined for any sufficiently large (by the absolute value) inputs, in other words there exists $C_*$ such that $f(x)$ is defined for all $x$ that satisfy the implication "if $|x| > C$, then $|f(x)-b|<\eps$".
+    We say that the limit of $f(x)$ as $x$ approaches infinity is $b$ if for all $\eps>0$ there exists $C$ such that for any $x$ if $|x| > C$, then $|f(x)-b|<\eps$.
+    \source
+        Пусть функция $f(x)$ определена для всех достаточно больших по модулю значений $x$, то есть найдётся такое $C_*$, что $f(x)$ определена для всех $x$, для которых $|x| > C_*$. 
+        Говорят, что предел функции $f(x)$ при $x$ стремящемся к бесконечности равен $b$, если для всякого $\eps>0$ найдётся такое $C$, что для всех $x$, если $|x| > C$, то $|f(x)-b|<\eps$.
 
 \definition
-    Пусть функция $f(x)$ определена для всех достаточно больших значений $x$, то
-    есть найдётся такое $C_*$, что $f(x)$ определена для всех $x > C_*$. Говорят,
-    что предел функции $f(x)$ при $x$ стремящемся к плюс бесконечности равен
-    $b$, если для всякого $\eps>0$ найдётся такое $C$, что для всех $x > C$
-    верно неравенство $|f(x)-b|<\eps$.
+    Suppose $f(x)$ is defined for all sufficiently large values of $x$, in other words there exists $C_*$ such that $f(x)$ is defined for all $x > C_*$.
+    We say that the limit of $f(x)$ as $x$ approaches positive infinity is $b$ if for all $\eps>0$ there exists $C$ such that the implication "if $x > C$, then $|f(x)-b|<\eps$" is true.
+    \source
+        Пусть функция $f(x)$ определена для всех достаточно больших значений $x$, то есть найдётся такое $C_*$, что $f(x)$ определена для всех $x > C_*$. 
+        Говорят, что предел функции $f(x)$ при $x$ стремящемся к плюс бесконечности равен $b$, если для всякого $\eps>0$ найдётся такое $C$, что для всех $x > C$ верно неравенство $|f(x)-b|<\eps$.
 
 \definition
-    Пусть функция $f(x)$ определена для всех достаточно больших по модулю
-    отрицательных значений $x$, то есть найдётся такое $C_*$, что $f(x)$
-    определена для всех $x < C_*$. Говорят, что предел функции $f(x)$ при $x$
-    стремящемся к минус бесконечности равен $b$, если для всякого $\eps>0$
-    найдётся такое $C$, что для всех $x < C$ верно неравенство $|f(x)-b|<\eps$.
+    Suppose $f(x)$ is defined for all sufficiently large (by the absolute value) values of $x$, in other words there exists $C_*$ such that $f(x)$ is defined for all $x < C_*$.
+    We say that the limit of $f(x)$ as $x$ approaches negative infinity is $b$ if for all $\eps>0$ there exists $C$ such that the implication "if $x < C$, then $|f(x)-b|<\eps$" is true.
+    \source
+        Пусть функция $f(x)$ определена для всех достаточно больших по модулю отрицательных значений $x$, то есть найдётся такое $C_*$, что $f(x)$ определена для всех $x < C_*$. 
+        Говорят, что предел функции $f(x)$ при $x$ стремящемся к минус бесконечности равен $b$, если для всякого $\eps>0$ найдётся такое $C$, что для всех $x < C$ верно неравенство $|f(x)-b|<\eps$.
 
-Обозначения:
+The notation is as follows:
+\source{Обозначения:}
 \eq
     \lim_{x\to \infty} f(x)=b, \quad \lim_{x\to +\infty} f(x)=b,\quad \lim_{x\to
     -\infty} f(x)=b.
