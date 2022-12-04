@@ -279,38 +279,52 @@ Another type of limit involving infinities is a limit as $x$ approaches infinity
         Пусть функция $f(x)$ определена для всех достаточно больших по модулю отрицательных значений $x$, то есть найдётся такое $C_*$, что $f(x)$ определена для всех $x < C_*$. 
         Говорят, что предел функции $f(x)$ при $x$ стремящемся к минус бесконечности равен $b$, если для всякого $\eps>0$ найдётся такое $C$, что для всех $x < C$ верно неравенство $|f(x)-b|<\eps$.
 
-The notation is as follows:
+The notations are as follows:
 \source{Обозначения:}
 \eq
     \lim_{x\to \infty} f(x)=b, \quad \lim_{x\to +\infty} f(x)=b,\quad \lim_{x\to
     -\infty} f(x)=b.
 
 \exercise
-    Докажите, что если $\lim_{x\to \infty} f(x)=b$, то $\lim_{x\to +\infty}
-    f(x)=b$ и $\lim_{x\to -\infty} f(x)=b$. Верно и обратное: если $\lim_{x\to
-    +\infty} f(x)=b$ и $\lim_{x\to -\infty} f(x)=b$, то $\lim_{x\to \infty}
-    f(x)=b$. Докажите и это.
+    Prove that if $\lim_{x\to \infty} f(x)=b$, then $\lim_{x\to +\infty} f(x)=b$ and $\lim_{x\to -\infty} f(x)=b$.
+    In fact, the converse is also true: if both $\lim_{x\to +\infty} f(x)=b$ and $\lim_{x\to -\infty} f(x)=b$ hold, then $\lim_{x\to \infty} f(x)=b$.
+    Try to also prove this proposition.
+    \source
+        Докажите, что если $\lim_{x\to \infty} f(x)=b$, то $\lim_{x\to +\infty} f(x)=b$ и $\lim_{x\to -\infty} f(x)=b$. 
+        Верно и обратное: если $\lim_{x\to +\infty} f(x)=b$ и $\lim_{x\to -\infty} f(x)=b$, то $\lim_{x\to \infty} f(x)=b$. 
+        Докажите и это.
 
 \example
-    Функция $f(x)=1/x$ стремится к нулю при $x\to \infty$. (Докажите!)
+    The function $f(x)=1/x$ approaches zero as $x\to \infty$.
+    (Prove it).
+    \source
+        Функция $f(x)=1/x$ стремится к нулю при $x\to \infty$. 
+        (Докажите!)
 \example
-    Функция $f(x)=e^x$ стремится к нулю при $x\to -\infty$, а предел при $x\to
-    +\infty$ не существует.
+    The function $f(x)=e^x$ approaches zero as $x\to -\infty$.
+    The limit as $x\to +\infty$ does not exist.
+    \source{Функция $f(x)=e^x$ стремится к нулю при $x\to -\infty$, а предел при $x\to +\infty$ не существует.}
 
 \definition
-    Если функция стремится к какому-то числу при $x\to +\infty$ или $x \to -\infty$,
-    её график приближается к горизонтальной прямой $y=b$. Такая прямая
-    называется \emph{горизонтальной асимптотой}.
+    If a function approaches some number as $x\to +\infty$ or $x \to -\infty$, then its graph starts to look like a horizontal line $y=b$.
+    This line is called a $horizontal assymptote$.
+    \source
+        Если функция стремится к какому-то числу при $x\to +\infty$ или $x \to -\infty$, её график приближается к горизонтальной прямой $y=b$. 
+        Такая прямая называется \emph{горизонтальной асимптотой}.
 
 \remark
-    Иногда при формулировании определение асимптоты хочется
-    сказать, что это прямая, к которой график приближается, но никогда её не
-    достигает. Для вертикальной асимптоты это верно, а для горизонтальной нет.
-    Например, у функции $f(x)=2$ есть горизонтальная асимптота $y=2$ —
-    в этом случае график совпадает со своей горизонтальной асимптотой.
-    Менее тривиальный пример: рассмотрим функцию $f(x)=\frac{\sin x}{x}$. Её
-    предел при $x\to \infty$ равен нулю и у неё есть горизонтальная асимптота
-    $y=0$, с которой график пересекается бесконечно много раз.
+    It may be tempting to define an asymptote as a line that a graph gets closer and closer to, but cannot ever match it exactly.
+    Actually, this is true for a certical asymptote, but not for a vertical one.
+    For example, the function $f(x)=2$ has a horizontal asymptote $y=2$ (in this case the graph is equal to the asymptote).
+    Less trivial of an example is $f(x)=\frac{\sin}{x}$.
+    This function has a limit of zero as $x\to \infty$, hence $y=0$ is a horizontal asymptote.
+    However, $f(x)$ intersects $y=0$ infinitely many times.
+    \source
+        Иногда при формулировании определение асимптоты хочется сказать, что это прямая, к которой график приближается, но никогда её не достигает. 
+        Для вертикальной асимптоты это верно, а для горизонтальной нет.
+        Например, у функции $f(x)=2$ есть горизонтальная асимптота $y=2$ — в этом случае график совпадает со своей горизонтальной асимптотой.
+        Менее тривиальный пример: рассмотрим функцию $f(x)=\frac{\sin x}{x}$. 
+        Её предел при $x\to \infty$ равен нулю и у неё есть горизонтальная асимптота $y=0$, с которой график пересекается бесконечно много раз.
 
 \figure \showcode \collapsed
     \pythonfigure \style max-width: 700px;
@@ -329,13 +343,15 @@ The notation is as follows:
                        xlabel="x", ylabel="y", axlabelshift=1.2) 
         plt.xticks([])
         plt.yticks([])
-    \caption Прямая $y=0$ является горизонтальной асимптотой функции $f(x)=(\sin
-        x)/x$.
+    \caption 
+        The line $y=0$ is a horizontal asymptote of $f(x)=(\sin x)/x$.
+        \source{Прямая $y=0$ является горизонтальной асимптотой функции $f(x)=(\sin x)/x$.
 \remark
-    У функции может быть не более двух горизонтальных асимптот: одна
-    соответствует пределу при $x\to +\infty$, а другая при $x=-\infty$.
+    A function may have no more than two horizontal asymptotes, each corresponding to the limit as $x\to +\infty$ and as $x\to -\infty$.
+    \source{У функции может быть не более двух горизонтальных асимптот: одна соответствует пределу при $x\to +\infty$, а другая при $x=-\infty$.}
 \question
-    Сколько вертикальных асимптот может быть у функции?
+    How many vertical asymptotes may a function have?
+    \source{Сколько вертикальных асимптот может быть у функции?}
     \quiz
         \choice \correct
             Сколько угодно, даже бесконечное число.
