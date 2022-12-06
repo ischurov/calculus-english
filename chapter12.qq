@@ -429,46 +429,62 @@ The notations are as follows:
                     Последовательность на самом деле состоит из нулей и её предел равен нулю. 
                     А функция $\sin \pi x$ может принимать значения $1$ или $-1$ для сколь угодно больших $x$, и значит не имеет предела.
 
-\subsection Бесконечные пределы на бесконечности
+\subsection 
+    Infinite limits on infinity ???
+    \source{Бесконечные пределы на бесконечности}
 
-Мы рассмотрели бесконечные пределы в конечных точках и конечные пределы на
-бесконечности. Можно скрестить ужа с ежом и получить бесконечные пределы
-при $x$ стремящемся к бесконечности.
+We've considered infinite limits in finite points and finite limits as a variable approaches infinity.
+Now we'd like to merge these two together and define infinite limits as a variable approaches infinity.
+\source
+    Мы рассмотрели бесконечные пределы в конечных точках и конечные пределы на бесконечности. 
+    Можно скрестить ужа с ежом и получить бесконечные пределы при $x$ стремящемся к бесконечности.
 
 \definition
-    Пусть функция $f(x)$ определена для всех достаточно больших значений $x$, то
-    есть найдётся такое $C_*$, что $f(x)$ определена для всех $x > C_*$. Говорят,
-    что предел функции $f(x)$ при $x$ стремящемся к плюс бесконечности равен
-    плюс бесконечности, если для всякого $D$ найдётся такое $C$, что для всех $x > C$
-    верно неравенство $f(x)>D$. Записывают:
+    Suppose $f(x)$ is defined for all sufficiently large $x$, that is there exists $C_*$ such that $f(x)$ is defined for all $x > C_*$.
+    A limit of $f(x)$ is equal to positive infinity as $x$ approaches positive infinity if for any $D$ it's possib;e to find $C$ such that for all $x > C$ the inequality $f(x) > D$ holds.
+    We denote it as
+    \source
+        Пусть функция $f(x)$ определена для всех достаточно больших значений $x$, то есть найдётся такое $C_*$, что $f(x)$ определена для всех $x > C_*$. 
+        Говорят, что предел функции $f(x)$ при $x$ стремящемся к плюс бесконечности равен плюс бесконечности, если для всякого $D$ найдётся такое $C$, что для всех $x > C$ верно неравенство $f(x)>D$. 
+        Записывают:
     \eq
         \lim_{x\to +\infty} f(x) = +\infty.
 
 \exercise
-    Придумайте определения для остальных комбинаций бесконечностей.
+    Try to formulate the definitions for all combinations of positive and negative infinities (and infinity without a sign).
+    \source{Придумайте определения для остальных комбинаций бесконечностей.}
 
 \example
-    Функция $f(x)=x^2$ стремится к плюс бесконечности при $x\to \infty$, а функция
-    $f(x)=x^3$ стремится просто к бесконечности при $x\to \infty$.
+    The function $f(x)=x^2$ approaches positive infinity as $x \to \infty$, and the function $f(x)=x^3$ approaches infinity without a sign as $x\to \infty$.
+    \source{Функция $f(x)=x^2$ стремится к плюс бесконечности при $x\to \infty$, а функция $f(x)=x^3$ стремится просто к бесконечности при $x\to \infty$.}
 
 \example
-    Рассмотрим функцию
+    Consider the function
+    \source{Рассмотрим функцию}
     \eq
         f(x)=\frac{1}{1+e^{-x}}.
-    При $x \to +\infty$ функция $e^{-x}$ стремится к нулю (она равна $1/e^{x}$,
-    и раз $e^{x}$ становится очень-очень большим, $e^{-x}$ становится очень
-    близким к нулю). По арифметике пределов,
+    Notice that $e^{-x}$ approaches zero as $x \to +\infty$ (it is equal to $1/e^{x}$, where the denominator gets increasingly bigger and the numerator is constant), and by arithmetic of limits:
+    \source
+        При $x \to +\infty$ функция $e^{-x}$ стремится к нулю (она равна $1/e^{x}$, и раз $e^{x}$ становится очень-очень большим, $e^{-x}$ становится очень близким к нулю). 
+        По арифметике пределов,
     \eq
         \lim_{x \to +\infty} \frac{1}{1+e^{-x}}=\frac{1}{1+0}=1.
-    При $x\to -\infty$ функция $e^{-x}$ стремится к плюс бесконечности. В этом
-    случае знаменатель дроби также стремится к плюс бесконечности. Поскольку
-    числитель равен 1, значение дроби стремится к нулю (см.
-    \ref[утверждение][prop:07:1/infty] из \ref[лекции][chap:07:infinite], где
-    шла речь про «арифметику бесконечностей»). Значит
+    Notice also that $e^{-x}$ approaches positive infinity as $x\to -\infty.
+    In this case the denominator of the fraction also approaches positive infinity.
+    And since the numerator is equal to $1$, the whole fraction approaches zero (see \ref[proposition][prop:07:1/infty] from \ref[lecture][chap:07:infinite], where we've analyzed the arithmetic of limits).
+    Hecne, 
+    \source
+        При $x\to -\infty$ функция $e^{-x}$ стремится к плюс бесконечности. 
+        В этом случае знаменатель дроби также стремится к плюс бесконечности. 
+        Поскольку числитель равен 1, значение дроби стремится к нулю (см. \ref[утверждение][prop:07:1/infty] из \ref[лекции][chap:07:infinite], где шла речь про «арифметику бесконечностей»). 
+        Значит
     \eq
         \lim_{x\to -\infty} \frac{1}{1+e^{-x}}=0.
-    У нашей функции две горизонтальные асимптоты: $y=0$ и $y=1$. (И вообще это
-    важная функция — так называемая «сигмоида», встречается в эконометрике и нейросетях.)
+    We condlude, $f(x)$ has two asymptotes: $y=0$ and $y=1$.
+    (In fact, this function has called "sigmoid" and has a variety of important applications including economentics and neural networks.)
+    \source
+        У нашей функции две горизонтальные асимптоты: $y=0$ и $y=1$. 
+        (И вообще это важная функция — так называемая «сигмоида», встречается в эконометрике и нейросетях.)
 
     \figure \showcode \collapsed
         \pythonfigure \style max-width: 600px;
@@ -486,8 +502,10 @@ The notations are as follows:
                            xlabel="x", ylabel="y", axlabelshift=1.2) 
             plt.xticks([])
             plt.yticks([1], ['$1$'], va="bottom")
-        \caption У функции $f(x)=1/(1+e^{-x})$ две горизонтальные асимптоты:
-            $y=0$ и $y=1$.
+        \caption 
+            The function $f(x)=1/(1+e^{-x})$ has two horizontal asymptotes: $y=0$ and $y=1$.
+            \source{У функции $f(x)=1/(1+e^{-x})$ две горизонтальные асимптоты: $y=0$ и $y=1$.}
+
 
 \remark 
     В этой лекции восемь разных определений — и это ещё несколько я попросил вас
