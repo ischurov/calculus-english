@@ -354,55 +354,80 @@ The notations are as follows:
     \source{Сколько вертикальных асимптот может быть у функции?}
     \quiz
         \choice \correct
-            Сколько угодно, даже бесконечное число.
+            As many as desired.
+            Even infinitely many asymptotes.
+            \source{Сколько угодно, даже бесконечное число.}
             \comment
                 Это правда. Например, у тангенса их бесконечно много.
         \choice
-            Тоже не больше двух.
+            Same as with horizontal ones: not more than two
+            \source{Тоже не больше двух.}
             \comment
-                У функции $f(x)=1/(x(x-1)(x+1))$ их три!
+                No, consider the function $f(x)=1/(x(x-1)(x+1))$.
+                It has three vertical asymptotes!
+                \source{У функции $f(x)=1/(x(x-1)(x+1))$ их три!}
         \choice
-            Сколько угодно, но конечное число.
+            As many as desired, but only a finite amount
+            \source{Сколько угодно, но конечное число.}
             \comment
-                Что насчёт тангенса?
+                What about the tangent function?
+                \source{Что насчёт тангенса?}
 
 \remark
-    Предел функции $f(x)$ при $x\to +\infty$ очень похож на предел
-    последовательности $\seq{f(n)}$ при $n\to \infty$. Однако, это не одно и то
-    же: когда обсуждается предел последовательности, $n$ принимает только
-    натуральные значения, а в случае предела функции $x$ может принимать любые
-    вещественные значения.
+    Notice that a limit of $f(x)$ as $x\to +\infty$ is very similar to a limit of a sequence $\seq{f(n)}$ as $n\to \infty$.
+    However, it is not the same thing, among other things $n$ is a natural number and $x$ is real.  
+    \source
+        Предел функции $f(x)$ при $x\to +\infty$ очень похож на предел последовательности $\seq{f(n)}$ при $n\to \infty$. 
+        Однако, это не одно и то же: когда обсуждается предел последовательности, $n$ принимает только натуральные значения, а в случае предела функции $x$ может принимать любые вещественные значения.
 
 \question
-    Рассмотрим два предела: предел функции $\lim_{x\to +\infty} \sin (\pi x)$ и
-    предел последовательности $\lim_{n \to \infty} \sin (\pi n)$. Что вы можете
-    про них сказать?
+    Consider two limits: the limit $\lim_{x\to +\infty} \sin (\pi x)$ and $\lim_{n \to \infty} \sin (\pi n)$.
+    What can be said about them?
+    \source
+        Рассмотрим два предела: предел функции $\lim_{x\to +\infty} \sin (\pi x)$ и предел последовательности $\lim_{n \to \infty} \sin (\pi n)$. 
+        Что вы можете про них сказать?
     \quiz
         \choice
-            Они оба существуют, но не равны.
+            They both exist and are unequal.
+            \source{Они оба существуют, но не равны.}
             \comment
-                Этого не может быть из определения предела по Гейне.
+                This cannot happen by the ($\eps$, $\delta$)-definition of a limit.
+                \source{Этого не может быть из определения предела по Гейне.}
         \choice
-            Они оба существуют и равны.
+            They both exist and are equal.
+            \source{Они оба существуют и равны.}
             \comment
-                Это вряд ли. Функция $\sin \pi x$ может принимать значения $1$
-                или $-1$ для сколь угодно больших $x$.
+                Not really.
+                Notice that $\sin \pi x$ takes the values of $1$ and $-1$ for arbitrarily large $x$.
+                \source
+                    Это вряд ли. 
+                    Функция $\sin \pi x$ может принимать значения $1$ или $-1$ для сколь угодно больших $x$.
         \choice
-            Они оба не существуют.
+            They both does not exist.
+            \source{Они оба не существуют.}
             \comment
-                А что вы можете сказать про последовательность $\seq{\sin(\pi
-                n)}$? Найдите несколько её членов.
+                What about the sequence $\seq{\sin(\pi n)}$?
+                Try to write out some of its terms.
+                \source
+                    А что вы можете сказать про последовательность $\seq{\sin(\pi n)}$? 
+                    Найдите несколько её членов.
         \choice
-            Предел функции существует, а предел последовательности нет.
+            The limit of the function exist, and the other does not.
+            \source{Предел функции существует, а предел последовательности нет.}
             \comment
-                Этого не может быть из определения предела по Гейне.
+                This cannot happen by the ($\eps$, $\delta$)-definition of a limit.
+                \source{Этого не может быть из определения предела по Гейне.}
         \choice \correct
+            The limit of the sequence exist, and the other does not.
             Предел последовательности существует, а предел функции нет.
             \comment
-                И правда! Последовательность на самом деле состоит из нулей и её
-                предел равен нулю. А функция $\sin \pi x$ может принимать
-                значения $1$ или $-1$ для сколь угодно больших $x$, и значит не
-                имеет предела.
+                Yes, indeed!
+                The sequence consists of zeros, hence its limit is zero.
+                The function takes the values of $1$ and $-1$ for arbitrarily large $x$, so it dxiverges.
+                \source
+                    И правда! 
+                    Последовательность на самом деле состоит из нулей и её предел равен нулю. 
+                    А функция $\sin \pi x$ может принимать значения $1$ или $-1$ для сколь угодно больших $x$, и значит не имеет предела.
 
 \subsection Бесконечные пределы на бесконечности
 
