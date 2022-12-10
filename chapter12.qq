@@ -508,39 +508,56 @@ Now we'd like to merge these two together and define infinite limits as a variab
 
 
 \remark 
-    В этой лекции восемь разных определений — и это ещё несколько я попросил вас
-    придумать самостоятельно! Глаза разбегаются. При этом можно заметить, что
-    все определения очень похожи друг на друга. Нет ли возможности
-    как-то их объединить в одно супер-определение? Оказывается, есть — можно
-    ввести общее понятие \emph{предела по базе}, для которого все наши пределы
-    (предел последовательности и всевозможные пределы функций) будут частными
-    случаями. Затем можно в общем случае доказать все утверждения, которые нам
-    нужны (единственность предела, арифметику и т.д.) Этот подход позволяет
-    сэкономить время, но грешит слишком большой абстрактностью — для первого
-    знакомства с матанализом он не подходит.
+    We've already introduced eight new definitions in this licture, not to mention couple extra ones for self-study.
+    Eyes run away from such a variety.
+    At the same time, these definitions are very much alike.
+    Does there exist a way to combine all of them into one Definition?
+    It turns out that the answer is "yes"!
+    The definition of a limit over a base can be introduced, for which all above definitions (a limit of a sequence and a function) are just special cases.
+    Afterwards, propositions such as uniqueness of a limit and limit arithmetic can be proven in general case.
+    This approach saves time but leads to difficulties with abstraction, especially when studying calculus for the first time.   
+    \source
+        В этой лекции восемь разных определений — и это ещё несколько я попросил вас придумать самостоятельно! 
+        Глаза разбегаются. 
+        При этом можно заметить, что все определения очень похожи друг на друга. 
+        Нет ли возможности как-то их объединить в одно супер-определение? 
+        Оказывается, есть — можно ввести общее понятие \emph{предела по базе}, для которого все наши пределы (предел последовательности и всевозможные пределы функций) будут частными случаями. 
+        Затем можно в общем случае доказать все утверждения, которые нам нужны (единственность предела, арифметику и т.д.) 
+        Этот подход позволяет сэкономить время, но грешит слишком большой абстрактностью — для первого знакомства с матанализом он не подходит.
 
 \remark
-    А что с пределами по Гейне? Их сформулировать как раз очень просто.
-    Например, утверждение $\lim_{x\to +\infty} f(x)=-\infty$ с точки зрения
-    определения по Гейне означает, что для любой последовательности $\seq{x_n}$,
-    стремящейся к плюс бесконечности, последовательность $\seq{f(x_n)}$
-    стремится к минус бесконечности. Аналогично определяются и все остальные
-    понятия, которые мы тут обсуждали. Доказать эквивалентность таких
-    определений по Гейне и тех, которые сформулированы здесь — хорошее
-    упражнение.
+    We can alternatively define a limit in terms of a limit of sequences.
+    For example, the proposition $\lim_{x\to +\infty} f(x)=-\infty$ means that for any sequence $\seq{x_n}$ that approach positive infinity the sequence $\seq{f(x_n)}$ approaches negative infinity.
+    This definition is sometimes called the Heine definition of a limit.
+    Each of the associated definitions can be formulated analogously.
+    A great exercise is to prove that this definition is equivalent to $\eps-\delta$ definition of a limit. 
+    (It must be shown that the second one is implied by the first and vice versa.)
+    \source
+        А что с пределами по Гейне? 
+        Их сформулировать как раз очень просто.
+        Например, утверждение $\lim_{x\to +\infty} f(x)=-\infty$ с точки зрения определения по Гейне означает, что для любой последовательности $\seq{x_n}$, стремящейся к плюс бесконечности, последовательность $\seq{f(x_n)}$ стремится к минус бесконечности. 
+        Аналогично определяются и все остальные понятия, которые мы тут обсуждали. 
+        Доказать эквивалентность таких определений по Гейне и тех, которые сформулированы здесь — хорошее упражнение.
 
-\subsection Наклонные асимптоты
+\subsection 
+    Oblique asymptotes
+    \source{Наклонные асимптоты}
 
-Пусть $\lim_{x\to \infty} f(x)=\infty$. Тогда функция не может иметь
-горизонтальных асимптот. Однако её график по-прежнему может приближаться к
-какой-нибудь прямой — только не горизонтальной.
+Suppose that $\lim_{x\to \infty} f(x)=\infty$. 
+Then the function may have no horizontal asymptotes.
+At the same time, its graph can still "approach" some sloped line.
+\source
+    Пусть $\lim_{x\to \infty} f(x)=\infty$. 
+    Тогда функция не может иметь горизонтальных асимптот. 
+    Однако её график по-прежнему может приближаться к какой-нибудь прямой — только не горизонтальной.
 
 \example
-    Рассмотрим функцию
+    Consider the function
+    \source{Рассмотрим функцию}
     \eq
         f(x)=x+\frac{1}{x}.
-    Её предел при $x\to \infty$ равен бесконечности,  и когда $x$ стремится к
-    бесконечности, график функции неограниченно приближается к прямой $y=x$.
+    The limit as $x\to \infty$ is infinity, and the larger $x$ gets, the more the graph starts to look like $y=x$. 
+    \source{Её предел при $x\to \infty$ равен бесконечности,  и когда $x$ стремится к бесконечности, график функции неограниченно приближается к прямой $y=x$.}
 
     \figure \showcode \collapsed
         \pythonfigure \style max-width: 400px;
@@ -557,78 +574,117 @@ Now we'd like to merge these two together and define infinite limits as a variab
                            xlabel="x", ylabel="y", axlabelshift=1.2) 
             plt.xticks([])
             plt.yticks([], [])
-        \caption У функции $f(x)=x+\frac{1}{x}$ есть наклонная асимптота $y=x$.
+        \caption 
+            The function $f(x)=x+\frac{1}{x}$ has an oblique asymptote of $y=x$.
+            \source{У функции $f(x)=x+\frac{1}{x}$ есть наклонная асимптота $y=x$.}
 
-    Действительно, давайте возьмём большое значение $x=x_0$ и посчитаем «расстояние
-    по вертикали» между графиком функции и прямой $y=x$ для этого значения $x$.
-    (Иными словами, мы проведём вертикальную прямую $x=x_0$ и посмотрим на
-    расстояние между точками пересечения этой прямой и графиков $y=f(x)$ и
-    $y=x$.) Это расстояние вычисляется как $|f(x)-x|=|1/x|$. Оно стремится к
-    нулю при $x\to \infty$.
+    Let's set the argument to a sufficienly large value $x=x_0$ and calculate the "distance" between our function and the function $y=x$ at $x_0$.
+    (In other words, draw a vertical line $x=x_0$ and see how far apart are the points of intersection located.)
+    This distance turns out to be $|f(x)-x|=|1/x|$. 
+    It approaches zero as $x\to \infty$.
+    \source
+        Действительно, давайте возьмём большое значение $x=x_0$ и посчитаем «расстояние по вертикали» между графиком функции и прямой $y=x$ для этого значения $x$.
+        (Иными словами, мы проведём вертикальную прямую $x=x_0$ и посмотрим на расстояние между точками пересечения этой прямой и графиков $y=f(x)$ и $y=x$.) 
+        Это расстояние вычисляется как $|f(x)-x|=|1/x|$. 
+        Оно стремится к нулю при $x\to \infty$.
 
 \definition
-    Прямая $y=kx+b$ называется \emph{наклонной асимптотой} функции $f(x)$ (или
-    её графика), если хотя бы один из пределов
+    The line $y=kx+b$ is called a \emph{oblique asymptote} of $f(x)$ (or of its graph) if at least one of the following limits
+    \source{Прямая $y=kx+b$ называется \emph{наклонной асимптотой} функции $f(x)$ (или её графика), если хотя бы один из пределов}
     \eq
         \lim_{x\to +\infty} (f(x) - (kx + b)),
-    или
+    or
+    \source{или}
     \eq
         \lim_{x\to -\infty} (f(x) - (kx + b))
-    равен нулю.
+    is equal to zero.
+    \source{равен нулю.}
 
 \remark
-    Как видно из определения, горизонтальная асимптота — это частный случай
-    наклонной ($k=0$). Всего может быть не более двух наклонных асимптот (одна
-    соответствует $x\to +\infty$, а другая $x\to -\infty$), включая
-    горизонтальные.
+    The definition is formulated in such way that a horizontal asymptote can be thought of as a special case of an oblique one with $k=0$.
+    Notice that there can exist no more than two asymptotes, each corresponding to limits as the argument approaches positive or negative infinity. 
+    \source
+        Как видно из определения, горизонтальная асимптота — это частный случай наклонной ($k=0$). 
+        Всего может быть не более двух наклонных асимптот (одна соответствует $x\to +\infty$, а другая $x\to -\infty$), включая горизонтальные.
 
-Как искать наклонные асимптоты? На эту тему есть рецепт.
+How to find oblique asymptotes?
+Luckily, there exists a universal recipe.
+\source
+    Как искать наклонные асимптоты? 
+    На эту тему есть рецепт.
 
 \proposition
-    Наклонная асимптота $y=kx+b$ при $x\to +\infty$ у функции $f(x)$ существует
-    тогда и только тогда, когда существуют пределы
+    The oblique asymptote of $f(x)$ as $x\to +\infty$ exists if and only if there exist the following limits
+    \source{Наклонная асимптота $y=kx+b$ при $x\to +\infty$ у функции $f(x)$ существует тогда и только тогда, когда существуют пределы}
     \align
         \item \label eq:12:asy-k 
             \lim_{x\to +\infty} & \frac{f(x)}{x}=k;
         \item \label eq:12:asy-b
             \lim_{x\to +\infty} & (f(x)-kx)=b.
-    При этом они обязаны равняться указанным значениям ($k$ и $b$).
+    Moreover, these values are the coefficients of $y=kx+b$.
+    \source{При этом они обязаны равняться указанным значениям ($k$ и $b$).}
 
 \proof
-    Докажем в одну сторону. Пусть $y=kx+b$ является наклонной асимптотой функции
-    $f(x)$ при $x\to +\infty$. Тогда
+    Let's first prove in the backward direction.
+    Suppose that $y=kx+b$ is the oblique asymptote of $f(x)$ as $x\to +\infty$.
+    This implies
+    \source
+        Докажем в одну сторону. 
+        Пусть $y=kx+b$ является наклонной асимптотой функции $f(x)$ при $x\to +\infty$. 
+        Тогда
     \align \nonumber
         \item &\lim_{x\to +\infty} \frac{f(x)}{x}=
         \splitem \splonly{&=}\lim_{x\to +\infty} \frac{f(x)-(kx+b)+(kx+b)}{x}=
         \item &=\lim_{x\to +\infty} \left(\frac{f(x)-(kx+b)}{x}+k+\frac{b}{x}\right)=k
-    Предел первого слагаемого равен нулю, поскольку числитель стремится к нулю
-    (по предположению), а знаменатель к бесконечности.
+    The limit of the first term is zero since the denominator approaches zero (by assumption), and the denominator approaches infinity.
+    \source
+        Предел первого слагаемого равен нулю, поскольку числитель стремится к нулю (по предположению), а знаменатель к бесконечности.
 
-    Со вторым пределом ещё проще:
+    The limit of the second term is even simpler:
+    \source{Со вторым пределом ещё проще:}
     \align \nonumber
         \item \lim_{x\to +\infty} & (f(x)-kx)=
         \splitem \splonly{&=} \lim_{x\to +\infty} ( (f(x) - (kx + b) + b ) = b.
 
-    В обратную сторону. Пусть существует предел \ref{eq:12:asy-b} и он равен
-    $b$. Тогда
+    Now the other direction.
+    Suppose there exists limit \ref{eq:12:asy-b} and it's equal to $b$.
+    Then
+    \source
+        В обратную сторону. 
+        Пусть существует предел \ref{eq:12:asy-b} и он равен $b$. 
+        Тогда
     \align \nonumber
         \item \lim_{x\to +\infty} & (f(x) - (kx + b)) = 
         \splitem \splonly{&=} \lim_{x\to +\infty} (f(x)-kx) - b = b - b = 0.
-    Утверждение доказано.
+    The proposition is proven.
+    \source{Утверждение доказано.}
 
-Конечно, можно сформулировать и доказать аналогичное утверждение для $x\to
--\infty$.
+Now it's clear how to formulate and prove the similar proposition for $x\to -\infty$.
+\source{Конечно, можно сформулировать и доказать аналогичное утверждение для $x\to -\infty$.}
 
-Таким образом, чтобы найти наклонные асимптоты, нужно сперва найти предел
-\ref{eq:12:asy-k}. Если он не существует, наклонной асимптоты (для этой
-бесконечности) точно нет. Если существует, нужно найти предел \ref{eq:12:asy-b}.
-Если этот предел существует, прямая $y=kx+b$ является наклонной асимптотой.
+Summing up, to find oblique asymptotes one needs to first find limit \ref{eq:12:asy-k}.
+If it does not esixt, then the asymptote (for the respective infinity) does not exist.
+If it is equal to some $k$, then limit \ref{eq:12:asy-b} must equal to some $b$.
+If so, the asymptote exists and equals to $y=kx+b$.
+\source
+    Таким образом, чтобы найти наклонные асимптоты, нужно сперва найти предел \ref{eq:12:asy-k}. 
+    Если он не существует, наклонной асимптоты (для этой бесконечности) точно нет. 
+    Если существует, нужно найти предел \ref{eq:12:asy-b}. 
+    Если этот предел существует, прямая $y=kx+b$ является наклонной асимптотой.
 
 \example
-    Может так случиться, что предел \ref{eq:12:asy-k} существует, а предел
-    \ref{eq:12:asy-b} нет. Например, это верно для функции $f(x)=\sin x$.
+    It may so happen that limit \ref{eq:12:asy-k} exists, while \ref{eq:12:asy-b} is not.
+    For example, this is true for $f(x)=\sin x$.
+    \source
+        Может так случиться, что предел \ref{eq:12:asy-k} существует, а предел \ref{eq:12:asy-b} нет. 
+        Например, это верно для функции $f(x)=\sin x$.
 
-\section Заключение
+\section 
+    Conclusion
+    \source{Заключение}
 
-Главная цель математического анализа — научиться «заглядывать в бесконечность».
-В этой лекции мы серьезно продвинулись в этом навыке. 
+The main goal of calculus is to be able to "look into infinily".
+In this lecture we've made a step towards this goal.
+\source
+    Главная цель математического анализа — научиться «заглядывать в бесконечность».
+    В этой лекции мы серьезно продвинулись в этом навыке. 
