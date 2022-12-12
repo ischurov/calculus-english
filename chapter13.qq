@@ -1,16 +1,26 @@
 \chapter \label chap:13:continuity
-    Непрерывность
+    Continuity
+    \source{Непрерывность}
 
-Рассмотрим функцию $f(x)=x^2+3x+1$. Чему равен её предел при $x\to x_0$? С
-помощью арифметики пределов легко показать, что он равен $x_0^2 + 3x_0 + 1$, то
-есть значению функции $f$ в точке $x_0$. Мы обсуждали (см.
-\ref[пример][ex:10:cases] из \ref[лекции][chap:10:limfunc]), что это не всегда
-так работает. Однако, случай, когда работает, очень важен, и имеет специальное
-название.
+Consider the function $f(x)=x^2+3x+1$. 
+What is its limit as $x\to x_0$? 
+With the help of arithmetic of limits, It can be shown that the answer is $x_0^2 + 3x_0 + 1$, which is actually just the value of $f$ in $x_0$.
+Recall that we've discussed the case (see \ref[example][ex:10:cases] from \ref[lecture][chap:10:limfunc]) when the limit does not equal to the value.
+It turns out that the case when this property holds is an important one, to such extent that it even has a name.
+\source
+    Рассмотрим функцию $f(x)=x^2+3x+1$. 
+    Чему равен её предел при $x\to x_0$? 
+    С помощью арифметики пределов легко показать, что он равен $x_0^2 + 3x_0 + 1$, то есть значению функции $f$ в точке $x_0$. 
+    Мы обсуждали (см. \ref[пример][ex:10:cases] из \ref[лекции][chap:10:limfunc]), что это не всегда так работает. 
+    Однако, случай, когда работает, очень важен, и имеет специальное название.
 
-\section Непрерывность функции в точке
+\section 
+    Continuity at a number
+    \source{Непрерывность функции в точке}
 
-\subsection Определение непрерывности
+\subsection 
+    Definition of continuity
+    \source{Определение непрерывности}
 \definition \label def:13:cont-def
     Пусть функция $f$ определена в некоторой окрестности точки $x_0$ (включая
     саму точку $x_0$). Говорят, что $f$ \emph{непрерывна} в точке $x_0$, если
