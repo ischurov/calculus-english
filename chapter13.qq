@@ -22,10 +22,10 @@ It turns out that the case when this property holds is an important one, to such
     Definition of continuity
     \source{Определение непрерывности}
 \definition \label def:13:cont-def
-    Пусть функция $f$ определена в некоторой окрестности точки $x_0$ (включая
-    саму точку $x_0$). Говорят, что $f$ \emph{непрерывна} в точке $x_0$, если
-    предел $f(x)$ при $x\to x_0$ равен значению функции в этой точке:
-    \equation \label eq:13:cont-def
+    Suppose a function $f$ is defined on some neighbourhood of $x_0$ (including $x_0$).
+    \source
+        Пусть функция $f$ определена в некоторой окрестности точки $x_0$ (включая саму точку $x_0$). 
+        Говорят, что $f$ \emph{непрерывна} в точке $x_0$, если предел $f(x)$ при $x\to x_0$ равен значению функции в этой точке: \equation \label eq:13:cont-def
         \lim_{x\to x_0} f(x)=f(x_0).
 
 Как видно из этого определения, чтобы функция была непрерывной в некоторой
