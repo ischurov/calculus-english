@@ -151,67 +151,91 @@ Luckily, the functions we're interested in are continuous on the whole domain.
             The function $v(x)=\frac{f(x)}{g(x)}$ is continuous at $x_0$ if $g(x_0)\ne 0$.
             \source{функция $v(x)=\frac{f(x)}{g(x)}$ непрерывна в $x_0$ если $g(x_0)\ne 0$.}
 \proof
-    Это утверждение является мгновенным следствием из арифметики пределов.
-    Например, пусть $h(x)=f(x)+g(x)$. Докажем, что $h$ непрерывна в $x_0$.
+    This statement follows directly from arithmetic of limits.
+    For example, let $h(x)=f(x)+g(x)$.
+    \source
+        Это утверждение является мгновенным следствием из арифметики пределов.
+        Например, пусть $h(x)=f(x)+g(x)$. 
+        Докажем, что $h$ непрерывна в $x_0$.
     \align \nonumber
         \item \lim_{x\to x_0} h(x)&=\lim_{x\to x_0} (f(x)+g(x))=
         \splitem \splonly{&=}\lim_{x\to x_0} f(x) + \lim_{x\to x_0} g(x)=
         \splitem \splonly{&=} f(x_0) + g(x_0) = h(x_0).
-    Мы применили арифметику пределов (третье равенство) и условие непрерывности
-    $f$ и $g$ (предпоследнее равенство).
+    We've applied arithmetic of limits in the third equality and continuity condition for both $f$ and $g$ in the second last one.
+    \source{Мы применили арифметику пределов (третье равенство) и условие непрерывности $f$ и $g$ (предпоследнее равенство).}
 
-    Остальные утверждения доказываются аналогично.
+    Other propositions can be proven similarly.
+    \source{Остальные утверждения доказываются аналогично.}
 
 \corollary \nonumber 
-    Из \ref[утверждения][prop:13:cont-arithm] мгновенно следует, что
+    \ref[Proposition][prop:13:cont-arithm] implies that
+    \source{Из \ref[утверждения][prop:13:cont-arithm] мгновенно следует, что}
     \enumerate
         \item
-            Многочлены, то есть функции вида
+            Polynomials, or functions of the form
+            \source{Многочлены, то есть функции вида}
             \eq
                 P(x)=a_0 + a_1 x + a_2 x^2 + \ldots + a_n x^n
-            непрерывны на всём множестве вещественных чисел.
+            are continuous on the entire number line.
+            \source{непрерывны на всём множестве вещественных чисел.}
         \item
-            Рациональные функции, то есть функции вида
+            Rational functions, or functions of the form
+            \source{Рациональные функции, то есть функции вида}
             \eq
                 R(x)=\frac{P(x)}{Q(x)},
-            где $P(x)$ и $Q(x)$ — многочлены, являются непрерывными на всей области
-            определения (то есть при таких $x$, при которых знаменатель не обнуляется).
+            where both $P(x)$ and $Q(x)$ and polynomials are continuous on the whole domain (that is, at all $x$ that does not make the denominator equal to zero).
+            \source{где $P(x)$ и $Q(x)$ — многочлены, являются непрерывными на всей области определения (то есть при таких $x$, при которых знаменатель не обнуляется).}
 
-На семинарах мы также докажем непрерывность синуса, косинуса, тангенса,
-экспоненты, логарифма, квадратного корня на всей области определения. Ниже мы
-докажем ещё одну важную теорему — о непрерывности композиции — но пока давайте
-поговорим, что бывает, когда непрерывность нарушается.
+We'll prove that sine, cosine, tangent, exponential, ligarithmic, and square root functions are continuous on the whole domain duting seminars.
+We're going to prove an important theorem about a limit of a composition of functions, but first let's discuss what happens when continuity does not hold.
+\source
+    На семинарах мы также докажем непрерывность синуса, косинуса, тангенса, экспоненты, логарифма, квадратного корня на всей области определения. 
+    Ниже мы докажем ещё одну важную теорему — о непрерывности композиции — но пока давайте поговорим, что бывает, когда непрерывность нарушается.
 
-\section Разрывы
+\section 
+    Discontinuities
+    \source{Разрывы}
 \definition
-    Пусть функция $f$ определена в некоторой проколотой окрестности точки
-    $x_0$, но не является непрерывной в $x_0$. Тогда мы скажем, что она
-    \emph{терпит разрыв} в этой точке.
+    Suppose a function $f$ is defined in some deleted neighbourhood of $x_0$, at the same time not being continuious at $x_0$.
+    In this case we say that it is \emph{discontinuous} at that point.
+    \source
+        Пусть функция $f$ определена в некоторой проколотой окрестности точки $x_0$, но не является непрерывной в $x_0$. 
+        Тогда мы скажем, что она \emph{терпит разрыв} в этой точке.
 
-Какими бывают разрывы? Тут принята такая немножко условия классификация.
+What are the types of discontinuities?
+Let's investigate them all!
+\source
+    Какими бывают разрывы? 
+    Тут принята такая немножко условия классификация.
 
-\subsection Разрывы первого рода
+\subsection 
+    Jump and removable discontinuities
+    \source{Разрывы первого рода}
 \definition
-    Пусть функция $f$ не является непрерывной в точке $x_0$, но существуют
-    односторонние пределы $\lim_{x\to x_0^+} f(x)$ и $\lim_{x\to x_0^-} f(x)$.
-    Тогда разрыв в точке $x_0$ называется \emph{разрывом первого рода} — по
-    крайней мере, такой термин принят в русскоязычной литературе.
+    Suppose $f$ is discontinuous in $x_0$, but there exist both one-sided limits $\lim_{x\to x_0^+} f(x)$ and $\lim_{x\to x_0^-} f(x)$.
+    In this case we say that the point $x_0$ is a \emph{jump discontinuity}.
+    \source
+        Пусть функция $f$ не является непрерывной в точке $x_0$, но существуют односторонние пределы $\lim_{x\to x_0^+} f(x)$ и $\lim_{x\to x_0^-} f(x)$.
+        Тогда разрыв в точке $x_0$ называется \emph{разрывом первого рода} — по крайней мере, такой термин принят в русскоязычной литературе.
 
-Если односторонние пределы существуют, они могут совпадать, а могут не
-совпадать. Если они совпадают (и равны какому-то числу $b$), существует предел
-$\lim_{x\to x_0} f(x)$ и тоже равен числу $b$. (См.
-\ref[упражнение][exer:10:sidelimits] из \ref[лекции][chap:10:limfunc].)
-Поскольку функция не является непрерывной в $x_0$, либо $f(x_0)$ не определено,
-либо $f(x_0)\ne b$. Такой тип разрывов называется \emph{устранимым}: достаточно
-«отредактировать» (доопределить или переопределить) значение функции $f$ в
-единственной точке $x_0$, чтобы она стала непрерывной, то есть разрыв был бы
-устранён.
+If one-sided limits exist are equal to each other, this type is actually called a \emph{removable discontinuity}.
+We know that if both one-sided limits exist and are equal to $b$, then there exist $\lim_{x\to x_0} f(x)$ and it's also equal to $b$.
+(See \ref[exersice][exer:10:sidelimits] from \ref[lecture][chap:10:limfunc].)
+But since the function is not continuous, it must be that it is either undefined in $x_0$, or $f(x_0)\ne b$.
+This motivates us to "manually" set $f(x_0)$ to equal to $b$, which makes $f$ continuous at $x_0$. 
+\source
+    Если односторонние пределы существуют, они могут совпадать, а могут не совпадать. 
+    Если они совпадают (и равны какому-то числу $b$), существует предел $\lim_{x\to x_0} f(x)$ и тоже равен числу $b$. 
+    (См. \ref[упражнение][exer:10:sidelimits] из \ref[лекции][chap:10:limfunc].)
+    Поскольку функция не является непрерывной в $x_0$, либо $f(x_0)$ не определено, либо $f(x_0)\ne b$. 
+    Такой тип разрывов называется \emph{устранимым}: достаточно «отредактировать» (доопределить или переопределить) значение функции $f$ в единственной точке $x_0$, чтобы она стала непрерывной, то есть разрыв был бы устранён.
 
-Если односторонние пределы существуют, но различны, такой разрыв называется
-\emph{скачком}.
+ПОНЯТИЯ РАЗРЫВ I РОДА НЕТ В АНГЛ
+\source{Если односторонние пределы существуют, но различны, такой разрыв называется \emph{скачком}.}
 
 \example \label ex:13:picewise
-    Рассмотрим функцию
+    Consider a function
+    \source{Рассмотрим функцию}
     \eq
         f(x)=\begin{cases}
             x,& x < -1; \\\\
@@ -219,24 +243,31 @@ $\lim_{x\to x_0} f(x)$ и тоже равен числу $b$. (См.
             5, & x = 2; \\\\
             x^2 - 6, & x > 2.
         \end{cases}
-    Она является непрерывной во всех точках, кроме $-1$ и $2$, в точке $-1$ у
-    неё разрыв типа «скачок», а в точке $2$ — устранимый разрыв.
+    It is continuous in all point except for $-1$ and $2$.
+    Point $-1$ is a jump discontinuity and point $2$ is a removable one.
+    \source{Она является непрерывной во всех точках, кроме $-1$ и $2$, в точке $-1$ у неё разрыв типа «скачок», а в точке $2$ — устранимый разрыв.}
 
-\subsection Разрывы второго рода
+\subsection 
+    Essential discontinuities.
+    \source{Разрывы второго рода}
 
-Любые разрывы, не являющиеся разрывами первого рода, называются разрывами
-\emph{второго рода} (неожиданно, правда?)
+Any discontinuities that are neither jump nor removable are called essential discontinuities. 
+\source{Любые разрывы, не являющиеся разрывами первого рода, называются разрывами \emph{второго рода} (неожиданно, правда?)}
 
-Какими они бывают?
+ДУМАЮ СЮДА НИЧЕГО НЕ НАДО, ВСЕ БУДУТ СУЩЕСТВЕННЫМИ
+\source{Какими они бывают?}
 
-Может статься, что предел $f(x)$ при $x\to x_0$ не существует, но при
-этом равен бесконечности (вы ведь помните, что когда предел равен бесконечности,
-он не существует?). Такие разрывы мы будем называть \emph{полюсами}.
+-//-
+\source
+    Может статься, что предел $f(x)$ при $x\to x_0$ не существует, но при этом равен бесконечности (вы ведь помните, что когда предел равен бесконечности, он не существует?). 
+    Такие разрывы мы будем называть \emph{полюсами}.
 
-Всё остальное будем называть \emph{существенными разрывами}. (Тут терминология
-может быть не очень однозначной и разные источники могут вкладывать несколько
-разный смысл. Например, можно считать полюсом любой разрыв с
-вертикальной асимптотой. Но мы будем придерживаться этих определений.)
+-//-
+\source
+    Всё остальное будем называть \emph{существенными разрывами}. 
+    (Тут терминология может быть не очень однозначной и разные источники могут вкладывать несколько разный смысл. 
+    Например, можно считать полюсом любой разрыв с вертикальной асимптотой. 
+    Но мы будем придерживаться этих определений.)
 
 \example
     Рассмотрим функцию $f(x)=e^{1/x}$. Когда $x\to 0^+$, $1/x\to +\infty$ и
