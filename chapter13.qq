@@ -28,24 +28,34 @@ It turns out that the case when this property holds is an important one, to such
         Говорят, что $f$ \emph{непрерывна} в точке $x_0$, если предел $f(x)$ при $x\to x_0$ равен значению функции в этой точке: \equation \label eq:13:cont-def
         \lim_{x\to x_0} f(x)=f(x_0).
 
-Как видно из этого определения, чтобы функция была непрерывной в некоторой
-точке, она должна как минимум быть определена в этой точке и иметь в ней предел.
-Если какое-то из этих условий нарушается, функция не является непрерывной
-автоматически. Наконец, может статься, что и значение функции в точке $x_0$
-есть, и предел есть, но они не равны друг другу. В этом случае функция также не
-является непрерывной в точке $x_0$.
+As seen from the definition, in order for a function to be continuous at some point, it must be defined and have a limit in it.
+If one of these two conditions does not hold, the function cannot be continuous.
+It may happen so that a value of a function in some point does not equal to a limit at that point.
+In this case the function is also discontinious.
+\source
+    Как видно из этого определения, чтобы функция была непрерывной в некоторой точке, она должна как минимум быть определена в этой точке и иметь в ней предел.
+    Если какое-то из этих условий нарушается, функция не является непрерывной автоматически. 
+    Наконец, может статься, что и значение функции в точке $x_0$ есть, и предел есть, но они не равны друг другу. 
+    В этом случае функция также не является непрерывной в точке $x_0$.
 
-Условие \ref{eq:13:cont-def} можно переписать в кванторах:
+Condition \ref{eq:13:cont-def} can be rewritten in terms of quantifiers:
+\source{Условие \ref{eq:13:cont-def} можно переписать в кванторах:}
 
 \align \nonumber
     \item & \forall \eps>0  \\ \exists \delta>0\\ \forall x\colon 
     \splitem \splonly{&} 0 < |x-x_0| < \delta \Rightarrow  |f(x)-f(x_0)| < \eps.
 
-В условии на $x$ как обычно в определении предела записана проколотая
-окрестность. Но что будет, если $x=x_0$? В этом случае условие после знака
-импликации превращается в $|f(x_0)-f(x_0)| < \eps$. В левой части стоит ноль,
-поэтому это условие всегда выполнено. Таким образом, условие непрерывности можно
-записать таким образом:
+ The condition on $x$ involves a deleted $\eps$-neighbourhood, which should be a familiar trick for you by now. 
+ But what happens if we set $x=x_0$?
+ In this case the expression after the implication sign becomes $|f(x_0)-f(x_0)| < \eps$.
+ Clearly, the left hand side is identically zero, hence the condition is always satisfied.
+ This allows us to rewrite the whole condition as follows:
+ \source
+    В условии на $x$ как обычно в определении предела записана проколотая окрестность. 
+    Но что будет, если $x=x_0$? 
+    В этом случае условие после знака импликации превращается в $|f(x_0)-f(x_0)| < \eps$. 
+    В левой части стоит ноль, поэтому это условие всегда выполнено. 
+    Таким образом, условие непрерывности можно записать таким образом:
 \align 
     \item \label eq:13:cont-quantors
         & \forall \eps>0\\ \exists \delta>0\\ \forall x\colon 
@@ -53,67 +63,93 @@ It turns out that the case when this property holds is an important one, to such
     \splitem \splonly{& \Rightarrow} |f(x)-f(x_0)| < \eps.
 
 \exercise \label exer:13:cont-heine
-    Докажите, что функция $f$ непрерывна в точке $x_0$ тогда и только тогда,
-    когда выполняется следующее утверждение: для всякой последовательности
-    $\seq{x_n}$, стремящейся к $x_0$, $f(x_n)$ стремится к $f(x_0)$. Иными
-    словами, в определении предела по Гейне в этом случае можно убрать
-    требование $x_n\ne x_0$ для всех $n$.
+    Prove that the function $f$ is continuous in $x_0$ if and only if the following condition is satisfied: for any sequence $\seq{x_n}$ that approaches $x_0$, it must be that $f(x_n)$ approaches $f(x_0)$.
+    In other words, we can remove the condition $x_n\ne x_0$ for any $n$ from the Heine definition of a limit.
+    \source
+        Докажите, что функция $f$ непрерывна в точке $x_0$ тогда и только тогда, когда выполняется следующее утверждение: для всякой последовательности $\seq{x_n}$, стремящейся к $x_0$, $f(x_n)$ стремится к $f(x_0)$. 
+        Иными словами, в определении предела по Гейне в этом случае можно убрать требование $x_n\ne x_0$ для всех $n$.
 
-\subsection Односторонняя непрерывность
-
-Чтобы говорить о непрерывности функции в точке, нам нужно, чтобы функция была
-определена в окрестности этой точки. Но часто бывает, что функции определены на
-каких-то отрезках или лучах (например, $x \ge 0$). В этом случае
-\ref[определение][def:13:cont-def] неприменимо для граничных точек области
-определения функции. Если мы всё-таки хотим сказать, что функция непрерывна в
-такой точке (а мы скоро захотим), нам нужно будет использовать определение
-\emph{односторонней непрерывности}.
+\subsection 
+    One-sided continuity
+    \source{Односторонняя непрерывность}
+    
+To analyze continuity at a point, the function must be defined in some neighbourhood of that point.
+However, very often we encounter functions that are defined on close intervals or close rays (for example, $x \ge 0$).
+In this case \ref[definition][def:13:cont-def] cannot be applied for boundary points.
+For future purposes, we must define what it means for a function to be \emph{one-sided continuous}. 
+\source
+    Чтобы говорить о непрерывности функции в точке, нам нужно, чтобы функция была определена в окрестности этой точки. 
+    Но часто бывает, что функции определены на каких-то отрезках или лучах (например, $x \ge 0$). 
+    В этом случае \ref[определение][def:13:cont-def] неприменимо для граничных точек области определения функции. 
+    Если мы всё-таки хотим сказать, что функция непрерывна в такой точке (а мы скоро захотим), нам нужно будет использовать определение \emph{односторонней непрерывности}.
 
 \definition
-    Пусть функция $f$ определена в некоторой правой полуокрестности точки
-    $x_0$, включая саму точку $x_0$ (то есть на некотором полуинтервале $[x_0,
-    x_0 + \delta)$), $\delta>0$. Говорят, что $f$ \emph{непрерывна справа} в
-    точке $x_0$, если предел $f(x)$ при $x\to x_0^+$ равен значению функции в
-    этой точке:
+    Suppose $f$ is defined in some right half-neighbourhood of $x_0$ including $x_0$ (in other words, it is defined on $[x_0, x_0 + \delta)$) for some $\delta>0$).
+    We say that $f$ is \source{continuous from the right} in $x_0$ if the limit of $f(x)$ as $x\to x_0^+$ is equal to the value in this point:
+    \source
+        Пусть функция $f$ определена в некоторой правой полуокрестности точки $x_0$, включая саму точку $x_0$ (то есть на некотором полуинтервале $[x_0, x_0 + \delta)$), $\delta>0$. 
+        Говорят, что $f$ \emph{непрерывна справа} в точке $x_0$, если предел $f(x)$ при $x\to x_0^+$ равен значению функции в этой точке:
     \eq
         \lim_{x\to x_0^+} f(x)=f(x_0).
 
-Аналогично определяется непрерывность слева.
+Continuity from the left is defined analogously. 
+\source{Аналогично определяется непрерывность слева.}
 
 \definition
-    Пусть $A \subset D(f)$ — некоторое подмножество области определения функции.
-    Если функция $f$ непрерывна для всякого $x\in A$, мы будем говорить, что $f$
-    \emph{непрерывна} на $A$. Если $A$ — отрезок или луч, мы как правило будем
-    требовать лишь соответствующую одностороннюю непрерывность на его концах.
+    Suppose $A \subset D(f)$ is some set from a domain.
+    If a function $f$ is continuous for any $x\in A$ we say that is is \emph{continuous} at $A$.
+    If $A$ is a closed interval or a closed ray, we demand a respective one-sided continuity.
+    \source
+        Пусть $A \subset D(f)$ — некоторое подмножество области определения функции.
+        Если функция $f$ непрерывна для всякого $x\in A$, мы будем говорить, что $f$ \emph{непрерывна} на $A$. 
+        Если $A$ — отрезок или луч, мы как правило будем требовать лишь соответствующую одностороннюю непрерывность на его концах.
 
-\subsection Какие функции непрерывны
+\subsection 
+    Which functions are continuous?
+    \source{Какие функции непрерывны}
 
-Неформально говоря, условие непрерывности означает, что если $x$ не сильно
-отличается от $x_0$, значение функции $f(x)$ не сильно отличается от $f(x_0)$.
-Это очень важное условие с практической точки зрения: как правило, мы не знаем
-точных значений никаких величин. Если бы интересующие нас функции не были
-непрерывными, мы бы мало что могли сказать о их значениях. Пусть мы хотим
-вычислить $f(x_0)$, но знаем величину $x_0$ лишь с какой-то точностью. Иными
-словами, мы знаем на самом деле величину $x_1$, и знаем, что расстояние от неё
-до $x_0$ маленькое. Если $f$ не является непрерывной в точке $x_0$, посчитав
-её значение в точке $x_1$, мы бы не получили никакой информации о значениях этой
-же функции в точке $x_0$, сколь бы близким $x_1$ ни было к $x_0$.
+Informally speaking, continuity means that if $x$ is much far away from $x_0$, then $f(x)$ must also be not so far away from $f(x_0)$.
+This property is very important from a practical view since in reality we never know any values precisely.
+Which means that if the function we analyze is discintiniuos, we can never state surely what value it takes.
+To illustrate, suppose we want to find $f(x_0)$, but posess the knowledge about $x_0$ up to some number of decimal places.
+In other words, we know some $x_1$ that is close to $x_0$.
+If $f$ is not continuous at $x_0$, then $f(x_1)$ cannot give us any information about $f(x_0)$, no matter how close two points are.
+\source
+    Неформально говоря, условие непрерывности означает, что если $x$ не сильно отличается от $x_0$, значение функции $f(x)$ не сильно отличается от $f(x_0)$.
+    Это очень важное условие с практической точки зрения: как правило, мы не знаем точных значений никаких величин. 
+    Если бы интересующие нас функции не были непрерывными, мы бы мало что могли сказать о их значениях. 
+    Пусть мы хотим вычислить $f(x_0)$, но знаем величину $x_0$ лишь с какой-то точностью. 
+    Иными словами, мы знаем на самом деле величину $x_1$, и знаем, что расстояние от неё до $x_0$ маленькое. 
+    Если $f$ не является непрерывной в точке $x_0$, посчитав её значение в точке $x_1$, мы бы не получили никакой информации о значениях этой же функции в точке $x_0$, сколь бы близким $x_1$ ни было к $x_0$.
 
-Например, все вычисления на компьютере с вещественными числами происходят с
-некоторыми погрешностями: компьютер не может запомнить бесконечное число цифр
-после запятой, и постоянно прибегает к округлениям. Если бы не непрерывность,
-компьютерные вычисления были бы в основном бессмысленными.
+For example, all computer's calculations with real numbers are done with tiny inaccuracies because no memory can store infinitely long decimal expansion of a number.
+Large share of computations would be pointless if they were no continuity.
+\source
+    Например, все вычисления на компьютере с вещественными числами происходят с некоторыми погрешностями: компьютер не может запомнить бесконечное число цифр после запятой, и постоянно прибегает к округлениям. 
+    Если бы не непрерывность, компьютерные вычисления были бы в основном бессмысленными.
 
-Поэтому очень важно понимать, какие функции являются непрерывными, и в каких
-случаях непрерывность может нарушаться. К счастью, те функции,
-которые нас интересуют, часто являются непрерывными на своей области определения.
+This is the reason why it's important to know which functions are continuious and in what cases does continuity break.
+Luckily, the functions we're interested in are continuous on the whole domain.
+\source
+    Поэтому очень важно понимать, какие функции являются непрерывными, и в каких случаях непрерывность может нарушаться. 
+    К счастью, те функции, которые нас интересуют, часто являются непрерывными на своей области определения.
 
 \proposition \label prop:13:cont-arithm
-    Пусть функции $f$ и $g$ непрерывны в точке $x_0$. Тогда
+    Suppose $f$ and $f$ are both continuous at $x_0$.
+    Then
+    \source
+        Пусть функции $f$ и $g$ непрерывны в точке $x_0$. 
+        Тогда
     \enumerate
-        \item функция $h(x)=f(x)+g(x)$ непрерывна в $x_0$;
-        \item функция $u(x)=f(x)g(x)$ непрерывна в $x_0$;
-        \item функция $v(x)=\frac{f(x)}{g(x)}$ непрерывна в $x_0$ если $g(x_0)\ne 0$.
+        \item 
+            The function $h(x)=f(x)+g(x)$ is continuous at $x_0$.
+            \source{функция $h(x)=f(x)+g(x)$ непрерывна в $x_0$;}
+        \item 
+            The function $u(x)=f(x)g(x)$ is continuous at $x_0$.
+            \source{функция $u(x)=f(x)g(x)$ непрерывна в $x_0$;}
+        \item 
+            The function $v(x)=\frac{f(x)}{g(x)}$ is continuous at $x_0$ if $g(x_0)\ne 0$.
+            \source{функция $v(x)=\frac{f(x)}{g(x)}$ непрерывна в $x_0$ если $g(x_0)\ne 0$.}
 \proof
     Это утверждение является мгновенным следствием из арифметики пределов.
     Например, пусть $h(x)=f(x)+g(x)$. Докажем, что $h$ непрерывна в $x_0$.
