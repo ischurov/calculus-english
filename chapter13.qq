@@ -270,9 +270,15 @@ Any discontinuities that are neither jump nor removable are called essential dis
     Но мы будем придерживаться этих определений.)
 
 \example
-    Рассмотрим функцию $f(x)=e^{1/x}$. Когда $x\to 0^+$, $1/x\to +\infty$ и
-    $e^{1/x}\to +\infty$. Однако при $x\to 0^-$, $1/x\to -\infty$ и $e^{1/x}\to
-    0$. Получается существенный разрыв.
+    Consider the function $f(x)=e^{1/x}$.
+    Observe that $1/x\to +\infty$ and $e^{1/x}\to +\infty$ as $x\to 0^+$. 
+    However, $1/x\to -\infty$ and $e^{1/x}\to 0 as $x\to 0^-$.
+    Hence, $x=0$ is an essential discontinuity.
+    \source
+        Рассмотрим функцию $f(x)=e^{1/x}$. 
+        Когда $x\to 0^+$, $1/x\to +\infty$ и $e^{1/x}\to +\infty$. 
+        Однако при $x\to 0^-$, $1/x\to -\infty$ и $e^{1/x}\to 0$. 
+        Получается существенный разрыв.
 
     \figure \showcode \collapsed
         \pythonfigure \style max-width: 400px;
@@ -291,17 +297,19 @@ Any discontinuities that are neither jump nor removable are called essential dis
             plt.xticks([])
             plt.yticks([])
         \caption
-            Функция $y=e^{1/x}$ имеет существенный разрыв в точке $x=0$.
+            The function $y=e^{1/x}$ has an essential discontinuity $x=0$.
+            \source{Функция $y=e^{1/x}$ имеет существенный разрыв в точке $x=0$.}
         
 \example
-    Рассмотрим функцию $f(x)=\sin(\pi/x)$. Как обсуждалось в
-    \ref[примере][ex:10:sin-pi/x] из \ref[лекции][chap:10:limfunc], у неё нет
-    предела при $x\to 0$, поскольку в любой окрестности нуля она может принимать
-    различные значения (например, $0$, $1$ и $-1$). Это означает, что в нуле она
-    терпит разрыв. Поскольку функция является ограниченной, она не может
-    стремиться к бесконечности, и значит это существенный разрыв (хотя, пожалуй,
-    он и не похож на то, что хочется себе представить, когда слышишь слово
-    «разрыв»).
+    Consider the function $f(x)=\sin(\pi/x)$.
+    We've already discovered (see \ref[example][ex:10:sin-pi/x] from \ref[lecture][chap:10:limfunc]) that it doesn't have a limit as $x\to 0$ since it can take different values in arbitrarily small neighbourhood of zero (for example, $0$, $1$, and $-1$). 
+    This means $f$ has a discontinuity $x=0$, but what type exactly?
+    Since the function is bounded, it cannot approach infinity, thus we conclude $x=0$ is an essential discontinuity.
+    \source
+        Рассмотрим функцию $f(x)=\sin(\pi/x)$. 
+        Как обсуждалось в \ref[примере][ex:10:sin-pi/x] из \ref[лекции][chap:10:limfunc], у неё нет предела при $x\to 0$, поскольку в любой окрестности нуля она может принимать различные значения (например, $0$, $1$ и $-1$). 
+        Это означает, что в нуле она терпит разрыв. 
+        Поскольку функция является ограниченной, она не может стремиться к бесконечности, и значит это существенный разрыв (хотя, пожалуй, он и не похож на то, что хочется себе представить, когда слышишь слово «разрыв»).
 
     \figure \showcode \collapsed
         \pythonfigure \style max-width: 700px;
@@ -321,55 +329,80 @@ Any discontinuities that are neither jump nor removable are called essential dis
             plt.xticks([])
             plt.yticks([])
         \caption
-            Функция $f(x)=\sin{\pi/x}$ имеет существенный разрыв в точке $x=0$.
+            The function $f(x)=\sin{\pi/x}$ has an essential discontinuity $x=0$.
+            \source{Функция $f(x)=\sin{\pi/x}$ имеет существенный разрыв в точке $x=0$.}
 
-\section Непрерывность композиции
+\section 
+    Continuity of a composition
+    \source{Непрерывность композиции}
 
-\subsection Сложные функции
+\subsection 
+    Composite functions
+    \source{Сложные функции}
 
-Мы часто сталкиваемся функциями, заданными выражениями вида $h(x)=\sqrt{x^2+1}$.
-Чтобы вычислить значение такой функции в какой-то точке, нужно сначала вычислить
-значение функции $f(x)=x^2+1$ в этой точке, и подставить результат в функцию
-«квадратный корень». Можно сказать, что $h(x)=g(f(x))$, где $f(x)$ определена
-выше, а $g(y)=\sqrt{y}$. Поскольку в функцию $g(y)$ подставляется не $x$, а
-значение функции $f(x)$, я использую другую букву в качестве аргумента $g$ —
-чтобы не путаться.
+We often encounter functions defined by an expression like $h(x)=\sqrt{x^2+1}$.
+To evaluate $h$ in a point we first evaluate $f(x)=x^2+1$ in that point, and then input the result into the square root.
+We can say that $h(x)=g(f(x))$, where $f(x)$ is defined above and $g(y)=\sqrt{y}$.
+Since $f(x)$ is an input of $g(y)$, and not $x$, we use a different symbol for an argument of $g$.
+\source 
+    Мы часто сталкиваемся функциями, заданными выражениями вида $h(x)=\sqrt{x^2+1}$.
+    Чтобы вычислить значение такой функции в какой-то точке, нужно сначала вычислить значение функции $f(x)=x^2+1$ в этой точке, и подставить результат в функцию «квадратный корень». 
+    Можно сказать, что $h(x)=g(f(x))$, где $f(x)$ определена выше, а $g(y)=\sqrt{y}$. 
+    Поскольку в функцию $g(y)$ подставляется не $x$, а значение функции $f(x)$, я использую другую букву в качестве аргумента $g$ — чтобы не путаться.
 
 \remark
-    Если бы я написал $g(x)=\sqrt{x^2+1}$, это было бы ошибкой. Тогда было бы
-    верно $g(f(x))=g(x^2+1)=\sqrt{(x^2+1)^2+1}$, и это совсем не то, что мы
-    хотим.
+    Notice that writing $g(x)=\sqrt{x^2+1}$ results in a mistake.
+    If it was true, then $g(f(x))=g(x^2+1)=\sqrt{(x^2+1)^2+1}$, which is not the function we've discussed.
+    \source
+        Если бы я написал $g(x)=\sqrt{x^2+1}$, это было бы ошибкой. 
+        Тогда было бы верно $g(f(x))=g(x^2+1)=\sqrt{(x^2+1)^2+1}$, и это совсем не то, что мы хотим.
 
 \definition
-    Функция $h(x)=g(f(x))$ называется \emph{композицией} или
-    \emph{суперпозицией} функций $f$ и $g$, или \emph{сложной функцией}. Часто
-    пишут так: $h(x)=(g\circ f)(x)$. Функции в композиции применяются «справа
-    налево»: сначала $x$ подставляется в $f$, потом результат подставляется в
-    $g$.
+    A function $h(x)=g(f(x))$ is called a \emph{composition} of $f$ and $g$.
+    We write it in the following notation: $h(x)=(g\circ f)(x)$.
+    Notice that the functions are applied from right to left: we first evaluate $f$, then substitute the result into $g$.
+    \source
+        Функция $h(x)=g(f(x))$ называется \emph{композицией} или \emph{суперпозицией} функций $f$ и $g$, или \emph{сложной функцией}. 
+        Часто пишут так: $h(x)=(g\circ f)(x)$. 
+        Функции в композиции применяются «справа налево»: сначала $x$ подставляется в $f$, потом результат подставляется в $g$.
 
-\subsection Предел сложной функции
+\subsection 
+    Limit of a compotion
+    \source{Предел сложной функции}
 
-Мы бы хотели доказать утвердение, кратко формулируемое как «композиция
-непрерывных функций непрерывна». Это позволит нам доказывать непрерывность
-разнообразных функций, заданных формулами. Чтобы это сделать, нам сперва
-придётся доказать теорему о пределе сложной функции. И тут надо быть осторожным.
+We'd like to prove that a composition of two continuous functions is a continuous function.
+This propositions is going to be very helpful for studying functions that are defined as an expression.
+To do so, we must first prove the theorem about a limit of a composite function.
+And we must be careful!
+\source
+    Мы бы хотели доказать утвердение, кратко формулируемое как «композиция непрерывных функций непрерывна». 
+    Это позволит нам доказывать непрерывность разнообразных функций, заданных формулами. 
+    Чтобы это сделать, нам сперва придётся доказать теорему о пределе сложной функции. 
+    И тут надо быть осторожным.
 
 \question
-    Пусть 
+    Suppose
+    \source{Пусть} 
     \equation \label eq:13:limf
         \lim_{x\to x_0} f(x)=y_0
-    и
+    and
+    \source{и}
     \equation \label eq:13:limg
         \lim_{y\to y_0} g(y)=b.
-    Верно ли, что
+    Does this imply that
+    \source{Верно ли, что}
     \equation \label eq:13:limgf
         \lim_{x \to x_0} g(f(x))=b?
 
-Хочется ответить утвердительно. Действительно, если $x\to x_0$, согласно
-первому пределу \ref{eq:13:limf}, $f(x)$ становится близок к $y_0$. В третьем
-пределе \ref{eq:13:limgf} мы подставляем $g$ именно $f(x)$, а из второго
-предела следует, что если аргумент функции $g$ близок к $y_0$, то значение $g$
-близко к $b$. Казалось бы, что может пойти не так?
+It's tempting to say "yes".
+Indeed, as $x\to x_0$ we have $f(x)$ approaching $y_0$ (according to the first limit \ref{eq:13:limf}).
+Moreover, in the third limit \ref{eq:13:limgf} we substitute $f(x)$ into $g$, and the second limit tells us that if an argument of $g$ is close to $y_0$, then its value is close to $b$.
+What could go wrong?
+\source
+    Хочется ответить утвердительно. 
+    Действительно, если $x\to x_0$, согласно первому пределу \ref{eq:13:limf}, $f(x)$ становится близок к $y_0$. 
+    В третьем пределе \ref{eq:13:limgf} мы подставляем $g$ именно $f(x)$, а из второго предела следует, что если аргумент функции $g$ близок к $y_0$, то значение $g$ близко к $b$. 
+    Казалось бы, что может пойти не так?
 
 \example
     Пусть 
