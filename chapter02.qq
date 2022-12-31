@@ -6,19 +6,16 @@
 \subsection Examples of proposition 
     \source{Примеры высказываний}
 
-You might think a chapter with such title must contain strict and formal definitions for each new concept.
-But no.
+One might think a chapter with such title must contain strict and formal definitions, but no.
 \source{Вероятно, в главе с таким названием читатель ожидает наконец увидеть аккуратные определения всем вводимым понятиям.}
 \source{Но нет.}
 
 \quasidefinition
     A proposition is a declarative sentence with an unambiguous meaning. 
     Propositions can be either true or false. 
-    Propositions are often called statements, but we will use the word "statement" in a natural language sence. 
-    (For example, "the statement of the Pythagorean theorem is $\ldots$").
     \source{Высказывание — это утверждение с чётко определенным смыслом, которое может быть истинным или ложным.}
 
-As always, examples are going to make it clear.
+As usual, examples are going to make it clear.
 \source{Как обычно, проще привести несколько примеров.}
 
 \example \nonumber
@@ -26,17 +23,17 @@ As always, examples are going to make it clear.
         \item The sentence "$2+2=5$" is a proposition. 
             It is false.
             \source{«$2+2=5$» — пример высказывания. Оно ложно.}
-        \item Another example is "$3 > 2$". This is a true proposition.
+        \item Another example is "$3 > 2$". This is a proposition and it's true.
             \source{«$3 > 2$» — ещё один пример высказывания. Оно истинно.}
-        \item Yet another true proposition is "$5$ is a prime".
+        \item Yet another true proposition is "$5$ is a prime number".
             \source{«$5$ — простое число» — ещё одно истинное высказывание.}
         \item The sentence "the set of all prime numbers is finite" is false.
             \source{«Множество простых чисел конечно» — это ложное высказывание.}
         \item The sentence "If a prime number is bigger than two, then it is odd" is a true proposition.
             \source{«Если целое число простое и оно больше двух, оно нечётно» — истинное высказывание.}
         \item There are propositions that haven't yet been proven to be true or false. 
-            "Every even number bigger than two can be written as the sum of two prime numbers" is a proposition of such kind. 
-            It actually has a name: \href[Goldbach's conjecture][https://en.wikipedia.org/wiki/Goldbach%27s_conjecture].
+            "Every even number bigger than two can be written as a sum of two prime numbers" is a proposition of such kind. 
+            It is referred to as [Goldbach's conjecture][https://en.wikipedia.org/wiki/Goldbach%27s_conjecture].
             \source{«Каждое чётное число, большее двух, можно представить в виде суммы двух простых чисел» — это высказывание, истинность которого в настоящий момент неизвестна (это так называемая \href[бинарная проблема Гольдбаха][https://ru.wikipedia.org/wiki/Проблема_Гольдбаха]).}
         \item The sentence "$n$ is an even number" is not a proposition because what $n$ stands for is unclear.
             Because of that, it is neither true nor false.
@@ -52,12 +49,12 @@ As always, examples are going to make it clear.
 
 New propositions can be created by combining existing ones.
 This can be done by using logical operations (which are also called boolean algebra operations).
-Suppose propositions $A$ and $B$ are given.
+Consider propositions $A$ and $B$.
 \source{Из существующих высказываний можно делать новые высказывания с помощью логических операций (которые также называются операциями булевой алгебры). 
 Пусть даны какие-то высказывания $A$ и $B$.}
 
 \definition
-    The proposition "at least one of the propositions $A$ and $B$ is true" is called a \emph{disjunction}, write $A\vee B$.
+    The proposition "at least one of the propositions $A$ and $B$ is true" is called a \emph{disjunction} of $A$ and $B$, it is denoted by $A\vee B$.
     Another term for disjunction is \emph{logical OR}.
     \source{Высказывание «верно по крайней мере одно из двух высказываний $A$ или $B$ (или оба)», называется \emph{дизъюнкцией} высказываний $A$ и $B$. 
     Оно обозначается $A\vee B$. 
@@ -65,21 +62,21 @@ Suppose propositions $A$ and $B$ are given.
 
 
 \definition
-    The proposition "both  of the propositions $A$ and $B$ are true" is called a \emph{conjunction}, write $A\wedge B$.
+    The proposition "both  of the propositions $A$ and $B$ are true" is called a \emph{conjunction}, it is denoted by $A\wedge B$.
     Another term for conjunction is \emph{logical AND}.
     \source{Высказывание «верны оба высказывания $A$ и $B$» называется \emph{конъюнкцией} высказываний $A$ и $B$. 
     Оно обозначается $A \wedge B$.
     Другой термин для конъюнкции — \emph{логическое «И»}.}
 
 \definition
-   The proposition "$A$ is false" is called a \emph{negation}, write $\neg A$.
+   The proposition "$A$ is false" is called a \emph{negation}, it is denoted by $\neg A$.
    Another term for negation is \emph{logical NOT}.
    \source{Высказывание «высказывание $A$ неверно» называется \emph{отрицанием} $A$. Обозначается $\neg A$. Другой термин — \emph{логическое «НЕ»}.}
     
-If the truth values of propositions $A$ and $B$ are known, it's straightforward to establish the truth value of the conjunction, disjunction and negation. 
+If the truth values of propositions $A$ and $B$ are known, we can establish the truth value of their conjunction, disjunction and negation. 
 For example, if $A$ is true, then $\neg A$ is false.
 If $A$ and $B$ are both true, then $A\wedge B$ is true, otherwise false—and so on.
-All these variations can be conveniently written in the form of a table, which has a name: a \emph{truth table}.
+All these combinations can be conveniently written in the form of a table, which has a name: a \emph{truth table}.
 \source{Если про каждое из высказываний $A$ и $B$ известно, является оно истинным или ложным, легко установить истинность их конъюнкции, дизъюнкции и отрицания. 
 Например, если $A$ истинно, то $\neg A$ ложно. 
 Если $A$ и $B$ оба истинны, то $A\wedge B$ истинно, иначе оно ложно. 
@@ -117,9 +114,9 @@ There is actually another important logical operation, but for now we'll focus o
 \subsection De Morgan's laws \label ssec:02:deMorg
     \source{Раскрытие скобок с отрицанием \label ssec:02:deMorg}
 
-Suppose $A$ and $B$ are some propositions. 
+Let $A$ and $B$ be some propositions. 
 Consider the proposition $\neg(A\vee B)$, which is the negation of $A \vee B$.
-In which case is it true?
+When is it true?
 Only when both $A$ and $B$ are false. 
 Indeed, suppose one of them is true, then the disjunction (logical OR) is true, and its negation is false.
 Formally we write
@@ -135,7 +132,7 @@ Formally we write
         \neg(A\vee B)=(\neg A) &\wedge (\neg B)=
     \splitem \splonly{=}
         \neg A \splonly{&} \wedge \neg B
-The second equality holds because negation has a priority over conjunction.
+The second equality holds because negation has a higher priority than conjunction.
 In other words, writing $\neg A \wedge \neg B$ means the negations happen first, then the conjunction—so brackets are unnecessary. 
 \source{Второе равенство верно, поскольку операция отрицания имеет приоритет перед конъюнкцией, то есть в формуле $\neg A \wedge \neg B$ сначала выполняются отрицания, а потом конъюнкция, так что скобки вокруг $\neg A$ и $\neg B$ можно не писать.}
 
@@ -152,7 +149,7 @@ Again, more formally
     \splitem
         \splonly{&=}\neg A \vee \neg B.
 
-Observe that when expanding the brackets with a negation in front, an operator $\vee$ changes to $\wedge$ and vice versa.
+Observe that when expanding the brackets with a negation in front, the symbol $\vee$ changes to $\wedge$ and vice versa.
 \source{Можно сказать, что при раскрытии скобок, перед которыми стоит отрицание, знак $\vee$ меняется на $\wedge$ и наоборот.}
 
 These logical rules are calles \emph{De Morgan's laws}.
@@ -169,22 +166,22 @@ These logical rules are calles \emph{De Morgan's laws}.
 \subsection Logical operations in programming.
     \source{Логические операции в программировании}
 
-In common programming languages propositions are representes by variables that are called "boolean values" (for example, \tt{bool} in Python).
-They take two values: true and false (\tt{True} and \tt{False}).
-As an example, consider the proposition \tt{2 + 3 == 4}. 
+In common programming languages propositions are representes by boolean variables (for example, \tt{bool} in Python).
+They take on two values: true and false (\tt{True} and \tt{False}).
+For example, consider the proposition \tt{2 + 3 == 4}. 
 Its value is \tt{False}.
 On the other hand, \tt{3 > 2} has a value of \tt{True}.
-It's possible to apply logical operators to them. 
-These are called \tt{and}, \tt{or}, and \tt{not}.
+It's possible to apply logical operators \tt{and}, \tt{or}, and \tt{not} to boolean variables.
 For example, \tt{2 * 0 == 1 or 3 > 2} has a value of \tt{True}.
 \source{В распространённых языках программирования высказываниям соответствуют выражения, имеющие значения типа «булевская величина» (например, в Python это \tt{bool}), то есть принимающие значения «истина» или «ложь» (\tt{True} и \tt{False}). 
 Например, \tt{2 + 3 == 4} имеет значение \tt{False}, а \tt{3 > 2} — \tt{True}. 
-К булевским значениям можно применять логические операторы \tt{and}, \tt{or} и \tt{not}. Например, \tt{2 * 0 == 1 or 3 > 2} имеет значение \tt{True}.}
+К булевским значениям можно применять логические операторы \tt{and}, \tt{or} и \tt{not}. 
+Например, \tt{2 * 0 == 1 or 3 > 2} имеет значение \tt{True}.}
 
 \comment
     Consider the line of code \tt{if x > 0 and x < 10: print("ok"). 
-    When executed, it prints \tt{ok} if a variable \tt{x} contains a number greater than $0$ \emph{and} less than $10$.
-    In the process of developing a certain program, logical operators can be very useful for creating complex (so called \emph{compound}) statements from simple ones.
+    When executed, it prints \tt{ok} if the variable \tt{x} contains a number greater than $0$ \emph{and} less than $10$.
+    Logical operators are used for creating complex (so called \emph{compound}) statements from simple ones, which is a common practice when it comes to implementing a certain logic inside an app. 
     \source{Например: \tt{if x > 0 and x < 10: print("ok")} — на экран будет выведена строка \tt{ok} если в переменной \tt{x} находится значение больше 0 \emph{и} меньше 10. 
     С помощью логических операторов можно составлять сложные условия из простых, и это часто приходится делать, чтобы реализовать ту или иную логику работы приложения.}
 
