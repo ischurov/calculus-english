@@ -152,7 +152,7 @@ Again, more formally
 Observe that when expanding the brackets with a negation in front, the symbol $\vee$ changes to $\wedge$ and vice versa.
 \source{Можно сказать, что при раскрытии скобок, перед которыми стоит отрицание, знак $\vee$ меняется на $\wedge$ и наоборот.}
 
-These logical rules are calles \emph{De Morgan's laws}.
+These transformation rules are calles \emph{De Morgan's laws}.
 \source{Эти правила преобразования формул в алгебре логики называются \emph{законами де Моргана}.}
 
 \remark
