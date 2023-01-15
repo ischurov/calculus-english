@@ -40,16 +40,25 @@ For example, consider the function defined by the graph at \ref[fig.][fig:15:gra
                       xlabel="x", ylabel="y", axlabelshift=1.3) 
         plt.grid()
         plt.yticks([-1, 1, 2, 3])
-    \caption График функции
+    \caption 
+        The graph of the function
+        \source{График функции}
     \label fig:15:graph
 
-Этот график можно интерпретировать следующим образом. В момент времени $x=-4$
-точка находилась на высоте $y=-1$. Она сразу стала двигаться вверх, и спустя две
-единицы времени, в момент $x=-2$ достигла высоты $y=3$. Тут она на мгновение
-остановилась (перестала двигаться вверх) и изменила направление движения. Далее
-она двигалась вниз на протяжении четырёх единиц времени, до момента $x=2$. Тут
-она снова на мгновение остановилась, и стала двигаться вверх, вплоть до момента
-времени $x=4$ (точка достигла высоты $y=3$). Дальнейшая её судьба неизвестна.
+This graph can be interpreted in the following way: at time $x=-4$ the dot was located at height $y=-1$.
+At time $x=-4$ it was at $y=-1$.
+Then it started to move up, and after two units of time, at $x=-2$, it reached height $y=-3$.
+At this point it stopped moving up and changed its direction.
+For the next four time units it went down, then again changed the direction at $x=2$ and moved up untill $x=4$ (when it reached $y=3$).
+Its further fate is unknown.
+\source
+    Этот график можно интерпретировать следующим образом.   
+    В момент времени $x=-4$ точка находилась на высоте $y=-1$.  
+    Она сразу стала двигаться вверх, и спустя две единицы времени, в момент $x=-2$ достигла высоты $y=3$.     
+    Тут она на мгновение остановилась (перестала двигаться вверх) и изменила направление движения.   
+    Далее она двигалась вниз на протяжении четырёх единиц времени, до момента $x=2$.  
+    Тут она снова на мгновение остановилась, и стала двигаться вверх, вплоть до момента времени $x=4$ (точка достигла высоты $y=3$).    
+    Дальнейшая её судьба неизвестна.
 
 
 \figure \showcode \collapsed
@@ -86,15 +95,22 @@ For example, consider the function defined by the graph at \ref[fig.][fig:15:gra
             camera.snap()
         animation = camera.animate()
 
-    \caption График функции и движение точки
+    \caption 
+        The graph of the function and the dot's movement.
+        \source{График функции и движение точки}
     \label fig:15:graph-ani
 
-Именно такую интерпретацию функций мы будем использовать в дальнейшем в этой
-лекции.
+This is the interpretation we'll utilize during this lecture.
+\source{Именно такую интерпретацию функций мы будем использовать в дальнейшем в этой лекции.}
 
-\subsection Производная как мгновенная скорость
-Рассмотрим функцию, заданную графиком на \ref[рис.][fig:15:deriv]. Пусть нас
-интересует скорость движения точки в какой-то момент времени $x_0$.
+\subsection 
+    Derivative as instant speed
+    \source{Производная как мгновенная скорость
+Consider the function defined by the graph in \ref[fig.][fig:15:deriv].
+Suppose we're interested in the speed of the dot at some time moment $x_0$.
+\source
+    Рассмотрим функцию, заданную графиком на \ref[рис.][fig:15:deriv]. 
+    Пусть нас интересует скорость движения точки в какой-то момент времени $x_0$.
 
 
 \figure
@@ -106,25 +122,31 @@ For example, consider the function defined by the graph at \ref[fig.][fig:15:gra
             Нарисован график функции, на горизонтальной оси отмечены точки x_0
             и x_0 + Delta x, на вертикальной — f(x_0) и f(x_0 + Delta x)
     \caption
-        Вычисление средней скорости движения на интервале времени от $x_0$ до
-        $x_0 + \Delta x$.
+        Average speed calculation on the interval from $x_0$ to $x_0 + \Delta x$.
+        \source{Вычисление средней скорости движения на интервале времени от $x_0$ до $x_0 + \Delta x$.}
     \label fig:15:deriv
 
-В школе нас учат, что чтобы найти скорость, нужно поделить расстояние на время.
-Рассмотрим период от момента $x_0$ до момента $x_0+\Delta x$, где
-$\Delta x$ — какое-то небольшое число. (Выражение $\Delta x$ нужно воспринимать
-как неделимый символ, читается «дельта-икс».) В начале периода точка имела
-высоту $f(x_0)$, а в конце — $f(x_0 + \Delta x)$. Пройденное расстояние между
-двумя моментами равно разности этих двух значений: 
+In school we've learned that velocity equals to distance divided by time.
+Let's look at the time interval from $x_0$ to $x_0+\Delta x$, where $\Delta x$ is some small number.
+(The expression $\Delta x$ should be perceived as a joint symbol called "delta x".)
+In the beginning, the dot was at height $$f(x_0)$, and in the end it reached $f(x_0 + \Delta x)$. 
+Hence, the distance equals to the difference between the heights.
+\source
+    В школе нас учат, что чтобы найти скорость, нужно поделить расстояние на время.
+    Рассмотрим период от момента $x_0$ до момента $x_0+\Delta x$, где $\Delta x$ — какое-то небольшое число. 
+    (Выражение $\Delta x$ нужно воспринимать как неделимый символ, читается «дельта-икс».) 
+    В начале периода точка имела высоту $f(x_0)$, а в конце — $f(x_0 + \Delta x)$. 
+    Пройденное расстояние между двумя моментами равно разности этих двух значений: 
 \eq
-    \text{расстояние} = f(x_0 + \Delta x) - f(x_0)
-Тут нужно иметь в виду, что нас интересует «чистое расстояние», вычисляемое с
-учётом знака — не «сколько мы проехали», а «на сколько поднялись». Например,
-если в течение этого промежутка точка в какой-то момент двигалась вниз, в это
-время «пройденное расстояние» уменьшалось, а не увеличивалось. Также
-«расстояние» может быть отрицательным, если новое значение высоты $f(x_0 +
-\Delta x)$ окажется меньше исходного (то есть в итоге точка опустилась ниже, чем
-была).
+    \text{distance} = f(x_0 + \Delta x) - f(x_0)
+    \source{\text{расстояние} = f(x_0 + \Delta x) - f(x_0)}
+Importantly, we're interested in the "net" distance, in other words it's not "how far we've travelled", more like "by what value the height changed".
+For example, if the dot was going down during some period of time, then the "distance" was decreasing, not increasing.
+This implies that the "distance" can be negative if the "end" height value $f(x_0 + \Delta x)$ is smaller than the initial one (which mean the dot ended up lower than its starting position).
+\source
+    Тут нужно иметь в виду, что нас интересует «чистое расстояние», вычисляемое с учётом знака — не «сколько мы проехали», а «на сколько поднялись». 
+    Например, если в течение этого промежутка точка в какой-то момент двигалась вниз, в это время «пройденное расстояние» уменьшалось, а не увеличивалось. 
+    Также «расстояние» может быть отрицательным, если новое значение высоты $f(x_0 + \Delta x)$ окажется меньше исходного (то есть в итоге точка опустилась ниже, чем была).
 
 Вернёмся к вычислению скорости. Время движения равно просто $\Delta x$. Значит,
 скорость движения — вернее, \emph{средняя скорость движения} на интервале от
