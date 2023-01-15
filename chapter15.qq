@@ -1,24 +1,34 @@
 \chapter \label chap:15:derivative
-    Производная функции
+    Derivative of a function
+    \source{Производная функции}
 
-Исторически математический анализ произошёл из задач механики, из необходимости
-описывать движение физических тел, их скорости и ускорения. Со временем
-оказалось, что в тех же терминах можно говорить о множестве разных процессов и
-объектов. В этой лекции мы введём понятие производной, формализующее идею о
-скорости какого-либо изменения. 
+Historically calculus originated from mechanics, where motion of physical objects is studied in terms of their velocities and accellerations.
+Later it turned out that such concepts can be applied to analyze many other objects.
+During this lecture, we're going to introduce the notion of a derivative, which formalizes the rate of change concept. 
+\source
+    Исторически математический анализ произошёл из задач механики, из необходимости описывать движение физических тел, их скорости и ускорения. 
+    Со временем оказалось, что в тех же терминах можно говорить о множестве разных процессов и объектов. 
+    В этой лекции мы введём понятие производной, формализующее идею о скорости какого-либо изменения. 
 
-\section Определение производной
+\section 
+    Definition of a derivative
+    \source{Определение производной}
 
-\subsection Функции как динамические процессы
+\subsection 
+    Functions as dynamic processes.
+    \source{Функции как динамические процессы}
 
-Рассмотрим функцию $y=f(x)$ и пусть $x$ — это время, а $y$ — результат измерения
-какой-то величины в момент времени $x$. Это может быть артериальное давление у
-пациента, или популяция некоторого вида, или количество людей, зараженных вирусом
-— что угодно. Но проще всего про это думать так: есть точка, которая может
-двигаться вверх и вниз, $f(x)$ — это вертикальная координата (то есть просто
-высота) этой точки в момент времени $x$. Тогда про эту функцию можно думать в
-динамических терминах. Например, рассмотрим функцию, заданную графиком на
-\ref[рис.][fig:15:graph].
+Consider a function $y=f(x)$, where $x$ is time and $y$ is a result of measuring some object at time moment $x$.
+Possible candidates for such functions are blood pressure, population size of some species, the amount of people infected by COVID-19, etc.
+Perhaps the easiest way to visualize $f(x)$ is to think about a dot that moves up and down, so that $f(x)$ is it's vertical coordinate (height) at time moment $x$.
+This way we can think about a function in dynamic terms.
+For example, consider the function defined by the graph at \ref[fig.][fig:15:graph].
+\source
+    Рассмотрим функцию $y=f(x)$ и пусть $x$ — это время, а $y$ — результат измерения какой-то величины в момент времени $x$. 
+    Это может быть артериальное давление у пациента, или популяция некоторого вида, или количество людей, зараженных вирусом — что угодно. 
+    Но проще всего про это думать так: есть точка, которая может двигаться вверх и вниз, $f(x)$ — это вертикальная координата (то есть просто высота) этой точки в момент времени $x$. 
+    Тогда про эту функцию можно думать в динамических терминах. 
+    Например, рассмотрим функцию, заданную графиком на \ref[рис.][fig:15:graph].
 
 \figure \showcode \collapsed
     \pythonfigure \style max-width: 500px;
