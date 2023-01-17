@@ -104,7 +104,7 @@ This is the interpretation we'll utilize during this lecture.
 \source{Именно такую интерпретацию функций мы будем использовать в дальнейшем в этой лекции.}
 
 \subsection 
-    Derivative as instant speed
+    Derivative as instantaneous speed
     \source{Производная как мгновенная скорость
 Consider the function defined by the graph in \ref[fig.][fig:15:deriv].
 Suppose we're interested in the speed of the dot at some time moment $x_0$.
@@ -148,37 +148,50 @@ This implies that the "distance" can be negative if the "end" height value $f(x_
     Например, если в течение этого промежутка точка в какой-то момент двигалась вниз, в это время «пройденное расстояние» уменьшалось, а не увеличивалось. 
     Также «расстояние» может быть отрицательным, если новое значение высоты $f(x_0 + \Delta x)$ окажется меньше исходного (то есть в итоге точка опустилась ниже, чем была).
 
-Вернёмся к вычислению скорости. Время движения равно просто $\Delta x$. Значит,
-скорость движения — вернее, \emph{средняя скорость движения} на интервале от
-$x_0$ до $x_0 + \Delta x$ находится по формуле:
+Let's get back to the calculation of speed.
+Time is just equal to $\Delta x$.
+Hence, speed (or, more accurately, \emph{average speed}) on the interval $x_0$ до $x_0 + \Delta x$ can be found in the following way:
+\source
+    Вернёмся к вычислению скорости. 
+    Время движения равно просто $\Delta x$. 
+    Значит, скорость движения — вернее, \emph{средняя скорость движения} на интервале от $x_0$ до $x_0 + \Delta x$ находится по формуле:
 \eq
-    \text{средняя скорость} = \frac{f(x_0 + \Delta x) - f(x_0)}{\Delta x}
-Однако, нужно иметь в виду, что на промежутке от $x_0$ до $x_0+\Delta x$
-движение не обязано быть равномерным — в какие-то моменты точка могла двигаться
-быстрее, в какие-то медленнее. Нас же интересует, что происходит в сам момент
-времени $x_0$, интересует \emph{мгновенная скорость} в этот момент. Чтобы
-изменение скорости на промежутке длиной $\Delta x$ не влияло на оценку скорости
-в момент $x_0$, нужно сделать длину этого промежутка как можно меньше. Иными
-словами, перейти к пределу при $\Delta x \to 0$. Так мы и получим производную.
+    \text{average speed} = \frac{f(x_0 + \Delta x) - f(x_0)}{\Delta x}
+    \source{\text{средняя скорость} = \frac{f(x_0 + \Delta x) - f(x_0)}{\Delta x}}
+However, one needs to keep in mind that the movement does not have to be linear.
+This means that during some periods it may be faster than during others.
+Still, the thing we're interested in determening the speed exactly at time moment $x_0$, and this is the \emph{instantaneous speed} at this moment.
+In order to prevent changes in speed during on whole interval from affecting the instantaneous speed at $x_0$, we need to make the length of the interval as small as possible.
+Let's take a limit as $\Delta x \to 0$ then!
+These are exactly what is means to calculate a derivative.
+\source
+    Однако, нужно иметь в виду, что на промежутке от $x_0$ до $x_0+\Delta x$ движение не обязано быть равномерным — в какие-то моменты точка могла двигаться быстрее, в какие-то медленнее. 
+    Нас же интересует, что происходит в сам момент времени $x_0$, интересует \emph{мгновенная скорость} в этот момент. 
+    Чтобы изменение скорости на промежутке длиной $\Delta x$ не влияло на оценку скорости в момент $x_0$, нужно сделать длину этого промежутка как можно меньше. 
+    Иными словами, перейти к пределу при $\Delta x \to 0$. 
+    Так мы и получим производную.
 
 \snippet \flabel определение производной \label snip:deriv
     \definition \label def:15:deriv
-        \emph{Производная} функции $f$ в точке $x_0$ равна мгновенной скорости
-        изменения функции в этой точке. Она обозначается через $f'(x_0)$ и
-        определяется следующим образом:
+        Instantaneous speed of a function $f$ at $x_0$ is called a \emph{derivative}, which is denoted by $f'(x_0)$ and formally defined as
+        \source
+            \emph{Производная} функции $f$ в точке $x_0$ равна мгновенной скорости изменения функции в этой точке. 
+            Она обозначается через $f'(x_0)$ и определяется следующим образом:
         \align 
             \item \label eq:15:deriv-def
                 & f'(x_0)=
             \splitem \splonly{&=} 
                 \lim_{\Delta x \to 0} \frac{f(x_0 + \Delta x) - f(x_0)}{\Delta x}.
-        Также можно обозначить $x:=x_0 + \Delta x$ и записать тот же предел следующим
-        образом:
+        Alternatively, we can denote $x:=x_0 + \Delta x$ and rewrite the limit in the following way:
+        \source{Также можно обозначить $x:=x_0 + \Delta x$ и записать тот же предел следующим образом:}
         \equation
             f'(x_0) = \lim_{x\to x_0} \frac{f(x) - f(x_0)}{x-x_0}.
 \remark \label rem:15:positive
-    Мы раньше рисовали картинки, на которых $\Delta x$ была положительна. В
-    определении производной этого на самом деле не требуется: используется
-    предел при $\Delta x\to 0$, а не односторонний предел.
+    Previously we've been drawing pictures with positive $\Delta x$.
+    But notice that it is not necessary from the definition of a derivative (we've used the limit as  $\Delta x\to 0$, which exists if both left- and right-sided limits exist).
+    \source
+        Мы раньше рисовали картинки, на которых $\Delta x$ была положительна. 
+        В определении производной этого на самом деле не требуется: используется предел при $\Delta x\to 0$, а не односторонний предел.
 \section Интерпретация производной
 \subsection Линейная функция и равномерное движение
 
