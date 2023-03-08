@@ -1,147 +1,213 @@
-\chapter Вокруг бесконечных пределов \label chap:07:infinite
+\chapter 
+    Infinite limits \label chap:07:infinite
+    \source{Вокруг бесконечных пределов \label chap:07:infinite}
 
-На прошлой лекции мы обсуждали, как пределы взаимодействуют с арифметическими
-операциями, и выяснили, что взаимодействуют «хорошо». Однако, это только до тех
-пор, пока пределы существуют (как обычные вещественные числа). Тот факт, что
-предел последовательности, входящей в арифметическое выражение, может оказаться
-равен бесконечности (а также плюс бесконечности и минус бесконечности), сильно
-расширяет пространство возможностей. Иногда предел такого арифметического
-выражения удаётся найти однозначно, иногда же он может оказаться равен любому
-числу или бесконечности. Важно уметь различать эти случаи.
+The last lecture was dedicated to the relationship between limits and arithmetic operations.
+It turned out that under a limit every operation is preserved (only a strict inequality changes to a non-strict one).
+Importantly, these rules hold only if when the limiting value is not infinity.
+We need to be able to understand how a limit of an arithmetic operation with divergent terms behave (it may take a unique value, or be equal to any real number and even infinity).
+\source
+    На прошлой лекции мы обсуждали, как пределы взаимодействуют с арифметическими операциями, и выяснили, что взаимодействуют «хорошо». 
+    Однако, это только до тех пор, пока пределы существуют (как обычные вещественные числа). 
+    Тот факт, что предел последовательности, входящей в арифметическое выражение, может оказаться равен бесконечности (а также плюс бесконечности и минус бесконечности), сильно расширяет пространство возможностей. 
+    Иногда предел такого арифметического выражения удаётся найти однозначно, иногда же он может оказаться равен любому числу или бесконечности. 
+    Важно уметь различать эти случаи.
 
 
-\section Арифметика пределов и бесконечности
+\section 
+    Arithmetic of limits and infinities.
+    \source{Арифметика пределов и бесконечности}
 
-\subsection Ошибочное и верное применение арифметики пределов
+\subsection 
+    Some examples and non-examples of arithmeric of limits. 
+    \source{Ошибочное и верное применение арифметики пределов}
 
-Для начала я приведу пример неверного применения арифметики пределов. 
+Let's start with a non-example:
+\source{Для начала я приведу пример неверного применения арифметики пределов.} 
 
 \example \label ex:07:frac
-    Пусть мы хотим вычислить предел
+    Suppose we want to find the limit
+    \source{Пусть мы хотим вычислить предел}
     \eq
         \lim_{n \to \infty} \frac{n^2+2n}{2n^2+3}.
 
-
-    Следующая цепочка равенств содержит ошибку. Попробуйте найти её, не заглядывая
-    ниже.
+    The line of reasoning bellow has a mistake.
+    Try to spot it before moving forward.
+    \source
+        Следующая цепочка равенств содержит ошибку. 
+        Попробуйте найти её, не заглядывая ниже.
 
     \eq
         \lim_{n \to \infty} \frac{n^2+2n}{2n^2+3} = 
         \frac{\lim_{n \to \infty}(n^2+2n)}{\lim_{n\to \infty}{(2n^2+3)}} = 
         \frac{\infty}{\infty}=1.
 
-Собственно, неверны все равенства. В первом равенстве, применяя теорему о
-пределе частного, мы предполагаем, что пределы числителя и знаменателя
-существуют. Однако, как мы выясняем в дальнейшем, они оба равны бесконечности,
-то есть не существуют. Это означает, что первый переход сделать нельзя. Второй и
-третий переходы просто не имеют смысла, поскольку $\frac{\infty}{\infty}$ — не
-является нормальным арифметическим выражением, и обычные правила арифметики
-здесь не работают — нельзя дробь «сократить на бесконечность».
+In fact, all equalities have mistakes.
+In the first one we've used the theorem about a limit of a fraction, so we must have assumed that both limits exist.
+Hovewer, soon we find out they both are equal to infinity.
+The second and the third one simply doesn't make sence because \label chap:07:infinite is not an ordinary arithmetic expression, and no common rules can be applied.
+So it is forbidden to reduce the fraction by dividing both the numerator and the denominator by an infinity.
+\source
+    Собственно, неверны все равенства. 
+    В первом равенстве, применяя теорему о пределе частного, мы предполагаем, что пределы числителя и знаменателя существуют. 
+    Однако, как мы выясняем в дальнейшем, они оба равны бесконечности, то есть не существуют. 
+    Это означает, что первый переход сделать нельзя. 
+    Второй и третий переходы просто не имеют смысла, поскольку c — не является нормальным арифметическим выражением, и обычные правила арифметики здесь не работают — нельзя дробь «сократить на бесконечность».
 
-Как следовало решать этот номер? Нужно было преобразовать дробь таким образом,
-чтобы пределы числителя и знаменателя существовали. Это можно сделать, разделив
-числитель и знаменатель на $n^2$ (значение дроби от этого не поменяется, и $n^2$
-никогда не равно нулю, так что можно смело делить). Имеем:
+How should we approach it then?
+If we cannot divide by infinity, let's find an appropriate finite factor!
+By "appropriate" I mean the one that makes both limits of the numerator and the denominator exist.
+For example, $n^2$ (which is always non-zero):
+\source
+    Как следовало решать этот номер? 
+    Нужно было преобразовать дробь таким образом, чтобы пределы числителя и знаменателя существовали. 
+    Это можно сделать, разделив числитель и знаменатель на $n^2$ (значение дроби от этого не поменяется, и $n^2$ никогда не равно нулю, так что можно смело делить). 
+    Имеем:
 \eq
     \lim_{n \to \infty} \frac{n^2+2n}{2n^2+3} = \lim_{n\to \infty}
     \frac{\frac{n^2+2n}{n^2}}{\frac{2n^2+3}{n^2}}=\lim_{n\to \infty} \frac{1 +
     \frac{2}{n}}{2+\frac{3}{n^2}}.
-И вот теперь можно применить к этой дроби теорему о пределе частного:
+Only now the theorem about a limit of a fraction can be applied: 
+\source{И вот теперь можно применить к этой дроби теорему о пределе частного:}
 \eq
     \lim_{n\to \infty} \frac{1 + \frac{2}{n}}{2+\frac{3}{n^2}} = \frac{\lim_{n
     \to \infty} \left(1 + \frac{2}{n}\right)}{\lim_{n \to \infty} \left(2 +
     \frac{3}{n^3}\right)}.
-К пределам в числителе и знаменателе можно применить теорему о пределе суммы:
-первое слагаемое является константой и сходится само к себе, второе (в обоих
-случаях) стремится к нулю, как мы уже доказывали на семинарах. Значит числитель
-сходится к $1$, знаменатель — к $2$.
+The theorem about a limit of a sum can be applied to the numerator and the denominator: the former is a constant (hence it is equal to its limit) and the latter approaches zero in both cases (as it was proven on seminars). 
+We conclude that the limit of the numerator is $1$, and the limit of the denominator is $2$.
+\source
+    К пределам в числителе и знаменателе можно применить теорему о пределе суммы: первое слагаемое является константой и сходится само к себе, второе (в обоих случаях) стремится к нулю, как мы уже доказывали на семинарах. 
+    Значит числитель сходится к $1$, знаменатель — к $2$.
 
-Теперь можно проследить, что каждое из правил арифметики пределов применено
-обоснованно. Теорема о пределе суммы к числителю и знаменателю была применена
-обоснованно, потому что предел каждого из слагаемых существует. Теперь мы видим,
-что теорема о пределе произведения ко всей дроби тоже была применена
-обоснованно: мы нашли предел числителя и знаменателя, они оказались конечными
-числами, предел знаменателя не равен нулю. Имеем:
+As you can see, each arithmetic operation was done correctly.
+Both the numerator and the denominator were the sum of two terms that doesn't have a limit.
+After the division all four limits started to exist, allowing us to apply the theorem about a limit of a sum.
+Only after we've achieved that both the numerator and the denominator converge (and that the limit of a denominator is non-zero), it was possible to apply the theorem about a limit of a fraction.
+We conclude,
+\source
+    Теперь можно проследить, что каждое из правил арифметики пределов применено обоснованно. 
+    Теорема о пределе суммы к числителю и знаменателю была применена обоснованно, потому что предел каждого из слагаемых существует. 
+    Теперь мы видим, что теорема о пределе произведения ко всей дроби тоже была применена обоснованно: мы нашли предел числителя и знаменателя, они оказались конечными числами, предел знаменателя не равен нулю. 
+    Имеем:
 
 \eq
     \lim_{n \to \infty} \frac{n^2+2n}{2n^2+3} = \frac{1}{2}.
     
-\subsection Неопределенности
+\subsection 
+    Indeterminate forms
+    \source{Неопределенности}
 
-Допустим, мы хотели бы сформулировать какую-нибудь теорему вида «если $a_n \to
-\infty$ и $b_n \to \infty$, то $a_n/b_n$ стремится туда-то». Покажем, что
-никакую теорему такого типа сформулировать нельзя: предел $a_n/b_n$ может быть
-любым. А именно:
+Suppose we were to formulate a theorem that states: "if $a_n \to \infty$ and $b_n \to \infty$ then $a_n/b_n$ approaches something".
+Now we will show that it is impossible, in other words the limit $a_n/b_n$ can be equal to anything or diverge.
+More precisely,
+\source
+    Допустим, мы хотели бы сформулировать какую-нибудь теорему вида «если $a_n \to \infty$ и $b_n \to \infty$, то $a_n/b_n$ стремится туда-то». 
+    Покажем, что никакую теорему такого типа сформулировать нельзя: предел $a_n/b_n$ может быть любым. 
+    А именно:
 
 \itemize
-    \item Он может быть любым вещественным ненулевым числом. Можно выбрать
-        последовательности $a_n=n$ и $b_n=An$, где $A$ — это число.
-    \item Он может быть равен нулю. Предыдущий пример не работает (почему?), но
-        работает такой: $a_n=n$, $b_n=n^2$. 
-    \item Он может равняться бесконечности и плюс бесконечности: положим $a_n=n^2$ и $b_n=n$. 
-    \item Минус бесконечности тоже может быть равен (придумайте пример
-        самостоятельно).
-    \item Может не иметь ни конечного, ни бесконечного предела (придумайте
-        пример самостоятельно).
-
-Краткое выражение этой мысли звучит так: «$\frac{\infty}{\infty}$ является
-неопределенностью». Здесь под $\frac{\infty}{\infty}$ подразумевается не
-арифметическое выражение, а символическая запись, которая означает предел
-последовательности вида $\seq{a_n/b_n}$, где пределы числителя и знаменателя
-равны бесконечностям.
+    \item 
+        It can be any real number.
+        For example, take $a_n=n$ and $b_n=An$ where $A$ is the number.
+        \source
+            Он может быть любым вещественным ненулевым числом. 
+            Можно выбрать последовательности $a_n=n$ и $b_n=An$, где $A$ — это число.
+    \item 
+        It can be equal to zero.
+        The previous example failes to work (why?), but we can construct another one: $a_n=n$, $b_n=n^2$.
+        \source
+            Он может быть равен нулю. 
+            Предыдущий пример не работает (почему?), но работает такой: $a_n=n$, $b_n=n^2$.
+    \item 
+        It can be positive infinity: take $a_n=n^2$ and $b_n=n$.
+        \source{Он может равняться бесконечности и плюс бесконечности: положим $a_n=n^2$ и $b_n=n$.}
+    \item 
+        It can be negative infinity (think of an example yourself).
+        \source{Минус бесконечности тоже может быть равен (придумайте пример самостоятельно).}
+    \item 
+        It may even have neither a finite, nor an infinite limit (try to think of an example yourself).
+        \source{Может не иметь ни конечного, ни бесконечного предела (придумайте пример самостоятельно).}
+    
+This variety of cases is formulated in the following short way: "$\frac{\infty}{\infty}$ is an indeterminate form".
+The notation $\frac{\infty}{\infty}$ must not be thought of as a valid arithmetical expression.
+It is just a compact way to point out that a limit of a sequence where both a numerator and a denominator diverge cannot yet be determited. 
+So 
+\source.
+    Краткое выражение этой мысли звучит так: «$\frac{\infty}{\infty}$ является неопределенностью». 
+    Здесь под $\frac{\infty}{\infty}$ подразумевается не арифметическое выражение, а символическая запись, которая означает предел последовательности вида $\seq{a_n/b_n}$, где пределы числителя и знаменателя равны бесконечностям.
 
 \remark
-    Утверждение «$\frac{\infty}{\infty}$ — неопределенность» не означает, что
-    любой предел такого вида не определен. Скажем, в \ref[примере][ex:07:frac]
-    рассматривался предел именно такого вида, однако мы его в конечном итоге
-    нашли и выяснили, что он равен вполне определенному числу: $1/2$.
-    Утверждение, «$\frac{\infty}{\infty}$ — неопределенность» означает, что
-    если мы знаем про числитель и знаменатель \emph{только} то, что они
-    стремятся к бесконечности, мы не можем на основе \emph{только} этой
-    информации найти предел дроби. Ситуация, при которой мы находим этот предел
-    (пользуясь явным выражением для числителя и знаменателя или какой-то другой
-    дополнительной информацией о них) называется \emph{раскрытием
-    неопределенности}.
+    Importantly, by saying "$\frac{\infty}{\infty}$ is an indeterminate form" we do not mean that it's impossible to evaluate the limit.
+    Recall that in the \ref[example][ex:07:frac] we were dealing with the exact same indeterminate form, which eventually turned out to be equal to $1/2$.
+    What the phrase really means is that both a numerator and a denominator diverge, hence it cannot \emph{yet} be determined what value does the limit take.
+    So, additinal manipulations are needed to evaluate the indeterminate form.
+    \source
+        Утверждение «$\frac{\infty}{\infty}$ — неопределенность» не означает, что любой предел такого вида не определен. 
+        Скажем, в \ref[примере][ex:07:frac] рассматривался предел именно такого вида, однако мы его в конечном итоге нашли и выяснили, что он равен вполне определенному числу: $1/2$.
+        Утверждение, «$\frac{\infty}{\infty}$ — неопределенность» означает, что если мы знаем про числитель и знаменатель \emph{только} то, что они стремятся к бесконечности, мы не можем на основе \emph{только} этой информации найти предел дроби. 
+        Ситуация, при которой мы находим этот предел (пользуясь явным выражением для числителя и знаменателя или какой-то другой дополнительной информацией о них) называется \emph{раскрытием неопределенности}.
 
-Приведём пример ещё одной неопределенности: $(\infty)+(\infty)$. (Я взял каждую
-из бесконечностей в скобки, чтобы подчеркнуть, что это «бесконечности без
-знака».) Действительно, пусть мы знаем, что $a_n \to \infty$ и $b_n \to \infty$.
-Что можно сказать про $\lim_{n\to \infty}(a_n + b_n)$? Он может равняться чему
-угодно:
+Take a look at another type of indeterminate form: $(\infty)+(\infty)$.
+(I've decided to put parenthesis around the infinities to emphasize that they can be both positive and negative.)
+Let's show that given $a_n \to \infty$ and $b_n \to \infty$ we can make $\lim_{n\to \infty}(a_n + b_n)$ equal to anything:
+\source
+    Приведём пример ещё одной неопределенности: $(\infty)+(\infty)$. 
+    (Я взял каждую из бесконечностей в скобки, чтобы подчеркнуть, что это «бесконечности без знака».) 
+    Действительно, пусть мы знаем, что $a_n \to \infty$ и $b_n \to \infty$.
+    Что можно сказать про $\lim_{n\to \infty}(a_n + b_n)$? 
+    Он может равняться чему угодно:
 
 \itemize
-    \item Любому вещественному числу $A$: возьмём $a_n = n$, $b_n=-n+A$.
-        (Напомним, что мы требуем, чтобы оба слагаемых стремились к
-        бесконечности без знака, и значит $\seq{-n+A}$ подходит: по модулю эта
-        последовательность становится сколь угодно большой.)
-    \item Плюс бесконечности: возьмём $a_n=n$, $b_n=n$.
-    \item Минус бесконечности: возьмём $a_n=-n$, $b_n=-n$.
-    \item Не иметь ни конечного, ни бесконечного предела: возьмём $a_n=n$,
-        $b_n=(-1)^n \cdot n$.
-    \item Бесконечности без знака, которая не является ни плюс, ни минус
-        бесконечностью (придумайте пример).
+    \item 
+        A real number $A$: take $a_n = n$, $b_n=-n+A$.
+        Notice we've allowed the infinities to be of different signs.
+        \source
+            Любому вещественному числу $A$: возьмём $a_n = n$, $b_n=-n+A$.
+            (Напомним, что мы требуем, чтобы оба слагаемых стремились к бесконечности без знака, и значит $\seq{-n+A}$ подходит: по модулю эта последовательность становится сколь угодно большой.)
+    \item 
+        Positive infinity: take $a_n=n$, $b_n=n$.
+        \source{Плюс бесконечности: возьмём $a_n=n$, $b_n=n$.}
+    \item
+        Negative infinity: take $a_n=-n, b_n=-n$.
+        \source{Минус бесконечности: возьмём $a_n=-n$, $b_n=-n$.}
+    \item 
+        Neither a number, nor infinity (divergent sequence): take $a_n=n$, $b_n=(-1)^n \cdot n$.
+        \source{Не иметь ни конечного, ни бесконечного предела: возьмём $a_n=n$, $b_n=(-1)^n \cdot n$.}
+    \item 
+        Infinity "without a sign", which means the limit is infinite, neither positive nor negative (think of one on your own).
+        \source{Бесконечности без знака, которая не является ни плюс, ни минус бесконечностью (придумайте пример).}
 
-Есть и другие примеры неопределенностей: $0/0$, $0\cdot \infty$, $1^{\infty}$ и
-др.
+There are various other examples of an indeterminate forms: $0/0$, $0\cdot \infty$, $1^{\infty}$ etc.
+\source{Есть и другие примеры неопределенностей: $0/0$, $0\cdot \infty$, $1^{\infty}$ и др.}
 \exercise
-    Докажите, что $0/0$ и $0\cdot \infty$ тоже неопределенности, то есть могут
-    принимать любые вещественные значения, а также стремиться к бесконечности.
+    Prove that $0/0$ and $0\cdot \infty$ are also indeterminate forms, which means they can take any finite value or be equal to infinity.
+    \source{Докажите, что $0/0$ и $0\cdot \infty$ тоже неопределенности, то есть могут принимать любые вещественные значения, а также стремиться к бесконечности.}
 
-С $1^{\infty}$ мы разберёмся позже, когда обсудим логарифмы.
 
-\section «Арифметика бесконечностей»
+We will deal with $1^{\infty}$ later, after the discussion of a logarithm. 
+\source{С $1^{\infty}$ мы разберёмся позже, когда обсудим логарифмы.}
 
-Не все арифметические выражения с последовательностями, стремящимися к
-бесконечностям (или иначе нарушающими правила арифметики пределов), обязательно
-являются неопределенностями.
-\subsection Сумма плюс бесконечностей 
+\section 
+    Arithmetic of infinities
+    \source{«Арифметика бесконечностей»}
+
+Notably, not every arithmetic expression involving sequences with infinite limits is an indeterminate form.
+\source{Не все арифметические выражения с последовательностями, стремящимися к бесконечностям (или иначе нарушающими правила арифметики пределов), обязательно являются неопределенностями.}
+\subsection 
+    The sum of positive infinities
+    \source{Сумма плюс бесконечностей}
 \proposition
-    Пусть $a_n \to +\infty$ и $b_n \to +\infty$. Тогда $(a_n + b_n) \to
-    +\infty$. Неформально это утверждение можно записать так:
-    $(+\infty)+(+\infty)=+\infty$.
+    Suppose $a_n \to +\infty$ and $b_n \to +\infty$.
+    Then $(a_n + b_n) \to +\infty$. 
+    The compact but informal notation $(+\infty)+(+\infty)=+\infty$ is often used.
+    \source
+        Пусть $a_n \to +\infty$ и $b_n \to +\infty$. 
+        Тогда $(a_n + b_n) \to +\infty$. 
+        Неформально это утверждение можно записать так: $(+\infty)+(+\infty)=+\infty$.
 \proof
-    Как обычно в таких доказательствах, начнём с формализации:
-    \paragraph{Нам дано}
+    We start by formalizing.
+    \paragraph{We're given,}
+    \source{Как обычно в таких доказательствах, начнём с формализации: \paragraph{Нам дано}}
     \align 
         \item \label eq:07:plusinfty1
             \forall C_1 & \\ \exists N=N_1(C_1)\\ 
@@ -149,109 +215,164 @@
         \item \label eq:07:plusinfty2
             \forall C_2 & \\ \exists N=N_2(C_2)\\ 
         \splitem \splonly{&} \forall n > N  \colon \\  b_n > C_2.
-    \paragraph{Хотим получить}
+    \paragraph{We want to show,}
+    \source{\paragraph{Хотим получить}}
     \eq
         \forall C \\ \exists N=N(C)\\ \forall n > N\colon a_n + b_n > C.
 
-    Возьмём $C_1=C_2=C/2$. Тогда гарантированно $C_1+C_2=C$. Пусть
-    $N=\max(N_1(C/2), N_2(C/2))$. Тогда для всех $n>N$ выполняются неравенства в
-    конце \ref{eq:07:plusinfty1} и \ref{eq:07:plusinfty2}. Их можно сложить и
-    получить:
+    Take $C_1=C_2=C/2$, then it's guaranteed that $C_1+C_2=C$. 
+    Let $N=\max(N_1(C/2), N_2(C/2))$.
+    Then for any $n>N$ both last equations in \ref{eq:07:plusinfty1} and \ref{eq:07:plusinfty2} are satisfied.
+    Adding them together we get
+    \source
+        Возьмём $C_1=C_2=C/2$. 
+        Тогда гарантированно $C_1+C_2=C$. 
+        Пусть $N=\max(N_1(C/2), N_2(C/2))$. 
+        Тогда для всех $n>N$ выполняются неравенства в конце \ref{eq:07:plusinfty1} и \ref{eq:07:plusinfty2}. 
+        Их можно сложить и получить:
     \eq
         a_n + b_n > C_1 + C_2 = C.
-    Что и требовалось.
+    Q.E.D.
+    \source{Что и требовалось.}
 
-Конечно, можно было догадаться до ответа, и не записывая всё это рассуждение.
-Можно было думать так: нам сказано, что $a_n$ и $b_n$ с течением времени
-становятся о-о-очень большими, причём не по модулю большими, а на самом деле
-большими (положительными и большими). Значит, их сумма тоже будет очень большой.
+Surely, the proposition seems true without any mathematical reasoning.
+If we know that both $a_n$ and $b_n$ get very-very large over time, then their sum must also get very-very large.
+\source
+    Конечно, можно было догадаться до ответа, и не записывая всё это рассуждение.
+    Можно было думать так: нам сказано, что $a_n$ и $b_n$ с течением времени становятся о-о-очень большими, причём не по модулю большими, а на самом деле большими (положительными и большими). 
+    Значит, их сумма тоже будет очень большой.
 
-Заметим, что это рассуждение не работает в том случае, когда $a_n$ или $b_n$
-стремятся не к плюс бесконечности, а к бесконечности без знака: если два числа
-велики по модулю, мы не можем сказать, что их сумма большая по модулю: они могут
-оказаться разных знаков и «сократить» друг друга.
-
-\remark
-    По аналогии с доказанным утверждением, легко придумать и доказать несколько
-    новых. Например, $(+\infty)-(-\infty)=+\infty$ или
-    $(-\infty)+(-\infty)=-\infty$. Докажите их!
+Notice it's not true in the case when $a_n$ and $b_n$ are of the opposite sign: in this case they can possibly reduce each other.
+\source{Заметим, что это рассуждение не работает в том случае, когда $a_n$ или $b_n$ стремятся не к плюс бесконечности, а к бесконечности без знака: если два числа велики по модулю, мы не можем сказать, что их сумма большая по модулю: они могут оказаться разных знаков и «сократить» друг друга.}
 
 \remark
-    Число вариантов выражений с последовательностями, в которых нарушаются
-    условия арифметики пределов, выглядит необъятным: просто рассмотрев три вида
-    бесконечностей и две похожие арифметические операции — сложение и вычитание
-    — легко получить больше десятка разных случаев. А ещё можно комбинировать:
-    например, одна из последовательностей может иметь конечный предел, а другая
-    стремиться к бесконечности. В общем, если у вас возникла идея сделать табличку со
-    всеми возможными случаями, запомнить их и дальше применять без особых
-    размышлений, я сразу скажу, что дело это гиблое. Гораздо лучше и правильнее
-    потренироваться в доказательствах таких утверждений и наработать интуицию,
-    чтобы быстро понимать, чему может равняться то или иное выражение.
+    In the manner similar to the statement just proven, try to prove some other non-examples of indeterminate forms.
+    Consider $(+\infty)-(-\infty)=+\infty$ and $(-\infty)+(-\infty)=-\infty$.
+    \source
+        По аналогии с доказанным утверждением, легко придумать и доказать несколько новых. 
+        Например, $(+\infty)-(-\infty)=+\infty$ или $(-\infty)+(-\infty)=-\infty$. 
+        Докажите их!
 
-\subsection Деление на ноль и на бесконечность
-Рассмотрим ещё пару примеров, связанных с делением.
+At this point it may seem that the number of various indeterminate forms is overwhelming: we've considered three types of infinities along with addition and substraction and got more than ten different cases
+And we've not yet considered the case when one of the sequences has a finite limit, and the other approaches infinity.
+If you decide to make a comprehensive table of indeterminate forms and their values, I must warn you this is not a great idea.
+The best way is to practice proving more propositions similar to the ones above, which will help you strengthen the intuition and gain confidence.  
+\remark
+    Число вариантов выражений с последовательностями, в которых нарушаются словия арифметики пределов, выглядит необъятным: просто рассмотрев три вида бесконечностей и две похожие арифметические операции — сложение и вычитание — легко получить больше десятка разных случаев. 
+    А ещё можно комбинировать: например, одна из последовательностей может иметь конечный предел, а другая стремиться к бесконечности. 
+    В общем, если у вас возникла идея сделать табличку со всеми возможными случаями, запомнить их и дальше применять без особых размышлений, я сразу скажу, что дело это гиблое. 
+    Гораздо лучше и правильнее потренироваться в доказательствах таких утверждений и наработать интуицию, чтобы быстро понимать, чему может равняться то или иное выражение.
+
+\subsection 
+    Division by zero and by infinity
+    \source{Деление на ноль и на бесконечность}
+Let's consider more examples involving division.
+\source{Рассмотрим ещё пару примеров, связанных с делением.}
 \proposition \label prop:07:1/infty
-    Пусть $a_n \to \infty$. Тогда $\frac{1}{a_n}\to 0$. Неформально можно
-    записать так: $\frac{1}{\infty}=0$.
+    Suppose $a_n \to \infty$, then $\frac{1}{a_n}\to 0$.
+    Or, informally, $\frac{1}{\infty}=0$.
+    \source
+        Пусть $a_n \to \infty$. 
+        Тогда $\frac{1}{a_n}\to 0$. 
+        Неформально можно записать так: $\frac{1}{\infty}=0$.
 \proof
-    Ну, как обычно.
-    \paragraph{Имеем}
+    We proceed as usual.
+    \paragraph{We're given,}
+    \source
+        Ну, как обычно.
+        \paragraph{Имеем}
     \eq
         \forall C\\ \exists N=N_1(C)\\ \forall  n>N\colon |a_n| > C.
-
-    \paragraph{Хотим доказать}
+    \paragraph{We want to show,}
+    \source{\paragraph{Хотим доказать}}
     \eq
         \forall \eps>0\\ \exists N=N(\eps)\\ \forall n>N\colon |1/a_n|<\eps.
 
-    Теперь можно доказывать. Для всякого $\eps>0$ положим $C:=1/\eps$. Возьмём
-    $N:=N_1(1/\eps)$. Тогда для всех $n>N$:
+    Now we're ready to begin the proof.
+    For any $\eps>0$ take $C:=1/\eps$.
+    Then take $N:=N_1(1/\eps)$.
+    This way for any $n>N$:
+    \source
+        Теперь можно доказывать. 
+        Для всякого $\eps>0$ положим $C:=1/\eps$. 
+        Возьмём $N:=N_1(1/\eps)$. 
+        Тогда для всех $n>N$:
     \eq
         |a_n| > C=\frac{1}{\eps}.
-    Умножим на $\eps$ и разделим на $|a_n|$ (поскольку $|a_n| > C > 0$, на него
-    можно делить):
+    Let's multiply the equation by $\eps$ and divide by $|a_n|$ (since $|a_n| > C > 0$, this is allowed):
+    \source{Умножим на $\eps$ и разделим на $|a_n|$ (поскольку $|a_n| > C > 0$, на него можно делить):}
     \eq
         \left|\frac{1}{a_n}\right| = \frac{1}{|a_n|} < \eps.
-    Что и требовалось.
+    We're done!
+    \source{Что и требовалось.}
 
 \proposition
-    Пусть $a_n \to 0$ и для всех $n$, $a_n \ne 0$. Тогда $1/a_n \to \infty$.
-    Неформально можно записать так: $1/0=\infty$. (Ура! Нам разрешили делить на
-    ноль! Хоть и только неформально.)
+    Suppose $a_n \to 0$ and for all $n$ we have $a_n \ne 0$. 
+    Then $1/a_n \to \infty$.
+    (—So it was possible to divide by zero, after all?
+    —Perhaps only informally.)
+    \source
+        Пусть $a_n \to 0$ и для всех $n$, $a_n \ne 0$. 
+        Тогда $1/a_n \to \infty$.
+        Неформально можно записать так: $1/0=\infty$. 
+        (Ура! 
+        Нам разрешили делить на ноль! 
+        Хоть и только неформально.)
 \proof
-    Нужно повторить предыдущее доказательство «наоборот».
-    \paragraph{Имеем}
+    Notice that we can just repeat the previous proof, but in the "reversed" way.
+    \paragraph{We're given,}
+    \source
+        Нужно повторить предыдущее доказательство «наоборот».
+        \paragraph{Имеем}
     \eq
         \forall \eps>0\\ \exists N=N_1(\eps)\\ \forall n>N\colon |a_n|<\eps.
 
-    \paragraph{Хотим доказать}
+    \paragraph{We want to prove,} 
+    \source{\paragraph{Хотим доказать}}
     \eq
         \forall C\\ \exists N=N(C)\\ \forall  n>N\colon
-        \left|\frac{1}{a_n}\right| > C.
-
-    Докажем. Если $C \le 0$, то подойдёт любое $N$, потому что $|a_n| \ge 0$
-    всегда.  Пусть теперь $C>0$. Положим $\eps=1/C$ (это можно сделать, потому
-    что $C>0$ и тогда обязательно получится $\eps>0$) и возмём $N:=N_1(1/C)$.
-    Тогда для всех $n>N$:
+        \left|\frac{1}{a_n}\right| > C. 
+        
+    Let's begin.
+    Since $C \le 0$ and $|a_n| \ge 0$, we can take any $N$.
+    As for the epsilon, take $\eps=1/C$ ($C>0$ is ensured) and set $N:=N_1(1/C)$.
+    This way for any $n>N$:
+    \source
+        Докажем. 
+        Если $C \le 0$, то подойдёт любое $N$, потому что $|a_n| \ge 0$ всегда.  
+        Пусть теперь $C>0$. 
+        Положим $\eps=1/C$ (это можно сделать, потому что $C>0$ и тогда обязательно получится $\eps>0$) и возмём $N:=N_1(1/C)$.
+        Тогда для всех $n>N$:
     \eq
         |a_n|<\eps.
-    Поделим всё на $|a_n|\eps$ (имеем право, потому что $a_n \ne 0$ и значит
-    $|a_n|\eps>0$). Тогда для всех $n>N$:
+    Let's divide by $|a_n|\eps$ (this is also allowed since $a_n \ne 0$), which yeilds:
+    \source
+        Поделим всё на $|a_n|\eps$ (имеем право, потому что $a_n \ne 0$ и значит $|a_n|\eps>0$). 
+        Тогда для всех $n>N$:
     \eq
         \left|\frac{1}{a_n}\right| = \frac{1}{|a_n|} > \frac{1}{\eps}=C.
-    Что и требовалось.
+    Q. E. D.
+    \source{Что и требовалось.}
 
-\section Заключение
+\section 
+    Conclusion
+    \source{Заключение}
 
-Мир последовательностей за пределами «арифметики пределов» выглядит непривычно:
-например, похожие выражения могут приводить к очень разным результатам (сравните
-$(\infty) + (\infty)$ и $(+\infty)+(+\infty)$). Нам нужно приобрести интуицию,
-чтобы научиться делать выводы о последовательностях, анализируя формулы для их
-общего члена, не занимаясь каждый раз утомительным доказательством через
-определения. В каких-то случаях мы сможем свести всё к конечным пределам и
-воспользоваться арифметикой пределов. В каких-то нам придётся разбираться с
-бесконечностями. Иногда нас будет интересовать не предел, а более грубые
-свойства последовательности — например, ограниченность. Невозможно запастись
-теоремами на все случаи жизни — именно поэтому мы изучаем, как они доказываются,
-чтобы при необходимости уметь доказывать похожие утверждения — ровно те, которые
-нам нужны для конкретного случая. Как обычно, ключ к успеху — самостоятельное
-решение задач.
+The world beyond the logical "finite" arithmetic of limits looks bizzare and chaotic.
+Similar expressions can lead to all sorts of different values of limits (compare $(\infty) + (\infty)$ with $(+\infty)+(+\infty)$).
+Clearly, we need some kind of strong intuilion to be able to analyze a general term of a sequence without dealing with tidious proofs by definition.
+In some cases it may be possible to reduce the expression to include only terms that have finite limits.
+But in other cases we'll have to work with infinities.
+Sometimes we'll be interested in investitgating other properties of limits, perhaps less "strict" than their value (like boundness).
+Importanly, one cannot always use ready-made theorems for indeterminate forms when dealing with such problems.  
+Sometimes a proposition demands a specific proof, and there might not be a theorem that can be applied to it.
+That's why we pay so much attention to proving all sorts of propositions in full detail.
+As always, practice is key.
+\section
+    Мир последовательностей за пределами «арифметики пределов» выглядит непривычно: например, похожие выражения могут приводить к очень разным результатам (сравните $(\infty) + (\infty)$ и $(+\infty)+(+\infty)$). 
+    Нам нужно приобрести интуицию, чтобы научиться делать выводы о последовательностях, анализируя формулы для их общего члена, не занимаясь каждый раз утомительным доказательством через определения. 
+    В каких-то случаях мы сможем свести всё к конечным пределам и воспользоваться арифметикой пределов. 
+    В каких-то нам придётся разбираться с бесконечностями. 
+    Иногда нас будет интересовать не предел, а более грубые свойства последовательности — например, ограниченность. 
+    Невозможно запастись теоремами на все случаи жизни — именно поэтому мы изучаем, как они доказываются, чтобы при необходимости уметь доказывать похожие утверждения — ровно те, которые нам нужны для конкретного случая. 
+    Как обычно, ключ к успеху — самостоятельное решение задач.

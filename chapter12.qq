@@ -1,76 +1,113 @@
 \chapter \label chap:12:asymptote
-    Бесконечные пределы и асимптоты
+    Infinite limits and asymptotes
+   \source{Бесконечные пределы и асимптоты}
 
-Помимо конечных пределов, у последовательностей бывают бесконечные (см. раздел
-\ref[Пределы и ограниченность\nonumber][sec:05:lim-bound] в
-\ref[главе][chap:05:lim-properties]). У функций тоже!
+Besides finite limits, a sequence may have an infinite one (see section about \ref[limits and boundness\nonumber][sec:05:lim-bound] in \ref[chapter][chap:05:lim-properties]).
+Same thing with functions!
+\source
+    Помимо конечных пределов, у последовательностей бывают бесконечные (см. раздел \ref[Пределы и ограниченность\nonumber][sec:05:lim-bound] в \ref[главе][chap:05:lim-properties]). 
+    У функций тоже!
 
-\section Бесконечные пределы в конечных точках
-\subsection Существование предела и ограниченность
-Из \ref[лекции][chap:05:lim-properties] мы знаем, что \ref[сходящаяся
-последовательность ограничена\nonumber][thm:05:bound]. Для функций можно
-сформулировать аналогичное утверждение.
+\section 
+    Infinite limits in finite points
+    \source{Бесконечные пределы в конечных точках}
+\subsection 
+    Existence and boundness
+    \source{Существование предела и ограниченность}
+\ref[Lection][chap:05:lim-properties] taught us that \ref[convergent sequence is bounded\nonumber][thm:05:bound]. 
+We woiuld like to formulate a similar proposition for functions.
+\source
+    Из \ref[лекции][chap:05:lim-properties] мы знаем, что \ref[сходящаяся последовательность ограничена\nonumber][thm:05:bound]. 
+    Для функций можно сформулировать аналогичное утверждение.
 
 \theorem \label thm:12:bound
-    Пусть функция $f(x)$ имеет предел при $x\to x_0$. Тогда она ограничена на
-    некоторой проколотой окрестности точки $x_0$. Иными словами, найдутся такие
-    $C$ и $\delta_*>0$, что для всех $x \in \mathring{U}_{\delta_*}(x_0)$
-    выполняется неравенство $|f(x)|<C$.
+    Suppose $f(x)$ has a limit as $x\to x_0$.
+    Then it is bounded in some deleted neighbourhood of $x_0$.
+    In other words, there exist $C$ and $\delta_*>0$ such that for all $x \in \mathring{U}_{\delta_*}(x_0)$ the inequality $|f(x)|<C$ is satisfied.
+    \source
+        Пусть функция $f(x)$ имеет предел при $x\to x_0$. 
+        Тогда она ограничена на  некоторой проколотой окрестности точки $x_0$. 
+        Иными словами, найдутся такие $C$ и $\delta_*>0$, что для всех $x \in \mathring{U}_{\delta_*}(x_0)$ выполняется неравенство $|f(x)|<C$.
 \proof
-    По определению предела, для всякого $\eps>0$ найдётся такое
-    $\delta=\delta(\eps)>0$, что для всех $x$ из проколотой $\delta$-окрестности
-    $x_0$ выполняется неравенство $|f(x)-b|<\eps$.
+    By the definition of a limit, for every $\eps>0$ we can find $\delta=\delta(\eps)>0$ such that for all $x$ in the deleted $\delta$-neighbourhood of $x_0$ the inequality $|f(x)-b|<\eps$ is satisfied.
+    \source{По определению предела, для всякого $\eps>0$ найдётся такое $\delta=\delta(\eps)>0$, что для всех $x$ из проколотой $\delta$-окрестности $x_0$ выполняется неравенство $|f(x)-b|<\eps$.}
 
-    Положим $\delta_* := \delta(1)$ (то есть возьмём $\eps=1$). Тогда для всех
-    $x$ из проколотой $\delta_*$-окрестности точки $x_0$ выполняется неравенство
-    $|f(x)-b|<1$. По неравенству треугольника,
+    Set $\delta_* := \delta(1)$ (which means we took $\eps=1$).
+    Then $|f(x)-b|<1$ is satisfied for any $x$ from the deleted $\delta_*$-neighbourhood of $x_0$.
+    By the triangle inequality,
+    \source
+        Положим $\delta_* := \delta(1)$ (то есть возьмём $\eps=1$). 
+        Тогда для всех $x$ из проколотой $\delta_*$-окрестности точки $x_0$ выполняется неравенство $|f(x)-b|<1$. 
+        По неравенству треугольника,
     \eq
         |f(x)| \le |f(x)-b| + |b-0| < 1 + |b|.
-    Положим $C=1+|b|$. Тогда $\mathring{U}_{\delta_*}(x_0)$ — искомая окрестность
-    точки $x_0$. Теорема доказана.
+    Take $C=1+|b|$.
+    Then $\mathring{U}_{\delta_*}(x_0)$ is the desired neighbourhood of $x_0$.
+    And we're done!
+    \source
+        Положим $C=1+|b|$. 
+        Тогда $\mathring{U}_{\delta_*}(x_0)$ — искомая окрестность точки $x_0$. 
+        Теорема доказана.
 
-Доказательство очень похоже на доказательство \ref[аналогичной
-теоремы\nonumber][thm:05:bound] для последовательностей, и даже проще: в случае
-с последовательностями нужно было отдельно рассматривать начальный отрезок. За
-это мы платим тем фактом, что утверждение об ограниченности распространяется не
-на всю область определения функции, а лишь на некоторую проколотую окрестность
-точки $x_0$.
+The proof is very similar to the proof of an \ref[analogous theorem\nonumber][thm:05:bound] for sequences, perhaps even simpler since we didn't consider the initial interval.
+This comes with a price: boundness exists only on some deleted neighbourhood of $x_0$, not the whole domain of a function.  
+\source
+    Доказательство очень похоже на доказательство \ref[аналогичной теоремы\nonumber][thm:05:bound] для последовательностей, и даже проще: в случае с последовательностями нужно было отдельно рассматривать начальный отрезок. 
+    За это мы платим тем фактом, что утверждение об ограниченности распространяется не на всю область определения функции, а лишь на некоторую проколотую окрестность точки $x_0$.
 
 \example
-    Рассмотрим функцию $f(x)=1/x$. Она имеет предел при $x\to 1$, однако не
-    является ограниченной на всей области определения.
+    Consider the function $f(x)=1/x$.
+    It has a limit as $x\to 1$, but it is not bounded on on the whole domain.
+    \source
+        Рассмотрим функцию $f(x)=1/x$. 
+        Она имеет предел при $x\to 1$, однако не является ограниченной на всей области определения.
 
-\subsection Бесконечные пределы
+\subsection 
+    Infinite limits
+    \source{Бесконечные пределы}
 
-В том случае, когда функция не является ограниченной ни в какой проколотой
-окрестности точки $x_0$, она не может иметь предела в этой точке. Однако,
-опять аналогично ситуациям с последовательностями, мы можем определить, что
-означает, что функция \emph{стремится к бесконечности} в точке $x_0$.
+In the case when the function is unbounded in any deleted neighbourhood of $x_0$, it cannot have a limit in $x_0$.
+But again, similar to sequences, it's useful to define what it means to \emph{approach infinity} in $x_0$.
+\source
+    В том случае, когда функция не является ограниченной ни в какой проколотой окрестности точки $x_0$, она не может иметь предела в этой точке. 
+    Однако, опять аналогично ситуациям с последовательностями, мы можем определить, что означает, что функция \emph{стремится к бесконечности} в точке $x_0$.
 
 \definition
-    Пусть функция $f(x)$ определена в некоторой проколотой окрестности точки
-    $x_0$. Говорят, что её предел в этой точке равен бесконечности, если для
-    всякого $C$ найдётся такая $\delta>0$, что для всех $x$ из проколотой
-    $\delta$-окрестности точки $x_0$ выполняется неравенство: $|f(x)| > C$.
-    Формально:
+    Suppose a function $f(x)$ is defined in some deleted neighbourhood of $x_0$.
+    We say that the limit of $f(x)$ in $x_0$ is infinity if for any $C$ there exists $\delta>0$ such that for any $x$ in the deleted $\delta$-neighbourhood of $x_0$ the inequality  $|f(x)| > C$ is satisfied.
+    Formally,
+    \source
+        Пусть функция $f(x)$ определена в некоторой проколотой окрестности точки $x_0$. 
+        Говорят, что её предел в этой точке равен бесконечности, если для всякого $C$ найдётся такая $\delta>0$, что для всех $x$ из проколотой $\delta$-окрестности точки $x_0$ выполняется неравенство: $|f(x)| > C$.
+        Формально:
     \align \nonumber
         \item \forall C \in \mathbb R & \\ \exists \delta>0 \\ \forall x\in \mathbb R\colon
         \splitem \splonly{&}
             0 < |x-x_0| < \delta \Rightarrow |f(x)| > C.
-    Записывают:
+    The notation is as follows:
+    \source{Записывают:}
     \eq
         \lim_{x\to x_0} f(x)=\infty.
 \remark
-    И снова: если предел функции равен бесконечности, это означает, что предел
-    «не существует» (в смысле обычного определения предела). Тот факт, что
-    функция стремится к бесконечности, означает, что она \emph{не имеет} предела
-    в точке, но при этом не имеет его специфическим образом.
+    It's important to note that when a function approaches infinity, it actually does not approach anything (in the sence of an ordinary definition of a limit).
+    It is just very common to see such kind of divergence, so it's useful to treat it like other limits.
+    Once again: the fact that a function approaches infinity in some point means that it \emph{doesn't have} a limit in this point.
+    \source
+        И снова: если предел функции равен бесконечности, это означает, что предел «не существует» (в смысле обычного определения предела). 
+        Тот факт, что функция стремится к бесконечности, означает, что она \emph{не имеет} предела в точке, но при этом не имеет его специфическим образом.
 
 \example
-    Функция $f(x)=\frac{1}{x}$ стремится к бесконечности при $x\to 0$.
-    Дейстительно, возьмём любоое $C$. Если $C \le 0$, условие $|1/x| > C$
-    выполнено автоматически. Если $C > 0$, положим $\delta=1/C$. Тогда если
-    $|x|<\delta$, то $|1/x|=1/|x| > 1/\delta = C$.
+    The function $f(x)=\frac{1}{x}$ approaches infinity as $x\to 0$.
+    Let's take any $C$.
+    If $C \le 0$, then $|1/x|>C$ is trivially satisfied.
+    If $C > 0$, set $\delta=1/C$.
+    This way if $|x|<\delta$, then $|1/x|=1/|x| > 1/\delta = C$.
+    \source
+        Функция $f(x)=\frac{1}{x}$ стремится к бесконечности при $x\to 0$.
+        Дейстительно, возьмём любоое $C$. 
+        Если $C \le 0$, условие $|1/x| > C$ выполнено автоматически. 
+        Если $C > 0$, положим $\delta=1/C$. 
+        Тогда если $|x|<\delta$, то $|1/x|=1/|x| > 1/\delta = C$.
 
     \figure \showcode \collapsed
         \pythonfigure \style max-width: 400px;
@@ -108,74 +145,90 @@
             plt.yticks([])
 
 \example
-    Функция
+    The function
+    \source{Функция}
     \eq
         f(x)=\begin{cases}
             1/x,& x \in \mathbb Q, \\\\
             0, & x \not \in \mathbb Q,
         \end{cases}
-    не является ограниченной ни в какой проколотой окрестности точки $x=0$
-    (поскольку сколь угодно близко к нулю существуют рациональные числа), но
-    при этом не стремится к бесконечности при $x\to 0$ (поскольку сколь угодно
-    близко к нулю существуют иррациональные числа, в которых функция принимает
-    значение 0).
+    is not bounded in $x=0$ because there are no deleted neighbourhood of $x=0$ such that it doesn't include rational numbers (because there exist arbitrarily close to zero rational numbers).
+    At the same time, it doesn't approach infinity as $x\to 0$ (because there exist arbitrarily close to zero irrational numbers, in which $f(x)$ is zero).
+    \source{не является ограниченной ни в какой проколотой окрестности точки $x=0$ (поскольку сколь угодно близко к нулю существуют рациональные числа), но при этом не стремится к бесконечности при $x\to 0$ (поскольку сколь угодно близко к нулю существуют иррациональные числа, в которых функция принимает значение 0).}
 
-Опять же, аналогично последовательностям, помимо просто бесконечности, бывает
-плюс бесконечность и минус бесконечность:
+Again, similar to the case of sequences, there are plus and minus infinities.
+\source{Опять же, аналогично последовательностям, помимо просто бесконечности, бывает плюс бесконечность и минус бесконечность:}
 
 \definition \label def:12:plus-infty
-    Пусть функция $f(x)$ определена в некоторой проколотой окрестности точки
-    $x_0$. Говорят, что её предел в этой точке равен плюс бесконечности (минус
-    бесконечности), если для всякого $C$ найдётся такая $\delta>0$, что для всех
-    $x$ из проколотой $\delta$-окрестности точки $x_0$ выполняется неравенство:
-    $f(x) > C$ (соответственно, $f(x) < C$).
+    Suppose $f(x)$ is defined in some deleted neighbourhood of $x_0$.
+    We say that is approaches positive infinity (negative infinity) in $x_0$ if for all $C$ there exists $\delta>0$ such that for all $x$ from a deleted $\delta$-neighbourhood of $x_0$ the inequality $f(x) > C$ ($f(x) < C$ respectively) is satisfied.
+    \source
+        Пусть функция $f(x)$ определена в некоторой проколотой окрестности точки $x_0$. 
+        Говорят, что её предел в этой точке равен плюс бесконечности (минус бесконечности), если для всякого $C$ найдётся такая $\delta>0$, что для всех $x$ из проколотой $\delta$-окрестности точки $x_0$ выполняется неравенство: $f(x) > C$ (соответственно, $f(x) < C$).
 \exercise
-    Запишите эти три определения в кванторах.
+    Try to formulate these two definitions in quantifiers.
+    \spurcЗапишите эти три определения в кванторах.
 \example
-    Неверно, что $1/x \to +\infty$ при $x\to 0$: когда $x$ приближается к нулю
-    слева (то есть становится очень маленьким по модулю, но отрицательным),
-    $1/x$ становится большим по модулю, но тоже отрицательным. В то же время,
-    $1/(x^2) \to +\infty$ при $x\to 0$: знаменатель всегда положительный при
-    $x\ne 0$, и когда он маленький по модулю, дробь становится очень большой.
+    Notice that it is wrong to say that $1/x \to +\infty$ as $x\to 0$.
+    There are two ways for $x$ to approach $0$: from the left and from the right.
+    In the first case, the value of the function is always negative, so it must approach negative infinity.
+    Unlike $1/x$, the function $1/(x^2)$ approaches infinity as $x\to 0$ since its denominator is always nonnegative.
+    \source
+        Неверно, что $1/x \to +\infty$ при $x\to 0$: когда $x$ приближается к нулю слева (то есть становится очень маленьким по модулю, но отрицательным), $1/x$ становится большим по модулю, но тоже отрицательным. 
+        В то же время, $1/(x^2) \to +\infty$ при $x\to 0$: знаменатель всегда положительный при $x\ne 0$, и когда он маленький по модулю, дробь становится очень большой.
 
-Наконец, можно рассматривать односторонние бесконечные пределы. 
+Now we move to one-sided infinite limits.
+\source{Наконец, можно рассматривать односторонние бесконечные пределы.} 
+
+\exercise$\lim_{x\to x_0^+} f(x)=+\infty$,{$\lim_{x\to x_0^+} f(x)=-\infty$, $\lim_{x\to x_0^-} f(x)=+\infty$,{$\lim_{x\to x_0^-} f(x)=-\infty$ yourself, 
+    Try to come up with a definition for expressions $\lim_{x\to x_0^+} f(x)=+\infty$,{$\lim_{x\to x_0^+} f(x)=-\infty$, $\lim_{x\to x_0^-} f(x)=+\infty$,{$\lim_{x\to x_0^-} f(x)=-\infty$ yourself by combining definitions {\ref{def:12:plus-infty}, \ref{def:10:left} and \ref{def:10:right} from \ref[lecture][chap:10:limfunc].
+    \source{Придумайте определения для утверждений $\lim_{x\to x_0^+} f(x)=+\infty$,{$\lim_{x\to x_0^+} f(x)=-\infty$, $\lim_{x\to x_0^-} f(x)=+\infty$,{$\lim_{x\to x_0^-} f(x)=-\infty$  самостоятельно, объединяя определение{\ref{def:12:plus-infty} и определения \ref{def:10:left} и \ref{def:10:right}{из \ref[лекции][chap:10:limfunc].}
 
 \exercise
-    Придумайте определения для утверждений $\lim_{x\to x_0^+} f(x)=+\infty$,
-    $\lim_{x\to x_0^+} f(x)=-\infty$, $\lim_{x\to x_0^-} f(x)=+\infty$,
-    $\lim_{x\to x_0^-} f(x)=-\infty$  самостоятельно, объединяя определение
-    \ref{def:12:plus-infty} и определения \ref{def:10:left} и \ref{def:10:right}
-    из \ref[лекции][chap:10:limfunc].
-
-\exercise
-    Снова рассмотрим функцию $f(x)=1/x$. Докажите, что
+    Let's revisit the function $f(x)=1/x$.
+    Prove that 
+    \source
+        Снова рассмотрим функцию $f(x)=1/x$. 
+        Докажите, что
     \eq
         \lim_{x\to 0^+} \frac{1}{x}=+\infty
-    и
+    and
+    \source{и}
     \eq
         \lim_{x\to 0^-} \frac{1}{x}=-\infty.
 
 \definition
-    Заметим, что если функция стремится к какой-нибудь из бесконечностей
-    (неважно, плюс, минус или просто бесконечности) когда $x$ стремится к $x_0$
-    с какой-нибудь стороны, график $y=f(x)$ приближается к вертикальной прямой
-    $x=x_0$ когда $x$ приближается к $x_0$ (слева или справа). В этом случае
-    прямая $x=x_0$ называется \emph{вертикальной асимптотой} функции $y=f(x)$
-    (или её графика).
+    Notice that if a function approaches some kind of infinity (no matter whether it is positive, negative or unspecified) as $x$ goes to $x_0$, then its graph starts to look like a vetrical line $x=x_0$.
+    In this case the line $x=x_0$ is called a \emph{vertical asymptote} of the function (or its graph).
+    \source
+        Заметим, что если функция стремится к какой-нибудь из бесконечностей (неважно, плюс, минус или просто бесконечности) когда $x$ стремится к $x_0$ с какой-нибудь стороны, график $y=f(x)$ приближается к вертикальной прямой $x=x_0$ когда $x$ приближается к $x_0$ (слева или справа). 
+        В этом случае прямая $x=x_0$ называется \emph{вертикальной асимптотой} функции $y=f(x)$ (или её графика).
 
 \example
-    Рассмотрим функцию
+    Consider the function
+    \source{Рассмотрим функцию}
     \eq
         f(x)=\frac{x-1}{x^2-1}.
-    Знаменатель обнуляется в двух точках: $x=1$ и $x=-1$. При приближении к
-    точке $x=-1$ знаменатель стремится к нулю, а числитель к $-2$. Значит, дробь
-    стремится к бесконечности (без знака, т.к. знаменатель может быть
-    положительным или отрицательным, в зависимости от того, с какой стороны
-    приближаемся). У функции есть вертикальная асимптота $x=-1$. В точке $x=1$
-    обнуляется и числитель, и знаменатель. Чтобы найти предел в этой точке,
-    сократим дробь на $(x-1)$. Получится выражение $1/(x+1)$. Оно имеет предел,
-    равный $1/2$ при $x\to 1$. Значит, вертикальной асимптоты $x=1$ у функции
-    нет.
+    Notice that the denominator turns zero at $x=1$ and $x=-1$.
+    Also, as $x$ approaches $-1$, the numerator becomes $-2$.
+    This means that the whole fraction approaches infinity (neither a positive, nor a negative one since it depends on what side we choose to approach $x=-1$ from).
+    Hence, $f(x)$ has a vertical asymptote $x=-1$.
+    Now to the point $x=1$.
+    It makes both the numerator and the denominator equal to zero.
+    To find the value of a limit in this point we need to reduce the fraction by $(x-1)$.
+    This yeilds the expression $1/(x+1)$.
+    Clearly, it approaches $1/2$ as $x\to 1$. 
+    This means $f(x)$ does not have a vertical asymptote at $x=1$.
+    \source
+        Знаменатель обнуляется в двух точках: $x=1$ и $x=-1$. 
+        При приближении к точке $x=-1$ знаменатель стремится к нулю, а числитель к $-2$. 
+        Значит, дробь стремится к бесконечности (без знака, т.к. знаменатель может быть положительным или отрицательным, в зависимости от того, с какой стороны приближаемся). 
+        У функции есть вертикальная асимптота $x=-1$. 
+        В точке $x=1$ обнуляется и числитель, и знаменатель. 
+        Чтобы найти предел в этой точке, сократим дробь на $(x-1)$. 
+        Получится выражение $1/(x+1)$. 
+        Оно имеет предел, равный $1/2$ при $x\to 1$. 
+        Значит, вертикальной асимптоты $x=1$ у функции нет.
     \figure \showcode \collapsed
         \pythonfigure \style max-width: 450px;
             def f(x):
@@ -193,67 +246,85 @@
             ob.settle_axes(xmin=-3.7, xmax=3.7, ymin=-3.7, ymax=3.7, 
                            xlabel="x", ylabel="y") 
         \caption
-            У функции $f(x)=\frac{x-1}{x^2-1}$ есть единственная вертикальная
-            асимптота: $x=-1$.
+            The function $f(x)=\frac{x-1}{x^2-1}$ has a single vertical asymptote at $x=-1$.
+            \source{У функции $f(x)=\frac{x-1}{x^2-1}$ есть единственная вертикальная асимптота: $x=-1$.}
 
-\section Пределы на бесконечности
-Другой тип пределов функций, связанный с бесконечностями — это предел при $x$
-стремящемся к бесконечности.
+\section 
+    Approaching infinity
+    \source{Пределы на бесконечности}
+Another type of limit involving infinities is a limit as $x$ approaches infinity.
+\source{Другой тип пределов функций, связанный с бесконечностями — это предел при $x$ стремящемся к бесконечности.}
 
 \subsection
-    Конечные пределы на бесконечности и горизонтальные асимптоты
+    Finite limits and horizontal asymptotes
+    \source{Конечные пределы на бесконечности и горизонтальные асимптоты}
 \definition
-    Пусть функция $f(x)$ определена для всех достаточно больших по модулю значений
-    $x$, то есть найдётся такое $C_*$, что $f(x)$ определена для всех $x$, для
-    которых $|x| > C_*$. Говорят, что предел функции $f(x)$ при $x$ стремящемся к
-    бесконечности равен $b$, если для всякого $\eps>0$ найдётся такое $C$, что
-    для всех $x$, если $|x| > C$, то $|f(x)-b|<\eps$.
+    Suppose a function $f(x)$ is defined for any sufficiently large (by the absolute value) inputs, in other words there exists $C_*$ such that $f(x)$ is defined for all $x$ that satisfy the implication "if $|x| > C$, then $|f(x)-b|<\eps$".
+    We say that the limit of $f(x)$ as $x$ approaches infinity is $b$ if for all $\eps>0$ there exists $C$ such that for any $x$ if $|x| > C$, then $|f(x)-b|<\eps$.
+    \source
+        Пусть функция $f(x)$ определена для всех достаточно больших по модулю значений $x$, то есть найдётся такое $C_*$, что $f(x)$ определена для всех $x$, для которых $|x| > C_*$. 
+        Говорят, что предел функции $f(x)$ при $x$ стремящемся к бесконечности равен $b$, если для всякого $\eps>0$ найдётся такое $C$, что для всех $x$, если $|x| > C$, то $|f(x)-b|<\eps$.
 
 \definition
-    Пусть функция $f(x)$ определена для всех достаточно больших значений $x$, то
-    есть найдётся такое $C_*$, что $f(x)$ определена для всех $x > C_*$. Говорят,
-    что предел функции $f(x)$ при $x$ стремящемся к плюс бесконечности равен
-    $b$, если для всякого $\eps>0$ найдётся такое $C$, что для всех $x > C$
-    верно неравенство $|f(x)-b|<\eps$.
+    Suppose $f(x)$ is defined for all sufficiently large values of $x$, in other words there exists $C_*$ such that $f(x)$ is defined for all $x > C_*$.
+    We say that the limit of $f(x)$ as $x$ approaches positive infinity is $b$ if for all $\eps>0$ there exists $C$ such that the implication "if $x > C$, then $|f(x)-b|<\eps$" is true.
+    \source
+        Пусть функция $f(x)$ определена для всех достаточно больших значений $x$, то есть найдётся такое $C_*$, что $f(x)$ определена для всех $x > C_*$. 
+        Говорят, что предел функции $f(x)$ при $x$ стремящемся к плюс бесконечности равен $b$, если для всякого $\eps>0$ найдётся такое $C$, что для всех $x > C$ верно неравенство $|f(x)-b|<\eps$.
 
 \definition
-    Пусть функция $f(x)$ определена для всех достаточно больших по модулю
-    отрицательных значений $x$, то есть найдётся такое $C_*$, что $f(x)$
-    определена для всех $x < C_*$. Говорят, что предел функции $f(x)$ при $x$
-    стремящемся к минус бесконечности равен $b$, если для всякого $\eps>0$
-    найдётся такое $C$, что для всех $x < C$ верно неравенство $|f(x)-b|<\eps$.
+    Suppose $f(x)$ is defined for all sufficiently large (by the absolute value) values of $x$, in other words there exists $C_*$ such that $f(x)$ is defined for all $x < C_*$.
+    We say that the limit of $f(x)$ as $x$ approaches negative infinity is $b$ if for all $\eps>0$ there exists $C$ such that the implication "if $x < C$, then $|f(x)-b|<\eps$" is true.
+    \source
+        Пусть функция $f(x)$ определена для всех достаточно больших по модулю отрицательных значений $x$, то есть найдётся такое $C_*$, что $f(x)$ определена для всех $x < C_*$. 
+        Говорят, что предел функции $f(x)$ при $x$ стремящемся к минус бесконечности равен $b$, если для всякого $\eps>0$ найдётся такое $C$, что для всех $x < C$ верно неравенство $|f(x)-b|<\eps$.
 
-Обозначения:
+The notations are as follows:
+\source{Обозначения:}
 \eq
     \lim_{x\to \infty} f(x)=b, \quad \lim_{x\to +\infty} f(x)=b,\quad \lim_{x\to
     -\infty} f(x)=b.
 
 \exercise
-    Докажите, что если $\lim_{x\to \infty} f(x)=b$, то $\lim_{x\to +\infty}
-    f(x)=b$ и $\lim_{x\to -\infty} f(x)=b$. Верно и обратное: если $\lim_{x\to
-    +\infty} f(x)=b$ и $\lim_{x\to -\infty} f(x)=b$, то $\lim_{x\to \infty}
-    f(x)=b$. Докажите и это.
+    Prove that if $\lim_{x\to \infty} f(x)=b$, then $\lim_{x\to +\infty} f(x)=b$ and $\lim_{x\to -\infty} f(x)=b$.
+    In fact, the converse is also true: if both $\lim_{x\to +\infty} f(x)=b$ and $\lim_{x\to -\infty} f(x)=b$ hold, then $\lim_{x\to \infty} f(x)=b$.
+    Try to also prove this proposition.
+    \source
+        Докажите, что если $\lim_{x\to \infty} f(x)=b$, то $\lim_{x\to +\infty} f(x)=b$ и $\lim_{x\to -\infty} f(x)=b$. 
+        Верно и обратное: если $\lim_{x\to +\infty} f(x)=b$ и $\lim_{x\to -\infty} f(x)=b$, то $\lim_{x\to \infty} f(x)=b$. 
+        Докажите и это.
 
 \example
-    Функция $f(x)=1/x$ стремится к нулю при $x\to \infty$. (Докажите!)
+    The function $f(x)=1/x$ approaches zero as $x\to \infty$.
+    (Prove it).
+    \source
+        Функция $f(x)=1/x$ стремится к нулю при $x\to \infty$. 
+        (Докажите!)
 \example
-    Функция $f(x)=e^x$ стремится к нулю при $x\to -\infty$, а предел при $x\to
-    +\infty$ не существует.
+    The function $f(x)=e^x$ approaches zero as $x\to -\infty$.
+    The limit as $x\to +\infty$ does not exist.
+    \source{Функция $f(x)=e^x$ стремится к нулю при $x\to -\infty$, а предел при $x\to +\infty$ не существует.}
 
 \definition
-    Если функция стремится к какому-то числу при $x\to +\infty$ или $x \to -\infty$,
-    её график приближается к горизонтальной прямой $y=b$. Такая прямая
-    называется \emph{горизонтальной асимптотой}.
+    If a function approaches some number as $x\to +\infty$ or $x \to -\infty$, then its graph starts to look like a horizontal line $y=b$.
+    This line is called a $horizontal assymptote$.
+    \source
+        Если функция стремится к какому-то числу при $x\to +\infty$ или $x \to -\infty$, её график приближается к горизонтальной прямой $y=b$. 
+        Такая прямая называется \emph{горизонтальной асимптотой}.
 
 \remark
-    Иногда при формулировании определение асимптоты хочется
-    сказать, что это прямая, к которой график приближается, но никогда её не
-    достигает. Для вертикальной асимптоты это верно, а для горизонтальной нет.
-    Например, у функции $f(x)=2$ есть горизонтальная асимптота $y=2$ —
-    в этом случае график совпадает со своей горизонтальной асимптотой.
-    Менее тривиальный пример: рассмотрим функцию $f(x)=\frac{\sin x}{x}$. Её
-    предел при $x\to \infty$ равен нулю и у неё есть горизонтальная асимптота
-    $y=0$, с которой график пересекается бесконечно много раз.
+    It may be tempting to define an asymptote as a line that a graph gets closer and closer to, but cannot ever match it exactly.
+    Actually, this is true for a certical asymptote, but not for a vertical one.
+    For example, the function $f(x)=2$ has a horizontal asymptote $y=2$ (in this case the graph is equal to the asymptote).
+    Less trivial of an example is $f(x)=\frac{\sin}{x}$.
+    This function has a limit of zero as $x\to \infty$, hence $y=0$ is a horizontal asymptote.
+    However, $f(x)$ intersects $y=0$ infinitely many times.
+    \source
+        Иногда при формулировании определение асимптоты хочется сказать, что это прямая, к которой график приближается, но никогда её не достигает. 
+        Для вертикальной асимптоты это верно, а для горизонтальной нет.
+        Например, у функции $f(x)=2$ есть горизонтальная асимптота $y=2$ — в этом случае график совпадает со своей горизонтальной асимптотой.
+        Менее тривиальный пример: рассмотрим функцию $f(x)=\frac{\sin x}{x}$. 
+        Её предел при $x\to \infty$ равен нулю и у неё есть горизонтальная асимптота $y=0$, с которой график пересекается бесконечно много раз.
 
 \figure \showcode \collapsed
     \pythonfigure \style max-width: 700px;
@@ -272,105 +343,148 @@
                        xlabel="x", ylabel="y", axlabelshift=1.2) 
         plt.xticks([])
         plt.yticks([])
-    \caption Прямая $y=0$ является горизонтальной асимптотой функции $f(x)=(\sin
-        x)/x$.
+    \caption 
+        The line $y=0$ is a horizontal asymptote of $f(x)=(\sin x)/x$.
+        \source{Прямая $y=0$ является горизонтальной асимптотой функции $f(x)=(\sin x)/x$.
 \remark
-    У функции может быть не более двух горизонтальных асимптот: одна
-    соответствует пределу при $x\to +\infty$, а другая при $x=-\infty$.
+    A function may have no more than two horizontal asymptotes, each corresponding to the limit as $x\to +\infty$ and as $x\to -\infty$.
+    \source{У функции может быть не более двух горизонтальных асимптот: одна соответствует пределу при $x\to +\infty$, а другая при $x=-\infty$.}
 \question
-    Сколько вертикальных асимптот может быть у функции?
+    How many vertical asymptotes may a function have?
+    \source{Сколько вертикальных асимптот может быть у функции?}
     \quiz
         \choice \correct
-            Сколько угодно, даже бесконечное число.
+            As many as desired.
+            Even infinitely many asymptotes.
+            \source{Сколько угодно, даже бесконечное число.}
             \comment
                 Это правда. Например, у тангенса их бесконечно много.
         \choice
-            Тоже не больше двух.
+            Same as with horizontal ones: not more than two
+            \source{Тоже не больше двух.}
             \comment
-                У функции $f(x)=1/(x(x-1)(x+1))$ их три!
+                No, consider the function $f(x)=1/(x(x-1)(x+1))$.
+                It has three vertical asymptotes!
+                \source{У функции $f(x)=1/(x(x-1)(x+1))$ их три!}
         \choice
-            Сколько угодно, но конечное число.
+            As many as desired, but only a finite amount
+            \source{Сколько угодно, но конечное число.}
             \comment
-                Что насчёт тангенса?
+                What about the tangent function?
+                \source{Что насчёт тангенса?}
 
 \remark
-    Предел функции $f(x)$ при $x\to +\infty$ очень похож на предел
-    последовательности $\seq{f(n)}$ при $n\to \infty$. Однако, это не одно и то
-    же: когда обсуждается предел последовательности, $n$ принимает только
-    натуральные значения, а в случае предела функции $x$ может принимать любые
-    вещественные значения.
+    Notice that a limit of $f(x)$ as $x\to +\infty$ is very similar to a limit of a sequence $\seq{f(n)}$ as $n\to \infty$.
+    However, it is not the same thing, among other things $n$ is a natural number and $x$ is real.  
+    \source
+        Предел функции $f(x)$ при $x\to +\infty$ очень похож на предел последовательности $\seq{f(n)}$ при $n\to \infty$. 
+        Однако, это не одно и то же: когда обсуждается предел последовательности, $n$ принимает только натуральные значения, а в случае предела функции $x$ может принимать любые вещественные значения.
 
 \question
-    Рассмотрим два предела: предел функции $\lim_{x\to +\infty} \sin (\pi x)$ и
-    предел последовательности $\lim_{n \to \infty} \sin (\pi n)$. Что вы можете
-    про них сказать?
+    Consider two limits: the limit $\lim_{x\to +\infty} \sin (\pi x)$ and $\lim_{n \to \infty} \sin (\pi n)$.
+    What can be said about them?
+    \source
+        Рассмотрим два предела: предел функции $\lim_{x\to +\infty} \sin (\pi x)$ и предел последовательности $\lim_{n \to \infty} \sin (\pi n)$. 
+        Что вы можете про них сказать?
     \quiz
         \choice
-            Они оба существуют, но не равны.
+            They both exist and are unequal.
+            \source{Они оба существуют, но не равны.}
             \comment
-                Этого не может быть из определения предела по Гейне.
+                This cannot happen by the ($\eps$, $\delta$)-definition of a limit.
+                \source{Этого не может быть из определения предела по Гейне.}
         \choice
-            Они оба существуют и равны.
+            They both exist and are equal.
+            \source{Они оба существуют и равны.}
             \comment
-                Это вряд ли. Функция $\sin \pi x$ может принимать значения $1$
-                или $-1$ для сколь угодно больших $x$.
+                Not really.
+                Notice that $\sin \pi x$ takes the values of $1$ and $-1$ for arbitrarily large $x$.
+                \source
+                    Это вряд ли. 
+                    Функция $\sin \pi x$ может принимать значения $1$ или $-1$ для сколь угодно больших $x$.
         \choice
-            Они оба не существуют.
+            They both does not exist.
+            \source{Они оба не существуют.}
             \comment
-                А что вы можете сказать про последовательность $\seq{\sin(\pi
-                n)}$? Найдите несколько её членов.
+                What about the sequence $\seq{\sin(\pi n)}$?
+                Try to write out some of its terms.
+                \source
+                    А что вы можете сказать про последовательность $\seq{\sin(\pi n)}$? 
+                    Найдите несколько её членов.
         \choice
-            Предел функции существует, а предел последовательности нет.
+            The limit of the function exist, and the other does not.
+            \source{Предел функции существует, а предел последовательности нет.}
             \comment
-                Этого не может быть из определения предела по Гейне.
+                This cannot happen by the ($\eps$, $\delta$)-definition of a limit.
+                \source{Этого не может быть из определения предела по Гейне.}
         \choice \correct
+            The limit of the sequence exist, and the other does not.
             Предел последовательности существует, а предел функции нет.
             \comment
-                И правда! Последовательность на самом деле состоит из нулей и её
-                предел равен нулю. А функция $\sin \pi x$ может принимать
-                значения $1$ или $-1$ для сколь угодно больших $x$, и значит не
-                имеет предела.
+                Yes, indeed!
+                The sequence consists of zeros, hence its limit is zero.
+                The function takes the values of $1$ and $-1$ for arbitrarily large $x$, so it dxiverges.
+                \source
+                    И правда! 
+                    Последовательность на самом деле состоит из нулей и её предел равен нулю. 
+                    А функция $\sin \pi x$ может принимать значения $1$ или $-1$ для сколь угодно больших $x$, и значит не имеет предела.
 
-\subsection Бесконечные пределы на бесконечности
+\subsection 
+    Infinite limits on infinity ???
+    \source{Бесконечные пределы на бесконечности}
 
-Мы рассмотрели бесконечные пределы в конечных точках и конечные пределы на
-бесконечности. Можно скрестить ужа с ежом и получить бесконечные пределы
-при $x$ стремящемся к бесконечности.
+We've considered infinite limits in finite points and finite limits as a variable approaches infinity.
+Now we'd like to merge these two together and define infinite limits as a variable approaches infinity.
+\source
+    Мы рассмотрели бесконечные пределы в конечных точках и конечные пределы на бесконечности. 
+    Можно скрестить ужа с ежом и получить бесконечные пределы при $x$ стремящемся к бесконечности.
 
 \definition
-    Пусть функция $f(x)$ определена для всех достаточно больших значений $x$, то
-    есть найдётся такое $C_*$, что $f(x)$ определена для всех $x > C_*$. Говорят,
-    что предел функции $f(x)$ при $x$ стремящемся к плюс бесконечности равен
-    плюс бесконечности, если для всякого $D$ найдётся такое $C$, что для всех $x > C$
-    верно неравенство $f(x)>D$. Записывают:
+    Suppose $f(x)$ is defined for all sufficiently large $x$, that is there exists $C_*$ such that $f(x)$ is defined for all $x > C_*$.
+    A limit of $f(x)$ is equal to positive infinity as $x$ approaches positive infinity if for any $D$ it's possib;e to find $C$ such that for all $x > C$ the inequality $f(x) > D$ holds.
+    We denote it as
+    \source
+        Пусть функция $f(x)$ определена для всех достаточно больших значений $x$, то есть найдётся такое $C_*$, что $f(x)$ определена для всех $x > C_*$. 
+        Говорят, что предел функции $f(x)$ при $x$ стремящемся к плюс бесконечности равен плюс бесконечности, если для всякого $D$ найдётся такое $C$, что для всех $x > C$ верно неравенство $f(x)>D$. 
+        Записывают:
     \eq
         \lim_{x\to +\infty} f(x) = +\infty.
 
 \exercise
-    Придумайте определения для остальных комбинаций бесконечностей.
+    Try to formulate the definitions for all combinations of positive and negative infinities (and infinity without a sign).
+    \source{Придумайте определения для остальных комбинаций бесконечностей.}
 
 \example
-    Функция $f(x)=x^2$ стремится к плюс бесконечности при $x\to \infty$, а функция
-    $f(x)=x^3$ стремится просто к бесконечности при $x\to \infty$.
+    The function $f(x)=x^2$ approaches positive infinity as $x \to \infty$, and the function $f(x)=x^3$ approaches infinity without a sign as $x\to \infty$.
+    \source{Функция $f(x)=x^2$ стремится к плюс бесконечности при $x\to \infty$, а функция $f(x)=x^3$ стремится просто к бесконечности при $x\to \infty$.}
 
 \example
-    Рассмотрим функцию
+    Consider the function
+    \source{Рассмотрим функцию}
     \eq
         f(x)=\frac{1}{1+e^{-x}}.
-    При $x \to +\infty$ функция $e^{-x}$ стремится к нулю (она равна $1/e^{x}$,
-    и раз $e^{x}$ становится очень-очень большим, $e^{-x}$ становится очень
-    близким к нулю). По арифметике пределов,
+    Notice that $e^{-x}$ approaches zero as $x \to +\infty$ (it is equal to $1/e^{x}$, where the denominator gets increasingly bigger and the numerator is constant), and by arithmetic of limits:
+    \source
+        При $x \to +\infty$ функция $e^{-x}$ стремится к нулю (она равна $1/e^{x}$, и раз $e^{x}$ становится очень-очень большим, $e^{-x}$ становится очень близким к нулю). 
+        По арифметике пределов,
     \eq
         \lim_{x \to +\infty} \frac{1}{1+e^{-x}}=\frac{1}{1+0}=1.
-    При $x\to -\infty$ функция $e^{-x}$ стремится к плюс бесконечности. В этом
-    случае знаменатель дроби также стремится к плюс бесконечности. Поскольку
-    числитель равен 1, значение дроби стремится к нулю (см.
-    \ref[утверждение][prop:07:1/infty] из \ref[лекции][chap:07:infinite], где
-    шла речь про «арифметику бесконечностей»). Значит
+    Notice also that $e^{-x}$ approaches positive infinity as $x\to -\infty.
+    In this case the denominator of the fraction also approaches positive infinity.
+    And since the numerator is equal to $1$, the whole fraction approaches zero (see \ref[proposition][prop:07:1/infty] from \ref[lecture][chap:07:infinite], where we've analyzed the arithmetic of limits).
+    Hecne, 
+    \source
+        При $x\to -\infty$ функция $e^{-x}$ стремится к плюс бесконечности. 
+        В этом случае знаменатель дроби также стремится к плюс бесконечности. 
+        Поскольку числитель равен 1, значение дроби стремится к нулю (см. \ref[утверждение][prop:07:1/infty] из \ref[лекции][chap:07:infinite], где шла речь про «арифметику бесконечностей»). 
+        Значит
     \eq
         \lim_{x\to -\infty} \frac{1}{1+e^{-x}}=0.
-    У нашей функции две горизонтальные асимптоты: $y=0$ и $y=1$. (И вообще это
-    важная функция — так называемая «сигмоида», встречается в эконометрике и нейросетях.)
+    We condlude, $f(x)$ has two asymptotes: $y=0$ and $y=1$.
+    (In fact, this function has called "sigmoid" and has a variety of important applications including economentics and neural networks.)
+    \source
+        У нашей функции две горизонтальные асимптоты: $y=0$ и $y=1$. 
+        (И вообще это важная функция — так называемая «сигмоида», встречается в эконометрике и нейросетях.)
 
     \figure \showcode \collapsed
         \pythonfigure \style max-width: 600px;
@@ -388,43 +502,62 @@
                            xlabel="x", ylabel="y", axlabelshift=1.2) 
             plt.xticks([])
             plt.yticks([1], ['$1$'], va="bottom")
-        \caption У функции $f(x)=1/(1+e^{-x})$ две горизонтальные асимптоты:
-            $y=0$ и $y=1$.
+        \caption 
+            The function $f(x)=1/(1+e^{-x})$ has two horizontal asymptotes: $y=0$ and $y=1$.
+            \source{У функции $f(x)=1/(1+e^{-x})$ две горизонтальные асимптоты: $y=0$ и $y=1$.}
+
 
 \remark 
-    В этой лекции восемь разных определений — и это ещё несколько я попросил вас
-    придумать самостоятельно! Глаза разбегаются. При этом можно заметить, что
-    все определения очень похожи друг на друга. Нет ли возможности
-    как-то их объединить в одно супер-определение? Оказывается, есть — можно
-    ввести общее понятие \emph{предела по базе}, для которого все наши пределы
-    (предел последовательности и всевозможные пределы функций) будут частными
-    случаями. Затем можно в общем случае доказать все утверждения, которые нам
-    нужны (единственность предела, арифметику и т.д.) Этот подход позволяет
-    сэкономить время, но грешит слишком большой абстрактностью — для первого
-    знакомства с матанализом он не подходит.
+    We've already introduced eight new definitions in this licture, not to mention couple extra ones for self-study.
+    Eyes run away from such a variety.
+    At the same time, these definitions are very much alike.
+    Does there exist a way to combine all of them into one Definition?
+    It turns out that the answer is "yes"!
+    The definition of a limit over a base can be introduced, for which all above definitions (a limit of a sequence and a function) are just special cases.
+    Afterwards, propositions such as uniqueness of a limit and limit arithmetic can be proven in general case.
+    This approach saves time but leads to difficulties with abstraction, especially when studying calculus for the first time.   
+    \source
+        В этой лекции восемь разных определений — и это ещё несколько я попросил вас придумать самостоятельно! 
+        Глаза разбегаются. 
+        При этом можно заметить, что все определения очень похожи друг на друга. 
+        Нет ли возможности как-то их объединить в одно супер-определение? 
+        Оказывается, есть — можно ввести общее понятие \emph{предела по базе}, для которого все наши пределы (предел последовательности и всевозможные пределы функций) будут частными случаями. 
+        Затем можно в общем случае доказать все утверждения, которые нам нужны (единственность предела, арифметику и т.д.) 
+        Этот подход позволяет сэкономить время, но грешит слишком большой абстрактностью — для первого знакомства с матанализом он не подходит.
 
 \remark
-    А что с пределами по Гейне? Их сформулировать как раз очень просто.
-    Например, утверждение $\lim_{x\to +\infty} f(x)=-\infty$ с точки зрения
-    определения по Гейне означает, что для любой последовательности $\seq{x_n}$,
-    стремящейся к плюс бесконечности, последовательность $\seq{f(x_n)}$
-    стремится к минус бесконечности. Аналогично определяются и все остальные
-    понятия, которые мы тут обсуждали. Доказать эквивалентность таких
-    определений по Гейне и тех, которые сформулированы здесь — хорошее
-    упражнение.
+    We can alternatively define a limit in terms of a limit of sequences.
+    For example, the proposition $\lim_{x\to +\infty} f(x)=-\infty$ means that for any sequence $\seq{x_n}$ that approach positive infinity the sequence $\seq{f(x_n)}$ approaches negative infinity.
+    This definition is sometimes called the Heine definition of a limit.
+    Each of the associated definitions can be formulated analogously.
+    A great exercise is to prove that this definition is equivalent to $\eps-\delta$ definition of a limit. 
+    (It must be shown that the second one is implied by the first and vice versa.)
+    \source
+        А что с пределами по Гейне? 
+        Их сформулировать как раз очень просто.
+        Например, утверждение $\lim_{x\to +\infty} f(x)=-\infty$ с точки зрения определения по Гейне означает, что для любой последовательности $\seq{x_n}$, стремящейся к плюс бесконечности, последовательность $\seq{f(x_n)}$ стремится к минус бесконечности. 
+        Аналогично определяются и все остальные понятия, которые мы тут обсуждали. 
+        Доказать эквивалентность таких определений по Гейне и тех, которые сформулированы здесь — хорошее упражнение.
 
-\subsection Наклонные асимптоты
+\subsection 
+    Oblique asymptotes
+    \source{Наклонные асимптоты}
 
-Пусть $\lim_{x\to \infty} f(x)=\infty$. Тогда функция не может иметь
-горизонтальных асимптот. Однако её график по-прежнему может приближаться к
-какой-нибудь прямой — только не горизонтальной.
+Suppose that $\lim_{x\to \infty} f(x)=\infty$. 
+Then the function may have no horizontal asymptotes.
+At the same time, its graph can still "approach" some sloped line.
+\source
+    Пусть $\lim_{x\to \infty} f(x)=\infty$. 
+    Тогда функция не может иметь горизонтальных асимптот. 
+    Однако её график по-прежнему может приближаться к какой-нибудь прямой — только не горизонтальной.
 
 \example
-    Рассмотрим функцию
+    Consider the function
+    \source{Рассмотрим функцию}
     \eq
         f(x)=x+\frac{1}{x}.
-    Её предел при $x\to \infty$ равен бесконечности,  и когда $x$ стремится к
-    бесконечности, график функции неограниченно приближается к прямой $y=x$.
+    The limit as $x\to \infty$ is infinity, and the larger $x$ gets, the more the graph starts to look like $y=x$. 
+    \source{Её предел при $x\to \infty$ равен бесконечности,  и когда $x$ стремится к бесконечности, график функции неограниченно приближается к прямой $y=x$.}
 
     \figure \showcode \collapsed
         \pythonfigure \style max-width: 400px;
@@ -441,78 +574,117 @@
                            xlabel="x", ylabel="y", axlabelshift=1.2) 
             plt.xticks([])
             plt.yticks([], [])
-        \caption У функции $f(x)=x+\frac{1}{x}$ есть наклонная асимптота $y=x$.
+        \caption 
+            The function $f(x)=x+\frac{1}{x}$ has an oblique asymptote of $y=x$.
+            \source{У функции $f(x)=x+\frac{1}{x}$ есть наклонная асимптота $y=x$.}
 
-    Действительно, давайте возьмём большое значение $x=x_0$ и посчитаем «расстояние
-    по вертикали» между графиком функции и прямой $y=x$ для этого значения $x$.
-    (Иными словами, мы проведём вертикальную прямую $x=x_0$ и посмотрим на
-    расстояние между точками пересечения этой прямой и графиков $y=f(x)$ и
-    $y=x$.) Это расстояние вычисляется как $|f(x)-x|=|1/x|$. Оно стремится к
-    нулю при $x\to \infty$.
+    Let's set the argument to a sufficienly large value $x=x_0$ and calculate the "distance" between our function and the function $y=x$ at $x_0$.
+    (In other words, draw a vertical line $x=x_0$ and see how far apart are the points of intersection located.)
+    This distance turns out to be $|f(x)-x|=|1/x|$. 
+    It approaches zero as $x\to \infty$.
+    \source
+        Действительно, давайте возьмём большое значение $x=x_0$ и посчитаем «расстояние по вертикали» между графиком функции и прямой $y=x$ для этого значения $x$.
+        (Иными словами, мы проведём вертикальную прямую $x=x_0$ и посмотрим на расстояние между точками пересечения этой прямой и графиков $y=f(x)$ и $y=x$.) 
+        Это расстояние вычисляется как $|f(x)-x|=|1/x|$. 
+        Оно стремится к нулю при $x\to \infty$.
 
 \definition
-    Прямая $y=kx+b$ называется \emph{наклонной асимптотой} функции $f(x)$ (или
-    её графика), если хотя бы один из пределов
+    The line $y=kx+b$ is called a \emph{oblique asymptote} of $f(x)$ (or of its graph) if at least one of the following limits
+    \source{Прямая $y=kx+b$ называется \emph{наклонной асимптотой} функции $f(x)$ (или её графика), если хотя бы один из пределов}
     \eq
         \lim_{x\to +\infty} (f(x) - (kx + b)),
-    или
+    or
+    \source{или}
     \eq
         \lim_{x\to -\infty} (f(x) - (kx + b))
-    равен нулю.
+    is equal to zero.
+    \source{равен нулю.}
 
 \remark
-    Как видно из определения, горизонтальная асимптота — это частный случай
-    наклонной ($k=0$). Всего может быть не более двух наклонных асимптот (одна
-    соответствует $x\to +\infty$, а другая $x\to -\infty$), включая
-    горизонтальные.
+    The definition is formulated in such way that a horizontal asymptote can be thought of as a special case of an oblique one with $k=0$.
+    Notice that there can exist no more than two asymptotes, each corresponding to limits as the argument approaches positive or negative infinity. 
+    \source
+        Как видно из определения, горизонтальная асимптота — это частный случай наклонной ($k=0$). 
+        Всего может быть не более двух наклонных асимптот (одна соответствует $x\to +\infty$, а другая $x\to -\infty$), включая горизонтальные.
 
-Как искать наклонные асимптоты? На эту тему есть рецепт.
+How to find oblique asymptotes?
+Luckily, there exists a universal recipe.
+\source
+    Как искать наклонные асимптоты? 
+    На эту тему есть рецепт.
 
 \proposition
-    Наклонная асимптота $y=kx+b$ при $x\to +\infty$ у функции $f(x)$ существует
-    тогда и только тогда, когда существуют пределы
+    The oblique asymptote of $f(x)$ as $x\to +\infty$ exists if and only if there exist the following limits
+    \source{Наклонная асимптота $y=kx+b$ при $x\to +\infty$ у функции $f(x)$ существует тогда и только тогда, когда существуют пределы}
     \align
         \item \label eq:12:asy-k 
             \lim_{x\to +\infty} & \frac{f(x)}{x}=k;
         \item \label eq:12:asy-b
             \lim_{x\to +\infty} & (f(x)-kx)=b.
-    При этом они обязаны равняться указанным значениям ($k$ и $b$).
+    Moreover, these values are the coefficients of $y=kx+b$.
+    \source{При этом они обязаны равняться указанным значениям ($k$ и $b$).}
 
 \proof
-    Докажем в одну сторону. Пусть $y=kx+b$ является наклонной асимптотой функции
-    $f(x)$ при $x\to +\infty$. Тогда
+    Let's first prove in the backward direction.
+    Suppose that $y=kx+b$ is the oblique asymptote of $f(x)$ as $x\to +\infty$.
+    This implies
+    \source
+        Докажем в одну сторону. 
+        Пусть $y=kx+b$ является наклонной асимптотой функции $f(x)$ при $x\to +\infty$. 
+        Тогда
     \align \nonumber
         \item &\lim_{x\to +\infty} \frac{f(x)}{x}=
         \splitem \splonly{&=}\lim_{x\to +\infty} \frac{f(x)-(kx+b)+(kx+b)}{x}=
         \item &=\lim_{x\to +\infty} \left(\frac{f(x)-(kx+b)}{x}+k+\frac{b}{x}\right)=k
-    Предел первого слагаемого равен нулю, поскольку числитель стремится к нулю
-    (по предположению), а знаменатель к бесконечности.
+    The limit of the first term is zero since the denominator approaches zero (by assumption), and the denominator approaches infinity.
+    \source
+        Предел первого слагаемого равен нулю, поскольку числитель стремится к нулю (по предположению), а знаменатель к бесконечности.
 
-    Со вторым пределом ещё проще:
+    The limit of the second term is even simpler:
+    \source{Со вторым пределом ещё проще:}
     \align \nonumber
         \item \lim_{x\to +\infty} & (f(x)-kx)=
         \splitem \splonly{&=} \lim_{x\to +\infty} ( (f(x) - (kx + b) + b ) = b.
 
-    В обратную сторону. Пусть существует предел \ref{eq:12:asy-b} и он равен
-    $b$. Тогда
+    Now the other direction.
+    Suppose there exists limit \ref{eq:12:asy-b} and it's equal to $b$.
+    Then
+    \source
+        В обратную сторону. 
+        Пусть существует предел \ref{eq:12:asy-b} и он равен $b$. 
+        Тогда
     \align \nonumber
         \item \lim_{x\to +\infty} & (f(x) - (kx + b)) = 
         \splitem \splonly{&=} \lim_{x\to +\infty} (f(x)-kx) - b = b - b = 0.
-    Утверждение доказано.
+    The proposition is proven.
+    \source{Утверждение доказано.}
 
-Конечно, можно сформулировать и доказать аналогичное утверждение для $x\to
--\infty$.
+Now it's clear how to formulate and prove the similar proposition for $x\to -\infty$.
+\source{Конечно, можно сформулировать и доказать аналогичное утверждение для $x\to -\infty$.}
 
-Таким образом, чтобы найти наклонные асимптоты, нужно сперва найти предел
-\ref{eq:12:asy-k}. Если он не существует, наклонной асимптоты (для этой
-бесконечности) точно нет. Если существует, нужно найти предел \ref{eq:12:asy-b}.
-Если этот предел существует, прямая $y=kx+b$ является наклонной асимптотой.
+Summing up, to find oblique asymptotes one needs to first find limit \ref{eq:12:asy-k}.
+If it does not esixt, then the asymptote (for the respective infinity) does not exist.
+If it is equal to some $k$, then limit \ref{eq:12:asy-b} must equal to some $b$.
+If so, the asymptote exists and equals to $y=kx+b$.
+\source
+    Таким образом, чтобы найти наклонные асимптоты, нужно сперва найти предел \ref{eq:12:asy-k}. 
+    Если он не существует, наклонной асимптоты (для этой бесконечности) точно нет. 
+    Если существует, нужно найти предел \ref{eq:12:asy-b}. 
+    Если этот предел существует, прямая $y=kx+b$ является наклонной асимптотой.
 
 \example
-    Может так случиться, что предел \ref{eq:12:asy-k} существует, а предел
-    \ref{eq:12:asy-b} нет. Например, это верно для функции $f(x)=\sin x$.
+    It may so happen that limit \ref{eq:12:asy-k} exists, while \ref{eq:12:asy-b} is not.
+    For example, this is true for $f(x)=\sin x$.
+    \source
+        Может так случиться, что предел \ref{eq:12:asy-k} существует, а предел \ref{eq:12:asy-b} нет. 
+        Например, это верно для функции $f(x)=\sin x$.
 
-\section Заключение
+\section 
+    Conclusion
+    \source{Заключение}
 
-Главная цель математического анализа — научиться «заглядывать в бесконечность».
-В этой лекции мы серьезно продвинулись в этом навыке. 
+The main goal of calculus is to be able to "look into infinily".
+In this lecture we've made a step towards this goal.
+\source
+    Главная цель математического анализа — научиться «заглядывать в бесконечность».
+    В этой лекции мы серьезно продвинулись в этом навыке. 
