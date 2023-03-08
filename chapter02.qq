@@ -3,15 +3,15 @@
 
 \section Propositions
     \source{Высказывания}
-\subsection Examples of proposition 
+\subsection Examples of propositions 
     \source{Примеры высказываний}
 
-One might think a chapter with such title must contain strict and formal definitions, but no.
+One might think a chapter with such a title must contain strict and formal definitions, but no.
 \source{Вероятно, в главе с таким названием читатель ожидает наконец увидеть аккуратные определения всем вводимым понятиям.}
 \source{Но нет.}
 
 \quasidefinition
-    A proposition is a declarative sentence with an unambiguous meaning. 
+    A proposition is a declarative sentence with unambiguous meaning. 
     Propositions can be either true or false. 
     \source{Высказывание — это утверждение с чётко определенным смыслом, которое может быть истинным или ложным.}
 
@@ -20,22 +20,22 @@ As usual, examples are going to make it clear.
 
 \example \nonumber
     \itemize
-        \item The sentence "$2+2=5$" is a proposition. 
+        \item The sentence “$2+2=5$” is a proposition. 
             It is false.
             \source{«$2+2=5$» — пример высказывания. Оно ложно.}
-        \item Another example is "$3 > 2$". This is a proposition and it's true.
+        \item Another example is “$3 > 2$”. This is a proposition and it's true.
             \source{«$3 > 2$» — ещё один пример высказывания. Оно истинно.}
-        \item Yet another true proposition is "$5$ is a prime number".
+        \item Yet another true proposition is “$5$ is a prime number”.
             \source{«$5$ — простое число» — ещё одно истинное высказывание.}
-        \item The sentence "the set of all prime numbers is finite" is false.
-            \source{«Множество простых чисел конечно» — это ложное высказывание.}
-        \item The sentence "If a prime number is bigger than two, then it is odd" is a true proposition.
-            \source{«Если целое число простое и оно больше двух, оно нечётно» — истинное высказывание.}
-        \item There are propositions that haven't yet been proven to be true or false. 
-            "Every even number bigger than two can be written as a sum of two prime numbers" is a proposition of such kind. 
+        \item The sentence “the set of all prime numbers is finite” is false.
+            \source{«Множество простых чисел конечно» — это ложное высказывание.}
+        \item The sentence “If a prime number is bigger than two, then it is odd” is a true proposition.
+            \source{«Если целое число простое и оно больше двух, оно нечётно» — истинное высказывание.} 
+        \item some propositions havent yet been proven to be true or false. 
+            “Every even number bigger than two can be written as a sum of two prime numbers” is a proposition of such kind. 
             It is referred to as [Goldbach's conjecture][https://en.wikipedia.org/wiki/Goldbach%27s_conjecture].
             \source{«Каждое чётное число, большее двух, можно представить в виде суммы двух простых чисел» — это высказывание, истинность которого в настоящий момент неизвестна (это так называемая \href[бинарная проблема Гольдбаха][https://ru.wikipedia.org/wiki/Проблема_Гольдбаха]).}
-        \item The sentence "$n$ is an even number" is not a proposition because what $n$ stands for is unclear.
+        \item The sentence “$n$ is an even number” is not a proposition because what $n$ stands for is unclear.
             Because of that, it is neither true nor false.
             Such sentences are called \emph{predicates}, and we will study them in greater detail a little bit later.
             \source{«$n$ — чётное число» — это не высказывание, потому что непонятно, чему равно $n$ (здесь, конечно, под $n$ подразумевается не собственно буква, а переменная, которая может принимать разные значения), и поэтому это утверждение не является ни ложным, ни истинным. 
@@ -54,7 +54,7 @@ Consider propositions $A$ and $B$.
 Пусть даны какие-то высказывания $A$ и $B$.}
 
 \definition
-    The proposition "at least one of the propositions $A$ and $B$ is true" is called a \emph{disjunction} of $A$ and $B$, it is denoted by $A\vee B$.
+    The proposition "at least one of the propositions $A$ and $B$ is true" is called a \emph{disjunction} of $A$ and $B$, and it is denoted by $A\vee B$.
     Another term for disjunction is \emph{logical OR}.
     \source{Высказывание «верно по крайней мере одно из двух высказываний $A$ или $B$ (или оба)», называется \emph{дизъюнкцией} высказываний $A$ и $B$. 
     Оно обозначается $A\vee B$. 
@@ -62,18 +62,18 @@ Consider propositions $A$ and $B$.
 
 
 \definition
-    The proposition "both  of the propositions $A$ and $B$ are true" is called a \emph{conjunction}, it is denoted by $A\wedge B$.
+    The proposition “both of the propositions $A$ and $B$ are true” is called a \emph{conjunction}, it is denoted by $A\wedge B$.
     Another term for conjunction is \emph{logical AND}.
     \source{Высказывание «верны оба высказывания $A$ и $B$» называется \emph{конъюнкцией} высказываний $A$ и $B$. 
     Оно обозначается $A \wedge B$.
     Другой термин для конъюнкции — \emph{логическое «И»}.}
 
 \definition
-   The proposition "$A$ is false" is called a \emph{negation}, it is denoted by $\neg A$.
+   The proposition “$A$ is falsel” is called a \emph{negation}, it is denoted by $\neg A$.
    Another term for negation is \emph{logical NOT}.
-   \source{Высказывание «высказывание $A$ неверно» называется \emph{отрицанием} $A$. Обозначается $\neg A$. Другой термин — \emph{логическое «НЕ»}.}
+   \source{Высказывание «высказывание $A$ неверно» называется \emph{отрицанием} $A$. Обозначается $\neg A$. Другой термин — \emph{логическое «НЕ»}.}
     
-If the truth values of propositions $A$ and $B$ are known, we can establish the truth value of their conjunction, disjunction and negation. 
+If the truth values of propositions $A$ and $B$ are known, we can establish the truth value of their conjunction, disjunction, and negation. 
 For example, if $A$ is true, then $\neg A$ is false.
 If $A$ and $B$ are both true, then $A\wedge B$ is true, otherwise false—and so on.
 All these combinations can be conveniently written in the form of a table, which has a name: a \emph{truth table}.
@@ -107,7 +107,7 @@ The following table is for conjunction and disjunction
         \hline
     \end{array}
 
-There is actually another important logical operation, but for now we'll focus on these three.
+There is another important logical operation, but for now, we'll focus on these three.
 \source{В дальнейшем нам понадобится ещё одна важная логическая операция, но пока остановимся на этих.}
 
 
@@ -133,7 +133,7 @@ Formally we write
     \splitem \splonly{=}
         \neg A \splonly{&} \wedge \neg B
 The second equality holds because negation has a higher priority than conjunction.
-In other words, writing $\neg A \wedge \neg B$ means the negations happen first, then the conjunction—so brackets are unnecessary. 
+In other words, writing $\neg A \wedge \neg B$ means the negations are applied first, then the conjunction—so brackets are unnecessary. 
 \source{Второе равенство верно, поскольку операция отрицания имеет приоритет перед конъюнкцией, то есть в формуле $\neg A \wedge \neg B$ сначала выполняются отрицания, а потом конъюнкция, так что скобки вокруг $\neg A$ и $\neg B$ можно не писать.}
 
 Similar reasoning can be applied to the proposition $\neg(A \wedge B)$.
@@ -149,10 +149,10 @@ Again, more formally
     \splitem
         \splonly{&=}\neg A \vee \neg B.
 
-Observe that when expanding the brackets with a negation in front, the symbol $\vee$ changes to $\wedge$ and vice versa.
+Observe that when removing the parentheses with a negation sign in front, the symbol $\vee$ changes to $\wedge$ and vice versa.
 \source{Можно сказать, что при раскрытии скобок, перед которыми стоит отрицание, знак $\vee$ меняется на $\wedge$ и наоборот.}
 
-These transformation rules are calles \emph{De Morgan's laws}.
+These transformation rules are called \emph{De Morgan's laws}.
 \source{Эти правила преобразования формул в алгебре логики называются \emph{законами де Моргана}.}
 
 \remark
@@ -166,13 +166,13 @@ These transformation rules are calles \emph{De Morgan's laws}.
 \subsection Logical operations in programming.
     \source{Логические операции в программировании}
 
-In common programming languages propositions are representes by boolean variables (for example, \tt{bool} in Python).
+In common programming languages, propositions are represented by boolean variables (for example, \tt{bool} in Python).
 They take on two values: true and false (\tt{True} and \tt{False}).
 For example, consider the proposition \tt{2 + 3 == 4}. 
 Its value is \tt{False}.
-On the other hand, \tt{3 > 2} has a value of \tt{True}.
+On the other hand, the proposition \tt{3 > 2} has a value of \tt{True}.
 It's possible to apply logical operators \tt{and}, \tt{or}, and \tt{not} to boolean variables.
-For example, \tt{2 * 0 == 1 or 3 > 2} has a value of \tt{True}.
+For example, the proposition \tt{2 * 0 == 1 or 3 > 2} has a value of \tt{True}.
 \source{В распространённых языках программирования высказываниям соответствуют выражения, имеющие значения типа «булевская величина» (например, в Python это \tt{bool}), то есть принимающие значения «истина» или «ложь» (\tt{True} и \tt{False}). 
 Например, \tt{2 + 3 == 4} имеет значение \tt{False}, а \tt{3 > 2} — \tt{True}. 
 К булевским значениям можно применять логические операторы \tt{and}, \tt{or} и \tt{not}. 
@@ -180,8 +180,8 @@ For example, \tt{2 * 0 == 1 or 3 > 2} has a value of \tt{True}.
 
 \comment
     Consider the line of code \tt{if x > 0 and x < 10: print("ok"). 
-    When executed, it prints \tt{ok} if the variable \tt{x} contains a number greater than $0$ \emph{and} less than $10$.
-    Logical operators are used for creating complex (so called \emph{compound}) statements from simple ones, which is a common practice when it comes to implementing a certain logic inside an app. 
+    When executed, it prints \tt{ok} if the variable \tt{x} has a value greater than $0$ \emph{and} less than $10$.
+    Logical operators are used for creating complex (so-called \emph{compound}) statements from simple ones. This often needs to be done to implement some feature inside an app.
     \source{Например: \tt{if x > 0 and x < 10: print("ok")} — на экран будет выведена строка \tt{ok} если в переменной \tt{x} находится значение больше 0 \emph{и} меньше 10. 
     С помощью логических операторов можно составлять сложные условия из простых, и это часто приходится делать, чтобы реализовать ту или иную логику работы приложения.}
 
@@ -191,8 +191,8 @@ For example, \tt{2 * 0 == 1 or 3 > 2} has a value of \tt{True}.
 \subsection Examples of predicates
     \source{Примеры предикатов}
 
-We've already encountered the sentence "$n$ is even" earlier. 
-One can argue that the question of its truth value doesn't make sence since it's not specified what exactly $n$ stands for.
+We've already encountered the sentence “$n$ is even” earlier. 
+One can argue that the question of its truth value doesn't make sense since it's not specified what exactly $n$ stands for.
 This is an example of a declarative sentence that is not a proposition.
 Instead, such sentences are called \emph{predicates}.
 \source{Выше фигурировал пример утверждения «$n$ — чётное число». 
@@ -201,51 +201,50 @@ Instead, such sentences are called \emph{predicates}.
 Утверждения такого типа называются \emph{предикатами}.}
 
 \quasidefinition
-    Roungly speaking, a \emph{predicate} is a sentence that contains one or more variables. 
-    It becomes a proposition if the values of \emph{all} variables are specified. 
+    Roughly speaking, a \emph{predicate} is a sentence that contains one or more variables. 
+    It becomes a proposition when the values of \emph{all} variables are specified. 
     \source{Грубо говоря, \emph{предикат} — это такое утверждение, которое зависит от одной или нескольких переменных, и становится высказыванием, если задать значения этих переменных.}
 
 \example
-    Consider the predicate "$n$ is even".
-    In formal language predicates are often written like this: $E(n)$.
-    By substituting a certain value into $n$ it becomes a proposition, which is either true or false.
+    Consider the predicate “$n$ is even”.
+    Predicates can be denoted by letters, just like functions, for example, $E(n)$.
+    By substituting a certain value for $n$ it becomes a proposition, which is either true or false.
     For example, $E(2)$ is true, while $E(17)$ is false.
-    When dealing with a function, we always specify its domain.
-    In similar way, predicates also have their domains, which is the set of all values their variables are allowed to take.
+    Like a function, a predicate has a domain — the set of all values its variables are allowed to take.
     In this example, let's define the domain of $E(n)$ to be all natural numbers $n\in \mathbb N$. 
-    (No one can restrict us to this particular domain, other ones are also allowed).
+    (But we can also define a similar predicate for the set of all integers).
     \source{Рассмотрим предикат «$n$ — чётное число». 
     Его можно обозначить какой-нибудь буквой, аналогично обозначению функций — например, $E(n)$. 
     При подстановке конкретного $n$ предикат становится высказыванием, которое является истинным или ложным. 
-    Например, $E(2)$ истинно, а $E(17)$ — ложно. 
+    Например, $E(2)$ истинно, а $E(17)$ — ложно. 
     Подобно функциям, у предикатов есть «область определения» — множество значений, которые могут принимать переменные. 
     Например, давайте считать, что областью определения для $E(n)$ является множество натуральных чисел, $n\in \mathbb N$ (но можно было бы определить аналогичный предикат и для множества всех целых чисел).}
-\example Consider a predicate $D(k, n)$ that is the sentence "$n$ is divisible by $k$".
-    This predicate depends on two variables $k$ and $n$.
+\example Consider a predicate $D(k, n)$ that is the sentence “$n$ is divisible by $k$”.
+    This predicate has two variables $k$ and $n$.
     Suppose also that $n\in \mathbb N$ and $k \in \mathbb N$.
-    By trying some values we observe  $D(2, 3)$ is false and D(2, 4)$ is true.
+    By trying some values we observe that $D(2, 3)$ is false and D(2, 4)$ is true.
     \source{Определим предикат $D(k, n)$ — «$n$ делится на $k$». 
     Этот предикат зависит от двух переменных. 
     Будем считать, что $n\in \mathbb N$ и $k \in \mathbb N$. 
     Например, $D(2, 3)$ — ложь, а $D(2, 4)$ — истина.}
-\example Later we'll work with the predicate $S(x, y):=«x^2=y»$, where $x$ and $y$ are real numbers.
-    It checks whether $x^2$ is equal to $y$ or not.
+\example We will also need the predicate $S(x, y):=«x^2=y»$, where $x$ and $y$ are real numbers.
+    It checks whether $x^2$ is equal to $y$.
     \source{Ещё нам понадобится предикат $S(x, y):=«x^2=y»$, определенный для вещественных $x$ и $y$. 
     Он проверяет, что $x^2$ равняется $y$.}
 
-\remark From now on we'll reserve variable names $m$, $n$, and $k$ for natural numbers, and $x$ and $y$ for real numbers.
-    \source{В дальнейшем в этой главе, если не оговорено обратное, мы будем считать, что буквы $m$, $n$, $k$ обозначают натуральные числа, а $x$ и $y$ — вещественные.}
+\remark In this chapter by default we'll use variables $m$, $n$, and $k$ for natural numbers, and $x$ and $y$ for real numbers.
+    \source{В дальнейшем в этой главе, если не оговорено обратное, мы будем считать, что буквы $m$, $n$, $k$ обозначают натуральные числа, а $x$ и $y$ — вещественные.}
 
 It's possible to define new predicates from existing ones.
 For example, suppose we have a predicate $D$, that checks divisibility. 
-If we need to make a predicate $E$ that checks whether a number is even, $D$ can help:
+If we need a predicate $E$ that checks whether a number is even, we can define it using $D$ like this:
 \source{Одни предикаты можно определять через другие. 
 Например, если бы у нас был готовый предикат $D$, проверяющий делимость, и нам нужно было изготовить из него предикат $E$, проверяющий число на чётность, его легко можно было бы задать таким образом:}
 
 \eq
     E(n):=D(2, n).
 
-In the following section we will discuss another way to define a predicate.
+In the following section, we will discuss another way to define a predicate using the existing ones.
 \source{В следующем разделе мы познакомимся с ещё одним способом создания новых предикатов из существующих.}
 
 \subsection Universal quantifier
@@ -253,9 +252,9 @@ In the following section we will discuss another way to define a predicate.
 
 Consider the predicate $T(n):=D(1, n)$.
 It checks whether a natural number $n$ is divisible by $1$. 
-(Note that every natural number is divisible by $1$).
-It can also be restates this way: "for all $n$ predicate $T(n)$ is true".
-There is a short way of representing the same thing:
+But all natural numbers are divisible by $1$!
+This can also be reformulated as “for all $n$ the predicate $T(n)$ is true”.
+There is a special short way to represent the same thing:
 \source{Давайте рассмотрим предикат $T(n):=D(1, n)$. 
 Он проверяет, что натуральное число $n$ делится на $1$. 
 Но все натуральные числа делятся на 1! 
@@ -264,7 +263,7 @@ There is a short way of representing the same thing:
 \eq
     \forall n \\ T(n).
 A sign $\forall$ (upside down A, from \emph{all}) is called a \emph{universal quantifier}.
-It is read as "for all".
+It is read as “for all”.
 \source{Знак $\forall$ (перевёрнутая буква A, от \emph{all}) называется \emph{квантором всеобщности}. 
 Он читается «для всякого». }
 
@@ -279,8 +278,8 @@ It is read as "for all".
     определении предиката или её можно понять из контекста.
 
 \question
-    Consider the proposition $\forall n \\ E(n)$, where $E(n)$ is a predicare that checks whether a natural number $n$ is even.
-    What is its truth value?
+    Consider the proposition $\forall n \\ E(n)$, where $E(n)$ is a predicate that checks whether a natural number $n$ is even.
+    What can we tell about this proposition?
     \source{Рассмотрим утверждение $\forall n \\ E(n)$, где $E(n)$ — предикат, проверяющий, что натуральное число $n$ является чётным. 
     Что вы можете сказать про построенное таким образом утверждение?}
     \quiz
@@ -306,8 +305,11 @@ It is read as "for all".
             \source{Невозможно определить его истинность, зависит от значения $n$.}
             \comment
                 No!
-                It's false simply because there are natural numbers that are not even.
-                They are called odd numbers.
+   The proposition states that for any natural $n$ the value of $n$
+is even.
+   Or, to put it differently, “all natural numbers are even”.
+   This proposition is clearly false.
+
                 \source{Нет! 
                 В этом утверждении сказано: «для любого натурального $n$ верно, что $n$ чётно». 
                 Иными словами, это утверждение можно переписать так: «все натуральные числа — чётны». 
@@ -315,13 +317,13 @@ It is read as "for all".
 
 \remark \label rem:02:bound
     Suppose $P(x)$ is a predicate.
-    Consider a sentence $\forall x \\ P(x)$.
-    If for all values of $x$ the proposition $P(x)$ is true, then this sentence must be also true.
-    Otherwise it is false.
-    (This verifies the sentence is a proposition).
-    Notice that although $x$ is contained in the sentence, we cannot substitute any values in it.
-    (A sentence $\forall 2 \\ P(2)$ does not make sence at all, because a quantifier must be followed by a variable).
-    In such cases $x$ is called a \emph{bound} variable because it's somewhat "bound" to a quantifier and cannot be manipulated in any way.
+    Consider the statement $\forall x \\ P(x)$.
+    If the sentence $P(x)$ is true for all values of $x$, then the statement above is also true.
+    Otherwise, it is false.
+    So, this statement is not a predicate, but simply a proposition that can be true or false.
+    Notice that although our statement has the variable $x$, we cannot substitute any value for it.
+    The statement $\forall 2 \\ P(2)$ does not make sense, because a quantifier must be followed by a variable and not a number.
+    In such cases, $x$ is called \emph{bound} — as if it exists only inside the sentence and cannot be changed “from outside”.
     \source{Пусть $P(x)$ — какой-то предикат. 
     Рассмотрим утверждение $\forall x \\ P(x)$. 
     Если $P(x)$ при всех значениях $x$ является истинным, значит, это утверждение истинно. 
@@ -334,26 +336,26 @@ It is read as "for all".
 \subsection Existential quantifier
     \source{Квантор существования}
 
-\emph{Perfect numbers} are natural numbers, that are equal to the sum of their (positive) divisors that are different from the number itself. 
-(Such divisors are called \emph{proper divisors}).
+\emph{Perfect numbers} are natural numbers that are equal to the sum of their positive divisors that are different from the number itself. 
+(Such divisors are called \emph{proper}).
 \source{\emph{Совершенными числами} называются натуральные числа, которые равны сумме всех своих положительных делителей, отличных от самого числа (так называемых «собственных делителей»).}
 
 Consider a predicate $R(n)$ that checks whether a natural number $n$ is a perfect number.
-(In other words, it states that "$n$ is a perfect number").
+(In other words, it represents the statement “$n$ is a perfect number”).
 \source{Рассмотрим предикат $R(n)$, проверяющий, является ли натуральное число $n$ совершенным. 
 (Иными словами, $R(n)$ соответствует утверждению «$n$ — совершенное число».)}
 
-By choosing a particular $n$ we can easily check whether it is a perfect number or not.
-For example, a number $10$ has three proper divisors: $5$, $2$, and $1$, but $5+2+1=8\ne 10$.
+By choosing a particular value of $n$ we can easily check whether it is a perfect number or not.
+For example, the number $10$ has three proper divisors: $5$, $2$, and $1$, but $5+2+1=8\ne 10$.
 Hence $10$ is not a perfect number.
 To check the truth value of $R(n)$ it's useful to know whether perfect numbers exist at all.
-In other words, is the proposition "there exist at least one value of $n$ such that $R(n)$ is true" a true proposition?
+In other words, is the proposition “there exists $n$ such that $R(n)$ is true” a true proposition?
 \source{Если взять какое-то конкретное $n$, очень легко проверить, является ли оно совершенным. 
 Например, число $10$ имеет три собственных делителя, $5$, $2$ и $1$, но $5+2+1=8\ne 10$ — значит, оно не совершенное. 
 Но существуют ли вообще совершенные числа? 
 Иными словами, верно ли утверждение: «существует такое $n$, что $R(n)$ имеет значение „истина”»?}
 
-There exist a short notation for formulating propositions of this kind
+There exist a short notation for propositions of this kind
 \source{Для формулирования таких утверждений также есть специальное короткое обозначение:}
 \eq
     \exists n \\ R(n).
@@ -363,43 +365,44 @@ There exist a short notation for formulating propositions of this kind
     \eq
         \exists n\in \mathbb N\colon R(n).
 
-The sign $\exists$ (mirrored letter E, from \emph{exists}) is called an \epmh{existential quantifier} and is read as "there exists (such)".
+The sign $\exists$ (mirrored letter E, from \emph{exists}) is called an \epmh{existential quantifier} and is read as “there exists (such)”.
 \source{Знак $\exists$ (перевернутая буква E, от \emph{exists}) называется \emph{квантором существования}. 
 Читается просто «существует [такое]».}
 
-Similarly to a universal quantifier, an existential quantifier "bounds" the variable after it.
-Notice that a proposition $\exists n\\ R(n)$ is not actually a predicate, despite containing a variable $n$.
-It's a proposition because perfect numbers either exist (which makes the sentence true), or not (making it false).
+Similarly to a universal quantifier, an existential quantifier “binds” the variable after it.
+Although it contains the variable $n$, the proposition $\exists n\\ R(n)$ is not a predicate of $n$.
+Notice that the proposition $\exists n\\ R(n)$ is not actually a predicate, despite containing a variable $n$.
+It's a proposition because perfect numbers either exist (which makes the sentence true), or do not (making it false).
 \source{Аналогично квантору всеобщности (см. \ref[замечание][rem:02:bound]), квантор существования «связывает» соответствующую переменную. 
 Утверждение $\exists n\\ R(n)$, хотя в нём фигурирует переменная $n$, не является предикатом, зависящим от $n$. 
 Это просто высказывание, которое является истинным (если совершенные числа существуют), или ложным (если их нет).}
 
 In fact, perfect numbers do exist. 
-For example a number $6$ is a perfect number because $3+2+1=6$.
+For example, a number $6$ is a perfect number because $3+2+1=6$.
 This proves that the proposition $\exists n \\ R(n)$ is true.
 \source{Кстати, совершенные числа существуют. 
 Например, число 6 совершенно. 
 Это доказывает, что утверждение $\exists n \\ R(n)$ является истинным.}
 
-\subsection Relation between quantifiers and negations \label ssec:02:quant-neg
+\subsection Quantifiers and Negation \label ssec:02:quant-neg
     \source{Кванторы и отрицание \label ssec:02:quant-neg}
 
-We can generalize \ref[De Morgan's laws\nonumber][ssec:02:deMorg] for propositions and predicates involving quantifiers.
+We can generalize \ref[De Morgan's laws\nonumber][ssec:02:deMorg] to formulas with quantifiers.
 Consider a predicate $P(x)$.
-To be specific, let $P(x)$ state that "given a crocodile $x$, it is red".
+(For example, let $x$ belong to the set of all crocodiles, and $P(x)$ check that a crocodile $x$ is red.)
 \source{Есть обобщение \ref[законов де Моргана\nonumber][ssec:02:deMorg] на формулы с кванторами.
 Рассмотрим какой-нибудь предикат $P(x)$. 
 (Например, $x$ принадлежит множеству всех крокодилов, а $P(x)$ проверяет, что крокодил $x$ является красным.)}
 
-Consider the proposition $\forall x \\ P(x)$ ("all crocodiles are red").
+Consider the proposition $\forall x \\ P(x)$ (“all crocodiles are red”).
 To disprove it, it is sufficient to give an example (in such cases called a \emph{counterexample}) of a crocodile which is \emph{not} red.
-More formally, the following equality holds:
+In other words, the following equality holds:
 \source{Рассмотрим высказывание $\forall x \\ P(x)$ («все крокодилы красные»). 
 Чтобы его опровергнуть (то есть доказать его отрицание), достаточно предъявить какого-нибудь крокодила, который бы не был красным. 
 Иными словами, верно равенство:} 
 \equation \label eq:02:negofrall
     \neg(\forall x \\ P(x)) = (\exists x \\ \neg P(x))
-Similarly, we can consider the proposition $\exists x \\ P(x)$ ("there exist at least one red crocodile").
+Similarly, we can consider the proposition $\exists x \\ P(x)$ (“there exists at least one red crocodile”).
 The way to disprove it is to check the color of \emph{each} crocodile.
 In other words, 
 \source{Аналогично, можно рассмотреть утверждение $\exists x \\ P(x)$ («существует по крайней мере один красный крокодил»). 
@@ -407,7 +410,7 @@ In other words,
 Иными словами, верно такое равенство:}
 \equation \label eq:02:negexists
     \neg(\exists x \\ P(x)) = (\forall x \\ \neg P(x))
-We've just observed that negation acts on quantifiers by changing them to an "inverse" of itself: "there exist at least one" becomes "for any" and vice versa.
+As you can see when negation passes through a quantifier it reverses it -- existential becomes universal and vice versa.
 \source{Можно сказать, что при переносе знака отрицания через квантор он меняется на обратный: существование на всеобщность и наоборот.}
 
 \remark
@@ -421,18 +424,19 @@ We've just observed that negation acts on quantifiers by changing them to an "in
         \item \neg(P(1) \wedge P(2) \wedge P(3))=
         \splitem \splonly{=}  \neg P(1) \vee \neg P(2)
             \vee \neg P(3).
-    Clearly, the last proposition is equivalent to $\exists x\\ \neg P(x)$.
-    This way we've shown (with the help of De Morgan) that negation acts on quantifiers the way we described.
+    The last proposition is equivalent to $\exists x\\ \neg P(x)$.
+    We see that the rule of applying negation to a quantified formula is indeed a generalization of De Morgan's laws.
     \source{Оно в свою очередь эквивалентно $\exists x\\ \neg P(x)$. 
     Таким образом, правило переноса знака отрицания через квантор — это действительно обобщение законов де Моргана.}
 
 \section Quantifiers and predicates with multiple variables
     \source{Кванторы и предикаты с несколькими переменными}
-\subsection Bounding one of the variables
+\subsection Binding one of the variables
     \source{Связывание одной переменной}
 
-Now we revisit the predicate $S(x, y):=«x^2=y»$ defined on real numbers.
-LLet's form the sentence $\exists x \\ S(x, y)$ and investigate its nature.
+Consider the predicate $S(x, y):=«x^2=y»$ defined on real numbers.
+Consider the sentence $\exists x \\ S(x, y)$.
+What kind of nature does it have?
 \source{Рассмотрим предикат $S(x, y):=«x^2=y»$, определённый для вещественных $x$ и $y$.
 Рассмотрим такое утверждение: $\exists x \\ S(x, y)$. 
 Что это за объект?}
@@ -442,23 +446,23 @@ If we set the value of $y$ to be $4$, we get $\exists x \\ S(x, 4)$ or simply
 \eq
     \exists x \enspace (x^2=4).
 In other words, we get a proposition about the existence of the square root of $4$.
-This is a proposition (since it doesn't depend on anything), and the straighforward way to prove it is to provide an example $x=2$.
+This is a proposition that does not depend on anything, it is true, and to prove it it is sufficient to provide an example $x+2$.
 \source{Иными словами, получается высказывание о том, что существует квадратный корень из числа $4$. 
 Это высказывание ни от чего не зависит и является верным, чтобы его доказать, достаточно предъявить $x=2$.}
 
-What if we choose $y$ to equal to $-1$ istead?
+What if we choose $y$ to equal $-1$ instead?
 In this case we get the proposition
 \source{Однако, можно выбрать другое значение $y$, например, положить $y=-1$. 
 Тогда получается утверждение}
 \eq
     \exists x \enspace (x^2=-1).
 This proposition is false since a square of a \emph{real} number is always non-negative. 
-This ensures that there exist no real number with a square root $-1$. 
+This proposition is false since a square of a \emph{real} number is always non-negative, hence there exists no $x$ whose square is equal to $-1$.
 \source{Это утверждение неверно: мы знаем, что квадраты вещественных чисел неотрицательны, и значит не существует такого $x$, что его квадрат равен $-1$.}
 
 Now let's get back to the sentence $\exists x \\ S(x, y)$.
 We've seen that it's possible to get different results (either true or false) depending on the values of $y$.
-This means it is a predicate, which depends on $y$.
+This means it is a predicate depending on $y$.
 Let's denote it by $Q(y)$.
 We can write:
 \source{Вернёмся теперь к утверждению $\exists x \\ S(x, y)$. 
@@ -468,24 +472,23 @@ We can write:
 Можно записать:}
 \eq
     Q(y):=(\exists x \\ S(x, y))
-Notice that we've originally had a predicate $S(x, y)$ with two variables, out of which we've constructed another predicate $Q(y)$, which depends only on $y$.
-One cay say we've "bounded" a variable $x$ by putting a quantifier in front of it.
-In a proposition $\exists x \\ S(x, y)$ a variable $x$ is called a \emph{free} variable (recall that $y$ is called a \emph{bound} variable).
+So we've got a predicate with one variable from a predicate with two variables by binding one of the variables with a quantifier.
+In the proposition $\exists x \\ S(x, y)$, the variable $x$ is called \emph{free} (we can substitute values for it and get different propositions), and the variable $y$ is called \emph{bound}.
 \source{Таким образом, из предиката с двумя переменными $S$ мы получили предикат с одной переменной $y$, поскольку переменную $x$ «связали» с помощью квантора. 
 В высказывании $\exists x \\ S(x, y)$ переменная $y$ называется «свободной» (мы можем задавать её значения как хотим и получать разные высказывания), а переменная $x$ — «связанной».}
 
-\subsection Order of quantifiers
+\subsection Sequential Quantifiers
     \source{Последовательное применение кванторов}
 
 Consider a predicate $G(n, m):=«n>m»$, defined on the set of all natural numbers.
-It checks whether $n$ is bigger than $m$ or not.
-Define a new predicate
+It checks whether $n$ is greater than $m$.
+Let’s define a new predicate
 \source{Рассмотрим предикат $G(n, m):=«n>m»$, определенный на множестве натуральных чисел. 
 Он проверяет, что $n$ больше $m$. 
 Введём новый предикат:} 
 \eq
     Z(m):=(\exists n \\ G(n, m))=(\exists n \enspace (n>m)).
-Now we consider the proposition $\forall m \\ Z(m)$, which can be restated as
+Now we consider the proposition $\forall m \\ Z(m)$, which can be written as
 \source{Теперь можно рассмотреть высказывание $\forall m \\ Z(m)$. 
 Его можно записать так:}
 \equation
@@ -494,26 +497,27 @@ We can remove the parentheses and get
 \source{Скобки вокруг предиката $(\exists n \\ (n > m))$ можно убрать, и получится такая запись:}
 \equation \label eq:02:forallexists
     \forall m\\ \exists n \enspace (n > m).
-This proposition is read as "for all $m$ there exist such $n$ that $n>m$".
+This proposition is read as “for all $m$ there exists $n$ such that $n>m$”.
 \source{Читается: «для всякого $m$ существует такое $n$, что $n>m$».}
 
-Observe that at first we've had a predicate with two variables, then we've "bounded" each of it and got a proposition.
-\source{Во-первых, нужно заметить, что получившееся утверждение не является предикатом — мы последовательно связали обе переменные и то, что получилось, уже ни от чего не зависит, это просто высказывание, которое может быть истинным или ложным.}
+Notice that this statement is not a predicate since we've bound both its variables. 
+Now it does not depend of anything. This means it is a proposition, which can be true or false.
+\source{Во-первых, нужно заметить, что получившееся утверждение не является предикатом — мы последовательно связали обе переменные и то, что получилось, уже ни от чего не зависит, это просто высказывание, которое может быть истинным или ложным.}
 
 Is it true?
 Yes, it is. 
-Take an arbitrary natural number $m$.
-Notice $Z(m)$ is true since we can take $n=m+1$ and get the desired result.
-Since the reasoning above is true for an arbitrary element of natural numbers, it is true for all natural numbers.
+Let $m$ be a natural number.
+Notice that $Z(m)$ is true since we can take $n=m+1$ and get the desired result.
+Since the reasoning above is true for any element of the natural numbers, it is true for all natural numbers.
 \source{Является ли оно истинным? 
 Действительно, возьмём любое $m$.
 Заметим, что для него предикат $Z(m)$ верен, поскольку существует такое $n$ (например, можно взять $n=m+1$), для которого $n>m$. 
 (Действительно, $m+1>m$, каким бы ни было $m$.)}
 
-We can speak the sentence out loud (which is often helpful): "for every natural number we can find a number bigger than it".
-It's somewhat tempting to restate it as "there is a natural number bigger than any natural number".
+We can say the sentence out loud (which is often helpful): “for every natural number we can find a number greater than it”.
+One might want to restate it as “there is a natural number greater than any natural number”.
 But in fact, these propositions are not the same. 
-The latter is formally written as
+The latter can be written as
 \source{Словами это высказывание можно было бы записать так: «для всякого натурального числа найдётся большее его число». 
 Эта формулировка с точки зрения привычного нам языка выглядит немножко неестественно и может возникнуть искушение сделать её более привычной, переформулировав таким образом: «найдется натуральное число, большее любого другого натурального числа». 
 Однако, то, что в результате получилось — не переформулировка исходного утверждения, а совсем другое высказывание. 
@@ -522,14 +526,14 @@ The latter is formally written as
 \equation \label eq:02:existsforall
     \exists n\\ \forall m \enspace (n > m)
 
-This proposition differs from \ref{eq:02:forallexists} only by the order of quantifiers, but if you think about it, the meaning has changed.
-In the process of proving a proposition \ref{eq:02:forallexists}, the strategy was to choose an exceeding number for a \emph{particular} given number.
-In a proposition \ref{eq:02:existsforall}, on the other hand, there must exist the one and only number $n$ that makes $n>m$ true for all natural $m$.
-It's easy to see that there are no such natural number.
-No matter how big we make $n$, for $m=n$ (or $m=n+1$, or $m=n+2$ and so on) the predicate $n>m$ will be false. 
+This proposition differs from \ref{eq:02:forallexists} only by the order of the quantifiers, but the meaning has changed.
+When we were proving proposition \ref{eq:02:forallexists}, the strategy was to choose a number greater than the given one.
+In proposition \ref{eq:02:existsforall}, on the other hand, there must exist the one and only number $n$ that makes $n>m$ true for all natural $m$.
+It's easy to see that such a number does not exist.
+No matter how big we make $n$, for $m=n$ (or $m=n+1$, or $m=n+2$, and so on) the predicate $n>m$ will be false. 
 Now it's clear that the order of quantifiers is very important: it can change the way the corresponding variables are chosen.
-In our case the order of quantifiers changed the truth value: the first proposition is true, while the second one is false.
-This is not the case in general (think of a proposition for which changing the order of quantifiers preserves its truth value), and the main takeaway is that different orders of quantifiers make different statements.
+In our case, the order of quantifiers changed the truth value: the first proposition is true, while the second one is false.
+This is not the case in general (think of a proposition for which changing the order of quantifiers preserves its truth value), and the main takeaway is that changing the order produces a different statement.
 \source{Как видно, эта формулировка отличается от \ref{eq:02:forallexists} только порядком следования кванторов. 
 Однако, её смысл совсем иной. 
 При доказательстве высказывания \ref{eq:02:forallexists} мы для каждого конкретного $m$ могли выбирать своё $n$, так, чтобы сделать предикат $n>m$ справедливым. 
@@ -540,13 +544,13 @@ This is not the case in general (think of a proposition for which changing the o
 В данном случае при изменении порядка кванторов получились разные результаты: утверждение с одним порядок истинное, а с другим ложное. 
 Так бывает не всегда (придумайте пример, когда это не так), но важно понимать, что изменение порядка следования кванторов создаёт другое утверждение.}
 
-\subsection How negation acts on a series of quantifiers \label ssec:02:quant-neg-series
+\subsection Sequential Quantifiers and Negation \label ssec:02:quant-neg-series
     \source{Отрицание и серия кванторов \label ssec:02:quant-neg-series}
 
-We've already disproven the proposition \ref{eq:02:existsforall}, but let's revision the way we've done it.
-A common way to disprove a proposition is to formulate its negation with quantifiers, then prove the negation is true.
-Let's use the identities from the \ref[section][ssec:02:quant-neg] and denote a predicate $\forall m \\ (n>m)$ by $W(n)$.
-Then the proposition \ref{eq:02:existsforall} can be stated in the following form:
+We've already disproven the proposition \ref{eq:02:existsforall}, but let's discuss more in-depth how we've done it.
+A common way to disprove a proposition is to take its negation and prove it.
+Let's use the identities from the \ref[section][ssec:02:quant-neg] and denote the predicate $\forall m \\ (n>m)$ by $W(n)$.
+Then the proposition \ref{eq:02:existsforall} can be written as follows:
 \source{Мы уже опровергли утверждение \ref{eq:02:existsforall}, но давайте ещё раз более подробно поговорим, как мы это сделали. 
 Чтобы опровергнуть утверждение с кванторами обычно проще всего записать к нему отрицание, а потом доказать это отрицание. 
 Воспользуемся формулами из \ref[раздела][ssec:02:quant-neg]. 
@@ -554,7 +558,7 @@ Then the proposition \ref{eq:02:existsforall} can be stated in the following for
 Утверждение \ref{eq:02:existsforall} можно переписать в виде:}
 \eq
     \neg(\exists n \enspace W(n)).
-Let's apply the equality \ref{eq:02:negexists} to it:
+Let's apply the equality \ref{eq:02:negexists}:
 \source{Применим к нему равенство \ref{eq:02:negexists}:}
 
 \gather
@@ -566,9 +570,9 @@ Now we can apply \ref{eq:02:negofrall} to the proposition $\neg(\forall m \\ (n>
 \eq
     \ldots=(\forall n\\ \exists m \enspace \neg(n>m))=(\forall n\\ \exists m
     \enspace (n \leqslant m)).
-We've sequentially "applied" a negation to the quantifiers, and each one has been changed to the "opposite" of itself.
-Eventually the negation "moved" to a predicate $n>m$, and changed it to $n \leqslant m$.
-We conclude, a negation of the proposition \ref{eq:02:existsforall} is the proposition
+We've sequentially “applied” a negation to the quantifiers, and each one has been changed to the “opposite” of itself.
+Eventually the negation “moved” to a predicate $n>m$, and changed it to $n \leqslant m$.
+We conclude thata negation of the proposition \ref{eq:02:existsforall} is the proposition
 \source{Мы как бы последовательно перекинули знак отрицания сначала через первый квантор, а потом через второй. 
 Каждый раз квантор менялся на противоположный.
 Наконец, отрицание оказалось записано перед предикатом $n>m$, но мы знаем, что отрицание к утверждение $n>m$ — это утверждение, что $n \leqslant m$. 
@@ -576,9 +580,9 @@ We conclude, a negation of the proposition \ref{eq:02:existsforall} is the propo
 \eq
     \forall n\\ \exists m \enspace (n \leqslant m).
 Let's prove it.
-We need to be able to produce a number $m$ for any given $n$, such that $n \leqslant m$. 
+Given a numbet $n$, we need to produce a number $m$ such that $n \leqslant m$.
 That's easy! 
-Just take $m=n$, or $m=n+1$ or any number bigger than $n$.
+Just take $m=n$, or $m=n+1$, or any number bigger than $n$.
 \source{Докажем его. 
 Для этого нужно научиться для всякого $n$ предъявлять такое $m$, что $n \leqslant m$. 
 Это просто: достаточно взять, например, $m=n$. 
@@ -587,16 +591,13 @@ Just take $m=n$, or $m=n+1$ or any number bigger than $n$.
 \section Implication \label sec:02:impl
     \source{Импликация \label sec:02:impl}
 
-Let's consider the sentence "if a natural number is divisible by $4$, then it is divisible by $2$" and denote it by $A$.
-First of all, notice it is somewhat an algorithm for determining the divisibility by $2$.
-An algorithm can be either correct (then people use it) or incorrect (leading to mistakes), hence $A$ is a proposition.
-In this case it is a well-known correct algorithm, so we know that the proposition $A$ is true.
-Can we formulate it using quantifiers and predicates?
-Consider a predicate $Q(n)$, that checks whether $n$ is divisible by $4$.
-Since the proposition $A$ claims something about an arbitrary natural number, the appropriate (universal) quantifier must go first.
-Then the predicates follow, but how exactly?
-Sometimes, like in this case, it is not obvious how to write an expression for a predicate.
-But there is always another approach.
+Let's consider the sentence “if a natural number is divisible by $4$, then it is divisible by $2$” and denote it by $A$.
+We know that this proposition is true.
+How to write it using the language of quantifiers and predicates?
+Let's introduce the predicate $Q(n)$ that checks whether $n$ is divisible by $4$.
+Earlier we considered the predicate $E(n)$ that checked the parity of $n$.
+Since we're talking about all natural numbers, we should start with the quantifier $\forall n$.
+We need to follow it by some proposition involving predicates $Q(n)$ and $E(n)$, but which exactly?
 \source{Давайте рассмотрим такое утверждение: «если натуральное число делится на 4, то оно делится на 2» (обозначим его за $A$). 
 Как мы знаем, это верное утверждение.
 Как его сформулировать на языке кванторов и предикатов? 
@@ -606,7 +607,7 @@ But there is always another approach.
 Очевидно, дальше нужно написать какое-то утверждение с предикатами $Q(n)$ и $E(n)$, но какое?}
 
 Perhaps it's easier to formulate the negation of $A$, then use the rules derived above to get a formal expression for $A$.
-Okay, so what is a negation of $A$ in words?
+What do we need to disprove $A$?
 We must provide a number $n$ that is a counterexample: it is divisible by $4$, but not divisible by $2$.
 This would disprove our initial proposition.
 In other words, there must exist a number $n$ such that $Q(n)$ is true and $E(n)$ is false.
@@ -633,7 +634,7 @@ This is precisely what we're aiming to say.
 \source{Это ровно то, что мы хотим сказать.}
 
 \question
-    Why was it necessary to make a fuss with introducing double negations in order to state such a simple thing? 
+    Why was it necessary to make a fuss with introducing double negations to state such a simple thing? 
     Why not just write
     \source{Зачем городить такой огород? 
     Почему нельзя было просто написать}
@@ -641,7 +642,7 @@ This is precisely what we're aiming to say.
         \forall n \enspace (E(n) \wedge Q(n))?
     \quiz
         \choice
-            Yes, we could have written it in this (equivalent) way, the reasoning above is purely for building an intuition.
+            Yes, we could have written it in this (equivalent) way, the reasoning above is purely for building intuition.
             \source{Можно было так и написать, формулы \ref{eq:02:wrong} и \ref{eq:02:APnQ} эквивалентны.}
             \comment
                 Actually, we couldn't!
@@ -671,20 +672,20 @@ This is precisely what we're aiming to say.
                 Оно не делится на 4, значит, $Q(6)$ ложно, и значит для этого значения $n$ конъюнкция ложна, а раз такое $n$ нашлось, то и всё утверждение ложно. 
                 Проверьте, что этот пример не опровергает утверждение \ref{eq:02:APnQ}.}
 
-It seems like sentences including "if" and "then" are important and must have their own names.
-Indeed, propositions "$A$ implies $B$", or "if $A$, then $B$", or "if $A$ is true, then $B$ is true" are formally written as $\neg A \vee B$.
-Notice that by saying "if $A$ is true, then $B$ is true" we don't state anything about the case when $A$ is false.
+In the general case, consider two propositions $A$ and $B$.
+Propositions “$A$ implies $B$”, or “if $A$, then $B$”, or “if $A$ is true, then $B$ is true” are formally written as $\neg A \vee B$.
+Notice that by saying “if $A$ is true, then $B$ is true” we don't state anything about the case when $A$ is false.
 But in this case, what truth value must the proposition take?
 Quite logically it must be true, or perhaps it must \emph{not} be false.
-If this is convincing, one will not take as a surprise that if $A$ turned out to be true, then $B$ is also true.
+If this is convincing, one will not take it as a surprise that if $A$ turned out to be true, then $B$ is also true.
 \source{В общем виде это формулируется так. 
 Пусть есть два высказывания, $A$ и $B$. 
 Утверждения «из $A$ следует $B$» или  «$A$ влечёт $B$» или «если $A$ истинно, то $B$ тоже истинно», формально записываются как $\neg A \vee B$. 
 Иными словами, говоря «если $A$ истинно, то $B$ тоже истинно», мы говорим, что $A$ может и не быть истинным, но нас этот случай, не интересует, мы про него никаких выводов не делаем (а значит, и ошибаться не можем), но если уж $A$ истинно, то $B$ обязано быть истинным.}
 
-Although this kind of proposition can be expressed using logical OR, logical AND, and a negation, it has a special name — \emph{implication}, and it's notated as $A\Rightarrow B$.
-A proposition $A$ is called an \emph{antecedent}, and $B$ is called a \emph{consequent} in this context.
-\source{Эта операция с высказываниями $A$ и $B$ настолько важна, что хотя она и выражается через конъюнкцию, дизъюнкцию и отрицание, у него есть специальное название — \emph{импликация} (ср. с английским словом \emph{imply}, влечёт), и специальное обозначение $A\Rightarrow B$. 
+Although this kind of proposition can be expressed using using logical AND, logical OR, and negation, it has a special name — \emph{implication}, and it's denoted by $A\Rightarrow B$.
+The proposition $A$ is called an \emph{antecedent}, and the proposition $B$ is called a \emph{consequent} in this context.
+\source{Эта операция с высказываниями $A$ и $B$ настолько важна, что хотя она и выражается через конъюнкцию, дизъюнкцию и отрицание, у него есть специальное название — \emph{импликация} (ср. с английским словом \emph{imply}, влечёт), и специальное обозначение $A\Rightarrow B$. 
 Утверждение $A$ называется \emph{посылкой}, а утверждение $B$ — \emph{заключением}.}
 
 Since an implication is a proposition, let's construct its truth table.
@@ -701,23 +702,22 @@ Since an implication is a proposition, let's construct its truth table.
         \hline
     \end{array}
 
-This table, in particular its third row, it usually confusing the first time you see it. 
-How can a false proposition imply a true proposition?
-The thing is, when we say "if $A$ is true, them $B$ is also true", we don't state anything about the "state of the world" when $A$ is false, so we cannot possibly be wrong in this case.
+This table, and in particular its third row, is usually confusing the first time you see it. 
+How can falsehood imply truth?
+The thing is, if we consider a proposition $A \Rightarrow B$ (“if $A$ is true, then $B$ is also true”) and $A$ happens to be false, then this is a situation about which we haven't stated anything. And since we haven't stated anything, we cannot be wrong.
 \source{Эта таблица, и особенно её третья строчка, обычно ставит в тупик всех, кто её в первый раз видит. 
 «Из лжи следует истина!» — как такое может быть? Дело в том, что если вы делаете утверждение $A \Rightarrow B$ («Если $A$ истинно, то $B$ тоже истинно»), и $A$ оказалось ложным, то это просто означает, что вы находитесь в ситуации, про которую вы ничего не утверждали. 
 А раз ничего не утверждали, то не могли и ошибиться. 
 И значит вы правы (ваше утверждение истинно), вне зависимости от того, является ли $B$ истинным или ложным.}
 
-Revisiting the example above, consider the (true) proposition "if a natural number is divisible by $4$, it is even".
+Revisiting the example above, consider the (true) proposition “if a natural number is divisible by $4$, it is even”.
 Take $n=6$, and notice that the antecedent is false. 
-Despite this fact, and no matter whether $6$ turns out even or odd, the implication is true.
+Despite this, and no matter whether $6$ turns out even or odd, the implication is true.
 \source{Возвращаясь к примеру, который мы разбирали раньше: «если число $n$ делится на 4, то оно чётное». 
 Рассмотрим число $n=6$. 
 Для него посылка оказалась ложной (оно не делится на 4), и хотя заключение оказалось истинным (оно чётно), это никак не противоречит нашей импликации: она остаётся верна и в этом случае.}
 
-From now on we'll use implications very often.
-You will most certainly notice it in the next chapter, and in subsequent ones too.
+In the future, we will use implications in proofs all the time.
 \source{В дальнейшем мы будем постоянно пользоваться импликацией в доказательствах. 
 Начнём прямо со следующей лекции.}
 
@@ -726,23 +726,22 @@ You will most certainly notice it in the next chapter, and in subsequent ones to
 \subsection Formal and natural language
     \source{Формальный и естественный язык}
 
-Notations from mathematical logic are very useful for writing mathematical propositions and their proofs using quantifiers and predicates.
-They have the obvious advantage over natural language: they are strict and formal, making the meaning of propositions unambiguous.
+The notation taken from mathematical logic and introduced above allows us to write propositions and even proofs as long formulas that consist of quantifiers and predicates.
+They have an obvious advantage over natural language: they are strict and formal, making the meaning of propositions unambiguous.
 Even computers can understand mathematical logic! 
-Propositions can be validated and written by a computer that was introdiced to formal rules we've discussed above.
+Propositions can be validated and written by a computer that was introduced to the formal rules we've discussed above.
 \source{Обозначения математической логики, которые мы ввели выше, позволяют записывать утверждения и даже их доказательства в виде длинных формул, состоящих из кванторов и предикатов. 
 Они хороши своей чёткостью и однозначностью: после того, как утверждение записано на этом формальном языке, прочитать его можно единственным образом, а доказательство может проверить (или, в некоторых случаях, даже придумать) и компьютер, пользуясь чисто формальными правилами, описывающими допустимые преобразования одних строчек символов в другие.}
 
-Back in the time I was a first-year undergraduate student, I was absolutely in awe of the mathematical logic.
-For a period of time I thought that \emph{anything} can be proven or disproven, one just needs to phrase it in quantifiers, predicates, and propositions.
-However, I quickly understood I was wrong: formal lanuage usually makes logical connections and proof validation easier, but when it comes to \emph{inventing} a proof, it's essential to really dive into the problem, not just manipulate with its notation. 
+Back when I was a first-year undergraduate student, I was absolutely in awe of mathematical logic.
+For some time, I thought that \emph{anything} can be proven or disproven, one just needs to phrase it in quantifiers, predicates, and propositions.
+However, I quickly understood I was wrong: formal language usually makes logical connections and proof validation easier, but when it comes to \emph{inventing} a proof, it's essential to really gain an insight into problem, not just manipulate with its notation. 
 \source{Когда я учился на первом курсе и только познакомился с этим языком, я был им очарован: какое-то время мне казалось, что достаточно записать любое утверждение «в кванторах», и дальше станет понятно, как его доказывать. 
 Однако очень быстро я обнаружил, что это не так: формальная запись иногда упрощает некоторые логические переходы, и она часто необходима, чтобы убедиться в правильности доказательства, но чтобы придумать доказательство, нужно проникнуть в суть утверждения, а не просто манипулировать строчками с кванторами.}
 
-At the same time, the intuition behind logic connections is usually easier expressed and understood in natural language, not in the language of mathematical logic.
+At the same time, the intuition behind logical connections is usually easier expressed and understood in natural language, not in the language of mathematical logic.
 Professional mathematicians write their papers (let alone introductory textbooks) in natural language, using formal expressions only when necessary.
-Try to overcome the fear of the new terminology and the increased level of abstractions. 
-These things take time to settle, thats why every formal reasoning in this text will be accompanied by a clarification in natural language.
+Don't let this deluge of new concepts and notation scare you. We will be using them and you need to learn them, but we will clarify all the formally stated assertions using “normal” language.
 \source{При этом «суть», то есть идеи, стоящие за математическими рассуждениями, как правило проще передавать, пользуясь преимущественно естественным языком, а не формальным. 
 В конце концов, профессиональные математики пишут научные статьи именно на естественном языке, используя формальный лишь там, где это действительно необходимо. 
 Что уж говорить об учебнике, читатели которого видят все эти кванторы впервые в жизни!
@@ -751,11 +750,11 @@ These things take time to settle, thats why every formal reasoning in this text 
 \subsection Shorthand notions \label ssec:02:short
     \source{Сокращённые обозначения \label ssec:02:short}
 
-To simplify the notations with quantifiers and make them more natural, we will allow ourselves to slightly uphold the formal rules derived above.
-Firstly, usually we will insert a colon after numeous quantifiers in a row.
+To simplify the notation with quantifiers and make them more natural, we will allow ourselves to slightly break the formal rules from above.
+Firstly, usually we will put a colon after several quantifiers in a row.
 For example, instead of
 \source{Чтобы немножко упростить обозначения в формулах с кванторами и приблизить их к естественному языку, я разрешу себе чуть-чуть отступить от правил формального языка, введённого выше. 
-Во-первых, часто после серии кванторов я буду ставить двоеточие — например, вместо}
+Во-первых, часто после серии кванторов я буду ставить двоеточие — например, вместо}
 \eq
     \forall x \\ \exists y \enspace (x < y)
 we write
@@ -763,35 +762,35 @@ we write
 \eq
     \forall x \\ \exists y\colon x < y.
 This colon doesn't change the meaning of the sentence.
-It just makes it visually easier to separate quantifiers from the predicates. 
-It can also be used as a substitute to parentheses, for example in the sentence
+It just makes it visually easier to separate the quantifiers from the predicates. 
+It can also be used as a substitute for parentheses, for example in the sentence
 \source{Двоеточие тут не несёт никакой содержательной нагрузки и служит просто для визуального отделения предиката, на который навешиваются кванторы. 
-Оно также будет заменять скобки — например, в высказывании}
+Оно также будет заменять скобки — например, в высказывании}
 \equation \label eq:02:xy1
     \forall x\\  \exists y\colon x \ne 0 \Rightarrow xy=1
-Quantifiers are applied to the whole part $(x \ne 0 \Rightarrow xy=1)$, not just to the $x\ne 0$.
+Quantifiers are applied to the whole statement $(x \ne 0 \Rightarrow xy=1)$, not just to the $x\ne 0$ part.
 This notation is equivalent to
 \source{кванторы навешиваются целиком на предикат $(x \ne 0 \Rightarrow xy=1)$, а не только на часть $x\ne 0$. 
 Иными словами, эта запись эквивалентна такой:}
 \eq
     \forall x\\  \exists y \enspace (x \ne 0 \Rightarrow xy=1).
-Secondly, we will place the condition right after the quantifiers, as shown bellow with the proposition \ref{eq:02:xy1}.
+Secondly, we will place the condition right after the quantifiers.
+For example, the proposition \ref can be written as \ref{eq:02:xy1}.
 \source{Во-вторых, я буду зачастую писать условие, которому должно удовлетворять значение переменной, сразу после квантора. 
 Например, утверждение \ref{eq:02:xy1} можно записать так:}
 \eq
     \forall x \ne 0 \\ \exists y\colon xy=1.
-In a similar way we specify the set of all values that quantifier's variable may take.
-For the proposition "for every natural number there exist a rational number such that their product is bigger than 9", our canonical notation looks like this
+Similarly, we specify the set of all values that the quantifier's variable may take.
+For the proposition “for every natural number there exists a rational number such that their product is bigger than 9”, our canonical notation looks like this
 \source{Аналогично я часто буду указывать, из каких множеств допустимо брать значения переменных. 
 Например, если бы я хотел сказать, что для любого натурального числа найдётся такое рациональное число, что их произведение больше 9, то записал бы это так:}
 \eq
     \forall x \in \mathbb N \\ \exists y \in \mathbb Q\colon xy > 9.
-More formally this is restated as
+A more precise, but a longer way to write this statement is this:
 \source{Формально более аккуратная, но громоздкая запись этого же утверждения звучит следующим образом:}
 \equation \label eq:xygr1
     \forall x\\ \exists y \enspace (x \in \mathbb N \Rightarrow (y \in \mathbb Q
     \wedge xy > 9)).
-Which is less visually appealing.
 \question
     Will the proposition still hold if we substitute $x \in \mathbb N$ for $x \in \mathbb Z$?
     \source{Останется ли это утверждение верным, если заменить условие $x \in \mathbb N$ на условие $x \in \mathbb Z$?}
@@ -800,7 +799,7 @@ Which is less visually appealing.
             Yes.
             \source{Да.}
             \comment
-                Are you sure \emph{every} integer satisfies?
+                Are you sure \emph{every} integer satisfies the proposition?
                 Try to think about a counterexample.
                 \source{Прямо-таки для любого целого числа вы можете найти рациональное, чтобы их произведение было больше 9? 
                 Гм… 
@@ -831,15 +830,11 @@ Which is less visually appealing.
                 The product of a natural number and a negative number is negative, hence it cannot be bigger than $9$.
                 \source{Конечно, произведение натурального числа и отрицательного всегда отрицательно и не может быть больше 9.}
 
-And the final observation: commonly there is a condition on a variable for which a quantifier is applied.
-If the variable comes after an existential quantifier, we may use conjunction instead of introducing a quantifier.
-Since we want some \emph{particular} values to have certain properties, logical AND is a natural way to go.
-If it comes after a universal quantifier, implication fits well.
-This time the following logic can be applied: "for all" means \emph{as soon as} some condition is satisfied, we must have certain properties. 
+The conditions written after an existential quantifier in the more precise notation are attached to the predicate by a conjunction (we need a value for the variable to satisfy the conditions \strong{and} the predicate to be true), and those written after a universal quantifier — by an implication (we state that the predicate is true for all the values satisfying the condition, and for those who don't we state nothing).
 \source{Условия, записываемые после квантора существования, в более подробной записи приписываются к предикату через конъюнкцию (потому что нам нужно, чтобы существовало значение переменной, удовлетворяющей условию, \strong{и} предикат был бы верен), а те, что идут после квантора всеобщности — через импликацию (потому что мы утверждаем, что предикат верен для всех значения переменной, удовлетворяющей условию, а для тех, кто не удовлетворяют, ничего не утверждаем).}
 
 \exercise
-    Try to formulate a negation of the proposition \ref{eq:xygr1} using the rules derived above and De Morgan's laws.
+    Try to formulate a negation of the proposition \ref{eq:xygr1} using the rules formulated above and De Morgan's laws.
     Make a notation simpler by putting the conditions right after a quantifier.
     What happens to them when a negation is applied?
     Do they change?
@@ -850,9 +845,11 @@ This time the following logic can be applied: "for all" means \emph{as soon as} 
 \section Conclusion
     \source{Заключение}
 
-Now we have a mathematical tool, which allows us to make precise notations for various kinds of sentences, and even—to some extent—analyze them automatically.
+Now we have a mathematical tool— in some sense a language —that allows us to accurately state and even automatically analyze to some extent rather complex propositions.
 So far we've considered rather easy examples to get a feel for how the language works.
-Very soon they will come in handy when dealing with all kinds of theorems and claims. 
+Very soon we will be using this language to actually solve problems.
 \source{Теперь у нас есть математический аппарат, своего рода язык, который позволяет аккуратно записывать и даже в какой-то мере автоматически анализировать довольно сложные утверждения.  
 Мы рассматривали самые простые примеры, чтобы было понятно, как работает «механика» математической логики. 
 Совсем скоро мы будем использовать её в условиях, максимально приближенных к боевым.}
+
+
