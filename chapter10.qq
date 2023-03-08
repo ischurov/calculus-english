@@ -6,7 +6,7 @@
         Предел функции
 
 \section
-    Definition of a function
+    Concept of a function
     \source{Понятие функции} 
 
 \subsection
@@ -14,13 +14,13 @@
     \source{Функции и отображения}
 
 We have reached the main object of mathematical analysis: a function.
-To avoid confusion, I clarify that the words "function" and "mapping" are synosyms and refer to the same object.
-Also, when I say "a function" I mean a \emph{real-valued function of one variable}, or a mapping that associates a number with a number.
-In other words, this is a function one studies in school.
+To be clear from the start, the words "function" and "mapping" are synonyms, and they both are used depending on a context.
+In addition, from this point when I say "a function", I mean a \emph{real-valued function of one variable}, in other words a mapping that maps a real number to a real number.
+(These are exactly the functions one learns at school.)
 \source
     Мы, наконец, добрались до главного объекта математического анализа — до функций.
     Слова «функция» и «отображения» в принципе являются синонимами, они обозначают одно и то же математическое понятие, но в зависимости от контекста чаще используют одно или другое. 
-    Говоря «функция», мы будем как правило иметь в виду  \emph{числовую функцию одной переменной}, то есть отображение, которое числу ставит в соответствие число. 
+    Говоря «функция», мы будем как правило иметь в виду \emph{числовую функцию одной переменной}, то есть отображение, которое числу ставит в соответствие число. 
     Именно такие функции изучают в школе.
 
 \definition
