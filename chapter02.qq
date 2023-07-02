@@ -69,7 +69,7 @@ Consider propositions $A$ and $B$.
     Другой термин для конъюнкции — \emph{логическое «И»}.}
 
 \definition
-   The proposition “$A$ is falsel” is called a \emph{negation}, it is denoted by $\neg A$.
+   The proposition “$A$ is false” is called a \emph{negation}, it is denoted by $\neg A$.
    Another term for negation is \emph{logical NOT}.
    \source{Высказывание «высказывание $A$ неверно» называется \emph{отрицанием} $A$. Обозначается $\neg A$. Другой термин — \emph{логическое «НЕ»}.}
     
