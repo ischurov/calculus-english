@@ -101,7 +101,7 @@ The following table is for conjunction and disjunction
         A & B & A \vee B & A \wedge B \\\\
         \hline
         \text{T} & \text{T} & \text{T} & \text{T} \\\\
-        \text{T} & \text{Л} & \text{T} & \text{F} \\\\
+        \text{T} & \text{F} & \text{T} & \text{F} \\\\
         \text{F} & \text{T} & \text{T} & \text{F} \\\\
         \text{F} & \text{F} & \text{F} & \text{F} \\\\
         \hline

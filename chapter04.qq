@@ -572,10 +572,10 @@ We will need some auxiliary definitions and notations.
             padding: 1em; max-width:500px;
         \src lim-seq-1.svg
         \alt
-		The number line is drawn with points a = -1 and b = 3. It is shown that the distance between them is equal to the absolute value of their difference |a-b|
-		\source
-Нарисована числовая прямая, на ней отмечены две точки: a = -1 и b =3. 
-Показано, что расстояние между ними равно модулю разности: |a-b|
+            The number line is drawn with points a = -1 and b = 3. It is shown that the distance between them is equal to the absolute value of their difference |a-b|
+            \source
+                Нарисована числовая прямая, на ней отмечены две точки: a = -1 и b =3. 
+                Показано, что расстояние между ними равно модулю разности: |a-b|
     \caption
         The absolute value of a difference is the distance between numbers as points on the number line.
         \source{Модуль разности — это расстояние между числами как точками числовой прямой.}
@@ -651,8 +651,8 @@ Notice that the points whose indexes are less than or equal to $N$ are allowed t
         The tail of a sequence is $\eps$-closed to a number $A$.
         \source{Хвост последовательности $\eps$-близок к числу $A$.}
     \label fig:04:eps-nearby-tail
- 
- Notice that the definition does not say which element is the start of the “tail” of the sequence. 
+
+Notice that the definition does not say which element is the start of the “tail” of the sequence. 
 Moreover, a sequence can have different “tails”, for different values of $\eps$.
 \source
     Заметим, что в этом определении не сказано, с какого именно члена начинается «хвост последовательности». 
@@ -725,13 +725,13 @@ Moreover, a sequence can have different “tails”, for different values of $\e
             $\eps=0{.}5$
             \comment 
                 No, since there are arbitrarily large elements of the sequence that differ from $1$ by more than $0{.}5$. 
-		   For example, all odd-indexed elements.
+                For example, all odd-indexed elements.
                 \source{Нет, у последовательности есть члены со сколь угодно большими номерами, лежащие на расстоянии больше $0{.}5$ от $1$ — например, все члены с нечётными номерами.}
         \choice
             $\eps=1{.}5$
             \comment 
                 No, since there are arbitrarily large elements of the sequence that differ from $1$ by more than $0{.}5$. 
-		   For example, all odd-indexed elements are bigger than $2$ (although the distance between $a_1=0$ and $1$ is $1$).
+                For example, all odd-indexed elements are bigger than $2$ (although the distance between $a_1=0$ and $1$ is $1$).
                 \source{Нет, у последовательности есть члены со сколь угодно большими номерами, лежащие на расстоянии больше $1{.}5$ от $1$ — например, все члены с нечётными номерами, большими $2$ (хотя $a_1=0$ находится на расстоянии $1$ от числа $1$).}
         \choice \correct
             $\eps=2$
@@ -859,14 +859,14 @@ This is what it means for a sequence to approach $A$.
             padding: 1em; max-width:600px;
         \src lim-seq-3.svg
         \alt
-		The graph of a sequence is shown. There is a label for the point A on the vertical axis, together with three horizontal lines: y=A, y=A+ε_1, y=A-ε_1. Somewhat of a corridor is formed by the second and the third one. There is an indication that all element after  N=N(ε_1)=3 (i.e. starting from n=4) are inside the mentioned corridor.
-		\source
-Изображен график последовательности.
-На вертикальной оси отмечено
-            число A и проведено три горизонтальных прямых: y=A, y=A+ε_1,
-            y=A-ε_1, две последние прямые образуют своего рода коридор. 
-Показано, что все элементы, после N=N(ε_1)=3 (то есть начиная с n=4)
-            находятся внутри этого коридора.
+            The graph of a sequence is shown. There is a label for the point A on the vertical axis, together with three horizontal lines: y=A, y=A+ε_1, y=A-ε_1. Somewhat of a corridor is formed by the second and the third one. There is an indication that all element after  N=N(ε_1)=3 (i.e. starting from n=4) are inside the mentioned corridor.
+            \source
+                Изображен график последовательности.
+                На вертикальной оси отмечено
+                число A и проведено три горизонтальных прямых: y=A, y=A+ε_1,
+                y=A-ε_1, две последние прямые образуют своего рода коридор. 
+                Показано, что все элементы, после N=N(ε_1)=3 (то есть начиная с n=4)
+                находятся внутри этого коридора.
     \rawhtml
         <hr>
     \img
@@ -1109,7 +1109,7 @@ Now, if we put off all motivation mentioned above, the full proof looks like thi
     \section{Предел не равен какому-то числу}
 \proposition
     The limit of the sequence $\seq{a_n}$,  $a_n=\frac{1}{n}$, is not equal to $1$:
-   \source{Предел последовательности $\seq{a_n}$, $a_n=\frac{1}{n}$, не равен 1:}
+        \source{Предел последовательности $\seq{a_n}$, $a_n=\frac{1}{n}$, не равен 1:}
     \eq
         \lim_{n\to \infty}\frac{1}{n} \ne 1.
 \proof
@@ -1276,10 +1276,9 @@ Not every sequence has a limit.
         Нас пожидает некоторая трудность в самом начале. 
         Определение предела требует, чтобы мы назвали конкретное число $A$, которое является пределом.
         Здесь никакого $A$ нет.
-
-   Formally, the proposition “$\seq{a_n}$ has a limit” is written as follows: “There exists some number $A$ that is the limit of $\seq{a_n}$”.
-   The same thing using quantifiers:
-   \source
+    Formally, the proposition “$\seq{a_n}$ has a limit” is written as follows: “There exists some number $A$ that is the limit of $\seq{a_n}$”.
+    The same thing using quantifiers:
+    \source
         Формально, утверждение «последовательность $\seq{a_n}$ имеет предел» записывается так: найдётся какое-то число $A$, которое является пределом $\seq{a_n}$. 
         В кванторах:
     \eq
@@ -1321,21 +1320,21 @@ Not every sequence has a limit.
                 padding: 1em; max-width:700px;
             \src lim-seq-5.svg
             \alt
-			The graph of $a_n=(-1)^n$ is shown.
-			The point $A$ is indicated between points $0$ and $1$.
-			Horizontal lines $y=1$, $y=-1$, and $y=A$ are drawn.
-\source
-Нарисован график последовательности a_n=(-1)^n. 
-На оси y отмечена точка A между точками 0 и -1. 
-Проведены горизонтальныепрямые y=1, y=-1, y=A
+                The graph of $a_n=(-1)^n$ is shown.
+                The point $A$ is indicated between points $0$ and $1$.
+                Horizontal lines $y=1$, $y=-1$, and $y=A$ are drawn.
+                \source
+                    Нарисован график последовательности a_n=(-1)^n. 
+                    На оси y отмечена точка A между точками 0 и -1. 
+                    Проведены горизонтальныепрямые y=1, y=-1, y=A
         \caption
             The graph of the sequence $\seq{(-1)^n$.
             \source{График последовательности $\seq{(-1)^n}$.}
         \label fig:04:(-1)^n
 
     How to choose $\eps>0$ so that our sequence will occasionally “jump out” of the $\eps$-corridor even very far away in the future?
-	And how to find $\eps$?
-	Since we know that $A\ne 1$ and that the sequence comes to the number $1$ arbitrarily far into the future, it is natural to make the corridor narrow enough to exclude points such that $y=1$.
+    And how to find $\eps$?
+    Since we know that $A\ne 1$ and that the sequence comes to the number $1$ arbitrarily far into the future, it is natural to make the corridor narrow enough to exclude points such that $y=1$.
     This ensures that whenever an element is equal to $1$, it's not $\eps$-close to $A$.
     \source
         Теперь нужно выбрать такое $\eps>0$, что последовательность будет время от времени выскакивать из $\eps$-коридора сколько угодно далеко в будущем. 
@@ -1355,7 +1354,7 @@ Not every sequence has a limit.
     Consider an arbitrary natural number $N$.
     No matter what it is, we can always find an index $m>N$, for which the corresponding element $a_m$ doesn't belong to the corridor from $A+\eps$ to $A-\eps$ (a shaded region in the figure).
     In fact, that's why we’ve chosen this $\eps$: for every even $n$ we have $a_n=1$, and hence all the corresponding elements can't be inside the corridor.
-   Importantly, for every $N$ there exists an even $n>N$, which is exactly what we need.
+    Importantly, for every $N$ there exists an even $n>N$, which is exactly what we need.
     \source
         Тогда одна из границ коридора будет проходить в точности посередине между $A$ и $1$, см. \ref[рис.][fig:04:(-1)^n+eps]. 
         Пусть теперь дано произвольное натуральное $N$. 
@@ -1374,7 +1373,7 @@ Not every sequence has a limit.
                 Проведена вертикальная прямая n=N (N выбрано равным 6), закрашен
                 коридор правее прямой n=N между прямыми y=A+ε и y=A-ε.
         \caption
-            The graph of $\seq{(-1)^n$ and a corridor for the chosen $\eps$.
+            The graph of $\seq{(-1)^n}$ and a corridor for the chosen $\eps$.
             \source{График последовательности $\seq{(-1)^n}$ и коридор для выбранного значения $\eps$.}
         \label fig:04:(-1)^n+eps
 
@@ -1492,7 +1491,7 @@ Let’s prove it.
         И они сейчас находятся в нашей власти — мы можем их выбирать какими хотим!
 
     Recall that in the process of proving statements about the value of a limit we've taken $\eps$ as given and couldn’t manipulate it.
-This was because the condition we are proving, which we took from the definition of the limit starts with a universal quantifier xcx
+    This was because the condition we are proving, which we took from the definition of the limit starts with a universal quantifier xcx
     But now we're dealing with the opposite.
     We're given (by assumption) that $A_1$ is the limit of the sequence.
     This implies that for every $\eps>0$, there exists $N_1=N_1(\eps_1)$ such that a certain inequality holds.
@@ -1523,23 +1522,23 @@ This was because the condition we are proving, which we took from the definition
             \style
                 padding: 1em;
             \alt
-			The graph of some sequence ${a_n}$ is shown.
-			There are points $A_1$ and $A_2$, such that $A_1 > A_2$ on the vertical axis.
-			The segment $[A_1, A_2]$ is divided into three equal parts by two dots: the lower one is $A_2+ε$, and the upper one is $A_1-ε$.
-			The points $A_2+ε$ and $A_1-ε$ are also shown.
-			Horizontal lines are drawn through every point.
-			There are vertical lines $n=N_1=5$ and $n=N_2=8$.
-			Two corridors are colored: the first is around $A_1$ to the right of $N_1$ and the second is around $A_2$ to the right of $N_2$.
-			The points to the left of $N_1$ and $N_2$ are located arbitrarily, the points between $N_1$ and $N_2$ are inside the corridor around $A_1$, and there are no points to the right.
-			\source
-Построен график некоторой последовательности ${a_n}$.
-На вертикальной оси отмечены две различные точки $A_1$ и A_2, A_1 > A_2. 
-Отрезок [A_1, A_2] разделен на три равные части двумя точками, нижняя A_2+ε, верхняя A_1-ε. 
-Также отмечены точки A_1+ε и A_2-ε. 
-Через все отмеченные точки проведены горизонтальные прямые. 
-Нарисованы вертикальные прямые n=N_1=5 и n=N_2=8.
-Закрашены коридоры правее N_1 вокруг A_1 и правее N_2 вокруг A_2. 
-Левее N_1 и N_2 точки последователности располагаются произвольным образом, между N_1 и N_2 только внутри коридора вокруг A_1, правее N_2 точек не отмечено. 
+                The graph of some sequence ${a_n}$ is shown.
+                There are points $A_1$ and $A_2$, such that $A_1 > A_2$ on the vertical axis.
+                The segment $[A_1, A_2]$ is divided into three equal parts by two dots: the lower one is $A_2+ε$, and the upper one is $A_1-ε$.
+                The points $A_2+ε$ and $A_1-ε$ are also shown.
+                Horizontal lines are drawn through every point.
+                There are vertical lines $n=N_1=5$ and $n=N_2=8$.
+                Two corridors are colored: the first is around $A_1$ to the right of $N_1$ and the second is around $A_2$ to the right of $N_2$.
+                The points to the left of $N_1$ and $N_2$ are located arbitrarily, the points between $N_1$ and $N_2$ are inside the corridor around $A_1$, and there are no points to the right.
+            \source
+                Построен график некоторой последовательности ${a_n}$.
+                На вертикальной оси отмечены две различные точки $A_1$ и A_2, A_1 > A_2. 
+                Отрезок [A_1, A_2] разделен на три равные части двумя точками, нижняя A_2+ε, верхняя A_1-ε. 
+                Также отмечены точки A_1+ε и A_2-ε. 
+                Через все отмеченные точки проведены горизонтальные прямые. 
+                Нарисованы вертикальные прямые n=N_1=5 и n=N_2=8.
+                Закрашены коридоры правее N_1 вокруг A_1 и правее N_2 вокруг A_2. 
+                Левее N_1 и N_2 точки последователности располагаются произвольным образом, между N_1 и N_2 только внутри коридора вокруг A_1, правее N_2 точек не отмечено. 
         \caption
             The contradiction in the proof of \ref[theorem][thm:04:uniq].
             \source{Противоречие в доказательстве \ref[теоремы][thm:04:uniq].}
