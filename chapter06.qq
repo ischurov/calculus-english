@@ -1,28 +1,28 @@
 \chapter 
-    More on properties of limits \label chap:06:more-lim-properties
+    More on Properties of Limits \label chap:06:more-lim-properties
     \source{Ещё о свойствах пределов \label chap:06:more-lim-properties}
 \section 
-    Limit of a fraction
+    Limit of a Fraction
     \source{Предел частного}
-We are going to state and prove a theorem about a limit of a function that is the ratio of two other functions.
-It will be similar to the theorems about a limit of a sum and a product, but first we need to introduce some new concepts valuable on their own.
+We are going to state and prove a theorem about a limit of a fraction, which is analogous to the already proven theorems about the limit of a sum and a product.
+But first, we need to introduce some new concepts that are useful on their own.
 \source
     Мы бы хотели сформулировать и доказать теорему о пределе частного, аналогичную уже доказанным теоремам о пределах суммы и произведения. 
     Но для этого нам понадобится несколько новых понятий, имеющих и самостоятельную ценность.
 \subsection 
-    The sequence is bounded away from a number
+    The notion of being bounded away from a number.
     \source{Понятие отделенности последовательности от числа}
 \snippet \flabel bounded away \source{отделена}  \label snip:bounded-away
     \definition \label def:06:bounded-away
-        A sequence $\seq{a_n}$ is called \emph{bounded away} from $a$ if there exists $c>0$ such that a distance between every element and $a$ is at least $c$.
+        A sequence $\seq{a_n}$ is called \emph{bounded away} from $a$ if there exists $c>0$ such that a distance between every element of the sequence and $a$ is at least $c$.
         Formally,
         \source
             Последовательность $\seq{a_n}$ называется \emph{отделённой от} числа $a$, если найдётся такое $c>0$, что все элементы последовательности находятся на расстоянии хотя бы $c$ от $a$. 
             Формально:
         \eq
             \exists c>0\\ \forall n \in \mathbb N\colon |a_n - a| \ge c.
-        It is often useful to state that "a sequence is bounded away from $a$ starting from the $N$-th element".
-        This means that the condition $|a_n-a|\ge c$ is satisfied not for every natural $n$, but only for $n\ge N$.
+        It is sometimes useful to use the phrase "a sequence is bounded away from $a$ starting from the $N$-th element".
+        This means that not every natural $n$ satisfy the condition $|a_n-a|\ge c$, but only those that satisfy $n\ge N$.
         \source
             Иногда полезно использовать формулировку «последовательность отделена от $a$ начиная с члена под номером $N$». 
             Это означает, что условие $|a_n-a|\ge c$ выполняется не для всех натуральных $n$, а только для $n\ge N$.
@@ -33,22 +33,25 @@ It will be similar to the theorems about a limit of a sum and a product, but fir
         \style
             padding: 1em;
         \alt
-            Нарисован график последовательности $\seq{a_n}$, прямые $y=a$,
-            $y=a+c$, $y=a-c$. Ни одной точки последовательности нет между
-            прямыми $y=a+c$ и $y=a-c$.
+            The graph of $\seq{a_n}$ is drawn, as well as the lines $y=a$, $y=a+c$, and $y=a-c$.
+		No points of the graph lie between $y=a+c$ and $y=a-c$.
+\source
+Нарисован график последовательности $\seq{a_n}$, прямые $y=a$, $y=a+c$, $y=a-c$. 
+Ни одной точки последовательности нет между прямыми $y=a+c$ и $y=a-c$.
     \caption
         An illustration to the concept of \ref[being bounded away from a number\nonumber][def:06:bounded-away].}
         \source{Иллюстрация к понятию \ref[отделенности от числа\nonumber][def:06:bounded-away].}
     \label fig:06:bounded-away
 
 \example 
-    The sequence $\seq{1/n}$ is bounded away from $-1$ but not bounded away from $0$, although each its element is strictly bigger than $0$.
+    The sequence $\seq{1/n}$ is bounded away from $-1$ but not bounded away from $0$, although all elements are strictly greater than $0$.
     The sequence $\seq{(-1)^n+1/n}$ is not bounded away from $1$ and $-1$ but it is bounded away from $0$ starting from the second element.
     \source
         Последовательность $\seq{1/n}$ отделена от $-1$, но не отделена от $0$, несмотря на то, что все её члены строго больше $0$. 
         Последовательность $\seq{(-1)^n+1/n}$ не отделена от $1$ и $-1$, но отделена от $0$ начиная со второго члена.
 \question
-    Let's construct the sequence $\seq{b_n}$ out of $\seq{a_n}$ in the following way:
+    Consider a sequence $\seq{a_n}$. 
+    Let’s construct a sequence $\seq{b_n}$ in the following way:
     \source{Для последовательности $\seq{a_n}$ определим последовательность $\seq{b_n}$ следующим образом:}
     \eq
         b_n = a_{n+1}-a_n.
@@ -64,14 +67,12 @@ It will be similar to the theorems about a limit of a sum and a product, but fir
                     Yes.
                     \source{Да.}
                     \comment
-                        Wrong. 
                         Consider a sequence $b_n=\frac{1}{2^n}$.
                         \source{Рассмотрите последовательность $b_n=\frac{1}{2^n}$}.
                 \choice \correct
                     No.
                     \source{Нет.} 
                     \comment
-                        Yes!
                         Take $b_n = \frac{1}{2^n}$, $a_1=0$, $a_n=0+\frac{1}{2}+\frac{1}{4}+\ldots+\frac{1}{2^{n-1}} < 1$.
                         \source{Например, если $b_n = \frac{1}{2^n}$, $a_1=0$, $a_n=0+\frac{1}{2}+\frac{1}{4}+\ldots+\frac{1}{2^{n-1}} < 1$.}
         \item
@@ -87,31 +88,31 @@ It will be similar to the theorems about a limit of a sum and a product, but fir
                     \comment 
                         Indeed, if all $b_n \ge c$, then $a_n = a_1 + b_1 + \ldots + b_{n-1} \ge a_1 + c + c + \ldots + c = a_1 + (n-1)c \to +\infty$ since $c>0$.
                         Действительно, если все $b_n \ge c$, то $a_n = a_1 + b_1 + \ldots + b_{n-1} \ge a_1 + c + c + \ldots + c = a_1 + (n-1)c \to +\infty$, т.к. $c>0$.
-                \choice \correct НАВЕРНОЕ НАДО УБРАТЬ \КОРРЕКТ
+                \choice 
                     No.
                     \source{Нет.}
                     \comment
                         If you managed to come up with a counterexample, send it to me please.
                         \source{Если вам удалось построить контрпример, пришлите его мне, пожалуйста.}
-    This exercise shows the difference between propositions "all elements are bigger than zero " ($b_n > 0$) and "the sequence is bounded away from zero" ($b_n \ge c > 0$).
-    \source{Это упражнение показывает практическую разницу между утверждениями вида «все элементы больше нуля» ($b_n > 0$) и «последовательность отделена от нуля» ($b_n \ge c > 0$).}
+    This exercise shows the practical difference between statements "all elements of the sequence are bigger than zero " ($b_n > 0$) and "the sequence is bounded away from zero" ($b_n \ge c > 0$).
+    \source{Это упражнение показывает практическую разницу между утверждениями вида «все элементы больше нуля» ($b_n > 0$) и «последовательность отделена от нуля» ($b_n \ge c > 0$).}
 \exercise \label exer:06:bounded-vs-lim
     Prove that if a sequence is bounded away from $b$, then it cannot approach $b$.
-    (Hint: take $\eps$ to be equal to $c$ and encounter a contradiction).
+    (Hint: take $\eps$ in the definition of a limit to be equal to $c$ from the definition of being bounded away and find a contradiction).
     \source
         Докажите, что если последовательность отеделена от числа $b$, то она не может стремиться к $b$. 
         (Подсказка: возьмите $\eps$ в определении предела равным $c$ в определении отделенности и придите к противоречию.)
 \proposition \label prop:06:lim-bound-away
-    Consider two distinct real numbers $a$ and $A$, where $A\ne a$.
+    Consider two distinct real numbers $a$ and $A$ ($A\ne a$).
     If a sequence $\seq{a_n}$ approaches $A$ and there are no elements equal to $a$, then $\seq{a_n}$ is bounded away from $a$.
     \source
         Пусть есть два различных вещественных числа $a$ и $A$, $A\ne a$. 
         Если последовательность $\seq{a_n}$ стремится к $A$ и ни один член последовательности не равен $a$, то $\seq{a_n}$ отделена от $a$.
 \proof
-    It is always helpful to start with an illustration, see \ref[fig.][fig:06:lim-bound-away-tail].
+    As always, we start with a formalization and an illustration, see \ref[fig.][fig:06:lim-bound-away-tail].
     \source{Как обычно, начнём с формализации и картинки, см. \ref[рис.][fig:06:lim-bound-away-tail].}
     
-    \paragraph{We know,} The limit is $A$ and no element is equal to $a$.
+    \paragraph{We know:} the limit is $A$ and no element of the sequence is equal to $a$.
     \source{\paragraph{Нам известно} Предел последовательности равен $A$ и ни один член не равен $a$.}
     \align
         \item 
@@ -119,7 +120,7 @@ It will be similar to the theorems about a limit of a sum and a product, but fir
         \splitem  \splonly{&} \forall n > N  \colon |a_n - A| < \eps.
         \item
             \forall  n & \in \mathbb N \colon a_n \ne a.
-    \paragraph{We need to show,} The sequence is bounded away from $a$.
+    \paragraph{We need to show:} the sequence is bounded away from $a$.
     \source{\paragraph{Нужно доказать} Последовательность отделена от $a$.}
     \eq
         \exists c > 0\\ \forall n \in \mathbb N\colon |a_n - a| \ge c.
@@ -131,10 +132,14 @@ It will be similar to the theorems about a limit of a sum and a product, but fir
             \style
                 padding: 1em;
             \alt 
-                Нарисован график последовательности a_n, прямые y=a и y=A (A>a),
-                коридор вокруг A с размахом ε, нижняя граница которого проходит
-                между A и a. Также нарисована вертикальная прямая $n=N$. Все
-                точки правее $n=N$ лежат внутри коридора.
+			The graph of a_n is drawn, as well as the lines y=a and y=A (A>a). 
+			There is a corridor around A with width ε, and its bottom line is lying between A and a.
+Also, a vertical line $n=N$ is drawn.
+All points to the right of $n=N$ lie inside the corridor.
+\source  
+Нарисован график последовательности a_n, прямые y=a и y=A (A>a), коридор вокруг A с размахом ε, нижняя граница которого проходит между A и a.
+Также нарисована вертикальная прямая $n=N$.
+Все точки правее $n=N$ лежат внутри коридора.
         \style
             \padding 1em;
         \caption
@@ -142,23 +147,23 @@ It will be similar to the theorems about a limit of a sum and a product, but fir
             Elements in the tail of a sequence cannot be $\eps$-close to $a$ since they are $\eps$-close to $A$ and $A\ne a$.
             \source{Иллюстрация к \ref[утверждению][prop:06:lim-bound-away]: элементы в хвосте последовательности не могут быть близки к $a$, потому что они близки к $A$ и $A\ne a$.}
         \label fig:06:lim-bound-away-tail
-    Take $\eps=|A-a|/2$, which correspond to $N=N(\eps)$ such that for any $n>N$:
+    Take $\eps=|A-a|/2$, which correspond to $N=N(\eps)$ so that for any $n>N$ we have:
     \source
         Положим $\eps=|A-a|/2$. 
         Получим $N=N(\eps)$. 
         Тогда для всех $n>N$:
     \eq
         |a_n - A| < \eps.  
-    Let's try to apply the triangle inequality (it seems to me that the key for mastery in calculus is to use the triangle inequality appropriately) to get the lower bound on  $|a_n - a|$.
+    Let's apply the triangle inequality (it looks like the main secret to these problems is correctly applying the triangle inequality) to get the lower bound on  $|a_n - a|$.
     To do so we must state that it is bigger than something, which ensures it must be on the right hand side of the triangle inequality $|x-y| \leq |x-z|+|z-y|$.
-    We see that an another term is needed, so let's try "the distance between $a$ and $A$ does not exceed the sum of the distances from $a$ to $a_n$ and from $a_n$ to $A$".
+    Let's try "the distance between $a$ and $A$ does not exceed the sum of the distances from $a$ to $a_n$ and from $a_n$ to $A$".
     \source
         воспользуемся неравенством треугольника (кажется, главный секрет этой науки в том, чтобы написать неравенство треугольника в правильную сторону). 
         Мы хотим получить оценку снизу на $|a_n - a|$ (сказать, что оно больше чего-то), то есть в неравенстве $|x-y| \leq |x-z|+|z-y|$ это расстояние должно стоять справа. 
         Попробуем так: расстояние от $a$ до $A$ не превосходит суммы расстояний от $a$ до $a_n$ и от $a_n$ до $A$.
     \eq
         |A - a| \le |a_n - a| + |A - a_n|  <  |a_n - a| + \eps.
-    Or equivalently,
+    We bring $\eps$ to the left, then substitute its value and reverse the inequation:
     \source{Перенесём $\eps$ в левую часть, подставим его значение и перевернём неравенство:}
     \align 
         \item \label eq:06:bounds
@@ -169,15 +174,15 @@ It will be similar to the theorems about a limit of a sum and a product, but fir
     Eureka!
     This is the lower bound we've desired.
     It's clear now that the tail of a sequence (all elements starting from $N+1$-th one) is bounded away from $a$.
-    What about the leftover part?
+    What about the first part of a sequence?
     \source
         Ура, получилась оценка сверху, которую мы хотели. 
         Отсюда видно, что хвост последовательности (все члены, начиная с члена с номером $N+1$) отделён от $a$.  
         Что насчёт начальной части последовательности?
     
-    Let's use the same approach from the proof that a convergent sequence is bounded: choose the closest to $a$ element from the set $a_1$, $a_2$, …, $a_N$.
+    Let's use the same approach from the proof that a convergent sequence is bounded: choose the closest element to $a$ from the set $a_1$, $a_2$, …, $a_N$.
     It does not equal to $a$ since there are no elements equal to $a$.
-    This means the distance between the element and $a$ is positive and also smaller than any other distance, see \ref[fig.][fig:06:lim-bound-away-head].
+    This means the distance between the element and $a$ is non-zero and also smaller than any other distance on this segment, see \ref[fig.][fig:06:lim-bound-away-head].
     \source
         Воспользуемся тем же приёмом, что и в доказательстве ограниченности сходящейся последовательности: выберем среди точек $a_1$, $a_2$, …, $a_N$ ближайшую к $a$. 
         Она не равна $a$, потому что ни один элемент последовательности не равен $a$. 
@@ -190,20 +195,23 @@ It will be similar to the theorems about a limit of a sum and a product, but fir
             \style
                 padding: 0.5em;
             \alt 
-                Дополнительно к предыдущей картинке нарисован коридор вокруг
-                $a$, граница которого проходит по ближайшей к $a$ точке левее
-                $n=N$. Этот коридор не пересекается с коридором вокруг $A$. Ни
-                одна точка последовательности не лежит внутри нового коридора.
+                In addition to the previous figure there is a corridor around $a$, the border of which is going through the closest point to $a$ to the left of $n=N$.
+			This corridor does not intersect the corridor around $A$.
+			No points lie inside the new corridor.
+\source
+Дополнительно к предыдущей картинке нарисован коридор вокруг $a$, граница которого проходит по ближайшей к $a$ точке левее $n=N$. 
+Этот коридор не пересекается с коридором вокруг $A$.
+Ни одна точка последовательности не лежит внутри нового коридора.
         \style
             \padding 1em;
         \caption
             An illustration to \ref[proposition][prop:06:lim-bound-away].
-            Among elements in the beginning of a sequence we choose the one closest to $a$ and set the lower bound to the distance between the points, otherwise take $|A-a|/2$.
+            Among elements in the beginning of a sequence we choose the one closest to $a$ and draw the lower bound through it if the distance from $a$ to it is less than $|A-a|/2$.
             \source{Иллюстрация к \ref[утверждению][prop:06:lim-bound-away]: среди элементов в начале последовательности можно выбрать ближайший и провести границу по нему, если расстояние от него до $a$ меньше, чем $|A-a|/2$.}
         \label fig:06:lim-bound-away-head
 
     Let's finish it up.
-    Take
+    Take:
     \source
         Сведём всё воедино. 
         Положим:
@@ -213,16 +221,15 @@ It will be similar to the theorems about a limit of a sum and a product, but fir
         \splitem |a_N-a|, \frac{|A-a|}{2}}.
     For every natural $n$ we have either $n \le N$, or $n > N$.
     In the first case by the definition of a minimum, $|a_n - a| \ge c$.
-    In the second case $|a_n - a| > \frac{|A-a|}{2} \ge c$, where the first inequality is \ref{eq:06:bounds} and the second follows from the definition of a limit.
+    In the second case $|a_n - a| > \frac{|A-a|}{2} \ge c$, where the first inequality is \ref{eq:06:bounds} and the second one follows from the definition of a limit.
     \source
         Для всякого натурального $n$, либо $n \le N$, и тогда $|a_n - a| \ge c$ по определению минимума, либо $n > N$, и тогда $|a_n - a| > \frac{|A-a|}{2} \ge c$ (первое неравенство по \ref{eq:06:bounds}, второе — снова по определению минимума).
 
     Hurray!
-    We're done.
     \source{Победа!}
 \remark
-    Notice the proof above mimics the one we've constructed for the \ref[theorem that a convergent seqience is bounded\nonumber][thm:05:bound] from the previous lecture.
-    One can say these two theorems are the same thing: boundness is like being bounded away from infinity.
+    Notice the proof above almost repeats the one we've constructed for the \ref[theorem that a convergent sequence is bounded\nonumber][thm:05:bound] from the previous lecture.
+    In some sense, the two theorems are the same: boundness is like being bounded away from infinity.
     \source
         Как вы могли заметить, это доказательство почти дословно повторяет доказательство \ref[теоремы об ограниченности сходящейся последовательности\nonumber][thm:05:bound] из предыдущей лекции. 
         В некотором смысле, это та же теорема: свойство ограниченности можно назвать «отделенностью от бесконечности».
@@ -243,11 +250,11 @@ It will be similar to the theorems about a limit of a sum and a product, but fir
     \eq
         \left| \frac{1}{a_n} \right| = \frac{1}{|a_n|} \le \frac{1}{c} = C.
     Which means the sequence is bounded.
-    (To clarify, we've utilized the fact that if both the numerator and the denominator of a fraction are positive, an increase in the denominator results in a decrease of the whole fraction.)
+    (We've utilized the fact that if both the numerator and the denominator of a fraction are positive, then an increase in the denominator results in a decrease of the whole fraction.)
     \source
         Следовательно, последовательность ограничена. 
         (Мы как обычно вспользовались тем, что если числитель и знаменатель дроби положителен, то при увеличении знаменателя дробь уменьшается.)
-\subsection A limit of the sequence of inversed elements 
+\subsection A limit of the sequence of the inverses of elements 
     \section{Предел последовательности обратных величин}
 \theorem \label thm:06:inverse
     Suppose a sequence $\seq{a_n}$ consists of strictly positive elements and has a limit $A \ne 0$.
@@ -266,9 +273,9 @@ It will be similar to the theorems about a limit of a sum and a product, but fir
         \splitem \splonly{&=} \frac{1}{|a_n|} \cdot
             \frac{1}{|A|} \cdot |A-a_n|.
     Since the sequence $\seq{a_n}$ consists of only positive elements and approaches a non-zero number, it is bounded away from zero by a \ref[proposition][prop:06:lim-bound-away].
-    Hence according to a \ref[proposition][prop:06:zero-infty], the term $\frac{1}{|a_n|}$ is bounded above by some $C$.
+    Hence, according to a \ref[proposition][prop:06:zero-infty], the term $\frac{1}{|a_n|}$ is bounded above by some $C$.
     Since $a_n\to A$ is satisfied, for any $\eps>0$ there must exist $N$ such that for every $n>N$ we have $|A-a_n| < \eps$.
-    This means the following inequality holds for each $n$:
+    This means that for each $n$:
     \source
         Поскольку последовательность $\seq{a_n}$ имеет только ненулевые элементы и стремится к числу, отличному от нуля, она отделена от нуля по \ref[утверждению][prop:06:lim-bound-away].
         Значит, сомножитель $\frac{1}{|a_n|}$ ограничен некоторым числом $C$ по \ref[утверждению][prop:06:zero-infty]. 
@@ -277,20 +284,18 @@ It will be similar to the theorems about a limit of a sum and a product, but fir
     \eq
         \left| \frac{1}{a_n}-\frac{1}{A}\right| < \frac{C}{|A|} \eps.
     The only thing left is to consider a \ref[simplifying lemma\nonumber][lem:05:simplify]: if the constant is $C/|A|$, we conclude the limit is equal to $1/A$.
-    \soure{По \ref[упрощающей лемме\nonumber][lem:05:simplify], мы доказали, что предел равен $1/A$: в качестве константы в лемме можно взять число $C/|A|$.}
+    \soure{По \ref[упрощающей лемме\nonumber][lem:05:simplify], мы доказали, что предел равен $1/A$: в качестве константы в лемме можно взять число $C/|A|$.}
 \remark
-    The assumption "all elements are positive" is rather technical: if there is an iddentically zero element in a sequence $\seq{a_n}$, then the "inverse" sequence $\seq{1/a_n}$ is undefined.
-    In practice we just ignore those "undefined" elements.
-    But how can we ignore some elements?
-    It applies we're "deforming" the sequence, doesn't it?
-    Actually, since the limit of $\seq{a_n}$ is non-zero, only a finite number of elements can be identically zero.
-    But earlier we've shown that a limit does not depend on a finite number of elements.
-    In other words, if we split apart the sequence after the last identically zero element and leave only the tail, we get a (new) seqeuence with the same properties.
+    The assumption "all elements are positive" is rather technical: if there is an element that is identically zero, then the expression $1/a_n$ is undefined, and it is unclear what does “a sequence $\seq{1/a_n}$” mean (each element in a sequence, according to the earlier definition, must equal to some real number).
+    In practice, this condition is ignored, meaning that some element of a sequence may be undefined, and this is not a problem.
+    The thing is, there are a finite number of such undefined elements (since the limit of $\seq{a_n}$ is nonzero, only a finite number of elements may equal to zero — prove it!), and the limit does not depend on a finite number of elements.
+    We can just forget about the first part of $\seq{a_n}$, where there happen to be undefined elements, and leave only the tail.
+    All conditions and results we proved earlier are valid for this tail of a sequence.
     \source
         Условие о том, что все элементы последовательности $\seq{a_n}$ ненулевые, носит технический характер. 
         Если какой-то элемент $a_n$ равен нулю, то выражение $1/a_n$ не определено, и вообще непонятно, что значит «последовательность $\seq{1/a_n}$» (в последовательности, как мы её определяли раньше, каждый член должен быть каким-то конкретным вещественным числом).
         Однако, этим условием как правило пренебрегают, имея в виду, что некоторые элементы последовательности $\seq{1/a_n}$ могут быть не определены, и это не страшно.
-        Их в любом случае конечное число (раз предел $\seq{a_n}$ не нулевой, лишь конечное число её членов могут быть нулевыми — докажите это!), а предел не зависит от любого конечного числа членов последовательности — мы можем просто выкинуть ту начальную часть последовательности $\seq{1/a_n}$, в которой есть неопределенные элементы, и рассматривать лишь оставшийся хвост. 
+        Их в любом случае конечное число (раз предел $\seq{a_n}$ не нулевой, лишь конечное число её членов могут быть нулевыми — докажите это!), а предел не зависит от любого конечного числа членов последовательности — мы можем просто выкинуть ту начальную часть последовательности $\seq{1/a_n}$, в которой есть неопределенные элементы, и рассматривать лишь оставшийся хвост. 
         Для него будут справедливы условия и заключение теоремы, которую мы только что доказали.
 \corollary \nonumber
     Suppose $a_n \to A$, $b_n \to B$, $B \ne 0$, and all elements of $b_n$ are non-zero.
@@ -309,36 +314,36 @@ It will be similar to the theorems about a limit of a sum and a product, but fir
             \frac{1}{b_n} &=\lim_{n\to \infty}{a_n} \cdot \lim_{n
             \to \infty} \frac{1}{b_n} =
         \splitem \splonly{&=}  A\cdot \frac{1}{B}=\frac{A}{B}.
-    This concludes the proof.
+    The corollary is proven.
     \source{Следствие доказано.}
 
 \section 
     Limits and inequalities
     \source{Пределы и неравенства}
 We've just shown how limits act on different arithmetic operations: addition, multiplication, and division.
-Now we proceed to how it affects the inequalities.
+Now we proceed to how it affects the inequations.
 \source
-    Только что мы обсудили, как пределы взаимодействуют с арифметическими операциями — сложением, умножением, делением. 
+    Только что мы обсудили, как пределы взаимодействуют с арифметическими операциями — сложением, умножением, делением. 
     Теперь обсудим, как они взаимодействуют с неравенствами.
 
 \subsection 
-    Taking the limit of an inequality
+    Limits in inequalities
     \source{Предельные переходы в неравенствах}
 \theorem \label thm:06:lim-ineq
-    Suppose all elements of a sequence $\seq{a_n}$ are less or equal to $a$ and the sequence has a limit of $A$.
+    Suppose all elements of a sequence $\seq{a_n}$ are less than or equal to $a$ and the sequence has a limit $A$.
     Then $A\le a$.
     \source
         Пусть все элементы последовательности $\seq{a_n}$ не превосходят числа $a$ и у последовательности есть предел, равный числу $A$.
         Тогда $A\le a$.
 \proof
     We proceed by contradiction.
-    Suppose $A>a$ (this fact must lead to a contradiction).
-    Notice that starting from some element, all subsequent ones must be $\eps$-close to $A$, and yet less than $a$, which implies being bounded away from $A$ (see \ref[fig.][fig:06:limit-ineq]).
+    Suppose $A>a$ (we want to get a contradiction).
+    From the one side, starting from some element, all subsequent ones must be $\eps$-close to $A$, and from the other side, they must be less than $a$, which implies being bounded away from $A$ (see \ref[fig.][fig:06:limit-ineq]).
     \source
         Хотим доказать эту теорему «от противного». 
         Пусть $A>a$. 
         Мы хотим прийти к противоречию. 
-        С одной стороны, элементы  последовательности, начиная с некоторого, должны быть близки к $A$, а с другой — они должны быть меньше $a$, а значит отделены от $A$, см. \ref[рис.][fig:06:limit-ineq].
+        С одной стороны, элементы  последовательности, начиная с некоторого, должны быть близки к $A$, а с другой — они должны быть меньше $a$, а значит отделены от $A$, см. \ref[рис.][fig:06:limit-ineq].
     \figure
         \img
             \src
@@ -346,6 +351,9 @@ Now we proceed to how it affects the inequalities.
             \style
                 padding: 1em;
             \alt
+                A graph of a sequence a_n is drawn, as well as the lines , y=a, y=A, y=A+ε, y=A-ε, n=N, and the value of ε is chosen so that y=A-ε lies above y=a.
+                All elements of a sequence to the left of N lies lower than y=a or on it.
+                There is a contradiction to the right of n=N: the points must lie lower than y=a, yet close to A
                 Нарисован график последовательности a_n, прямые y=a,
                 y=A, y=A+ε, y=A-ε, n=N, значение ε выбрано таким, чтобы
                 y=A-ε проходило выше y=a. Все точки последовательности левее N
@@ -353,16 +361,16 @@ Now we proceed to how it affects the inequalities.
                 противоречие: точки должны лежать ниже y=a, но при этом близко
                 к A.
         \caption
-            An illustration to taking the limit of an inequality in the proof of the \ref[theorem][thm:06:lim-ineq] by contradiction.
+            An illustration to taking the limit of an inequality in the proof by contradiction of the \ref[theorem][thm:06:lim-ineq].
             \source{Иллюстрация к предельному переходу в неравенствах, доказательство \ref[теоремы][thm:06:lim-ineq] от противного.}
         \label fig:06:limit-ineq
         
-    Take $\eps=\frac{A-a}{2}$ from the definition of a limit, which yeilds $N=N(\eps)$.
-    Set $n=N+1$ (since we need any element after the $N$-th one, why not take the next one?) and consider the corresponding element $a_{n}$.
+    So, let’s take $\eps=\frac{A-a}{2}$ from the definition of a limit and get $N=N(\eps)$.
+    Set $n=N+1$ (since we need any element to the right of the $N$-th one — any element, so we chose this particular one) and consider $a_{n}$.
     We have:
     \source
         Итак, возьмём в определении предела $\eps=\frac{A-a}{2}$ и получим соответствующее значение $N=N(\eps)$. 
-        Положим $n=N+1$ (нам нужен какой-то элемент правее $N$, любой — мы выбрали этот) и рассмотрим $a_{n}$. 
+        Положим $n=N+1$ (нам нужен какой-то элемент правее $N$, любой — мы выбрали этот) и рассмотрим $a_{n}$. 
         Имеем: 
     \equation \label eq:06:abs
         |a_{n}-A| < \eps.
@@ -370,26 +378,26 @@ Now we proceed to how it affects the inequalities.
     \source{Запишем это неравенство в виде:}
     \equation \label eq:06:ineq
         A - \eps < a_{n} < A + \eps.
-    The two inequalities are equivalent since \ref{eq:06:abs} states that the distance between $a_{n}$ and $A$ is less than $\eps$, but clearly all such numbers belong to the interval from $A-\eps$ to $A+\eps$.
-    This interval is in some sence a "one-dimentional ball" with radius $\eps$ centered at $A$.
-    It is called an $\eps$-neighbourhood of a point $A$.
-    Back to the inequality:
+    The two inequalities are equivalent since \ref{eq:06:abs} states that the distance between $a_{n}$ and $A$ is less than $\eps$, but all such numbers belong to the interval from $A-\eps$ to $A+\eps$.
+    (This interval is in some sense a "one-dimensional ball" with radius $\eps$ centered at $A$.
+    It is called an $\eps$-neighborhood of the point $A$.)
+    This implies,
     \source
         Это эквивалентный переход: неравенство \ref{eq:06:abs} говорит, что расстояние от $a_{n}$ до $A$ меньше $\eps$, но все такие числа лежат на интервале от $A-\eps$ до $A+\eps$. 
-        (Этот интервал — своего рода «одномерная окружность» с центром в точке $A$ и радиусом $\eps$. 
+        (Этот интервал — своего рода «одномерная окружность» с центром в точке $A$ и радиусом $\eps$. 
         Она называется $\eps$-окрестностью точки $A$.) 
         Тогда
     \eq
         a_{n} > A - \eps = A - \frac{A-a}{2}=\frac{A+a}{2}>a.
-    The last inequality uses the assumption $A>a$ and yeilds a contradiction.
-    (Because the proposition states that all elements are not larger than $a$.)
+    The last inequality uses the assumption $A>a$.
+    This is a contradiction.
     \source
         В последнем неравенстве мы восползовались тем фактом, что, по предположению, $A>a$. 
         Противоречие.
 \remark
     Informally speaking, non-strict inequalities are preserved when taking the limit.
-    And what about strict inequalities?
-    To be more precise, if all elements of a sequence are less than $a$, does this imply that the limit is also less than $a$?
+    And what about strict ones?
+    If all elements of a sequence are less than $a$, does this imply that the limit is also less than $a$?
     It's easy to come up with a counterexample: consider the sequence $\seq{-1/n}$.
     Each its element is smaller than zero, but the limit is zero.
     \source
@@ -401,22 +409,22 @@ Now we proceed to how it affects the inequalities.
 
 \corollary \nonumber
     Consider two sequences $\seq{a_n}$ and $\seq{b_n}$ such that the first one is smaller or equal to the second.
-    Formally, for any natural $n$, 
+    Namely, for any natural $n$, 
     \source{Пусть есть две последовательности $\seq{a_n}$ и $\seq{b_n}$, и первая поэлементно не превосходит вторую, то есть для всех натуральных $n$:}
     \eq
         a_n \le b_n.
-    Suppose that both sequences converge:
+    Suppose that both sequences have limits:
     \source{Пусть также у них есть пределы:}
     \eq
         \lim_{n \to \infty} a_n = A,\quad \lim_{n \to \infty} b_n = B.
     Then $A \le B$.
     \source{Тогда $A \le B$.}
 
-    In other words, we do not violate the inequality when taking the limits on both sides.  
+    In other words, we can take the limit of both sides in the inequality $a_n \le b_n$  .  
     \source{Иными словами, в неравенстве $a_n \le b_n$ можно перейти к пределу в правой и левой части.}
 \proof
     Consider a sequence $c_n = a_n - b_n$.
-    By construction, $c_n \le 0$ is satisfied and hence
+    Then for all $n$ the inequality $c_n \le 0$ is satisfied and hence
     \source
         Рассмотрим последовательность $c_n = a_n - b_n$. 
         Тогда для всех $n$ выполняется неравенство $c_n \le 0$ и значит
@@ -441,30 +449,30 @@ Now we proceed to how it affects the inequalities.
 
 \theorem \label thm:06:sandwich
     Consider three sequences: $\seq{a_n}$, $\seq{b_n}$, and $\seq{c_n}$.
-    Suppose the sequence $\seq{b_n}$ is "sandwiched" between the other two, which means the following inequality holds for any natural $n$:
+    Suppose the sequence $\seq{b_n}$ is "sandwiched" between the other two, meaning the following inequalities holds for any natural $n$:
     \source
         Рассмотрим три последовательности: $\seq{a_n}$, $\seq{b_n}$, $\seq{c_n}$.
         Пусть последовательность $\seq{b_n}$ «зажата» между двумя другими: для всех $n$ выполняются неравенства
     \eq
         a_n \le b_n \le c_n.
     Finally, suppose $\seq{a_n}$ and $\seq{c_n}$ converge to the same number $A$.
-    Then $\seq{b_n}$ also converges to $A$.
+    Then $\seq{b_n}$ also converges to $A$ (because it cannot go away).
     \source
         Пусть также $\seq{a_n}$ и $\seq{c_n}$ сходятся, причём к одному и тому же числу $A$. 
         Тогда $\seq{b_n}$ также сходится к $A$ (никуда не денется).
 
 The motivation behind the name is clear: one sequence is "sandwiched", or "squeezed" between two other sequences.
 (Sometimes it is also called the squeeze theorem.)
-In some european languages the theorem goes by the name of "the two officers (and a drunk) theorem", symbolizing two policemen arresting a civilian and carrying him to the police station, which is the limit in this setting.
+In some european languages the theorem goes by the name of "the two officers (and a drunk) theorem", symbolizing two policemen arresting a civilian and carrying him to the police station, which is the analogy for the value of a limit.
 \source 
     Эта теорема в советской, а потом российской математической традиции получила название «теоремы о двух милиционерах»: последовательности $\seq{a_n}$ и $\seq{c_n}$ играют роль милиционеров, которые ограничивают «хулигана» $\seq{b_n}$ и ведут его туда же, куда сами стремятся (видимо, в участок).
-    Вероятно, довольно скоро тут потребуется добавить комментарий о том, что полиция в России до 2011 года называлась милицией, а полицейскими — милиционерами. 
+    Вероятно, довольно скоро тут потребуется добавить комментарий о том, что полиция в России до 2011 года называлась милицией, а полицейскими — милиционерами. 
     В англоязычных источниках она как правило называется squeeze theorem или sandwich theorem.
 
 \proof
-    The idea of the proof is straighforward: if $a_n$ and $c_n$ are in the same $\eps$-neighbourhood, then $b_n$ must also be in this neighbourhood.
-    This is ensured since the whole interval $[a_n, c_n]$ must be nested into the $\eps$-neighbourhood, together with its every point (see \ref[fig.][fig:06:segments])).
-    When the intuition is clear, we must not be afraid of proving it formally.
+    The idea of the proof is very simple: if $a_n$ and $c_n$ are in the same $\eps$-neighbourhood, then $b_n$ must also be in this neighbourhood.
+    The interval $[a_n, c_n]$ is going to be nested into the $\eps$-neighbourhood, together with its every point.
+    This is clear from the figure \ref[fig.][fig:06:segments]), but we’re going to present a careful formulation with inequalities nevertheless.
     \source
         Идея доказательства очень простая. 
         Если $a_n$ и $c_n$ оказались в какой-то $\eps$-окрестности точки $A$, то и $b_n$ окажется в этой же $\eps$-окрестности: просто отрезок $[a_n, c_n]$ окажется целиком вложен в $\eps$-окрестность, и значит все его точки будут ей принадлежать. 
@@ -478,17 +486,21 @@ In some european languages the theorem goes by the name of "the two officers (an
                 padding: 1em;
                 max-width: 500px;
             \alt
-                На прямой изображены следующие точки (слева направо): A-ε, a_n,
-                A, b_n , c_n, A+ε. Отрезок [a_n, c_n], на котором лежит точка
-                b_n, целиком вложен в интервал (A-ε, A+ε). Ниже написано
-                неравенство: A-ε < a_n ≤  b_n ≤ c_n < A+ε.
+                The following points are located on the line (from left to right): A-ε, a_n, A, b_n , c_n, and A+ε.
+                The segment [a_n, c_n], to which a point b_n belongs, is fully included into the interval (A-ε, A+ε).
+                There is an inequality written below: A-ε < a_n ≤  b_n ≤ c_n < A+ε.
+                \source
+                    На прямой изображены следующие точки (слева направо): A-ε, a_n, A, b_n , c_n, A+ε. 
+                    Отрезок [a_n, c_n], на котором лежит точка b_n, целиком вложен в интервал (A-ε, A+ε). 
+                    Ниже написано неравенство: A-ε < a_n ≤  b_n ≤ c_n < A+ε.
         \caption
             If both "slices of bread" got into some $\eps$-neighbourhood, then the "ham" has to be there too.
             \source{Если «милиционеры» оказались в какой-то $\eps$-окрестности, то и ограниченный ими «хулиган» оказался в той же окрестности.}
         \label
             fig:06:segments
     
-    Let's formalize what is given:
+    Let's formalize what is given.
+    We know,
     \source
         Формализуем условие. 
         Нам даны следующие утверждения:
@@ -503,18 +515,18 @@ In some european languages the theorem goes by the name of "the two officers (an
             \colon |c_n - A| < \eps_2;
         \item \label eq:06:sandwich-est
             \forall n\splonly{&} \in \mathbb N \colon a_n \le b_n \le c_n.
-    Take $\eps_1=\eps_2=\eps$ and rewrite the inequalities in \ref{eq:06:sandwich1} and \ref{eq:06:sandwich2} without the absolute value (changing it to the double inequalities).
+    Take $\eps_1=\eps_2=\eps$ and rewrite the inequalities in \ref{eq:06:sandwich1} and \ref{eq:06:sandwich2} (changing it to the double inequalities that are equivalent).
     \source{Положим $\eps_1=\eps_2=\eps$ и перепишем неравенства в \ref{eq:06:sandwich1} и \ref{eq:06:sandwich2}: вместо неравенств с модулями запишем двойные неравенства, которые им эквивалентны:}
     \align 
         \item  \label eq:06:sandwich1-prim
             A - \eps &< a_n < A + \eps;
         \item  \label eq:06:sandwich2-prim
             A - \eps &< c_n < A + \eps.
-    The last inequalitiy in \ref{eq:06:sandwich-est} and the last one in \ref{eq:06:sandwich2-prim} together imply that for any $n>N_2$:
+    The last inequality in \ref{eq:06:sandwich-est} and the last one in \ref{eq:06:sandwich2-prim} together imply that for any $n>N_2$:
     \source{Из правого неравенства в цепочке \ref{eq:06:sandwich-est} и тоже правого неравенства в цепочке \ref{eq:06:sandwich2-prim} следует, что для всех $n>N_2$:}
     \eq
         b_n \le c_n < A + \eps.
-    Similarlly, the first inequalities of \ref{eq:06:sandwich-est} and \ref{eq:06:sandwich1-prim} tell us that for any $n>N_1$:
+    Similarly, the first inequalities of \ref{eq:06:sandwich-est} and \ref{eq:06:sandwich1-prim} tell us that for any $n>N_1$:
     \source{Аналогично из \ref{eq:06:sandwich-est} и \ref{eq:06:sandwich1-prim} (теперь нужно взять левые неравенства) следует, что для всех $n>N_1$:}
     \eq
         b_n \ge a_n > A - \eps.
@@ -522,7 +534,7 @@ In some european languages the theorem goes by the name of "the two officers (an
     \source{Таким образом, для всех $n>\max(N_1, N_2)$ (см. \ref[рис.][fig:06:sandwich]):}
     \eq
         A - \eps < b_n < A + \eps.
-    This is equivalent to the goal inequality $|b_n - A| < \eps$.
+    This is equivalent to the desired inequality $|b_n - A| < \eps$.
     \source{Это эквивалентно неравенству $|b_n - A| < \eps$, которое требовалось доказать.}
 
     \figure
@@ -533,18 +545,22 @@ In some european languages the theorem goes by the name of "the two officers (an
                 padding:1em;
                 max-width: 600px;
             \alt
-                Нарисованы графики трёх последовательностей: a_n, b_n, c_n. Для
-                каждого n, между a_n и c_n проведён отрезок, на котором лежит
-                b_n. Проведены прямые y=A, y=A+ε, y=A-ε, вертикальная прямая
-                n=N. Правее этой прямой точки всех последовательностей находятся
-                внутри ε-коридора вокруг точки A.
+                The graphs of three sequences is shown: a_n, b_n, c_n.
+                For each n there a segment is drawn between a_n and c_n, on which b_n lies.
+                The lines y=A, y=A+ε, y=A-ε and also a vertical line n=N is drawn.
+                All points to the right of this vertical line are inside an ε-corridor around A.
+                \source
+                    Нарисованы графики трёх последовательностей: a_n, b_n, c_n.
+                    Для каждого n, между a_n и c_n проведён отрезок, на котором лежит b_n. 
+                    Проведены прямые y=A, y=A+ε, y=A-ε, вертикальная прямая n=N. 
+                    Правее этой прямой точки всех последовательностей находятся внутри ε-коридора вокруг точки A.
         \caption
             All elements of three sequences starting from the $N+1$-th one lie in the $\eps$-corridor.  
             \source{Все элементы всех трёх последовательностей, начиная с номера $N+1$, лежат в $\eps$-коридоре.}
         \label
             fig:06:sandwich
     We've just shown that for any $\eps>0$ if we set $N=\max(N_1(\eps), N_2(\eps))$, the goal inequality holds for all $n>N$.
-    Thus, the theorem is proven!
+    The theorem is proven!
     \source
         Итак, мы получили, что для любого $\eps>0$ можно взять $N=\max(N_1(\eps), N_2(\eps))$ и тогда для всех $n>N$ будет выполняться искомое неравенство.
         Теорема доказана.
@@ -562,16 +578,16 @@ Consider the following examples.
     \source{Заметим, что для всех $n$,}
     \eq
         0 < \frac{1}{n^2+1} < \frac{1}{n}.
-    Since the left hand side is a constant, its limit is zero.
-    The right hand side most cenrtainly approaches zero.
-    By the sandwich theorem, if we set $a_n=0$, $b_n=1/(n^2+1)$, and $c_n=1/n$ we get that the limit of $b_n$ is also zero.
+    Since the left hand side is a constant, it is equal to its limit, namely zero.
+    The right hand side approaches zero.
+    By the sandwich theorem, if we set $a_n=0$, $b_n=1/(n^2+1)$, and $c_n=1/n$ we get that the limit of $b_n$ is zero.
     \source
         Левая часть — это константа, её предел равен ей самой, то есть нулю. 
         Правая часть стремится к нулю. 
         По теореме о двух милиционерах (полагаем $a_n=0$, $b_n=1/(n^2+1)$, $c_n=1/n$), получаем, что искомый предел равен нулю.
 
 \example
-    Let's calculate an another limit
+    Let's calculate another limit
     \source{Найдём предел}
     \eq
         \lim_{n \to \infty} 
@@ -609,25 +625,25 @@ Consider the following examples.
         -\frac{1}{n^2+1} \le \left(\frac{\sin n^n \cdot \cos n!}{n^2+1}\right)^{15} 
         \le \frac{1}{n^2+1}
     By the fact proven above, the right hand ride approaches zero.
-    The limit of the left hand side is also zero since the constant $-1$ can be taken out of the limit.
-    This implies that our limit equals to zero.
+    The limit of the left hand side is also zero (it differs from the right hand side only by a sign, and we know that the limit of a product is the product of limits).
+    This implies that our limit is also zero.
     \source
         По доказанному выше, правая оценка стремится к нулю. 
         Левая тоже стремится к нулю (отличается от правой только знаком, предел произведения равен произведению пределов). 
         Следовательно, наш предел также равен нулю.
 
-So far we've been always using a similar technique to find the limit: first come up with a suitable upper bound on the thing we want to minimize, then prove it can be made as small as desired by choosing the right $N(\eps)$ (by giving an explicit expression of $N(\eps)$).
-The sandwich theorem generalises this idea and makes it convenient to apply.
+So far we've been using an analogous technique to find the limit: bounding the expression we want to minimize by a simpler expression, then proving it can also be made small by choosing the right value of $N$. The sandwich theorem generalizes this idea and makes it convenient to apply.
 \source
-    До сих пор при решении задач на отыскание пределов по определению мы постоянно пользовались аналогичным приёмом — оценивали величину, которую нужно сделать маленькой, более простой величиной, и доказывали, что её тоже можно сделать маленькой подходящим выбором $N$. 
+    До сих пор при решении задач на отыскание пределов по определению мы постоянно пользовались аналогичным приёмом — оценивали величину, которую нужно сделать маленькой, более простой величиной, и доказывали, что её тоже можно сделать маленькой подходящим выбором $N$. 
     Теорема о двух милиционерах обобщает эту практику и удобно её «упаковывает».
 
-But how to find this "suitable" upper bound?
-Unfortunately (but not surprisingly), there is no general answer.
-Definitely, we want the upper bound to work for any $n$ or for all $n$ starting from some number.
-In addition, the expression that bounds the sequence should not be complicated.
-Moreover, it must approach the same value as our sequence (in the case of applying the sandwich theorem, the limit of the LHS must equal to the limit of the RHS).
-As usual, skill comes with practice.
+But how to find a good upper bound?
+In reality, there is no general answer.
+On the one hand, we want the upper bound to work for any $n$ or for all $n$ starting from some number.
+On the other hand, the expression that bounds the sequence should not be complicated.
+Moreover, it must approach the same value as our sequence (the limit of a lower bound must equal to the limit of an upper bound).
+Understanding of how to come us with such bounds (is there are any) comes with practice.
+Basically, one just needs to solve more problems.
 \source
     Как найти хорошую оценку? 
     Универсального ответа нет. 
@@ -641,17 +657,17 @@ As usual, skill comes with practice.
     Conclusion
     \source{Заключение}
 
-This lecture, together with the last one, was dedicated to how a limit acts on arithmetic operations.
-It turned out that the operations behave well: the limit of a sum is the sum of the limits, the limit of a product is the product of the limits, same with a fraction (if the denominator is non-zero), even non-strict inequalities stay unchanged.
-Although there is an exception in case of strict inequalities.
-Strict sign transforms into a non-strict sign.
-Importantly, all these properties hold only if the limits of the terms exist, in other words if they are equal to some number that is not infinity.
-What about the limits that diverge, or—one can say—equal infinity?
-This topic will be discussed in the next lecture. 
+During this lecture, as well as during the last one, we discussed how limits act on the familiar arithmetic operations.
+It turned out that the operations behave well: the limit of a sum is the sum of the limits, the limit of a product is the product of the limits, the limit of a ratio is also the ratio of limits (if the denominator is non-zero), also non-strict inequalities stay unchanged.
+Although, there is an exception in case of strict inequalities.
+They do not “survive” taking limits: a strict sign transforms into a non-strict one.
+Importantly, all these properties hold only if the limits of the terms exist, in other words if they are equal to some real number.
+What about the limits that are infinite?
+This will be discussed in the next lecture. 
 \source
     На прошлой и этой лекциях мы изучали, как пределы взаимодействуют с привычными нам операциями с числами. 
-    Выяснили, что взаимодействуют чаще всего «хорошо»: предел суммы равен сумме пределов, предел произведения — произведению пределов, предел частного — частному пределов (если оно определено), нестрогие неравенства сохраняются при предельном переходе. 
-    Есть, однако, и свои тонкости — например, строгие неравенства «не выживают» при переходе к пределу — превращаются в нестрогие. 
-    Также нужно учитывать, что все эти хорошие свойства выполняются лишь в том случае, когда все пределы, которые мы обсуждаем, существуют — то есть являются обычными вещественныи числами. 
+    Выяснили, что взаимодействуют чаще всего «хорошо»: предел суммы равен сумме пределов, предел произведения — произведению пределов, предел частного — частному пределов (если оно определено), нестрогие неравенства сохраняются при предельном переходе. 
+    Есть, однако, и свои тонкости — например, строгие неравенства «не выживают» при переходе к пределу — превращаются в нестрогие. 
+    Также нужно учитывать, что все эти хорошие свойства выполняются лишь в том случае, когда все пределы, которые мы обсуждаем, существуют — то есть являются обычными вещественныи числами. 
     Что происходит с бесконечными пределами?
     Об этом — в следующей лекции.
