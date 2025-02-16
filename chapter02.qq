@@ -33,7 +33,7 @@ As usual, examples are going to make it clear.
             \source{«Если целое число простое и оно больше двух, оно нечётно» — истинное высказывание.} 
         \item some propositions havent yet been proven to be true or false. 
             “Every even number bigger than two can be written as a sum of two prime numbers” is a proposition of such kind. 
-            It is referred to as [Goldbach's conjecture][https://en.wikipedia.org/wiki/Goldbach%27s_conjecture].
+            It is referred to as \href[Goldbach's conjecture][https://en.wikipedia.org/wiki/Goldbach%27s_conjecture].
             \source{«Каждое чётное число, большее двух, можно представить в виде суммы двух простых чисел» — это высказывание, истинность которого в настоящий момент неизвестна (это так называемая \href[бинарная проблема Гольдбаха][https://ru.wikipedia.org/wiki/Проблема_Гольдбаха]).}
         \item The sentence “$n$ is an even number” is not a proposition because what $n$ stands for is unclear.
             Because of that, it is neither true nor false.
@@ -58,7 +58,7 @@ Consider propositions $A$ and $B$.
     Another term for disjunction is \emph{logical OR}.
     \source{Высказывание «верно по крайней мере одно из двух высказываний $A$ или $B$ (или оба)», называется \emph{дизъюнкцией} высказываний $A$ и $B$. 
     Оно обозначается $A\vee B$. 
-    Другой термин для дизъюнкции — \emph{логическое «ИЛИ»}.
+    Другой термин для дизъюнкции — \emph{логическое «ИЛИ»}.}
 
 
 \definition
@@ -69,7 +69,7 @@ Consider propositions $A$ and $B$.
     Другой термин для конъюнкции — \emph{логическое «И»}.}
 
 \definition
-   The proposition “$A$ is falsel” is called a \emph{negation}, it is denoted by $\neg A$.
+   The proposition “$A$ is false” is called a \emph{negation}, it is denoted by $\neg A$.
    Another term for negation is \emph{logical NOT}.
    \source{Высказывание «высказывание $A$ неверно» называется \emph{отрицанием} $A$. Обозначается $\neg A$. Другой термин — \emph{логическое «НЕ»}.}
     
@@ -101,7 +101,7 @@ The following table is for conjunction and disjunction
         A & B & A \vee B & A \wedge B \\\\
         \hline
         \text{T} & \text{T} & \text{T} & \text{T} \\\\
-        \text{T} & \text{Л} & \text{T} & \text{F} \\\\
+        \text{T} & \text{F} & \text{T} & \text{F} \\\\
         \text{F} & \text{T} & \text{T} & \text{F} \\\\
         \text{F} & \text{F} & \text{F} & \text{F} \\\\
         \hline
@@ -179,7 +179,7 @@ For example, the proposition \tt{2 * 0 == 1 or 3 > 2} has a value of \tt{True}.
 Например, \tt{2 * 0 == 1 or 3 > 2} имеет значение \tt{True}.}
 
 \comment
-    Consider the line of code \tt{if x > 0 and x < 10: print("ok"). 
+    Consider the line of code \tt{if x > 0 and x < 10: print("ok")}. 
     When executed, it prints \tt{ok} if the variable \tt{x} has a value greater than $0$ \emph{and} less than $10$.
     Logical operators are used for creating complex (so-called \emph{compound}) statements from simple ones. This often needs to be done to implement some feature inside an app.
     \source{Например: \tt{if x > 0 and x < 10: print("ok")} — на экран будет выведена строка \tt{ok} если в переменной \tt{x} находится значение больше 0 \emph{и} меньше 10. 
@@ -305,10 +305,9 @@ It is read as “for all”.
             \source{Невозможно определить его истинность, зависит от значения $n$.}
             \comment
                 No!
-   The proposition states that for any natural $n$ the value of $n$
-is even.
-   Or, to put it differently, “all natural numbers are even”.
-   This proposition is clearly false.
+                The proposition states that for any natural $n$ the value of $n$ is even.
+                Or, to put it differently, “all natural numbers are even”.
+                This proposition is clearly false.
 
                 \source{Нет! 
                 В этом утверждении сказано: «для любого натурального $n$ верно, что $n$ чётно». 
@@ -775,7 +774,7 @@ This notation is equivalent to
 \eq
     \forall x\\  \exists y \enspace (x \ne 0 \Rightarrow xy=1).
 Secondly, we will place the condition right after the quantifiers.
-For example, the proposition \ref can be written as \ref{eq:02:xy1}.
+For example, the proposition \ref{eq:02:xy1} can be written as 
 \source{Во-вторых, я буду зачастую писать условие, которому должно удовлетворять значение переменной, сразу после квантора. 
 Например, утверждение \ref{eq:02:xy1} можно записать так:}
 \eq
@@ -850,4 +849,5 @@ So far we've considered rather easy examples to get a feel for how the language 
 Very soon we will be using this language to actually solve problems.
 \source{Теперь у нас есть математический аппарат, своего рода язык, который позволяет аккуратно записывать и даже в какой-то мере автоматически анализировать довольно сложные утверждения.  
 Мы рассматривали самые простые примеры, чтобы было понятно, как работает «механика» математической логики. 
+
 Совсем скоро мы будем использовать её в условиях, максимально приближенных к боевым.}
