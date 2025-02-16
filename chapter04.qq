@@ -1,15 +1,14 @@
 \chapter 
-    Limit of a Sequence \label chap:04:lim-seq
+    Limit of a sequence \label chap:04:lim-seq
     \source{Предел последовательности \label chap:04:lim-seq}
 \section 
-    Examples and Motivation
+    Examples and motivation
     \source{Примеры и мотивировка}
 
-In this lecture, we will introduce the concept of a limit, which is perhaps the most important concept in calculus.
-And a difficult one, too.
-This is because our brain is not used to thinking in terms of limits.
-When we think about sequences, it's natural for a human to imagine only the first few elements.
-Today we're going to look closely into the infinite "tail" of a sequence. This will allow us to understand its nature.
+In this lecture we will introduce the concept of a limit, which is perhaps the most important one of calculus.
+But a human brain is not really used to think in terms of limits because infinities are really counterintuitive.
+Consider the case of sequences: although they have infinitely many elements, it's natural for a human to imagine only a finite number of them.
+Today we're about to look closely into the infinite "tail" of a sequence and try to describe its nature.
 \source
     В этой лекции мы введём, пожалуй, главное понятие математического анализа — понятие предела. 
     Это сложное понятие. 
@@ -18,55 +17,55 @@ Today we're going to look closely into the infinite "tail" of a sequence. This w
     Сейчас же нам предстоит вглядеться в бесконечный хвост последовательности и понять, как он устроен.
 
 Consider a sequence $\seq{a_n}$. 
-You can think of it as a collection of measurements of some parameter in time.
-But in contrast to real measurements, our sequence extends infinitely into the future, and this infinite future is our object of interest
-Does there exist some value $A$ such that the elements of the sequence become closer and closer to - in such a way that it is harder and harder to tell them apart from $A$?
+You can think of it as a collection of measurements in time (for example, annual data of a country's population).
+But in contrast to measurements in science, our sequence consists of infinitely many elements, or you can say it extends as far in future as desired.
+We want to explore this object of "far, far future".
+Does there exist some $A$ that will be approached by the elements of a sequence the more "time" passes?
 \source
     Пусть есть последовательность $\seq{a_n}$. 
     Можно думать про неё как про последовательность результатов измерения какого-то параметра (скажем, населения некоторой страны) в последовательные моменты времени (например, каждый год).
     Правда, в отличие от реальных результатов измерения, наша последовательность простирается бесконечно далеко в будущее, и именно это «бесконечное будущее» нас и интересует. 
-    Есть ли какое-то значение $A$, к которому члены последовательности будут становиться всё ближе и ближе — так, что, со временем их будет всё сложнее и сложнее отличить от $A$?
+    Есть ли какое-то значение $A$, к которому члены последовательности будут становиться всё ближе и ближе — так, что, со временем их будет всё сложнее и сложнее отличить от $A$?
 
-Let's consider some examples.
+Let's consider some examples
 \source{Давайте рассмотрим несколько примеров.}
 
-\subsection The Sequence $1/2^n$
+\subsection The sequence $1/2^n$
     \source{Последовательность $1/2^n$}
 
 Let $a_n=\frac{1}{2^n}$.
-Firstly, let's print the first twenty elements of this sequence.
-I've written a Python code, which is shown below together with the result.
+Firstly, let's show the first twenty elements of this sequence.
+I've written a Python code, which is displayed bellow together with its execution result. 
 The code can be minimized and un-minimized using the button with a blue arrow.
-Don't worry if you don't know Python, it is not required for understanding.
-But if you do, perhaps you may find it interesting to conduct similar experiments yourself.
+Don't worry if you don't know Python, it will not affect the understanding.
+But if you are familiar with it, I encourage you to conduct similar experiments yourself.
 \source
     Пусть $a_n=\frac{1}{2^n}$. 
     Давайте выведем первые двадцать членов этой последовательности. 
     Я написал для этого короткий код на языке Python, который приведён ниже вместе с результатом его выполнения. 
     Код можно скрывать и открывать, нажимая на кнопку-уголок. 
-    Если вы не знаете Python, ничего страшного — для понимания он не понадобится. Но если знаете, возможно, вам будет интересно самостоятельно проводить эксперименты, похожие на приведенные.
+    Если вы не знаете Python, ничего страшного — для понимания он не понадобится. Но если знаете, возможно, вам будет интересно самостоятельно проводить эксперименты, похожие на приведенные.
 
 \pythoncode \showcode
     print("n	a_n")
     for n in range(1, 21):
         a_n = 1 / 2 ** n
         print(f"{n}	{a_n:0.5f}") 
-        # 0.5f means only five digits after the decimal place will be shown 
+        # 0.5f means only five digits after the decimal will be shown 
         \source{# 0.5f означает, что будут выведены 5 знаков после десятичной точки}
 
 This shows us that all elements starting from the 18th one are zeros.
-But we know that they cannot be precisely zero since every element of the sequence is positive.
-(There is no $x$ such that $1/x=0$ because this equation does not have a solution. 
-Notice that if it did, then this solution $x$ would satisfy $0\cdot x = 1$, but the product of any number and zero is zero (not $1$), which is a contradiction).
-The reason why some numbers above appear as zeros is that their first nonzero term comes after the 5th decimal place (in other words they are less than $0{.}00001$), and we’ve chosen to print only five decimal places.
+Of course, they cannot be identically zero since every element of the sequence is positive.
+(We cannot find a number $x$ such that $1/x=0$ because this equation does not have a solution. 
+If it did, the solution $x$ would satisfy $0\cdot x = 1$, but the product of any number and zero is zero (not $1$), which is a contradiction).
+The reason why some numbers above appear as zeros is because their first nonzero term comes after the 5th decimal place (in other words they are less than $0{,}00001$).
 \source
     Из результатов видно, что начиная с 18-го члена получаются нули. 
-    Конечно, мы понимаем, что это не настоящие нули — ни один член этой последовательности на самом деле не равен нулю. 
+    Конечно, мы понимаем, что это не настоящие нули — ни один член этой последовательности на самом деле не равен нулю. 
     (Если вы делите положительное число на что угодно, никак нельзя получить ноль — уравнение $1/x=0$ не имеет решения, потому что в противном случае $1$ окажется равным $0\cdot x$, а этого не может быть, потому что умножение чего угодно на $0$ даёт $0$.) 
-    Однако, мы вывели только 5 знаков после десятичной запятой (точки), поэтому все числа, меньшие $0{.}00001$, отображаются как нули.
+    Однако, мы вывели только 5 знаков после десятичной запятой (точки), поэтому все числа, меньшие $0{,}00001$, отображаются как нули.
 
-Let's increase the precision then!
-We’re going to try six decimal places.
+Let's increase the precision and try six decimal places.
 \source
     Но ведь можно увеличить точность! 
     Давайте отображать шесть цифр после запятой!
@@ -76,15 +75,15 @@ We’re going to try six decimal places.
     for n in range(1, 21):
         a_n = 1 / 2 ** n
         print(f"{n}	{a_n:0.6f}") 
-        # 0.6f means six digits after the decimal place will be shown
+        # 0.6f means six digits after the decimal will be shown
         \source{# 0.6f означает, что будут выведены 6 знаков после десятичной точки}
 
-Now the first twenty terms are non-zero.
+We see that the first twenty terms are nonzero.
 But the sequence doesn't stop there!
-Let's show some more elements.
+Let's show more elements.
 \source
     Теперь первые 20 членов последовательности отчётливо ненулевые. 
-    Но последовательность на этом не заканчивается — давайте выведем ещё несколько членов.
+    Но последовательность на этом не заканчивается — давайте выведем ещё несколько членов.
 
 \pythoncode \showcode \collapsed
     print("n	a_n")
@@ -94,9 +93,8 @@ Let's show some more elements.
         # 0.6f means 6 digits after the decimal will be shown 
         \source{# 0.6f означает, что будут выведены 6 знаков после десятичной точки}
 
-Zeros again!
-Let's increase the precision!
-Seven decimal places!
+Zeros again.
+Let's increase the precision to seven terms after the decimal place!
 \source
     Опять нули! 
     Давайте ещё увеличим точность! 
@@ -109,7 +107,7 @@ Seven decimal places!
         # 0.7f means 7 digits after the decimal will be shown 
         \source{# 0.7f означает, что будут выведены 6 знаков после десятичной точки}
 
-We see that the first 24 terms are non-zero, but what happens after?
+We see that the first 24 terms are nonzero, and what about the later ones?
 \source{До 24-го члена значения ненулевые, а после?}
 \pythoncode \showcode \collapsed
     print("n	a_n")
@@ -119,7 +117,7 @@ We see that the first 24 terms are non-zero, but what happens after?
         # 0.7f means 7 digits after the decimal will be shown 
         \source{# 0.7f означает, что будут выведены 6 знаков после десятичной точки}
 
-Seems like it is inevitable. No matter the precision, our sequence will look like all zeros from some index onwards.
+Seems like it's inevitable for zeros to occur no matter the precision.
 \source
     Похоже, дело безнадёжно. 
     Какую бы точность отображения мы ни выбирали, начиная с некоторого момента последовательность будет выглядеть, как будто состоит из сплошных нулей!
@@ -128,11 +126,11 @@ And this is exactly what it means for a sequence to \emph{approach zero}.
 \source{Это и означает, что она \emph{стремится к нулю}.}
 
 \subsection 
-    The Sequence $\frac{n+1}{n}$
+    The sequence $\frac{n+1}{n}$
     \source{Последовательность $\frac{n+1}{n}$}
 
 Now let $a_n=\frac{n+1}{n}$.
-Let’s show the first ten elements too.
+Firstly, let's show its first ten elements.
 \source
     Пусть теперь $a_n=\frac{n+1}{n}$.
     Тоже можно вывести первые несколько значений.
@@ -142,10 +140,10 @@ Let’s show the first ten elements too.
         a_n = (n + 1) / n
         print(f"{n}	{a_n:0.5f}")
 
-The behavior here is not as straightforward.
+The conclusion is not as straightforward as above.
 Let's plot this sequence.
-On the horizontal axis, we put the index of an element, and on the vertical its value.
-Unlike the graph of a function, this graph consists of individual points that correspond to respective natural numbers, see \ref[fig.][fig:04:n/n+1]
+On the horizontal axis we put an index of an element, and on the vertical its value.
+In contrast to a graph of a function, this type consists of individual points that correspond to natural numbers, see \ref[fig.][fig:04:n/n+1]
 \source
     Здесь эффект не столь очевиден. 
     Давайте построим график. 
@@ -169,8 +167,8 @@ Unlike the graph of a function, this graph consists of individual points that co
         \source{График $y=a_n$.}
     \label fig:04:n/n+1
 
-We can guess from the graph that the points approach the line $y=1$, in other words, the elements approach the number $1$.
-Let's plot the graph of $y=1$ for clarity. 
+The graph seems to tell us that elements approach a horizontal line $y=1$.
+Let's plot it for clarity. 
 \source
     По графику можно угадать, что точки, вероятно, приближаются к прямой $y=1$, то есть элементы последовательности стремятся к $1$.
     Для большей наглядности можно нарисовать эту прямую (\ref[рис.][fig:04:n/n+1-and-1]).
@@ -192,12 +190,11 @@ Let's plot the graph of $y=1$ for clarity.
                        xlabel="n", ylabel="y") 
 
     \caption 
-        The graph of $y=a_n$ and the line $y=1$.
+        A graph of $y=a_n$ and a line $y=1$.
         \source{График $y=a_n$ и прямая $y=1$.}
     \label fig:04:n/n+1-and-1
 
-Although the trend is obvious, we can see that there is a gap between the points and the line.
-But what if we take more elements?
+Although the value of a limit is visually apparent, there is still a gap between the points and the line, but what if we show more elements?
 See \ref[fig.][fig:04:n/n+1-and-1-large].
 \source
     Хотя тенденция вроде бы налицо, нетрудно видеть, что между точками $y=a_n$ и прямой $y=1$ есть некоторый зазор. 
@@ -225,8 +222,8 @@ See \ref[fig.][fig:04:n/n+1-and-1-large].
         \source{График $y=a_n$: взяли побольше точек.}
     \label fig:04:n/n+1-and-1-large
 
-The gap shrank, and for larger values of $n$ we can't even see it.
-But if we scale the y-axis, it becomes apparent that the gap still exists (see \ref[fig.][fig:04:n/n+1-and-1-yscale]). 
+Clearly, the gap shrinked, and for some (large) values of $n$ we can't even see it.
+Let's scale the y-axis to take a closer look (see \ref[fig.][fig:04:n/n+1-and-1-yscale]). 
 \source
     Видно, что зазор стал меньше и для больших значений $n$ вообще непонятно, есть он или нет. 
     Но если изменить масштаб вертикальной оси, станет видно, что он всё-таки есть (\ref[рис.][fig:04:n/n+1-and-1-yscale]).
@@ -252,7 +249,7 @@ But if we scale the y-axis, it becomes apparent that the gap still exists (see \
         \source{График $y=a_n$: увеличили масштаб вертикальной оси}
     \label fig:04:n/n+1-and-1-yscale
 
-Now we can try adding more points (see \ref[fig.][fig:04:n/n+1-and-1-even-more]).
+Now we try to add more points (see \ref[fig.][fig:04:n/n+1-and-1-even-more]).
 \source{Но теперь можно добавить ещё больше точек (\ref[рис.][fig:04:n/n+1-and-1-even-more])!}
 
 \figure \showcode \collapsed
@@ -276,21 +273,21 @@ Now we can try adding more points (see \ref[fig.][fig:04:n/n+1-and-1-even-more])
         \source{График $y=a_n$: увеличили масштаб вертикальной оси, а потом взяли ещё больше точек}
     \label fig:04:n/n+1-and-1-even-more
 
-Again the gap is barely discernible!
+Again the gap is barely distinguishable!
 \source{И снова зазор стал практически неразличим!}
 
-We can go on forever like this.
+We can go on forever at this point.
 Scaling the y-axis (to see more closely) and finding a gap, then increasing precision and again scaling the axis, and so on.
 \source
     Так можно продолжать до бесконечности. 
     Увеличивать масштаб вертикальной оси (и следовательно нашу способность различать близкие точки) — находить зазор — увеличивать количество точек — делать зазор неразличимым.
 
-It feels safe to conclude that our sequence approaches $1$.
-This does not come as a surprise. We can manipulate the formula of the sequence's general term
+It feels safe to conclude that our sequence approach $1$.
+In fact, it will become more apparent if we do some algebraic manipulations with its general term.
 \eq
     a_n=\frac{n+1}{n}=1 + \frac{1}{n}
 The term $\frac{1}{n}$ gets very close to zero as $n$ gets bigger, so the whole sum gets closer and closer to $1$.
-We can see this in the plot.
+This is well illustrated on the plot.
 \source
     В общем, можно предположить, что наша последовательность стремится к числу 1. 
     В принципе, это неудивительно. 
@@ -306,52 +303,53 @@ We can see this in the plot.
     натуральных $n$. Это постоянная последовательность. Если она к чему-то и
     стремится, то наверняка к единице. Но стремится ли?
 
-    Слово «стремится» подсказывает, что должно быть какое-то движение — как в
+    Слово «стремится» подсказывает, что должно быть какое-то движение — как в
     предыдущих примеров, когда для маленьких значений $n$ элементы
     последовательности были не очень близко к предельному значению, но со временем
     становятся к нему всё ближе к ближе. В случае с постоянной последовательностью,
-    такого «движения» нет — все элементы последовательности равны равны 1, то есть,
-    рассуждая в терминах изменения величины со временем — значение всегда равнялось
+    такого «движения» нет — все элементы последовательности равны равны 1, то есть,
+    рассуждая в терминах изменения величины со временем — значение всегда равнялось
     и всегда будет равняться 1.
 
     Тем не менее, в этом случае мы всё равно будем говорить, что последовательность
     стремится к 1: нам важен не столько процесс («сначала далеко, потом близко»),
     сколько результат: члены последовательности близки к предельному значению для
-    больших значений $n$. Если они были близки и для маленьких значений $n$ — тем
+    больших значений $n$. Если они были близки и для маленьких значений $n$ — тем
     лучше.
 
 \subsection 
-    The "Jumping" Sequence
+    The "jumping" sequence
     \source{«Скачущая» последовательность}
 
-After reading the examples above, one may be tempted to define a limit in the following way: “a sequence $\seq{a_n}$ approaches a number $a$ if the gap between the element and $a$ gets smaller and smaller as $n$ gets bigger.”
+After reading through the reasoning above, one may be tempted to think about limits in the following way: "a sequence $\seq{a_n}$ approaches a number $a$ if the gap between the element and $a$ is smaller and smaller as $n$ gets bigger".
 \source{При рассмотрении предыдущих примеров, у вас могло возникнуть искушение дать такое определение: «последовательность $\seq{a_n}$ стремится к какому-то числу $a$, если её члены с ростом $n$ становятся всё ближе и ближе к $a$: каждый следующий член ближе, чем предыдущий».}
 
-It turns out this definition is incorrect.
-For example, there are many numbers the sequence $\frac{n+1}{n}$ gets “closer and closer” to.
-It is not only 1 but also, for example, 0. However, 0 is definitely not the limit of our sequence.
+It turns out this definition can be broken in some ways we didn't account for.
+For example, $1$ is not the only number the sequence $\frac{n+1}{n}$ gets closer to with time.
+The one we've talked about is $1$, but $0$ also has the above property. 
+However, it sertainly cannot be a limit of our sequence. 
 \source
     Более внимательный анализ показывает, что это определение неверно. 
     Например, последовательность $\frac{n+1}{n}$, которую мы только что рассматривали, «становится всё ближе и ближе» не только к $1$, но и, например, к $0$ — причём каждый следующий член ближе, чем предыдущий. 
     Тем не менее, нельзя сказать, что она стремится к $0$.
 
-Also, it turns out it's unnecessary to require that \emph{every} next term must be closer to the limit.
+Also, it turns out it's unnecessary to demand that \emph{every} next term must be closer to the limit.
 \source{Более того, требование «каждый следующий член ближе, чем предыдущий», оказывается излишним.}
 
-Let's consider the following sequence:
+Let's consider the following sequence
 \source{Давайте рассмотрим такую последовательность:}
 \eq
     a_n=\begin{cases}
         \frac{n+1}{n},&n\text{ — нечётное}; \\\\
         \frac{n+3}{n},&n\text{ — чётное}.
     \end{cases}
-Its first elements are shown below:
+Its first five terms are shown bellow:
 \source{Её первые члены выглядят следующим образом:}
 \eq
     2,\\ \frac{5}{2},\\ \frac{4}{3},\\ \frac{7}{4},\\ \frac{6}{5},\ldots
 
 The graph of this sequence is shown in the \ref[fig.][fig:04:up-and-down].
-It's clear that the property that “every next term gets closer to $1$” does not hold since elements with even indexes are closer to $1$ than odd-indexed ones.
+It's clear that elements with even indexes are closer to $1$ than odd-idexed elements.
 \source
     График этой последовательности изображен на \ref[рис.][fig:04:up-and-down]. 
     Тут видно, что требование «каждый следующий элемент ближе к $1$, чем предыдущий», нарушается: элементы с чётными номерами ближе к $1$, чем элементы с нечётными номерами.
@@ -375,13 +373,13 @@ It's clear that the property that “every next term gets closer to $1$” does 
 
     \caption
         The sequence oscillates around $1$, but approaches it nevertheless. 
-        (The points are connected for the sake of illustration, recall that the sequence is defined only for natural numbers).
+        (Points are connected for better illustration, the sequence is defined only on natural numbers).
         \source
             Последовательность приближается и отдаляется от 1, но всё равно к ней стремится. 
             Точки соединены пунктирной линией исключительно для наглядности: значения последовательности для нецелых $n$ не определено.
     \label fig:04:up-and-down
 
-However, based on the graph on \ref[fig.][fig:04:up-and-down-more], it's reasonable to claim that despite the “jumps” the limit is still $1$ (as $n$ increases, the elements and the limit become indistinguishable from each other).
+Hovewer, based on the graph on \ref[fig.][fig:04:up-and-down-more], it's reasonable to claim that the limit is $1$ (as $n$ increases, the elements and the limit become more and more indistinguishable from each other).
 \source{Тем не менее, судя по графику на \ref[рис.][fig:04:up-and-down-more], можно предположить, что, несмотря на скачки, последовательность всё-таки стремится к числу $1$: с течением времени (то есть с ростом $n$) её элементы становятся настолько близки к единице, что их трудно от неё отличить.}
 
 \figure \showcode \collapsed
@@ -401,26 +399,26 @@ However, based on the graph on \ref[fig.][fig:04:up-and-down-more], it's reasona
                        xlabel="n", ylabel="y") 
 
     \caption
-        The sequence comes closer and then gets farther from $1$, but ultimately converges to it. 
+        The sequence oscillates aroung $1$ but approach it nevertheless. 
         \source{Последовательность приближается и отдаляется от 1, но всё равно к ней стремится.}
     \label fig:04:up-and-down-more
 
 \subsection 
-    Sequences without a Limit
+    Sequences that don't have a limit
     \source{Последовательности без предела}
 
-All sequences we’ve considered above converged to some number.
-Now let's take a look at sequences that don't have a limit.
+In the examples above we've discussed what it's like for a sequence to approach some number.
+Now let's take a look at sequences that doesn't have a limit.
 \source
 Последовательности, рассмотренные выше, стремились к какому-то числу. 
 Приведём несколько примеров последовательностей, у которых предела нет.
 
 \example 
-    Consider the sequence $a_n=n^2$:
+    Consider the sequence $a_n=n^2$ 
     \source{Последовательность $a_n=n^2$:}
     \eq
-        1,\\ 4,\\ 9,\\ 16,\ldots .
-    This sequence is unbounded, so it looks obvious that it does not converge to any number. It does not have a limit.
+        1,\\ 4,\\ 9,\\ 16,\ldots
+    This sequence is unbounded, so it looks almost trivial to conclude it has no limit. 
     \source
         Эта последовательность неограничена, и выглядит очевидным, что она не стремится ни к какому числу. 
         У неё нет предела.
@@ -429,8 +427,8 @@ Now let's take a look at sequences that don't have a limit.
     \source{Последовательность}
     \equation \label eq:04:flip
         a_n=(-1)^n+\frac{1}{n}.
-    Depending on the parity of $n$, the first term equals to $1$ or to $-1$
-    Let’s look at its graph in \ref[fig.][fig:04:here-and-there].
+    The first term equals to $1$ or $-1$ depending on the parity of $n$.
+    Its graph is shown in \ref[fig.][fig:04:here-and-there].
     \source
         В зависимости от чётности $n$, первое слагаемое оказывается равно $1$ или $-1$. 
         Посмотрим, как выглядит график этой последовательности (\ref[рис.][fig:04:here-and-there]).
@@ -456,18 +454,19 @@ Now let's take a look at sequences that don't have a limit.
             The sequence is "jumping" between two points.
             \source{Последовательность скачет между двумя точками.}
         \label fig:04:here-and-there
-We can see from the graph that there is no number that elements of the sequence get very close to as $n$ becomes large. The sequence is jumping between two values, $1$ and $-1$.
+    It appears clear that there is no such number that is close enough to all elements as $n$ increases.
+    In the limit, it has the same pattern of "jumping" between $1$ and $-1$.
     \source{По графику видно, что нет одного числа, к которому члены последовательности были бы очень близки при больших $n$: она скачет между двумя значениями, $1$ и $-1$.}
     
 \example \label ex:04:rare
-    Finally, let’s consider the following sequence
+    Consider the following sequence
     \source{Наконец, рассмотрим такую последовательность:}
     \equation \label eq:04:rare
         a_n=\begin{cases}
             \frac{1}{2},& \exists k \in \mathbb N\colon n=2^k; \\\\
             \frac{n+1}{n},& \forall k \in \mathbb N\colon n\ne 2^k.
             \end{cases}
-The sequence is constructed in the following way: for indexes that are powers of two, the elements are equal to $\frac{1}{2}$, otherwise to $\frac{n+1}{n}$.
+    The sequence is constructed in the following way: for indexes that are some power of two it is constant and equal to $\frac{1}{2}$, and for other indexes it is equal to $\frac{n+1}{n}$.
     Its graph is shown in \ref[fig.][fig:04:rare-outliers].
     \source
         Эта последовательность устроена так. 
@@ -493,75 +492,73 @@ The sequence is constructed in the following way: for indexes that are powers of
                            xlabel="n", ylabel="y") 
 
         \caption
-            The sequence "moves away" from the limit less and less
-      \source{Последовательность всё реже и реже убегает от предельного значения}
+            The sequence "moves away" from a limit every time an index is a power of two.
+            \source{Последовательность всё реже и реже убегает от предельного значения}
         \label fig:04:rare-outliers
         
-    Clearly, for elements whose indexes are not powers of two, the elements of the sequence get arbitrarily close to $1$.
+    Clearly, for elements whose indexes are not a power of two, the sequence gets arbitrarily close to $1$.
     Once in a while the sequence "moves away" from $1$ to $\frac{1}{2}$, but such "jumps" happen less and less often as $n$ grows.
-    If we start at a large value of $n$, the sequence is going to approach $1$ for a very long time.
+    If we start at a very large value of $n$, the sequence is going to behave as $\frac{n+1}{n}$ for very long time.
     \source
         Понятно, что для тех номеров, которые не являются степенями двойки, элементы становятся сколь угодно близки к 1. 
         Время от времени последовательность «убегает» в точку $\frac{1}{2}$, однако эти моменты, будучи степенями двойки, встречаются всё реже и реже. 
         Если бы мы стартовали с больших значений $n$, мы могли бы очень долго наблюдать последовательность, которая становится очень близка к 1.
     
-    Still, we cannot conclude it has a limit of $1$. We know that no matter how large is $n$, sooner or later we will encounter an element that is equal to $\frac{1}{2}$, which is quite far away from $1$. 
+    Still, we cannot conclude it has a limit of $1$ since no matter how large is $n$, sooner or later we will encounter an element that is equal to $\frac{1}{2}$. 
     \source
         Тем не менее, нельзя сказать, что её предел равен 1. 
         Мы знаем, что с какого бы начального момента времени мы ни стартовали, рано или поздно $n$ окажется степенью двойки, и в этот момент последовательность «скакнёт» в число $1/2$, уйдя от $1$ на заметное расстояние.
 
 \section 
-    Definition of a Limit
+    Definition of a limit
     \source{Определение предела}
 
 \subsection 
-    Intuition
+    Intiuition
     \source{Интуитивные соображения}
 
-Hopefully, the examples above have given you an intuitive idea of what we want from a sequence to say that it approaches some number $A$. 
-Let’s summarize what we've discussed.
+Hopefully, observations above have given you an intuitive idea of what we demand from a sequence for it to have a limit. 
+Let's summarize what we've discussed.
 \source
-    Из обсуждения в предыдущем разделе должно быть понятно — по крайней мере, на интуитивном уровне — чего бы мы хотели потребовать от последовательности, чтобы сказать, что она стремится к некоторому числу $A$. 
+    Из обсуждения в предыдущем разделе должно быть понятно — по крайней мере, на интуитивном уровне — чего бы мы хотели потребовать от последовательности, чтобы сказать, что она стремится к некоторому числу $A$. 
     Подведём промежуточный итог.
 
 \enumerate
     \item 
-        The first several terms are allowed to be rather far away from $A$, which does not prevent a sequence from approaching $A$.
-        In other words, convergence is something that depends only on the “tail” of a sequence.
+        First several terms are allowed to be considerably far away from $A$, and a sequence can still approach $A$.
+        In other words, convergence depends only on a "tail" of a sequence.
         \source
             Первые сколько-то членов могут быть достаточно далеки от $A$, это никак не мешает последовательности стремиться к $A$. 
-            Иными словами, «стремление» — это эффект, который зависит только от «хвоста» последовательности.
+            Иными словами, «стремление» — это эффект, который зависит только от «хвоста» последовательности.
     \item 
         For large values of $n$ elements of a sequence must become so close to $A$ that the gap between an element and $A$ becomes practically indistinguishable.
-For sufficiently large $n$ the elements need to become so close to $A$ that they cannot be distinguished from it by looking, for example, at a graph or a computer printout with finite precision.
+        (For example when you try to round the value of an element with any finite number of decimal places you still get $A$).
         \source{Для достаточно больших значениий $n$ члены последовательности должны становиться настолько близкими к $A$, чтобы их нельзя было отличить от $A$, скажем, на графике или на компьютерной распечатке, на которой числа выводятся с конечной точностью.}
     \item
-        This effect must persist for arbitrarily large $n$.
-        If a sequence keeps “moving away” from $A$ by a considerable amount, and this happens arbitrarily far away in the future, then the sequence cannot approach $A$.
+        There must exist a sufficiently large value of $n$ such that the behaviour above must not be interrupted by sudden "jumps" or any other forms of "moving away" from $A$ any time in the future. 
         \source
             Этот эффект должен сохраняться для всех достаточно больших $n$. 
             Если последовательность время от времени «убегает» от $A$ на какое-то заметное расстояние, и это происходит сколь угодно далеко в будущем, последовательность не будет стремиться к $A$.
     \item
-We may increase the precision of measurements, for example print out more digits after the decimal place, or scale the axis, so that the gap is seen.
-However, we can take even larger values of $n$ to make them indistinguishable again.
-        The thing we demand is that it's always possible to increase $n$ and make the gap invisible again.
+        When we get to the values of $n$ so large that the gap is no longer seen, it is okay to zoom in and make it visible again. 
+        The thing we demand is that it's always possible to increase $n$ and make the gap as small as we want.
         \source
             Мы можем увеличить точность измерения — например, выводить больше цифр после запятой или увеличить масштаб на графике — и увидеть зазор между членами последовательности и числом $A$. 
-            Однако, мы можем взять ещё большие значения $n$, чтобы эффект «неразличимости» вернулся.
+            Однако, мы можем взять ещё большие значения $n$, чтобы эффект «неразличимости» вернулся.
 
 Now we begin formalizing the notion of a limit.
 \source{Теперь приступим к формализации понятия предела.}
 
 \subsection 
-    Auxiliary Concepts
+    Auxiliary entities
     \source{Вспомогательные понятия}
 
 We will need some auxiliary definitions and notations.
 \source{Нам потребуется несколько вспомогательных определений и обозначений.}
 
 \definition
-    The \emph{distance} between two real numbers $a$ and $b$ is is the absolute value of their difference, or $|a-b|$.
-    This is a fairly natural way to define a distance if you think of numbers as points on the number line (see \ref[fig.][fig:04:abs]). 
+    The \emph{distance} between two real numbers $a$ and $b$ is $|a-b|$, which is the absolute value of their difference.
+    This seems like a natural way to define a distance if you think about numbers as points on the number line (see \ref[fig.][fig:04:abs]). 
     \source
         \emph{Расстоянием} между вещественными числами $a$ и $b$ называется модуль их разности: $|a-b|$. 
         Это довольно естественное определение, если думать про числа как про точки на числовой прямой, см. \ref[рис.][fig:04:abs].
@@ -572,52 +569,51 @@ We will need some auxiliary definitions and notations.
             padding: 1em; max-width:500px;
         \src lim-seq-1.svg
         \alt
-            The number line is drawn with points a = -1 and b = 3. It is shown that the distance between them is equal to the absolute value of their difference |a-b|
-            \source
-                Нарисована числовая прямая, на ней отмечены две точки: a = -1 и b =3. 
-                Показано, что расстояние между ними равно модулю разности: |a-b|
+            Нарисована числовая прямая, на ней отмечены две точки: a = -1 и b =
+            3. Показано, что расстояние между ними равно модулю разности: |a-b|
     \caption
-        The absolute value of a difference is the distance between numbers as points on the number line.
+        The absolute value of a difference is the distance between numbers represented by points on the number line
         \source{Модуль разности — это расстояние между числами как точками числовой прямой.}
     \label fig:04:abs
 
-We are going to use the letter $\eps$ (which is read as “epsilon”) to denote positive and usually small real numbers.
+We will denote some positive numbers by $\eps$, read "epsilon".
+In such cases it's an indication that a number is meant to be considerably small, often as small as you can imagine.
 \source
 Буквой $\eps$ (читается «эпсилон» — почему-то со слуха часто кажется, что там в конце есть буква «т» — нет, её нет) мы будем обозначать положительные и как правило маленькие вещественные числа.  
 
 \definition 
-    Two numbers are \emph{$\eps$-close} (read "epsilon-close") to each other if the distance between them is less than $\eps$.
+    We say that two numbers are \emph{$\eps$-close} (read "epsilon-close") to each other if the difference between them is less than $\eps$.
     \source{Скажем, что два числа \emph{$\eps$-близки} («эпсилон-близки») друг к другу, если расстояние между ними меньше $\eps$.}
 
-It is possible to replace $\eps$ with any number or symbol, like $\delta$-close numbers (“delta-closed”) or $0{.}1$-closed numbers.
-We can conclude that the proposition “the number $\pi$ is $0{.}1$-closed to the number $3{.}14$” is true since the distance between them (by its absolute value) is less than $0{.}1$.
-Two numbers $a$ and $b$ are $\eps$-close if the distance between them is less than $\eps$, in short, $|a-b|<\eps$.
+One can substitute $\eps$ by any number or even a letter (to which a value was previously assigned), for example $\delta$-closed numbers ("delta-closed") or $0{,}1$-closed numbers ("zero point one closed").
+We can conclude that a proposition "the number $\pi$ is $0{,}1$-closed to the number $3{,}14$" is true since a distance between them (the distance taken by its absolute value) is indeed less than $0{,}1$.
+Two numbers $a$ and $b$ are $\eps$-close if their difference taken by its abcolute value is less than $\eps$: $|a-b|<\eps$.
 \source
-    Вместо $\eps$ здесь можно подставлять другие буквы или конкретные числа — например, $\delta$-близки («дельта-близки») или $0{.}1$-близки. 
-    Скажем, утверждение «число $\pi$ $0{.}1$-близко к числу $3{.}14$» является верным, поскольку расстояние между $\pi$ и $3{.}14$ (модуль разности) меньше, чем $0{.}1$. 
+    Вместо $\eps$ здесь можно подставлять другие буквы или конкретные числа — например, $\delta$-близки («дельта-близки») или $0{,}1$-близки. 
+    Скажем, утверждение «число $\pi$ $0{,}1$-близко к числу $3{,}14$» является верным, поскольку расстояние между $\pi$ и $3{,}14$ (модуль разности) меньше, чем $0{,}1$. 
     Числа $a$ и $b$ будут $\eps$-близки, если модуль их разности меньше $\eps$: $|a-b|<\eps$.
 
 \definition
     Consider a sequence $\seq{a_n}$.
-    We say that \emph{its tail is $\eps$-close} to a number $A$ if, after some $n$ all elements are $\eps$-closed to $A$.
+    We say that \emph{its tail is $\eps$-close} to a number $A$ if after some $n$, all elements whose indexes are greater than $n$ are $\eps$-closed to $A$.
     In other words, there can be found an element after which the distance between any element and $A$ is less than $\eps$.
     \source
         Рассмотрим последовательность $\seq{a_n}$. 
         Скажем, что её \emph{хвост $\eps$-близок} к числу $A$, если все её члены, начиная с некоторого, $\eps$-близки к $A$. 
         Иными словами, если все члены, начиная с некоторого, находятся на расстоянии меньше $\eps$ от $A$.
     
-    Formally we write
+    Formally we can write
     \source{Формально это записывается так:}
     \gather
         \item \label eq:04:tail
             \exists N\in \mathbb N\\ \forall n \in \mathbb N\colon (n > N) \Rightarrow 
         \splitem \splonly{\Rightarrow} |a_n - A| < \eps.
-    This expression states that there exists some number $N$ such that all elements of the sequence with indices $N+1$ or greater are less than $\eps$ away from $A$.
+    This expression says that there exists some number $N$ such that all elements of the sequence with indexes $N+1$ or greater are within the range of values that are $\eps$-closed to $A$.
     \source{Здесь сказано, что найдётся такой номер $N$, что все члены последовательности с номерами от $N+1$ и больше находятся на расстоянии меньше $\eps$ от $A$.}
     
-    The implication from the definition tells us that we're interested in $|a_n - A| < \eps$ being satisfied only for $n$ such that $n > N$.
-Notice that when “earlier” elements don’t satisfy $|a_n - A| < \eps$ it doesn't make the proposition false because in this case the premise $n > N$ of the implication is false, making the implication true.
-    this definition can be written as follows:
+    The implication states that we're interested in satisfying $|a_n - A| < \eps$ only for $n$ such that $n > N$ (which means we're starting from some point and looking at a "tail" of a sequence).
+    Notice that the case when $|a_n - A| < \eps$ is not satisfied for more "early" elements doesn't make the implication false (this way a premise is false and an implication is true).
+    We can rewrite the definition above in a more compact form:
     \source
         Импликация в этом определении говорит, что нас интересует выполнение условия $|a_n - A| < \eps$ не для всех $n$, а только для тех, для которых выполнено $n > N$, то есть «начиная с некоторого члена»; если оно нарушается для членов с меньшими номерами, это не будет нарушать утверждение, поскольку в этом случае посылка импликации $n > N$ окажется ложной, и значит импликация будет истинной. 
         Более кратко это определение можно записать так:
@@ -625,11 +621,10 @@ Notice that when “earlier” elements don’t satisfy $|a_n - A| < \eps$ it do
     \eq
         \exists N\in \mathbb N\\ \forall n > N \colon |a_n - A| < \eps.
 
-\ref[Fig.][fig:04:eps-nearby-tail] gives an illustration to this definition.
-The set of all points that are $\eps$-close to $A$ is the open interval $(A-\eps, A+\eps)$.
-If we plot two horizontal lines $y=A+\eps$ and $y=A-\eps$ alongside the sequence, the lines form a “corridor” for $A$.
-By saying that a tail is $\eps$-close to $A$ we mean that after some value of $n$ all elements of the sequence belong to the interval $(A-\eps, A+\eps)$, and the respective points on the graph lie in the “corridor”.
-Notice that the points whose indexes are less than or equal to $N$ are allowed to leave the “corridor”.
+\ref[Fig.][fig:04:eps-nearby-tail] gives an illustration of this definition.
+The set of points that are $\eps$-close to $A$ is the open interval $(A-\eps, A+\eps)$.
+If we plot two horizontal lines $y=A+\eps$ and $y=A-\eps$ together with the sequence, the lines will become sort of a "corridor" for $A$.
+By saying that a tail is $\eps$-close to $A$ we mean that after some value of $n$ all elements of the sequence belong to this "corridor".
 \source
     На \ref[рис.][fig:04:eps-nearby-tail] приведена иллюстрация к этому определению.
     Множество точек, $\eps$-близких к точке $A$ — это интервал $(A-\eps, A+\eps)$.
@@ -648,50 +643,50 @@ Notice that the points whose indexes are less than or equal to $N$ are allowed t
             Показано, что все элементы, после N=5 (то есть начиная с n=6)
             находятся внутри этого коридора.
     \caption 
-        The tail of a sequence is $\eps$-closed to a number $A$.
+        The tail of a sequence is $\eps$-closed to $A$.
         \source{Хвост последовательности $\eps$-близок к числу $A$.}
     \label fig:04:eps-nearby-tail
-
-Notice that the definition does not say which element is the start of the “tail” of the sequence. 
-Moreover, a sequence can have different “tails”, for different values of $\eps$.
+ 
+ Notice that we're not specifying at what point in a sequence does its tail start.
+ Moreover, one sequence has infinitely many tails, and each of them corresponds to a unique value of $\eps$.
 \source
     Заметим, что в этом определении не сказано, с какого именно члена начинается «хвост последовательности». 
     Более того, для одной и той же последовательности «хвосты» могут быть разными, в зависимости от $\eps$.
 
 \example 
     Consider the sequence $a_n=\frac{1}{n}$.
-    Its tail is $0{.}1$-closed to $0$.
-    Let's prove it: take $N=10$ and observe that for any $n>N$ we have $a_n<0{.}1$ (since $n$ is bigger than $10$, its inverse $1/n$ is less than $1/10$).
+    Its tail is $0{,}1$-closed to $0$.
+    Let's prove it: take $N=10$ and observe that for any $n>N$ we have $a_n<0{,}1$ (since $n$ is bigger than $10$, its inverse $1/n$ is less than $1/10$).
     \source
         Рассмотрим последовательность $a_n=\frac{1}{n}$. 
-        Её хвост $0{.}1$-близок к $0$. 
+        Её хвост $0{,}1$-близок к $0$. 
         Действительно, возьмём $N=10$. 
-        Для всех $n>N$, $a_n$ меньше $0{.}1$ (поскольку $n$ больше $10$ обратная величина $1/n$ меньше $1/10$).
+        Для всех $n>N$, $a_n$ меньше $0{,}1$ (поскольку $n$ больше $10$ обратная величина $1/n$ меньше $1/10$).
 
 \question 
-    Is it true that the tail of this sequence is $0{.}01$-closed to $0$?
-    \source{Верно ли, что хвост последовательности $a_n = \frac{1}{n}$ является $0{.}01$-близким к $0$?}
+    Is it true that a tail of this sequence is $0{,}01$-closed to $0$?
+    \source{Верно ли, что хвост последовательности $a_n = \frac{1}{n}$ является $0{,}01$-близким к $0$?}
     \quiz
         \choice 
-            No, because there exists $n>N$ for which the distance to $0$ is bigger than $0{.}01$.
-            For example, $n=20$ yeilds $a_n=\frac{1}{20}=0{.}05$, and $|a_n-0|=|a_n|=0{.}05 > 0{.}01$.
-            \source{Нет, потому что существуют $n>10$, при которых расстояние между $a_n$ и $0$ больше, чем $0{.}01$ — например, $n=20$, $a_n=\frac{1}{20}=0{.}05$, $|a_n-0|=|a_n|=0{.}05 > 0{.}01$.}
+            No, because there exist $n>N$ for which the distance to $0$ is bigger than $0{,}01$.
+            For $n=20$ we get $a_n=\frac{1}{20}=0{,}05$, for which $|a_n-0|=|a_n|=0{,}05 > 0{,}01$.
+            \source{Нет, потому что существуют $n>10$, при которых расстояние между $a_n$ и $0$ больше, чем $0{,}01$ — например, $n=20$, $a_n=\frac{1}{20}=0{,}05$, $|a_n-0|=|a_n|=0{,}05 > 0{,}01$.}
             \comment 
                 This reasoning is false.
-                $N$ does not have to be $10$, we’re allowed to consider other values to satisfy the requirement.
+                When we've changed the "closeness" value (from $0{,}1$ to $0{,}01$) we've automatically started a new search for $N$, and it will most certainly be larger than $20$.
                 \source{Это рассуждение неверно: совсем не обязательно в качестве $N$ брать именно $10$, можно попробовать подобрать другое число, так, чтобы требование выполнялось.}
         \choice 
-            It's impossible to tell since it is dependent on $N$.
+            Its impossible to tell since it is dependent on $N$.
             \source{Неизвестно, зависит от $N$.}
             \comment 
-                No, because in definition \ref{eq:04:tail} a variable $N$ is bound by a quantifier.
-                We don't ask which values of $N$ satisfy some requirement, we just want to find out whether such $N$ exists.
-                \source{Нет, в формуле \ref{eq:04:tail} переменная $N$ является связанной (на неё «навешан» квантор) — мы не спрашиваем, при каких $N$ верно или неверно то-то и то-то  — мы спрашиваем, «найдётся ли такое $N$?»}
+                No, because in the definition \ref{eq:04:tail} a variable $N$ is bounded (the quantifier is acting on it).
+                We don't ask which values of $N$ make an inequality hold, we just want to find one.
+                \source{Нет, в формуле \ref{eq:04:tail} переменная $N$ является связанной (на неё «навешан» квантор) — мы не спрашиваем, при каких $N$ верно или неверно то-то и то-то  — мы спрашиваем, «найдётся ли такое $N$?»}
         \choice \correct
             Yes, it is.
             \source{Да, верно.}
             \comment
-                Exactly!
+                You're correct!
                 Which value of $N$ qualifies?
                 \source
                     Конечно! 
@@ -709,83 +704,84 @@ Moreover, a sequence can have different “tails”, for different values of $\e
                         \correct
                         \comment 
                             Yes!
-                            Observe that $100$ or any number greater than it will do.
+                            In fact, any number greater than $100$ qualifies.
                             \source
                                 Да, например, 100 подойдёт. 
                                 (Или любое большее число.)
 \example 
-    The sequence from \ref[example][ex:04:flip] (see. \ref{eq:04:flip}) has a tail that is $1{.}2$-close to $0$, but it doesn't have a tail that is $0{.}9$-close to $0$.
-    \source{Последовательность из \ref[примера][ex:04:flip] (см. \ref{eq:04:flip}) имеет хвост, $1{.}2$-близкий к числу $0$, однако неверно, что её хвост $0{.}9$-близок к $0$.}
+    The sequence from \ref[example][ex:04:flip] (see. \ref{eq:04:flip}) has a tail that is $1{,}2$-close to $0$, but it doesn't have a tail that is $0{,}9$-close to $0$.
+    \source{Последовательность из \ref[примера][ex:04:flip] (см. \ref{eq:04:flip}) имеет хвост, $1{,}2$-близкий к числу $0$, однако неверно, что её хвост $0{,}9$-близок к $0$.}
 
 \question 
-    For which value of $\eps$ the tail of this sequence is $\eps$-closed to $1$?
+    For which value of $\eps$ a tail of this sequence is $\eps$-closed to $1$?
     \source{Для какого $\eps$ хвост этой последовательности $\eps$-близок к числу 1?}
     \quiz
         \choice
-            $\eps=0{.}5$
+            $\eps=0{,}5$
             \comment 
-                No, since there are arbitrarily large elements of the sequence that differ from $1$ by more than $0{.}5$. 
-                For example, all odd-indexed elements.
-                \source{Нет, у последовательности есть члены со сколь угодно большими номерами, лежащие на расстоянии больше $0{.}5$ от $1$ — например, все члены с нечётными номерами.}
+                No, since for any (arbitrarily large) index $n$ we can find an element with a larger index for which the distance to $1$ is bigger than $0{,}5$.
+                (Indeed, any odd $n$ is valid).
+                \source{Нет, у последовательности есть члены со сколь угодно большими номерами, лежащие на расстоянии больше $0{,}5$ от $1$ — например, все члены с нечётными номерами.}
         \choice
-            $\eps=1{.}5$
+            $\eps=1{,}5$
             \comment 
-                No, since there are arbitrarily large elements of the sequence that differ from $1$ by more than $0{.}5$. 
-                For example, all odd-indexed elements are bigger than $2$ (although the distance between $a_1=0$ and $1$ is $1$).
-                \source{Нет, у последовательности есть члены со сколь угодно большими номерами, лежащие на расстоянии больше $1{.}5$ от $1$ — например, все члены с нечётными номерами, большими $2$ (хотя $a_1=0$ находится на расстоянии $1$ от числа $1$).}
+                No, since for any (arbitrarily large) number $n$ we can find an element with larger value for which the distance to $1$ is bigger than $1{,}5$.
+                (Indeed, any odd $n>2$ is valid since the distance between $a_1=0$ and $1$ is less than $1{,}5$).
+                \source{Нет, у последовательности есть члены со сколь угодно большими номерами, лежащие на расстоянии больше $1{,}5$ от $1$ — например, все члены с нечётными номерами, большими $2$ (хотя $a_1=0$ находится на расстоянии $1$ от числа $1$).}
         \choice \correct
             $\eps=2$
             \comment 
-                Correct!
+                Yes!
                 \source{Верно!}
         \choice 
-            There exists no such $\eps$.
+            There are no such $\eps$.
             \source{Ни для какого.}
             \comment 
                 Wrong.
                 \source{Нет, неверно.}
-Now we're ready for the Most Important Definition.
+Now we're ready to the Most Important Definition.
 \source{Теперь мы готовы к Самому Главному Определению.}
 
 \subsection 
-    Formal Definition of a Limit.
+    Formal definition of a limit.
     \source{Аккуратное определение предела}
 
-We're trying to find a formal way to say that all elements of a sequence $a_n$ are getting very, very close to some (fixed) value of $A$.
-So close that after some point we cannot practically see the gap between any element and $A$.
+We're trying to find a formal way to  say that all elements of a sequence $a_n$ are getting very, very close to some (fixed) value of $A$.
+So close that we're unable to see the gap between any element and $A$.
 \source{Мы хотим дать определение понятию, которое бы формализовало утверждение о том что члены последовательности $a_n$ с ростом $n$ становятся очень-очень близки к некоторому фиксированному числу $A$ — так, что, начиная с некоторого момента, мы их практически не можем отличить от $A$.}
 
-The concept of $\eps$-closeness is a formalization of the idea that two numbers are "close" to each other when the distance between them is small.
-This $\eps$ can be thought of as the precision of our measurements (the less $\eps$ is, the better the measurements).
-Given a precision $\eps$ we’re unable to practically tell apart the numbers that are $\eps$-close to each other.
-For example, if we show numbers with only two decimal places, it will be impossible to distinguish between the two that are $0{.}001$ apart.
+The concept of $\eps$-closeness is a formalization of an idea that two numbers are "close" to each other when the distance between them is small.
+This $\eps$ can be thought of as the precision of our measurements.
+Given a presicion $\eps$ we can no longer tell the difference between numbers that are $\eps$-close to each other.
+For example, if we print numbers with only two decimal places, it will be impossible to distinguish between two numbers that are $0{,}001$ apart.
 \source
     Понятие $\eps$-близости призвано формализовать идею о том, что два числа близки, если расстояние между ними маленькое. 
-    Можно думать, что $\eps$ — это точность или разрешающая способность наших измерительных приборов (чем меньше $\eps$, тем точнее приборы). 
+    Можно думать, что $\eps$ — это точность или разрешающая способность наших измерительных приборов (чем меньше $\eps$, тем точнее приборы). 
     В этом случае если два числа отличаются меньше, чем на $\eps$, у нас нет практической возможности их различить, для нас они совпадают.
-    Например, если мы печатаем все числа лишь с двумя знаками после запятой, мы можем не различить два числа, расстояние между которыми меньше $0{.}001$.
+    Например, если мы печатаем все числа лишь с двумя знаками после запятой, мы можем не различить два числа, расстояние между которыми меньше $0{,}001$.
 
-But what value of $\eps$ is “sufficiently small”?
-In contrast to other sciences, mathematics doesn't really have a natural scale.
-Consider geography, where the distance of $1/10$ meters is tiny.
-Geography studies countries, cities, rivers, and many other objects compared to which $1/10$ of a meter is insignificant.
-On the other hand, for microbiologists who analyze cells and bacteria, $1/10$ of a meter is enormously huge.
-But from the perspective of mathematics, the question “Is 1/10 small” doesn't make any sense.
-The answer can be anything depending on the number we compare $1/10$ with.
-This is why we cannot choose a universal value to state something like “a sequence approaches $A$ if after some element all subsequent ones are $\eps$-close to $A$”.
+But what value of $\eps$ is "sufficiently small"?
+This is a slippery question since math doesn't really have a natural scale.
+If we consider geography, a distance of $1/10$ meters is very small.
+Geography studies countries, cities, rivers, and many other objects compared to which $1/10$ of a meter is just nothing.
+On the other hand, for microbiologists who analyze cells and bacteria $1/10$ of a meter is enormously huge.
+But from the perspective of math, the question "is 1/10 small" doesn't make any sence.
+The answer can be anything depending on the number we compare with.
+This is why we cannot choose a particular value of $\eps$ for which if a tail is $\eps$-close to $A$, the limit is $A$.
 What should we do then?
 \source
     Но какой $\eps$ «достаточно маленький»? 
     В отличие от других дисциплин, в математике нет никакого естественного масштаба. 
-    С точки зрения географии, расстояние в $1/10$ метра — это очень маленькое расстояние — потому что мы сравниваем его с типичными объектами, изучаемыми географией — странами, городами, морями. 
+    С точки зрения географии, расстояние в $1/10$ метра — это очень маленькое расстояние — потому что мы сравниваем его с типичными объектами, изучаемыми географией — странами, городами, морями. 
     А с точки зрения микробиологии — фантастически большое — по сравнению с бактериями или ядром клетки. 
-    С точки зрения математики, невозможно даже задать вопрос «является ли $1/10$ маленьким числом?» — потому что непонятно, с чем его сравнивать.  
+    С точки зрения математики, невозможно даже задать вопрос «является ли $1/10$ маленьким числом?» — потому что непонятно, с чем его сравнивать.  
     Поэтому мы не можем выбрать какой-то конкретный $\eps$ и сказать: «последовательность стремится к $A$, если её члены, начиная с некоторого, $\eps$-близки к $A$». 
     Как же быть?
 
-If we cannot specify a particular value of $\eps$, let's instead require $\eps$-closeness for any positive $\eps$.
-
-We say that if we wait long enough, we will be unable to tell the difference..
+If we cannot specify a particular value of $\eps$, let's instead demand $\eps$-closeness for any positive $\eps$.
+(Notice that assigning negative values to $\eps$ doesn't make sence since the distance cannot be less than a negative number. 
+Zero is not a great choise either because in this case elements must be \emph{equal} to a limit, they cannot "approach" it in any sence).
+We say that no matter how presice our measurements are, at some point in time we will be unable to tell the difference forever.
 \source
     Очень просто. 
     Мы потребуем, чтобы утверждение «хвост последовательности $\eps$-близок к $A$», выполнялось \emph{для любого} положительного $\eps$. 
@@ -803,7 +799,7 @@ We say that if we wait long enough, we will be unable to tell the difference..
             \forall \eps > 0\\ \exists N \in \mathbb N\\ \forall n > N: 
         \splitem |a_n - A| < \eps.
     
-    If a sequence $\seq{a_n}$ has a limit $A$ it is said to \emph{tend to} $A$.
+    If a sequence $\seq{a_n}$ has a limit $A$ it is said to \emph{approach} $A$.
     \source
     Если последовательность $\seq{a_n}$ имеет предел $A$, говорят также, что она \emph{стремится} к $A$. 
 
@@ -811,43 +807,43 @@ We say that if we wait long enough, we will be unable to tell the difference..
     \source{Коротко пишут так:}
     \eq
         \lim_{n\to \infty} a_n = A,
-    (which is read as “the limit of $a_n$ as $n$ goes to infinity is $A$”) or
+    (read "the limit of $a_n$ as $n$ goes to infinily is $A$") or
     \source{(читается «предел при $n$ стремящемся к бесконечности от $a_n$ равен $A$») или}
     \eq
         a_n \to A\text{ при }n \to \infty,
-    (which is read as “the limit of $a_n$ is $A$ as $n$ goes to infinity”).
+    (read "the limit of $a_n$ is $A$ as $n$ goes to infinily").
     \source{(читается «$a_n$ стремится к $A$ при $n$ стремящемся к бесконечности»).}
     
     A sequence that has a limit is said to be \emph{convergent}, otherwise \emph{divergent}.
-    \source{Последовательность, имеющая предел, называется также \emph{сходящейся}, а не имеющая предела — \emph{расходящейся}.}
+    \source{Последовательность, имеющая предел, называется также \emph{сходящейся}, а не имеющая предела — \emph{расходящейся}.}
 
 \remark
-    Actually, in the case of sequences the part $n \to \infty$ is redundant since the only thing $n$ can approach is infinity.
-    Later, when we’re discussing limits of a function such distinctions will be important.
-    The notation will be the same as in the case of sequences, so we’ll leave this redundancy to make our notation uniform.
+    In the case of sequences saying $n \to \infty$ is redundant since the only thing $n$ can approach is infinity.
+    But this part is necessary when it comes to a limit of a function.
+    The notation will be the same as in case with sequences, so we leave this redundancy to be uniform in notations.
     \source
         Уточнение про $n \to \infty$ в случае с последовательностями является избыточным: никаких других (по крайней мере, общепринятых) способов определить предел последовательности, кроме как при $n \to \infty$, нет.
         Чуть позже мы будем обсуждать пределы функций, и там уточнения такого типа будут важны; в случае с последовательностями они сохраняются для единообразия обозначений.
 
 Notice that $N$ (the start of a tail of a sequence) is chosen according to the value of $\eps$.
-Different values of $\eps$ yield different choices of $N$.
-But if a sequence $\seq{a_n}$ approaches $A$, then it must be possible to find a “right” $N$ for any $\eps$.
-It is often convenient to denote this “right” $N$ for some $\eps$  by $N(\eps)$.
-(Actually, if a number $N$ satisfies the condition, so does $N+1$.
-We’re going to choose one of them and denote it by $N(\eps)$).
-In \ref[fig.][fig:04:N-of-eps] one can see an illustration: for $\eps=\eps_1$ we can choose $N=3$, so that $N(\eps_1)=3$.
-But for $\eps=\eps_2$ (see below) this value of $N$ doesn't work anymore (for example, the element $a_4$ leaves the "corridor").
-In this case we need to increase $N$, for example let $N(\eps_2)=8$.
-By doing so we make the requirement “all elements starting from $N+1$ are $\eps$-close to $A$” right again.
+Different values of $\eps$ demand different choices of $N$.
+But if a sequence $\seq{a_n}$ approaches $A$, then it must be possible to find the right $N$ for any $\eps$.
+It's often useful to denote this "right" $N$, which we've chosen for a particular $\eps$ by $N(\eps)$.
+(In fact, if $N$ qualifies, then every natural number bigger than $N$ also qualifies.
+This is not a problem since in the future we'll not be interested in choosing between them, instead we'll need just one, so its okay to let $N(\eps)$ be any of these).
+There is an illustration in \ref[fig.][fig:04:N-of-eps]: for $\eps=\eps_1$ we can choose $N(\eps_1)=3$.
+But for $\eps=\eps_2$ (see bellow) this value of $N$ doesn't work anymore (for example, $a_4$ leaves the "corridor").
+In this case we need to increase $N$, for example make it equal to $N(\eps_2)=8$.
+By doing so we ensure the requirement "all elements starting from $N+1$ are $\eps$-close to $A$" is once again satisfied.
 \source
     Заметим, что в определении предела, число $N$ (граница «хвоста последовательности») выбирается в зависимости от $\eps$ — для разных $\eps$ получаются разные $N$. 
     Если последовательность $\seq{a_n}$ стремится к $A$, гарантируется, что для любого $\eps$ найдётся «хорошее» $N$. 
     Часто бывает удобно это «хорошее» $N$, подходящее для какого-то $\eps$, обозначать через $N(\eps)$.
-    (Вообще говоря, это $N$ определяется не единственным образом — например, если $N$ подходит, то $N+1$ тоже подходит — но мы выберем какое-нибудь из подходящих значений $N$ и обозначим его через $N(\eps)$.) 
+    (Вообще говоря, это $N$ определяется не единственным образом — например, если $N$ подходит, то $N+1$ тоже подходит — но мы выберем какое-нибудь из подходящих значений $N$ и обозначим его через $N(\eps)$.) 
     На \ref[рис.][fig:04:N-of-eps] приведена иллюстрация: для $\eps=\eps_1$ мы могли выбрать $N=3$, то есть положить $N(\eps_1)=3$. 
     Но для $\eps=\eps_2$ (см. нижний рисунок) это значение $N$ уже «не работает» (например, $a_4$ выходит за границы нового коридора), однако увеличив $N$ до $8$ (то есть положив $N(\eps_2)=8$) мы снова добились соблюдения условия «все члены, начиная с $n=N+1$, находятся на расстоянии меньше $\eps$ от $A$».
 
-We can decrease $\eps$ even more, which means a new value of $N$ must be found--the one that satisfy the condition.
+After the manipulations above it is possible to decrease $\eps$ even more, and this wulds mean a new value of $N$ must be found.
 This is what it means for a sequence to approach $A$.
 \source
     Мы могли бы ещё сильнее уменьшить $\eps$ — и снова должно было найтись своё $N$, которое бы обеспечивало выполнение этого условия. 
@@ -859,14 +855,11 @@ This is what it means for a sequence to approach $A$.
             padding: 1em; max-width:600px;
         \src lim-seq-3.svg
         \alt
-            The graph of a sequence is shown. There is a label for the point A on the vertical axis, together with three horizontal lines: y=A, y=A+ε_1, y=A-ε_1. Somewhat of a corridor is formed by the second and the third one. There is an indication that all element after  N=N(ε_1)=3 (i.e. starting from n=4) are inside the mentioned corridor.
-            \source
-                Изображен график последовательности.
-                На вертикальной оси отмечено
-                число A и проведено три горизонтальных прямых: y=A, y=A+ε_1,
-                y=A-ε_1, две последние прямые образуют своего рода коридор. 
-                Показано, что все элементы, после N=N(ε_1)=3 (то есть начиная с n=4)
-                находятся внутри этого коридора.
+            Изображен график последовательности. На вертикальной оси отмечено
+            число A и проведено три горизонтальных прямых: y=A, y=A+ε_1,
+            y=A-ε_1, две последние прямые образуют своего рода коридор.
+            Показано, что все элементы, после N=N(ε_1)=3 (то есть начиная с n=4)
+            находятся внутри этого коридора.
     \rawhtml
         <hr>
     \img
@@ -885,39 +878,39 @@ This is what it means for a sequence to approach $A$.
     \label fig:04:N-of-eps
 
 \section 
-    An Example of How to Prove a Statement Involving Limits 
+    An example of how to prove a proposition involving limits 
     \source{Пример доказательств утверждений о пределах}
 
 \subsection 
-    Existence of a Limit
+    Existence of a limit
     \source{Существование предела}
 
-The best way to understand a definition is to prove a statement about it. 
+The best way to understand a definition is to study some propositions involving it. 
 \source{Самый лучший способ понять определение — доказать какое-нибудь утверждение про него.}
 \proposition \label prop:04:n+1:n
-    The limit of the sequence $a_n=\frac{n+1}{n}$ is $1$:
+    A limit of the sequence $a_n=\frac{n+1}{n}$ is $1$:
     \source{Предел последовательности $a_n=\frac{n+1}{n}$ равен $1$:}
     \eq
         \lim_{n\to \infty} \frac{n+1}{n}=1.
 \proof 
-    We need to be able to come up with $N=N(\eps)$ for any given $\eps>0$ such that for any $n>N$ we have:
+    We need to be able to come up with $N=N(\eps)$ for any given $\eps>0$ such that for any $n>N$ the following inequality holds:
     \source{Нам нужно научиться по любому $\eps>0$ строить такое $N=N(\eps)$, что для всех $n>N$,}
     \equation \label eq:04:frac
         \left|\frac{n+1}{n}-1\right|<\eps.
-    Let's rearrange the inequation:
+    Let's rearrange the inequality:
     \source{Преобразуем это неравенство:}
     \gather \nonumber
         \item \left|1 + \frac{1}{n} - 1\right| < \eps;
         \item \left|\frac{1}{n}\right| < \eps.
-    Notice that since $n$ is a natural number, it is positive, which makes $\frac{1}{n}$ positive too, and so it's equal to its absolute value.
-    This means we can remove the absolute value sign:
+    Notice that since $n$ is a natural number, $\frac{1}{n}$ is positive, hence it's equal to its absolute value.
+    This means we can get rid of the absolute value and get:
     \source
         Заметим, что $n$ — натуральное число, значит положительное, значит $\frac{1}{n}$ — тоже положительное, значит его модуль всегда равен ему самому. 
         Следовательно, знак модуля можно просто снять. 
         Получим неравенство:
     \eq 
         \frac{1}{n} < \eps.
-    Let's multiply both sides by $n$ and divide them by $\eps$ (since $n>0$ and $\eps>0$, this will produce an equivalent inequation and no change of sign is needed).
+    Let's multiply both sides by $n$ and divide by $\eps$ (the properties $n>0$ and $\eps>0$ ensure this operation results in an equivalent inequality, and we don't need to change the sign).
     We get
     \source
         Можно умножить обе части этого неравенства на $n$ и поделить на $\eps$ (благодаря тому, что $n>0$ и $\eps>0$, эта операция является эквивалентным преобразованием и не приведёт к изменению знака неравенства). 
@@ -929,15 +922,12 @@ The best way to understand a definition is to prove a statement about it.
     \equation \label eq:04:frac-up
         n > \frac{1}{\eps}.
     
-    We need to find such $N$ that whenever $n>N$, an inequality \ref{eq:04:frac} is satisfied.
-    All inequalities above are equivalent, which means whenever inequality \ref{eq:04:frac-up} is satisfied, then \ref{eq:04:frac} also is.
-    This means we want to show that inequality \ref{eq:04:frac-up} holds.
-Clearly, if we choose $N=\frac{1}{\eps}$, then we're done (in this case any $n$ bigger than $N$ is bigger than $\frac{1}{\eps}$, which means \ref{eq:04:frac-up} is satisfied).
-In principle, it's possible to just set $N=\frac{1}{\eps}$, but in \ref[definition][def:04:lim] we've stated that $N$ must be a natural number.
-This means we want to choose any natural number that is bigger than or equal to $\frac{1}{\eps}$, which is always possible.
-However, to be specific, let's present a concrete method.
+    We need to find such $N$ that if $n>N$, then an inequality \ref{eq:04:frac} is satisfied.
+    All inequalities above are equivalent, which means if inequality \ref{eq:04:frac-up} is satisfied, then \ref{eq:04:frac} is also satisfied.
+    Which means we want to show that inequality \ref{eq:04:frac-up} holds.
+    Clearly, if we choose $N=\frac{1}{\eps}$, then we're done, but in \ref[definition][def:04:lim] we've stated that $N$ must be a natural number.
     This means we want to choose any natural number that is bigger than or equal to $\frac{1}{\eps}$, which is always possible.
-    However, let's present a concrete method. 
+    However, let's clarify this operation to be more precise. 
     \source
         Нам нужно найти такое $N$, что если $n>N$, то неравенство \ref{eq:04:frac} выполняется.  
         Наши преобразования были эквивалентными, поэтому, в частности, если выполняется неравенство \ref{eq:04:frac-up}, то выполняется и неравенство \ref{eq:04:frac}. 
@@ -949,27 +939,26 @@ However, to be specific, let's present a concrete method.
         Однако, для определенности, давайте предложим конкретный механизм.
 
     \definition
-        Consider a real number $x$.
-        The \emph{ceiling} of $x$ is the smallest integer that is greater than or equal to $x$.       
-        For example, the ceiling of $2{.}1$ is $3$.
-        The number $17$ rounds up to itself since $17$ is already an integer.
+        A \emph{ceiling function} is a function that takes a real number $x$ as its input and outputs an integer which is greater or equal to $x$.
+        For example, $2{,}1$ corresponds to $3$.
+        A number $17$ rounds up to $17$ since its already an integer.
         This operation is denoted by $\lceil x \rceil$.
-        A function $y=\lceil x \rceil$ is called a \emph{ceiling function}. 
         \source
             Пусть $x$ — вещественное число. 
             Его \emph{округлением вверх} называется наименьшее целое число, не меньшее $x$. 
-            Например, $2{.}1$ округляется вверх до $3$. 
+            Например, $2{,}1$ округляется вверх до $3$. 
             Число $17$ округляется вверх до $17$, потому что оно уже целое. 
             Результат округления вверх числа $x$ обозначается через $\lceil x \rceil$. 
             Функция $y=\lceil x \rceil$ также называется \emph{функцией «потолок»} (англ. \emph{ceil}).
     \exercise
-        Describe the behavior of a ceiling function using an infinite decimal expansion of $x$.
+        Desribe the behaviour of a ceiling function using an infinite decimal expansion of $x$.
         \source{Опишите, как действует функция $\lceil x \rceil$, пользуясь представлением числа $x$ в виде бесконечной десятичной дроби.}
 
+    Now we're ready to present a proof.
     For any $\eps>0$ take $N(\eps):=\left\lceil \frac{1}{\eps} \right\rceil$.
-    By definition of the ceiling function, $N(\eps) \ge \frac{1}{\eps}$.
-    This means that for any natural $n$ if $n>N(\eps)$, then $n > \frac{1}{\eps}$, which means \ref{eq:04:frac-up} is satisfied and so \ref{eq:04:frac} is also satisfied.
-    Q.E.D., hurray!
+    By definition of a ceiling function, $N(\eps) \ge \frac{1}{\eps}$.
+    This means that for every natural $n$ if $n>N(\eps)$ than $n > \frac{1}{\eps}$, which means \ref{eq:04:frac-up} is satisfied and hence \ref{eq:04:frac} is also satisfied.
+    The proof is done, hurray!
     \source
         Итак, для всякого $\eps>0$, положим $N(\eps):=\left\lceil \frac{1}{\eps} \right\rceil$. 
         По определению функции потолок, $N(\eps) \ge \frac{1}{\eps}$.
@@ -977,12 +966,12 @@ However, to be specific, let's present a concrete method.
         Ура!
 
 \remark
-    Let's analyze our expression for $N(\eps)$.
-    The formula tells us that $N$ increases as $\eps$ decreases.
-    This should not come as a surprise since it takes longer for elements to get indistinguishable from a limit as we increase the precision.
-    Generally, this pattern is repeated in other similar exercises.
-    (If it doesn't, then this might be a good indicator of a mistake located somewhere.)
-    Once again, notice that the formula $N(\eps)$ must work for any $\eps>0$ and always output a natural number.
+    Let's analyze the value of $N(\eps)$ we've constructed.
+    Clearly, $N$ is increasing as $\eps$ is decreading.
+    This is not a surprise since it takes longer for elements of a sequence to get indistinguishable from a limit as we increase the precision.
+    Generally this pattern is repeated in other similar exersises.
+    (If it doesn't, this might be a good indicator that there is a mistake.)
+    Once again, notice that $N(\eps)$ must always output a natural nubmer.
     \source
         Проанализируем наше выражение для $N(\eps)$. 
         Из формулы видно, что чем меньше $\eps$, тем больше $N$. 
@@ -993,13 +982,14 @@ However, to be specific, let's present a concrete method.
         Ещё одно важное замечание: формула для $N(\eps)$ должна работать для всех $\eps>0$ и всегда давать натуральное число в качестве ответа.
 
 \remark
-Here, when, we started with the desired inequation and ended up with inequation  \ref{eq:04:frac-up}, which is easier to work with.
-    But the actual proof is generally easier to present in the reversed order.
-    Normally it sounds as follows: “for any $\eps>0$ set $N(\eps)$ to be the expression $\ldots$”.
-    We do not explain the choice of the inequality $N(\eps)$.
-Instead, we prove that in this case for all $n> N(\eps)$ the inequality  $|a_n - A|<\eps$ is satisfied. Generally, this is the moment when one needs to present a series of inequations similar to the one we used to go from \ref{eq:04:frac-up} to \ref{eq:04:frac}, but in reverse. It's crucial that any inequality follows from the previous one.
+    In our proof strategy we've come from inequality \ref{eq:04:frac}, which we were to prove, to a more understandble indequality \ref{eq:04:frac-up}, from which the value of $N(\eps)$ followed natually.
+    But the actual proof was presented in the reversed order.
+    A general form of such proofs looks as follows: "for any $\eps>0$ set $N(\eps)$ to be the expression $\ldots$".
+    (And the motivation behind this choice of $N(\eps)$ is not specified.)
+    Then a chain of inequalities follows.
+    It is similar to the one we've constructed in our proof strategy, but in reverse: coming from the inequality $n>N(\eps)$ to $|a_n - A|<\eps$.
     And the proof is done!
-    The reasoning is ironclad, but it makes a reader wonder: “Why was this particular value of $N(\eps)$ chosen”?
+    This is a convincing yet mysterious line of reasoning, which generally makes a reader wonder: why was this particular value of $N(\eps)$ chosen?
     \source
         В данном случае в ходе решения задачи мы шли от неравенства \ref{eq:04:frac}, которое нам было нужно, к неравенству \ref{eq:04:frac-up}, которое было легко проанализировать. 
         Однако сам текст доказательства как правило проще излагать в обратном порядке. 
@@ -1010,25 +1000,29 @@ Instead, we prove that in this case for all $n> N(\eps)$ the inequality  $|a_n -
         Победа! 
         Получается железобетонная последовательность рассуждений, оставляющая, впрочем, читателя в недоумении — почему же мы выбрали именно такое $N(\eps)$?
 
-Let's consider another example.
+Let's consider an another example.
 \source{Давайте рассмотрим ещё один пример.}
 
 \proposition 
-    The limit of the sequence $a_n=\frac{1}{n^2+5n+12}$ is equal to zero:
+    A limit of the sequence $a_n=\frac{1}{n^2+5n+12}$ is equal to zero:
     \source{Предел последовательности $a_n=\frac{1}{n^2+5n+12}$ равен нулю:}
     \eq
         \lim_{n\to \infty}\frac{1}{n^2+5n+12}=0.
 \proof
-    Like in the previous example, let's write the statement we want to show.
+    Similarly, let's write what we want to show.
     We want to be able to present $N=N(\eps)$ for any $\eps>0$ such that the following inequality holds for any $n>N$:
     \equation \label eq:04:longfrac
         \left|\frac{1}{n^2+5n+12}-0\right|<\eps.
-    Let's manipulate this inequality: firstly, subtracting zero doesn't change anything; secondly, since $n$ is positive we remove the absolute value sign.
+    Let's manipulate this inequality: firsly, substracting zero doesn't change anything; and secondly, since $n$ is positive we can get rid of a modulus.
     We get the following equation:
     \equation \label eq:04:longfrac-short
         \frac{1}{n^2+5n+12}<\eps.
-Similarly to the previous example, let’s write out what we want.
-We want to learn how to find $N=N(\eps)$ for any given $\eps>0$, so that for all $n>N$ the following holds:
+    Now we proceed to solving this inequality for $n$, but this is too straightforward.
+    Remember that we're not interested in finding the whole range of $N$ that make a tail $\eps$-close to the limit.
+    We need to find just a portion of values, and then take one of them.
+    This motivates us to proceed to a more strict inequality (which means that whenever this inequality is satisfied, the one we have is also satisfied).
+    This will make our life much easier!
+    Look:
     \source
         По аналогии с предыдущим примером, запишем, что мы хотим получить. 
         Мы хотим научиться для всякого $\eps>0$ строить такое $N=N(\eps)$, что для всех $n>N$ выполняется неравенство:
@@ -1052,7 +1046,7 @@ We want to learn how to find $N=N(\eps)$ for any given $\eps>0$, so that for all
     \source{Заметим, что для натуральных $n$,} 
     \eq
         n^2+5n+12>n^2.
-    Observe that if $n$ is a natural number, then $n^2$ is always bigger than $n$ (divide by $n>0$ and get $n>1$, which is true for all natural numbers), thus we obtain
+    Observe that $n^2$ is always bigger than $n$ for natural $n$ (divide by $n>0$ and get $n>1$ that is true for all natural numbers), thus obtaining
     \source
         Действительно, $5n$ и $12$ — положительные числа. 
         Более того: для натуральных $n$, $n^2 \ge n$ (можно поделить это неравенство на $n$, поскольку $n$ больше нуля, и получить неравенство $n\ge 1$, справедливое для всех натуральных $n$). 
@@ -1067,7 +1061,7 @@ We want to learn how to find $N=N(\eps)$ for any given $\eps>0$, so that for all
     \source{и следовательно}
     \equation \label eq:04:chain
         \frac{1}{n^2+5n+12}<\frac{1}{n}.
-    This is true since by bounding the denominator of the fraction from below, we get an upper bound for the whole fraction.
+    This is true since in the right hand side we're dividing by a smaller number.
     \source{Оценивая знаменатель дроби снизу, мы оцениваем саму дробь сверху.}
     
     Suppose we've found such $N$ that for all $n>N$ the inequality $\frac{1}{n}<\eps$ hodls.
@@ -1077,17 +1071,18 @@ We want to learn how to find $N=N(\eps)$ for any given $\eps>0$, so that for all
         Тогда в силу неравнства \ref{eq:04:chain}, для тех же самых $n$, будет выполняться неравенство
     \eq
         \frac{1}{n^2+5n+12}<\eps.
-    Here we're using the transitivity of the relation $<$: if both $A<B$ and $B<C$ hold, then $A<C$.
+    Here we're using the transitive property of inequalities: if both $A<B$ and $B<C$ hold, then $A<C$ holds.
     \source{(Мы опять используем транзитивность неравенства: если $A<B$ и $B<C$, то $A<C$.)}
 
     So we can make $N(\eps)$ equal to the same value as in the \ref[previous example\nonumber][prop:04:n+1:n]: $N(\eps):=\left\lceil \frac{1}{\eps} \right\rceil$.
-    This is much easier than solving a quadratic inequality with a parameter (you can try, but I doubt you'll like it).
+    This is much easier than solving a quadratic inequality with a parameter (try to finish up the straightforward way yourself and decide which one is for you).
     \source
         Таким образом, в качестве $N(\eps)$ можно взять то же выражение, что и в \ref[предыдущем примере\nonumber][prop:04:n+1:n]: $N(\eps):=\left\lceil \frac{1}{\eps} \right\rceil$. 
         И оно сработает! 
         Это гораздо проще, чем решать квадратное неравенство с параметром (можете попробовать — хотя вам вряд ли понравится).
 
-Now, if we put off all motivation mentioned above, the full proof looks like this: for any $\eps>0$ take $N(\eps):=\left\lceil \frac{1}{\eps} \right\rceil$. This will make the following chain of inequations and equations hold for any natural number $n>N(\eps)$:
+    Now skipping all the motivation above, we arrive at the actual proof.
+    For any $\eps>0$ take $N(\eps):=\left\lceil \frac{1}{\eps} \right\rceil$, which ensures the following chain of inequalities is satisfied:
     \source
         Итак, если отбросить все мотивировки, полное доказательство выглядит так: для всякого $\eps>0$, положим $N(\eps):=\left\lceil \frac{1}{\eps} \right\rceil$. 
         Тогда для всякого натурального $n>N(\eps)$ справедлива цепочка равенств и неравенств:
@@ -1105,23 +1100,22 @@ Now, if we put off all motivation mentioned above, the full proof looks like thi
         (Конечно, в аккуратном тексте нужно обосновать каждое из равенств и неравенств в цепочке, но мы это уже сделали выше.) 
 
 \subsection 
-    Limit is not Equal to some Number
+    A limit is not equal to a particular number
     \section{Предел не равен какому-то числу}
 \proposition
     The limit of the sequence $\seq{a_n}$,  $a_n=\frac{1}{n}$, is not equal to $1$:
-        \source{Предел последовательности $\seq{a_n}$, $a_n=\frac{1}{n}$, не равен 1:}
+   \source{Предел последовательности $\seq{a_n}$, $a_n=\frac{1}{n}$, не равен 1:}
     \eq
         \lim_{n\to \infty}\frac{1}{n} \ne 1.
 \proof
-    We’re asked to prove that it is not true that the limit is $1$.
-    In other words, we need to disprove the following statement:
+    We need to disprove the following statement:
     \source
         Нам нужно доказать, что неверно, что предел равен 1. 
         Иными словами, опровергнуть следующее утверждение:
     \eq
         \forall \eps > 0\\ \exists N \in \mathbb N\\ \forall n > N\colon
         \left|\frac{1}{n}-1\right|<\eps.
-    Disproving a statement is equivalent to proving its negation. We write the negation using \ref[section][ssec:02:quant-neg-series] of lecture \ref{chap:02:logic}.
+    Since disproving a sentence means proving its negation, let's use some of the rules rules from a \ref[section][ssec:02:quant-neg-series] of lecture \ref{chap:02:logic} and formulate it:
     \source
         Опровергнуть утверждение — это всё равно, что доказать его отрицание.
         Запишем отрицание, пользуясь \ref[разделом][ssec:02:quant-neg-series] лекции \ref{chap:02:logic}:
@@ -1129,12 +1123,12 @@ Now, if we put off all motivation mentioned above, the full proof looks like thi
         \item \label eq:04:ne
             \exists \eps > 0 \\ \forall N \in \mathbb N\\ 
         \splitem \exists n > N\colon \left|\frac{1}{n}-1\right|\ge \eps.
-    This means that we need to prove the existence of some $\eps>0$ such that whatever $N$ we chose, it's possible to find a bigger $n>N$, for which a respective element is not $\eps$-close to $1$.
-    Or, equivalently, there is a particular $\eps>0$, for which in every tail of a sequence one can always find an element separated from $1$ by more than $\eps$.
-    In this case, of course, convergence to $1$ is out of the question.
+    In other words, we need to prove that there exists some $\eps>0$ such that whatever $N$ we chose, it's possible to find a bigger $n>N$, for which an element of the sequence with index $n$ is not $\eps$-close to $1$.
+    Or, equivalently, there is a particular $\eps>0$, for which in every tail of a sequence there will always be an element separated from $1$ by more than $\eps$.
+    This is precisely the case when a sequence doen't approach $1$.
     \source
         Иными словами, нам нужно доказать, что существует такой $\eps>0$, что какой бы номер $N$ мы ни выбрали, найдётся номер $n$, больший, чем $N$, для которого элемент с номером $n$ не является $\eps$-близким к $1$. 
-        Попросту нам нужно доказать, что для какого-то конкретного $\eps$, время от времени — сколь угодно далеко в будущем — элементы последовательности будут на расстоянии как минимум $\eps$ от $1$. 
+        Попросту нам нужно доказать, что для какого-то конкретного $\eps$, время от времени — сколь угодно далеко в будущем — элементы последовательности будут на расстоянии как минимум $\eps$ от $1$. 
         В этом случае, конечно, ни о каком стремлении к $1$ речи уже идти не будет.
     
     Let's look at \ref[fig.][fig:04:1/n].
@@ -1156,18 +1150,17 @@ Now, if we put off all motivation mentioned above, the full proof looks like thi
                            xlabel="n", ylabel="y") 
 
         \caption 
-            The graph of the sequence $\seq{1/n}$.
+            A graph of a sequence $\seq{1/n}$.
             \source{График $\seq{1/n}$.}
         \label fig:04:1/n
 
     Which value of $\eps$ should we choose?
-    Maybe $\eps=1{.}5$?
-    Seems like it isn't a great one, since each element of the sequence is $1.5$-close to $1$.
-    This is clear from \ref[fig.][fig:04:1/n:eps=1.5].
+    Is $\eps=1{,}5$ a good choice?
+    Seems like it isn't a great one, since each element of the sequence is $1.5$-close to $1$, which is clearly from \ref[fig.][fig:04:1/n:eps=1.5].
     \source
         Какое значение $\eps$ подойдёт? 
-        Например, подойдёт ли $\eps=1{.}5$? 
-        Похоже, что нет — на самом деле, все элементы последовательности находятся на расстоянии не больше $1{.}5$ от числа $1$, см. \ref[рис.][fig:04:1/n:eps=1.5].
+        Например, подойдёт ли $\eps=1{,}5$? 
+        Похоже, что нет — на самом деле, все элементы последовательности находятся на расстоянии не больше $1{,}5$ от числа $1$, см. \ref[рис.][fig:04:1/n:eps=1.5].
 
     \figure \showcode \collapsed
         \pythonfigure
@@ -1190,11 +1183,11 @@ Now, if we put off all motivation mentioned above, the full proof looks like thi
                            xlabel="n", ylabel="y") 
 
         \caption 
-            The graph of $\seq{1/n}$ and a $1{.}5$-wide “corridor” around $1$. 
-            \source{График $\seq{1/n}$ и коридор вокруг $1$ с «размахом» $\eps=1{.}5$.}
+            The graph of $\seq{1/n}$ and a $1{,}5$-wide "corridor" around $1$. 
+            \source{График $\seq{1/n}$ и коридор вокруг $1$ с «размахом» $\eps=1{,}5$.}
         \label fig:04:1/n:eps=1.5
 
-    Notice that $\eps=1/3$ will do, since only one element of the sequence is $1\3$-closed to $1$ (see \ref[fig.][fig:04:1/n:eps=0.3]).
+    Notice that $\eps=1/3$ will do: only one element of the sequence is $1\3$-closed to $1$, see \ref[fig.][fig:04:1/n:eps=0.3].
     \source
         Однако, уже значение $\eps=1/3$ подходит. 
         Действительно, лишь одна точка лежит внутри коридора с «размахом» $1/3$ вокруг прямой $y=1$, см. \ref[рис.][fig:04:1/n:eps=0.3].
@@ -1231,7 +1224,7 @@ Now, if we put off all motivation mentioned above, the full proof looks like thi
     Clearly, every $n$ bigger than or equal to $2$ is okay.
     Restating this formally we get $n\ge 2$, which is satisfied whenever $n>N$ (recall that $N$ is a natural number).
     The only thing left is how to construct a natural number $n$ that is bigger than any given natural $N$.
-    Let's just add the number one to $N$!
+    Let's just add one to $N$!
     
     \source
         Итак, пусть мы взяли $\eps=1/3$. 
@@ -1256,11 +1249,11 @@ Now, if we put off all motivation mentioned above, the full proof looks like thi
             \left|\frac{1}{N+1}-1\right| & = 1-\frac{1}{N+1} \ge 
         \splitem \splonly{& \ge} 1-\frac{1}{2} = 
         \splitem \splonly{&=} \frac{1}{2}\ge \frac{1}{3}=\eps.
-    The first equality follows from the fact that $\frac{1}{N+1}$ is less than $1$ for natural $N$, so we should add a minus sign when removing an absolute value sign.
-    The first inequality is true since $\frac{1}{N+1}$ is less than $1/2$ because $N$ is a natural number bigger than or equal to $2$.
+    The first equality follows from the fact that $\frac{1}{N+1}$ is less than $1$ for natural $N$, so we should add a minus sign when removing a modulus.
+    The first inequality is true since $\frac{1}{N+1}$ is less than $1/2$ because $N$ is natural and bigger than or equal to $2$.
     \source{Первое равенство следует из того факта, что $\frac{1}{N+1}$ меньше единицы для натуральных $N$ и модуль может быть раскрыт только так, первое  неравенство следует из того факта, что $\frac{1}{N+1}$ ещё и меньше $1/2$, т.к. $N$ натуральное и не меньше $1$.}
         
-\subsection When Limit Does not Exist
+\subsection A limit doesn't exist
     \source{Несуществование предела}
 
 Not every sequence has a limit.
@@ -1269,16 +1262,17 @@ Not every sequence has a limit.
     The sequence $a_n=(-1)^n$ doesn't have a limit.
     \source{Последовательность $a_n=(-1)^n$ не имеет никакого предела.}
 \proof
-    Right from the start we are faced with an obstacle.
-    Recall that the definition of a limit involves its value $A$.
-    Here we don't have $A$.
+    Now we're faced with an unusual problem.
+    Recall that in a definition of a limit there is a number $A$ that represents its value.
+    Here we don't have such $A$.
     \source
         Нас пожидает некоторая трудность в самом начале. 
         Определение предела требует, чтобы мы назвали конкретное число $A$, которое является пределом.
         Здесь никакого $A$ нет.
-    Formally, the proposition “$\seq{a_n}$ has a limit” is written as follows: “There exists some number $A$ that is the limit of $\seq{a_n}$”.
-    The same thing using quantifiers:
-    \source
+
+   Formally, the proposition "$\seq{a_n}$ has a limit" is written as follows: there exists some number $A$ that is the limit of $\seq{a_n}$.
+   Same thing using quantifiers:
+   \source
         Формально, утверждение «последовательность $\seq{a_n}$ имеет предел» записывается так: найдётся какое-то число $A$, которое является пределом $\seq{a_n}$. 
         В кванторах:
     \eq
@@ -1290,13 +1284,13 @@ Not every sequence has a limit.
         Ух! 
         Четыре квантора.
 
-    Let's write the negation to this proposition (which is the thing we aim to prove).
+    Let's formulate a negation to this proposition (which is the thing we aim to prove).
     \source{Давайте напишем отрицание к этому утверждению (это как раз то, что нам нужно доказать):}
 
     \eq
         \forall A \in \mathbb R\\ \exists \eps > 0 \\ \forall N \in \mathbb N\\
         \exists n > N\colon |a_n - A| \ge \eps.
-    In other words, for all real numbers $A$ the proposition “$A$ is not a limit of the considered sequence” is true.
+    In other words, the proposition "$A$ is not a limit of the considered sequence" is true for all real numbers $A$.
     \source{Иными словами, для всякого вещественного числа $A$, справедливо утверждение: $A$ не является пределом нашей последовательности.}
 
     Now we proceed to the proof.
@@ -1305,11 +1299,9 @@ Not every sequence has a limit.
         Теперь будем его доказывать. 
         Тут нужно разобрать два случая: $A\ne 1$ и $A=1$.
 
-    \paragraph{
-        Case $A\ne 1$
-        \source{Случай $A\ne 1$}}
-    As usual, let's start by visualizing the setup: see \ref[fig][fig:04:(-1)^n].
-    We've put $A$ between $0$ and $-1$, but it can be anything except the number $1$.
+    \paragraph{Случай $A\ne 1$} 
+    As usual, let's start from visualizing the setup: see \ref[fig][fig:04:(-1)^n].
+    We've put $A$ between $0$ and $-1$, but it can be anything except a number $1$.
     \source
         Как обычно, начнём с картинки, см. \ref[рис.][fig:04:(-1)^n]. 
         Мы отметили точку $A$ между $0$ и $-1$, но на самом деле она может быть какой угодно, кроме $1$.
@@ -1320,21 +1312,17 @@ Not every sequence has a limit.
                 padding: 1em; max-width:700px;
             \src lim-seq-5.svg
             \alt
-                The graph of $a_n=(-1)^n$ is shown.
-                The point $A$ is indicated between points $0$ and $1$.
-                Horizontal lines $y=1$, $y=-1$, and $y=A$ are drawn.
-                \source
-                    Нарисован график последовательности a_n=(-1)^n. 
-                    На оси y отмечена точка A между точками 0 и -1. 
-                    Проведены горизонтальныепрямые y=1, y=-1, y=A
+                Нарисован график последовательности a_n=(-1)^n. На оси y
+                отмечена точка A между точками 0 и -1. Проведены горизонтальные
+                прямые y=1, y=-1, y=A
         \caption
-            The graph of the sequence $\seq{(-1)^n$.
+            A graph of a sequence $\seq{(-1)^n$.
             \source{График последовательности $\seq{(-1)^n}$.}
         \label fig:04:(-1)^n
 
-    How to choose $\eps>0$ so that our sequence will occasionally “jump out” of the $\eps$-corridor even very far away in the future?
-    And how to find $\eps$?
-    Since we know that $A\ne 1$ and that the sequence comes to the number $1$ arbitrarily far into the future, it is natural to make the corridor narrow enough to exclude points such that $y=1$.
+    How to choose $\eps>0$ so that our sequence will occasionally "jump out" of the $\eps$-corridor even very far in the future?
+    We know that $A\ne 1$, and we also know that a tail of the sequence "visits" the number $1$ no matter how far away it starts.
+    This motivates us to make $\eps$ smaller than the distance between $A$ and $1$.
     This ensures that whenever an element is equal to $1$, it's not $\eps$-close to $A$.
     \source
         Теперь нужно выбрать такое $\eps>0$, что последовательность будет время от времени выскакивать из $\eps$-коридора сколько угодно далеко в будущем. 
@@ -1347,14 +1335,14 @@ Not every sequence has a limit.
     \source{Положим} 
     \eq
         \eps=\frac{|A-1|}{2}.
-    Importantly, since $A\ne 1$, we have $\eps>0$.
+    Notice since $A\ne 1$, epsilon is always positive.
     \source{Тут важно, что $A\ne 1$ и следовательно $\eps>0$.}
 
-    This way one “side” of the $\eps$-corridor will be located strictly between $A$ and $1$, see \ref[fig. ][fig:04:(-1)^n+eps].
-    Consider an arbitrary natural number $N$.
-    No matter what it is, we can always find an index $m>N$, for which the corresponding element $a_m$ doesn't belong to the corridor from $A+\eps$ to $A-\eps$ (a shaded region in the figure).
-    In fact, that's why we’ve chosen this $\eps$: for every even $n$ we have $a_n=1$, and hence all the corresponding elements can't be inside the corridor.
-    Importantly, for every $N$ there exists an even $n>N$, which is exactly what we need.
+    This way one "side" of the $\eps$-corridor will be located strictly between $A$ and $1$, see \ref[fig. ][fig:04:(-1)^n+eps].
+    No matter what $N$ is chosen, it's always possible to find an index $m>N$, for which the corresponding element $a_m$ doesn't belong to the "corridor" from $A+\eps$ to $A-\eps$.
+    (In fact, there will be infinitely many such elements).
+    To be more precise, for every even $n$ we have $a_n=1$ and hence all such elements can't be $\eps$-close to $A$.
+    Obviously, for every $N$ there exists an even $n>N$, and this is what we needed.
     \source
         Тогда одна из границ коридора будет проходить в точности посередине между $A$ и $1$, см. \ref[рис.][fig:04:(-1)^n+eps]. 
         Пусть теперь дано произвольное натуральное $N$. 
@@ -1373,44 +1361,44 @@ Not every sequence has a limit.
                 Проведена вертикальная прямая n=N (N выбрано равным 6), закрашен
                 коридор правее прямой n=N между прямыми y=A+ε и y=A-ε.
         \caption
-            The graph of $\seq{(-1)^n}$ and a corridor for the chosen $\eps$.
+            The graph of $\seq{(-1)^n$ and a corridor for our $\eps$.
             \source{График последовательности $\seq{(-1)^n}$ и коридор для выбранного значения $\eps$.}
         \label fig:04:(-1)^n+eps
 
-    To make the proof rock-solid we must give an explicit algorithm for constructing $n$ based on the value of $N$.
-    This can be done in various ways, for example, the first even value bigger than $N$ is valid.
+    To make the proof fully complete we must give a formal recipe for constructing $n$ given the value of $N$.
+    This can be done in various ways, for example any even number bigger than $N$ is valid.
     But we'll do it even simpler, so let
     \source
         Чтобы сделать рассуждение совсем железобетонным, нужно привести явный способ построения $n$ по $N$. 
         Тут можно действовать разными методами — например, можно выбирать первое чётное, большее $N$, но можно проще: положить
     \eq
         n = 2N.
-    Indeed, if $N$ is a natural number, then $2N > N$ and $2N$ is even.
+    Obviously, if $N$ is a natural number, then $2N > N$ and $2N$ is even.
     \source{Действительно, $2N > N$ для всех натуральных $N$ и число $2N$ гарантированно чётное.}
 
-    Finally, we need to show that such $n$ satisfies the inequality $|a_n - A| \ge \eps$.
-    Since $n$ is even, we have $a_{n}=1$.
-Substituting the value of $\eps$ we get,
+    We need to show that the inequality $|a_n - A| \ge \eps$ is satisfied for all natural numbers $n$.
+    Since $n$ is even, we have $a_{n}=1$, so
     \source
         Наконец, нужно доказать, что для выбранного таким образом $n$, будет выполняться неравенство $|a_n - A| \ge \eps$. 
         Поскольку $n$ чётно, $a_{n}=1$. 
         Подставляя значение $\eps$, имеем:
     \eq
         |1-A| \ge \frac{|A-1|}{2}.
-    Notice that $|1-A|=|A-1|$ and this number is nonnegative, so the inequality is automatically satisfied. 
+    Notice that $|1-A|=|A-1|$ and this expression is non-negative, so the inequality is automatoacally satisfied. 
     \source{Поскольку $|1-A|=|A-1|$ и это положительное число, это неравенство заведомо верно.}
 
     \section   
-        Therefore, for every $A\ne 1$ we’ve provided the value $\eps=\frac{|A-1|}{2}>0$ such that for all natural $N$ there is $n=2N$ which makes $|a_n - A| \ge \eps$ satisfied for all $n>N$.
-        Hence, the number $A$ is not a limit of our sequence.
+        For every $A\ne 1$ we're now able to provide the value $\eps=\frac{|A-1|}{2}>0$ such that for all natural $N$ there is $n=2N$ which makes $|a_n - A| \ge \eps$ for all $n>N$.
+        This is precisely what we wanted to show.
+        The number $A$ is not a limit of our sequence, and the proof is done.
         \source
             Таким образом, для любого $A\ne 1$ мы предъявили такое значение $\eps=\frac{|A-1|}{2}>0$, что для всех натуральных $N$ мы построили такое $n=2N$, что $n>N$ и $|a_n - A| \ge \eps$. 
             Значит, $A$ не является пределом нашей последовательности.
 
-    \paragraph{$A=1$ case}
-    The proof is analogous, perhaps even simpler since the value of $A$ is fixed.
-    A good exercise is to write a clean and complete proof yourself, similar to the $A\ne 1$ case above.
-    Please, do it before moving on to the next section.
+    \paragraph{Case $A=1$}
+    The proof is analogous, perhaps even simpler since now the value of $A$ is fixed.
+    A good exercise is to write a proof yourself: with all formal aspects and explicit expressions as above.
+    Please, do it yourself before moving on to the next section.
         \source
             \paragraph{Случай $A=1$}
             Он доказывается полностью аналогично, и даже проще,  потому что теперь значение $A$ известно. 
@@ -1419,36 +1407,34 @@ Substituting the value of $\eps$ we get,
 
 
 \section 
-    Uniqueness of a Limit
+    Uniqueness of a limit
     \source{Единственность предела}
     
-When we write an expression like
+When we write an expression
 \source{Когда мы записываем выражение типа}
 \equation \label eq:04:lim
     \lim_{n\to \infty} a_n = A, 
-we assume that the left-hand side is uniquely defined. 
-Actually, it is possible for a mathematical expression to lack a numerical value.
-For example, the arithmetic expression $1/0$ doesn't have any. 
-But if something has a value, we’re assuming it’s unique.
-Nevertheless, the \ref[definition of a limit\nonumber][def:04:def-lim] doesn’t specify anything about its uniqueness.
-As we can see, this definition answers the following question: “Is the number $A$ the limit of the sequence?”.
-But what if for a sequence there exist two different numbers for which the answer turns out to be “yes”? 
-\source
+we assume that the left hand side is uniquely defined. 
+Actually, it's possible for a mathematical expression to not have a numerical value.
+For example, the arithmetic expression $1/0$ doesn't have a numerical value.
+Notice that in the \ref[definition of a limit\nonumber][def:04:def-lim] we did't specify anything about its uniqueness.
+This definition answers the question "is the number $A$ the limit of the sequence?".
+But what if there are numerous numbers for which the answer to the question above is "yes"? 
+\sourec
     мы подразумеваем, что левая часть равенства является каким-то однозначно определенным числом. 
     Конечно, мы понимаем, что не всякое выражение обязано иметь числовое значение (например, арифметическое выражение $1/0$ не имеет никакого числового значения), но если уж имеет, то мы предполагаем, что это значение определяется однозначно. 
     Тем не менее, в \ref[определении предела\nonumber][def:04:def-lim] никаких требований, связанных с единственностью предела, не накладывается. 
     Как видно, это определение отвечает на вопрос «является ли $A$ пределом последовательности $\seq{a_n}$», но вдруг для одной и той же последовательности найдутся два разных числа, для которых ответ будет положительным? 
     В этом случае запись вроде \ref{eq:04:lim} потеряла бы всякую определенность.
 
-Luckily, this cannot happen.
-Let’s prove it.
+Actually, this cannot happen, and we're going to prove it.
 \source
     К счастью, так не бывает. 
     Давайте это докажем.
 
 \theorem \label thm:04:uniq
-    If a sequence has a limit, then it is unique.
-    In other words, if we have a sequence $\seq{a_n}$ and two numbers $A_1$, $A_2$ that satisfy the definition of a limit of this sequence, then $A_1=A_2$.
+    If a limit of a sequence exists, it is unique.
+    In other words, if there are two numbers $A_1$ and $A_2$ that satisfy the definition of a limit of $\seq{a_n}$, then $A_1=A_2$.
     \source
         Если предел последовательности существует, то он единственный. 
         Иными словами, пусть есть последовательность $\seq{a_n}$ и два числа, $A_1$ и $A_2$, удовлетовряющие определению предела для этой последовательности.
@@ -1456,7 +1442,7 @@ Let’s prove it.
 \proof
     We proceed by contradiction.
     Suppose $A_1$ and $A_2$ are both limits of $\seq{a_n}$, and at the same time $A_1\ne A_2$.
-    Let's write it:
+    Let's restate this formally:
     \source
         Будем доказывать от противного. 
         Пусть $A_1$ и $A_2$ оба являются пределами последовательности $\seq{a_n}$, но при этом $A_1\ne A_2$. 
@@ -1469,19 +1455,19 @@ Let’s prove it.
             \forall &\eps_2>0\\ \exists N_2=N_2(\eps_2)\\ 
         \splitem \splonly{&} \forall n > N_2\colon |a_n - A_2|  < \eps_2.
     
-    From \ref[section][ssec:03:bound] we know that if there are several propositions with quantifiers involving the same letters, then there is no relation between the letters outside the respective propositions.
-    So in order to not get confused, we’ve added some indices: now $\eps_1$ is for $A_1$, and $\eps_2$ is for $A_2$.
-    Likewise, we've introduced a helpful notation $N_1(\eps_1)$ and $N_2(\eps_2)$: these help to understand from which definition did $N$ come from and to what $\eps$ it corresponds.
+    In \ref[section][ssec:03:bound] we discussed that if there are several (distinct) propositions involving quantifiers, then there are no connections between the same letters outside the propositions.
+    So we've added some indexes to avoid any confusion: there is $\eps_1$ for $A_1$, and $\eps_2$ for $A_2$.
+    Also we've introduced a helpful notation $N_1(\eps_1)$ and $N_2(\eps_2)$: these help to understand from which definition a number $N$ came from.
     \source
         Мы обсуждали (см. \ref[раздел][ssec:03:bound]), что когда есть несколько утверждений с кванторами, в которых участвуют одни и те же буквы, никакой связи между этими буквами за пределами соответствующих утверждений нет.
-        Так что чтобы не путаться, мы добавили немножко индексов — например, $\eps_1$ для утверждения про предел $A_1$ и $\eps_2$ для утверждения про предел $A_2$. 
+        Так что чтобы не путаться, мы добавили немножко индексов — например, $\eps_1$ для утверждения про предел $A_1$ и $\eps_2$ для утверждения про предел $A_2$. 
         Мы также ввели очень полезное обозначение $N_1(\eps_1)$ и $N_2(\eps_2)$ — таким образом мы сразу понимаем, $N$ из какого определения взято и для какого $\eps$ оно найдено.
 
-    Let's come back from formal reasoning to natural language.
-    We have two numbers $A_1$ and $A_2$ and two propositions: the first one states that a tail of the sequence is close to $A_1$, and the other one states that another tail of the same sequence is close to $A_2$.
-    Is it possible for these propositions to not contradict each other?
-    This depends on how we view “closeness”.
-    But it’s precisely for what $\eps_1$ and $\eps_2$ stand for, and we’re fully in control of both! 
+    Now let's return to the intuitive line of reasoning.
+    We have two numbers $A_1$ and $A_2$ and two true propositions: the first one states that a tail of the sequence is $\eps_1$-close to $A_1$, and the other one states that a tail is $\eps_2$-close to $A_2$.
+    Notice that these tails start from different elements ($N_1(\eps_1)$ and $N_2(\eps_2)$ respectively).
+    How can these two propositions not contradict each other?
+    Clearly, it depends on the values of $\eps_1$ and $\eps_2$, but we are fully in charge of them! 
     \source
         Впрочем, давайте вернёмся с формального уровня на интуитивный. 
         У нас есть два разных числа, $A_1$ и $A_2$, и два утверждения: одно говорит, что весь хвост последовательности, начиная с какого-то элемента, будет близок к $A_1$, а другое утверждение говорит, что хвост той же самый последовательности (начинающийся, впрочем, с какого-нибудь другого элемента) целиком близок к $A_2$. 
@@ -1490,15 +1476,15 @@ Let’s prove it.
         Но это как раз регулируются нашими значениями $\eps_1$ и $\eps_2$. 
         И они сейчас находятся в нашей власти — мы можем их выбирать какими хотим!
 
-    Recall that in the process of proving statements about the value of a limit we've taken $\eps$ as given and couldn’t manipulate it.
-    This was because the condition we are proving, which we took from the definition of the limit starts with a universal quantifier xcx
-    But now we're dealing with the opposite.
+    Recall that in the process of proving propositions about the value of a limit we've been perceiving $\eps$ as a fixed value.
+    The reason was because of a universal quantifier in front: it forced us to consider an arbitrary value of $\eps$.
+    But now we're dealing with the reversed case.
     We're given (by assumption) that $A_1$ is the limit of the sequence.
-    This implies that for every $\eps>0$, there exists $N_1=N_1(\eps_1)$ such that a certain inequality holds.
-    If we want to find the value of $N_1$ for $\eps_1=1/10$, then we’re able to do so.
-    The same holds for $\eps_1 = 1/100$.
+    This means we know that for every $\eps>0$ there is $N_1=N_1(\eps_1)$ such that a certain inequality holds.
+    If we want to find the value of $N_1$ for $\eps_1=1/10$, we can do that.
+    And for $\eps_1 = 1/100$ we can find the corresponding $N_1$.
     And for every other positive $\eps_1$ this is guaranteed to be possible.
-    A similar argument is true for the second proposition.
+    Similar argument holds for the second proposition (involving $\eps_2$ and $\N_2$).
     \source
         Действительно, до сих пор когда мы доказывали, что предел равен какому-то числу, мы воспринимали $\eps$ как нечто данное, что от нас не зависит.
         Потому что нам нужно было доказать утверждение, взятое из определения предела, а оно начинается квантором «для всякого $\eps>0$». 
@@ -1510,8 +1496,8 @@ Let’s prove it.
         И для любого другого положительного $\eps_1$ можем найти. 
         Аналогично и со вторым утверждением.
 
-    The question is, how to find $\eps_1$ and $\eps_2$ such that we arrive at a contradiction?
-    Let’s investigate \ref[fig.][fig:04:uniq].
+    The strategy is to find $\eps_1$ and $\eps_2$, such that we arrive at a contradiction.
+    The illustration is in \ref[fig.][fig:04:uniq].
     \source
         Как выбрать $\eps_1$ и $\eps_2$, чтобы имеющиеся у нас утверждения пришли к явному противоречию? 
         Давайте посмотрим на картинку, \ref[рис.][fig:04:uniq].
@@ -1522,40 +1508,31 @@ Let’s prove it.
             \style
                 padding: 1em;
             \alt
-                The graph of some sequence ${a_n}$ is shown.
-                There are points $A_1$ and $A_2$, such that $A_1 > A_2$ on the vertical axis.
-                The segment $[A_1, A_2]$ is divided into three equal parts by two dots: the lower one is $A_2+ε$, and the upper one is $A_1-ε$.
-                The points $A_2+ε$ and $A_1-ε$ are also shown.
-                Horizontal lines are drawn through every point.
-                There are vertical lines $n=N_1=5$ and $n=N_2=8$.
-                Two corridors are colored: the first is around $A_1$ to the right of $N_1$ and the second is around $A_2$ to the right of $N_2$.
-                The points to the left of $N_1$ and $N_2$ are located arbitrarily, the points between $N_1$ and $N_2$ are inside the corridor around $A_1$, and there are no points to the right.
-            \source
-                Построен график некоторой последовательности ${a_n}$.
-                На вертикальной оси отмечены две различные точки $A_1$ и A_2, A_1 > A_2. 
-                Отрезок [A_1, A_2] разделен на три равные части двумя точками, нижняя A_2+ε, верхняя A_1-ε. 
-                Также отмечены точки A_1+ε и A_2-ε. 
-                Через все отмеченные точки проведены горизонтальные прямые. 
-                Нарисованы вертикальные прямые n=N_1=5 и n=N_2=8.
-                Закрашены коридоры правее N_1 вокруг A_1 и правее N_2 вокруг A_2. 
-                Левее N_1 и N_2 точки последователности располагаются произвольным образом, между N_1 и N_2 только внутри коридора вокруг A_1, правее N_2 точек не отмечено. 
+                Построен график некоторой последовательности {a_n}. На вертикальной
+                оси отмечены две различные точки A_1 и A_2, A_1 > A_2. Отрезок [A_1,
+                A_2] разделен на три равные части двумя точками, нижняя A_2+ε,
+                верхняя A_1-ε. Также отмечены точки A_1+ε и A_2-ε. Через все
+                отмеченные точки проведены горизонтальные прямые. Нарисованы
+                вертикальные прямые n=N_1=5 и n=N_2=8. Закрашены коридоры правее
+                N_1 вокруг A_1 и правее N_2 вокруг A_2. Левее N_1 и N_2 точки
+                последователности располагаются произвольным образом, между N_1 и
+                N_2 только внутри коридора вокруг A_1, правее N_2 точек не отмечено. 
         \caption
             The contradiction in the proof of \ref[theorem][thm:04:uniq].
             \source{Противоречие в доказательстве \ref[теоремы][thm:04:uniq].}
         \label fig:04:uniq
-    We know that starting from some $n=N_1$, all elements of the sequence belong to the $\eps_1$-corridor around $A_1$.
+    We know that starting from some number $n=N_1$, all elements of the sequence belong to the $\eps_1$-corridor arond $A_1$.
     At the same time, starting from some $n=N_2$, all elements also lie in the $\eps_2$-corridor around $A_2$.
-If we choose the corridors to be disjoint, we’ll have a contradiction -- the points cannot be in both corridors at the same time!
+    If we choose the corridors to be disjoint, this will produce a valid contradiction!
     \source
         Известно, что, начиная с некоторого номера $n=N_1$, все элементы последовательности лежат в $\eps_1$-коридоре вокруг точки $A_1$. 
         В то же время, начиная с некоторого $n=N_2$, все элементы последовательности лежат в $\eps_2$-коридоре вокруг точки $A_2$. 
-        Если выбрать эти коридоры непересекающимися, будет явное противоречие — точки не смогут жить в обоих одновременно!
+        Если выбрать эти коридоры непересекающимися, будет явное противоречие — точки не смогут жить в обоих одновременно!
 
-    But what values of $\eps_1$ and $\eps_2$ can we choose for the corridors to be disjoint?
-    That’s easy!
-    We take the distance between $A_1$ and $A_2$ and divide it by $3$.
-    This way the upper line of the lower corridor (see \ref[fig.][fig:04:uniq]) will lie in the lower third of the interval $[A_2, A_1]$, and the lower line of an upper corridor will lie in the upper third of $[A_2, A_1]$.
-    This guarantees that the corridors don't intersect, and we should be done!
+    The question is, which values of $\eps_1$ and $\eps_2$ should we choose for them to be disjoint?
+    A common trick is helpful: lets divide the distance between $A_1$ and $A_2$ in three parts.
+    This way the upper line of the lower corridor (see \ref[fig.][fig:04:uniq]) will lie in the lower third of the interval $[A_2, A_1]$, and the lower line of an upper corridor will be contained in the upper third of $[A_2, A_1]$.
+    This will guarantee that the corridors don't intersect.
     \source
         Какими выбрать $\eps_1$ и $\eps_2$, чтобы коридоры не пересекались? 
         Это легко: давайте разделим расстояние между $A_1$ и $A_2$ на три.
@@ -1569,10 +1546,10 @@ If we choose the corridors to be disjoint, we’ll have a contradiction -- the p
         Итак, пусть
     \eq
         \eps_1=\eps_2=\frac{|A_1-A_2|}{3}.
-    Here we're utilized the assumption that $A_1\ne A_2$, hence both $\eps_1$ and $\eps_2$ are positive.
+    Here we're utilized the assumption that $A_1\ne A_2$, and hence both $\eps_1$ and $\eps_2$ are positive.
     \source{Здесь мы воспользовались предположением, что $A_1\ne A_2$, и значит наши $\eps_1$ и $\eps_2$ положительны.}
 
-    Also, let
+    Also let
     \source{Пусть также}
     \align
         \item N_1&:= N_1(\eps_1)=
@@ -1582,10 +1559,9 @@ If we choose the corridors to be disjoint, we’ll have a contradiction -- the p
 
     Now we need to find an element of the sequence (one is enough) that will produce a contradiction.
     Its index must satisfy both $n>N_1$ and $n>N_2$.
-    (This is because the condition for a limit $A_1$ (see \ref{eq:04:A1}) and $A_2$ respectively provides a nontrivial bound on these particular indexes, and doesn’t state anything about a lesser $n$).
+    (This is because \ref{eq:04:A1} involves a condition on the indexes in order for $\eps$-closeness to be satisfied).
     How to find such $n$?
-    It’s easy!
-    We can take the maximum of $N_1$ and $N_2$, then add $1$.
+    Another common technique: we can take the maximum of $N_1$ and $N_2$ and add $1$.
     Let
     \source
         Теперь нужно найти элемент (достаточно будет одного), который приведёт нас к противоречию. 
@@ -1603,7 +1579,7 @@ If we choose the corridors to be disjoint, we’ll have a contradiction -- the p
     \source{Одновременно $n>N_2$ и согласно \ref{eq:04:A2} в этом случае обязательно}
     \eq
         |a_n - A_2| < \eps_2=\frac{|A_1-A_2|}{3}.
-    To avoid different cases when dealing with an absolute value we’re going to utilize a well-known triangle inequality: the distance between $A_1$ and $A_2$ is less than or equal to the sum of the distances from $A_1$ to $a_n$ and from $a_n$ to $A_2$.
+    To avoid calculations involving an absolute value we can utilize a well-known triangle inequality: the distance between $A_1$ and $A_2$ is less than or equal to a sum of the distances from $A_1$ to $a_n$ and from $a_n$ to $A_2$.
     We have
     \source
         Чтобы не возиться с раскрытием модулей и рассмотрением разных случаев, применим известное неравенство треугольника: расстояние от $A_1$ до $A_2$ не превосходит сумму расстояний от $A_1$ до $a_n$ и от $a_n$ до $A_2$. 
@@ -1613,9 +1589,9 @@ If we choose the corridors to be disjoint, we’ll have a contradiction -- the p
         \splitem \splonly{\le} |A_1 - a_n| + |a_n - A_2| <
         \splitem \splonly{<} \frac{|A_1-A_2|}{3}+\frac{|A_1-A_2|}{3}=
         \splitem \splonly{=} \frac{2}{3}|A_1-A_2|.
-    But notice that $|A_1-A_2|$ is positive!
+    But remember that $|A_1-A_2|$ is positive!
     Positive numbers decrease when multiplied by $2/3$, but our inequality states the opposite.
-    And this is the contradiction!
+    And this is the contradiction we've desired!
     Thus the theorem is proven.
     \source
         Но $|A_1-A_2|$ — положительное число! 
@@ -1628,11 +1604,10 @@ If we choose the corridors to be disjoint, we’ll have a contradiction -- the p
     \source{Заключение}
 
 What a long lecture!
-But we've achieved the main goal: the precise definition of a limit is formulated and proven to be well-defined, which means that the limit exists and is unique!
-We've also considered some examples of proving statements involving the existence and nonexistence of a limit.
-The next lecture will contain proofs of more general properties of limits, while the next seminar will be dedicated to using the definitions.
+But we've achieved what we wanted: the definition of a limit is formulated and a limit is even proven to be unique!
+We've also constructed some proofs of propositions involving existence and nonexistence of a limit.
+The next lecture will contain proofs of more general properties of limits, and you'll be able to practice with the definitions during the next semimar.
 \source
-    Уфф, это была длинная лекция, но мы сделали самое главное: ввели аккуратное определение предела последовательности и убедились, что оно корректно — то есть для всякой последовательности, для которой предел существует, он задан однозначно. 
+    Уфф, это была длинная лекция, но мы сделали самое главное: ввели аккуратное определение предела последовательности и убедились, что оно корректно — то есть для всякой последовательности, для которой предел существует, он задан однозначно. 
     Мы также рассмотрели несколько примеров доказательств утверждений о существовании и не существовании пределов для конкретных последовательностей. 
-    На следующей лекции мы докажем больше общих свойств о пределах, а на семинаре потренируемся пользоваться определениями.
-
+    На следующей лекции мы докажем больше общих свойств о пределах, а на семинаре потренируемся пользоваться определениями. 
