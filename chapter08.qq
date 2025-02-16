@@ -1,58 +1,78 @@
-\chapter Теорема Вейерштрасса, немного комбинаторики и число e \label chap:08:weierstrass
+\chapter 
+    Weierstrass theorem, a look at combinatorics, and the number e \label chap:08:weierstrass
+    \source{Теорема Вейерштрасса, немного комбинаторики и число e \label chap:08:weierstrass}
 
-До сих пор у нас был единственный способ доказать, что некоторая
-последовательность имеет предел: угадать, чему этот предел равен, а затем
-использовать определение, чтобы доказать, что он действительно этому равен. В
-этой лекции мы познакомимся с утверждением, которое позволит доказать
-существование предела в ситуации, когда его значение неизвестно. Но начнём мы
-слегка издалека.
+So far we've been using only one way to find the limit of a sequence.
+First, you need to guess it and then use the definition to show that it is satusfied.
+In today's lecture we're going to learn the method that proves the existence of a limit when its value is unclear.
+We need to start from afar.
+\source
+    До сих пор у нас был единственный способ доказать, что некоторая последовательность имеет предел: угадать, чему этот предел равен, а затем использовать определение, чтобы доказать, что он действительно этому равен. 
+    В этой лекции мы познакомимся с утверждением, которое позволит доказать существование предела в ситуации, когда его значение неизвестно. 
+    Но начнём мы слегка издалека.
 
-\section Ограниченные множества
-\subsection Максимум и минимум
+\section    
+    Bounded sets
+    \source{Ограниченные множества}
+\subsection 
+    The maximum and the mininum
+    \source{Максимум и минимум}
 \definition \label def:08:bound
-    Пусть $X$ — некоторое числовое множество, $X\subset \mathbb R$. Пусть
-    существует такое число $C$, что все элементы множества $X$ не превосходят
-    $C$:
+    Suppose $X$ is a set of numbers, or formally $X\subset \mathbb R$.
+    Suppose there exists a number $C$ such that all elements of $X$ does not exceed $C$:
+    \source
+        Пусть $X$ — некоторое числовое множество, $X\subset \mathbb R$. 
+        Пусть существует такое число $C$, что все элементы множества $X$ не превосходят $C$:
     \eq
         \forall x \in X\colon x \le C.
-    Тогда множество $X$ называется \emph{ограниченным сверху}.
+    Then the set $X$ is called \emph{bounded from above].
+    \source{Тогда множество $X$ называется \emph{ограниченным сверху}.}
     
-Аналогично, с заменой неравенства $\le$ на $\ge$, определяется множество,
-ограниченное снизу.
+The definition of a set bounded from bellow is analogous (just change the inequality sign from $\le$ to $\ge$).
+\source{Аналогично, с заменой неравенства $\le$ на $\ge$, определяется множество, ограниченное снизу.}
 
 \remark
-    Для дальнейшего полезно ввести новые обозначения, позволяющие описывать
-    множества, получаемые из других множеств по некоторым правилам. Проще всего
-    объяснить их на примере.
+    Let's discuss sets that can be obtained by applying ceratin operations to another sets.
+    For example, 
+    \source
+        Для дальнейшего полезно ввести новые обозначения, позволяющие описывать множества, получаемые из других множеств по некоторым правилам. 
+        Проще всего объяснить их на примере.
     \itemize
-        \item 
-            $\seq{n^2 \mid n \in \mathbb N}$ — множество всех квадратов всех
-            натуральных чисел. Фигурные скобки подсказывают, что мы создаём
-            новое множество, после вертикальной черты написано, какие значения
-            пробегает переменная $n$, а до черты — как из переменной $n$
-            изготовить элементы множества.
         \item
-            $\seq{n \in \mathbb N \mid \exists k \in \mathbb N \colon k^2=n}$ —
-            это тоже множество квадратов всех натуральных чисел, только
-            записанное иначе.  Здесь до вертикальной черты написано, из какого
-            множества выбирается $n$, а после — какому условию $n$ должно
-            удовлетворять, чтобы быть включённым в наше новое множество.
+            The set of all squares of natural numbers is $\seq{n^2 \mid n \in \mathbb N}$.
+            Curly brackets indicate that a set is being created, and the vertical bar tells the range of a variable $n$ on the right, and the "recipe" of elements for this particular set. 
+            \source
+                $\seq{n^2 \mid n \in \mathbb N}$ — множество всех квадратов всех натуральных чисел. 
+                Фигурные скобки подсказывают, что мы создаём новое множество, после вертикальной черты написано, какие значения пробегает переменная $n$, а до черты — как из переменной $n$ изготовить элементы множества.
+        \item
+            We can define the same set using a different notation: $\seq{n \in \mathbb N \mid \exists k \in \mathbb N \colon k^2=n}$.
+            Here the range is to the left of a vertical bar, and the "recipe" is on the right.  
+            \source
+                $\seq{n \in \mathbb N \mid \exists k \in \mathbb N \colon k^2=n}$ — это тоже множество квадратов всех натуральных чисел, только записанное иначе.  
+                Здесь до вертикальной черты написано, из какого множества выбирается $n$, а после — какому условию $n$ должно удовлетворять, чтобы быть включённым в наше новое множество.
 \remark
-    Пусть есть последовательность $\seq{a_n}$. Рассмотрим множество всех её
-    элементов: $\set{a_n \mid n \in \mathbb N}$. (В отличие от последовательности,
-    это просто множество: в нём нет никакого порядка, и каждый элемент в него
-    может входить только один раз. Например, для последовательности
-    $\seq{(-1)^n}$ получится конечное множество $\set{1, -1}$; такое же
-    множество получится для последовательности $\seq{(-1)^{n+1}}$.) Это
-    множество ограничено тогда и только тогда, когда последовательность
-    ограничена. (Докажите!)
+    Consider a sequence $\seq{a_n}$.
+    Let's construct the set of all its elements $\set{a_n \mid n \in \mathbb N}$.
+    (In contrast to a sequence, a set is not ordered and repeating values are removed.
+    To illustrate, the sequence $\seq{(-1)^n}$ yeilds a finite set $set{1, -1}$, which also comes from the sequence $\seq{(-1)^{n+1}}$.) 
+    Such a set is bounded if and only if a sequence is bounded.
+    (Prove it yourself!.)
+    \source
+        Пусть есть последовательность $\seq{a_n}$. 
+        Рассмотрим множество всех её элементов: $\set{a_n \mid n \in \mathbb N}$. 
+        (В отличие от последовательности, это просто множество: в нём нет никакого порядка, и каждый элемент в него может входить только один раз. 
+        Например, для последовательности $\seq{(-1)^n}$ получится конечное множество $\set{1, -1}$; такое же множество получится для последовательности $\seq{(-1)^{n+1}}$.) 
+        Это множество ограничено тогда и только тогда, когда последовательность ограничена. 
+        (Докажите!)
 
 
 \definition \label def:08:max-min
-    Рассмотрим произвольное числовое множество $X\subset \mathbb R$. Его
-    \emph{максимумом} (соответственно, \emph{минимумом}) называется такой
-    элемент $X$, который не меньше (соответственно, не больше) всех элементов
-    $X$:
+    Consider an arbitrary numerical set $X\subset \mathbb R$.
+    We call an element a \emph{maximal element} if it is not smaller than any other element of $X$.
+    A \emph{minimal element} is not bigger than any other element of the set.
+    \source
+        Рассмотрим произвольное числовое множество $X\subset \mathbb R$. 
+        Его \emph{максимумом} (соответственно, \emph{минимумом}) называется такой элемент $X$, который не меньше (соответственно, не больше) всех элементов $X$:
     \align
         \item 
             & \max  X =  m  \quad \Leftrightarrow 
@@ -64,41 +84,60 @@
             \in X\colon M \le y).
 
 \question
-    Что будет, если заменить нестрогое неравенство на строгое?
+    What if we make the inequality strict? 
+    \source{Что будет, если заменить нестрогое неравенство на строгое?}
     \quiz
         \choice
-            Ничего не изменится, мы такое уже проходили.
+            Nothing changes, we've seen this before.
+            \source{Ничего не изменится, мы такое уже проходили.}
             \comment
-                В этот раз всё не так.
+                This time it's different.
+                \source{В этот раз всё не так.}
         \choice \correct
-            Определение потеряет свой смысл.
+            The definition loses its meaning.
+            \source{Определение потеряет свой смысл.}
             \comment
-                Действительно, если потребовать строгое неравенство, условие
-                будет всегда нарушаться: элемент не может быть строго больше или
-                строго меньше самого себя.
+                Indeed, in this case the definition must reject any candidate: an element cannot be strictly smaller or larger than itself.
+                \source{Действительно, если потребовать строгое неравенство, условие будет всегда нарушаться: элемент не может быть строго больше или строго меньше самого себя.}
 \exercise
-    Докажите, что если максимум (минимум) определён, он задан единственным
-    образом.
-Если множество конечное, у него всегда определён максимум и минимум, мы уже
-пользовались этим свойством. (Доказать это аккуратно с помощью индукции —
-полезное упражнение.) Если множество бесконечно, становится интереснее.
+    Prove that if a maximal (minimal) element is defined, then it's unique.
+    \source{Докажите, что если максимум (минимум) определён, он задан единственным образом.
+If a set is finite, it must always have a unique minimal and maximal value.
+We've already used this fact in our analysis, and a strict proof will be a great exercise.
+What if a set is infinite?
+This is where it gets interesting
+\source
+    Если множество конечное, у него всегда определён максимум и минимум, мы уже пользовались этим свойством. 
+    (Доказать это аккуратно с помощью индукции — полезное упражнение.) 
+    Если множество бесконечно, становится интереснее.
 
-Если максимум множества $X$ существует, это множество обязательно ограничено
-сверху: действительно, сам этот максимум можно подставить в
-\ref[определение][def:08:bound] в качестве $C$. Аналогично, если существует
-минимум, множество ограничено снизу.
+If a maximal element of $X$ exists, then the set must be bounded from above.
+Indeed, we can make this element play the role of $C$ in the \ref[definition][def:08:bound].
+Similarly, if a minimal element exists, then the set is bounded from bellow.
+\source
+    Если максимум множества $X$ существует, это множество обязательно ограничено сверху: действительно, сам этот максимум можно подставить в \ref[определение][def:08:bound] в качестве $C$.
+    Аналогично, если существует минимум, множество ограничено снизу.
 
-В обратную сторону, однако, это не работает: например, если множество ограничено
-сверху, ещё не факт, что у него есть максимум.
+Notice that the inplication doesn't work the other way around: if a set is bounded from above, it doesn't mean it has a maximal element.
+\source{В обратную сторону, однако, это не работает: например, если множество ограничено сверху, ещё не факт, что у него есть максимум.}
 
 \example 
-    Пусть $X=[0, 1) = \set{x \in \mathbb R\mid 0 \le x < 1}$ — полуоткрытый
-    интервал, включащий в себя $0$, но не включающий единицу. Это множество
-    ограничено и сверху, и снизу.  У него есть минимум — это число $0$, но нет
-    максимума. Действительно, любое число $x \in [0, 1)$ меньше 1 (см.
-    \ref[рис.][fig:08:nomax]). Рассмотрим число $y=\frac{x+1}{2}$ — середину
-    отрезка $[x, 1]$. Оно больше $x$, но меньше $1$ (проверьте аккуратно с
-    помощью неравенств). Значит, $x$ не является максимумом.
+    Consier a half-closed interval $X=[0, 1) = \set{x \in \mathbb R\mid 0 \le x < 1}$, in which $0$ is included but $0$ is not.
+    This set is bounded both from above and from bellow.
+    It has a minimal value, which is the number $0$, but no maximal value can be found.
+    This is easy to check: take any number $x \in [0, 1)$.
+    By construction is it smaller than $1$ (see \ref[fig.][fig:08:nomax]).
+    Consider a number $y=\frac{x+1}{2}$, which is a midpoint of an interval $[x, 1]$.
+    It's larger than $x$, but less than $1$ (which I andise you  to check yourself via a chain of inequalities), so it also belongs to $[0, 1)$.
+    Hence $x$ cannot be a maximal point.
+    \source
+        Пусть $X=[0, 1) = \set{x \in \mathbb R\mid 0 \le x < 1}$ — полуоткрытый интервал, включащий в себя $0$, но не включающий единицу. 
+        Это множество ограничено и сверху, и снизу.  
+        У него есть минимум — это число $0$, но нет максимума. 
+        Действительно, любое число $x \in [0, 1)$ меньше 1 (см. \ref[рис.][fig:08:nomax]). 
+        Рассмотрим число $y=\frac{x+1}{2}$ — середину отрезка $[x, 1]$. 
+        Оно больше $x$, но меньше $1$ (проверьте аккуратно с помощью неравенств). 
+        Значит, $x$ не является максимумом.
 
     \figure
         \img
@@ -111,52 +150,69 @@
                 Иллюстрация к доказательству утверждения о том, что у
                 полуинтервала $[0, 1)$ нет максимума, описание см. в тексте.
         \caption
-            У множества $[0, 1)$ нет максимума.
+            The set $[0, 1)$ does not have a maximal value.
+            \source{У множества $[0, 1)$ нет максимума.}
         \label fig:08:nomax
 
-Это неудачно: мы бы хотели как-то обобщить понятие максимума и минимума, чтобы
-они существовали для любого ограниченного с соответствующей стороны множества.
-Если ещё раз посмотреть на пример с полуоткрытым интервалом $[0, 1)$, и задать
-вопрос, какое число подходит на роль его «обобщённого максимума», напрашивается
-ответ, что это число $1$. Единственная причина, по которой $1$ не является
-максимумом на самом деле — то, что $1$ не принадлежит нашему множеству. Если бы
-мы могли снять это ограничение…
+This is somewhat of a failure.
+We'd like to generalize the notion of a maximal and a minimal value so that they exist for any bounded (from the respective side) set. 
+If we revisit the just considered example and ask ourselves, what number would be a good candidate for this generalized maximal value?
+The number begs to be $1$, but the only reason why it does not satisfy the definition is because it is excluded from the set.
+\source
+    Это неудачно: мы бы хотели как-то обобщить понятие максимума и минимума, чтобы они существовали для любого ограниченного с соответствующей стороны множества.
+    Если ещё раз посмотреть на пример с полуоткрытым интервалом $[0, 1)$, и задать вопрос, какое число подходит на роль его «обобщённого максимума», напрашивается ответ, что это число $1$. 
+    Единственная причина, по которой $1$ не является максимумом на самом деле — то, что $1$ не принадлежит нашему множеству. 
+    Если бы мы могли снять это ограничение…
 
-\subsection Точная верхняя и нижняя грани
+\subsection 
+    Infimum and supremum
+    \source{Точная верхняя и нижняя грани}
 
-Что будет, если мы уберём в \ref[определении максимума\nonumber][def:08:max-min]
-требование, чтобы $M$ принадлежал $X$. Для полуинтервала $[0, 1)$, число $1$
-будет удовлетворять новому определению. Однако, не только оно: любое число,
-большее 1, тоже ему будет удовлетворять. Мы лишились единственности. Однако,
-сделали важный шаг на пути к построению нужного нам понятия. Штука, которую мы
-определили, называется \emph{верхней гранью} множества.
+Let's analyze what happens if we change the \ref[definition of a maximal value\nonumber][def:08:max-min] by remobing the requirement that $M$ must belong to $X$. 
+Now the number $1$ is a maximal value for a half-cloded interval $[0, 1)$.
+But it is far from unique: any number greater than $1$ also qualifies.
+The uniqueness is gone, but we've made a step towards a definition we seek to formulate.
+The thing we defined actually has a name.
+It's called an \emph{upper bound} of a set.
+\source
+    Что будет, если мы уберём в \ref[определении максимума\nonumber][def:08:max-min] требование, чтобы $M$ принадлежал $X$. 
+    Для полуинтервала $[0, 1)$, число $1$ будет удовлетворять новому определению. 
+    Однако, не только оно: любое число, большее 1, тоже ему будет удовлетворять. 
+    Мы лишились единственности. 
+    Однако, сделали важный шаг на пути к построению нужного нам понятия. 
+    Штука, которую мы определили, называется \emph{верхней гранью} множества.
 
 \definition \label def:08:bound-C
+    An \emph{upper bound} of a set $X$ is a number $C$ that is larger or equal to all elements of $X$:
     \emph{Верхней гранью} множества $X$ называется такое число $C$, которое не
     меньше всех элементов $X$:
     \eq
         \forall x \in X\colon x \le C.
 
-    Аналогично (заменой неравенства $\le$ на $\ge$) определяетcя \emph{нижняя грань}
-    множества.
+    The definition of a \emph{lower bound} is the same expect for changing the inequality from $\le$ to $\ge$.
+    \source{Аналогично (заменой неравенства $\le$ на $\ge$) определяетcя \emph{нижняя грань} множества.}
 
-    Множество всех верхних граней $X$ будем обозначать через $\UB(X)$ (от англ.
-    \emph{upper bound}), а нижних — через $\LB(X)$ (от \emph{lower bound}).
+    The set of all upper bounds of $X$ is going to have a special notation $\UB(X)$, and the set of all lower bounds is going to be called $\LB(X)$.
+    \source{Множество всех верхних граней $X$ будем обозначать через $\UB(X)$ (от англ. \emph{upper bound}), а нижних — через $\LB(X)$ (от \emph{lower bound}).}
 
 
 
-Сравнивая определения \ref{def:08:bound-C} и \ref{def:08:bound}, мы видим, что
-множество является ограниченным сверху (снизу) тогда и только тогда, когда у
-него есть верхняя (нижняя) грань, то есть $\UB(X)$ непусто (соответственно,
-$\LB(X)$ непусто). Собственно, верхняя грань (нижняя грань) — это ровно та самая
-константа $C$, которая участвует в \ref[определении][def:08:bound]. Слово
-«грань» здесь следует понимать как «то, что ограничивает».
+Comparing the definitions \ref{def:08:bound-C} and \ref{def:08:bound} we see that the set is bounded from above (bellow) if ad only if it has an upper (lower) bound, which is equivalent to $\UB(X)$ ($\LB(X)$) being non-empty.
+Actually, a constant $C$ on the \ref[definition][def:08:bound] is an upper bound.
+\source
+    Сравнивая определения \ref{def:08:bound-C} и \ref{def:08:bound}, мы видим, что множество является ограниченным сверху (снизу) тогда и только тогда, когда у него есть верхняя (нижняя) грань, то есть $\UB(X)$ непусто (соответственно, $\LB(X)$ непусто). 
+    Собственно, верхняя грань (нижняя грань) — это ровно та самая константа $C$, которая участвует в \ref[определении][def:08:bound]. 
+    Слово «грань» здесь следует понимать как «то, что ограничивает».
 
-Вернёмся к задаче определения «обобщённого максимума» и примеру с полуинтервалом
-$[0, 1)$. Множеством верхих граней этого интервала оказывается весь луч $[1,
-+\infty)$, см. \ref[рис.][fig:08:bounds]. Какое число из этого луча в наибольшей
-степени достойно того, чтобы назваться «обобщённым максимумом» множества $[0,
-1)$? Очевидно, самое маленькое: число $1$.
+Let's get back to the desided definition of a generalized maximal value and the example involving $[0, 1)$.
+The set of all upper bounds for this interval is the ray $[1, +\infty)$, see \ref[fig.][fig:08:bounds]. 
+What element from this ray is the best candidate for a generalized maximal value of $[0, 1)$?
+Seems like $1$ is the best choice.
+\source
+    Вернёмся к задаче определения «обобщённого максимума» и примеру с полуинтервалом $[0, 1)$. 
+    Множеством верхих граней этого интервала оказывается весь луч $[1, +\infty)$, см. \ref[рис.][fig:08:bounds]. 
+    Какое число из этого луча в наибольшей степени достойно того, чтобы назваться «обобщённым максимумом» множества $[0, 1)$? 
+    Очевидно, самое маленькое: число $1$.
 
 \figure
     \img
@@ -169,82 +225,118 @@ $[0, 1)$. Множеством верхих граней этого интерв
             является луч (-∞, 0], а множеством верхних граней UB(X) является луч
             [1, +∞).
     \caption
-        Множества верхних и нижних граней для $[0, 1)$.
+        A set of all upper bounds of $[0, 1)$ and a set of all lower bounds of $[0, 1)$.
+        \source{Множества верхних и нижних граней для $[0, 1)$.}
     \label
         fig:08:bounds
 \definition \label def:08:sup-inf
-    Пусть $X \subset \mathbb R$ — некоторое числовое множество. Его \emph{точной
-    верхней гранью} называется самая маленькая верхняя грань, то есть минимум
-    множества $\UB(X)$. Аналогично, \emph{точной нижней гранью} называется самая
-    большая из нижних граней, то есть максимум множества $\LB(X)$.
+    Suppose $X \subset \mathbb R$ is some numerical set.
+    The smallest element of a set of all its upper bounds is called the \emph{least upper bound} of $X$.
+    Similarly, the \emph{greatest lower bound} of $X$ is the largest element in the set $\LB(X)$.
+    \source
+        Пусть $X \subset \mathbb R$ — некоторое числовое множество. 
+        Его \emph{точной верхней гранью} называется самая маленькая верхняя грань, то есть минимум множества $\UB(X)$. 
+        Аналогично, \emph{точной нижней гранью} называется самая большая из нижних граней, то есть максимум множества $\LB(X)$.
 
-    Точная верхняя грань также называется \emph{супремумом}, а точная нижняя
-    грань — \emph{инфимумом}. В обозначениях:
+    The least upper bound is often called the \emph{supremum}, and the greatest lower bound is called the \emph{infinum}.
+    In formal language,
+    \source
+        Точная верхняя грань также называется \emph{супремумом}, а точная нижняя грань — \emph{инфимумом}. 
+        В обозначениях:
 
     \eq
         \sup X := \min \UB(X),\quad \inf X := \max \LB(X).
 
-Позвольте! — скажет тут читатель, — вы водите нас кругами! Обещали построить
-обобщение максимума и минимума, но вернулись в итоге к ним же самим: супремум
-определяется через минимум, а инфимум — через максимум. Казалось бы, мы должны
-столкнуться с теми же самыми трудностями, от которых стремились уйти: максимум и
-минимум могут быть не определены. Стоило ли тогда так мучаться?
+But wait, isn't there a contradiction? 
+We were aiming to construct the generalized version of a maximal value, which led to the notion of the supremum.
+But its definition involves finding a minimal value of a set, and what if it doesn't exist, like in our example with $[0, 1)$? 
+\source
+    Позвольте! — скажет тут читатель, — вы водите нас кругами! 
+    Обещали построить обобщение максимума и минимума, но вернулись в итоге к ним же самим: супремум определяется через минимум, а инфимум — через максимум. 
+    Казалось бы, мы должны столкнуться с теми же самыми трудностями, от которых стремились уйти: максимум и минимум могут быть не определены. 
+    Стоило ли тогда так мучаться?
 
-Оказывается, да, стоило. Дело в том, что каким бы ни было множество $X$, если
-множество его верхних граней $\UB(X)$ не пусто, у него обязательно есть
-минимальный элемент $\min \UB(X)$, и аналогично если непусто множество нижних
-граний, определён его максимум.
+It turns out this does not yeild any complications at all.
+For an arbitraty $X$, if the set of all upper bounds of $X$ is non-empty, then it must have a minimal element $\min \UB(X)$.
+The same fact holds for the set of all lower bounds.
+\source
+    Оказывается, да, стоило. 
+    Дело в том, что каким бы ни было множество $X$, если множество его верхних граней $\UB(X)$ не пусто, у него обязательно есть минимальный элемент $\min \UB(X)$, и аналогично если непусто множество нижних граний, определён его максимум.
 
-Давайте ещё раз вернёмся к полуинтервалу $[0, 1)$. Его множество верхних граней
-— замкнутый луч $[1, +\infty)$, содержащий единицу. Может показаться, что если
-мы теперь возмём вместо полуинтервала замкнутый отрезок $[0, 1]$, множество
-верхних граней станет открытым лучом и лишится своего минимального элемента. Но
-нет! Из-за использования нестрого неравенства в
-\ref[определении][def:08:bound-C], верхняя грань может принадлежать множеству
-$X$ (это не запрещено). Множеством всех верхних граней отрезка $[0, 1]$
-по-прежнему является замкнутый луч $[1, +\infty)$, и он по-прежнему содержит
-минимальный элемент — число $1$. Здорово, правда?
+Let's once again revisit the interval $[0, 1)$. 
+Its set of all upper bounds is the closed ray $[1, +\infty)$, which includes $1$.
+It may seem like if we change the interval to include $1$, the set of all upper bounds will also change and become an open ray (which means it no longer has a maximal element).
+Quite remarkably, it won't!
+The fact that we've used a non-strict inequality in the \ref[definition][def:08:bound-C] makes it possible for an upper bound to be included in $X$.
+The set of all upper bounds is still $[1, +\infty)$, and it still has a minimal element, which is $1$.
+\source
+    Давайте ещё раз вернёмся к полуинтервалу $[0, 1)$. 
+    Его множество верхних граней — замкнутый луч $[1, +\infty)$, содержащий единицу. 
+    Может показаться, что если мы теперь возмём вместо полуинтервала замкнутый отрезок $[0, 1]$, множество верхних граней станет открытым лучом и лишится своего минимального элемента. 
+    Но нет! 
+    Из-за использования нестрого неравенства в \ref[определении][def:08:bound-C], верхняя грань может принадлежать множеству $X$ (это не запрещено). 
+    Множеством всех верхних граней отрезка $[0, 1]$ по-прежнему является замкнутый луч $[1, +\infty)$, и он по-прежнему содержит минимальный элемент — число $1$. 
+    Здорово, правда?
 
 \theorem \label thm:08:sup-inf
-    Если множество $X \subset \mathbb R$ ограничено сверху, у него есть точная
-    верхняя грань. Если оно ограничено снизу — точная нижняя.
+    If a set $X \subset \mathbb R$ is bounded from above, then it has the least upper bound.
+    If it is bounded from bellow, then the greatest lower bound exist.
+    \source
+        Если множество $X \subset \mathbb R$ ограничено сверху, у него есть точная верхняя грань. 
+        Если оно ограничено снизу — точная нижняя.
 
-Эта теорема доказывается не очень сложно, хотя и немножко занудно. (Как-то я
-даже хотел рассказать доказательство на лекциях, но, прикинув масштабы бедствия,
-понял, что все быстро уснут, и отказался от этой идеи.) Например, доказательство
-можно найти \href[в
-Википедии][https://ru.wikipedia.org/wiki/Точная_верхняя_и_нижняя_границы#Доказательство].
-Выглядит жутковато, но если сесть и аккуратно в нём разобраться, вы увидите, что
-оно не очень сложное. Тем не менее, мы не будем его подробнее обсуждать. Однако,
-стоит обсудить, почему эта теорема не так очевидна, как может показаться из
-рассмотрения примера с полуинтервалом.
+The proof is not hard, but a little tidious.
+(At one point I was planning on presenting it during a lecture, but quickly I realized everybody's going to fall asleep, so I abandoned the idea.)
+You can read the proof yourself in \href[Wikipedia][???].
+It may look scary, but in fact it is not that difficult.
+Nevertheless, we're not going to discuss it in full detail now.
+But we will examine why this theorem is not as trivial as it seems based in the half-closed interval example.
+\source
+    Эта теорема доказывается не очень сложно, хотя и немножко занудно. 
+    (Как-то я даже хотел рассказать доказательство на лекциях, но, прикинув масштабы бедствия, понял, что все быстро уснут, и отказался от этой идеи.)  
+    Например, доказательство можно найти \href[в Википедии][https://ru.wikipedia.org/wiki/Точная_верхняя_и_нижняя_границы#Доказательство].
+    Выглядит жутковато, но если сесть и аккуратно в нём разобраться, вы увидите, что оно не очень сложное. 
+    Тем не менее, мы не будем его подробнее обсуждать. 
+    Однако, стоит обсудить, почему эта теорема не так очевидна, как может показаться из рассмотрения примера с полуинтервалом.
 
-Представьте себе, что мы переместились во времена Пифагора, когда про
-вещественные числа ещё ничего не знали. Рассмотрим множество
+Imagine yourself in the Pythagorean times, where everything about real numbers is unknown.
+Consider a set
+\source
+    Представьте себе, что мы переместились во времена Пифагора, когда про вещественные числа ещё ничего не знали. 
+    Рассмотрим множество
 \eq
     S := \set{x \in \mathbb Q \mid x^2 < 2}.
-Древние греки вполне могли такое множество рассмотреть: оно состоит из
-рациональных чисел, и в его определении никакие иррациональные числа не
-участвуют. Однако, если бы древний грек попытался найти точную верхнюю грань
-множества $S$, его бы постигла неудача. Действительно, он бы рассматривал только
-рациональные верхние грани (других чисел он не знает). Поскольку $\sqrt{2}$, как
-мы сейчас знаем, иррационален (см.  \ref[теорему][thm:01:sqrt2] из
-\ref[лекции][chap:01:setsnumbers]), множество \emph{рациональных} верхних граней
-для $S$ не содержит минимального элемента: какое бы рациональное число, большее
-$\sqrt{2}$ мы бы ни взяли, можно найти рациональное число поменьше, по-прежнему
-являющееся верхней гранью для $S$. (Это следует из плотности множества
-рациональных чисел, которую мы доказывали на семинарах.) Неудача!
+The ancient greeks could have considered such a set themselves since its definition involve only rational numbers.
+But if the question of finding a supremum arose, it wouldn't be possible to get the answer.
+Since only rational numbers were discovered at that time, there was no such thing as $\sqrt{2}$ at the moment.
+Today we know that $\sqrt{2}$ is irrational (see \ref[theorem][thm:01:sqrt2]) from \ref[lecture][chap:01:setsnumbers]), so as long as we consider only rational numbers, each of them fails to be the least upper bound.
+(For any rational number larger than $\sqrt{2}$ it's possible to construct an another upper bound that is smaller than an original upper bound.
+This possibility is nothing but the density property of rational numbers, which was discussed during seminars.)
 
-Тот факт, что у любого ограниченного сверху подмножества множества вещественных
-чисел есть (вещественная) точная верхняя грань — пожалуй, главное, что отличает
-вещественные числа от рациональных.
+\source
+    Древние греки вполне могли такое множество рассмотреть: оно состоит из рациональных чисел, и в его определении никакие иррациональные числа не участвуют. 
+    Однако, если бы древний грек попытался найти точную верхнюю грань множества $S$, его бы постигла неудача. 
+    Действительно, он бы рассматривал только рациональные верхние грани (других чисел он не знает). 
+    Поскольку $\sqrt{2}$, как мы сейчас знаем, иррационален (см.  \ref[теорему][thm:01:sqrt2] из \ref[лекции][chap:01:setsnumbers]), множество \emph{рациональных} верхних граней для $S$ не содержит минимального элемента: какое бы рациональное число, большее $\sqrt{2}$ мы бы ни взяли, можно найти рациональное число поменьше, по-прежнему являющееся верхней гранью для $S$. 
+    (Это следует из плотности множества рациональных чисел, которую мы доказывали на семинарах.) 
+    Неудача!
 
-\section Теорема Вейерштрасса
-Вернёмся к последовательностям.
+The fact that any bounded subset of real numbers has a supremum is arguably the main difference between rational and irrational numbers.
+\source{Тот факт, что у любого ограниченного сверху подмножества множества вещественных чисел есть (вещественная) точная верхняя грань — пожалуй, главное, что отличает вещественные числа от рациональных.}
+
+\section 
+    Weierstrass theorem
+    \source{Теорема Вейерштрасса}
+Let's return to the discussion of sequences. 
+\source{Вернёмся к последовательностям.}
 \theorem  \label thm:08:weierstrass
-    (Вейерштрасс)
-    Пусть последовательность $\seq{a_n}$ ограничена сверху и неубывает. Тогда
-    она имеет предел.
+    (Weierstrass)
+    Suppose a sequence $\seq{a_n}$ is non-decreasing and bounded from above.
+    This implies that it converges.
+    \source
+        (Вейерштрасс)
+        Пусть последовательность $\seq{a_n}$ ограничена сверху и неубывает. 
+        Тогда она имеет предел.
 
     \figure
         \img
@@ -257,28 +349,39 @@ $\sqrt{2}$ мы бы ни взяли, можно найти рациональн
             \style
                 padding:1em;
         \caption
-            Иллюстрация к \ref[теореме][thm:08:weierstrass]. Неубывающая
-            ограниченная последовательность. Здесь число $C$ является какой-то
-            из верхних граней (не обязательно точной) для множества всех членов
-            последовательности.
+            An illustration to \ref[theorem][thm:08:weierstrass].
+            Non-decreasing bounded sequence.
+            A number $C$ is some (not necessarily lowest) upper bound for a set of all elements of a sequence.
+            \source
+                Иллюстрация к \ref[теореме][thm:08:weierstrass]. 
+                Неубывающая ограниченная последовательность.  
+                Здесь число $C$ является какой-то из верхних граней (не обязательно точной) для множества всех членов последовательности.
     
         
 \proof
-    Рассмотрим множество элементов последовательности $\set{a_n \mid n \in
-    \mathbb N}$. Поскольку последовательность ограничена сверху, это множество
-    тоже ограничено сверху. Возьмём его точную верхнюю грань (она существует по
-    \ref[теореме][thm:08:sup-inf]) и обозначим её за $A$. Докажем, что $A$
-    является пределом нашей последовательности.
+    Consider a set of all elements of a sequence $\set{a_n \mid n \in \mathbb N}$.
+    The assumption that a set is bounded from above implies that this set is also bounded from above.
+    Consider its lowers upper bound (it exists because of \ref[theorem][thm:08:sup-inf]) and denote it by $A$.
+    Now we prove that $A$ is a limit of the sequence.
+    \source 
+        Рассмотрим множество элементов последовательности $\set{a_n \mid n \in \mathbb N}$. 
+        Поскольку последовательность ограничена сверху, это множество тоже ограничено сверху. 
+        Возьмём его точную верхнюю грань (она существует по \ref[теореме][thm:08:sup-inf]) и обозначим её за $A$. 
+        Докажем, что $A$ является пределом нашей последовательности.
 
 
-    \paragraph{Близкие элементы существуют} Сперва докажем более слабое
-    утверждение: докажем, что элементы последовательности подходят к $A$ сколь
-    угодно близко, см. \ref[рис.][fig:08:weierstrass-proof]. Формально:
+    \paragraph{Close elements exist}
+    Firstly, let's prove a less strict proposition.
+    It states that there is an element of the sequence that gets arbitrarily close to $A$, see \ref[fig.][fig:08:weierstrass-proof]. 
+    Formally,
+    \source
+        \paragraph{Близкие элементы существуют} 
+        Сперва докажем более слабое утверждение: докажем, что элементы последовательности подходят к $A$ сколь угодно близко, см. \ref[рис.][fig:08:weierstrass-proof]. 
+        Формально:
     \equation \label eq:08:A
         \forall \eps>0\\ \exists N \in \mathbb N \colon |a_N - A| < \eps.
-    Это ещё не определение предела (мы ничего не говорим про бесконечный хвост
-    последовательности, а говорим только про один элемент), но давайте начнём с
-    этого.
+    Notice that this proposition doesn't match the definition of a limit since we focus on each element endividually, not on the whole tail of a sequence.
+    \source{Это ещё не определение предела (мы ничего не говорим про бесконечный хвост последовательности, а говорим только про один элемент), но давайте начнём с этого.}
     \figure
         \img
             \src
@@ -292,135 +395,184 @@ $\sqrt{2}$ мы бы ни взяли, можно найти рациональн
             \style
                 padding:1em;
         \caption
-            Иллюстрация к доказательству теоремы Вейерштрасса, $A=\sup
-            \set{a_n\mid n \in \mathbb N}$.
+            An illistration to the proof of the Weierstrass theorem, where $A=\sup \set{a_n\mid n \in \mathbb N}$.
+            \source{Иллюстрация к доказательству теоремы Вейерштрасса, $A=\sup \set{a_n\mid n \in \mathbb N}$.}
         \label
             fig:08:weierstrass-proof
-    От противного, пусть это неверно. Запишем отрицание:
+    Our strategy is the proof by contradiction.
+    Suppose, on the contrary, that there is no element that gets arbitratily close to $A$.
+    Let's formulate the negation formally:
+    \source
+        От противного, пусть это неверно. 
+        Запишем отрицание:
     \eq
         \exists \eps > 0 \\ \forall N \in \mathbb N\colon |a_N - A| \ge \eps
-    Заметим, что раз $A$ — верхняя грань множества всех элементов
-    последовательности, каждый из элементов не больше $A$ и значит модуль
-    раскрывается как $A-a_N$. Тогда нашлось такое $\eps$, что все элементы
-    последовательности удовлетворяют неравенству
+    Notice that since $A$ is an upper bound, each element of the sequence is less than or equal to $A$, so the expression involving an absolute value becomes $A-a_N$.
+    This means we've found $\eps$ such that the following inequality holds for any element of a sequence:
+    \source
+        Заметим, что раз $A$ — верхняя грань множества всех элементов последовательности, каждый из элементов не больше $A$ и значит модуль раскрывается как $A-a_N$. 
+        Тогда нашлось такое $\eps$, что все элементы последовательности удовлетворяют неравенству
     \eq
         A - a_N \ge \eps,
-    или, иными словами, $a_n \le A-\eps$. Таким образом, все элементы
-    $\seq{a_n}$ не превосходят $(A-\eps)$, то есть $(A-\eps)$ — верхняя грань.
-    (На \ref[рис.][fig:08:weierstrass-proof] в этом случае не было бы никаких
-    точек последовательности выше $y=A-\eps$.) Но $A-\eps < A$, а мы
-    предположили, что $A$ точная верхняя грань, то есть
-    минимум из всех верхних граней. Противоречие!
+    In other words, $a_n \le A-\eps$.
+    This implies that ell elements of $\seq{a_n}$ so not exceed $(A-\eps)$.
+    This means that $(A-\eps)$ is an upper bound.
+    (This way \ref[fig.][fig:08:weierstrass-proof] wouldn't contain any elements greater than $y=A-\eps$.)
+    But we've assumed that $A$ is the least upper bound, so there cannot be any other upper bounds lower that it.
+    Clearly, $A-\eps < A$, so we've come to a contradiction.
+    \source
+        или, иными словами, $a_n \le A-\eps$. 
+        Таким образом, все элементы $\seq{a_n}$ не превосходят $(A-\eps)$, то есть $(A-\eps)$ — верхняя грань.
+        (На \ref[рис.][fig:08:weierstrass-proof] в этом случае не было бы никаких точек последовательности выше $y=A-\eps$.) 
+        Но $A-\eps < A$, а мы предположили, что $A$ точная верхняя грань, то есть минимум из всех верхних граней. 
+        Противоречие!
 
-    Иными словами, если элементы последовательности не подходят к $A$ сколь
-    угодно близко, то между $A$ и этими элементами есть «зазор», и $A$ можно
-    было бы уменьшить, сохранив его свойство быть верхней гранью. Это
-    противоречит тому, что $A$ точная (самая маленькая) верхняя грань.
+    In other words, if no element of the sequence can get arbitrarily close to $A$, then $A$ must be bounded awat from all elements, which implies $A$ can get smaller and still be an upper bound.
+    This contradicts the fact that $A$ is assumed to be the lowest upper bound.
+    \source
+        Иными словами, если элементы последовательности не подходят к $A$ сколь угодно близко, то между $A$ и этими элементами есть «зазор», и $A$ можно было бы уменьшить, сохранив его свойство быть верхней гранью. 
+        Это противоречит тому, что $A$ точная (самая маленькая) верхняя грань.
 
-    \paragraph{Монотонность} Заметим, что в силу монотонности, если $a_N > A -
-    \eps$, то для всякого $n>N$, $a_n \ge a_N > A - \eps$. Поскольку для всех
-    элементов выполняется, что $a_N \le A$, отсюда следует, что для $|a_n -
-    A|=A-a_n < \eps$.
+    \paragraph{Monotonicity}
+    Notice that due to monotonicity, if $a_N > A - \eps$, then $a_n \ge a_N > A - \eps$ holds for any $n>N$.
+    Since all elements satisfy $a_N \le A$, we get $|a_n - A|=A-a_n < \eps$.
+    \source
+        \paragraph{Монотонность} 
+        Заметим, что в силу монотонности, если $a_N > A - \eps$, то для всякого $n>N$, $a_n \ge a_N > A - \eps$. 
+        Поскольку для всех элементов выполняется, что $a_N \le A$, отсюда следует, что для $|a_n - A|=A-a_n < \eps$.
 
-    Таким образом, утверждение доказано по определению предела: мы показали, что
-    для всякого $\eps$ найдётся такое $N$ (определяемое из формулы
-    \ref{eq:08:A}), что для всех $n>N$, $|a_n - A| < \eps$.
+    We've just proven the proposition using the definition of a limit: we've shown that for any $\eps$ it's possible to construct $N$ (using \ref{eq:08:A}) such that for any $n>N$ the inequality $|a_n - A| < \eps$ holds.
+    \source{Таким образом, утверждение доказано по определению предела: мы показали, что для всякого $\eps$ найдётся такое $N$ (определяемое из формулы \ref{eq:08:A}), что для всех $n>N$, $|a_n - A| < \eps$.}
 
 \remark 
-    Конечно, легко сформулировать и доказать теорему Вейерштрасса для
-    ограниченных снизу невозрастающих последовательностей.
+    The theorem can be formulated for the case of sequences that are non-increasing and bounded from bellow.
+    Its proof is similar to the one we've just presented.
+    \source{Конечно, легко сформулировать и доказать теорему Вейерштрасса для ограниченных снизу невозрастающих последовательностей.}
 
 \remark \label rem:08:limbound
-    В ходе доказательства получили, что предел неубывающей последовательности
-    является точной верхней гранью всех её членов. Отсюда в частности следует,
-    что все члены не превосходят предела: если $\seq{a_n}$ неубывает и имеет
-    предел $A$, то для всех натуральных $k$, $a_k \le A$. Конечно, мы могли бы
-    получить этот результат и непосредственно: в силу неубывания, для всех
-    $n>k$, $a_k \le a_n$. Зафиксируем $k$ и перейдём в этом неравенстве к
-    пределу при $n\to \infty$. (Поскольку предел зависит только от «хвоста»
-    последовательности, тот факт, что неравенство выполняется не для всех $n$, а
-    только для тех, которые больше $k$, не является препятствием — можно просто
-    выкинуть первые $k$ элементов обеих последовательностей.) Получим $a_k \le
-    \lim_{n \to \infty} a_n = A$. 
+    ...
+    \source
+        В ходе доказательства получили, что предел неубывающей последовательности является точной верхней гранью всех её членов. 
+        Отсюда в частности следует, что все члены не превосходят предела: если $\seq{a_n}$ неубывает и имеет предел $A$, то для всех натуральных $k$, $a_k \le A$. 
+        Конечно, мы могли бы получить этот результат и непосредственно: в силу неубывания, для всех $n>k$, $a_k \le a_n$. 
+        Зафиксируем $k$ и перейдём в этом неравенстве к пределу при $n\to \infty$. 
+        (Поскольку предел зависит только от «хвоста» последовательности, тот факт, что неравенство выполняется не для всех $n$, а только для тех, которые больше $k$, не является препятствием — можно просто выкинуть первые $k$ элементов обеих последовательностей.) 
+        Получим $a_k \le \lim_{n \to \infty} a_n = A$. 
 
-\section Биномиальные коэффициенты
-\subsection Упорядоченные наборы
+\section 
+    Binomial coefficients
+    \source{Биномиальные коэффициенты}
+\subsection 
+    Ordered sets
+    \source{Упорядоченные наборы}
 \definition
-    Пусть есть множества $X$ и $Y$. \emph{Декартовым произведением} этих
-    множеств называется множество упорядоченных пар $(x, y)$, где $x \in X$ и
-    $y\in Y$. Пишут:
+    Cosider two arbitrary sets $X$ and $Y$.
+    The set of all ordered pairs $(x, y)$ ("ordered" means $x$ is in the first place, and $y$ is in the second) where $x \in X$ и $y\in Y$ is called a \emph{Cartesian product}.
+    The notation is as follows:
+    \source
+        Пусть есть множества $X$ и $Y$. 
+        \emph{Декартовым произведением} этих множеств называется множество упорядоченных пар $(x, y)$, где $x \in X$ и $y\in Y$. 
+        Пишут:
     \eq
         X \times Y = \set{(x, y)\mid x\in X,\\ y\in Y}.
 
 \example
-    Рассмотрим множество $\mathbb R^2=\mathbb R \times \mathbb R$ — декартов
-    квадрат множества вещественных чисел. Оно состоит из упорядоченных пар $(x,
-    y)$, где $x$ и $y$ — вещественные числа. С этим объектом мы хорошо знакомы
-    из школы: это обыкновенная декартова плоскость.
+    Consider a set $\mathbb R^2=\mathbb R \times \mathbb R$ which is a Cartesian product of all real numbers with itself.
+    It consists of ordered pairs $(x, y)$ where $X$ and $y$ are real numbers.
+    This object is very familiar from the school days: it is precisely the Cartesian coordinate system.
+    \source
+        Рассмотрим множество $\mathbb R^2=\mathbb R \times \mathbb R$ — декартов квадрат множества вещественных чисел. 
+        Оно состоит из упорядоченных пар $(x, y)$, где $x$ и $y$ — вещественные числа. 
+        С этим объектом мы хорошо знакомы из школы: это обыкновенная декартова плоскость.
 
 \question
-    Пусть множества $X$ и $Y$ конечны: в $X$ 3 элемента, а в $Y$ два. Сколько
-    элементов в множестве $X\times Y$?
+    Suppose a set $X$ has three elements, and a set $Y$ has two.
+    How many elements are in their Cartesian product $X\times Y$?
+    \source
+        Пусть множества $X$ и $Y$ конечны: в $X$ 3 элемента, а в $Y$ два. 
+        Сколько элементов в множестве $X\times Y$?
     \quiz
         \choice \correct
-            6
+            $6$
+            \source{6}
             \comment
-                Конечно: к каждому из трёх элементов $X$ можно приписать два
-                элемента из $Y$, значит всего шесть элементов.
+                Yes!
+                There are three elements, and each can be associated with two elements from $Y$, so there are six elements in total. 
+                \source{Конечно: к каждому из трёх элементов $X$ можно приписать два элемента из $Y$, значит всего шесть элементов.}
         \choice
-            5
+            $5$
+            \source{5}
             \comment
-                Интересно, как это получилось?
+                Something's wrong... 
+                \source{Интересно, как это получилось?}
         \choice
-            3
+            $3$
+            \source{3}
             \comment
-                Ой?
+                Oops?
+                \source{Ой?}
         \choice
-            12
+            $12$
+            \source{12}
             \comment
-                Откуда это могло взяться?
+                How did you get that?
+                \source{Откуда это могло взяться?}
 
-Можно рассматривать декартово произведение больше, чем двух множеств: оно
-состоит из упорядоченных наборов элементов, каждый из которых взят из
-соответствующего сомножителя. Например:
+It's possible to consider a Cartesian product of more than two sets, and it consists of all possible ordered tuples of elements.
+For example,
+\source
+    Можно рассматривать декартово произведение больше, чем двух множеств: оно состоит из упорядоченных наборов элементов, каждый из которых взят из соответствующего сомножителя. 
+    Например:
 \align \nonumber
     \item X \times Y \times Z = \set{(x, y, z)\mid  x \in X, \\ y \in Y, \\ 
     \splitem z \in Z}.
-Можно было бы расставить скобки в выражении $X \times  Y \times Z$ и, например,
-получить множество $(X \times Y) \times Z$, элементами которого были бы
-упорядоченные пары $(w, z)$, где $z \in Z$ и $w\in X\times Y$, то есть $w=(x,
-y)$ — тоже упорядоченная пара. Но с практической точки зрения обычно нет никакой
-разницы между выражениями вида $((x, y), z)$ и $(x, y, z)$.
+One could add parenthesis to the expression $X \times  Y \times Z$ and get a Cartesian product of two sets $(X \times Y) \times Z$, which consists of all ordered pairs $(w, z)$ where $z \in Z$ и $w\in X\times Y$, in other words $w=(x, y)$ is also an ordered pair.
+But from a practical point of view, the notations $((x, y), z)$ and $(x, y, z)$ are equivalent and there is commonly no need to add extra parenthesis.
+\source
+    Можно было бы расставить скобки в выражении $X \times  Y \times Z$ и, например, получить множество $(X \times Y) \times Z$, элементами которого были бы упорядоченные пары $(w, z)$, где $z \in Z$ и $w\in X\times Y$, то есть $w=(x, y)$ — тоже упорядоченная пара. 
+    Но с практической точки зрения обычно нет никакой разницы между выражениями вида $((x, y), z)$ и $(x, y, z)$.
 
 \definition
-    Результат $k$-кратного декартова умножения множества $X$ на себя называется
-    \emph{$k$-й декартовой степенью} множества $X$ и обозначается $X^k$. Оно
-    состоит из упорядоченных $k$-элементных наборов элементов множества $X$:
+    If we take a set $X$ and repeatedly apply a Cartesian product $k$ times we get a \emph{$k$-ary Cartesian product} of $X$, which is denoted by $X^k$.
+    This Cartesian product is said to have an \emph{arity} of $k$.
+    It consists of all ordered $k$-tuples of elements in $X$.
+    \source
+        Результат $k$-кратного декартова умножения множества $X$ на себя называется \emph{$k$-й декартовой степенью} множества $X$ и обозначается $X^k$. 
+        Оно состоит из упорядоченных $k$-элементных наборов элементов множества $X$:
     \align \nonumber
         \item X^k=\set{(x_1, x_2, \ldots, x_k)\mid 
                  x_1\in X, 
         \splitem x_2 \in X, \ldots, x_k \in X}.
 
-Про упорядоченные наборы важно понимать следующее: элементы в них могут
-повторяться (никто не мешает вам рассмотреть точку $(1, 1) \in \mathbb R^2$) и
-порядок следования элементов важен (точка $(1, 2)$ — это совсем не то же самое,
-что точка $(2, 1)$).
+It's important to note that, firstly, ordered tuples can consist of equal elemets (consider a point $(1, 1) \in \mathbb R^2$).
+Secondly, the order of elements in tuples matters, since a point $(1, 2)$ is not the same as $(2, 1)$.
+\source
+    Про упорядоченные наборы важно понимать следующее: элементы в них могут повторяться (никто не мешает вам рассмотреть точку $(1, 1) \in \mathbb R^2$) и порядок следования элементов важен (точка $(1, 2)$ — это совсем не то же самое, что точка $(2, 1)$).
 
 \proposition  \label prop:08:tuples
-    Пусть $X$ — конечное множество, состоящее из $n$ элементов. Тогда $X^k$ состоит
-    из $n^k$ элементов. Иными словами, количество $k$-элементных упорядоченных
-    наборов из $n$-элементного множества равно $n^k$.
+    Suppose $X$ is a finite set that consists of $n$ elements.
+    Then $X^k$ consists of $n^k$ elements.
+    In other words, a total number of $k$-tuples that can be constructed from a set with $n$ elements is $n^k$.
+    \source
+        Пусть $X$ — конечное множество, состоящее из $n$ элементов. 
+        Тогда $X^k$ состоит из $n^k$ элементов. 
+        Иными словами, количество $k$-элементных упорядоченных наборов из $n$-элементного множества равно $n^k$.
 \proof
-    Совсем аккуратное доказательство проводится по индукции, но и без неё всё
-    довольно наглядно. Пусть нам нужно выбрать $k$-элементный упорядоченный
-    набор. Будем выписывать его по очереди. У нас есть $n$ различных способов
-    выбрать первый элемент, см. \ref[рис.][fig:08:tuples]. После того, как
-    первый элемент выбран, к нему нужно приписать второй элемент, и это можно
-    сделать $n$ разными способами. Всего получается $n\times n$ способов
-    выписать первые два элемента. Когда первые два элемента зафиксированы, есть
-    $n$ способов выписать третий элемент, значит количество вариантов умножается
-    на $n$ и становится равно $n^2\times n = n^3$. И так далее до $k$-го
-    элемента.
+    The most strict proof can be done by induction, but we'll examine a more intuitive one.
+    Since we would like to get a $k$-tuple, let's start from its first element element and chose one by one. 
+    We have $n$ different ways to chose the first element (see \ref[fig.][fig:08:tuples]). 
+    After we fix the first one, we still have the same number of candidates for a second elements, so there are $n\times n$ ways to chose the second one.
+    When we proceed to the third one, there are also $n$ total ways to chose it from $X$, so the number of all possible options is $n^2\times n = n^3$.
+    Generalizing this reasoning to the case of $k$ elements yeilds the desired expression.
+    \source
+        Совсем аккуратное доказательство проводится по индукции, но и без неё всё довольно наглядно. 
+        Пусть нам нужно выбрать $k$-элементный упорядоченный набор. 
+        Будем выписывать его по очереди. 
+        У нас есть $n$ различных способов выбрать первый элемент, см. \ref[рис.][fig:08:tuples]. 
+        После того, как первый элемент выбран, к нему нужно приписать второй элемент, и это можно сделать $n$ разными способами. 
+        Всего получается $n\times n$ способов выписать первые два элемента. 
+        Когда первые два элемента зафиксированы, есть $n$ способов выписать третий элемент, значит количество вариантов умножается на $n$ и становится равно $n^2\times n = n^3$. 
+        И так далее до $k$-го элемента.
 
     \figure
         \img
@@ -439,33 +591,47 @@ y)$ — тоже упорядоченная пара. Но с практичес
                 точек. Каждой из этих точек соответствует упорядоченный набор,
                 который считывается из цифр, написанных на стрелочках.
         \caption
-            Построение всевозможных трёхэлементных упорядоченных наборов из
-            чисел $1$ и $2$. Выбор каждого следующего элемента удваивает
-            количество наборов.
+            The construction of all possible ordered $3$-tuples consisting of numbers $1$ and $2$.
+            Adding an another element doubles the total number of options.
+            \source
+                Построение всевозможных трёхэлементных упорядоченных наборов из чисел $1$ и $2$. 
+                Выбор каждого следующего элемента удваивает количество наборов.
         \label fig:08:tuples
 
-\subsection Наборы без повторений
+\subsection 
+    Choice without replacements
+    \source{Наборы без повторений}
 
-Рассмотрим теперь упорядоченные наборы без повторяющихся элементов.
+Now we consider ordered tuples without replacements.
+\source{Рассмотрим теперь упорядоченные наборы без повторяющихся элементов.}
 \proposition \label prop:08:tuples-without-replacements
-    Количество $k$-элементных упорядоченных наборов из $n$-элементного множества
-    равно 
+    The number of $k$-tuples without replacements what can be constructed from a set of $n$ elements is equal to
+    \source{Количество $k$-элементных упорядоченных наборов из $n$-элементного множества равно} 
     \eq
         n(n-1)\ldots (n-k+1)=\frac{n!}{(n-k)!},
-    где $n!=1\times 2\times 3\times \cdots \times n$ — $n$-факториал. (По
-    определению полагают, что $0!=1$.)
+    where $n!=1\times 2\times 3\times \cdots \times n$ is the factorial of $n$.
+    (Recall that be definition, $0!=1$.)
+    \source
+        где $n!=1\times 2\times 3\times \cdots \times n$ — $n$-факториал. 
+        (По определению полагают, что $0!=1$.)
 \proof
-    Доказательство очень похоже на доказательство
-    \ref[утверждения][prop:08:tuples], см.
-    \ref[рис.][fig:08:tuples-without-replacements] Будем выписывать набор
-    последовательно.  Есть $n$ способов выбрать первый элемент. После того, как
-    первый элемент выбран, остаётся $(n-1)$ способ выбрать второй элемент
-    (потому что повторяться нельзя, и значит множество допустимых элементов
-    сокращается на $1$). Значит, есть $n\cdot(n-1)$ способов выбрать первые два
-    элемента. И так далее. Получится $k$ сомножителей, начиная с $n=(n-0)$.
-    Значит, последний сомножитель будет $(n-(k-1))=(n-k+1)$. (Чтобы не
-    запутаться, всегда полезно подставить какое-нибудь конкретное значение
-    — например, $k=2$ — и посмотреть, что получится.)
+    The proof is in many ways similar to the proof of a \ref[proposition][prop:08:tuples], see \ref[fig.][fig:08:tuples-without-replacements].
+    Let's choose the elements one by one.
+    Clearly, there are $n$ ways to chose the first one.
+    After we fix the first element, there are $n-1$ ways left for the second one to be chosen (since repetitions are not allowed).
+    So there are $n\cdot(n-1)$ ways to chose the first two elements.
+    In general, the number of all possible $k$-tuples without replacements consists of $k$ multipliers, where the first one is $n=(n-0)$, so the last one is $(n-(k-1))=(n-k+1)$.
+    (It's helpful to substitute some particular values for $k$ since it may not be straighforward without an example).
+    \source
+        Доказательство очень похоже на доказательство \ref[утверждения][prop:08:tuples], см. \ref[рис.][fig:08:tuples-without-replacements] 
+        Будем выписывать набор последовательно.  
+        Есть $n$ способов выбрать первый элемент. 
+        После того, как первый элемент выбран, остаётся $(n-1)$ способ выбрать второй элемент (потому что повторяться нельзя, и значит множество допустимых элементов сокращается на $1$). 
+        Значит, есть $n\cdot(n-1)$ способов выбрать первые два элемента. 
+        И так далее. 
+        Получится $k$ сомножителей, начиная с $n=(n-0)$.
+        Значит, последний сомножитель будет $(n-(k-1))=(n-k+1)$. 
+        (Чтобы не запутаться, всегда полезно подставить какое-нибудь конкретное значение    — например, $k=2$ — и посмотреть, что получится.)
 
 
     \figure
@@ -487,49 +653,72 @@ y)$ — тоже упорядоченная пара. Но с практичес
                 соответствует упорядоченный набор, который считывается из цифр,
                 написанных на стрелочках.
         \caption
-            Построение всевозможных трёхэлементных упорядоченных наборов без
-            повторений из чисел $1$, $2$, $3$ и $4$. На каждом следующем шаге
-            число возможных элементов уменьшается на 1.
+            The construction of all possible ordered $3$-tuples consisting of numbers $1$, $2$, $3$, and $4$.
+            Every step the number of candidates for the next place in decreasing by one.
+            \source
+                Построение всевозможных трёхэлементных упорядоченных наборов без повторений из чисел $1$, $2$, $3$ и $4$. 
+                На каждом следующем шаге число возможных элементов уменьшается на 1.
         \label fig:08:tuples-without-replacements
 
-\subsection Неупорядоченные наборы без повторений 
+\subsection 
+    Unordered tuples without replacements
+    \source{Неупорядоченные наборы без повторений} 
 
-Сколько существует $k$-элементных подмножеств данного $n$-элементного множества?
-Если выписать элементы подмножества в строчку, получится $k$-элементный набор
-без повторений. Однако, между упорядоченными наборами и подмножествами есть
-важное различие: множество не упорядочено. Наборы $(1, 2)$ и $(2, 1)$ — разные
-наборы, множества $\set{1, 2}$ и $\set{2, 1}$ — одно и то же множество. Поэтому
-количество упорядоченных наборов больше количества подмножеств. Во сколько раз?
+How many subsets of length $k$ does a set $X$ with $n$ elements in total have?
+Notice that each of the subsets is a $k$-tuple without replacements.
+However, a set is unordered, so it is not the same thing as an ordered tuple.
+To illustrate, the tuples $(1, 2)$ and $(2, 1)$ are disticts, but the sets $\set{1, 2}$ and $\set{2, 1}$ are actually different notations for a single set.
+This means that the number of ordered tuples is larger than the number of subsets.
+The question is, how exactly?
+\source
+    Сколько существует $k$-элементных подмножеств данного $n$-элементного множества?
+    Если выписать элементы подмножества в строчку, получится $k$-элементный набор без повторений. 
+    Однако, между упорядоченными наборами и подмножествами есть важное различие: множество не упорядочено. 
+    Наборы $(1, 2)$ и $(2, 1)$ — разные наборы, множества $\set{1, 2}$ и $\set{2, 1}$ — одно и то же множество. 
+    Поэтому количество упорядоченных наборов больше количества подмножеств. 
+    Во сколько раз?
 
 \question
-    Пусть есть $k$-элементное множество. Сколькими способами его элементы можно
-    упорядочить (выстроить в ряд)? Иными словами, сколько есть различных
-    $k$-элементных наборов без повторяющихся элементов из элементов данного
-    $k$-элементного множества?
+    Consider a set of $k$ elements.
+    How many ways are there to construct distinct ordered tuples without replacements of a length $k$ out of this set? 
+    \source
+        Пусть есть $k$-элементное множество. 
+        Сколькими способами его элементы можно упорядочить (выстроить в ряд)? 
+        Иными словами, сколько есть различных $k$-элементных наборов без повторяющихся элементов из элементов данного $k$-элементного множества?
 
-Ответ на этот вопрос содержится в
-\ref[утверждении][prop:08:tuples-without-replacements]: нужно просто подставить
-$n=k$. Видно, что в этом случае $(n-k)=0$, а по определению $0!=1$. Значит,
-искомое число способов равно $k!$.
+The answer can be found in \ref[proposition][prop:08:tuples-without-replacements] where $n=k$.
+In this case $(n-k)=0$ and $0!=1$ by definition.
+Hence, the answer is $k!$.
+\source
+    Ответ на этот вопрос содержится в \ref[утверждении][prop:08:tuples-without-replacements]: нужно просто подставить $n=k$. 
+    Видно, что в этом случае $(n-k)=0$, а по определению $0!=1$. 
+    Значит, искомое число способов равно $k!$.
 
 \proposition \label prop:08:Cnk
-    Обозначим количество $k$-элементных подмножеств $n$-элементного множества
-    через $C_n^k$. Тогда
+    Let's denote the number of subsets that have length $k$ of a set with $n$ eleents by $C_n^k$.
+        Then
+    \source
+        Обозначим количество $k$-элементных подмножеств $n$-элементного множества через $C_n^k$. 
+        Тогда
     \align 
         \item \label eq:08:Cnk
             C_n^k = \frac{n(n-1)\cdots (n-k+1)}{k!} =
         \splitem \splonly{=} \frac{n!}{k!(n-k)!}.
 \proof
-    Пусть мы выписали все $\frac{n!}{(n-k)!}$ упорядоченных $k$-элементных
-    наборов наборов из элементов нашего $n$-элементного множества (см.
-    \ref[утверждение][prop:08:tuples-without-replacements] ). Рассмотрим
-    какой-нибудь из этих наборов. Его элементы можно переставлять $k!$ разными
-    способами, получая новые наборы из нашего списка (включая его самого). Все
-    они задают одно и то же подмножество. Значит, если мы хотим посчитать
-    подмножества, нужно все эти $k!$ наборов посчитать один раз. Таким образом,
-    чтобы получить количество подмножеств из количества наборов, надо количество
-    наборов разделить на $k!$. (Поскольку каждому подмножеству соответствует
-    ровно $k!$ упорядоченных наборов.) Отсюда и следует формула \ref{eq:08:Cnk}.
+    Consider one of the $\frac{n!}{(n-k)!}$ ordered $k$-tuples that can be constructed out of the initial set (see. \ref[proposition][prop:08:tuples-without-replacements]).
+    Its elements can be rearranged in $k!$ ways, each time relusting in an another (distinct) $k$-tuple.
+    At the same time, each such $k$-tuple define the same subset, so since we're aiming to count the subsets, we must consider $k!$ tuples as one.
+    This implies that the number of subsets is $k!$ times smaller than the number of tuples.
+    This is the motivation behind the expression \ref{eq:08:Cnk}.
+    \source
+        Пусть мы выписали все $\frac{n!}{(n-k)!}$ упорядоченных $k$-элементных наборов наборов из элементов нашего $n$-элементного множества (см. \ref[утверждение][prop:08:tuples-without-replacements] ). 
+        Рассмотрим какой-нибудь из этих наборов. 
+        Его элементы можно переставлять $k!$ разными способами, получая новые наборы из нашего списка (включая его самого). 
+        Все они задают одно и то же подмножество. 
+        Значит, если мы хотим посчитать подмножества, нужно все эти $k!$ наборов посчитать один раз. 
+        Таким образом, чтобы получить количество подмножеств из количества наборов, надо количество наборов разделить на $k!$. 
+        (Поскольку каждому подмножеству соответствует ровно $k!$ упорядоченных наборов.) 
+        Отсюда и следует формула \ref{eq:08:Cnk}.
 
     \figure
         \img
@@ -545,38 +734,56 @@ $n=k$. Видно, что в этом случае $(n-k)=0$, а по опред
                 max-width: 600px;
             \alt
         \caption
-            Построение всевозможных трёхэлементных подмножеств множества
-            $\set{1, 2, 3, 4}$. Мы сначала построили всевозможные упорядоченные
-            3-элементные наборы без повторений, а потом объединили те из них,
-            которые отличаются только порядком и следовательно задают одно и то
-            же множество. На рисунке отмечены два таких объединения, в каждом по
-            6 наборов (здесь $6=3!$ — число способов переставить три элемента).
-            Напишите, какие два множества мы не указали, и отметьте все наборы,
-            которые задают эти множества.
+            Construction of all subsets of length $3$ in the set $\set{1, 2, 3, 4}$ in two steps.
+            The first is to find all possible ordered $3$-tuples without replacements.
+            The second is to "merge" all tuples that differ only in the order.
+            The figure illustrates two of the four "mergers", each one contains $6$ tuples (where $6=3!$ is the number of ways to reorder a $3$-tuple).
+            Try to write down the structure of other "mergers" explicitly yourself. 
+            \source
+                Построение всевозможных трёхэлементных подмножеств множества $\set{1, 2, 3, 4}$. 
+                Мы сначала построили всевозможные упорядоченные 3-элементные наборы без повторений, а потом объединили те из них, которые отличаются только порядком и следовательно задают одно и то же множество. 
+                На рисунке отмечены два таких объединения, в каждом по 6 наборов (здесь $6=3!$ — число способов переставить три элемента).
+                Напишите, какие два множества мы не указали, и отметьте все наборы, которые задают эти множества.
         \label fig:08:subsets
 \exercise
-    Самый лучший способ понять все утверждения, сформулированные выше, такой:
-    взять какое-нибудь небольшое $n$ и $k$ и пройти все шаги. Например, $n=4$,
-    $k=2$. Выпишите все двухэлементные упорядоченные наборы без повторений с
-    элементами из множества $X=\set{1, 2, 3, 4}$, руководствуясь алгоритмом из
-    \ref[утверждения][prop:08:tuples-without-replacements]. Посчитайте, сколько их
-    получилось. Затем объедините их в группы, так, чтобы в каждой группе наборы
-    отличались только порядком (и следовательно задавали одно и то же
-    множество). Сколько элементов в каждой группе? Сколько всего групп?
-    Повторите эти действия, например, с $n=5$, $k=3$.
+    The best way to get along with the propositions above is to take a fairly small values of $n$ and $k$ and to go through all the steps yourself.
+    For example, let $n=4$ and $k=2$.
+    Construst all ordered pairs without replacements from the set $X=\set{1, 2, 3, 4}$ by following the technique from \ref[proposition][prop:08:tuples-without-replacements].
+    Then count them all up.
+    Then "merge" the tuples into groups where only the order of elements differs (in other words, the groups where each tuple define the same set).
+    How many tuples are there in each group?
+    What is the tital number of groups?
+    Then repeat the steps with different parameters, say $n=5$ and $k=3$.
+    \source
+        Самый лучший способ понять все утверждения, сформулированные выше, такой: взять какое-нибудь небольшое $n$ и $k$ и пройти все шаги. 
+        Например, $n=4$, $k=2$. 
+        Выпишите все двухэлементные упорядоченные наборы без повторений с элементами из множества $X=\set{1, 2, 3, 4}$, руководствуясь алгоритмом из \ref[утверждения][prop:08:tuples-without-replacements]. 
+        Посчитайте, сколько их получилось. 
+        Затем объедините их в группы, так, чтобы в каждой группе наборы отличались только порядком (и следовательно задавали одно и то же множество). 
+        Сколько элементов в каждой группе? 
+        Сколько всего групп?
+        Повторите эти действия, например, с $n=5$, $k=3$.
 
 \remark
-    Числа $C_n^k$ называются \emph{биномиальными коэффициентами} (почему так —
-    будет ясно в следующем разделе) или \emph{числом сочетаний из $n$ элементов
-    по $k$}. Другое обозначение: $\binom{n}{k}$ — обратите внимание, что в этом
-    случае $n$ ставится сверху.
+    The numbers $C_n^k$ are called the \emph{binomial coefficients} (motivation behind the name is discussed in the next section).
+    An equivalent notation is $\binom{n}{k}$ (notice this time $n$ is in the superscript).
+    \source
+        Числа $C_n^k$ называются \emph{биномиальными коэффициентами} (почему так — будет ясно в следующем разделе) или \emph{числом сочетаний из $n$ элементов по $k$}. 
+        Другое обозначение: $\binom{n}{k}$ — обратите внимание, что в этом случае $n$ ставится сверху.
 
-\subsection Бином Ньютона
+\subsection 
+    Binomial theorem
+    \source{Бином Ньютона}
 
-Рассмотрим выражение $(a+b)^n$. Что получится, если раскрыть в нём скобки и
-привести подобные слагаемые?
+Consider an expression $(a+b)^n$.
+What is the best way to expand the brackets?
+\source
+    Рассмотрим выражение $(a+b)^n$. 
+    Что получится, если раскрыть в нём скобки и привести подобные слагаемые?
 
-\example Посмотрим, что происходит при небольших значениях $n$:
+\example
+    Let's examine what happens when $n$ is low:
+    \source{Посмотрим, что происходит при небольших значениях $n$:}
     \align \nonumber
         \item (a+b)^2=(a+b)(a+b)=
         \splitem \splonly{=} aa + a b + b a + b b = 
@@ -591,63 +798,90 @@ $n=k$. Видно, что в этом случае $(n-k)=0$, а по опред
         \item    
             & =a^3+3a^2b+3ab^2+b^3.
 
-Мы видим, что если не приводить подобные слагаемые, каждый раз получается сумма
-всевозможных мономов, состоящих из $n$ сомножителей, каждый сомножитель — $a$
-или $b$ — они выглядят как «слова» типа $aaba$. Так будет и дальше: каждый раз
-нужно умножить $(a+b)$ на $(a+b)^{n-1}$, то есть приписать слева к каждому
-«слову», получающемуся в $(a+b)^{n-1}$, букву $a$ (получили $(n-1)$ новых
-«слов» длины $n$), а затем букву $b$ (получили ещё $(n-1)$ новых «слов» длины
-$n$), и всё сложить. Если в разложении $(a+b)^{n-1}$ были все $(n-1)$-буквенные
-«слова» из букв $a$ и $b$, то в разложении $(a+b)^n$ будут все $n$-буквенные
-слова из букв $a$ и $b$.
+It turns out the expression turned out to be the sum of $n$ monomials, each being the product of $n$ terms (either $a$ or $b$).
+It looks like the sum of "words", like $abaa$ and $baba$.
+The pattern looks recursive, since each time we're multiplying $(a+b)^{n-1}$ by $(a+b)$, which looks like attaching the "letter" $a$ to the left of each "word" in $(a+b)^{n-1}$ (which results in $(n-1)$ new "words" of the length $n$), then doing the same thing with the "letter" $b$ (another $(n-1)$ words), and summing over both groups at once.
+So, the expansion of $(a+b)^{n-1}$ has each "word" of length $(n-1)$ in it, and the expansion of $(a+b)^n$ has each "words" of length $n$.
+\source
+    Мы видим, что если не приводить подобные слагаемые, каждый раз получается сумма всевозможных мономов, состоящих из $n$ сомножителей, каждый сомножитель — $a$ или $b$ — они выглядят как «слова» типа $aaba$. 
+    Так будет и дальше: каждый раз нужно умножить $(a+b)$ на $(a+b)^{n-1}$, то есть приписать слева к каждому «слову», получающемуся в $(a+b)^{n-1}$, букву $a$ (получили $(n-1)$ новых «слов» длины $n$), а затем букву $b$ (получили ещё $(n-1)$ новых «слов» длины $n$), и всё сложить. 
+    Если в разложении $(a+b)^{n-1}$ были все $(n-1)$-буквенные «слова» из букв $a$ и $b$, то в разложении $(a+b)^n$ будут все $n$-буквенные слова из букв $a$ и $b$.
 
-Теперь нужно привести подобные слагаемые. Например, для $(a+b)^2$ мы замечаем,
-что $ab=ba$ и значит коэффициент при $ab$ равен двум. Для $(a+b)^3$, чтобы
-посчитать коэффициент при $a^2b$, нужно найти количество «слов», в которых две
-буквы $a$ и одна буква $b$. Таких слов 3: $aab$, $aba$ и $baa$. Значит,
-коэффициент при $a^2b$ равен трём.
+Now the only thing left is to combine like terms.
+For example, $(a+b)^2$ has "words" $ab$ and $ba$, which are the same thing, so the coefficient must be $2$.
+To calculate the coefficient of a term in $(a+b)^3$, say $a^2b$, we need to find the number of "words" that have two $a$s and one $b$.
+Clearly, there are $3$ such words: $aab$, $aba$, and $baa$.
+Hence the coefficient of $a^2b$ is equal to $3$.
+\source
+    Теперь нужно привести подобные слагаемые. 
+    Например, для $(a+b)^2$ мы замечаем, что $ab=ba$ и значит коэффициент при $ab$ равен двум. 
+    Для $(a+b)^3$, чтобы посчитать коэффициент при $a^2b$, нужно найти количество «слов», в которых две буквы $a$ и одна буква $b$. 
+    Таких слов 3: $aab$, $aba$ и $baa$. 
+    Значит, коэффициент при $a^2b$ равен трём.
 
 \theorem
-    Если раскрыть собки и привести подобные слагаемые в выражении $(a+b)^n$,
-    получится сумма мономов вида $a^k b^{n-k}$, коэффициент перед каждым таким
-    мономом равен $C_n^k$:
+    The result of expanding the expression $(a+b)^n$ and combining like terms of the form $a^k b^{n-k}$, the coefficient of each term is equal to $C_n^k$.
+    \source{Если раскрыть собки и привести подобные слагаемые в выражении $(a+b)^n$, получится сумма мономов вида $a^k b^{n-k}$, коэффициент перед каждым таким мономом равен $C_n^k$:}
     \eq
         (a+b)^n = \sum_{k=0}^n C_n^k a^k b^{n-k}.
 \proof
-    Коэффициент при выражении $a^k b^{n-k}$ — это количество различных «слов»
-    длины $n$, в которых входит ровно $k$ раз буква $a$ и оставшиеся $(n-k)$ раз
-    буква $b$.  Сколько таких слов существует? Поскольку мы знаем длину слова
-    (она равна $n$), и знаем, что в слове бывают только буквы $a$ и $b$, чтобы
-    задать такое слово, нужно просто задать, на каких позициях стоят буквы $a$.
-    Всего возможных позиций $n$, из них $k$ позиций нужно заполнить буквами $a$.
-    Чтобы выбрать эти позиции, нужно из $n$-элементного множества (всех позиций)
-    выбрать $k$-элементное подмножество (тех позиций, на которых мы напишем
-    $a$). Это можно сделать $C_n^k$ различными способами.
+    The coefficient of $a^k b^{n-k}$ equals to the number of different "words" of a length $n$ that contain the "letter" $a$ exactly $k$ times, and the remaining $(n-k)$ "letters" are $b$s.
+    How many such "words" are there?
+    Since the length of a "word" is known to be $n$, and there are only two possibile "letters" (namely, $a$ and $b$), the positions of "letters" $a$ completely determine the resulting word.
+    Once again, there are $n$ total positions for $k$ letters $a$, which can be though of as having a set of length $n$ and finnding all its subseets of length $k$.
+    By definition this is possible in $C_n^k$ ways.
+    \source
+        Коэффициент при выражении $a^k b^{n-k}$ — это количество различных «слов» длины $n$, в которых входит ровно $k$ раз буква $a$ и оставшиеся $(n-k)$ раз буква $b$.  
+        Сколько таких слов существует? 
+        Поскольку мы знаем длину слова (она равна $n$), и знаем, что в слове бывают только буквы $a$ и $b$, чтобы задать такое слово, нужно просто задать, на каких позициях стоят буквы $a$.
+        Всего возможных позиций $n$, из них $k$ позиций нужно заполнить буквами $a$.
+        Чтобы выбрать эти позиции, нужно из $n$-элементного множества (всех позиций) выбрать $k$-элементное подмножество (тех позиций, на которых мы напишем $a$). 
+        Это можно сделать $C_n^k$ различными способами.
 \remark
-    Разумеется, у этой теоремы есть строгое формальное доказательство через
-    индукцию. Провести его — полезное упражнение. Однако, на мой взгляд, понять
-    смысл из этого доказательство — довольно трудно. Поэтому я его здесь не
-    привожу.
+    A theorem of this kind must have an induction proofm, and it is a good exercise to go through it yourself.
+    However, I think the intuition behind such a proof is not clear enough to be included in here.
+    \source
+        Разумеется, у этой теоремы есть строгое формальное доказательство через индукцию. 
+        Провести его — полезное упражнение. 
+        Однако, на мой взгляд, понять смысл из этого доказательство — довольно трудно. 
+        Поэтому я его здесь не привожу.
 
-\section Число $e$
+\section 
+    Number $e$
+    \source{Число $e$}
 
-Рассмотрим следующий предел
+Consider a following limt
+\source{Рассмотрим следующий предел}
 \eq
     \lim_{n\to \infty} \left(1+\frac{1}{n}\right)^n.
-Чему он равен? Если вы попробуете применить арифметику пределов, то заметите,
-что основание степени стремится к $1$, а показатель — к бесконечности. Чему
-«равняется» $1^\infty$? Увы, это неопределенность. Лобовой метод тут не
-работает. Мы пока даже не знаем, существует этот предел, или нет. Однако, скоро
-узнаем.
+What value does it equal to?
+If one thies to apply the arithmetic of limits, it turns out that the expression inside the brackets approaches $1$, and the exponent approaches infinity.
+What value does $1^\infty$ equal to?
+Unfortunately, it is one of the indeterminate foms, so no known method can be applied.
+For the moment, we cannot even determine if the limit converges or not.
+but siin we will be.
+\source
+    Чему он равен? 
+    Если вы попробуете применить арифметику пределов, то заметите, что основание степени стремится к $1$, а показатель — к бесконечности. 
+    Чему «равняется» $1^\infty$? 
+    Увы, это неопределенность. 
+    Лобовой метод тут не работает. 
+    Мы пока даже не знаем, существует этот предел, или нет. 
+    Однако, скоро узнаем.
 
 
 \proposition
-    При всех $n$,
+    For all $n$,
+    \source{При всех $n$,}
     \eq
         \left(1+\frac{1}{n}\right)^n < 3.
 \proof
-    Случай $n=1$ разбирается явно. Пусть $n>1$. Раскроем скобки по биному
-    Ньютона (ага! пригодился!).
+    The case when $n=1$ is trivial.
+    Suppose $n>1$ and expand the brackets using the binomial theorem.
+    \source
+        Случай $n=1$ разбирается явно. 
+        Пусть $n>1$. 
+        Раскроем скобки по биному Ньютона (ага! пригодился!).
     Имеем:
     \align 
         \item \label eq:08:eee
@@ -655,8 +889,13 @@ $n$), и всё сложить. Если в разложении $(a+b)^{n-1}$ �
         \splitem \splonly{&+} \frac{n(n-1)}{2!} \frac{1}{n^2} + 
         \splitem \splonly{&+} \frac{n(n-1)(n-2)}{3!} \frac{1}{n^3} + \ldots +
         \splitem \splonly{&+} \frac{n(n-1)(n-2)\ldots 1}{n!}\frac{1}{n^n}.
-    Первые два слагаемые равны $1$. Рассмотрим $(k+1)$-е слагаемое, $k>2$. Оно
-    имеет вид:
+    The first two terms are equal to $1$.
+    Consider a $(k+1)$th term, where $k>2$.
+    It has the following form:
+    \source
+        Первые два слагаемые равны $1$. 
+        Рассмотрим $(k+1)$-е слагаемое, $k>2$. 
+        Оно имеет вид:
     \align 
         \item \nonumber
             \frac{n(n-1)\ldots(n-k+1)}{k!}\frac{1}{n^k} =
@@ -664,63 +903,92 @@ $n$), и всё сложить. Если в разложении $(a+b)^{n-1}$ �
         \item \label eq:08:term 
             = \left(1 - \frac{1}{n}\right) \cdots\left(1-\frac{k-1}{n}\right)\frac{1}{k!}
 
-    Иными словами, оно состоит из $(k-1)$ сомножителя вида $1-\frac{m}{n}$, где 
-    $m$ меняется от $1$ до $(k-1)$, и последнего сомножителя $\frac{1}{k!}$.
+    In ither words, it consists of $(k-1)$ factors of the form $1-\frac{m}{n}$ where $m$ vary from $1$ to $(k-1)$, and the last factor $\frac{1}{k!}$.
+    \source{Иными словами, оно состоит из $(k-1)$ сомножителя вида $1-\frac{m}{n}$, где  $m$ меняется от $1$ до $(k-1)$, и последнего сомножителя $\frac{1}{k!}$.}
 
-    Заметим, что каждый из сомножителей вида $1-\frac{m}{n}$ меньше 1.
-    Значит, всё слагаемое меньше $\frac{1}{k!}$. Но с другой стороны
-    $2^{k-1} \le k!$ для всех натуральных $k$ (проверьте, а ещё лучше — докажите
-    по индукции, что это так) и значит
-    $\frac{1}{k!} \le \frac{1}{2^{k-1}}$. Имеем:
+    Notice that every factor of the form $1-\frac{m}{n}$ is less than $1$.
+    This implies that the whole term is less than $\frac{1}{k!}$.
+    On the other hans, $2^{k-1} \le k!$ is true for any natural $k$ (a proof by induction is highly recommended), hence $\frac{1}{k!} \le \frac{1}{2^{k-1}}$. 
+    We get that
+    \source
+        Заметим, что каждый из сомножителей вида $1-\frac{m}{n}$ меньше 1.
+        Значит, всё слагаемое меньше $\frac{1}{k!}$. 
+        Но с другой стороны $2^{k-1} \le k!$ для всех натуральных $k$ (проверьте, а ещё лучше — докажите по индукции, что это так) и значит $\frac{1}{k!} \le \frac{1}{2^{k-1}}$. 
+        Имеем:
     \eq
         \left(1+\frac{1}{n}\right)^n  < 1 + 1 + \frac{1}{2^1} + \frac{1}{2^2} +
         \ldots \frac{1}{2^n}.
-    Слагаемые, начиная с третьего, образуют геометрическую прогрессию с
-    положительным знаменателем, меньшим $1$. Её сумма меньше суммы
-    соответствующей бесконечной геометрической прогрессии, которая в свою
-    очередь равна 1. (Не нужно знать формулу суммы бесконечной геометрической
-    прогрессии, чтобы это увидеть: если у вас была одна шоколадка, вы её
-    разломали пополам, съели половину (то есть $1/2$), остаток разломали снова пополам,
-    съели половину от половину (то есть $1/2^2$) и т.д., в каждый момент времени вы
-    съедите меньше, чем целую шоколадку, а в пределе съедите её всю.) Значит,
-    вся сумма меньше трёх.
+    All terms starting from the thind one form a geometric series whose common ratio is positive and less than $1$.
+    So, its sum is less than the sum of an infinite geometric series that has a common ratio $1$.
+    (A great illustration is eating a chocolate bar by biting a half of the previous bite, so that you start with biting a half of a bar, then a fourth, and eating the whole in the limit.)
+    Hence, the whole sum is less than $3$.
+    \source
+        Слагаемые, начиная с третьего, образуют геометрическую прогрессию с положительным знаменателем, меньшим $1$. 
+        Её сумма меньше суммы соответствующей бесконечной геометрической прогрессии, которая в свою очередь равна 1. 
+        (Не нужно знать формулу суммы бесконечной геометрической прогрессии, чтобы это увидеть: если у вас была одна шоколадка, вы её разломали пополам, съели половину (то есть $1/2$), остаток разломали снова пополам, съели половину от половину (то есть $1/2^2$) и т.д., в каждый момент времени вы съедите меньше, чем целую шоколадку, а в пределе съедите её всю.) 
+        Значит, вся сумма меньше трёх.
         
 \proposition
-    Последовательность
+    A sequence
+    \source{Последовательность}
     \eq
         \largeseq{\left(1+\frac{1}{n}\right)^n}
-    монотонно возрастает.
+    is monotonically increasing
+    \source{монотонно возрастает.}
 \proof
-    Рассмотрим представление \ref{eq:08:eee}. Что произойдёт при увеличении $n$
-    на единицу? Первые два слагаемые не изменятся. Добавится ещё одно
-    неотрицательное слагаемое. Что произойдёт с остальными?
+    Consider expression \ref{eq:08:eee} and think of what happens if we increase $n$ by one.
+    The first two terms stay unchanged, and one positive term is added.
+    But what about the rest?
+    \source
+        Рассмотрим представление \ref{eq:08:eee}. 
+        Что произойдёт при увеличении $n$ на единицу? 
+        Первые два слагаемые не изменятся. 
+        Добавится ещё одно неотрицательное слагаемое. 
+        Что произойдёт с остальными?
 
-    Первые два слагаемые равны 1, они не изменятся. Слагаемые, начиная с
-    третьего, задаются формулой \ref{eq:08:term}. Возьмём какое-то конкретное
-    слагаемое, то есть зафиксируем какое-то $k>2$. Посмотрим на правую часть
-    \ref{eq:08:term}. Что произойдёт с ней, когда $n$ увеличится, а $k$
-    останется прежним?  Во-первых, сомножитель $\frac{1}{k!}$, стоящий в конце,
-    не изменится. Во-вторых, количество сомножителей вида $1-\frac{m}{n}$ тоже
-    не изменится, их $(k-1)$ штука. Наконец, каждый из сомножителей такого вида
-    при увеличении $n$ увеличивается, поскольку дробь $\frac{m}{n}$
-    уменьшается, но перед ней стоит минус.
+    The first two terms equal to $1$, so they don't change.
+    The terms that follow are defined by \ref{eq:08:term}.
+    Let's fix some particular value of $k>2$ and look at the right hand side of \ref{eq:08:term}. 
+    How does it change when $n$ is increased and $k>2$ is unchanged?
+    Firstly, the factor $\frac{1}{k!}$ in the end stays the same.
+    Secondly, the number of factors of the form $1-\frac{m}{n}$ is unchanged (there are still $(k-1)$ of them).
+    Finally, each of the factors is increased as $n$ rises, since the fraction $\frac{m}{n}$ gets smaller, but there is a minus sign in front.
+    \source
+        Первые два слагаемые равны 1, они не изменятся. 
+        Слагаемые, начиная с третьего, задаются формулой \ref{eq:08:term}. 
+        Возьмём какое-то конкретное слагаемое, то есть зафиксируем какое-то $k>2$. 
+        Посмотрим на правую часть \ref{eq:08:term}. 
+        Что произойдёт с ней, когда $n$ увеличится, а $k$ останется прежним?  
+        Во-первых, сомножитель $\frac{1}{k!}$, стоящий в конце, не изменится. 
+        Во-вторых, количество сомножителей вида $1-\frac{m}{n}$ тоже не изменится, их $(k-1)$ штука. 
+        Наконец, каждый из сомножителей такого вида при увеличении $n$ увеличивается, поскольку дробь $\frac{m}{n}$ уменьшается, но перед ней стоит минус.
         
-    Итак, в результате увеличения $n$ на единицу к сумме \ref{eq:08:term}
-    добавится положительное слагаемое, а остальные слагаемые не уменьшатся.
-    Значит, сумма возрастёт.
+    Finally, we conclude that increasing $n$ by one adds a positive term to sum \ref{eq:08:term}, and each of the original terms does not increase.  
+    Hence, the expression increases.
+    \source
+        Итак, в результате увеличения $n$ на единицу к сумме \ref{eq:08:term} добавится положительное слагаемое, а остальные слагаемые не уменьшатся.
+        Значит, сумма возрастёт.
 
 \corollary \nonumber
-    Таким образом, наша последовательность возрастает и ограничена сверху.
-    Значит, по \ref[теореме Вейерштрасса\nonumber][thm:08:weierstrass], у неё
-    есть предел.
+    Utilizing the \ref[Weierstrass theorem\nonumber][thm:08:weierstrass], since the sequence is increasing and bounded, it must have a limit. 
+    \source
+        Таким образом, наша последовательность возрастает и ограничена сверху. 
+        Значит, по \ref[теореме Вейерштрасса\nonumber][thm:08:weierstrass], у неё есть предел.
 
-Оказывается, этот предел не записывается в виде какого-либо простого
-арифметического выражения, и представляет собой иррациональное число. Оно
-обозначается буквой $e$ и играет важную роль в построении анализа.
+It turns out that this limit is an irrational number that cannot be expressed in any familiar arithmetic way.
+This number is denoted by $e$ and it plays an important role in calculus. 
+\source
+    Оказывается, этот предел не записывается в виде какого-либо простого арифметического выражения, и представляет собой иррациональное число. 
+    Оно обозначается буквой $e$ и играет важную роль в построении анализа.
 
-\section Заключение
+\section 
+    Conclusion
+    \source{Заключение}
 
-Мы доказали теорему Вейерштрасса, позволяющую исследовать на сходимость
-монотонные ограниченные последовательности. С её помощью, а также с помощью
-бинома Ньютона, мы определили число $e$ как предел некоторой последовательности.
-Оно нам ещё пригодится.
+We've proven the Weierstrass theorem, which is a helpful tool when dealing with bounded and monotonic seqences.
+This theorem, alongside with a binomial theorem, helped us to define a number $e$ as a limit of a sequence.
+It will be very helpful in furure.
+\source
+    Мы доказали теорему Вейерштрасса, позволяющую исследовать на сходимость монотонные ограниченные последовательности. 
+    С её помощью, а также с помощью бинома Ньютона, мы определили число $e$ как предел некоторой последовательности.
+    Оно нам ещё пригодится.
